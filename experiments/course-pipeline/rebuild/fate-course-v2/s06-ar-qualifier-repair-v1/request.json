@@ -1,0 +1,82 @@
+{
+  "contractsSHA256": "b55ceba82fdcd0573e430ed4f582529ff6a8f2de6c3966d771bae8841ad80298",
+  "brandAssets": [
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/Cairo.ttf",
+      "name": "Cairo.ttf",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/masaarat-logo-lockup.png",
+      "name": "masaarat-logo-lockup.png",
+      "sha256": "60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706"
+    }
+  ],
+  "bootstrapFiles": {
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/bootstrap.cjs": "a940abe892666d1a39aff4bbcfc0858f508074043ef49631176870c98bc443f3",
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/verified-package.en.json": "82cd4e18ff20c964535bbf5ea61690da23753731fc6b208e10f790cf428d4dac",
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/package.json": "0bff60e82712dceebf99bbba7792c446967ff30dc0f060d9506cdbe49487895e",
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/package-lock.json": "7838f794756faefe1458d53da71f626b57a5bb4aa3c81bbbefb4bb1dddf40c4e"
+  },
+  "id": "s06-ar-qualifier-repair-v1",
+  "newProviderCalls": 0,
+  "newSpeechCalls": 0,
+  "newImageCalls": 0,
+  "maxSemanticCalls": 0,
+  "providerReservationUSD": 0,
+  "parts": [
+    {
+      "id": "S06-03-ar-EG-qualifier-r1",
+      "originalPartID": "S06-03-ar-EG",
+      "step": "FATE2-S06",
+      "locale": "ar-EG",
+      "sceneIndex": 3,
+      "sectionID": "food-web",
+      "sceneImplementation": "baseline",
+      "sourceTiming": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S06-03-ar-EG",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "52370ec6efabc3967f95a2d9958f79137f3c3eae600d44d2cec2b9dccba130d6"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S06-03-ar-EG",
+        "file": "S06-03-ar-EG.wav",
+        "sha256": "d80f529b2449dc0c7fd98e45b4cadfa9447705040da63ca42f7b79d119498741"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S06-organism-mass-balance",
+        "file": "S06-organism-mass-balance.jpg",
+        "sha256": "13940704876092ed964c502761bcf92ce565db4c407599dd04624828fecb3799"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S06-03-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "c1b845e4d60bd3183ae352651b8506900aaebb5131a64478646b4d18ff9cd6fd"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S06-03-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "7a9985557f117654592573163e9ca6961b4f01c05e1175a7d3c60c127b521e64"
+      },
+      "originalTextSHA256": "3df997168f8f81c724f50f0a3145e5355b11722e1ce3622e26ee6b7404c6f5d1",
+      "originalDeliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "originalFrames": 1202,
+      "originalAudioFrames": 960960,
+      "originalActionsSHA256": "ce23854aa3bb6d436ade980792da540bcfd346793e4a414b2d195883638130c9",
+      "originalCaptionsSHA256": "99ca56ec81fb6d3cd19b4da0f6e112e0cda4f39e5cc62a98df1a11cd8fd427e3"
+    }
+  ],
+  "targetedDisplayChanges": [
+    "Only Arabic scene03 English energy-versus-fixed-pesticide-transfer qualifier is translated; 10% and ≠ retained as separate LTR text.",
+    "Original caption text/times, authored scripts/lesson, audio/PCM/gates, image, clocks/actions, frame counts and all other scenes remain exact."
+  ],
+  "sourceRepairEvidence": {
+    "file": "repair-evidence.en.json",
+    "sha256": "b652710485d72fb79a1046cb883608924c99fd3b630bd6c45cef71412d704427"
+  }
+}
