@@ -22,7 +22,7 @@ jobs:
       matrix:
         part: ["S01-01-ar-EG", "S01-01-en", "S01-02-ar-EG", "S01-02-en", "S01-03-ar-EG", "S01-03-en", "S01-04-ar-EG", "S01-04-en", "S01-05-ar-EG", "S01-05-en", "S01-06-ar-EG", "S01-06-en"]
     env:
-      EXPECTED_REQUEST_SHA256: dc01c644570b4daa2bc869f2aa6e6470d3280f865b9c2240e1db35ee9a19f90c
+      EXPECTED_REQUEST_SHA256: 70d257f94cb8e2a0a2d4a1db609859e3c57449b153f0e84a8ac0d0dc5f2d5dad
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - name: Verify exact model and generate one coherent original
@@ -58,7 +58,7 @@ jobs:
       matrix:
         scene: ["result-versus-claim", "sample-basis", "source-pathway-receptor"]
     env:
-      EXPECTED_REQUEST_SHA256: 7ba3be2caa2fea9f02e9f957a30f7369094d00e890cae37b71c9a737c0bd1573
+      EXPECTED_REQUEST_SHA256: 09673174b6d8f05e3b55859c7585be1c528a272f278e38d95d79c004ad22dfb0
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - name: Verify approved exact image model and generate one ingredient

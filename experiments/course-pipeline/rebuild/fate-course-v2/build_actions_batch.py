@@ -19,7 +19,8 @@ request={'id':'fate-v2-s01-media-20261026-v1','model':draft['model'],'analysisMo
  'budget':{'ownerCeilingUSD':25,'initialTTSCalls':12,'initialImageCalls':3,'audioReviewCalls':24,'repairTTSCallsReservedNotDispatched':2,'repairImageCallsReservedNotDispatched':2,'conservativeInternalReservationUSD':20,'noAutomaticRefill':True,'pricingEvidence':'Google official Gemini pricing inspected 2026-10-26: Pro TTS input $1/M, audio output $20/M. TTS output bounded8192 tokens per request. Reservation is planning, not an account-wide billing cap. Image model must first answer availability; no silent alias or provider substitution.'},
  'sourceLessonSHA256':hashlib.sha256((R/'lessons/FATE2-S01/lesson.public.json').read_bytes()).hexdigest(),'newMethodApprovalRequired':False,'approvalLimits':'Existing same-course voice/method approval retained. New clips require actual review; no acceptance fabricated. Full new video needs scoped sync sample review.'}
 def put(name,ob):
-    (T/name).write_text(ob if isinstance(ob,str) else json.dumps(ob,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+    with (T/name).open('w',encoding='utf8',newline='\n') as f:
+        f.write(ob if isinstance(ob,str) else json.dumps(ob,ensure_ascii=False,indent=2)+'\n')
 put('request.json',request)
 generate=(old/'audio/generate.py').read_text(encoding='utf8')
 generate=generate.replace("len(M['segments'])==45","len(M['segments'])==12").replace("'responseModalities':['AUDIO']","'responseModalities':['AUDIO'],'maxOutputTokens':8192")
