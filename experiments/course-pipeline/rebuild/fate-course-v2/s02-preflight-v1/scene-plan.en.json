@@ -1,0 +1,97 @@
+{
+  "id": "FATE2-S02-scenes-v2",
+  "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+  "spokenRequestSHA256": "9a88e962d0fa9894956baaf3289f125d170c652ffc8b656d903a6ac75db1110d",
+  "locales": [
+    "ar-EG",
+    "en"
+  ],
+  "model": "gemini-3.8-flash-tts",
+  "voices": [
+    "Charon",
+    "Kore"
+  ],
+  "timing": "All cue timestamps pending actual recorded audio; no estimated durations.",
+  "scenes": [
+    {
+      "id": "two-denominators",
+      "mode": "two_independent_measurement_bases",
+      "before": "Two separated blank measurement panels: food tray/balance and body-weight scale with day marker.",
+      "actions": [
+        "Reveal mg/kg food only on the food panel.",
+        "Reveal mg/kg body weight/day only on the other panel.",
+        "Isolate food mass versus body mass/time; prevent a direct numeric-comparison arrow."
+      ],
+      "after": "MRL and ADI remain bound to their own quantities.",
+      "restriction": "No ADI as a fill line in food, no invented regulatory values, no fixed voice characters."
+    },
+    {
+      "id": "equation",
+      "mode": "unit_cancellation_and_mass_flow",
+      "before": "Independent food-source terms with matching residue identity.",
+      "actions": [
+        "Multiply each C_i by matching kg food/day.",
+        "Cancel kg food visibly while mg/day remains.",
+        "Combine only compatible residue masses, then divide by kg body weight."
+      ],
+      "after": "Σ(C_i × consumption_i) / body weight; explicit mg/kg body weight/day.",
+      "restriction": "Arrows show mathematical dependency, not observed biological absorption or real causal transport."
+    },
+    {
+      "id": "hypothetical-reference",
+      "mode": "two_question_routes",
+      "before": "One route asks scenario intake/reference; another asks sample compliance.",
+      "actions": [
+        "Attach hypothetical flag to the example ADI before comparison.",
+        "Keep percentage only on the compatible intake route.",
+        "Open commodity/part/residue/jurisdiction/date/method decision fields on the compliance route without invented entries."
+      ],
+      "after": "Different questions retain different evidence requirements.",
+      "restriction": "No green safe/unsafe badge, official stamp, or current legal cutoff fabricated."
+    },
+    {
+      "id": "multiple-residues",
+      "mode": "identity_gated_grouping",
+      "before": "Same-R source cards separate from several chemically different substance cards.",
+      "actions": [
+        "Combine source masses only after same substance and residue basis checks.",
+        "Place different compounds in a conditional common-mechanism group; require evidence before the grouping.",
+        "Reject sum of arbitrary concentrations compared to one chemical ADI."
+      ],
+      "after": "Aggregate and cumulative meanings retain the explicit EPA/FQPA context.",
+      "restriction": "A shared colour/icon is not proof of common toxicity mechanism; no fake molecular structures."
+    },
+    {
+      "id": "worked-example",
+      "mode": "numbered_dimensional_calculation",
+      "before": "Invented R, A0.20mg/kg×0.15kg/day, B0.05mg/kg×0.40kg/day; body50kg; example ADI0.010.",
+      "actions": [
+        "Compute A0.030mg/day and B0.020mg/day independently.",
+        "Join masses into0.050mg/day.",
+        "Divide by50kg body weight into0.0010mg/kg body weight/day.",
+        "Divide by hypothetical0.010 and multiply100 into10%.",
+        "Retain one-day/source assumptions and no compliance or lifetime conclusion."
+      ],
+      "after": "All unit cancellation and the percentage are visible, with the invented-reference flag.",
+      "restriction": "No inference that other foods/water or acute/chronic complete assessment were included."
+    }
+  ],
+  "ingredients": {
+    "reuse": [
+      {
+        "path": "production/FATE2-S01-initial-v1/artifacts/fate-v2-image-sample-basis/sample-basis.jpg",
+        "sha256": "3966b4a0be8d16d27f3c49ff99f80f2ccfe1b328f2e4cdc60841f6790a67c86d",
+        "allowedRole": "Qualitative whole-food/sample illustration only, no displayed mass or calibrated result inferred from the pixels."
+      }
+    ],
+    "newPending": [
+      {
+        "id": "two-measurement-bases",
+        "contract": "Realistic text-free generated3D-style food-balance and separate body-weight-scale ingredient, exact units outside image.",
+        "generation": "Not called; provider/model availability and a funded finite request required."
+      }
+    ],
+    "font": "Existing Cairo.ttf; exact units, values, labels and diagrams editable."
+  },
+  "status": "authored_motion_contract_not_rendered_or_owner_appearance_accepted"
+}

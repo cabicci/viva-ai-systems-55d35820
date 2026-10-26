@@ -1,0 +1,221 @@
+{
+  "id": "FATE2-S02",
+  "version": "written-batch-v1",
+  "sourcePages": [
+    2,
+    7,
+    8,
+    9,
+    10
+  ],
+  "sourceItems": [
+    "SRC01-P02-OUT02",
+    "SRC01-P02-OUT03"
+  ],
+  "status": "written_draft_self_review_pending_not_media_complete",
+  "references": [
+    {
+      "title": "Codex pesticide-residue glossary",
+      "url": "https://codex.fao.org/codex-texts/codex-online-databases/pesticides-residues/glossary",
+      "applicability": "ADI, MRL, EMRL and GAP definitions; no real commodity limit selected.",
+      "access": "Actual returned primary passage inspected; not a claim that the entire linked standard was read."
+    },
+    {
+      "title": "EPA: Food Quality Protection Act",
+      "url": "https://www.epa.gov/laws-regulations/summary-food-quality-protection-act",
+      "applicability": "1996 amendment, aggregate/common-mechanism cumulative distinction and child safety factor; current EPA summary read on 2026-10-26.",
+      "access": "Actual returned primary passage inspected; not a claim that the entire linked standard was read."
+    }
+  ],
+  "editorialNotes": [
+    "All numerical cases are newly authored hypothetical data. No actual ADI, MRL or acute-reference value is asserted."
+  ],
+  "ar": {
+    "title": "حدود المتبقيات والمدخول اليومي",
+    "intro": "تميّز حد تركيز الغذاء عن المدخول اليومي بالنسبة لوزن الجسم.",
+    "outcomes": [
+      "تميّز حد تركيز الغذاء عن المدخول اليومي بالنسبة لوزن الجسم.",
+      "تحسب مدخولًا افتراضيًا وتراجع الوحدات وحدود المقارنة.",
+      "تفصل تجميع مصادر المادة الواحدة عن تقييم مواد ذات آلية مشتركة."
+    ],
+    "sections": [
+      {
+        "id": "two-denominators",
+        "title": "١. نفس كلمة «حد» مش معناها نفس الكمية",
+        "paragraphs": [
+          "في الخطوة اللي فاتت حسبنا كتلة متبقٍ في حصة أكل. دلوقتي تخيّل تقريرًا جنبُه رقم مكتوب بوحدة `mg/kg food` ورقم تاني بوحدة `mg/kg body weight/day`. ما ينفعش نقارن الرقمين مباشرة، حتى لو الاتنين فيهم ملِّيجرام وكيلوجرام. المقام الأول كتلة غذاء؛ والتاني كتلة جسم ومعاها أساس زمني.",
+          "الحدّ الأقصى لمتبقّيات المبيدات، MRL، في تعريف كودكس هو أعلى تركيز لمتبقّي مبيد توصي هيئة الدستور الغذائي بالسماح القانوني بوجوده في الغذاء أو العلف أو عليه. هو مرتبط بسلعة وتعريف متبقّي محدَّدين، ومبني على بيانات الممارسات الزراعية الجيدة مع التقييم العلمي. ده يوضح وظيفته، لكنه مش جرعة شخصيّة؛ والحدّ الساري في سوق معيّن لازم يتراجع من نظامه المعني.",
+          "المدخول اليومي المقبول، ADI، يخصّ كمية المادة اللي يمكن تناولها يوميًّا طول العمر، ويبدو إنها لا تحمل مخاطرة صحية يُعتدّ بيها حسب المعلومات المعروفة وقت التقييم. بيتعبّر عنه بالنسبة لوزن الجسم؛ وفي حساب المدخول اليومي بنوضّح كمان أساس اليوم. ده مرجع لتقييم التعرض طويل المدى، مش حدّ تركيز لعينة غذاء، ومش ضمانًا مطلقًا لكل حالة. المرجع التفسيري هنا هو قاموس Codex؛ القيمة الفعلية لازم تتجاب للمادة والحالة المعنيتين."
+        ]
+      },
+      {
+        "id": "equation",
+        "title": "٢. نبني المدخول خطوة خطوة",
+        "paragraphs": [
+          "للتدريب، نكتب كمية المادة من كل غذاء باعتبارها التركيز مضروبًا في كتلة الغذاء المستهلكة. نجمع كتل المادة ذاتها من الأغذية المختلفة، وبعدها نقسم على وزن الجسم. لو المدخلات استهلاك يومي، النتيجة تكون مدخولًا يوميًا لكل كيلوجرام من وزن الجسم. لازم كل التركيزات تخص نفس تعريف المتبقي أو تتحول بأساس علمي مناسب؛ تشابه الأسماء مش كفاية.",
+          "مجموع يوم افتراضي واحد مش تقدير تلقائي لمتوسط التعرض طوال العمر. وما حسبناش تلقائيًا التعرّض الحاد بمجرد إن عندنا أرقام ليوم: التقييم الحاد له مرجع وسيناريو ومنهج ملائم. احنا بنتدرّب على الأبعاد والحساب، مش بنستخرج تصريحًا بالأكل أو تشخيصًا صحيًا."
+        ]
+      },
+      {
+        "id": "hypothetical-reference",
+        "title": "٣. مقارنة تعليمية بشروطها",
+        "paragraphs": [
+          "لو المثال نفسه أعطاك ADI افتراضيًا، تقدر تحسب نسبة المدخول المقدّر إليه بعد توحيد الوحدات. كتابة النسبة من غير ذكر إن المرجع افتراضي بتدي انطباعًا مضللًا. وكلمة «أقل» معناها إن نتيجة السيناريو الحسابي أقل من الرقم المستخدم؛ ما تثبتش إن بقية الغذاء أو الميه أو ظروف الناس اتحسبت.",
+          "أما مقارنة عينة غذاء بـMRL فتبدأ بهوية السلعة، والجزء محل الفحص، وتعريف المتبقي، والجهة والسوق والتاريخ وطريقة أخذ العينة والتحليل وقواعد القرار. رقم افتراضي في درس مش حد ساري، وفرق بسيط بين أرقام مجردة مش حكم إنفاذ رسمي."
+        ]
+      },
+      {
+        "id": "multiple-residues",
+        "title": "٤. نفس المادة ولا مواد مختلفة؟",
+        "paragraphs": [
+          "حسب ملخص EPA لقانون FQPA، السؤال عن مادة واحدة من مصادر تعرض متعددة يدخل ضمن التجميع aggregate. أما cumulative في السياق التنظيمي المذكور فيخص مبيدات لها آلية سمّية مشتركة. وجود كذا اسم في تحليل متعدد المتبقيات ما يديش لوحده أساس نجمع كل التركيزات ونقارنها بـADI مادة واحدة.",
+          "قبل أي جمع اسأل: هل دي نفس المادة وتعريف المتبقي؟ هل الوحدات والزمن متوافقين؟ هل المطلوب مدخول أم مؤشر مخاطر وفق طريقة معتمدة؟ ما ينفعش تستخدم حاصل جمع سهل عشان تتجاوز السؤال العلمي الأصعب عن قابلية المقارنة."
+        ]
+      }
+    ],
+    "example": {
+      "title": "مثال محلول: يوم افتراضي لشخص افتراضي",
+      "scenario": "كل الأرقام تعليمية: مادة ر في غذاء أ بتركيز 0.20 mg/kg food واستهلاك 0.15 kg/day، وفي غذاء ب بتركيز 0.05 mg/kg food واستهلاك 0.40 kg/day. وزن الجسم 50 kg. ADI افتراضي 0.010 mg/kg body weight/day. نفس تعريف المتبقي، ولا مصادر أخرى في الحساب.",
+      "steps": [
+        {
+          "text": "نحسب كتلة المادة من كل غذاء.",
+          "equation": "A: 0.20 * 0.15 = 0.030 mg/day; B: 0.05 * 0.40 = 0.020 mg/day"
+        },
+        {
+          "text": "نجمع الكتلتين ونقسم على وزن الجسم.",
+          "equation": "(0.030 + 0.020) / 50 = 0.0010 mg/kg body weight/day"
+        },
+        {
+          "text": "نقارن بالمرجع الافتراضي المتوافق.",
+          "equation": "0.0010 / 0.010 = 0.10 = 10%"
+        }
+      ],
+      "conclusion": "المدخول المحسوب يمثل 10% من المرجع الافتراضي لهذا اليوم والمصادر المذكورة فقط؛ مش تقييمًا مكتملًا طويل المدى أو حكم مطابقة غذاء.",
+      "commonError": "استخدام MRL مكان ADI أو نسيان وزن الجسم بيغيّر معنى النتيجة."
+    },
+    "guided": {
+      "kind": "reasoning",
+      "title": "تطبيق بإرشاد",
+      "scenario": "تدريب جديد: غذاء واحد 0.08 mg/kg food، واستهلاك 0.25 kg/day، ووزن جسم 40 kg.",
+      "prompts": [
+        "اكتب كتلة المادة في اليوم ثم المدخول بالنسبة لوزن الجسم.",
+        "اذكر مصدر تعرّض غير محسوب ومعلومة زمنية ناقصة."
+      ],
+      "support": "ابدأ بضرب التركيز في كتلة الغذاء؛ راجع إلغاء kg food قبل القسمة على kg body weight."
+    },
+    "practice": [
+      "اختار بيانات لازمة لقرار مطابقة عينة، وبيانات مختلفة لتقييم تعرض مستهلك.",
+      "اشرح ليه جمع تركيز مادتين مختلفتين مش دليل على تقييم تراكمي."
+    ],
+    "faq": [
+      {
+        "question": "لو الحساب أقل من ADI، يبقى كل شيء اتراجع؟",
+        "answer": "لأ؛ النتيجة مربوطة بالمصادر والزمن والافتراضات وصلاحية البيانات اللي دخلت الحساب."
+      },
+      {
+        "question": "MRL وtolerance نفس الرقم في كل مكان؟",
+        "answer": "لأ. فيه تشابه في وظيفة حد المتبقي، لكن لازم ترجع للنظام الساري والحالة المحددة."
+      }
+    ],
+    "summary": [
+      "اقرأ المقام وأساس الزمن.",
+      "اجمع كتلًا متوافقة قبل التطبيع لوزن الجسم.",
+      "خلّي الحكم في حدود السيناريو."
+    ],
+    "next": "ارجع لمحطات المسار، وراجع المتطلبات المقترحة للخطوة التالية."
+  },
+  "en": {
+    "title": "Residue limits and daily intake",
+    "intro": "Distinguish a food concentration limit from body-mass-normalised daily intake.",
+    "outcomes": [
+      "Distinguish a food concentration limit from body-mass-normalised daily intake.",
+      "Calculate a hypothetical intake and check its units and interpretation.",
+      "Separate multiple sources of one substance from common-mechanism cumulative assessment."
+    ],
+    "sections": [
+      {
+        "id": "two-denominators",
+        "title": "1. Read the denominator before comparing numbers",
+        "paragraphs": [
+          "The previous step calculated residue mass in a food portion. Now imagine two neighbouring figures: one in `mg/kg food`, the other in `mg/kg body weight/day`. Matching the words milligram and kilogram does not make the quantities interchangeable. One denominator is food mass; the other includes body mass and a time basis.",
+          "In Codex, an MRL is the maximum pesticide-residue concentration that the Codex Alimentarius Commission recommends should be legally permitted in or on food commodities or animal feed. It refers to a particular commodity and residue definition and is based on good-agricultural-practice residue data and scientific assessment. This regulatory function does not make it an individual dose; the operative limit in a particular market must be checked in its applicable system.",
+          "An ADI concerns the amount of a chemical that may be taken in daily over an entire lifetime and appears to be without appreciable health risk on the evidence known at the evaluation. It is expressed relative to body weight; the daily-intake calculation also makes the daily time basis explicit. It is a chronic-exposure reference, not a food-sample concentration limit or an absolute guarantee for every situation. These meanings follow the Codex glossary; retrieve the actual value for the substance and assessment concerned."
+        ]
+      },
+      {
+        "id": "equation",
+        "title": "2. Build intake in explicit stages",
+        "paragraphs": [
+          "For the training calculation, multiply each food concentration by the mass consumed to obtain a mass of residue. Add masses of the same residue, then divide by body weight. Daily consumption inputs produce a daily body-mass-normalised intake. Concentrations must refer to compatible residue definitions or use a justified conversion; similar names are insufficient.",
+          "A constructed one-day menu does not automatically estimate lifetime average exposure. Nor does having one day's numbers complete an acute assessment, which requires an appropriate reference and method. Here the task is dimensional reasoning, not a consumption recommendation or clinical conclusion."
+        ]
+      },
+      {
+        "id": "hypothetical-reference",
+        "title": "3. Compare only under stated conditions",
+        "paragraphs": [
+          "If the exercise supplies a hypothetical ADI, calculate the estimated-intake-to-reference ratio after matching units. Clearly retain the hypothetical label. Being below that example value describes the calculation; it does not show that the rest of the diet, drinking water or relevant population circumstances have been evaluated.",
+          "Comparing a sample with an MRL instead requires commodity identity, the analysed portion, residue definition, jurisdiction, market, date, sampling and analytical methods, and the applicable decision rule. A teaching value is not an operative legal limit, and a bare numerical difference is not an enforcement decision."
+        ]
+      },
+      {
+        "id": "multiple-residues",
+        "title": "4. One substance or several substances?",
+        "paragraphs": [
+          "In EPA's FQPA summary, aggregate exposure brings together multiple sources for one pesticide. Its cumulative assessment requirement concerns pesticides sharing a common toxicity mechanism. Finding several names in a multiresidue report does not justify adding every concentration and comparing the sum with one chemical's ADI.",
+          "Before combining values, establish substance and residue identity, compatible units and time, and whether the intended result is an intake or a method-specific risk metric. An easy arithmetic sum cannot replace the scientific justification for combining its terms."
+        ]
+      }
+    ],
+    "example": {
+      "title": "Worked example: a hypothetical daily menu",
+      "scenario": "All values are invented: residue R is 0.20 mg/kg food in food A consumed at 0.15 kg/day, and 0.05 mg/kg food in food B consumed at 0.40 kg/day. Body weight is 50 kg; the hypothetical ADI is 0.010 mg/kg body weight/day. Residue definitions match; no other sources are included.",
+      "steps": [
+        {
+          "text": "Calculate residue mass from each food.",
+          "equation": "A: 0.20 * 0.15 = 0.030 mg/day; B: 0.05 * 0.40 = 0.020 mg/day"
+        },
+        {
+          "text": "Sum the masses and normalise to body weight.",
+          "equation": "(0.030 + 0.020) / 50 = 0.0010 mg/kg body weight/day"
+        },
+        {
+          "text": "Compare with the matching hypothetical reference.",
+          "equation": "0.0010 / 0.010 = 0.10 = 10%"
+        }
+      ],
+      "conclusion": "The calculated intake is 10% of this invented reference for the specified day and sources. It is not a completed long-term assessment or a food-compliance finding.",
+      "commonError": "Substituting an MRL for an ADI or omitting body weight changes the quantity being calculated."
+    },
+    "guided": {
+      "kind": "reasoning",
+      "title": "Guided reasoning",
+      "scenario": "New case: one food at 0.08 mg/kg food, consumption 0.25 kg/day, body weight 40 kg.",
+      "prompts": [
+        "Show residue mass per day and then body-mass-normalised intake.",
+        "Name one omitted exposure source and one missing time-related input."
+      ],
+      "support": "Multiply concentration by food mass first; cancel kg food before dividing by kg body weight."
+    },
+    "practice": [
+      "Separate the data needed for sample compliance from those needed for consumer exposure.",
+      "Explain why adding two different residue concentrations is not itself a cumulative assessment."
+    ],
+    "faq": [
+      {
+        "question": "Does an intake below an ADI complete every check?",
+        "answer": "No. The result remains conditional on included sources, time basis, assumptions and data validity."
+      },
+      {
+        "question": "Are MRLs and tolerances identical everywhere?",
+        "answer": "No. Their regulatory functions are related, but the applicable system and specific entry must be checked."
+      }
+    ],
+    "summary": [
+      "Read the denominator and time basis.",
+      "Combine compatible masses before body-weight normalisation.",
+      "Keep the conclusion within the scenario."
+    ],
+    "next": "Return to the path stations and check the recommended prerequisites for the next step."
+  }
+}
