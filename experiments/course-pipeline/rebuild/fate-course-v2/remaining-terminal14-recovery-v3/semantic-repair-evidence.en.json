@@ -1,0 +1,170 @@
+{
+  "schema": "fate-saved-semantic-index-repair.v1",
+  "scope": "Two terminal structural mapping failures only; no speech defect inferred and no source clocks/audio changed. No fresh provider calls. Existing machine acoustic qualification remains bounded, not native human listening.",
+  "parts": [
+    {
+      "id": "S09-04-en",
+      "sourceAudio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S09-04-en",
+        "file": "S09-04-en.wav",
+        "sha256": "bddeda0b8941145d59eb6e5cd07b4ae88d398bdec7aa6c5ca65ac5d6184a2381"
+      },
+      "sourceClock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S09-04-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "c8cc46697ca683cde1ba84586b521a5e2902a83639e537312ee2d7a10dd39394"
+      },
+      "sourceGate": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S09-04-en",
+        "file": "review-disposition.en.json",
+        "sha256": "7920a5b7c058a22ed707f2dce3d8f02e8d1533745b417edc5b4ef7bbb136665e"
+      },
+      "originalResultSHA256": "7106b055d7290d40476300e314113618dfc4db01deb41a403152e48909f80d06",
+      "changes": [
+        {
+          "field": "actions",
+          "beforeCount": 9,
+          "afterCount": 3,
+          "method": "Retain exact first already audio-mapped meaningful introductory clause per authored action; remove repeated IDs. No new times, anchor words or visual actions."
+        },
+        {
+          "field": "captions[10].endWordIndex",
+          "before": 89,
+          "after": 84,
+          "actualBoundaryWords": [
+            {
+              "word": "toxicity,",
+              "start": 38.04,
+              "end": 38.56,
+              "probability": 0.9984374642372131
+            },
+            {
+              "word": "and",
+              "start": 38.94,
+              "end": 38.98,
+              "probability": 0.9988254904747009
+            }
+          ],
+          "reason": "Caption text ends at toxicity; following unchanged caption begins and use volume factors interact. Remove duplicated assignment of units85–89."
+        }
+      ],
+      "exactOriginalGuardReplay": "pass_after_only_documented_patch",
+      "sourceCaptionsTextUnchanged": true,
+      "newProviderCalls": 0,
+      "newSpeechCalls": 0,
+      "candidate": "diagnostics\\semantic-index-repair-candidates\\S09-04-en.semantic-result.repaired.en.json",
+      "candidateSHA256": "192e8da7c9564f2005acc587d28d7108d4993fef04cf80cb4418a433cfbd958e",
+      "evidence": [
+        {
+          "path": "diagnostics\\semantic-failure-inputs\\fate-v2-rest-ready-clock-v1-S09-04-en\\semantic-result.en.json",
+          "sha256": "7106b055d7290d40476300e314113618dfc4db01deb41a403152e48909f80d06"
+        },
+        {
+          "path": "diagnostics\\semantic-failure-inputs\\fate-v2-rest-ready-clock-v1-S09-04-en\\semantic-response.en.json",
+          "sha256": "df5a6ddab5458511c9c5c33a6d3762dfd28584725f2363c667317bdd3330d536"
+        },
+        {
+          "path": "production\\rest-quality-v1\\artifacts\\fate-v2-rest-clock-S09-04-en\\actual-word-clock.en.json",
+          "sha256": "c8cc46697ca683cde1ba84586b521a5e2902a83639e537312ee2d7a10dd39394"
+        },
+        {
+          "path": "production\\rest-quality-v1\\artifacts\\fate-v2-rest-review-S09-04-en\\review-disposition.en.json",
+          "sha256": "7920a5b7c058a22ed707f2dce3d8f02e8d1533745b417edc5b4ef7bbb136665e"
+        },
+        {
+          "path": "production\\rest-quality-v1\\artifacts\\fate-v2-rest-review-S09-04-en\\blind-analysis.en.json",
+          "sha256": "324ed22e5059323cdd60950b1e7b40ae7b3968e910e32430be955d16808ee0c5"
+        },
+        {
+          "path": "production\\rest-quality-v1\\artifacts\\fate-v2-rest-review-S09-04-en\\reference-analysis.en.json",
+          "sha256": "633cb97e7e4c010310883552a4a51ce905e4df38f354e853b6d1f1df07d0eb44"
+        }
+      ]
+    },
+    {
+      "id": "S10-02-en",
+      "sourceAudio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S10-02-en",
+        "file": "S10-02-en.wav",
+        "sha256": "d162fa783c7aa3a46c94fa4f527ded766bac21c895e188ff6e0891ad40680bbd"
+      },
+      "sourceClock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S10-02-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "9598e5fa2056091cbcc69143b44639ce913954e99fff95b903a68846cfcd0215"
+      },
+      "sourceGate": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S10-02-en",
+        "file": "review-disposition.en.json",
+        "sha256": "ab806c73990f271bb8bb843059b208bb0ae86c2d385ff5fc6398fafdb0d44380"
+      },
+      "originalResultSHA256": "acc396bbfba0212892d0a58e5b5c4ec0dc8df8fd785b1478c63a63eb8a74c515",
+      "changes": [
+        {
+          "field": "captions[7].endWordIndex",
+          "before": 51,
+          "after": 50,
+          "actualBoundaryWords": [
+            {
+              "word": "transformation",
+              "start": 28.86,
+              "end": 29.46,
+              "probability": 0.9924269914627075
+            },
+            {
+              "word": "The",
+              "start": 30.160000000000004,
+              "end": 30.8,
+              "probability": 0.42949312925338745
+            }
+          ],
+          "reason": "Next caption begins The source’s. Unit51 belongs only to that next caption. Preserve rates in clean caption because both independent acoustic transcripts include transformation rates. ASR does not give rates its own unit; do not invent word timing."
+        },
+        {
+          "field": "actions[1].endWordIndex",
+          "before": 51,
+          "after": 50,
+          "reason": "The existing heard anchor ends at transformation; remove the next clause introductory The from this action span."
+        }
+      ],
+      "exactOriginalGuardReplay": "pass_after_only_documented_patch",
+      "sourceCaptionsTextUnchanged": true,
+      "newProviderCalls": 0,
+      "newSpeechCalls": 0,
+      "candidate": "diagnostics\\semantic-index-repair-candidates\\S10-02-en.semantic-result.repaired.en.json",
+      "candidateSHA256": "5ef2c7613cc42442c1bd0982bc8ea6a3d25188b7250338d40fc6d68fb685e288",
+      "evidence": [
+        {
+          "path": "diagnostics\\semantic-failure-inputs\\fate-v2-rest-ready-clock-v1-S10-02-en\\semantic-result.en.json",
+          "sha256": "acc396bbfba0212892d0a58e5b5c4ec0dc8df8fd785b1478c63a63eb8a74c515"
+        },
+        {
+          "path": "diagnostics\\semantic-failure-inputs\\fate-v2-rest-ready-clock-v1-S10-02-en\\semantic-response.en.json",
+          "sha256": "9eeadb2cb13977eef028e53a2cc920cfcf386d7c29884a2e6e205d258b82b2ef"
+        },
+        {
+          "path": "production\\rest-quality-v1\\artifacts\\fate-v2-rest-clock-S10-02-en\\actual-word-clock.en.json",
+          "sha256": "9598e5fa2056091cbcc69143b44639ce913954e99fff95b903a68846cfcd0215"
+        },
+        {
+          "path": "production\\rest-quality-v1\\artifacts\\fate-v2-rest-review-S10-02-en\\review-disposition.en.json",
+          "sha256": "ab806c73990f271bb8bb843059b208bb0ae86c2d385ff5fc6398fafdb0d44380"
+        },
+        {
+          "path": "production\\rest-quality-v1\\artifacts\\fate-v2-rest-review-S10-02-en\\blind-analysis.en.json",
+          "sha256": "93d317fdf8dfd3d5bc3e63158ee25fe4848339d5a576d0fcd0f755eaa6b4055f"
+        },
+        {
+          "path": "production\\rest-quality-v1\\artifacts\\fate-v2-rest-review-S10-02-en\\reference-analysis.en.json",
+          "sha256": "a619ac7c2ad1a1dad32e59dff47493c00108cddc3a0a4e2e02bfe1d1d0f41df7"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1064 @@
+{
+  "id": "remaining-terminal14-recovery-v3",
+  "newProviderCalls": 0,
+  "newSpeechCalls": 0,
+  "newImageCalls": 0,
+  "maxSemanticCalls": 0,
+  "providerReservationUSD": 0,
+  "contractsSHA256": "b55ceba82fdcd0573e430ed4f582529ff6a8f2de6c3966d771bae8841ad80298",
+  "brandAssets": [
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/Cairo.ttf",
+      "name": "Cairo.ttf",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/masaarat-logo-lockup.png",
+      "name": "masaarat-logo-lockup.png",
+      "sha256": "60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706"
+    }
+  ],
+  "bootstrapFiles": {
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/bootstrap.cjs": "a940abe892666d1a39aff4bbcfc0858f508074043ef49631176870c98bc443f3",
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/verified-package.en.json": "82cd4e18ff20c964535bbf5ea61690da23753731fc6b208e10f790cf428d4dac",
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/package.json": "0bff60e82712dceebf99bbba7792c446967ff30dc0f060d9506cdbe49487895e",
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/package-lock.json": "7838f794756faefe1458d53da71f626b57a5bb4aa3c81bbbefb4bb1dddf40c4e"
+  },
+  "parts": [
+    {
+      "id": "S06-05-ar-EG-terminal-r2",
+      "originalPartID": "S06-05-ar-EG",
+      "step": "FATE2-S06",
+      "locale": "ar-EG",
+      "sceneIndex": 5,
+      "sectionID": "worked-example",
+      "sceneImplementation": "baseline",
+      "sourceTiming": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-clock-v1-S06-05-ar-EG",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "79b25c5cb3c16bdbce77bdffcde2b89c1f8eb428ec3a1ad5710bd0a6a999464c"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S06-05-ar-EG",
+        "file": "S06-05-ar-EG.wav",
+        "sha256": "bf526a4666ce2d88b5051ccf07aa062423afab63d498122ee4a11e6e57989516"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S06-organism-mass-balance",
+        "file": "S06-organism-mass-balance.jpg",
+        "sha256": "13940704876092ed964c502761bcf92ce565db4c407599dd04624828fecb3799"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S06-05-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "afe2352f299bbc5a7443c2a00407d859c5977fb170f1fb2a40a4879b3b3a22bc"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S06-05-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "b9ef2ff32b91e54c1b02df2351eb6b60ded67a82a236ce62fb2a3d94b535ab12"
+      },
+      "originalTextSHA256": "349fc9dd7eb9e631751f7646f8d6e5c7030ae7469b08f275a948052d8980abca",
+      "originalDeliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "originalFrames": 1182,
+      "originalAudioFrames": 945600,
+      "originalActionsSHA256": "c28d4769d667fabe15960b102017fcf16854041c1f988f137d4ea56073536956",
+      "originalCaptionsSHA256": "87c50d6676379ea8e7eda92521718d1a2ea7bd670ff68f1ebbd7ec3ec9bea228"
+    },
+    {
+      "id": "S07-03-ar-EG-terminal-r2",
+      "originalPartID": "S07-03-ar-EG",
+      "step": "FATE2-S07",
+      "locale": "ar-EG",
+      "sceneIndex": 3,
+      "sectionID": "kinetic",
+      "sceneImplementation": "baseline",
+      "sourceTiming": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-clock-v1-S07-03-ar-EG",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "fc398d6d46c368af8f4e1e7fac4906e7e493def663722a9a14bfb14416e4a401"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S07-03-ar-EG",
+        "file": "S07-03-ar-EG.wav",
+        "sha256": "a40c210bd17389ac7af35a19edd0bc092c995e33ca74c8323d9d22ef8b135096"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S07-aqueous-uptake-chamber",
+        "file": "S07-aqueous-uptake-chamber.jpg",
+        "sha256": "dae59b7f446b0f5af2ec310da79aba2ec381c84b3b7db758cc1607668e00f022"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S07-03-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "ac1e13d48bd8859e7b46df1bc02b5001ea5e59272574b8f3a71255c990cb02dc"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S07-03-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "1d3021b347a19f4928db6df1bc879ff3d05db6f5b24427fffea1bf2b1749cd9d"
+      },
+      "originalTextSHA256": "82878881d02e566e8d8f4f831bde9e5eceea1fd249b72b19b210d0a390a0250a",
+      "originalDeliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "originalFrames": 1748,
+      "originalAudioFrames": 1397760,
+      "originalActionsSHA256": "0af54709b2b19fe1009e2958a2517c4b33a2bca2d57f4fdde4187d2555c24d2f",
+      "originalCaptionsSHA256": "f5b0c6199f07fd858966ffb96555f6e185fa6d6b713bd64934764deecc8e1b08"
+    },
+    {
+      "id": "S07-04-en-terminal-r2",
+      "originalPartID": "S07-04-en",
+      "step": "FATE2-S07",
+      "locale": "en",
+      "sceneIndex": 4,
+      "sectionID": "prediction",
+      "sceneImplementation": "baseline",
+      "sourceTiming": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-clock-v1-S07-04-en",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "520bd3f01bba5f96852fe6574fbf162f9e7058b07500a57ae1cf7d61be272132"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S07-04-en",
+        "file": "S07-04-en.wav",
+        "sha256": "b2205cad423474b22b4dd5d944c427fa94938d0f32161c7e59c0362912333a5a"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S07-aqueous-uptake-chamber",
+        "file": "S07-aqueous-uptake-chamber.jpg",
+        "sha256": "dae59b7f446b0f5af2ec310da79aba2ec381c84b3b7db758cc1607668e00f022"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S07-04-en",
+        "file": "review-disposition.en.json",
+        "sha256": "819295302517a760fb6f2c37e43ed1b7c400995e44da66ea0076a70b35a897e3"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S07-04-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "d72615877fcd7c3e22c89c14bbd740c2b4fce73cd212e1410a85004accef21fc"
+      },
+      "originalTextSHA256": "8ad91bb80c9d0753f80b089d89e7b73cdb21c1447a869adbe02155ef3686431e",
+      "originalDeliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "originalFrames": 1506,
+      "originalAudioFrames": 1204800,
+      "originalActionsSHA256": "782c4477fe515b51af75bf2a66e7358d9174f1cd4715540fe40fc620931c8e35",
+      "originalCaptionsSHA256": "2e0bfb94810d3fe8dc8ee81e37e28fdf0573d488dacd6afaafac3309ca29b6ef"
+    },
+    {
+      "id": "S07-05-en-terminal-r2",
+      "originalPartID": "S07-05-en",
+      "step": "FATE2-S07",
+      "locale": "en",
+      "sceneIndex": 5,
+      "sectionID": "worked-example",
+      "sceneImplementation": "baseline",
+      "sourceTiming": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-clock-v1-S07-05-en",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "aa83187afe822a51327ed850ba75f6ec3dc771e51e51795bbd032174da98ac51"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S07-05-en",
+        "file": "S07-05-en.wav",
+        "sha256": "6a0d37ba56496b2e6097c04b3128f8a82ecee0d4437f2d9980b134b689b57a5c"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S07-aqueous-uptake-chamber",
+        "file": "S07-aqueous-uptake-chamber.jpg",
+        "sha256": "dae59b7f446b0f5af2ec310da79aba2ec381c84b3b7db758cc1607668e00f022"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S07-05-en",
+        "file": "review-disposition.en.json",
+        "sha256": "610d2dde2c8b5c01065ecf52153a4108b66a50dea5eeac67165910d8007b97f5"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S07-05-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "ed0b8e378ea49bf7a3f07e72263957b1ea49b27d656722fd7ddcb0d12eba3331"
+      },
+      "originalTextSHA256": "3c4bd8e890aaa4150d0c09c0411061e89c9a0b95ed70988e5c406d7bf5137830",
+      "originalDeliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "originalFrames": 1539,
+      "originalAudioFrames": 1230720,
+      "originalActionsSHA256": "c93d424ecac8abbd7cae58dcf040d0b61f8b5431329b8b6f50d3216cfa056d95",
+      "originalCaptionsSHA256": "fa3e029db44861ea7794ae4c36512f3b269887f0ca2bbbb9d03d7d961c3245e9"
+    },
+    {
+      "id": "S08-05-ar-EG-terminal-r2",
+      "originalPartID": "S08-05-ar-EG",
+      "step": "FATE2-S08",
+      "locale": "ar-EG",
+      "sceneIndex": 5,
+      "sectionID": "worked-example",
+      "sceneImplementation": "baseline",
+      "sourceTiming": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-clock-v1-S08-05-ar-EG",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "0c049d4f6dbbfb18fee59cf4c9ea94a3a9671dadc7da4f933c0143ee5c389c4c"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S08-05-ar-EG",
+        "file": "S08-05-ar-EG.wav",
+        "sha256": "b3dc62927674c7bafde9542beffad9b3dfdad536e1a65d2c08b49510b41c6a64"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S08-organism-endpoint-context",
+        "file": "S08-organism-endpoint-context.jpg",
+        "sha256": "e63a7b6cced9370ffc3af0f9265204dc0e97cd57a2b2ba466ed8ea83c90cb1f9"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S08-05-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "789a8810c181c7cd69b16a95cd00f17259c4a3dcf5b3b14742a0f7468b66d630"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S08-05-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "19b4f8bcfb21c4682f8628dcb9cb1077ee198c8a229f5ab6fed09d91384ba363"
+      },
+      "originalTextSHA256": "0588e01a279f59d563531e668cf6c7a4897bad56074b405eeda8a1987c2906d5",
+      "originalDeliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "originalFrames": 1192,
+      "originalAudioFrames": 953280,
+      "originalActionsSHA256": "1ae337e8fa000a2e480317a798e97a75b2b9058bba0a016cc4899df0c87ff838",
+      "originalCaptionsSHA256": "36cc0d52d997ba268897af2774541d30cb145e5bee37e0d82cd9b91826959df5"
+    },
+    {
+      "id": "S09-03-ar-EG-terminal-r2",
+      "originalPartID": "S09-03-ar-EG",
+      "step": "FATE2-S09",
+      "locale": "ar-EG",
+      "sceneIndex": 3,
+      "sectionID": "partition",
+      "sceneImplementation": "baseline",
+      "sourceTiming": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-clock-v1-S09-03-ar-EG",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "d18a327161139b7ccc077572227679246608d775a136290d5fa0ac9a725bc913"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S09-03-ar-EG",
+        "file": "S09-03-ar-EG.wav",
+        "sha256": "b8d8583758631d469191eb78ed1a3ac6ace29eed671bc57baf39abfb760031dd"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S09-soil-water-air",
+        "file": "S09-soil-water-air.jpg",
+        "sha256": "77f99bec951f3361a4ea2c94998eb6aff8019d9cfd0c62d013b8ed4ae01b35bb"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S09-03-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "eef38ee7cfff74d02be22a7fde30a1b2bd05d29658a37fd09cefd6ccb332a1a5"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S09-03-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "0ae76996523f081d2ec58aadd0ca7387f2f66309bd869db51989bc63b3ab4b93"
+      },
+      "originalTextSHA256": "85cec2f1a0ffbd0312dfffa1261e5d1d2bcfc6c30ac199758ccb7f1529ce4839",
+      "originalDeliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "originalFrames": 1546,
+      "originalAudioFrames": 1236480,
+      "originalActionsSHA256": "f8bec7d8ac56c1d8881cfb30098f53a294bacd11223fb87fec09f16dcfaaea19",
+      "originalCaptionsSHA256": "36a8882f9a74f681d6804e3d4701cb9a03947487df9d1bde8384ef874230fc05"
+    },
+    {
+      "id": "S09-05-en-terminal-r2",
+      "originalPartID": "S09-05-en",
+      "step": "FATE2-S09",
+      "locale": "en",
+      "sceneIndex": 5,
+      "sectionID": "worked-example",
+      "sceneImplementation": "baseline",
+      "sourceTiming": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-clock-v1-S09-05-en",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "6f45819682b630d299de0e9a0c1ba0715278b72bc2bd87777779dceb61446b4c"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S09-05-en",
+        "file": "S09-05-en.wav",
+        "sha256": "16e565052a47f96d66ac8f1d6569ff896f8b70117d304d158729caeef0463909"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S09-soil-water-air",
+        "file": "S09-soil-water-air.jpg",
+        "sha256": "77f99bec951f3361a4ea2c94998eb6aff8019d9cfd0c62d013b8ed4ae01b35bb"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S09-05-en",
+        "file": "review-disposition.en.json",
+        "sha256": "4b15b79e68ff57c01a6aa43f93caabee63daa9b61f4fb9439233db9a4a129bd0"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S09-05-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "9408ce8c09816c96acaaaea5b0e80ab680948a4bc3f3d58e0b192ab40541580c"
+      },
+      "originalTextSHA256": "bbc9dac89f989d51934eab38ba2bca70b2fb50ca9f7982fe524c683f49d46f2f",
+      "originalDeliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "originalFrames": 1254,
+      "originalAudioFrames": 1003200,
+      "originalActionsSHA256": "779a7254eab68035d928d264e632ec8cb44c996a9a0772dde6f7f2f38a07ed1b",
+      "originalCaptionsSHA256": "32aa1530555f5f97699e840ffc0695a67e35b18c544dfaf2e3fbe3685e312752"
+    },
+    {
+      "id": "S10-02-ar-EG-terminal-r2",
+      "originalPartID": "S10-02-ar-EG",
+      "step": "FATE2-S10",
+      "locale": "ar-EG",
+      "sceneIndex": 2,
+      "sectionID": "mechanism",
+      "sceneImplementation": "baseline",
+      "sourceTiming": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-clock-v1-S10-02-ar-EG",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "fba51f0b78fa9ff9e27094cf6a4cce4053685e7cda63759d2acea60f1084eb04"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S10-02-ar-EG",
+        "file": "S10-02-ar-EG.wav",
+        "sha256": "0f8ac6d5fbb0a0a0d86b12e612ace81b9757cfd09ddf65317ffda8e5c6684289"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S10-transformation-conditions",
+        "file": "S10-transformation-conditions.jpg",
+        "sha256": "0cefb2a87d2bfeb95edf77a1624f9dd7942539e8f17930f98a4686af6a0c7127"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S10-02-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "580fd0c74215c82ae1573c741d39dc643d28b137c87323fba99aaf09a28d7bea"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S10-02-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "ef18d03bfa9e21a0bcd879e795c10b3a9261d95a78f4a80ba6c293dea271811e"
+      },
+      "originalTextSHA256": "4a97d091401213196c73ae72133ef2f319c8d2375df99e1a01b774dae66e7963",
+      "originalDeliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "originalFrames": 1311,
+      "originalAudioFrames": 1048320,
+      "originalActionsSHA256": "90d637570a5de105ef5310fc13e7c73bf4e7e1269e736bcaeace75f3fae44636",
+      "originalCaptionsSHA256": "e8e85358b2d24327f256f81418e0f04836d79c9e2da5567efdbfc25e59045b4d"
+    },
+    {
+      "id": "S10-05-ar-EG-terminal-r2",
+      "originalPartID": "S10-05-ar-EG",
+      "step": "FATE2-S10",
+      "locale": "ar-EG",
+      "sceneIndex": 5,
+      "sectionID": "worked-example",
+      "sceneImplementation": "baseline",
+      "sourceTiming": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-clock-v1-S10-05-ar-EG",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "1a3b207935e76d52f8dc6102b998342cd06a2d182a480f9cb4cf0437d336cc17"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S10-05-ar-EG",
+        "file": "S10-05-ar-EG.wav",
+        "sha256": "9ed2e5ee8d6dddc24c321f8b74ab3778bc69090c2c65e934998dacfa93c1b029"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S10-transformation-conditions",
+        "file": "S10-transformation-conditions.jpg",
+        "sha256": "0cefb2a87d2bfeb95edf77a1624f9dd7942539e8f17930f98a4686af6a0c7127"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S10-05-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "78976529cf1f4d3ac7559a5ef3c0bc7931f2f7eb693351c7d1924a76c8f514cd"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S10-05-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "57ec831853342a752b8cdbda5b007bdfe288f69f87ebff7e268c277b6cb9ebd5"
+      },
+      "originalTextSHA256": "7618f1474f88ec69b7df72ae6b41b94817270b24d3d7f9ebdec996409d5f79d7",
+      "originalDeliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "originalFrames": 1248,
+      "originalAudioFrames": 998400,
+      "originalActionsSHA256": "a0ae85f9a9fb235bb1c5902f205da85b70f292c7784c400656edb8cbf0ea2ba4",
+      "originalCaptionsSHA256": "6dd959edd78289c14bef531726c5e14f64f39f7a9898ebb8cb8732f4b5b030c0"
+    },
+    {
+      "id": "S03-03-ar-EG-terminal-r2",
+      "originalPartID": "S03-03-ar-EG",
+      "step": "FATE2-S03",
+      "locale": "ar-EG",
+      "sceneIndex": 3,
+      "sectionID": "us",
+      "sceneImplementation": "s03display",
+      "sourceTiming": {
+        "run": 40308939576,
+        "artifact": "fate-v2-s03-recovery-clock-S03-03-ar-EG-visual-r1",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "aa04b0a4ccfbb986830d12414f6202412d00012560f6ea72da5df61d63319062"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S03-03-ar-EG",
+        "file": "S03-03-ar-EG.wav",
+        "sha256": "cbca628b00c2430c845b57157ddf9c749b160c70f2384f9823c20da0e5cdc412"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S03-evidence-dossier",
+        "file": "S03-evidence-dossier.jpg",
+        "sha256": "6468d81fbc260cf8ec81283c9b4af83779f883a9c6f2712c943ef7bea842109a"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S03-03-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "c3ec8301aa5eba609fe81819bb8de1e96415b2f7bb78399b042dd39c7be89fc8"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S03-03-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "672428960d1c0e5bff0ead4eadaae98d21c2827f14a9a939b8bca25ceb8c4f58"
+      },
+      "originalTextSHA256": "19eda012401388a8c66afa9513d2cc36f0af4537830284cc1f7aa63c7ea5974c",
+      "originalDeliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "originalFrames": 1682,
+      "originalAudioFrames": 1344960,
+      "originalActionsSHA256": "a6e41118d6efd8b2281c763b3fefec1cb45855dbf02ac2b3bc509c468bc064f3",
+      "originalCaptionsSHA256": "b0d6171ad95635fa43c421747e2a58f08d2bd927e512d98394d85fe65b02ee5d"
+    },
+    {
+      "id": "S03-05-en-terminal-r2",
+      "originalPartID": "S03-05-en",
+      "step": "FATE2-S03",
+      "locale": "en",
+      "sceneIndex": 5,
+      "sectionID": "evidence-and-committee-scope",
+      "sceneImplementation": "s03display",
+      "sourceTiming": {
+        "run": 40308939576,
+        "artifact": "fate-v2-s03-recovery-clock-S03-05-en-visual-r1",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "2853422249f3217b3bb146cc6075cf2a64a02b56083ba5890a1c3cf763cf35a5"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S03-05-en",
+        "file": "S03-05-en.wav",
+        "sha256": "f425b04dd1b50a0f28c3e289c37e1e5be6e8384f86cdba8b494dfa4f91ce267c"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S03-evidence-dossier",
+        "file": "S03-evidence-dossier.jpg",
+        "sha256": "6468d81fbc260cf8ec81283c9b4af83779f883a9c6f2712c943ef7bea842109a"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S03-05-en",
+        "file": "review-disposition.en.json",
+        "sha256": "4295797c978f2605e6b8e26b3ff24619015101ee487517940c42fcfc0c0c13ce"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S03-05-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "c9ad96264034a879ae55215b4f45c32e7565cb619ac579605f059f7751c67fc7"
+      },
+      "originalTextSHA256": "147ada6903d7769a64da529ad301b6442d21d15c8d9f2cea751271a1fe87ffb0",
+      "originalDeliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "originalFrames": 1847,
+      "originalAudioFrames": 1477440,
+      "originalActionsSHA256": "995226f8ff9b22702811b96be055d1e3a52dcd39ea65532ab8a91ac6148835d8",
+      "originalCaptionsSHA256": "99d5f1c99c839f90efd0ffc1b939b9d9fe9fb4ed90d87049ec362af201134fa5"
+    },
+    {
+      "id": "S05-05-en-terminal-r2",
+      "originalPartID": "S05-05-en",
+      "step": "FATE2-S05",
+      "locale": "en",
+      "sceneIndex": 5,
+      "sectionID": "worked-example",
+      "sceneImplementation": "baseline",
+      "sourceTiming": {
+        "run": 40310655183,
+        "artifact": "fate-v2-s05-caption-recovery-clock-S05-05-en-caption-r1",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "0a3503d4a7b8c5b67aa2432ec5e298c71eb2d4c145f7675d957ddd0e6f05d2f1"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S05-05-en",
+        "file": "S05-05-en.wav",
+        "sha256": "2a2db1db64f45b7175a634c3ae31922aaaa6e23b95431999be161206443a7203"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S05-water-analysis-bench",
+        "file": "S05-water-analysis-bench.jpg",
+        "sha256": "0e94b85377dd007442c300e8444711a98db031a967d7bfffad3a9ba79ac264bf"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S05-05-en",
+        "file": "review-disposition.en.json",
+        "sha256": "52ac4a145a263d44642df9bc3e9ef5bd4ec3206d664b0aa8dda810ed87cd33f5"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S05-05-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "41e116a3a71260e8fff06942b78545b9774e9e584d7b51bcad558d4f48a8c23a"
+      },
+      "originalTextSHA256": "c8b4fa674386f412c4b9a17f263d313edd6ed25c0dc94956e2d88b334b434d4f",
+      "originalDeliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "originalFrames": 1289,
+      "originalAudioFrames": 1031040,
+      "originalActionsSHA256": "1b526ec1976ac1d547231c7702dd2318d4b8f44ceb25ec9d6eb20b612b6b2637",
+      "originalCaptionsSHA256": "fa515821e9291108c9c3d2ecd68f52cfca208a6dc051bafa5256e846101ec7ab"
+    },
+    {
+      "id": "S09-04-en-semantic-r1",
+      "locale": "en",
+      "voice": "Kore",
+      "sectionID": "vapour",
+      "spokenText": "Vapour pressure needs a stated temperature and unit. The source uses mPa: one millipascal equals zero point zero zero one pascals, while a pascal is one newton per square metre. Dropping the prefix changes the value by a factor of a thousand. Do not compare mmHg and mPa without a correct conversion. Spray drift can involve droplets carried away from the target; volatilisation transfers substance to the gas phase. Airborne movement is not one mechanism, and temperature, conditions and formulation matter. Page 19's persistence, mobility, non-target toxicity and use-volume factors interact; their layout is not a unique one-to-one map assigning every process to a single box.",
+      "textSHA256": "3d00db673d8c1a17b5b9f60239cd687128852daadfac02179b9597d24426917f",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "86593139eb42bdc10abdb15893ae637b6b2b98cb88f8828f84f60b1ccb2d695c",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S09",
+      "scene": 4,
+      "semanticID": "vapour",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Kore",
+        "file": "EN-Kore.wav",
+        "sha256": "486aca8835050c6a1774f963553db4034b761b358fa159ddda4c97d224e420b3"
+      },
+      "sceneIndex": 4,
+      "title": {
+        "ar": "٤. ضغط البخار غير انجراف القطرة",
+        "en": "4. Vapour pressure and droplet drift differ"
+      },
+      "actions": [
+        {
+          "id": "unit",
+          "label": {
+            "ar": "مِلِّي باسكال وباسكال",
+            "en": "Millipascal and pascal"
+          },
+          "meaning": "Retainmeasurementtemperatureandunit.",
+          "equation": "1 mPa = 0.001 Pa; 1 Pa = 1 N/m²"
+        },
+        {
+          "id": "mechanisms",
+          "label": {
+            "ar": "الانجراف غير التطاير",
+            "en": "Drift differs from volatilisation"
+          },
+          "meaning": "Driftmayinvolvecarrieddroplets;volatilisationtransfersthechemicaltothegasphase."
+        },
+        {
+          "id": "conditions",
+          "label": {
+            "ar": "الجوّ والمستحضر والوسط",
+            "en": "Atmosphere, formulation and medium"
+          },
+          "meaning": "Diagramlayoutisnotauniqueone-to-oneprocessassignment."
+        }
+      ],
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S09-04-en",
+        "file": "S09-04-en.wav",
+        "sha256": "bddeda0b8941145d59eb6e5cd07b4ae88d398bdec7aa6c5ca65ac5d6184a2381"
+      },
+      "verification": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S09-04-en",
+        "file": "verification.json",
+        "sha256": "347fb89ac252d1273ace77dd4d68c2bb36c9377afdd8d1679fa8473a46d84b42"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S09-04-en",
+        "file": "review-disposition.en.json",
+        "sha256": "7920a5b7c058a22ed707f2dce3d8f02e8d1533745b417edc5b4ef7bbb136665e"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S09-04-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "c8cc46697ca683cde1ba84586b521a5e2902a83639e537312ee2d7a10dd39394"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S09-soil-water-air",
+        "file": "S09-soil-water-air.jpg",
+        "sha256": "77f99bec951f3361a4ea2c94998eb6aff8019d9cfd0c62d013b8ed4ae01b35bb"
+      },
+      "imageMetadata": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S09-soil-water-air",
+        "file": "image.json",
+        "sha256": "45c8d3605247140e4dabd0a7a8e4fffe1de1ef76864c4a9dc7e7ac44de30a672"
+      },
+      "imageReview": {
+        "id": "S09-soil-water-air",
+        "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S09-soil-water-air/S09-soil-water-air.jpg",
+        "sha256": "77f99bec951f3361a4ea2c94998eb6aff8019d9cfd0c62d013b8ed4ae01b35bb",
+        "width": 2752,
+        "height": 1536,
+        "format": "JPEG",
+        "model": "gemini-nano-banana-2.1",
+        "returnedModelVersion": "gemini-nano-banana-2.1",
+        "promptSHA256": "54acf3a4c84ed17eb630f425062553ce88defd66be13d2c02c1a173b5c2040ad",
+        "metadataEvidence": [
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S09-soil-water-air/image.json",
+            "sha256": "45c8d3605247140e4dabd0a7a8e4fffe1de1ef76864c4a9dc7e7ac44de30a672"
+          },
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S09-soil-water-air/provider-metadata.json",
+            "sha256": "d97cd9fe4c29b69550d498cd1b782750e6b95e60d69ac013c7157bd8f8966678"
+          }
+        ],
+        "visibleFeatures": [
+          "A soil cutaway with pore-like cavities and branching roots supports a green plant. A clear adjacent water block exposes submerged roots and sediment; plain light space lies above and to the right. No arrows, vapour cloud, coloured chemicals, phase scales or values appear."
+        ],
+        "roleComparison": "Fits a qualitative soil/water/air context with no embedded numerical partition claims.",
+        "disposition": "USABLE_WITH_SCOPE_RESTRICTIONS",
+        "allowedUses": [
+          "Context for contrasting environmental compartments and separately labelled physicochemical quantities."
+        ],
+        "restrictions": [
+          "Cutaway boundaries and relative compartment volumes are illustrative. Do not derive phase fractions, partition coefficients, flux, root uptake, systemic action or molecular-weight rules from the picture. Air space does not depict measured vapour."
+        ],
+        "localizedIssuesOrUncertainty": [],
+        "native3D": false,
+        "finalMotionAcceptance": false,
+        "status": "usable",
+        "imageSHA256": "77f99bec951f3361a4ea2c94998eb6aff8019d9cfd0c62d013b8ed4ae01b35bb",
+        "report": "media-plan/remaining-visual-review.en.json",
+        "reportSHA256": "bbfd0e117ab7a1cf6bc2ac9c402f7e1f121440012120de3441eeb9d76d9c3aba",
+        "globalRestrictions": [
+          "All assets are generated realistic 3D-style raster illustrations, not native geometry or experimental records.",
+          "Exact numbers, equations, labels, uncertainty and causal relationships must remain editable course overlays. Apparent sizes and volumes are not quantitative evidence.",
+          "Generated appearances do not prove organism identity, laboratory compliance or scientific outcomes.",
+          "Composition, legibility, localized captions, measured-audio synchronization and actual encoded object contact remain separate video-review requirements.",
+          "No original artifact or worktree source was modified during this review; only this report was created."
+        ]
+      },
+      "originalPartID": "S09-04-en",
+      "sceneImplementation": "baseline",
+      "semanticResponse": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-clock-v1-S09-04-en",
+        "file": "semantic-response.en.json",
+        "sha256": "df5a6ddab5458511c9c5c33a6d3762dfd28584725f2363c667317bdd3330d536"
+      },
+      "approvedSemanticRepair": {
+        "file": "S09-04-en.approved-semantic-repair.en.json",
+        "sha256": "97bdc74ffbafe9a91dc01c5ebc4d8f15005b0a2ec5b296e2c4dec574f65f8ec3",
+        "rawCandidateEvidenceSHA256": "192e8da7c9564f2005acc587d28d7108d4993fef04cf80cb4418a433cfbd958e",
+        "copyPolicy": "LF-only commissioned copy; raw R candidate and its evidence hash preserved unchanged"
+      },
+      "repairEvidence": {
+        "id": "S09-04-en",
+        "sourceAudio": {
+          "run": 40296268513,
+          "artifact": "fate-v2-rest-original-S09-04-en",
+          "file": "S09-04-en.wav",
+          "sha256": "bddeda0b8941145d59eb6e5cd07b4ae88d398bdec7aa6c5ca65ac5d6184a2381"
+        },
+        "sourceClock": {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-clock-S09-04-en",
+          "file": "actual-word-clock.en.json",
+          "sha256": "c8cc46697ca683cde1ba84586b521a5e2902a83639e537312ee2d7a10dd39394"
+        },
+        "sourceGate": {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S09-04-en",
+          "file": "review-disposition.en.json",
+          "sha256": "7920a5b7c058a22ed707f2dce3d8f02e8d1533745b417edc5b4ef7bbb136665e"
+        },
+        "originalResultSHA256": "7106b055d7290d40476300e314113618dfc4db01deb41a403152e48909f80d06",
+        "changes": [
+          {
+            "field": "actions",
+            "beforeCount": 9,
+            "afterCount": 3,
+            "method": "Retain exact first already audio-mapped meaningful introductory clause per authored action; remove repeated IDs. No new times, anchor words or visual actions."
+          },
+          {
+            "field": "captions[10].endWordIndex",
+            "before": 89,
+            "after": 84,
+            "actualBoundaryWords": [
+              {
+                "word": "toxicity,",
+                "start": 38.04,
+                "end": 38.56,
+                "probability": 0.9984374642372131
+              },
+              {
+                "word": "and",
+                "start": 38.94,
+                "end": 38.98,
+                "probability": 0.9988254904747009
+              }
+            ],
+            "reason": "Caption text ends at toxicity; following unchanged caption begins and use volume factors interact. Remove duplicated assignment of units85–89."
+          }
+        ],
+        "exactOriginalGuardReplay": "pass_after_only_documented_patch",
+        "sourceCaptionsTextUnchanged": true,
+        "newProviderCalls": 0,
+        "newSpeechCalls": 0,
+        "candidate": "diagnostics\\semantic-index-repair-candidates\\S09-04-en.semantic-result.repaired.en.json",
+        "candidateSHA256": "192e8da7c9564f2005acc587d28d7108d4993fef04cf80cb4418a433cfbd958e",
+        "evidence": [
+          {
+            "path": "diagnostics\\semantic-failure-inputs\\fate-v2-rest-ready-clock-v1-S09-04-en\\semantic-result.en.json",
+            "sha256": "7106b055d7290d40476300e314113618dfc4db01deb41a403152e48909f80d06"
+          },
+          {
+            "path": "diagnostics\\semantic-failure-inputs\\fate-v2-rest-ready-clock-v1-S09-04-en\\semantic-response.en.json",
+            "sha256": "df5a6ddab5458511c9c5c33a6d3762dfd28584725f2363c667317bdd3330d536"
+          },
+          {
+            "path": "production\\rest-quality-v1\\artifacts\\fate-v2-rest-clock-S09-04-en\\actual-word-clock.en.json",
+            "sha256": "c8cc46697ca683cde1ba84586b521a5e2902a83639e537312ee2d7a10dd39394"
+          },
+          {
+            "path": "production\\rest-quality-v1\\artifacts\\fate-v2-rest-review-S09-04-en\\review-disposition.en.json",
+            "sha256": "7920a5b7c058a22ed707f2dce3d8f02e8d1533745b417edc5b4ef7bbb136665e"
+          },
+          {
+            "path": "production\\rest-quality-v1\\artifacts\\fate-v2-rest-review-S09-04-en\\blind-analysis.en.json",
+            "sha256": "324ed22e5059323cdd60950b1e7b40ae7b3968e910e32430be955d16808ee0c5"
+          },
+          {
+            "path": "production\\rest-quality-v1\\artifacts\\fate-v2-rest-review-S09-04-en\\reference-analysis.en.json",
+            "sha256": "633cb97e7e4c010310883552a4a51ce905e4df38f354e853b6d1f1df07d0eb44"
+          }
+        ]
+      }
+    },
+    {
+      "id": "S10-02-en-semantic-r1",
+      "locale": "en",
+      "voice": "Kore",
+      "sectionID": "mechanism",
+      "spokenText": "Photolysis concerns light-driven processes, hydrolysis reaction with water, and biological transformation organism-mediated processes; oxidation and reduction also have specific conditions. A substance may follow several routes. Their order in a diagram is not a universal ranking of importance. Temperature, pH, moisture, oxygen, medium and experimental conditions can affect transformation rates. The source's 3–10 day range illustrates variability; it is not a half-life to assign to every pesticide. Report a value with process, medium, method and uncertainty.",
+      "textSHA256": "901f96c8d7d50a4e9460d9bfead38b8a8ff3ec22131886fba0a762ce464d7c6a",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "29c5f8c619f2d039d80ae98ca849726e97565976cc31f3b297cf928fdabfb080",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S10",
+      "scene": 2,
+      "semanticID": "mechanism",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Kore",
+        "file": "EN-Kore.wav",
+        "sha256": "486aca8835050c6a1774f963553db4034b761b358fa159ddda4c97d224e420b3"
+      },
+      "sceneIndex": 2,
+      "title": {
+        "ar": "٢. نسمي العملية ونقيسها تحت ظروفها",
+        "en": "2. Name the process and its conditions"
+      },
+      "actions": [
+        {
+          "id": "routes",
+          "label": {
+            "ar": "ضوء ومياه وتحول حيوي",
+            "en": "Light, water and biological transformation"
+          },
+          "meaning": "Photolysis,hydrolysis,biotransformationandredoxhavedistinctconditions."
+        },
+        {
+          "id": "conditions",
+          "label": {
+            "ar": "الحرارة والرطوبة والوسط",
+            "en": "Temperature, moisture and medium"
+          },
+          "meaning": "pH,oxygenandexperimentalconditionsaffectrates."
+        },
+        {
+          "id": "range",
+          "label": {
+            "ar": "مدى توضيحي مش عمر نصف عام",
+            "en": "An illustrative range, not a universal half-life"
+          },
+          "meaning": "Source3–10daysillustratesvariabilitynotavaluefor everypesticide."
+        }
+      ],
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S10-02-en",
+        "file": "S10-02-en.wav",
+        "sha256": "d162fa783c7aa3a46c94fa4f527ded766bac21c895e188ff6e0891ad40680bbd"
+      },
+      "verification": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S10-02-en",
+        "file": "verification.json",
+        "sha256": "1b2ef1a4cee2610c5d58099654f7af0e4333ccb29a9c0f80e744d1db506650fa"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S10-02-en",
+        "file": "review-disposition.en.json",
+        "sha256": "ab806c73990f271bb8bb843059b208bb0ae86c2d385ff5fc6398fafdb0d44380"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S10-02-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "9598e5fa2056091cbcc69143b44639ce913954e99fff95b903a68846cfcd0215"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S10-transformation-conditions",
+        "file": "S10-transformation-conditions.jpg",
+        "sha256": "0cefb2a87d2bfeb95edf77a1624f9dd7942539e8f17930f98a4686af6a0c7127"
+      },
+      "imageMetadata": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S10-transformation-conditions",
+        "file": "image.json",
+        "sha256": "0794def17e4057f0272cf01859585f0c9a35ee005f2211049be2fafda055267f"
+      },
+      "imageReview": {
+        "id": "S10-transformation-conditions",
+        "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S10-transformation-conditions/S10-transformation-conditions.jpg",
+        "sha256": "0cefb2a87d2bfeb95edf77a1624f9dd7942539e8f17930f98a4686af6a0c7127",
+        "width": 2752,
+        "height": 1536,
+        "format": "JPEG",
+        "model": "gemini-nano-banana-2.1",
+        "returnedModelVersion": "gemini-nano-banana-2.1",
+        "promptSHA256": "bb8cdff839b93eb89e8f8fdcbe93c8dbe7f6b716fe37691cc38782a881a76fb5",
+        "metadataEvidence": [
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S10-transformation-conditions/image.json",
+            "sha256": "0794def17e4057f0272cf01859585f0c9a35ee005f2211049be2fafda055267f"
+          },
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S10-transformation-conditions/provider-metadata.json",
+            "sha256": "563e69b5243cad98b1c9abbb0d3a8a944e050ebcf5c56f117e0f13213b3e3d59"
+          }
+        ],
+        "visibleFeatures": [
+          "A shallow round tray contains dark moist soil and pooled clear water. One detached green leaf lies above the soil; angled sunlight and shadows cross the scene. The right half is quiet. No molecules, glowing particles, arrows, measured decline or disappearance appear."
+        ],
+        "roleComparison": "Fits generic light/soil/water conditions; it is a detached-leaf still rather than a whole-plant experiment.",
+        "disposition": "USABLE_WITH_SCOPE_RESTRICTIONS",
+        "allowedUses": [
+          "Qualitative context for environmental transformation conditions, beside explicit hypothetical decay equations and assumptions."
+        ],
+        "restrictions": [
+          "Do not imply the leaf is an intact living plant, or that the tray is a validated transformation experiment. No degradation, detoxification, mineralization, actual half-life or harvest permission is evidenced. Moist appearance cannot establish water content, pH or temperature."
+        ],
+        "localizedIssuesOrUncertainty": [
+          "The leaf is detached and lies on soil rather than being attached above it; keep the use limited to environmental-condition ingredients."
+        ],
+        "native3D": false,
+        "finalMotionAcceptance": false,
+        "status": "usable",
+        "imageSHA256": "0cefb2a87d2bfeb95edf77a1624f9dd7942539e8f17930f98a4686af6a0c7127",
+        "report": "media-plan/remaining-visual-review.en.json",
+        "reportSHA256": "bbfd0e117ab7a1cf6bc2ac9c402f7e1f121440012120de3441eeb9d76d9c3aba",
+        "globalRestrictions": [
+          "All assets are generated realistic 3D-style raster illustrations, not native geometry or experimental records.",
+          "Exact numbers, equations, labels, uncertainty and causal relationships must remain editable course overlays. Apparent sizes and volumes are not quantitative evidence.",
+          "Generated appearances do not prove organism identity, laboratory compliance or scientific outcomes.",
+          "Composition, legibility, localized captions, measured-audio synchronization and actual encoded object contact remain separate video-review requirements.",
+          "No original artifact or worktree source was modified during this review; only this report was created."
+        ]
+      },
+      "originalPartID": "S10-02-en",
+      "sceneImplementation": "baseline",
+      "semanticResponse": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-clock-v1-S10-02-en",
+        "file": "semantic-response.en.json",
+        "sha256": "9eeadb2cb13977eef028e53a2cc920cfcf386d7c29884a2e6e205d258b82b2ef"
+      },
+      "approvedSemanticRepair": {
+        "file": "S10-02-en.approved-semantic-repair.en.json",
+        "sha256": "efe8c6b972fd462f3ae974c52ca573abb8255986119a90cbe486b3cb434f3bb5",
+        "rawCandidateEvidenceSHA256": "5ef2c7613cc42442c1bd0982bc8ea6a3d25188b7250338d40fc6d68fb685e288",
+        "copyPolicy": "LF-only commissioned copy; raw R candidate and its evidence hash preserved unchanged"
+      },
+      "repairEvidence": {
+        "id": "S10-02-en",
+        "sourceAudio": {
+          "run": 40296268513,
+          "artifact": "fate-v2-rest-original-S10-02-en",
+          "file": "S10-02-en.wav",
+          "sha256": "d162fa783c7aa3a46c94fa4f527ded766bac21c895e188ff6e0891ad40680bbd"
+        },
+        "sourceClock": {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-clock-S10-02-en",
+          "file": "actual-word-clock.en.json",
+          "sha256": "9598e5fa2056091cbcc69143b44639ce913954e99fff95b903a68846cfcd0215"
+        },
+        "sourceGate": {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S10-02-en",
+          "file": "review-disposition.en.json",
+          "sha256": "ab806c73990f271bb8bb843059b208bb0ae86c2d385ff5fc6398fafdb0d44380"
+        },
+        "originalResultSHA256": "acc396bbfba0212892d0a58e5b5c4ec0dc8df8fd785b1478c63a63eb8a74c515",
+        "changes": [
+          {
+            "field": "captions[7].endWordIndex",
+            "before": 51,
+            "after": 50,
+            "actualBoundaryWords": [
+              {
+                "word": "transformation",
+                "start": 28.86,
+                "end": 29.46,
+                "probability": 0.9924269914627075
+              },
+              {
+                "word": "The",
+                "start": 30.160000000000004,
+                "end": 30.8,
+                "probability": 0.42949312925338745
+              }
+            ],
+            "reason": "Next caption begins The source’s. Unit51 belongs only to that next caption. Preserve rates in clean caption because both independent acoustic transcripts include transformation rates. ASR does not give rates its own unit; do not invent word timing."
+          },
+          {
+            "field": "actions[1].endWordIndex",
+            "before": 51,
+            "after": 50,
+            "reason": "The existing heard anchor ends at transformation; remove the next clause introductory The from this action span."
+          }
+        ],
+        "exactOriginalGuardReplay": "pass_after_only_documented_patch",
+        "sourceCaptionsTextUnchanged": true,
+        "newProviderCalls": 0,
+        "newSpeechCalls": 0,
+        "candidate": "diagnostics\\semantic-index-repair-candidates\\S10-02-en.semantic-result.repaired.en.json",
+        "candidateSHA256": "5ef2c7613cc42442c1bd0982bc8ea6a3d25188b7250338d40fc6d68fb685e288",
+        "evidence": [
+          {
+            "path": "diagnostics\\semantic-failure-inputs\\fate-v2-rest-ready-clock-v1-S10-02-en\\semantic-result.en.json",
+            "sha256": "acc396bbfba0212892d0a58e5b5c4ec0dc8df8fd785b1478c63a63eb8a74c515"
+          },
+          {
+            "path": "diagnostics\\semantic-failure-inputs\\fate-v2-rest-ready-clock-v1-S10-02-en\\semantic-response.en.json",
+            "sha256": "9eeadb2cb13977eef028e53a2cc920cfcf386d7c29884a2e6e205d258b82b2ef"
+          },
+          {
+            "path": "production\\rest-quality-v1\\artifacts\\fate-v2-rest-clock-S10-02-en\\actual-word-clock.en.json",
+            "sha256": "9598e5fa2056091cbcc69143b44639ce913954e99fff95b903a68846cfcd0215"
+          },
+          {
+            "path": "production\\rest-quality-v1\\artifacts\\fate-v2-rest-review-S10-02-en\\review-disposition.en.json",
+            "sha256": "ab806c73990f271bb8bb843059b208bb0ae86c2d385ff5fc6398fafdb0d44380"
+          },
+          {
+            "path": "production\\rest-quality-v1\\artifacts\\fate-v2-rest-review-S10-02-en\\blind-analysis.en.json",
+            "sha256": "93d317fdf8dfd3d5bc3e63158ee25fe4848339d5a576d0fcd0f755eaa6b4055f"
+          },
+          {
+            "path": "production\\rest-quality-v1\\artifacts\\fate-v2-rest-review-S10-02-en\\reference-analysis.en.json",
+            "sha256": "a619ac7c2ad1a1dad32e59dff47493c00108cddc3a0a4e2e02bfe1d1d0f41df7"
+          }
+        ]
+      }
+    }
+  ],
+  "requiredBeforeApply": "Actual successful encoded7 rescue proves strict full audio/video decoding and PNG extraction with these exact pinned tools.",
+  "excludedPreservedEncodedSeven": [
+    "S02-03-en-provision-r1",
+    "S04-04-ar-EG-provision-r1",
+    "S04-04-en-provision-r1",
+    "S05-01-en-provision-r1",
+    "S06-05-en-provision-r1",
+    "S09-02-ar-EG-provision-r1",
+    "S11-04-en-provision-r1"
+  ],
+  "excludedSuccessfulReplacements": [
+    "S03-02-ar-EG-render-r2",
+    "S05-04-en-caption-r1"
+  ],
+  "excludedSemanticRepairsPendingOwnBoundedPackage": [],
+  "targetedDisplayChanges": [
+    "Preserve exact latest accepted display implementation for S03; all remaining source actions/captions/audio/frames unchanged.",
+    "No apt; video rendering only for12 actual terminal provisioning failures, never the7 existing encoded movies.",
+    "Exactly two already qualified recordings additionally use documented saved-response structural index repairs. No fresh semantic/audio/image calls."
+  ],
+  "speechModel": "gemini-3.8-flash-tts",
+  "analysisModel": "gemini-2.5-flash",
+  "sourceSemanticRepairReview": {
+    "file": "semantic-repair-evidence.en.json",
+    "sha256": "455924996d91ca1b6d650d1fe5e8fa6257f829c0618478aee148e91526ef6e1a",
+    "rawEvidenceSHA256": "4be1f87a1ed1b3914fa1e91c8b5175abd915f945024f89b2780719e74bb50d97",
+    "copyPolicy": "LF-only commissioned copy; raw R review preserved unchanged"
+  }
+}

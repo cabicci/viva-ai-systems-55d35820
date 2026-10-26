@@ -1,0 +1,692 @@
+{
+  "schema": "fate-selected-scenes-assembly-visual-gate.v2",
+  "step": "FATE2-S02",
+  "locale": "en",
+  "reviewedAtUTC": "2026-10-26T12:18:53.040085+00:00",
+  "status": "clear",
+  "visualDimensionReadyForAssembly": true,
+  "sourceSelectionPlan": {
+    "file": "diagnostics/selection-refresh-candidate/snapshots/FATE2-S02-en-selection.candidate.en.json",
+    "sha256": "c315beed73d6736dffc1d771f372e295e8cad2192264454783d328e89836fad5"
+  },
+  "reviewer": "motion_scenes helper",
+  "scope": "Exact five selected S02 English explanatory scenes. Newly inspected five actual Linux-extracted EN03 checkpoints from run 40321033334, with exact retained review of 22 encoded checkpoints for unchanged scenes 01/02/04/05; previous pending report is preserved.",
+  "scenes": [
+    {
+      "sceneIndex": 1,
+      "status": "clear",
+      "selectedVideo": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-01-en",
+        "file": "FateV2-S02-01-en.mp4",
+        "sha256": "d8800c2e124d9f67e91ad8d77b19c32341b4adc482e81aa84bc8f6d0acf43e53",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-01-en/FateV2-S02-01-en.mp4"
+      },
+      "visual": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-01-en",
+        "file": "visual.mp4",
+        "sha256": "72b6ab86c73fa3d8d10eb6b7ff1575d8c492e6aed9b877fb6f9a084e4ed29ef7",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-01-en/visual.mp4"
+      },
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-01-en",
+        "file": "S02-01-en.wav",
+        "sha256": "51058d7075755fdb247c4064592b1b2efcee5fde003d1bc8a98d60dca6284b13",
+        "localPath": "production/funded-s02-v2/artifacts/fate-v2-funded-original-S02-01-en/S02-01-en.wav"
+      },
+      "audioGate": {
+        "run": 40296268492,
+        "artifact": "fate-v2-audio-review-v3-S02-01-en",
+        "file": "review-disposition.en.json",
+        "sha256": "fa50c562fab387834d70e35576fae168fafd6d43d3e3097ba679544d52d11fd9",
+        "localPath": "production/audio-review-v3/artifacts/fate-v2-audio-review-v3-S02-01-en/review-disposition.en.json"
+      },
+      "timing": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-01-en",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "d84da50dfd47126fd7183d3cbe3abe50a157617d7a5296f877a889fca18bfcd1",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-01-en/timing-and-inputs.en.json"
+      },
+      "render": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-01-en",
+        "file": "render.en.json",
+        "sha256": "b40c6d93aeedd1041fc71970ccbc6206d171c198e846c76fe90c6779c7c86259",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-01-en/render.en.json"
+      },
+      "actualEncodedFramesInspected": [
+        {
+          "path": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-01-en/encoded-01.png",
+          "sha256": "1e4953215eaf246abde6325a1a0ff4286720d05c172daaa072a98b5d5cdd4e23",
+          "frame": 0,
+          "timeSeconds": 0.0,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "The previous step calculated residue mass in a food portion."
+        },
+        {
+          "path": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-01-en/encoded-02.png",
+          "sha256": "48b2a6f07b03ce8ea50a72159c11753559179af0ad6e36796ecd54fd34e4991e",
+          "frame": 155,
+          "timeSeconds": 5.166666666666667,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "Now compare the units of two figures:"
+        },
+        {
+          "path": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-01-en/encoded-03.png",
+          "sha256": "99a566b145144a25f7ea22b2063ec3c4ee3f1441dfaab05397163e424247f4a2",
+          "frame": 568,
+          "timeSeconds": 18.933333333333334,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "In Codex, an MRL is the maximum pesticide-residue concentration"
+        },
+        {
+          "path": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-01-en/encoded-04.png",
+          "sha256": "d2d1bcc5268816a7297fc1529ec12409039c0d03d6e152879bb9f155937f6d40",
+          "frame": 1013,
+          "timeSeconds": 33.766666666666666,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "An ADI concerns daily intake over an entire lifetime"
+        },
+        {
+          "path": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-01-en/encoded-05.png",
+          "sha256": "d57f4e7d29dd84d9873d08311880fae7cafa84ca5379d4b788f2bd4e5ddcb75b",
+          "frame": 1738,
+          "timeSeconds": 57.93333333333333,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": null
+        }
+      ],
+      "reviewProvenance": {
+        "path": "media-plan/FATE2-S02/visual-recovery-en-encoded-review.en.json",
+        "sha256": "0b5561e4c51220395b42bfb0972feddea378576f80fe2e244bcaa50b3363d286",
+        "method": "Reuse exact previously viewed encoded checkpoint evidence after raw hash read-back; no duplicate pixel review this turn."
+      }
+    },
+    {
+      "sceneIndex": 2,
+      "status": "clear",
+      "selectedVideo": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-02-en",
+        "file": "FateV2-S02-02-en.mp4",
+        "sha256": "9e6ac4064f7f6fc41b58ada3cdd1d44431cd5fc9af31876ed5a7b037fee2be7f",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-02-en/FateV2-S02-02-en.mp4"
+      },
+      "visual": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-02-en",
+        "file": "visual.mp4",
+        "sha256": "5b88e399131af577fbaa583029f41fb2e4a77607c4fdf3990edcb37bbd12e76c",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-02-en/visual.mp4"
+      },
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-02-en",
+        "file": "S02-02-en.wav",
+        "sha256": "de36ec17704939c7170962496e45a35dfb3ad6dec8eeef7d2e7f41413147906f",
+        "localPath": "production/funded-s02-v2/artifacts/fate-v2-funded-original-S02-02-en/S02-02-en.wav"
+      },
+      "audioGate": {
+        "run": 40296268492,
+        "artifact": "fate-v2-audio-review-v3-S02-02-en",
+        "file": "review-disposition.en.json",
+        "sha256": "adeffbc3552c4ed1cdcc3bc89f7ee2ec7d9e86700aa2106de78f404e83512580",
+        "localPath": "production/audio-review-v3/artifacts/fate-v2-audio-review-v3-S02-02-en/review-disposition.en.json"
+      },
+      "timing": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-02-en",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "ac335ce42b741f16aeff397bdc75d9f3d6771710add68f7bd89b4ccc9c2243be",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-02-en/timing-and-inputs.en.json"
+      },
+      "render": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-02-en",
+        "file": "render.en.json",
+        "sha256": "f3663855612d9327c0cd97fc000d51f7385a71e198467e42983790bc3b2c6630",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-02-en/render.en.json"
+      },
+      "actualEncodedFramesInspected": [
+        {
+          "path": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-02-en/encoded-01.png",
+          "sha256": "fc3b1c63f68fd94189dc48b34461627cbf86d551bc9b3073f4438b9f226cc45b",
+          "frame": 0,
+          "timeSeconds": 0.0,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "For the training calculation,"
+        },
+        {
+          "path": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-02-en/encoded-02.png",
+          "sha256": "142cf830f9e127dca6cb7cf43467d9aece876733ea8532fc94cfbb4a1693a61a",
+          "frame": 93,
+          "timeSeconds": 3.1,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "multiply each food concentration by the mass consumed"
+        },
+        {
+          "path": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-02-en/encoded-03.png",
+          "sha256": "b7dc43fe58b9b2d6c820751880d60bec532f9d23d5eeba1404918b98d996e939",
+          "frame": 265,
+          "timeSeconds": 8.833333333333334,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "Add masses of the same residue,"
+        },
+        {
+          "path": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-02-en/encoded-04.png",
+          "sha256": "361fa017c5a0619e3f5810824799068e8ee2fb9e8f5510cdf0d0a650ebbe0c0c",
+          "frame": 329,
+          "timeSeconds": 10.966666666666667,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "then divide by body weight."
+        },
+        {
+          "path": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-02-en/encoded-05.png",
+          "sha256": "3f9dba3e780f3e1e0f3abc4b7d7b08154bc9c11cd90c44258925b8d47ebeaf19",
+          "frame": 763,
+          "timeSeconds": 25.433333333333334,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "A constructed one-day menu does not automatically estimate"
+        },
+        {
+          "path": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-02-en/encoded-06.png",
+          "sha256": "466d6fa952c1aeec276bef37f758b6690a78d3c989a22364ddd3660bff9cc894",
+          "frame": 1306,
+          "timeSeconds": 43.53333333333333,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": null
+        }
+      ],
+      "reviewProvenance": {
+        "path": "media-plan/FATE2-S02/visual-recovery-en-encoded-review.en.json",
+        "sha256": "0b5561e4c51220395b42bfb0972feddea378576f80fe2e244bcaa50b3363d286",
+        "method": "Reuse exact previously viewed encoded checkpoint evidence after raw hash read-back; no duplicate pixel review this turn."
+      }
+    },
+    {
+      "sceneIndex": 3,
+      "id": "FateV2-S02-03-en-provision-r1",
+      "status": "clear",
+      "selectedVideo": {
+        "run": 40321033334,
+        "artifact": "fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1",
+        "file": "FateV2-S02-03-en-provision-r1.mp4",
+        "sha256": "c3cef85891d72cd678777dcc4013a992503cd2ed07d452d14a53787525d38b2d",
+        "localPath": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/FateV2-S02-03-en-provision-r1.mp4"
+      },
+      "visual": {
+        "run": 40321033334,
+        "artifact": "fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1",
+        "file": "visual.mp4",
+        "sha256": "f9f1085b70bca8718d4ed95c42738b4e02aea0ef79da9bf33e5277762b69f3ea",
+        "localPath": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/visual.mp4"
+      },
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-03-en",
+        "file": "S02-03-en.wav",
+        "sha256": "2f6220bd930223f7e00730b8cf9a0c33a7386a88087de7e921f77c0b7ce18e91",
+        "localPath": "production/funded-s02-v2/artifacts/fate-v2-funded-original-S02-03-en/S02-03-en.wav"
+      },
+      "audioGate": {
+        "run": 40296268492,
+        "artifact": "fate-v2-audio-review-v3-S02-03-en",
+        "file": "review-disposition.en.json",
+        "sha256": "bce19173217035836918c790621d36ddfd0526345a23f4cde29c133dbe50f19f",
+        "localPath": "production/audio-review-v3/artifacts/fate-v2-audio-review-v3-S02-03-en/review-disposition.en.json"
+      },
+      "timing": {
+        "run": 40321033334,
+        "artifact": "fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "46d45dade242f7a17ee412e0de78f4010d1651115e3244a0e0c1f8723fea9a52",
+        "localPath": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/timing-and-inputs.en.json"
+      },
+      "render": {
+        "run": 40321033334,
+        "artifact": "fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1",
+        "file": "render.en.json",
+        "sha256": "d20f09d48c44e30d44d4328f5fc6c4cae46c641155e11cdf1d39ed3669222054",
+        "localPath": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/render.en.json"
+      },
+      "actualEncodedFramesInspected": [
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/encoded-01.png",
+          "sha256": "42c2c77c6dae57137da2ee77e187ac70071c802ca0a6186152a5c50039e7f900",
+          "frame": 0,
+          "timeSeconds": 0.0,
+          "accurateSeekThresholdSeconds": 0.0,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "If the exercise supplies a hypothetical ADI,"
+        },
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/encoded-02.png",
+          "sha256": "6cc60e4f21424201c7cbe1855dfc6ef36d4a1db6e6e988e7b77423047cc531d3",
+          "frame": 24,
+          "timeSeconds": 0.8,
+          "accurateSeekThresholdSeconds": 0.7833335,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "If the exercise supplies a hypothetical ADI,"
+        },
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/encoded-03.png",
+          "sha256": "b16fc4bbe8642c92311253a45153ae38e26dedd5733585f0226507a553502b20",
+          "frame": 363,
+          "timeSeconds": 12.1,
+          "accurateSeekThresholdSeconds": 12.0833335,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "Being below that example value describes the calculation."
+        },
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/encoded-04.png",
+          "sha256": "520ac81ed176a8513a831e3ee3dc03af192685850babd3a2bc2b5d2b10447f28",
+          "frame": 678,
+          "timeSeconds": 22.6,
+          "accurateSeekThresholdSeconds": 22.583333500000002,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "Comparing a sample with an MRL instead requires"
+        },
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/encoded-05.png",
+          "sha256": "4e087049fb2647dc971474178d4e9bd80fff553d0f88aba2cdf1bf684a8e889c",
+          "frame": 1279,
+          "timeSeconds": 42.633333,
+          "accurateSeekThresholdSeconds": 42.6166665,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": null
+        }
+      ],
+      "actualObservations": [
+        "Opening and 0.8-second images identify an explicitly hypothetical ADI teaching reference; the first branch is calculation/prediction under assumptions and domain.",
+        "At actual PTS 12.1 seconds, the scenario-bound percentage label and separate compliance/use branch retain a distinction between numerical calculation and a supported regulatory/use conclusion.",
+        "At 22.6 seconds the sample-compliance action is active, the separate evidence branch remains visible, and an inequality plus moving-between-questions-requires-evidence statement prevents treating calculation as enforcement.",
+        "All five checkpoints retain readable labels/captions and safe card, disclaimer and subtitle bounds. Final checkpoint has no lingering caption."
+      ],
+      "evidence": [
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/render.en.json",
+          "sha256": "d20f09d48c44e30d44d4328f5fc6c4cae46c641155e11cdf1d39ed3669222054"
+        },
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/decoded-verification.en.json",
+          "sha256": "d897887a23faa497e4bbc8b87c2f35e355e0b74f023e598b446071406fd588a1"
+        },
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/encoded-checkpoints.en.json",
+          "sha256": "6ee2a22516a8eff992de09c10b84b793d7384cb8fd593eedd45963ea9f9a8a2b"
+        },
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/rescue-source-binding.en.json",
+          "sha256": "1c286a4912e4931d0efd0811cbcdfba4d0e40e1f0bf0546ab46f3b1829e707f7"
+        },
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/timing-and-inputs.en.json",
+          "sha256": "46d45dade242f7a17ee412e0de78f4010d1651115e3244a0e0c1f8723fea9a52"
+        },
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/preserved-timing-and-inputs.en.json",
+          "sha256": "97fcbfc5aa128bac9b16e1e9d4da073d91ff8073b43715e81b99c18b31d79eb8"
+        },
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/visual-recovery-preparation.en.json",
+          "sha256": "a0aab3a3c8023ddda747c34538ea2c654b29af9db862d3cd749667f2f3ec3f4f"
+        },
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/full-stream-decoded-frame-count.stderr.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/actual-video-frame-timestamps.stderr.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/extract-actual-encoded-checkpoint-01.stderr.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/extract-actual-encoded-checkpoint-02.stderr.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/extract-actual-encoded-checkpoint-03.stderr.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/extract-actual-encoded-checkpoint-04.stderr.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/extract-actual-encoded-checkpoint-05.stderr.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "defects": []
+    },
+    {
+      "sceneIndex": 4,
+      "status": "clear",
+      "selectedVideo": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-04-en",
+        "file": "FateV2-S02-04-en.mp4",
+        "sha256": "0f9d43993d39471d31bcb95c8cebba9b4eb228dfc022e860c5be12aa3f617e0e",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-04-en/FateV2-S02-04-en.mp4"
+      },
+      "visual": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-04-en",
+        "file": "visual.mp4",
+        "sha256": "ac5d5aa5e868034576918c8e85a3eb485957b8524e5beca51f4d773e1742630b",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-04-en/visual.mp4"
+      },
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-04-en",
+        "file": "S02-04-en.wav",
+        "sha256": "6b75f7f16b025fbb3805a738598f1616660f151c58f719e4eab2397f2c639380",
+        "localPath": "production/funded-s02-v2/artifacts/fate-v2-funded-original-S02-04-en/S02-04-en.wav"
+      },
+      "audioGate": {
+        "run": 40296268492,
+        "artifact": "fate-v2-audio-review-v3-S02-04-en",
+        "file": "review-disposition.en.json",
+        "sha256": "a0072f75fc7ea8db1bda761632957fb87c196d3f6bf0cf8fa1856656500434f3",
+        "localPath": "production/audio-review-v3/artifacts/fate-v2-audio-review-v3-S02-04-en/review-disposition.en.json"
+      },
+      "timing": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-04-en",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "c39f8ad646cd52e07464c28950d9bb1846fb791b5924656270d3a2063f3cee42",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-04-en/timing-and-inputs.en.json"
+      },
+      "render": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-04-en",
+        "file": "render.en.json",
+        "sha256": "25020e4c6436605defe51f8f05a024444bfa1272ea07931bf175b8b318048072",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-04-en/render.en.json"
+      },
+      "actualEncodedFramesInspected": [
+        {
+          "path": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-04-en/encoded-01.png",
+          "sha256": "cbab5c89a6b7e460af1c6593f802237ef4ad3b9fd8971c056b3672511f1e7274",
+          "frame": 0,
+          "timeSeconds": 0.0,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "In EPA's FQPA summary,"
+        },
+        {
+          "path": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-04-en/encoded-02.png",
+          "sha256": "8d791921f0aaa61a7b49965799783d2904cdb54a63baf27a0578d74fef45c5ee",
+          "frame": 111,
+          "timeSeconds": 3.7,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "aggregate exposure brings together multiple sources for one pesticide."
+        },
+        {
+          "path": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-04-en/encoded-03.png",
+          "sha256": "dc08d3e10d61d15898ddcd190d19c0f467507c565a4a316c36efad5b20313262",
+          "frame": 248,
+          "timeSeconds": 8.266666666666667,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "Its cumulative assessment requirement concerns pesticides sharing a common toxicity mechanism."
+        },
+        {
+          "path": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-04-en/encoded-04.png",
+          "sha256": "ee43d7aec544b87d350fd5c0dda8cd54241ad89d11df7b229b661ad733e4318a",
+          "frame": 449,
+          "timeSeconds": 14.966666666666667,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "Finding several names in a multi-residue report"
+        },
+        {
+          "path": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-04-en/encoded-05.png",
+          "sha256": "d7e295524eb47a2aa0f884a0d63e13c15c504a9e810aefb8bd447722013c1a08",
+          "frame": 1249,
+          "timeSeconds": 41.63333333333333,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": null
+        }
+      ],
+      "reviewProvenance": {
+        "path": "media-plan/FATE2-S02/visual-recovery-en-encoded-review.en.json",
+        "sha256": "0b5561e4c51220395b42bfb0972feddea378576f80fe2e244bcaa50b3363d286",
+        "method": "Reuse exact previously viewed encoded checkpoint evidence after raw hash read-back; no duplicate pixel review this turn."
+      }
+    },
+    {
+      "sceneIndex": 5,
+      "status": "clear",
+      "selectedVideo": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-05-en",
+        "file": "FateV2-S02-05-en.mp4",
+        "sha256": "82364c2a67aafa8cf99492376359f9b903c380a997492928e55ee37334557523",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-05-en/FateV2-S02-05-en.mp4"
+      },
+      "visual": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-05-en",
+        "file": "visual.mp4",
+        "sha256": "1354de9abbf5a00729f57a94b7e27fbd91926a4b28f3bd7e1b0640fbed4aa02c",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-05-en/visual.mp4"
+      },
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-05-en",
+        "file": "S02-05-en.wav",
+        "sha256": "8eb60d0d30d0eed7f075ab74fcb475a4cea796be780ea01d7e0e73123e145530",
+        "localPath": "production/funded-s02-v2/artifacts/fate-v2-funded-original-S02-05-en/S02-05-en.wav"
+      },
+      "audioGate": {
+        "run": 40296268492,
+        "artifact": "fate-v2-audio-review-v3-S02-05-en",
+        "file": "review-disposition.en.json",
+        "sha256": "1413e17ac11f3c944bda4497c8c04f4934fd3c3ed131bb86f9bbdc6f2ea31967",
+        "localPath": "production/audio-review-v3/artifacts/fate-v2-audio-review-v3-S02-05-en/review-disposition.en.json"
+      },
+      "timing": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-05-en",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "2eaa8fff76eda3e6c4c97b678e93c6caacfc9eeffe02cc0249906b7b54707b92",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-05-en/timing-and-inputs.en.json"
+      },
+      "render": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-05-en",
+        "file": "render.en.json",
+        "sha256": "e1429a959c77b879b2dc67fcc746521164cb49c997af9f3eaa7c66df58524633",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-05-en/render.en.json"
+      },
+      "actualEncodedFramesInspected": [
+        {
+          "path": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-05-en/encoded-01.png",
+          "sha256": "b7d2483fec1a6633b4f4b682a659f13a459826fbd0509f53c7252c31d16c9bd8",
+          "frame": 0,
+          "timeSeconds": 0.0,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "Consider an invented daily menu."
+        },
+        {
+          "path": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-05-en/encoded-02.png",
+          "sha256": "c2f660ee0b7e4e8f28dabc981808433043b09f6ab5e45d2202391ec56147f459",
+          "frame": 24,
+          "timeSeconds": 0.8,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "Consider an invented daily menu."
+        },
+        {
+          "path": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-05-en/encoded-03.png",
+          "sha256": "95fb61e969644806e83fb1deb5cd5c0a0b2067f8f6df4e09338ace0ac8367a27",
+          "frame": 651,
+          "timeSeconds": 21.7,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "The first food contributes 0.03 milligrams per day."
+        },
+        {
+          "path": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-05-en/encoded-04.png",
+          "sha256": "319ac317c1051b07e24a8552554d44fa74b57b4cd33fa17104f98ffb871e01e0",
+          "frame": 983,
+          "timeSeconds": 32.766666666666666,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "Dividing by 50 gives 0.001 milligrams per kilogram of body weight per day."
+        },
+        {
+          "path": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-05-en/encoded-05.png",
+          "sha256": "4d25f28bcbdea15a1f2a419cfb5bd5a538f4935518577366a3978a04def20858",
+          "frame": 1157,
+          "timeSeconds": 38.56666666666667,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "Against an invented ADI of 0.01 in the same units,"
+        },
+        {
+          "path": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-05-en/encoded-06.png",
+          "sha256": "3f80345e58ce677a5071b7431b3eaaf686eddc2da26ecb118c8193dfa336539c",
+          "frame": 1487,
+          "timeSeconds": 49.56666666666667,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": null
+        }
+      ],
+      "reviewProvenance": {
+        "path": "media-plan/FATE2-S02/visual-recovery-en-encoded-review.en.json",
+        "sha256": "0b5561e4c51220395b42bfb0972feddea378576f80fe2e244bcaa50b3363d286",
+        "method": "Reuse exact previously viewed encoded checkpoint evidence after raw hash read-back; no duplicate pixel review this turn."
+      }
+    }
+  ],
+  "allCheckpointsRead": 27,
+  "newActualEncodedCheckpointsRead": 5,
+  "reusedExactCheckpointReviews": 22,
+  "defects": [],
+  "sourceSpeechPreserved": true,
+  "newProviderCalls": 0,
+  "newRenderCalls": 0,
+  "Wwrites": 0,
+  "previewWrites": 0,
+  "BunnyWrites": 0,
+  "pending": [
+    "Master assembly and inspection of its actual encoded scene/join checkpoints.",
+    "Owner full-master native playback and listening; not inferred from this sampled visual gate."
+  ],
+  "limits": [
+    "This is sampled encoded-pixel/identity qualification for assembly, not continuous playback or exhaustive scientific acceptance.",
+    "Original machine audio gates are preserved; no new native pronunciation, listening or owner approval is claimed.",
+    "The rescued movie was neither rerendered nor remuxed; source timing/actions/captions/original PCM hashes remain unchanged.",
+    "Approximate actual-recording word timing is not sample-exact phoneme alignment."
+  ],
+  "nextAction": "Assemble this exact complete English selection with original speech using the reviewed no-APT assembly method, then inspect actual encoded master checkpoints and joins."
+}

@@ -1,0 +1,112 @@
+{
+  "actions": [
+    {
+      "id": "unit",
+      "startWordIndex": 0,
+      "endWordIndex": 7,
+      "heardAnchor": "Vapor pressure needs a stated temperature and unit.",
+      "uncertaintySeconds": 0.0
+    },
+    {
+      "id": "mechanisms",
+      "startWordIndex": 49,
+      "endWordIndex": 58,
+      "heardAnchor": "Spray drift can involve droplets carried away from the target.",
+      "uncertaintySeconds": 0.0
+    },
+    {
+      "id": "conditions",
+      "startWordIndex": 66,
+      "endWordIndex": 77,
+      "heardAnchor": "Airborne movement is not one mechanism, and temperature, conditions, and formulation matter.",
+      "uncertaintySeconds": 0.0
+    }
+  ],
+  "captions": [
+    {
+      "text": "Vapor pressure needs a stated temperature and unit.",
+      "startWordIndex": 0,
+      "endWordIndex": 7
+    },
+    {
+      "text": "The source uses millipascals.",
+      "startWordIndex": 8,
+      "endWordIndex": 11
+    },
+    {
+      "text": "One millipascal equals 0.001 pascals,",
+      "startWordIndex": 12,
+      "endWordIndex": 17
+    },
+    {
+      "text": "while a pascal is one newton per square meter.",
+      "startWordIndex": 18,
+      "endWordIndex": 26
+    },
+    {
+      "text": "Dropping the prefix changes the value by a factor of a thousand.",
+      "startWordIndex": 27,
+      "endWordIndex": 38
+    },
+    {
+      "text": "Do not compare mmHg and mPa without a correct conversion.",
+      "startWordIndex": 39,
+      "endWordIndex": 48
+    },
+    {
+      "text": "Spray drift can involve droplets carried away from the target.",
+      "startWordIndex": 49,
+      "endWordIndex": 58
+    },
+    {
+      "text": "Volatilization transfers substance to the gas phase.",
+      "startWordIndex": 59,
+      "endWordIndex": 65
+    },
+    {
+      "text": "Airborne movement is not one mechanism,",
+      "startWordIndex": 66,
+      "endWordIndex": 71
+    },
+    {
+      "text": "and temperature, conditions, and formulation matter.",
+      "startWordIndex": 72,
+      "endWordIndex": 77
+    },
+    {
+      "text": "Page 19's persistence, mobility, non-target toxicity,",
+      "startWordIndex": 78,
+      "endWordIndex": 84
+    },
+    {
+      "text": "and use volume factors interact.",
+      "startWordIndex": 85,
+      "endWordIndex": 89
+    },
+    {
+      "text": "Their layout is not a unique one-to-one map",
+      "startWordIndex": 90,
+      "endWordIndex": 99
+    },
+    {
+      "text": "assigning every process to a single box.",
+      "startWordIndex": 100,
+      "endWordIndex": 106
+    }
+  ],
+  "captionCorrections": [
+    {
+      "asrIndex": 42,
+      "from": "MMHG",
+      "to": "mmHg",
+      "acousticReason": "capitalization"
+    },
+    {
+      "asrIndex": 44,
+      "from": "MPA",
+      "to": "mPa",
+      "acousticReason": "capitalization"
+    }
+  ],
+  "unresolved": []
+}

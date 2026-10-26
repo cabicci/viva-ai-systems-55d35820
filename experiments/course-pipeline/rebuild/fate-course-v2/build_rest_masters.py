@@ -47,11 +47,17 @@ def main():
  if not result:raise ValueError('At least one complete ready locale required')
  out=B/'rest-master-assembly/jobs'/f'{step}-{args.version}'
  if out.exists():raise FileExistsError('Version already exists; never overwrite an existing request')
+ # Verify the actual no-APT bootstrap and exact companion lock before output creation.
+ tools=B/'ci-media-tools-v1';toolRequest=load(tools/'request.json')
+ if sha(tools/'request.json')!='4363d55e4b46c8b3a6e3d2bb0b70a62f937b2044631cdea6a138dc5e7f1c3740':raise ValueError('Frozen media-tool request changed')
+ for name,h in toolRequest['files'].items():
+  if sha(tools/name)!=h:raise ValueError('Pinned media-tool source changed: '+name)
+ toolPins={str((tools/name).relative_to(B.parents[3]).as_posix()):h for name,h in toolRequest['files'].items()}
  # All actual input guards pass before creating an output.
  out.mkdir(parents=True)
  for n in ['assemble.py','selection_contract.py']:text(out/n,(B/'rest-master-assembly'/n).read_text(encoding='utf8'))
  text(out/'method-approval.en.json',approval.read_text(encoding='utf8'))
- m={'schema':'course-master-assembly.v1','id':f'{step}-masters-{args.version}','step':step,'sceneCount':sceneCount,'newProviderCalls':0,'speechModel':'gemini-3.8-flash-tts','sourceLessonSHA256':lessonHash,'sourceSpokenDraftSHA256':sha(draftFile),'actualSelectionSHA256':sha(args.selection),'implementationSHA256':sha(out/'assemble.py'),'selectionContractSHA256':sha(out/'selection_contract.py'),'methodApprovalOriginalSHA256':sha(approval),'methodApprovalCopySHA256':sha(out/'method-approval.en.json'),'locales':result,'scope':'Ordinary explanatory scenes only. Written lesson, independent practice and private assessment keys remain separate.','ownerFullMasterListening':'Not claimed','createdUTC':datetime.datetime.now(datetime.timezone.utc).isoformat()};save(out/'request.json',m)
+ m={'schema':'course-master-assembly.v1','id':f'{step}-masters-{args.version}','step':step,'sceneCount':sceneCount,'newProviderCalls':0,'speechModel':'gemini-3.8-flash-tts','sourceLessonSHA256':lessonHash,'sourceSpokenDraftSHA256':sha(draftFile),'actualSelectionSHA256':sha(args.selection),'implementationSHA256':sha(out/'assemble.py'),'selectionContractSHA256':sha(out/'selection_contract.py'),'methodApprovalOriginalSHA256':sha(approval),'methodApprovalCopySHA256':sha(out/'method-approval.en.json'),'mediaToolsFiles':toolPins,'mediaToolsRequestSHA256':sha(tools/'request.json'),'locales':result,'scope':'Ordinary explanatory scenes only. Written lesson, independent practice and private assessment keys remain separate.','ownerFullMasterListening':'Not claimed','createdUTC':datetime.datetime.now(datetime.timezone.utc).isoformat()};save(out/'request.json',m)
  package=out.relative_to(B.parents[3]).as_posix();artifactPrefix='fate-v2-master-'+step+'-'+args.version
  workflow='''name: Fate v2 STEP selected bilingual master assembly VERSION
 on:
@@ -69,6 +75,7 @@ env:
   EXPECTED_REQUEST_SHA256: REQUESTHASH
   GH_TOKEN: ${{ github.token }}
   PYTHONUNBUFFERED: '1'
+  MEDIA_TOOLS_PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1
 jobs:
   assemble:
     if: github.run_attempt == 1
@@ -81,10 +88,31 @@ jobs:
         locale: LOCALELIST
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-      - name: Verify actual clear source gates and assemble retained speech
+      - name: Verify exact frozen companion, bootstrap and lock sources
         run: |
-          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
-          python "$PACKAGE/assemble.py" "${{ matrix.locale }}"
+          python - <<'PY'
+          import hashlib,json,os
+          from pathlib import Path
+          request=Path(os.environ['PACKAGE'])/'request.json'
+          assert hashlib.sha256(request.read_bytes()).hexdigest()==os.environ['EXPECTED_REQUEST_SHA256']
+          data=json.loads(request.read_text())
+          for name,h in data['mediaToolsFiles'].items():assert hashlib.sha256(Path(name).read_bytes()).hexdigest()==h
+          assert hashlib.sha256((Path(os.environ['MEDIA_TOOLS_PACKAGE'])/'request.json').read_bytes()).hexdigest()==data['mediaToolsRequestSHA256']
+          PY
+      - name: Install only the lock-pinned companion, without package scripts
+        working-directory: experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Expose verified job-only media tools without APT
+        run: node "$MEDIA_TOOLS_PACKAGE/bootstrap.cjs" --dependency-root "$MEDIA_TOOLS_PACKAGE" --receipt "$PACKAGE/media-bootstrap-receipt.en.json"
+      - name: Preserve actual bootstrap receipt separately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ARTIFACTPREFIX-media-tools-${{ matrix.locale }}
+          path: ${{ env.PACKAGE }}/media-bootstrap-receipt.en.json
+          retention-days: 30
+      - name: Verify actual clear source gates and assemble retained speech
+        run: python "$PACKAGE/assemble.py" "${{ matrix.locale }}"
       - name: Deliver each completed step and locale immediately
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

@@ -1,0 +1,97 @@
+{
+  "actions": [
+    {
+      "id": "routes",
+      "startWordIndex": 0,
+      "endWordIndex": 27,
+      "heardAnchor": "Fotolysis concerns light-driven processes, hydrolysis, reaction with water, and biological transformation organism-mediated processes. Oxidation and reduction also have specific conditions. A substance may follow several routes.",
+      "uncertaintySeconds": 0.0
+    },
+    {
+      "id": "conditions",
+      "startWordIndex": 40,
+      "endWordIndex": 50,
+      "heardAnchor": "Temperature, pH, moisture, oxygen, medium, and experimental conditions can affect transformation",
+      "uncertaintySeconds": 0.0
+    },
+    {
+      "id": "range",
+      "startWordIndex": 51,
+      "endWordIndex": 70,
+      "heardAnchor": "The source's 3 to 10 day range illustrates variability. It is not a half-life to assign to every pesticide.",
+      "uncertaintySeconds": 0.0
+    }
+  ],
+  "captions": [
+    {
+      "text": "Photolysis concerns light-driven processes,",
+      "startWordIndex": 0,
+      "endWordIndex": 4
+    },
+    {
+      "text": "hydrolysis: reaction with water,",
+      "startWordIndex": 5,
+      "endWordIndex": 8
+    },
+    {
+      "text": "and biological transformation organism-mediated processes.",
+      "startWordIndex": 9,
+      "endWordIndex": 14
+    },
+    {
+      "text": "Oxidation and reduction also have specific conditions.",
+      "startWordIndex": 15,
+      "endWordIndex": 21
+    },
+    {
+      "text": "A substance may follow several routes.",
+      "startWordIndex": 22,
+      "endWordIndex": 27
+    },
+    {
+      "text": "Their order in a diagram is not a universal ranking of importance.",
+      "startWordIndex": 28,
+      "endWordIndex": 39
+    },
+    {
+      "text": "Temperature, pH, moisture, oxygen, medium,",
+      "startWordIndex": 40,
+      "endWordIndex": 44
+    },
+    {
+      "text": "and experimental conditions can affect transformation rates.",
+      "startWordIndex": 45,
+      "endWordIndex": 50
+    },
+    {
+      "text": "The source's 3 to 10 day range illustrates variability.",
+      "startWordIndex": 51,
+      "endWordIndex": 59
+    },
+    {
+      "text": "It is not a half-life to assign to every pesticide.",
+      "startWordIndex": 60,
+      "endWordIndex": 70
+    },
+    {
+      "text": "Report a value with process, medium, method, and uncertainty.",
+      "startWordIndex": 71,
+      "endWordIndex": 79
+    }
+  ],
+  "captionCorrections": [
+    {
+      "asrIndex": 0,
+      "from": "Fotolysis",
+      "to": "Photolysis",
+      "acousticReason": "mispronunciation"
+    },
+    {
+      "asrIndex": 51,
+      "from": "The",
+      "to": "The",
+      "acousticReason": "none"
+    }
+  ],
+  "unresolved": []
+}

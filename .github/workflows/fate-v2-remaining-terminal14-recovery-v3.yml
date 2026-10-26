@@ -1,0 +1,70 @@
+name: Fate v2 recover fourteen terminal scenes from preserved actual ingredients
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/remaining-terminal14-recovery-v3/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/remaining-terminal14-recovery-v3
+  EXPECTED_REQUEST_SHA256: 0db3666e4aaa29ad79b6669270d5f5d19b616e4d3987f3d337a8f53cb37a78cf
+  MEDIA_TOOLS_PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1
+  GH_TOKEN: ${{ github.token }}
+  PYTHONUNBUFFERED: '1'
+  EXPECTED_IMPLEMENTATION_SHA256: 7425982db4b77c5065293c30f969970b8ba3f534f20786b96db72d46a1155428
+jobs:
+  scene:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        part: ["S06-05-ar-EG-terminal-r2", "S07-03-ar-EG-terminal-r2", "S07-04-en-terminal-r2", "S07-05-en-terminal-r2", "S08-05-ar-EG-terminal-r2", "S09-03-ar-EG-terminal-r2", "S09-05-en-terminal-r2", "S10-02-ar-EG-terminal-r2", "S10-05-ar-EG-terminal-r2", "S03-03-ar-EG-terminal-r2", "S03-05-en-terminal-r2", "S05-05-en-terminal-r2", "S09-04-en-semantic-r1", "S10-02-en-semantic-r1"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify exact finite request and implementation pins
+        run: |
+          python - <<'PY'
+          import os,json,hashlib,pathlib
+          p=pathlib.Path(os.environ['PACKAGE']);s=lambda f:hashlib.sha256(f.read_bytes()).hexdigest()
+          assert os.environ['GITHUB_RUN_ATTEMPT']=='1'
+          assert s(p/'request.json')==os.environ['EXPECTED_REQUEST_SHA256']
+          assert s(p/'implementation-pins.en.json')==os.environ['EXPECTED_IMPLEMENTATION_SHA256']
+          for n,h in json.loads((p/'implementation-pins.en.json').read_text()).items():assert s(p/n)==h
+          for n,h in json.loads((p/'request.json').read_text())['bootstrapFiles'].items():assert s(pathlib.Path(n))==h
+          PY
+      - name: Verify audio gate and actual clock, bind explanatory actions
+        run: python "$PACKAGE/prepare.py" "${{ matrix.part }}"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-terminal14-r3-clock-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Install pinned renderer
+        working-directory: experiments/course-pipeline/rebuild/fate-course-v2/remaining-terminal14-recovery-v3
+        run: npm ci --no-audit --no-fund
+      - name: Expose verified packaged FFmpeg and FFprobe, no apt
+        timeout-minutes: 1
+        run: node "$MEDIA_TOOLS_PACKAGE/bootstrap.cjs" --dependency-root "$PACKAGE"
+      - name: Render meaningful action checkpoints
+        run: timeout --signal=TERM --kill-after=15s 9m node "$PACKAGE/render.cjs" stills
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-terminal14-r3-stills-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Render single scene and decode actual video checkpoints
+        run: |
+          command -v ffmpeg
+          command -v ffprobe
+          timeout --signal=TERM --kill-after=15s 9m node "$PACKAGE/render.cjs" video
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-terminal14-r3-video-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
