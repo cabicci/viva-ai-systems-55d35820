@@ -90,6 +90,7 @@ function AuthorizedLesson({
   revoke,
   readOnlyPreview = false,
   previewFigures = [],
+  previewVideoSrc = null,
 }: {
   delivery: Omit<Extract<AcademicDelivery, { allowed: true }>, "allowed">;
   locale: SupportedLocale;
@@ -97,6 +98,7 @@ function AuthorizedLesson({
   revoke: () => void;
   readOnlyPreview?: boolean;
   previewFigures?: { src: string; alt: string; caption: string }[];
+  previewVideoSrc?: string | null;
 }) {
   const { lesson } = delivery,
     en = locale === "en";
@@ -154,6 +156,7 @@ function AuthorizedLesson({
     )
       ? delivery.video
       : null;
+  const localPreviewVideo = readOnlyPreview && /^\/__fate-media\/FATE2-S01-(ar-EG|en)\.mp4$/.test(previewVideoSrc ?? "") ? previewVideoSrc : null;
   async function save(action: "read" | "practice" | "quiz") {
     if (readOnlyPreview) return;
     setBusy(true);
@@ -208,7 +211,7 @@ function AuthorizedLesson({
         <aside className="rounded-3xl border bg-card p-4 lg:sticky lg:top-24">
           <nav aria-label={c.sections} className="grid grid-cols-2 gap-2 lg:grid-cols-1">
             {Object.entries(labels)
-              .filter(([key]) => key !== "video" || validVideo)
+              .filter(([key]) => key !== "video" || validVideo || localPreviewVideo)
               .map(([key, label]) => (
                 <button
                   key={key}
@@ -293,7 +296,10 @@ function AuthorizedLesson({
               <p className="rounded-xl bg-accent/20 p-4 leading-8">{lesson.example.decision}</p>
             </>
           )}
-          {tab === "video" && validVideo && (
+          {tab === "video" && localPreviewVideo && (
+            <video key={localPreviewVideo} title={lesson.title} src={localPreviewVideo} controls playsInline preload="metadata" className="aspect-video w-full rounded-xl" />
+          )}
+          {tab === "video" && !localPreviewVideo && validVideo && (
             <iframe
               title={lesson.title}
               src={validVideo}
@@ -469,10 +475,11 @@ function AuthorizedLesson({
 }
 
 /** Explicit public-data preview: no identity, authorization assertion, visit write or saved progress. */
-export function AcademicLessonPreview({ courseId, delivery, figures = [] }: {
+export function AcademicLessonPreview({ courseId, delivery, figures = [], localVideo = null }: {
   courseId: string;
   delivery: Omit<Extract<AcademicDelivery, { allowed: true }>, "allowed">;
   figures?: { src: string; alt: string; caption: string }[];
+  localVideo?: string | null;
 }) {
   const { locale } = useLocale();
   const en = locale === "en";
@@ -483,7 +490,7 @@ export function AcademicLessonPreview({ courseId, delivery, figures = [] }: {
         {en ? "Public read-only preview using the platform interface. No account or subscription is claimed. Answers stay on this page; grading, saved progress and the assistant are not connected."
           : "معاينة للمحتوى العام بواجهة المنصة. مفيش حساب أو اشتراك مفعّل هنا. الإجابات بتفضل في الصفحة؛ التصحيح وحفظ التقدّم والمساعد مش متصلين."}
       </p>
-      <AuthorizedLesson delivery={delivery} locale={locale} courseId={courseId} revoke={() => {}} readOnlyPreview previewFigures={figures} />
+      <AuthorizedLesson delivery={delivery} locale={locale} courseId={courseId} revoke={() => {}} readOnlyPreview previewFigures={figures} previewVideoSrc={localVideo} />
     </main>
     <Footer />
   </div>;
