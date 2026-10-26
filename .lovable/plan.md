@@ -1,90 +1,35 @@
-# Current coordination note — 3 October 2026
+# تشخيص فقط: المسار الطبيعي لصف خارطة الطريق (بدون سر خادم على DELL)
 
-The owner cancelled additional Vault/token setup. Automatic lifecycle processing
-uses the existing protected account-welcome-job schedule and internal server
-permissions. Do not propose or reinstall a separate lifecycle/contact Vault
-binding or cron. Existing account/family/financial handlers and separate switches
-are preserved. The sole contact flag is CONTACT_MAIL_DIRECT_ENABLED; old contact
-resources are retired. Historical capability notes below are not current rollout
-instructions. Exact activation evidence and final acceptance belong to the two
-authoritative registers.
+## الخلاصة
+- لا حاجة لنسخ مفتاح الخدمة إلى DELL. يوجد بالفعل مسار طبيعي مُصادَق داخل التطبيق: صفحة `/roadmap` للأدمن، وهي تنشئ الصف بجلسة المالك وصلاحياته.
 
----
+## (1) الإدارة ومكان الاتصال
+- المرجع abyqqeboyrkkwhjpwmtd يديره Lovable Cloud، وهو نسخة واحدة تخدم المعاينة والموقع المنشور.
+- الاتصال الخادمي يُضبط داخل بيئة Lovable Cloud (أسماء فقط): `SUPABASE_URL` و`SUPABASE_PUBLISHABLE_KEY` و`SUPABASE_SERVICE_ROLE_KEY`، وكلها موجودة في بيئة الخادم والمعاينة.
+- إعدادات المتصفح موجودة في `.env` الخاص بالمشروع: `VITE_SUPABASE_URL` و`VITE_SUPABASE_PUBLISHABLE_KEY` و`VITE_SUPABASE_PROJECT_ID`.
+- مفتاح الخدمة غير متاح للاستخراج على Lovable Cloud. لهذا يبقى DELL بلا هذه المتغيرات، وهذا وضع طبيعي.
 
-# فحص حالة قراءة فقط — بريد التواصل والترحيب
+## (2) الكاتب الطبيعي الموجود
+- الواجهة: `src/routes/roadmap.index.tsx`، أي الصفحة `/roadmap`. تحميها `AdminGate` و`requireAdminBeforeLoad`.
+- دالة الخادم: `createRoadmapItem` في `src/lib/roadmap.functions.ts`.
+  - تمر عبر `requireSupabaseAuth`، أي جلسة المستخدم نفسه مع تطبيق RLS.
+  - تتحقق من الصلاحية عبر `has_role(_role:'admin')`.
+  - حد الكتابة 120 عملية في الساعة.
+  - الحقول: title، description، notes، phase (الافتراضي inbox)، status، ويشمل ذلك in_progress.
+- لتعديل صف موجود: `updateRoadmapItem` في الملف نفسه. ويوجد كذلك RPC اسمه `append_roadmap_note`، يستخدمه السكربت.
+- الصلاحية المطلوبة: جلسة المالك khalil.wahid@gmail.com بدور admin في `public.user_roles`. لا يلزم أي سر.
 
-فحص حالة حالي بدون أي تعديل. النتائج:
+## (3) هل يعمل السكربت في هذا السياق؟
+- لا. السكربت `scripts/roadmap-log.ts` يقرأ مفتاح الخدمة من `process.env` فقط، ولا يقبل جلسة المستخدم. لذلك لا يمكنه استخدام المسار المُصادَق كما هو.
+- البديل الصحيح دون أي بنية جديدة:
+  1. ينشئ المالك الصف الواحد من `/roadmap` على الموقع المنشور أو في المعاينة. القيم: الحالة in_progress، والملاحظة تبدأ بـ `[source:user]` ثم `[scope:...]`.
+  2. بعد أن يظهر الصف فعليًا في القائمة، يكون هذا هو «المسار المعتمد الآخر» الذي يذكره السكربت. عندها يصبح `--marker-only --item <id>` مشروعًا، وهو يكتب `.lovable/roadmap-sync.md` فقط.
+  3. بعد ذلك يُشغَّل الحارس الحقيقي.
+- الشرط الخارجي الوحيد الذي لا غنى عنه: أن يسجّل المالك الدخول بحساب الأدمن في المتصفح. لا حاجة لمتغيرات على DELL.
+- الخيار الوحيد الذي يتطلب سرًا هو تشغيل السكربت بوضعه العادي على DELL، وهو غير ضروري.
 
-## الدوال المنشورة (GET بدون مصادقة)
+## غير متحقَّق
+- لم أتحقق من وجود صفوف أو من حالة RLS فعليًا، لأن ذلك يتطلب استعلامًا وهو محظور هنا.
+- لم أتحقق من نجاح `append_roadmap_note` تحت جلسة المستخدم. السكربت يستدعيه بمفتاح الخدمة فقط.
 
-- contact-mail-job: منشورة (405)
-- contact-mail-webhook: منشورة (405)
-- account-welcome-job: منشورة (405) — تشمل بريد الترحيب والاشتراك
-- account-deletion-job: غير منشورة (404)
-
-## الأعلام والأسرار (أسماء فقط، بدون قيم)
-
-- CONTACT_MAIL_ENABLED: موجودة في الأسرار؛ القيمة الحالية غير قابلة للفحص بأمان — UNVERIFIED (آخر حالة موثقة: false)
-- مفتاح الإدخال في التطبيق (نفس الراية): UNVERIFIED لنفس السبب
-- RESEND_API_KEY: موجود
-- RESEND_WEBHOOK_SECRET: موجود (ربط التوقيع نجح سابقًا)
-- CONTACT_MAIL_JOB_SECRET: موجود
-- ACCOUNT_WELCOME_JOB_SECRET: موجود
-
-## الجداول المجدولة
-
-- masaarat-account-welcome-v1: موجودة ونشطة (كل 5 دقائق) — محفوظة
-- لا يوجد أي جدول مجدول لبريد التواصل
-
-## قابلية نشر account-deletion-job
-
-- نعم: بعد دمج/مزامنة مصدرها المراجع من GitHub في المشروع، يمكن نشرها عبر أداة نشر الدوال المعتمدة (نفس مسار contact-mail-job). هذا يختلف عن إنشاء عامل مؤقت جديد الذي رُفض سابقًا — النشر لدالة موجودة في المصدر مسموح. لا نشر الآن.
-
-## لا إجراءات
-
-لا تعديل كود، لا SQL، لا نشر، لا تغيير أسرار أو أعلام، لا بريد. تدوير الأسرار والإرسال الحقيقي ونشر الموقع بوابات إنتاج منفصلة.
-
-## Previous read-only explanation preserved
-
-# شرح تفصيلي: ليه الموقع كان بطيء وبقى سريع (بدون أي تنفيذ)
-
-القرار: **مفيش أي تعديل**. ده شرح للحالة الحالية بناءً على قراءة السجلات والملفات فقط.
-
-## اللي بيحصل عند أول فتح (الإقلاع البارد)
-
-التسلسل الفعلي من سجل خادم التطوير:
-
-```text
-1) توليد الأصول قبل التشغيل  → materialized: 400  (كتابة 400 صورة PNG على القرص)
-2) Vite ready                → 2299 ms  (وفي مرة تانية 3249 ms)
-3) أول زيارة للصفحة          → new dependencies optimized: h3-v2, @tanstack/router-core, ...
-4) optimized dependencies changed → reloading   ← الصفحة بتعيد التحميل في نص أول زيارة
-5) كل route وكل صورة بتتترجم عند أول طلب لها → الصور بتظهر بالتدريج
-```
-
-النتيجة اللي كنت شايفها: الصفحة الرئيسية بس هي اللي بتفتح (لأنها أول route اتترجم)، والصور بتفضل تتحمّل واحدة ورا التانية.
-
-## ليه بقى سريع دلوقتي
-
-- مجلد `node_modules/.vite/deps` موجود ومحدّث (آخر تحديث 10:57)، يعني خطوة optimize خلصت خلاص.
-- الـ400 صورة متولّدة بالفعل على القرص، والعلامة `.materialize-ok.json` بتقول `ok: true, materialized: 400`.
-- فمرحلة الـ`reloading` الوسطانية مش بتحصل، والصفحة بتفتح على طول.
-
-**مهم:** مفيش أي سطر كود اتغير. الفرق كله في الكاش (cache) مش في المشروع.
-
-## متى ترجع البطء تاني
-
-أي حاجة تمسح أو تبطّل الكاش:
-
-- إعادة تشغيل بيئة البريفيو أو الخادم
-- تغيير في `bun.lockb` — السجل شايف فعلاً: `Re-optimizing dependencies because lockfile has changed` الساعة 11:07
-- تثبيت أو تحديث أي حزمة
-
-## المصدر البنيوي للبطء (للعِلم فقط)
-
-- `src/lib/lesson-visuals/controlled-v1/runtime/controlledV1BrowserResolver.ts` بيستخدم `import.meta.glob` بـ `eager: true` على 400 أصل — في وضع التطوير ده بيخلي المتصفح يجيب مئات الموديولات كل واحد لوحده.
-- سكربت `controlled-visuals:materialize-runtime-assets` بيعيد كتابة 400 ملف في كل إقلاع حتى لو موجودين بالفعل.
-
-## الحالة
-
-مفيش أي تنفيذ مطلوب. لو حبيت بعدين نثبّت السرعة دايمًا، الحلول الثلاثة المعروفة: تخطّي إعادة التوليد لو الأصول موجودة، تحويل الـglob لـ lazy في التطوير، وإضافة الحزم لـ `optimizeDeps`.
+لم يُنفَّذ أي شيء. هذا تشخيص من الكود فقط.
