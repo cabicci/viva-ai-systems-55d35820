@@ -1,0 +1,35 @@
+{
+  "id": "fate-v2-s01-images-v1",
+  "imageModel": "gemini-nano-banana-2.1",
+  "reviewModel": "gemini-2.5-flash",
+  "automaticRetries": 0,
+  "maxImageCalls": 3,
+  "maxReviewCalls": 0,
+  "style": "Create a premium university-level scientific educational 3D-rendered illustration, physically plausible realistic materials, carefully modeled recognizable objects, restrained elegant composition, soft natural studio lighting from upper left, convincing contact shadows, detailed but readable geometry, pale near-white cool neutral environment compatible with Masaarat soft blue and mint overlays. Adult scientific visualization, not children's illustration, not toy-like, no cartoon faces or characters, no excessive glossy plastic, no glow or magical toxicity. Deliberately composed negative space for later editable labels. NO text, words, letters, numerals, logos, watermarks, arrows, diagram symbols or charts baked into the image. This is a reconstructed teaching visualization, not photographic evidence. Keep important geometry sharp. 16:9 landscape.",
+  "scenes": [
+    {
+      "id": "result-versus-claim",
+      "title": {
+        "en": "result-versus-claim"
+      },
+      "meaning": "A realistic laboratory bench, peppers in a sample tray and an unlabelled report sheet. Separate objects, no text, numbers, arrows, logos or people. Restrained university scientific visualisation, plausible proportions, soft neutral materials, consistent perspective. This is an illustrative reconstruction, not evidence from an actual experiment.",
+      "visualContract": "A realistic laboratory bench, peppers in a sample tray and an unlabelled report sheet. Separate objects, no text, numbers, arrows, logos or people. Restrained university scientific visualisation, plausible proportions, soft neutral materials, consistent perspective. This is an illustrative reconstruction, not evidence from an actual experiment. Actions will be composed separately: Reveal sample result; keep person/outcome separate.; On the phrase about exposure, connect source to contact with a question-mark label.; Keep risk inference visually conditional; no poisoning symptoms."
+    },
+    {
+      "id": "sample-basis",
+      "title": {
+        "en": "sample-basis"
+      },
+      "meaning": "Realistic separated ingredients: whole pepper, cut edible pepper portion, empty precision-balance pan and clean sample container. No fabricated balance reading. No baked text or arrows. Maintain consistent lighting and viewpoints; distinguish the whole fruit from the analysed portion.",
+      "visualContract": "Realistic separated ingredients: whole pepper, cut edible pepper portion, empty precision-balance pan and clean sample container. No fabricated balance reading. No baked text or arrows. Maintain consistent lighting and viewpoints; distinguish the whole fruit from the analysed portion. Actions will be composed separately: Highlight whole fruit versus sampled portion without changing the measured basis.; Show concentration and food mass in separate editable unit boxes.; Do not show an absorbed human dose."
+    },
+    {
+      "id": "source-pathway-receptor",
+      "title": {
+        "en": "source-pathway-receptor"
+      },
+      "meaning": "Realistic three-dimensional-looking field-to-stream cutaway, separate soil, water-channel and healthy aquatic-organism layers. Clearly readable topography and contained water. No dead animals, smoke, arrows, words or measured particle counts. Mark reconstruction and not-to-scale in editable overlays.",
+      "visualContract": "Realistic three-dimensional-looking field-to-stream cutaway, separate soil, water-channel and healthy aquatic-organism layers. Clearly readable topography and contained water. No dead animals, smoke, arrows, words or measured particle counts. Mark reconstruction and not-to-scale in editable overlays. Actions will be composed separately: Trace a possible route with a dashed overlay, maintaining physical land/water topology.; Distinguish a sample observation from an unobserved contact arrow.; Do not animate a causal injury without evidence."
+    }
+  ]
+}

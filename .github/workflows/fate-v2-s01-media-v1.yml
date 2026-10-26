@@ -1,0 +1,74 @@
+name: Fate v2 S01 bounded original media
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/media-s01/request.json]
+permissions:
+  contents: read
+concurrency:
+  group: fate-v2-s01-initial-media
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/media-s01
+  PYTHONUNBUFFERED: '1'
+jobs:
+  audio:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        part: ["S01-01-ar-EG", "S01-01-en", "S01-02-ar-EG", "S01-02-en", "S01-03-ar-EG", "S01-03-en", "S01-04-ar-EG", "S01-04-en", "S01-05-ar-EG", "S01-05-en", "S01-06-ar-EG", "S01-06-en"]
+    env:
+      EXPECTED_REQUEST_SHA256: dc01c644570b4daa2bc869f2aa6e6470d3280f865b9c2240e1db35ee9a19f90c
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify exact model and generate one coherent original
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/generate.py" "${{ matrix.part }}"
+      - name: Retain this original immediately before any review
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-original-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Blind then reference actual-audio checks without regeneration
+        if: success()
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/review.py" "${{ matrix.part }}"
+      - name: Retain actual review independently
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-review-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/review*
+          retention-days: 30
+  image:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        scene: ["result-versus-claim", "sample-basis", "source-pathway-receptor"]
+    env:
+      EXPECTED_REQUEST_SHA256: 7ba3be2caa2fea9f02e9f957a30f7369094d00e890cae37b71c9a737c0bd1573
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify approved exact image model and generate one ingredient
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/image_worker.py" "${{ matrix.scene }}" generate
+      - name: Retain each result or availability blocker immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-image-${{ matrix.scene }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
