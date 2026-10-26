@@ -1,0 +1,2235 @@
+{
+  "schema": "fate-rest-scenes.v1",
+  "scenes": [
+    {
+      "step": "FATE2-S02",
+      "stepNumber": 2,
+      "sectionID": "two-denominators",
+      "sceneIndex": 1,
+      "kind": "bases",
+      "title": {
+        "ar": "١. نفس كلمة «حد» مش معناها نفس الكمية",
+        "en": "1. Read the denominator before comparing numbers"
+      },
+      "actions": [
+        {
+          "id": "bases",
+          "label": {
+            "ar": "المقام وأساس الزمن",
+            "en": "Denominator and time basis"
+          },
+          "meaning": "Food mass differs from body mass with a daily time basis.",
+          "equation": "mg/kg food ≠ mg/kg body weight/day"
+        },
+        {
+          "id": "mrl",
+          "label": {
+            "ar": "حدّ لتركيز في سلعة",
+            "en": "A commodity concentration limit"
+          },
+          "meaning": "MRL is a recommended legally-permitted residue concentration for the commodity and residue definition."
+        },
+        {
+          "id": "adi",
+          "label": {
+            "ar": "مرجع مدخول يومي طويل المدى",
+            "en": "A lifetime daily-intake reference"
+          },
+          "meaning": "ADI is body-weight based, lifetime daily intake appearing without appreciable health risk on evaluation evidence; not an absolute guarantee."
+        }
+      ],
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "spokenDraftSHA256": "9a88e962d0fa9894956baaf3289f125d170c652ffc8b656d903a6ac75db1110d",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S02",
+      "stepNumber": 2,
+      "sectionID": "equation",
+      "sceneIndex": 2,
+      "kind": "unitflow",
+      "title": {
+        "ar": "٢. نبني المدخول خطوة خطوة",
+        "en": "2. Build intake in explicit stages"
+      },
+      "actions": [
+        {
+          "id": "multiply",
+          "label": {
+            "ar": "نضرب لكل غذاء",
+            "en": "Multiply for each food"
+          },
+          "meaning": "Multiply concentration by food consumption; kg food cancels.",
+          "equation": "mg/kg food × kg food/day = mg/day"
+        },
+        {
+          "id": "combine",
+          "label": {
+            "ar": "نجمع كتلًا متوافقة",
+            "en": "Combine compatible masses"
+          },
+          "meaning": "Add masses only for compatible substance/residue definitions, not arbitrary concentrations.",
+          "equation": "Σ residue mass (mg/day)"
+        },
+        {
+          "id": "normalise",
+          "label": {
+            "ar": "نقسم على وزن الجسم",
+            "en": "Normalise by body weight"
+          },
+          "meaning": "Divide total daily chemical mass by kg body weight.",
+          "equation": "mg/day ÷ kg body weight = mg/kg body weight/day"
+        },
+        {
+          "id": "scope",
+          "label": {
+            "ar": "يوم افتراضي مش تقييم كامل",
+            "en": "One hypothetical day is not a complete assessment"
+          },
+          "meaning": "A one-day menu neither establishes lifetime exposure nor completes acute assessment."
+        }
+      ],
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "spokenDraftSHA256": "9a88e962d0fa9894956baaf3289f125d170c652ffc8b656d903a6ac75db1110d",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S02",
+      "stepNumber": 2,
+      "sectionID": "hypothetical-reference",
+      "sceneIndex": 3,
+      "kind": "decision",
+      "title": {
+        "ar": "٣. مقارنة تعليمية بشروطها",
+        "en": "3. Compare only under stated conditions"
+      },
+      "actions": [
+        {
+          "id": "reference",
+          "label": {
+            "ar": "مرجع تعليمي افتراضي",
+            "en": "A hypothetical teaching reference"
+          },
+          "meaning": "Only compare an intake to an explicitly hypothetical ADI with compatible units."
+        },
+        {
+          "id": "percentage",
+          "label": {
+            "ar": "نسبة تحت شروط السيناريو",
+            "en": "A scenario-bound percentage"
+          },
+          "meaning": "Below the teaching reference does not mean unexamined food/water/population circumstances were evaluated."
+        },
+        {
+          "id": "compliance",
+          "label": {
+            "ar": "مطابقة العيّنة لها بياناتها",
+            "en": "Sample compliance has its own evidence"
+          },
+          "meaning": "Commodity, portion, residue definition, jurisdiction/date, sampling/method and decision rule are needed."
+        }
+      ],
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "spokenDraftSHA256": "9a88e962d0fa9894956baaf3289f125d170c652ffc8b656d903a6ac75db1110d",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S02",
+      "stepNumber": 2,
+      "sectionID": "multiple-residues",
+      "sceneIndex": 4,
+      "kind": "grouping",
+      "title": {
+        "ar": "٤. نفس المادة ولا مواد مختلفة؟",
+        "en": "4. One substance or several substances?"
+      },
+      "actions": [
+        {
+          "id": "aggregate",
+          "label": {
+            "ar": "مصادر مختلفة لنفس المادة",
+            "en": "Several sources of one substance"
+          },
+          "meaning": "EPA/FQPA aggregate context: combine multiple exposure sources for one pesticide."
+        },
+        {
+          "id": "cumulative",
+          "label": {
+            "ar": "آلية سُمّية مشتركة بدليل",
+            "en": "A supported common toxicity mechanism"
+          },
+          "meaning": "EPA/FQPA cumulative context concerns pesticides with common mechanisms; a shared icon is not evidence."
+        },
+        {
+          "id": "no-arbitrary-sum",
+          "label": {
+            "ar": "ما نجمعش كل الأسماء وخلاص",
+            "en": "No arbitrary concentration sum"
+          },
+          "meaning": "Multiresidue detections do not justify summing concentrations against one chemical ADI."
+        }
+      ],
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "spokenDraftSHA256": "9a88e962d0fa9894956baaf3289f125d170c652ffc8b656d903a6ac75db1110d",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S02",
+      "stepNumber": 2,
+      "sectionID": "worked-example",
+      "sceneIndex": 5,
+      "kind": "calculation",
+      "title": {
+        "ar": "مثال محلول: يوم افتراضي لشخص افتراضي",
+        "en": "Worked example: a hypothetical daily menu"
+      },
+      "actions": [
+        {
+          "id": "sources",
+          "label": {
+            "ar": "قيم افتراضية ونفس تعريف المتبقّي",
+            "en": "Invented values, matching residue definition"
+          },
+          "meaning": "A0.20mg/kg food with0.15kg/day; B0.05mg/kg food with0.40kg/day; body50kg."
+        },
+        {
+          "id": "masses",
+          "label": {
+            "ar": "كتلة المادة من الغذاءين",
+            "en": "Residue mass from each food"
+          },
+          "meaning": "Multiply each food contribution independently.",
+          "equation": "A: 0.20 × 0.15 = 0.030 mg/day; B: 0.05 × 0.40 = 0.020 mg/day"
+        },
+        {
+          "id": "intake",
+          "label": {
+            "ar": "المجموع بالنسبة لوزن الجسم",
+            "en": "Total normalised to body weight"
+          },
+          "meaning": "Combine0.030and0.020mg/day, divide by50kg.",
+          "equation": "0.050 mg/day ÷ 50 kg body weight = 0.0010 mg/kg body weight/day"
+        },
+        {
+          "id": "ratio",
+          "label": {
+            "ar": "١٠٪ من المرجع الافتراضي",
+            "en": "10% of the hypothetical reference"
+          },
+          "meaning": "Only the hypothetical0.010 reference is used; no compliance or lifetime conclusion.",
+          "equation": "0.0010 ÷ 0.010 × 100 = 10%"
+        }
+      ],
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "spokenDraftSHA256": "9a88e962d0fa9894956baaf3289f125d170c652ffc8b656d903a6ac75db1110d",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S03",
+      "stepNumber": 3,
+      "sectionID": "question",
+      "sceneIndex": 1,
+      "kind": "decision",
+      "title": {
+        "ar": "١. مين بيقيّم ومين بيقرّر؟",
+        "en": "1. Assessment and decisions answer different questions"
+      },
+      "actions": [
+        {
+          "id": "claim",
+          "label": {
+            "ar": "رقم دولي لا يكفي وحده",
+            "en": "An international number alone is insufficient"
+          },
+          "meaning": "A claim that an international number permits a shipment everywhere lacks function and governing-law links."
+        },
+        {
+          "id": "roles",
+          "label": {
+            "ar": "تقييم علمي وإدارة مخاطر",
+            "en": "Assessment and risk management"
+          },
+          "meaning": "Scientific assessment and management/enforcement are different tasks."
+        },
+        {
+          "id": "history",
+          "label": {
+            "ar": "نراجع السياق والتاريخ",
+            "en": "Check context and date"
+          },
+          "meaning": "Historical zero-residue wording is not a universal current registration condition."
+        }
+      ],
+      "sourceLessonSHA256": "490e6e5bdff7ae853bd36c66a016a4fd901d400467814b07bd8911a48fc571f0",
+      "spokenDraftSHA256": "95dfd92109971a6c8d4de710e696c1ad82102295c74ccb6a7317f0fb6f1ce2dc",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S03",
+      "stepNumber": 3,
+      "sectionID": "international",
+      "sceneIndex": 2,
+      "kind": "agency",
+      "title": {
+        "ar": "٢. المسار الدولي: علم ثم مداولة ثم اعتماد",
+        "en": "2. International sequence: science, consideration, adoption"
+      },
+      "actions": [
+        {
+          "id": "science",
+          "label": {
+            "ar": "JMPR: تقييم وتوصيات علمية",
+            "en": "JMPR: scientific assessment"
+          },
+          "meaning": "Scientific recommendations are not an adopted standard."
+        },
+        {
+          "id": "consider",
+          "label": {
+            "ar": "CCPR: النظر في التوصيات",
+            "en": "CCPR: considers recommendations"
+          },
+          "meaning": "Keep committee consideration distinct from scientific assessment and adoption."
+        },
+        {
+          "id": "adopt",
+          "label": {
+            "ar": "CAC: اعتماد حدود كودكس",
+            "en": "CAC: adoption of Codex limits"
+          },
+          "meaning": "An actual adoption record is required before claiming a standard was adopted."
+        },
+        {
+          "id": "data",
+          "label": {
+            "ar": "دراسات ومتَبقّيات وتقييم صحي",
+            "en": "Trials, residues and health evaluation"
+          },
+          "meaning": "Supervised trials/GAP and toxicological/dietary evidence retain their separate scientific roles."
+        }
+      ],
+      "sourceLessonSHA256": "490e6e5bdff7ae853bd36c66a016a4fd901d400467814b07bd8911a48fc571f0",
+      "spokenDraftSHA256": "95dfd92109971a6c8d4de710e696c1ad82102295c74ccb6a7317f0fb6f1ce2dc",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S03",
+      "stepNumber": 3,
+      "sectionID": "us",
+      "sceneIndex": 3,
+      "kind": "agency",
+      "title": {
+        "ar": "٣. المثال الأمريكي له نطاق وتاريخ",
+        "en": "3. The US example has a date and jurisdiction"
+      },
+      "actions": [
+        {
+          "id": "epa",
+          "label": {
+            "ar": "EPA: تسجيل وحدود متبقّيات",
+            "en": "EPA: registration and tolerances"
+          },
+          "meaning": "US EPA sets tolerances and regulates registration in the described framework."
+        },
+        {
+          "id": "enforce",
+          "label": {
+            "ar": "FDA وUSDA-FSIS: اختصاصات إنفاذ",
+            "en": "FDA and USDA-FSIS: enforcement remits"
+          },
+          "meaning": "FDA food remit has exceptions including meat,poultry,catfish and certain egg products underFSIS."
+        },
+        {
+          "id": "laws",
+          "label": {
+            "ar": "FIFRA وFQPA في سياقهم",
+            "en": "FIFRA and FQPA in context"
+          },
+          "meaning": "FQPA1996amendedFIFRA/FFDCA; retain aggregate/common-mechanism and child-susceptibility qualifications."
+        }
+      ],
+      "sourceLessonSHA256": "490e6e5bdff7ae853bd36c66a016a4fd901d400467814b07bd8911a48fc571f0",
+      "spokenDraftSHA256": "95dfd92109971a6c8d4de710e696c1ad82102295c74ccb6a7317f0fb6f1ce2dc",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S03",
+      "stepNumber": 3,
+      "sectionID": "dossier",
+      "sceneIndex": 4,
+      "kind": "dossier",
+      "title": {
+        "ar": "٤. نعمل ملف قرار بدل حكم سريع",
+        "en": "4. Build a decision dossier"
+      },
+      "actions": [
+        {
+          "id": "identity",
+          "label": {
+            "ar": "هوية المادة والسلعة",
+            "en": "Substance and commodity identity"
+          },
+          "meaning": "Residue definition,commodity,analysed portion and mass basis must match."
+        },
+        {
+          "id": "applicability",
+          "label": {
+            "ar": "السوق والتاريخ والحدّ الساري",
+            "en": "Market, date and operative limit"
+          },
+          "meaning": "An older value or another commodity entry is not silently applicable."
+        },
+        {
+          "id": "methods",
+          "label": {
+            "ar": "صلاحية العيّنة والطريقة والقرار",
+            "en": "Sampling, analysis and decision rule"
+          },
+          "meaning": "An analytical report alone does not establish all enforcement inputs."
+        },
+        {
+          "id": "environmental",
+          "label": {
+            "ar": "المصدر البيئي لا يجيز استخدامًا جديدًا",
+            "en": "Environmental origin does not authorise a use"
+          },
+          "meaning": "EMRL origin differs from use-relatedMRL; do not relabel a result to make it look compliant."
+        }
+      ],
+      "sourceLessonSHA256": "490e6e5bdff7ae853bd36c66a016a4fd901d400467814b07bd8911a48fc571f0",
+      "spokenDraftSHA256": "95dfd92109971a6c8d4de710e696c1ad82102295c74ccb6a7317f0fb6f1ce2dc",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S03",
+      "stepNumber": 3,
+      "sectionID": "evidence-and-committee-scope",
+      "sceneIndex": 5,
+      "kind": "evidencegrid",
+      "title": {
+        "ar": "٥. نحافظ على أنواع الدليل واختصاص اللجنة",
+        "en": "5. Preserve evidence types and committee scope"
+      },
+      "actions": [
+        {
+          "id": "toxicology",
+          "label": {
+            "ar": "ست نواحٍ لدليل السُمّية",
+            "en": "Six toxicological questions"
+          },
+          "meaning": "Acute,chronic,carcinogenic,mutagenic,developmental,reproduction/fertility evidence are not interchangeable."
+        },
+        {
+          "id": "requirements",
+          "label": {
+            "ar": "المتطلبات حسب الحالة",
+            "en": "Requirements are case-dependent"
+          },
+          "meaning": "The list does not make every test mandatory without justified alternatives/waivers."
+        },
+        {
+          "id": "committee",
+          "label": {
+            "ar": "ستة مجالات لاختصاص CCPR",
+            "en": "Six areas of CCPR remit"
+          },
+          "meaning": "Preservefood/feed limits,JMPRpriorities,sampling/analysis,otherresidue-safety issues,and specified pesticide-like environmental/industrialcontaminants."
+        },
+        {
+          "id": "separate",
+          "label": {
+            "ar": "اختصاص اللجنة غير اعتماد المعيار",
+            "en": "Remit differs from standard adoption"
+          },
+          "meaning": "Do not collapseCCPR,JMPRandCAC or expand the remit to every contaminant."
+        }
+      ],
+      "sourceLessonSHA256": "490e6e5bdff7ae853bd36c66a016a4fd901d400467814b07bd8911a48fc571f0",
+      "spokenDraftSHA256": "95dfd92109971a6c8d4de710e696c1ad82102295c74ccb6a7317f0fb6f1ce2dc",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S03",
+      "stepNumber": 3,
+      "sectionID": "worked-example",
+      "sceneIndex": 6,
+      "kind": "calculation",
+      "title": {
+        "ar": "مثال محلول: رقم بلا سياق قانوني",
+        "en": "Worked example: a number without legal context"
+      },
+      "actions": [
+        {
+          "id": "numbers",
+          "label": {
+            "ar": "مقارنة عددية فقط",
+            "en": "A numerical comparison only"
+          },
+          "meaning": "InventedRinpeppers0.07mg/kg and alleged0.10limit.",
+          "equation": "0.07 mg/kg < 0.10 mg/kg"
+        },
+        {
+          "id": "missing",
+          "label": {
+            "ar": "السوق والتاريخ والمصدر غايبين",
+            "en": "Market, date and source are missing"
+          },
+          "meaning": "No market,date,residue-definition or source for the limit is supplied."
+        },
+        {
+          "id": "conclusion",
+          "label": {
+            "ar": "المطابقة غير مثبتة",
+            "en": "Compliance is unestablished"
+          },
+          "meaning": "Report the arithmetic and list the missing commodity/portion/method/decision evidence."
+        }
+      ],
+      "sourceLessonSHA256": "490e6e5bdff7ae853bd36c66a016a4fd901d400467814b07bd8911a48fc571f0",
+      "spokenDraftSHA256": "95dfd92109971a6c8d4de710e696c1ad82102295c74ccb6a7317f0fb6f1ce2dc",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S04",
+      "stepNumber": 4,
+      "sectionID": "model",
+      "sceneIndex": 1,
+      "kind": "causegraph",
+      "title": {
+        "ar": "١. نرسم سلسلة ممكن نختبرها",
+        "en": "1. Draw a chain that can be tested"
+      },
+      "actions": [
+        {
+          "id": "chain",
+          "label": {
+            "ar": "مصدر ووسط ومستقبِل وأثر",
+            "en": "Source, medium, receptor and effect"
+          },
+          "meaning": "Separate origin,transport,contact and measured response."
+        },
+        {
+          "id": "state",
+          "label": {
+            "ar": "كل حلقة ليها حالة دليل",
+            "en": "Each link has an evidence state"
+          },
+          "meaning": "Measured,documented,assumedpossible,andunknown must remain distinguishable."
+        },
+        {
+          "id": "hypothesis",
+          "label": {
+            "ar": "السهم فرضية قابلة للاختبار",
+            "en": "An arrow is a testable hypothesis"
+          },
+          "meaning": "Do not fill an evidential gap with motion implying an observed event."
+        }
+      ],
+      "sourceLessonSHA256": "e8514b7603b9a846a4ae448bd56eb97ac9e8d96345aa39632e6cf373e4d7da1c",
+      "spokenDraftSHA256": "7e539a43de7f4d8d08e1f73a76c975d6fd3d40af78532f3f2900bf2821b537dd",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S04",
+      "stepNumber": 4,
+      "sectionID": "routes",
+      "sceneIndex": 2,
+      "kind": "routes",
+      "title": {
+        "ar": "٢. الوسط وطريق الدخول مش نفس الحاجة",
+        "en": "2. A medium is not an entry route"
+      },
+      "actions": [
+        {
+          "id": "media",
+          "label": {
+            "ar": "المياه والتربة والهواء والغذاء",
+            "en": "Water, soil, air and food"
+          },
+          "meaning": "Environmental media can carry a substance."
+        },
+        {
+          "id": "contact",
+          "label": {
+            "ar": "التماس والدخول يخصّان الكائن",
+            "en": "Contact and entry are receptor-specific"
+          },
+          "meaning": "Ingestion,surfacecontact andrespiratorytransfer differ from environmental media."
+        },
+        {
+          "id": "time",
+          "label": {
+            "ar": "المكان والزمن والمقارنة",
+            "en": "Location, time and comparison"
+          },
+          "meaning": "A water concentration is not an organism dose; timing/sites and quality must fit the question."
+        }
+      ],
+      "sourceLessonSHA256": "e8514b7603b9a846a4ae448bd56eb97ac9e8d96345aa39632e6cf373e4d7da1c",
+      "spokenDraftSHA256": "7e539a43de7f4d8d08e1f73a76c975d6fd3d40af78532f3f2900bf2821b537dd",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S04",
+      "stepNumber": 4,
+      "sectionID": "levels",
+      "sceneIndex": 3,
+      "kind": "levels",
+      "title": {
+        "ar": "٣. من فرد لتعداد لمجتمع",
+        "en": "3. Individual, population and community evidence"
+      },
+      "actions": [
+        {
+          "id": "individual",
+          "label": {
+            "ar": "الفرد: نمو أو بقاء",
+            "en": "Individual: growth or survival"
+          },
+          "meaning": "An individual endpoint is one evidence level."
+        },
+        {
+          "id": "population",
+          "label": {
+            "ar": "التعداد: وفرة أو تكاثر",
+            "en": "Population: abundance or reproduction"
+          },
+          "meaning": "Population changes need relevant evidence,not extrapolation from one organism."
+        },
+        {
+          "id": "community",
+          "label": {
+            "ar": "المجتمع والنظام البيئي",
+            "en": "Community and ecosystem"
+          },
+          "meaning": "Community composition/function require evidence at those levels; causation remains separate from coincidence."
+        }
+      ],
+      "sourceLessonSHA256": "e8514b7603b9a846a4ae448bd56eb97ac9e8d96345aa39632e6cf373e4d7da1c",
+      "spokenDraftSHA256": "7e539a43de7f4d8d08e1f73a76c975d6fd3d40af78532f3f2900bf2821b537dd",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S04",
+      "stepNumber": 4,
+      "sectionID": "history",
+      "sceneIndex": 4,
+      "kind": "evidencegrid",
+      "title": {
+        "ar": "٤. الصور والتاريخ لهم وظيفة محددة",
+        "en": "4. Use images and history for their actual purpose"
+      },
+      "actions": [
+        {
+          "id": "picture",
+          "label": {
+            "ar": "الصورة تفتح سؤالًا",
+            "en": "An image motivates a question"
+          },
+          "meaning": "Disease or organism pictures are neither exposure measurement nor diagnosis."
+        },
+        {
+          "id": "context",
+          "label": {
+            "ar": "السياق التاريخي مش تجربة",
+            "en": "History is not experimental evidence"
+          },
+          "meaning": "Arsenic andRachelCarson examples retain their limited contextual roles."
+        },
+        {
+          "id": "test",
+          "label": {
+            "ar": "استنتاج محدود واختبار لاحق",
+            "en": "A bounded conclusion and next test"
+          },
+          "meaning": "State the actual detection then specify compatible evidence needed for the proposed effect."
+        }
+      ],
+      "sourceLessonSHA256": "e8514b7603b9a846a4ae448bd56eb97ac9e8d96345aa39632e6cf373e4d7da1c",
+      "spokenDraftSHA256": "7e539a43de7f4d8d08e1f73a76c975d6fd3d40af78532f3f2900bf2821b537dd",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S04",
+      "stepNumber": 4,
+      "sectionID": "worked-example",
+      "sceneIndex": 5,
+      "kind": "causegraph",
+      "title": {
+        "ar": "مثال محلول: حقل ومجرى ويرقات",
+        "en": "Worked example: a field, stream and larvae"
+      },
+      "actions": [
+        {
+          "id": "known",
+          "label": {
+            "ar": "سجلّ وعيّنة وبلاغ",
+            "en": "Record, sample and reported observation"
+          },
+          "meaning": "Afield-userecord,rain,waterRsampleandfewer-larvae report are different evidence types."
+        },
+        {
+          "id": "unknown",
+          "label": {
+            "ar": "المسار والسبب لسه فرضيات",
+            "en": "Transport and cause remain hypotheses"
+          },
+          "meaning": "Field-to-streamtransport,larvalexposureandcause of declineareunestablished."
+        },
+        {
+          "id": "alternatives",
+          "label": {
+            "ar": "نختبر التفسير والبدائل",
+            "en": "Test the explanation and alternatives"
+          },
+          "meaning": "Selectmatchedtimes/sites,chemicalidentity,oxygen,temperature,habitatandrelevantendpoint."
+        }
+      ],
+      "sourceLessonSHA256": "e8514b7603b9a846a4ae448bd56eb97ac9e8d96345aa39632e6cf373e4d7da1c",
+      "spokenDraftSHA256": "7e539a43de7f4d8d08e1f73a76c975d6fd3d40af78532f3f2900bf2821b537dd",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S05",
+      "stepNumber": 5,
+      "sectionID": "report",
+      "sceneIndex": 1,
+      "kind": "dossier",
+      "title": {
+        "ar": "١. النتيجة محتاجة طريقة وسياق",
+        "en": "1. A result needs a method and context"
+      },
+      "actions": [
+        {
+          "id": "scope",
+          "label": {
+            "ar": "إضافة تعليمية موثّقة",
+            "en": "An explicitly referenced addition"
+          },
+          "meaning": "The outline names analytical topics without supplying a complete statistical treatment."
+        },
+        {
+          "id": "metadata",
+          "label": {
+            "ar": "مادة ووسط ومكان وزمن وطريقة",
+            "en": "Analyte, medium, place, time and method"
+          },
+          "meaning": "Keep units,methodlimits andqualitycontrols with every report."
+        },
+        {
+          "id": "basis",
+          "label": {
+            "ar": "أساس العيّنة قبل المقارنة",
+            "en": "Sample basis before comparison"
+          },
+          "meaning": "Total-water/free-dissolved and dry-sediment/wet-fish bases are not interchangeable."
+        }
+      ],
+      "sourceLessonSHA256": "4f98a2bceca3492d8420588c3048c2b6f281c15ce15e1415cd41620d3a5a5164",
+      "spokenDraftSHA256": "7dd3350540b2e819aaaa5c85a2b47cd0a3374b33fa480c5084bd955d67cb9705",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S05",
+      "stepNumber": 5,
+      "sectionID": "limits",
+      "sceneIndex": 2,
+      "kind": "thresholds",
+      "title": {
+        "ar": "٢. الكشف غير التقدير الكمي",
+        "en": "2. Detection is different from quantification"
+      },
+      "actions": [
+        {
+          "id": "lod",
+          "label": {
+            "ar": "الكشف: تمييز إشارة عن blank",
+            "en": "Detection: distinguish from a blank"
+          },
+          "meaning": "LOD ismethod/analyte/matrix/condition-specific detection under a stated definition."
+        },
+        {
+          "id": "loq",
+          "label": {
+            "ar": "التقدير الكمي له متطلباته",
+            "en": "Quantification has requirements"
+          },
+          "meaning": "LOQ here denotes lower quantification limit; no universalLOD-toLOQmultiplier."
+        },
+        {
+          "id": "between",
+          "label": {
+            "ar": "إشارة مكتشفة مع قيد كمي",
+            "en": "Detected signal with a quantitative limit"
+          },
+          "meaning": "BetweenLOD/LOQ mayindicatedetection withoutmeetingquantificationrequirements; retain reportingconvention."
+        }
+      ],
+      "sourceLessonSHA256": "4f98a2bceca3492d8420588c3048c2b6f281c15ce15e1415cd41620d3a5a5164",
+      "spokenDraftSHA256": "7dd3350540b2e819aaaa5c85a2b47cd0a3374b33fa480c5084bd955d67cb9705",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S05",
+      "stepNumber": 5,
+      "sectionID": "nondetect",
+      "sceneIndex": 3,
+      "kind": "censored",
+      "title": {
+        "ar": "٣. أقل من الحد مش صفر",
+        "en": "3. Below a limit does not mean zero"
+      },
+      "actions": [
+        {
+          "id": "qualifier",
+          "label": {
+            "ar": "أقلّ من الحدّ لا تعني صفر",
+            "en": "Below limit does not mean zero"
+          },
+          "meaning": "Preserve the qualifier and establish whether it is detection,quantification or reporting limit.",
+          "equation": "< 0.010 mg/L ≠ measured zero"
+        },
+        {
+          "id": "preserve",
+          "label": {
+            "ar": "ما نمسحش النتيجة أو نغيّرها",
+            "en": "Do not remove or rewrite the result"
+          },
+          "meaning": "Neither0nor0.005is asserted as the true censored concentration."
+        },
+        {
+          "id": "sensitivity",
+          "label": {
+            "ar": "افتراضات معلنة للحساسية",
+            "en": "Explicit sensitivity assumptions"
+          },
+          "meaning": "Lower/upper teaching scenarios show unknown influence; no universal imputation method."
+        }
+      ],
+      "sourceLessonSHA256": "4f98a2bceca3492d8420588c3048c2b6f281c15ce15e1415cd41620d3a5a5164",
+      "spokenDraftSHA256": "7dd3350540b2e819aaaa5c85a2b47cd0a3374b33fa480c5084bd955d67cb9705",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S05",
+      "stepNumber": 5,
+      "sectionID": "estimated",
+      "sceneIndex": 4,
+      "kind": "modelobserved",
+      "title": {
+        "ar": "٤. المقاس غير المقدّر بنموذج",
+        "en": "4. Measured and modelled concentrations are different evidence"
+      },
+      "actions": [
+        {
+          "id": "model",
+          "label": {
+            "ar": "تقدير من نموذج ومدخلات",
+            "en": "Estimate from model and inputs"
+          },
+          "meaning": "EEC is a scenario/modelresult,not a collected sample."
+        },
+        {
+          "id": "observed",
+          "label": {
+            "ar": "الرصد له مكان وزمن وأساس",
+            "en": "Monitoring has place, time and basis"
+          },
+          "meaning": "Keepmodelversion,averagingperiod,location,fraction,weatheranduse conditions."
+        },
+        {
+          "id": "compare",
+          "label": {
+            "ar": "نراجع قابلية المقارنة",
+            "en": "Check comparability"
+          },
+          "meaning": "Disagreement alone proves neither laboratory error nor model accuracy."
+        }
+      ],
+      "sourceLessonSHA256": "4f98a2bceca3492d8420588c3048c2b6f281c15ce15e1415cd41620d3a5a5164",
+      "spokenDraftSHA256": "7dd3350540b2e819aaaa5c85a2b47cd0a3374b33fa480c5084bd955d67cb9705",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S05",
+      "stepNumber": 5,
+      "sectionID": "worked-example",
+      "sceneIndex": 5,
+      "kind": "interval",
+      "title": {
+        "ar": "مثال محلول: متوسط ببيانات محجوبة",
+        "en": "Worked example: a mean with censored observations"
+      },
+      "actions": [
+        {
+          "id": "reports",
+          "label": {
+            "ar": "نتيجتان مقاسوَتان ونتيجتان محجوبتان",
+            "en": "Two measured and two censored results"
+          },
+          "meaning": "Invented0.030,0.020,<0.010,<0.010mg/L; keep the original reports."
+        },
+        {
+          "id": "lower",
+          "label": {
+            "ar": "افتراض أدنى تعليمي",
+            "en": "A lower teaching scenario"
+          },
+          "meaning": "Use zeros only in this calculation,not as rewritten observations.",
+          "equation": "(0.030 + 0.020 + 0 + 0) / 4 = 0.0125 mg/L"
+        },
+        {
+          "id": "upper",
+          "label": {
+            "ar": "الطرف الأعلى غير مشمول",
+            "en": "The upper endpoint is excluded"
+          },
+          "meaning": "Usinglimitsgives0.0175,butless-than excludes that endpoint.",
+          "equation": "0.0125 ≤ scenario mean < 0.0175 mg/L"
+        }
+      ],
+      "sourceLessonSHA256": "4f98a2bceca3492d8420588c3048c2b6f281c15ce15e1415cd41620d3a5a5164",
+      "spokenDraftSHA256": "7dd3350540b2e819aaaa5c85a2b47cd0a3374b33fa480c5084bd955d67cb9705",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S06",
+      "stepNumber": 6,
+      "sectionID": "balance",
+      "sceneIndex": 1,
+      "kind": "balance",
+      "title": {
+        "ar": "١. المادة اللي دخلت ناقص اللي خرجت",
+        "en": "1. Uptake minus loss"
+      },
+      "actions": [
+        {
+          "id": "mass",
+          "label": {
+            "ar": "ميزانية المادّة بمرور الزمن",
+            "en": "Chemical mass balance over time"
+          },
+          "meaning": "Uptake,transformationandexcretion depend on chemical andorganismconditions."
+        },
+        {
+          "id": "denominator",
+          "label": {
+            "ar": "الكتلة غير التركيز",
+            "en": "Amount differs from concentration"
+          },
+          "meaning": "Body growth can change the denominator without reducing chemical amount."
+        },
+        {
+          "id": "conditions",
+          "label": {
+            "ar": "مش قاعدة لكل مركّب",
+            "en": "No universal rule for every substance"
+          },
+          "meaning": "Do not teach fat-only accumulation or identical metabolism/elimination in all organisms."
+        }
+      ],
+      "sourceLessonSHA256": "71fc7b36375589492e53da2e4d328ff08169e42f722c5fbc4b1925ba17a651b8",
+      "spokenDraftSHA256": "846b23fd8b17423de19e0bd283dd982202e0963351cae321a150ce0744adf40e",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S06",
+      "stepNumber": 6,
+      "sectionID": "three-terms",
+      "sceneIndex": 2,
+      "kind": "exposurepaths",
+      "title": {
+        "ar": "٢. نسمّي العملية على أساس السؤال",
+        "en": "2. Name the process by the question"
+      },
+      "actions": [
+        {
+          "id": "accumulation",
+          "label": {
+            "ar": "تراكم حيوي من مسارات متعددة",
+            "en": "Bioaccumulation across routes"
+          },
+          "meaning": "Broaderuptake-and-retentionquestion across exposure routes."
+        },
+        {
+          "id": "concentration",
+          "label": {
+            "ar": "تركيز حيوي من الوسط",
+            "en": "Bioconcentration from surrounding medium"
+          },
+          "meaning": "Isolateaqueousuptake fromdietaryuptake in an appropriate design."
+        },
+        {
+          "id": "magnification",
+          "label": {
+            "ar": "تضخّم بين الغذاء والكائن",
+            "en": "Magnification between diet and consumer"
+          },
+          "meaning": "Compatiblefood-to-consumer comparisonsdifferfromaqueousBCFtests."
+        }
+      ],
+      "sourceLessonSHA256": "71fc7b36375589492e53da2e4d328ff08169e42f722c5fbc4b1925ba17a651b8",
+      "spokenDraftSHA256": "846b23fd8b17423de19e0bd283dd982202e0963351cae321a150ce0744adf40e",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S06",
+      "stepNumber": 6,
+      "sectionID": "food-web",
+      "sceneIndex": 3,
+      "kind": "trophic",
+      "title": {
+        "ar": "٣. السهم الغذائي مش نسبة انتقال ثابتة",
+        "en": "3. A feeding arrow is not a fixed transfer percentage"
+      },
+      "actions": [
+        {
+          "id": "feeding",
+          "label": {
+            "ar": "السهم علاقة تغذية",
+            "en": "The arrow represents feeding"
+          },
+          "meaning": "Aprey-predatorarrowdoesnot supply absorption/elimination fractions."
+        },
+        {
+          "id": "tenpercent",
+          "label": {
+            "ar": "١٠٪ طاقة مش معامل مبيد",
+            "en": "Energy transfer is not pesticide transfer"
+          },
+          "meaning": "No fixed10%pesticidetransfer coefficient is supplied."
+        },
+        {
+          "id": "basis",
+          "label": {
+            "ar": "المادة والنسيج وأساس الوزن",
+            "en": "Substance, tissue and mass basis"
+          },
+          "meaning": "Mercuryexampleisnotapesticidecase; no values fromunscaledbars or wet/lipidbasis mix."
+        }
+      ],
+      "sourceLessonSHA256": "71fc7b36375589492e53da2e4d328ff08169e42f722c5fbc4b1925ba17a651b8",
+      "spokenDraftSHA256": "846b23fd8b17423de19e0bd283dd982202e0963351cae321a150ce0744adf40e",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S06",
+      "stepNumber": 6,
+      "sectionID": "dilution",
+      "sceneIndex": 4,
+      "kind": "dilution",
+      "title": {
+        "ar": "٤. نفصل نمو الجسم عن انتقال الشبكة",
+        "en": "4. Separate growth dilution from trophic patterns"
+      },
+      "actions": [
+        {
+          "id": "growth",
+          "label": {
+            "ar": "نفس الكائن بمرور الزمن",
+            "en": "The same organism over time"
+          },
+          "meaning": "Growthdilution concerns a changing body-mass denominator."
+        },
+        {
+          "id": "trophic",
+          "label": {
+            "ar": "مقارنة مستويات غذائية",
+            "en": "A comparison across trophic levels"
+          },
+          "meaning": "Trophic dilution is a different observational comparison."
+        },
+        {
+          "id": "scope",
+          "label": {
+            "ar": "شرح نمط مش نصيحة أكل",
+            "en": "A pattern explanation, not dietary advice"
+          },
+          "meaning": "Retain measurementconditions; oldunlimited-consumptionlabelsarenotadvice."
+        }
+      ],
+      "sourceLessonSHA256": "71fc7b36375589492e53da2e4d328ff08169e42f722c5fbc4b1925ba17a651b8",
+      "spokenDraftSHA256": "846b23fd8b17423de19e0bd283dd982202e0963351cae321a150ce0744adf40e",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S06",
+      "stepNumber": 6,
+      "sectionID": "worked-example",
+      "sceneIndex": 5,
+      "kind": "dilution",
+      "title": {
+        "ar": "مثال محلول: تركيز قلّ من غير فقد مادة",
+        "en": "Worked example: lower concentration without chemical loss"
+      },
+      "actions": [
+        {
+          "id": "amount",
+          "label": {
+            "ar": "كتلة المادّة ثابتة",
+            "en": "Chemical amount stays constant"
+          },
+          "meaning": "Hypotheticalchemicalamount0.020mg throughout."
+        },
+        {
+          "id": "before",
+          "label": {
+            "ar": "قبل النموّ",
+            "en": "Before growth"
+          },
+          "meaning": "Bodymass0.010kg yields2.0mg/kg.",
+          "equation": "0.020 mg / 0.010 kg = 2.0 mg/kg"
+        },
+        {
+          "id": "after",
+          "label": {
+            "ar": "بعد النموّ",
+            "en": "After growth"
+          },
+          "meaning": "Bodymassdoubles to0.020kg,chemicalamountunchanged.",
+          "equation": "0.020 mg / 0.020 kg = 1.0 mg/kg"
+        },
+        {
+          "id": "meaning",
+          "label": {
+            "ar": "المقام اتغيّر، مش كتلة المادّة",
+            "en": "The denominator changed, not chemical amount"
+          },
+          "meaning": "Halvedconcentrationdoesnotdemonstrateelimination orpredator/preymagnification."
+        }
+      ],
+      "sourceLessonSHA256": "71fc7b36375589492e53da2e4d328ff08169e42f722c5fbc4b1925ba17a651b8",
+      "spokenDraftSHA256": "846b23fd8b17423de19e0bd283dd982202e0963351cae321a150ce0744adf40e",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S07",
+      "stepNumber": 7,
+      "sectionID": "ratios",
+      "sceneIndex": 1,
+      "kind": "ratios",
+      "title": {
+        "ar": "١. اسم النسبة مرتبط بالطريق والمقام",
+        "en": "1. Name the ratio by route and denominator"
+      },
+      "actions": [
+        {
+          "id": "units",
+          "label": {
+            "ar": "نبدأ بالبسط والمقام",
+            "en": "Start with numerator and denominator"
+          },
+          "meaning": "Organismmg/kg divided by watermg/L givesL/kg.",
+          "equation": "(mg/kg) / (mg/L) = L/kg"
+        },
+        {
+          "id": "routes",
+          "label": {
+            "ar": "طريق التعرّض يغيّر السؤال",
+            "en": "Exposure route changes the question"
+          },
+          "meaning": "BCFaqueous,BAFbroader,andBMFdiet-to-consumer comparisons require appropriatedesigns."
+        },
+        {
+          "id": "meaning",
+          "label": {
+            "ar": "عامل تركيز مش نسبة موت",
+            "en": "A concentration factor is not mortality"
+          },
+          "meaning": "Do not call these factors percentages or safe doses."
+        }
+      ],
+      "sourceLessonSHA256": "30497524d00035696db53c7451d0a1cd2b64e966e6b2e8d61693e3947b27563f",
+      "spokenDraftSHA256": "7c5e2382e6868c2c7177060f1de462da617bc3b6e2b1242e47fe23d99fc0879a",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S07",
+      "stepNumber": 7,
+      "sectionID": "normalise",
+      "sceneIndex": 2,
+      "kind": "normalisation",
+      "title": {
+        "ar": "٢. التطبيع مش تجميل للأرقام",
+        "en": "2. Normalisation changes the comparison"
+      },
+      "actions": [
+        {
+          "id": "tissue",
+          "label": {
+            "ar": "تركيز النسيج بالنسبة للدهن",
+            "en": "Lipid-normalised tissue concentration"
+          },
+          "meaning": "For the citedBSAFhydrophobicorganiccontext,divide tissueconcentration by lipidfraction."
+        },
+        {
+          "id": "sediment",
+          "label": {
+            "ar": "تركيز الرواسب بالنسبة للكربون العضوي",
+            "en": "Organic-carbon-normalised sediment"
+          },
+          "meaning": "Divide compatible sedimentconcentration by organiccarbonfraction."
+        },
+        {
+          "id": "fractions",
+          "label": {
+            "ar": "الكسر العشري، مش رقم النسبة",
+            "en": "Use the fraction, not the percentage numeral"
+          },
+          "meaning": "5%is0.05; basesmustmatch; applicability isnotautomatic for metals.",
+          "equation": "5% = 0.05"
+        }
+      ],
+      "sourceLessonSHA256": "30497524d00035696db53c7451d0a1cd2b64e966e6b2e8d61693e3947b27563f",
+      "spokenDraftSHA256": "7c5e2382e6868c2c7177060f1de462da617bc3b6e2b1242e47fe23d99fc0879a",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S07",
+      "stepNumber": 7,
+      "sectionID": "kinetic",
+      "sceneIndex": 3,
+      "kind": "flux",
+      "title": {
+        "ar": "٣. الحالة المستقرة ميزان حركة",
+        "en": "3. Steady state balances continuing fluxes"
+      },
+      "actions": [
+        {
+          "id": "assumptions",
+          "label": {
+            "ar": "حجرة واحدة وشروط ثابتة",
+            "en": "One compartment and constant conditions"
+          },
+          "meaning": "Aqueous-onlyuptake,constantwaterandcoefficients,no separategrowth/metabolismterm."
+        },
+        {
+          "id": "inout",
+          "label": {
+            "ar": "دخول ناقص فقد",
+            "en": "Uptake minus loss"
+          },
+          "meaning": "Netbodyconcentrationchange=k1Cw−k2Cf;unitsremainexplicit.",
+          "equation": "dCf/dt = k1 Cw − k2 Cf"
+        },
+        {
+          "id": "steady",
+          "label": {
+            "ar": "صافي صفر مع استمرار المسارين",
+            "en": "Zero net change with ongoing fluxes"
+          },
+          "meaning": "Kineticsteady stateisnotstoppedmotionorthermodynamicequilibrium."
+        }
+      ],
+      "sourceLessonSHA256": "30497524d00035696db53c7451d0a1cd2b64e966e6b2e8d61693e3947b27563f",
+      "spokenDraftSHA256": "7c5e2382e6868c2c7177060f1de462da617bc3b6e2b1242e47fe23d99fc0879a",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S07",
+      "stepNumber": 7,
+      "sectionID": "prediction",
+      "sceneIndex": 4,
+      "kind": "regression",
+      "title": {
+        "ar": "٤. علاقة تجريبية مش آلة تنبؤ من غير بيانات",
+        "en": "4. A regression needs coefficients and a domain"
+      },
+      "actions": [
+        {
+          "id": "form",
+          "label": {
+            "ar": "علاقة تجريبية لها معاملات",
+            "en": "An empirical relation needs coefficients"
+          },
+          "meaning": "SourceformlogBCF=a logKow+b isnotanumericalpredictionbyitself.",
+          "equation": "log BCF = a log Kow + b"
+        },
+        {
+          "id": "missing",
+          "label": {
+            "ar": "المعاملات والمجال غير معطاة",
+            "en": "Coefficients and domain are not supplied"
+          },
+          "meaning": "Do not inventa,b,domain orlogarithmbase."
+        },
+        {
+          "id": "validation",
+          "label": {
+            "ar": "بيانات بناء وتحقّق وعدم يقين",
+            "en": "Training, validation and uncertainty"
+          },
+          "meaning": "Unsupportedextrapolation remainsunresolved; modelisnotmeasurement."
+        }
+      ],
+      "sourceLessonSHA256": "30497524d00035696db53c7451d0a1cd2b64e966e6b2e8d61693e3947b27563f",
+      "spokenDraftSHA256": "7c5e2382e6868c2c7177060f1de462da617bc3b6e2b1242e47fe23d99fc0879a",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S07",
+      "stepNumber": 7,
+      "sectionID": "worked-example",
+      "sceneIndex": 5,
+      "kind": "flux",
+      "title": {
+        "ar": "مثال محلول: فحص النسبة بطريقتين",
+        "en": "Worked example: check a ratio two ways"
+      },
+      "actions": [
+        {
+          "id": "factor",
+          "label": {
+            "ar": "عامل تركيز حركي افتراضي",
+            "en": "An invented kinetic factor"
+          },
+          "meaning": "k1=20L/kg/day,k2=0.10/day understatedone-compartmentassumptions.",
+          "equation": "20 / 0.10 = 200 L/kg"
+        },
+        {
+          "id": "body",
+          "label": {
+            "ar": "تركيز الجسم عند الحالة المستقرّة",
+            "en": "Steady-state body concentration"
+          },
+          "meaning": "Water0.002mg/L times200L/kg gives0.40mg/kg.",
+          "equation": "200 L/kg × 0.002 mg/L = 0.40 mg/kg"
+        },
+        {
+          "id": "fluxes",
+          "label": {
+            "ar": "معدّلا الدخول والفقد متساويان",
+            "en": "Equal uptake and loss rates"
+          },
+          "meaning": "Eachrateis0.040mg/kg/day;netzero doesnotstopflow.",
+          "equation": "20 × 0.002 = 0.10 × 0.40 = 0.040 mg/kg/day"
+        }
+      ],
+      "sourceLessonSHA256": "30497524d00035696db53c7451d0a1cd2b64e966e6b2e8d61693e3947b27563f",
+      "spokenDraftSHA256": "7c5e2382e6868c2c7177060f1de462da617bc3b6e2b1242e47fe23d99fc0879a",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S08",
+      "stepNumber": 8,
+      "sectionID": "organisms",
+      "sceneIndex": 1,
+      "kind": "organisms",
+      "title": {
+        "ar": "١. نختار الكائن عشان السؤال",
+        "en": "1. Choose the organism to answer a question"
+      },
+      "actions": [
+        {
+          "id": "aquatic",
+          "label": {
+            "ar": "كائنات مائية ونقطة قياس",
+            "en": "Aquatic organisms and an endpoint"
+          },
+          "meaning": "Sourceaquaticgroups:algae,plants,snails,bivalves,oligochaetes,crustaceans,insects."
+        },
+        {
+          "id": "terrestrial",
+          "label": {
+            "ar": "كائنات برية وظروف اختبار",
+            "en": "Terrestrial organisms and conditions"
+          },
+          "meaning": "Sourcegroups:plants,snails,nematodes,oligochaetes,mites,springtails,insects."
+        },
+        {
+          "id": "design",
+          "label": {
+            "ar": "النوع والطور والسؤال",
+            "en": "Species, life stage and question"
+          },
+          "meaning": "Oneendpointdoesnotreplaceanother; diagramisnotanexperimentalprotocol."
+        }
+      ],
+      "sourceLessonSHA256": "b61348492f64b929a01727ee308cdfde1d3e4c54d4e4b1ff44975941caec15a2",
+      "spokenDraftSHA256": "bdba845d5533a2d4122b3086fd9472ca5b97a22f22f123b6446ca12151340527",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S08",
+      "stepNumber": 8,
+      "sectionID": "endpoint",
+      "sceneIndex": 2,
+      "kind": "endpoints",
+      "title": {
+        "ar": "٢. كل نتيجة بتوصف استجابة وشروط",
+        "en": "2. Every endpoint has a response and conditions"
+      },
+      "actions": [
+        {
+          "id": "lc50",
+          "label": {
+            "ar": "تركيز ونقطة قياس ومدّة",
+            "en": "Concentration, endpoint and duration"
+          },
+          "meaning": "LC50linksconcentrationand50%mortalityunderaspecifiedtest/time;notbody-massdose."
+        },
+        {
+          "id": "noec-loec",
+          "label": {
+            "ar": "تركيزات مختبَرة ومقارنة بالشاهد",
+            "en": "Tested levels and comparison with controls"
+          },
+          "meaning": "NOECandLOECdependontestedconcentrationsandstatisticalmethod."
+        },
+        {
+          "id": "uncertainty",
+          "label": {
+            "ar": "عدم الدلالة مش غياب كل أثر",
+            "en": "No significance does not prove no effect"
+          },
+          "meaning": "Concentrationspacing,samplesizeandanalysislimitinterpretation."
+        }
+      ],
+      "sourceLessonSHA256": "b61348492f64b929a01727ee308cdfde1d3e4c54d4e4b1ff44975941caec15a2",
+      "spokenDraftSHA256": "bdba845d5533a2d4122b3086fd9472ca5b97a22f22f123b6446ca12151340527",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S08",
+      "stepNumber": 8,
+      "sectionID": "matc",
+      "sceneIndex": 3,
+      "kind": "geometric",
+      "title": {
+        "ar": "٣. المتوسط الهندسي وحدوده",
+        "en": "3. The geometric mean and its limits"
+      },
+      "actions": [
+        {
+          "id": "product",
+          "label": {
+            "ar": "حاصل ضرب القيمتين",
+            "en": "Multiply the two values"
+          },
+          "meaning": "TeachingMATCisthesquarerootofNOEC×LOEC,withcompatibleunits.",
+          "equation": "MATC = √(NOEC × LOEC)"
+        },
+        {
+          "id": "geometric",
+          "label": {
+            "ar": "متوسط هندسي لدراسة محددة",
+            "en": "A study-specific geometric mean"
+          },
+          "meaning": "Thisisnotanarithmeticmean."
+        },
+        {
+          "id": "limits",
+          "label": {
+            "ar": "مش ضمان حماية ٩٥٪",
+            "en": "No universal95%protection guarantee"
+          },
+          "meaning": "Do not inventmissing/censoredinputs orgeneralprotectionprobabilities."
+        }
+      ],
+      "sourceLessonSHA256": "b61348492f64b929a01727ee308cdfde1d3e4c54d4e4b1ff44975941caec15a2",
+      "spokenDraftSHA256": "bdba845d5533a2d4122b3086fd9472ca5b97a22f22f123b6446ca12151340527",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S08",
+      "stepNumber": 8,
+      "sectionID": "acr",
+      "sceneIndex": 4,
+      "kind": "ratios",
+      "title": {
+        "ar": "٤. النسبة الحادة للمزمنة مش معيار نهائي",
+        "en": "4. An acute-to-chronic ratio is not a final criterion"
+      },
+      "actions": [
+        {
+          "id": "ratio",
+          "label": {
+            "ar": "نسبة حادّة إلى مزمنة",
+            "en": "An acute-to-chronic ratio"
+          },
+          "meaning": "SourceexampledividesLC50byMATCwithcompatibleunits.",
+          "equation": "ACR = LC50 / MATC"
+        },
+        {
+          "id": "compatible",
+          "label": {
+            "ar": "توافق الدراسات قبل القسمة",
+            "en": "Study compatibility before division"
+          },
+          "meaning": "Chemical,species,endpoints,durationsandmethodneedchecking."
+        },
+        {
+          "id": "criterion",
+          "label": {
+            "ar": "النسبة مش معيار مياه ساري",
+            "en": "A ratio is not an operative water criterion"
+          },
+          "meaning": "CMC/CCCderivationneedsitsactualregulatorymethodanddata."
+        }
+      ],
+      "sourceLessonSHA256": "b61348492f64b929a01727ee308cdfde1d3e4c54d4e4b1ff44975941caec15a2",
+      "spokenDraftSHA256": "bdba845d5533a2d4122b3086fd9472ca5b97a22f22f123b6446ca12151340527",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S08",
+      "stepNumber": 8,
+      "sectionID": "worked-example",
+      "sceneIndex": 5,
+      "kind": "geometric",
+      "title": {
+        "ar": "مثال محلول: من نتيجتين إلى نسبة",
+        "en": "Worked example: endpoints to a ratio"
+      },
+      "actions": [
+        {
+          "id": "given",
+          "label": {
+            "ar": "أرقام افتراضية ودراسات متوافقة",
+            "en": "Invented values and compatible studies"
+          },
+          "meaning": "NOEC0.04,LOEC0.16mg/L;LC500.80mg/L under declared assumptions."
+        },
+        {
+          "id": "mean",
+          "label": {
+            "ar": "نضرب وبعدين الجذر",
+            "en": "Product, then square root"
+          },
+          "meaning": "0.04×0.16=0.0064;geometricmean0.08mg/L.",
+          "equation": "√(0.04 × 0.16) = 0.08 mg/L"
+        },
+        {
+          "id": "acr",
+          "label": {
+            "ar": "النسبة تساوي عشرة",
+            "en": "The ratio equals ten"
+          },
+          "meaning": "0.80/0.08=10;not10%mortality,watercriterion or95%guarantee.",
+          "equation": "0.80 mg/L / 0.08 mg/L = 10"
+        }
+      ],
+      "sourceLessonSHA256": "b61348492f64b929a01727ee308cdfde1d3e4c54d4e4b1ff44975941caec15a2",
+      "spokenDraftSHA256": "bdba845d5533a2d4122b3086fd9472ca5b97a22f22f123b6446ca12151340527",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S09",
+      "stepNumber": 9,
+      "sectionID": "identity",
+      "sceneIndex": 1,
+      "kind": "dossier",
+      "title": {
+        "ar": "١. إيه المادة اللي خواصها اتقاست؟",
+        "en": "1. Identify the material whose property was measured"
+      },
+      "actions": [
+        {
+          "id": "form",
+          "label": {
+            "ar": "مادة فعالة وصورة ومستحضر",
+            "en": "Active substance, form and formulation"
+          },
+          "meaning": "Pureactive,technicalmaterialandcommercialformulationarenotinterchangeable."
+        },
+        {
+          "id": "conditions",
+          "label": {
+            "ar": "نقاوة وأيزومرات وظروف",
+            "en": "Purity, isomers and conditions"
+          },
+          "meaning": "Do not transfera propertytoevery similarlynamedproduct."
+        },
+        {
+          "id": "held",
+          "label": {
+            "ar": "الحدود العامة غير معتمدة هنا",
+            "en": "Broad numerical rules remain held"
+          },
+          "meaning": "Molecularweight/systemicactioncutoffsarenottaughtasvalidatedrules."
+        }
+      ],
+      "sourceLessonSHA256": "86593139eb42bdc10abdb15893ae637b6b2b98cb88f8828f84f60b1ccb2d695c",
+      "spokenDraftSHA256": "d0560453736a28a3d1dd338fe845c7f5e22fcc66cfe7953e7a4d46458c222661",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S09",
+      "stepNumber": 9,
+      "sectionID": "solubility",
+      "sceneIndex": 2,
+      "kind": "phases",
+      "title": {
+        "ar": "٢. الذوبان يتقاس تحت شروط",
+        "en": "2. Solubility needs conditions"
+      },
+      "actions": [
+        {
+          "id": "property",
+          "label": {
+            "ar": "ذوبان تحت ظروف محددة",
+            "en": "Solubility under stated conditions"
+          },
+          "meaning": "Solubilitypropertyhasunit,temperature,pHandmethod;sampleconcentrationisdifferent."
+        },
+        {
+          "id": "fractions",
+          "label": {
+            "ar": "جزء ذائب وجسيمات ووسط",
+            "en": "Dissolved fraction, particles and medium"
+          },
+          "meaning": "Watermovementdependsalsoonsoil/sedimentinteractionsandflow."
+        },
+        {
+          "id": "limits",
+          "label": {
+            "ar": "قليل الذوبان ممكن يتحرّك بطرق تانية",
+            "en": "Low solubility does not exclude other transport"
+          },
+          "meaning": "Particle-associatedorotherpathwaysarenotruledoutbysolubilityalone."
+        }
+      ],
+      "sourceLessonSHA256": "86593139eb42bdc10abdb15893ae637b6b2b98cb88f8828f84f60b1ccb2d695c",
+      "spokenDraftSHA256": "d0560453736a28a3d1dd338fe845c7f5e22fcc66cfe7953e7a4d46458c222661",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S09",
+      "stepNumber": 9,
+      "sectionID": "partition",
+      "sceneIndex": 3,
+      "kind": "partition",
+      "title": {
+        "ar": "٣. Kow يصف توزيعًا مش حكمًا شاملًا",
+        "en": "3. Kow describes partitioning, not every outcome"
+      },
+      "actions": [
+        {
+          "id": "ratio",
+          "label": {
+            "ar": "أوكتانول على مياه عند الاتزان",
+            "en": "Octanol-to-water at equilibrium"
+          },
+          "meaning": "Kowratioisdimensionlesswithcompatibleconcentrationunits."
+        },
+        {
+          "id": "log",
+          "label": {
+            "ar": "لوج عشري مش فرق جمع",
+            "en": "Base-ten log, not an additive ratio difference"
+          },
+          "meaning": "OneunitinlogKowmeansatenfoldKowdifference."
+        },
+        {
+          "id": "context",
+          "label": {
+            "ar": "خاصية توزيع مش سُمّية أو BCF مباشر",
+            "en": "Partition property, not toxicity or directBCF"
+          },
+          "meaning": "Ionisation,pHandcoefficientdefinitionmatter; no automatic systemicprediction."
+        }
+      ],
+      "sourceLessonSHA256": "86593139eb42bdc10abdb15893ae637b6b2b98cb88f8828f84f60b1ccb2d695c",
+      "spokenDraftSHA256": "d0560453736a28a3d1dd338fe845c7f5e22fcc66cfe7953e7a4d46458c222661",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S09",
+      "stepNumber": 9,
+      "sectionID": "vapour",
+      "sceneIndex": 4,
+      "kind": "pressure",
+      "title": {
+        "ar": "٤. ضغط البخار غير انجراف القطرة",
+        "en": "4. Vapour pressure and droplet drift differ"
+      },
+      "actions": [
+        {
+          "id": "unit",
+          "label": {
+            "ar": "مِلِّي باسكال وباسكال",
+            "en": "Millipascal and pascal"
+          },
+          "meaning": "Retainmeasurementtemperatureandunit.",
+          "equation": "1 mPa = 0.001 Pa; 1 Pa = 1 N/m²"
+        },
+        {
+          "id": "mechanisms",
+          "label": {
+            "ar": "الانجراف غير التطاير",
+            "en": "Drift differs from volatilisation"
+          },
+          "meaning": "Driftmayinvolvecarrieddroplets;volatilisationtransfersthechemicaltothegasphase."
+        },
+        {
+          "id": "conditions",
+          "label": {
+            "ar": "الجوّ والمستحضر والوسط",
+            "en": "Atmosphere, formulation and medium"
+          },
+          "meaning": "Diagramlayoutisnotauniqueone-to-oneprocessassignment."
+        }
+      ],
+      "sourceLessonSHA256": "86593139eb42bdc10abdb15893ae637b6b2b98cb88f8828f84f60b1ccb2d695c",
+      "spokenDraftSHA256": "d0560453736a28a3d1dd338fe845c7f5e22fcc66cfe7953e7a4d46458c222661",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S09",
+      "stepNumber": 9,
+      "sectionID": "worked-example",
+      "sceneIndex": 5,
+      "kind": "logarithms",
+      "title": {
+        "ar": "مثال محلول: اللوغاريتم والوحدة",
+        "en": "Worked example: logarithms and pressure units"
+      },
+      "actions": [
+        {
+          "id": "powers",
+          "label": {
+            "ar": "نرجع من اللوج للنسبة",
+            "en": "Recover ratios from logarithms"
+          },
+          "meaning": "HypotheticallogKow2and3undercompatibleconditions.",
+          "equation": "10² = 100; 10³ = 1000"
+        },
+        {
+          "id": "factor",
+          "label": {
+            "ar": "فرق بعامل عشرة",
+            "en": "A tenfold difference"
+          },
+          "meaning": "KowB/KowA=10,nottenfoldtoxicity.",
+          "equation": "1000 / 100 = 10"
+        },
+        {
+          "id": "pressure",
+          "label": {
+            "ar": "مثال منفصل لتحويل الضغط",
+            "en": "A separate pressure conversion"
+          },
+          "meaning": "5mPa=.005Pa; retaintemperature,no movementproof.",
+          "equation": "5 mPa = 0.005 Pa"
+        }
+      ],
+      "sourceLessonSHA256": "86593139eb42bdc10abdb15893ae637b6b2b98cb88f8828f84f60b1ccb2d695c",
+      "spokenDraftSHA256": "d0560453736a28a3d1dd338fe845c7f5e22fcc66cfe7953e7a4d46458c222661",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S10",
+      "stepNumber": 10,
+      "sectionID": "process",
+      "sceneIndex": 1,
+      "kind": "transformation",
+      "title": {
+        "ar": "١. اختفاء الأصل من مكان مش معناه زوال كل الخطر",
+        "en": "1. Loss from one location does not mean every concern has disappeared"
+      },
+      "actions": [
+        {
+          "id": "move",
+          "label": {
+            "ar": "انتقال أو توزيع",
+            "en": "Transport or partitioning"
+          },
+          "meaning": "Parentlossfromwaterwithsedimentpresenceisnotcomplete degradationproof."
+        },
+        {
+          "id": "transform",
+          "label": {
+            "ar": "تحوّل الأصل له نواتج",
+            "en": "Parent transformation has products"
+          },
+          "meaning": "Productsmayretainbiologicalactivityordifferinpersistence."
+        },
+        {
+          "id": "mineralise",
+          "label": {
+            "ar": "التمعدن الكامل معنى أضيق",
+            "en": "Complete mineralisation is narrower"
+          },
+          "meaning": "Do not claimallbreakdownimmediatelyyieldsonlyCO2andwater."
+        }
+      ],
+      "sourceLessonSHA256": "29c5f8c619f2d039d80ae98ca849726e97565976cc31f3b297cf928fdabfb080",
+      "spokenDraftSHA256": "26926e53bf1f59cc115e260498823dd6bc36691650d4290a5b8e6d0ee680a9e2",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S10",
+      "stepNumber": 10,
+      "sectionID": "mechanism",
+      "sceneIndex": 2,
+      "kind": "mechanisms",
+      "title": {
+        "ar": "٢. نسمي العملية ونقيسها تحت ظروفها",
+        "en": "2. Name the process and its conditions"
+      },
+      "actions": [
+        {
+          "id": "routes",
+          "label": {
+            "ar": "ضوء ومياه وتحول حيوي",
+            "en": "Light, water and biological transformation"
+          },
+          "meaning": "Photolysis,hydrolysis,biotransformationandredoxhavedistinctconditions."
+        },
+        {
+          "id": "conditions",
+          "label": {
+            "ar": "الحرارة والرطوبة والوسط",
+            "en": "Temperature, moisture and medium"
+          },
+          "meaning": "pH,oxygenandexperimentalconditionsaffectrates."
+        },
+        {
+          "id": "range",
+          "label": {
+            "ar": "مدى توضيحي مش عمر نصف عام",
+            "en": "An illustrative range, not a universal half-life"
+          },
+          "meaning": "Source3–10daysillustratesvariabilitynotavaluefor everypesticide."
+        }
+      ],
+      "sourceLessonSHA256": "29c5f8c619f2d039d80ae98ca849726e97565976cc31f3b297cf928fdabfb080",
+      "spokenDraftSHA256": "26926e53bf1f59cc115e260498823dd6bc36691650d4290a5b8e6d0ee680a9e2",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S10",
+      "stepNumber": 10,
+      "sectionID": "firstorder",
+      "sceneIndex": 3,
+      "kind": "decay",
+      "title": {
+        "ar": "٣. نموذج الرتبة الأولى تعليمي وبشروط",
+        "en": "3. A first-order teaching model has assumptions"
+      },
+      "actions": [
+        {
+          "id": "model",
+          "label": {
+            "ar": "معامل ثابت ومن غير إضافة",
+            "en": "Constant coefficient and no new input"
+          },
+          "meaning": "Assumeparentdeclineproportionaltoremainingamount.",
+          "equation": "C(t) = C₀ exp(−k t)"
+        },
+        {
+          "id": "half",
+          "label": {
+            "ar": "ننصّف الباقي كل عمر نصف",
+            "en": "Each half-life halves the remainder"
+          },
+          "meaning": "Half-life=ln2/k;timeunitsofktmustmatch.",
+          "equation": "t½ = ln(2) / k"
+        },
+        {
+          "id": "dt50",
+          "label": {
+            "ar": "مش كل منحنى له نفس عمر النصف",
+            "en": "Not every curve has one constant half-life"
+          },
+          "meaning": "DT50fornonexponentialcurveisnotnecessarilyconstantthroughout;notafittoobservations."
+        }
+      ],
+      "sourceLessonSHA256": "29c5f8c619f2d039d80ae98ca849726e97565976cc31f3b297cf928fdabfb080",
+      "spokenDraftSHA256": "26926e53bf1f59cc115e260498823dd6bc36691650d4290a5b8e6d0ee680a9e2",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S10",
+      "stepNumber": 10,
+      "sectionID": "limits",
+      "sceneIndex": 4,
+      "kind": "validity",
+      "title": {
+        "ar": "٤. PHI وQSAR ما يختصروش الدليل",
+        "en": "4. PHI and QSAR do not bypass the evidence"
+      },
+      "actions": [
+        {
+          "id": "phi",
+          "label": {
+            "ar": "فترة الحصاد من الاستخدام الساري",
+            "en": "Harvest interval from applicable use conditions"
+          },
+          "meaning": "AninventeddeclinecurvedoesnotpermitshorteningPHIorchangingdose."
+        },
+        {
+          "id": "qsar",
+          "label": {
+            "ar": "نموذج له مجال وتحقّق",
+            "en": "A model needs a domain and validation"
+          },
+          "meaning": "QSARneedsspecifiedendpoint,trainingdata,validationanduncertainty."
+        },
+        {
+          "id": "prediction",
+          "label": {
+            "ar": "التنبؤ غير القياس أو التصريح",
+            "en": "Prediction differs from measurement or authorisation"
+          },
+          "meaning": "Missingcoefficients/domainremainmissing; no inventednumber."
+        }
+      ],
+      "sourceLessonSHA256": "29c5f8c619f2d039d80ae98ca849726e97565976cc31f3b297cf928fdabfb080",
+      "spokenDraftSHA256": "26926e53bf1f59cc115e260498823dd6bc36691650d4290a5b8e6d0ee680a9e2",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S10",
+      "stepNumber": 10,
+      "sectionID": "worked-example",
+      "sceneIndex": 5,
+      "kind": "decay",
+      "title": {
+        "ar": "مثال محلول: نص الموجود كل أربع أيام",
+        "en": "Worked example: halve the remainder every four days"
+      },
+      "actions": [
+        {
+          "id": "given",
+          "label": {
+            "ar": "نموذج افتراضي وعمر نصف ٤ أيام",
+            "en": "Invented model, four-day half-life"
+          },
+          "meaning": "Start0.80mg/kg,constantfirstordercoefficient,nonewinput."
+        },
+        {
+          "id": "halves",
+          "label": {
+            "ar": "نصّ الباقي، ثم نصّه",
+            "en": "Half the remainder, then half again"
+          },
+          "meaning": "At4days0.40mg/kg;at8days0.20mg/kg.",
+          "equation": "0.80 → 0.40 → 0.20 mg/kg; 0 → 4 → 8 days"
+        },
+        {
+          "id": "check",
+          "label": {
+            "ar": "نراجع النموذج وحدوده",
+            "en": "Check the model and its limits"
+          },
+          "meaning": "Exponentialcheckworks;products,foodacceptabilityandPHIpermissionarenotestablished.",
+          "equation": "k = ln(2)/4; C(8) = 0.20 mg/kg"
+        }
+      ],
+      "sourceLessonSHA256": "29c5f8c619f2d039d80ae98ca849726e97565976cc31f3b297cf928fdabfb080",
+      "spokenDraftSHA256": "26926e53bf1f59cc115e260498823dd6bc36691650d4290a5b8e6d0ee680a9e2",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S11",
+      "stepNumber": 11,
+      "sectionID": "sequence",
+      "sceneIndex": 1,
+      "kind": "spraysequence",
+      "title": {
+        "ar": "١. اقرأ السلسلة الرئيسية بالترتيب",
+        "en": "1. Read the main sequence in order"
+      },
+      "actions": [
+        {
+          "id": "form",
+          "label": {
+            "ar": "تكوين القطرات ونقلها للهدف",
+            "en": "Atomization and transport to target"
+          },
+          "meaning": "Firsttwoofthesixmainstages."
+        },
+        {
+          "id": "contact",
+          "label": {
+            "ar": "اصطدام وتكوّن ترسيب",
+            "en": "Impaction and deposit formation"
+          },
+          "meaning": "Arrival,impactandretentionarenotthesameevent."
+        },
+        {
+          "id": "later",
+          "label": {
+            "ar": "حركة على النبات أو داخله ثم أثر",
+            "en": "Movement in/on plant, then effect"
+          },
+          "meaning": "Uptakeandbiologicaleffectneedtheirownevidence;noefficiencyordosefromarrows."
+        }
+      ],
+      "sourceLessonSHA256": "8187d3318035f90b659736daba578b9aa3508a9413348105d401415822aff295",
+      "spokenDraftSHA256": "adf0e5ebbdbd8842cf4b8093c1ec1ccc6f0f4777941a51e147011a813e59754d",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S11",
+      "stepNumber": 11,
+      "sectionID": "before",
+      "sceneIndex": 2,
+      "kind": "droplet",
+      "title": {
+        "ar": "٢. أثناء النقل والاصطدام فيه فروع",
+        "en": "2. Transport and impact have branches"
+      },
+      "actions": [
+        {
+          "id": "travel",
+          "label": {
+            "ar": "انجراف وتبخّر قبل الوصول",
+            "en": "Drift and evaporation before arrival"
+          },
+          "meaning": "Retainlossbranchesbeforearrival,noinventedfractions."
+        },
+        {
+          "id": "impact",
+          "label": {
+            "ar": "عند السطح: ارتداد واحتفاظ",
+            "en": "At the surface: reflection and retention"
+          },
+          "meaning": "Contactdoesnotguaranteecompleteretention."
+        },
+        {
+          "id": "limits",
+          "label": {
+            "ar": "العامل مش إعداد تشغيل جاهز",
+            "en": "A factor is not an operating recipe"
+          },
+          "meaning": "Nozzle,pressureanddosearenotsuppliedbytheconceptualdiagram."
+        }
+      ],
+      "sourceLessonSHA256": "8187d3318035f90b659736daba578b9aa3508a9413348105d401415822aff295",
+      "spokenDraftSHA256": "adf0e5ebbdbd8842cf4b8093c1ec1ccc6f0f4777941a51e147011a813e59754d",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S11",
+      "stepNumber": 11,
+      "sectionID": "deposit",
+      "sceneIndex": 3,
+      "kind": "deposit",
+      "title": {
+        "ar": "٣. الترسيب حالة بتتغير",
+        "en": "3. A deposit changes over time"
+      },
+      "actions": [
+        {
+          "id": "spread",
+          "label": {
+            "ar": "انتشار ديناميكي وانتشار ساكن",
+            "en": "Dynamic and static spreading"
+          },
+          "meaning": "Separateimpact-associatedmotionfromsubsequentliquid–surfacebehaviour."
+        },
+        {
+          "id": "dry",
+          "label": {
+            "ar": "تجفيف وإعادة توزيع وتأثير الطقس",
+            "en": "Drying and redistribution/weathering"
+          },
+          "meaning": "Dryingdoesnotmeanchemicaldisappearance;depositcanremain."
+        },
+        {
+          "id": "branches",
+          "label": {
+            "ar": "دخول ونشاط سطحي وفقد",
+            "en": "Uptake, surface activity and losses"
+          },
+          "meaning": "Movementonsurface,entryandeffectdiffer;donotmakeeverydropletinstantlyenter."
+        }
+      ],
+      "sourceLessonSHA256": "8187d3318035f90b659736daba578b9aa3508a9413348105d401415822aff295",
+      "spokenDraftSHA256": "adf0e5ebbdbd8842cf4b8093c1ec1ccc6f0f4777941a51e147011a813e59754d",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S11",
+      "stepNumber": 11,
+      "sectionID": "influences",
+      "sceneIndex": 4,
+      "kind": "influences",
+      "title": {
+        "ar": "٤. العوامل المؤثرة مش نواتج مؤكدة",
+        "en": "4. Influences are not guaranteed outcomes"
+      },
+      "actions": [
+        {
+          "id": "groups",
+          "label": {
+            "ar": "خمس مجموعات للعوامل",
+            "en": "Five factor groups"
+          },
+          "meaning": "Operating/formulation;atmospheric/operating;spray/surface;atmospheric;deposit/surface."
+        },
+        {
+          "id": "evidence",
+          "label": {
+            "ar": "العامل مش نسبة فقد مقاسة",
+            "en": "A factor is not a measured loss fraction"
+          },
+          "meaning": "Labelplacementdoesnotsupplyanumericalrelationship."
+        },
+        {
+          "id": "report",
+          "label": {
+            "ar": "مرحلة وملاحظة وفرع فقد وسؤال",
+            "en": "Stage, observation, loss branch and question"
+          },
+          "meaning": "Finaltaskconnectstoexposure,propertiesandtransformation;usepossiblewithoutmeasurement."
+        }
+      ],
+      "sourceLessonSHA256": "8187d3318035f90b659736daba578b9aa3508a9413348105d401415822aff295",
+      "spokenDraftSHA256": "adf0e5ebbdbd8842cf4b8093c1ec1ccc6f0f4777941a51e147011a813e59754d",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    },
+    {
+      "step": "FATE2-S11",
+      "stepNumber": 11,
+      "sectionID": "worked-example",
+      "sceneIndex": 5,
+      "kind": "droplet",
+      "title": {
+        "ar": "مثال محلول: القطرة وصلت، وبعدين؟",
+        "en": "Worked example: the droplet arrived—what follows?"
+      },
+      "actions": [
+        {
+          "id": "contact",
+          "label": {
+            "ar": "وصول واصطدام بالورقة",
+            "en": "Arrival and contact with a leaf"
+          },
+          "meaning": "Ateachingdropletreachesandstrikesaleaf;notameasuredexperiment."
+        },
+        {
+          "id": "retain",
+          "label": {
+            "ar": "جزء يرتدّ وجزء يبقى",
+            "en": "A portion rebounds and a portion remains"
+          },
+          "meaning": "Reflectionandretentionareschematic,noamountorpercentinvented."
+        },
+        {
+          "id": "spread",
+          "label": {
+            "ar": "انتشار وتجفيف لترسيب",
+            "en": "Spreading and drying of a deposit"
+          },
+          "meaning": "Retainedmaterialspreads/driesbutisnotclaimedchemicallygone."
+        },
+        {
+          "id": "unknown",
+          "label": {
+            "ar": "الدخول والأثر لسه مجهولين",
+            "en": "Uptake and effect remain unknown"
+          },
+          "meaning": "Choosenextmeasurementquestion;rain/waterdetectionraisesredistributionhypothesisnotcausalproof."
+        }
+      ],
+      "sourceLessonSHA256": "8187d3318035f90b659736daba578b9aa3508a9413348105d401415822aff295",
+      "spokenDraftSHA256": "adf0e5ebbdbd8842cf4b8093c1ec1ccc6f0f4777941a51e147011a813e59754d",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    }
+  ]
+}

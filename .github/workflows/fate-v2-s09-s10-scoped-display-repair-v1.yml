@@ -1,0 +1,70 @@
+name: Fate v2 repair twelve S09 and S10 displays preserving original speech
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/s09-s10-scoped-display-repair-v1/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/s09-s10-scoped-display-repair-v1
+  EXPECTED_REQUEST_SHA256: 2b2636deba565906985d2c1915ba4531257852abef00df20d474c83de0ae591c
+  MEDIA_TOOLS_PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1
+  GH_TOKEN: ${{ github.token }}
+  PYTHONUNBUFFERED: '1'
+  EXPECTED_IMPLEMENTATION_SHA256: 7a9522fe9fe2cda20c7e935e19daf21fb1682d6c09be33671fb33f302c14159b
+jobs:
+  scene:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        part: ["S09-01-ar-EG-display-r1", "S09-02-ar-EG-display-r1", "S09-01-en-display-r1", "S09-02-en-display-r1", "S10-01-ar-EG-display-r1", "S10-02-ar-EG-display-r1", "S10-03-ar-EG-display-r1", "S10-05-ar-EG-display-r1", "S10-01-en-display-r1", "S10-02-en-display-r1", "S10-03-en-display-r1", "S10-05-en-display-r1"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify exact finite request and implementation pins
+        run: |
+          python - <<'PY'
+          import os,json,hashlib,pathlib
+          p=pathlib.Path(os.environ['PACKAGE']);s=lambda f:hashlib.sha256(f.read_bytes()).hexdigest()
+          assert os.environ['GITHUB_RUN_ATTEMPT']=='1'
+          assert s(p/'request.json')==os.environ['EXPECTED_REQUEST_SHA256']
+          assert s(p/'implementation-pins.en.json')==os.environ['EXPECTED_IMPLEMENTATION_SHA256']
+          for n,h in json.loads((p/'implementation-pins.en.json').read_text()).items():assert s(p/n)==h
+          for n,h in json.loads((p/'request.json').read_text())['bootstrapFiles'].items():assert s(pathlib.Path(n))==h
+          PY
+      - name: Verify audio gate and actual clock, bind explanatory actions
+        run: python "$PACKAGE/prepare.py" "${{ matrix.part }}"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-s09-s10-display-r1-clock-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Install pinned renderer
+        working-directory: experiments/course-pipeline/rebuild/fate-course-v2/s09-s10-scoped-display-repair-v1
+        run: npm ci --no-audit --no-fund
+      - name: Expose verified packaged FFmpeg and FFprobe, no apt
+        timeout-minutes: 1
+        run: node "$MEDIA_TOOLS_PACKAGE/bootstrap.cjs" --dependency-root "$PACKAGE"
+      - name: Render meaningful action checkpoints
+        run: timeout --signal=TERM --kill-after=15s 9m node "$PACKAGE/render.cjs" stills
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-s09-s10-display-r1-stills-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Render single scene and decode actual video checkpoints
+        run: |
+          command -v ffmpeg
+          command -v ffprobe
+          timeout --signal=TERM --kill-after=15s 9m node "$PACKAGE/render.cjs" video
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-s09-s10-display-r1-video-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30

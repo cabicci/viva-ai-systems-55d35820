@@ -1,0 +1,57 @@
+{
+  "utc": "2026-10-26T01:27:05.677610+00:00",
+  "nativeThread": "01a15616-31db-77c1-931a-95e3c4e7a034",
+  "ownerAnswer": "اعتمد العربي والإنجليزي وكمّل",
+  "scope": "Exact four clips and same3.8 Charon/Kore delivery method for Arabic/English continuation; does not approve unheard future clips or full new synchronization.",
+  "files": [
+    {
+      "id": "AR-Charon",
+      "file": "production/voice38-proof-v1/artifacts/fate-v2-voice38-original-AR-Charon/AR-Charon.wav",
+      "model": "gemini-3.8-flash-tts",
+      "voice": "Charon",
+      "returnedModelVersion": "gemini-3.8-flash-tts",
+      "wavSHA256": "14ce4addce92d93f3d875063b37c1c2750aab94306dec48c755fcdd9f20bc5b6",
+      "pcmSHA256": "046363580c28984065ef638b3e01e3c91d2e385ecd9fedfaf097d90e8f40673c",
+      "durationSeconds": 9.08,
+      "textSHA256": "9d6d4081bed84af05db10be476aba9b45f87bb08059376d3b70ace590c20fda8",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656"
+    },
+    {
+      "id": "AR-Kore",
+      "file": "production/voice38-proof-v1/artifacts/fate-v2-voice38-original-AR-Kore/AR-Kore.wav",
+      "model": "gemini-3.8-flash-tts",
+      "voice": "Kore",
+      "returnedModelVersion": "gemini-3.8-flash-tts",
+      "wavSHA256": "9585b8d1083dcae47ff69fe13968c0a11aeaf76bc3468a316dadb9a5d7b105b2",
+      "pcmSHA256": "6f3d0f3722be17873e4b702c569fd2d480166424a09613adb1092b063b87dff5",
+      "durationSeconds": 11.16,
+      "textSHA256": "feaa51b599334ac7a7f87b4fec6a24214c17cc4f06e7b486afd7b9ceaf69e9e3",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656"
+    },
+    {
+      "id": "EN-Charon",
+      "file": "production/voice38-proof-v1/artifacts/fate-v2-voice38-original-EN-Charon/EN-Charon.wav",
+      "model": "gemini-3.8-flash-tts",
+      "voice": "Charon",
+      "returnedModelVersion": "gemini-3.8-flash-tts",
+      "wavSHA256": "3b8c7f97238b6ca2c2bedffef6baa85fb2d307de8a6451d726327cd35c2f36bc",
+      "pcmSHA256": "ffcd876de87bfe053a3a231eacc3dd43eca695338f1044dc526f0f546d66c20a",
+      "durationSeconds": 10.4,
+      "textSHA256": "faf49311ad71449a9c9191328bbe3f4d2afba003b810edb921ef976f274e9fd2",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3"
+    },
+    {
+      "id": "EN-Kore",
+      "file": "production/voice38-proof-v1/artifacts/fate-v2-voice38-original-EN-Kore/EN-Kore.wav",
+      "model": "gemini-3.8-flash-tts",
+      "voice": "Kore",
+      "returnedModelVersion": "gemini-3.8-flash-tts",
+      "wavSHA256": "486aca8835050c6a1774f963553db4034b761b358fa159ddda4c97d224e420b3",
+      "pcmSHA256": "67c96748220695d0327081ef13cb69c57177a3c335373994aa01cdd4904475e8",
+      "durationSeconds": 10.72,
+      "textSHA256": "d07cacb6f69dbe5877e00d9c38af9d82809b13daa85bc54dd1c0b593a1548629",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3"
+    }
+  ],
+  "minorAutomatedObservation": "EN Kore where-and-when speed flagged minor by blind pass only; owner accepted exact clip. Preserve it; do not regenerate a subjective accepted variant."
+}
