@@ -1,0 +1,721 @@
+{
+  "id": "fate-v2-s01-remaining-scenes38-v1",
+  "speechModel": "gemini-3.8-flash-tts",
+  "analysisModel": "gemini-2.5-flash",
+  "automaticRetries": 0,
+  "newSpeechCalls": 0,
+  "newImageCalls": 0,
+  "maxSemanticTimingCalls": 10,
+  "ownerCeilingUSD": 25,
+  "additionalProviderReservationUSD": 1,
+  "conservativeProviderReservationUSD": 21.02,
+  "syncAcceptanceSHA256": "826b00a4a71fe208f5671781b6e961485752e562c9bb74cbabcd74308524d8d8",
+  "brandAssets": [
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/Cairo.ttf",
+      "name": "Cairo.ttf",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/masaarat-logo-lockup.png",
+      "name": "masaarat-logo-lockup.png",
+      "sha256": "60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706"
+    }
+  ],
+  "parts": [
+    {
+      "id": "S01-02-ar-EG",
+      "locale": "ar",
+      "voice": "Kore",
+      "spokenText": "طبّ التحليل قاس إيه بالظبط؟ تعريف المتبقّي ممكن يشمل المادة الأصليّة ونواتج تحوُّل محدَّدة، حسب طريقة التحليل أو التقييم. عشان كده محتاجين هوية المادة، مش اسمًا قريبًا وخلاص. وبعدها نبصّ للعيّنة: التحليل على الثمرة كلّها، ولا الجزء المأكول؟ الوزن طازج ولا جاف؟ وهل العيّنة تمثّل الكمّية اللي بنتكلّم عنها؟ لو الأساس مختلف، الرقم ما يتنقلش من مكان للتاني كأنّه نفس القياس. كمان لازم نفرّق التركيز عن الكمّية. ملِّيجرام لكل كيلوجرام غذاء ده تركيز. أمّا الملِّيجرام لوحده فكتلة مادة. عشان نحسب اللي في حصّة أكل، هنحتاج كتلة الحصّة، بوحدة متوافقة مع مقام التركيز.",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "textSHA256": "7b4aaf010cdb54572307bf7fd7baa52bb5ce1ec416ecd25004ab4151c794944c",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "semanticID": "definition",
+      "scene": 2,
+      "sceneIndex": 2,
+      "title": {
+        "ar": "العيّنة وتعريف المتبقّي",
+        "en": "Residue identity and sample basis"
+      },
+      "actions": [
+        {
+          "id": "residue-definition",
+          "label": {
+            "ar": "تعريف المتبقّي",
+            "en": "Residue definition"
+          },
+          "meaning": "Parent and specified transformation products; identify what the method measured."
+        },
+        {
+          "id": "sample-basis",
+          "label": {
+            "ar": "الثمرة والجزء وأساس الوزن",
+            "en": "Whole fruit, portion and mass basis"
+          },
+          "meaning": "Whole fruit versus edible/analysed part and fresh/dry basis."
+        },
+        {
+          "id": "quantity",
+          "label": {
+            "ar": "التركيز غير الكمية",
+            "en": "Concentration differs from amount"
+          },
+          "meaning": "mg/kg food is concentration; mg is amount; compatible food mass is needed."
+        }
+      ],
+      "audio": {
+        "run": 40254395212,
+        "artifact": "fate-v2-full38-original-S01-02-ar-EG",
+        "file": "S01-02-ar-EG.wav",
+        "sha256": "52c45d25e83c1392a06077eb4f43a004a11cac2e069fd91f8a96fac5e0f1282d"
+      },
+      "audioReview": {
+        "status": "clear",
+        "evidence": [
+          "production/diagnostic38-v1/artifacts/fate-v2-diagnostic38-S01-02-ar-EG/review-disposition.en.json"
+        ]
+      },
+      "image": {
+        "run": 40253298480,
+        "artifact": "fate-v2-image-sample-basis",
+        "file": "sample-basis.jpg",
+        "sha256": "3966b4a0be8d16d27f3c49ff99f80f2ccfe1b328f2e4cdc60841f6790a67c86d"
+      },
+      "durationSeconds": 44.88
+    },
+    {
+      "id": "S01-02-en",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "What exactly did the method measure? A residue definition may include the parent substance and specified transformation products, depending on the method or assessment. Confirm substance identity instead of relying on a similar name. Then examine the sample: whole fruit or edible portion, fresh or dry mass, and representative of which quantity? A number cannot be transferred between different sample bases as though it were the same measurement. Concentration and amount also differ. Milligrams per kilogram of food is a concentration; milligrams alone is chemical mass. To estimate residue in a portion, we need the portion's food mass on a basis compatible with the concentration denominator.",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "textSHA256": "21c214e6bebfab5a8e68635f6e19093655eedef2c2229c919af86eb4ba7b37b0",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "semanticID": "definition",
+      "scene": 2,
+      "sceneIndex": 2,
+      "title": {
+        "ar": "العيّنة وتعريف المتبقّي",
+        "en": "Residue identity and sample basis"
+      },
+      "actions": [
+        {
+          "id": "residue-definition",
+          "label": {
+            "ar": "تعريف المتبقّي",
+            "en": "Residue definition"
+          },
+          "meaning": "Parent and specified transformation products; identify what the method measured."
+        },
+        {
+          "id": "sample-basis",
+          "label": {
+            "ar": "الثمرة والجزء وأساس الوزن",
+            "en": "Whole fruit, portion and mass basis"
+          },
+          "meaning": "Whole fruit versus edible/analysed part and fresh/dry basis."
+        },
+        {
+          "id": "quantity",
+          "label": {
+            "ar": "التركيز غير الكمية",
+            "en": "Concentration differs from amount"
+          },
+          "meaning": "mg/kg food is concentration; mg is amount; compatible food mass is needed."
+        }
+      ],
+      "audio": {
+        "run": 40254395212,
+        "artifact": "fate-v2-full38-original-S01-02-en",
+        "file": "S01-02-en.wav",
+        "sha256": "50795c02087047c3cbc707659074706a981bda42b16e3b1130ae184076ad67f0"
+      },
+      "audioReview": {
+        "status": "clear",
+        "evidence": [
+          "production/FATE2-S01-voice38-v1/artifacts/fate-v2-full38-review-S01-02-en/review/output/flash/S01-02-en-00-blind.analysis.json",
+          "production/FATE2-S01-voice38-v1/artifacts/fate-v2-full38-review-S01-02-en/review/output/flash/S01-02-en-00-reference.analysis.json"
+        ]
+      },
+      "image": {
+        "run": 40253298480,
+        "artifact": "fate-v2-image-sample-basis",
+        "file": "sample-basis.jpg",
+        "sha256": "3966b4a0be8d16d27f3c49ff99f80f2ccfe1b328f2e4cdc60841f6790a67c86d"
+      },
+      "durationSeconds": 47.44
+    },
+    {
+      "id": "S01-03-ar-EG",
+      "locale": "ar",
+      "voice": "Charon",
+      "spokenText": "نجرّب بأرقام افتراضيّة للتدريب، مش نتيجة معمل حقيقيّة. تركيز «ر» في الفلفل، صفر فاصلة واحد اتنين ملِّيجرام لكل كيلوجرام غذاء. وكتلة الحصّة ميتين وخمسين جرام. نفترض إنّ الحصّة متجانسة، وإنّ التركيز يخصّ نفس الجزء وأساس الوزن. أوّل خطوة نحوّل الجرام لكيلوجرام: ميتين وخمسين جرام يساووا صفر فاصلة اتنين خمسة صفر كيلوجرام. نضرب التركيز في كتلة الغذاء. وحدة كيلوجرام غذاء بتختصر، فيتبقّى صفر فاصلة صفر تلاتة صفر ملِّيجرام. وللمراجعة، دي تساوي تلاتين ميكروجرام. حسبنا كتلة المتبقّي في الحصّة بس. ما حسبناش اللي الجسم امتصّه، ولا بقية الأكل والميّه، ولا حكمنا على مطابقة الشحنة.",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "textSHA256": "317f5290244699b04f790e6d009d9af9e6ea3c76a0b0cb34b93410c8d9a24cf2",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "semanticID": "calculation",
+      "scene": 3,
+      "sceneIndex": 3,
+      "title": {
+        "ar": "من التركيز لكمية في حصّة",
+        "en": "From concentration to amount in a portion"
+      },
+      "actions": [
+        {
+          "id": "given",
+          "label": {
+            "ar": "أرقام افتراضية وافتراضات واضحة",
+            "en": "Invented data and explicit assumptions"
+          },
+          "meaning": "0.12mg/kg food,250g, homogeneous portion and compatible mass basis; training only."
+        },
+        {
+          "id": "convert",
+          "label": {
+            "ar": "نحوّل الجرام لكيلوجرام",
+            "en": "Convert grams to kilograms"
+          },
+          "meaning": "250g=0.250kg food."
+        },
+        {
+          "id": "multiply",
+          "label": {
+            "ar": "نضرب ونراجع الوحدات",
+            "en": "Multiply and cancel compatible units"
+          },
+          "meaning": "0.12mg/kg food multiplied by0.250kg food equals0.030mg."
+        },
+        {
+          "id": "microgram",
+          "label": {
+            "ar": "مراجعة بوحدة أصغر",
+            "en": "Cross-check in a smaller unit"
+          },
+          "meaning": "0.030mg equals30micrograms."
+        },
+        {
+          "id": "limit",
+          "label": {
+            "ar": "كمية في حصة؛ حدود الاستنتاج",
+            "en": "A portion amount; bounded interpretation"
+          },
+          "meaning": "Not absorbed dose, complete dietary exposure or food compliance."
+        }
+      ],
+      "audio": {
+        "run": 40254395212,
+        "artifact": "fate-v2-full38-original-S01-03-ar-EG",
+        "file": "S01-03-ar-EG.wav",
+        "sha256": "9ac6ecb40c2ca3de85f9c0fba9f230450a393688db97d379144d10fde796ee95"
+      },
+      "audioReview": {
+        "status": "clear",
+        "evidence": [
+          "production/diagnostic38-v1/artifacts/fate-v2-diagnostic38-S01-03-ar-EG/review-disposition.en.json"
+        ]
+      },
+      "image": {
+        "run": 40253298480,
+        "artifact": "fate-v2-image-sample-basis",
+        "file": "sample-basis.jpg",
+        "sha256": "3966b4a0be8d16d27f3c49ff99f80f2ccfe1b328f2e4cdc60841f6790a67c86d"
+      },
+      "durationSeconds": 47.16
+    },
+    {
+      "id": "S01-03-en",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "Try an invented training example, not an actual laboratory result. Residue R in peppers is zero point one two milligrams per kilogram of food, and the portion weighs two hundred and fifty grams. Assume a homogeneous portion and matching analysed-part and mass bases. First convert grams to kilograms: two hundred and fifty grams is zero point two five zero kilograms. Multiply concentration by food mass. Kilograms of food cancel, leaving zero point zero three zero milligrams of residue. As a cross-check, that equals thirty micrograms. We have calculated residue mass in this portion only. We have not calculated absorption, the rest of the diet or water intake, or shipment compliance.",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "textSHA256": "1227ee2b81abbc0c5fa97b3b4628d1571e749a4f8aead208ca13ff2e57f6a499",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "semanticID": "calculation",
+      "scene": 3,
+      "sceneIndex": 3,
+      "title": {
+        "ar": "من التركيز لكمية في حصّة",
+        "en": "From concentration to amount in a portion"
+      },
+      "actions": [
+        {
+          "id": "given",
+          "label": {
+            "ar": "أرقام افتراضية وافتراضات واضحة",
+            "en": "Invented data and explicit assumptions"
+          },
+          "meaning": "0.12mg/kg food,250g, homogeneous portion and compatible mass basis; training only."
+        },
+        {
+          "id": "convert",
+          "label": {
+            "ar": "نحوّل الجرام لكيلوجرام",
+            "en": "Convert grams to kilograms"
+          },
+          "meaning": "250g=0.250kg food."
+        },
+        {
+          "id": "multiply",
+          "label": {
+            "ar": "نضرب ونراجع الوحدات",
+            "en": "Multiply and cancel compatible units"
+          },
+          "meaning": "0.12mg/kg food multiplied by0.250kg food equals0.030mg."
+        },
+        {
+          "id": "microgram",
+          "label": {
+            "ar": "مراجعة بوحدة أصغر",
+            "en": "Cross-check in a smaller unit"
+          },
+          "meaning": "0.030mg equals30micrograms."
+        },
+        {
+          "id": "limit",
+          "label": {
+            "ar": "كمية في حصة؛ حدود الاستنتاج",
+            "en": "A portion amount; bounded interpretation"
+          },
+          "meaning": "Not absorbed dose, complete dietary exposure or food compliance."
+        }
+      ],
+      "audio": {
+        "run": 40254395212,
+        "artifact": "fate-v2-full38-original-S01-03-en",
+        "file": "S01-03-en.wav",
+        "sha256": "75e9828da819fc51ff26bdc0e1419e0f8723cf4970e8d7ff933dccb71e9a8f1e"
+      },
+      "audioReview": {
+        "status": "clear",
+        "evidence": [
+          "production/diagnostic38-v1/artifacts/fate-v2-diagnostic38-S01-03-en/review-disposition.en.json"
+        ]
+      },
+      "image": {
+        "run": 40253298480,
+        "artifact": "fate-v2-image-sample-basis",
+        "file": "sample-basis.jpg",
+        "sha256": "3966b4a0be8d16d27f3c49ff99f80f2ccfe1b328f2e4cdc60841f6790a67c86d"
+      },
+      "durationSeconds": 45.6
+    },
+    {
+      "id": "S01-04-ar-EG",
+      "locale": "ar",
+      "voice": "Kore",
+      "spokenText": "نرجع لرسم المسارات في صفحة أربعة. هو بيربط المتبقّيات بالإنسان والنباتات والتربة والميّه، وبكائنات زي الأسماك والطيور والحشرات النافعة. هنختار مسارًا واحدًا: مصدر في الحقل، وجريان سطحي محتمل، وبعده ميّه مجرى، وكائن مائي ممكن يتلامس مع المادة. كلمة «محتمل» مهمّة هنا. وجود السهم في الرسم ما يثبتش إنّ المادة وصلت، ووجود المادة في عيّنة ميّه ما يثبتش لوحده أثرًا في الكائن. محتاجين نعرف هوية المادة، ونقيس في مكان ووقت مناسبين، ونختار بيانات تناسب سؤال التأثير. كل حلقة ليها دليلها؛ ما نكمّلش الحلقة الناقصة بتخمين، ولا بصورة بتوحي إنّ الضرر حصل فعلًا.",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "textSHA256": "a8e3aef8de93e3792aa2eb3ba4b00d9428d14b4b39abc0cc5660313da16549a0",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "semanticID": "pathway",
+      "scene": 4,
+      "sceneIndex": 4,
+      "title": {
+        "ar": "مسار محتمل محتاج دليل",
+        "en": "A possible route needs evidence"
+      },
+      "actions": [
+        {
+          "id": "map",
+          "label": {
+            "ar": "رسم المسارات ينظّم الأسئلة",
+            "en": "A pathway map organises questions"
+          },
+          "meaning": "Source p4 links people,soil,water,plants,fish,birds,beneficial insects."
+        },
+        {
+          "id": "path",
+          "label": {
+            "ar": "حقل ← جريان محتمل ← مجرى",
+            "en": "Field → possible runoff → stream"
+          },
+          "meaning": "A field source, possible surface runoff, stream water and aquatic organism contact."
+        },
+        {
+          "id": "possible",
+          "label": {
+            "ar": "السهم مش قياس",
+            "en": "An arrow is not a measurement"
+          },
+          "meaning": "Possible transport and contact are hypotheses; detection alone not effect."
+        },
+        {
+          "id": "missing",
+          "label": {
+            "ar": "الهوية والمكان والوقت والأثر",
+            "en": "Identity, location, time and effect"
+          },
+          "meaning": "Need suitable substance, place/time observations and effect evidence."
+        }
+      ],
+      "audio": {
+        "run": 40254395212,
+        "artifact": "fate-v2-full38-original-S01-04-ar-EG",
+        "file": "S01-04-ar-EG.wav",
+        "sha256": "89a9eb192fd70731f86507781c7b8ff906a2220402c73ff5b1c639a4c45f46b8"
+      },
+      "audioReview": {
+        "status": "clear",
+        "evidence": [
+          "production/FATE2-S01-voice38-v1/artifacts/fate-v2-full38-review-S01-04-ar-EG/review/output/flash/S01-04-ar-EG-00-blind.analysis.json",
+          "production/FATE2-S01-voice38-v1/artifacts/fate-v2-full38-review-S01-04-ar-EG/review/output/flash/S01-04-ar-EG-00-reference.analysis.json"
+        ]
+      },
+      "image": {
+        "run": 40253298480,
+        "artifact": "fate-v2-image-source-pathway-receptor",
+        "file": "source-pathway-receptor.jpg",
+        "sha256": "1398c2d1f7b9a8e2f1436635da6f23d0ed994c15a020d07d99985247a3475446"
+      },
+      "durationSeconds": 45.52
+    },
+    {
+      "id": "S01-04-en",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "Return to the pathway illustration on page four. It connects residues with people, plants, soil and water, and with organisms such as fish, birds and beneficial insects. Follow one possible chain: a field source, possible runoff, stream water and contact with an aquatic organism. Possible matters here. An arrow does not establish that transport occurred, and detecting a substance in a water sample does not by itself establish an effect in the organism. We need chemical identity, observations at suitable places and times, and evidence suited to the effect question. Each link needs its own support. Neither a guess nor an image suggesting visible harm should fill a missing link.",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "textSHA256": "446eb58434e61435b6285705f1f6194b6f75a790267e74f28c8485c7339470f6",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "semanticID": "pathway",
+      "scene": 4,
+      "sceneIndex": 4,
+      "title": {
+        "ar": "مسار محتمل محتاج دليل",
+        "en": "A possible route needs evidence"
+      },
+      "actions": [
+        {
+          "id": "map",
+          "label": {
+            "ar": "رسم المسارات ينظّم الأسئلة",
+            "en": "A pathway map organises questions"
+          },
+          "meaning": "Source p4 links people,soil,water,plants,fish,birds,beneficial insects."
+        },
+        {
+          "id": "path",
+          "label": {
+            "ar": "حقل ← جريان محتمل ← مجرى",
+            "en": "Field → possible runoff → stream"
+          },
+          "meaning": "A field source, possible surface runoff, stream water and aquatic organism contact."
+        },
+        {
+          "id": "possible",
+          "label": {
+            "ar": "السهم مش قياس",
+            "en": "An arrow is not a measurement"
+          },
+          "meaning": "Possible transport and contact are hypotheses; detection alone not effect."
+        },
+        {
+          "id": "missing",
+          "label": {
+            "ar": "الهوية والمكان والوقت والأثر",
+            "en": "Identity, location, time and effect"
+          },
+          "meaning": "Need suitable substance, place/time observations and effect evidence."
+        }
+      ],
+      "audio": {
+        "run": 40254395212,
+        "artifact": "fate-v2-full38-original-S01-04-en",
+        "file": "S01-04-en.wav",
+        "sha256": "50813771f8c59e6d4ceed7ea5fe0b58e4eb2f7e2c1d67378a46a8b5f9998a9a6"
+      },
+      "audioReview": {
+        "status": "clear",
+        "evidence": [
+          "production/FATE2-S01-voice38-v1/artifacts/fate-v2-full38-review-S01-04-en/review/output/flash/S01-04-en-00-blind.analysis.json",
+          "production/FATE2-S01-voice38-v1/artifacts/fate-v2-full38-review-S01-04-en/review/output/flash/S01-04-en-00-reference.analysis.json"
+        ]
+      },
+      "image": {
+        "run": 40253298480,
+        "artifact": "fate-v2-image-source-pathway-receptor",
+        "file": "source-pathway-receptor.jpg",
+        "sha256": "1398c2d1f7b9a8e2f1436635da6f23d0ed994c15a020d07d99985247a3475446"
+      },
+      "durationSeconds": 48.04
+    },
+    {
+      "id": "S01-05-ar-EG",
+      "locale": "ar",
+      "voice": "Charon",
+      "spokenText": "طبّ وجدول الأضرار في الصفحات من أربعة لستّة؟ نقرأه قراءة نقديّة، مش نحفظ كل صفّ كحكم نهائي. الجدول فيه تسعتاشر صفّ فعلي، والترقيم بيقفز من تلتاشر لخمستاشر؛ ما نخترعش صفّ عشان نكمّل الترقيم. وكمان لقينا خطأ في صيغة الميثوكسيكلور: المصدر كاتب ستّ ذرات كربون في بداية الصيغة، والمرجع الرسمي المستخدم في المراجعة بيبيّن إنّها ستّاشر. تصحيح الهوية خطوة، واعتماد ادّعاء التأثير خطوة تانية. لازم نسأل: التجربة على أنهي كائن، وبأيّ طريق تعرُّض، وبأيّ كمّية ومدّة؟ وإيه الأثر اللي اتقاس، وإيه مجموعة المقارنة؟ من غير السياق ده، عبارة واسعة عن الضرر ما تكفيش لتقييم حالة جديدة.",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "textSHA256": "ffcba92dcfe53735f36d8cf14fd26785216637c98f9065cc42bb632789b698fd",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "semanticID": "critical-table",
+      "scene": 5,
+      "sceneIndex": 5,
+      "title": {
+        "ar": "نقرأ الجدول ونراجع الدليل",
+        "en": "Read the table and examine the evidence"
+      },
+      "actions": [
+        {
+          "id": "rows",
+          "label": {
+            "ar": "١٩ صفًا فعليًا",
+            "en": "19 actual rows"
+          },
+          "meaning": "Source table contains19actual rows."
+        },
+        {
+          "id": "gap",
+          "label": {
+            "ar": "الترقيم يقفز من١٣ إلى١٥",
+            "en": "Numbering jumps from13 to15"
+          },
+          "meaning": "Retain source numbering; never fabricate row14."
+        },
+        {
+          "id": "formula",
+          "label": {
+            "ar": "تصحيح هوية؛ مش اعتماد أثر",
+            "en": "Identity correction is not effect validation"
+          },
+          "meaning": "Methoxychlor printedC6H15Cl3O2; supported identityC16H15Cl3O2. No molecular geometry invented."
+        },
+        {
+          "id": "study",
+          "label": {
+            "ar": "النوع والطريق والكمية والمدة والمقارنة",
+            "en": "Species, route, amount, duration and comparison"
+          },
+          "meaning": "Effect claims require actual study context, measured endpoint and comparator."
+        }
+      ],
+      "audio": {
+        "run": 40254395212,
+        "artifact": "fate-v2-full38-original-S01-05-ar-EG",
+        "file": "S01-05-ar-EG.wav",
+        "sha256": "646ebab31f56d5cc2e93940f7ea0d168eedbc58ccfd3a7c20249a5017af828d5"
+      },
+      "audioReview": {
+        "status": "clear",
+        "evidence": [
+          "production/diagnostic38-v1/artifacts/fate-v2-diagnostic38-S01-05-ar-EG/review-disposition.en.json"
+        ]
+      },
+      "image": {
+        "run": 40253298480,
+        "artifact": "fate-v2-image-result-versus-claim",
+        "file": "result-versus-claim.jpg",
+        "sha256": "b3fd228678f4c5e19df85ba30199ba81cb93da476195d3fcb90c164805bb3872"
+      },
+      "durationSeconds": 42.28
+    },
+    {
+      "id": "S01-05-en",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "What about the effects table on pages four to six? Read it critically rather than memorising each row as a final judgement. It has nineteen actual rows; the numbering jumps from thirteen to fifteen. Do not invent a row to fill that gap. We also found a methoxychlor formula error: the source begins with six carbon atoms, while the official identity reference used in the review gives sixteen. Correcting identity and validating an effect claim are different tasks. Ask which organism was studied, through which exposure route, at what amount and duration, against which comparison group, and for which measured effect. Without that context, a broad harm statement cannot assess a new situation.",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "textSHA256": "83eeefabe36f18000115c7709d74eebdc567d344e3e0a22a7f3806b8dbbea4cf",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "semanticID": "critical-table",
+      "scene": 5,
+      "sceneIndex": 5,
+      "title": {
+        "ar": "نقرأ الجدول ونراجع الدليل",
+        "en": "Read the table and examine the evidence"
+      },
+      "actions": [
+        {
+          "id": "rows",
+          "label": {
+            "ar": "١٩ صفًا فعليًا",
+            "en": "19 actual rows"
+          },
+          "meaning": "Source table contains19actual rows."
+        },
+        {
+          "id": "gap",
+          "label": {
+            "ar": "الترقيم يقفز من١٣ إلى١٥",
+            "en": "Numbering jumps from13 to15"
+          },
+          "meaning": "Retain source numbering; never fabricate row14."
+        },
+        {
+          "id": "formula",
+          "label": {
+            "ar": "تصحيح هوية؛ مش اعتماد أثر",
+            "en": "Identity correction is not effect validation"
+          },
+          "meaning": "Methoxychlor printedC6H15Cl3O2; supported identityC16H15Cl3O2. No molecular geometry invented."
+        },
+        {
+          "id": "study",
+          "label": {
+            "ar": "النوع والطريق والكمية والمدة والمقارنة",
+            "en": "Species, route, amount, duration and comparison"
+          },
+          "meaning": "Effect claims require actual study context, measured endpoint and comparator."
+        }
+      ],
+      "audio": {
+        "run": 40254395212,
+        "artifact": "fate-v2-full38-original-S01-05-en",
+        "file": "S01-05-en.wav",
+        "sha256": "db452c6d8d0aa638003f7abc5f5a9bd683e4a246ac0821cc23cd3c7445cf475c"
+      },
+      "audioReview": {
+        "status": "clear",
+        "evidence": [
+          "production/diagnostic38-v1/artifacts/fate-v2-diagnostic38-S01-05-en/review-disposition.en.json"
+        ]
+      },
+      "image": {
+        "run": 40253298480,
+        "artifact": "fate-v2-image-result-versus-claim",
+        "file": "result-versus-claim.jpg",
+        "sha256": "b3fd228678f4c5e19df85ba30199ba81cb93da476195d3fcb90c164805bb3872"
+      },
+      "durationSeconds": 43.84
+    },
+    {
+      "id": "S01-06-ar-EG",
+      "locale": "ar",
+      "voice": "Kore",
+      "spokenText": "نلخّص اللي عملناه. بدأنا بنتيجة تحليل، وحدّدنا نوع الكمية ووحدتها، وحسبنا كتلة متبقّي في حصّة بأرقام افتراضيّة، وبعدها وقفنا عند حدود الحساب. عرفنا كمان إنّ المسار المحتمل محتاج قياس، وإنّ جدول التأثيرات محتاج مراجعة لهوية المادة وسياق الدراسة. الاستخدام الفعلي للمبيد له شروط معتمدة تخصّ المنتج والمحصول والمكان؛ الدرس مش وصفة رشّ ولا إذن لتغيير الجرعة أو تقصير فترة قبل الحصاد. لو السؤال مطابقة غذاء، هنحتاج حدًّا ساريًا وتعريف متبقّي وعينة مناسبة. ولو السؤال عن مخاطر شخص، هنحتاج بيانات تعرُّض وتأثير. الخطوة الجاية هنفرّق حدّ التركيز في الغذاء عن المدخول اليومي بالنسبة لوزن الجسم.",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "textSHA256": "34fc8219e55a204611798e88eed7372accc41f91547178619382918a83df266c",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "semanticID": "conclusion",
+      "scene": 6,
+      "sceneIndex": 6,
+      "title": {
+        "ar": "كل استنتاج له بياناته",
+        "en": "Keep each conclusion within its evidence"
+      },
+      "actions": [
+        {
+          "id": "summary",
+          "label": {
+            "ar": "من القياس للحساب للاستنتاج",
+            "en": "From measurement to calculation to conclusion"
+          },
+          "meaning": "Identify sample,units,assumptions and limits; evidence supports each link."
+        },
+        {
+          "id": "label",
+          "label": {
+            "ar": "الاستخدام له شروط معتمدة",
+            "en": "Use has authorised conditions"
+          },
+          "meaning": "No spray recipe,dose change or shortened preharvest interval."
+        },
+        {
+          "id": "questions",
+          "label": {
+            "ar": "مطابقة غذاء وتقييم مخاطر",
+            "en": "Food compliance and risk assessment"
+          },
+          "meaning": "Different questions require applicable limit/residue/sample versus exposure/effects."
+        },
+        {
+          "id": "next",
+          "label": {
+            "ar": "حد الغذاء والمدخول اليومي",
+            "en": "Food limit and daily intake"
+          },
+          "meaning": "Next step separates food concentration from body-mass-normalised daily intake."
+        }
+      ],
+      "audio": {
+        "run": 40254395212,
+        "artifact": "fate-v2-full38-original-S01-06-ar-EG",
+        "file": "S01-06-ar-EG.wav",
+        "sha256": "b91d8517fe432a45bc68784ba9ed3f1f1792569a17032aa91e4393a588836a9e"
+      },
+      "audioReview": {
+        "status": "clear",
+        "evidence": [
+          "production/diagnostic38-v1/artifacts/fate-v2-diagnostic38-S01-06-ar-EG/review-disposition.en.json"
+        ]
+      },
+      "image": {
+        "run": 40253298480,
+        "artifact": "fate-v2-image-result-versus-claim",
+        "file": "result-versus-claim.jpg",
+        "sha256": "b3fd228678f4c5e19df85ba30199ba81cb93da476195d3fcb90c164805bb3872"
+      },
+      "durationSeconds": 48.52
+    },
+    {
+      "id": "S01-06-en",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "We began with an analytical finding, identified the quantity and units, and calculated residue mass in a portion using invented values. Then we kept the conclusion within those assumptions. A possible pathway still needs observations, and an effects table needs identity checks and study context. Actual pesticide use has authorised conditions for the product, crop and location; this lesson is not a spray recipe or permission to change a dose or shorten a pre-harvest interval. Food compliance needs an applicable limit, residue definition and suitable sample evidence. A person's risk question needs exposure and effect evidence. Next, we will separate a food concentration limit from daily intake normalised to body weight.",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "textSHA256": "feff83107137a20e6f5c21ae3aa1608d54ad873935bd64e0344a0003cbdd3fb3",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "semanticID": "conclusion",
+      "scene": 6,
+      "sceneIndex": 6,
+      "title": {
+        "ar": "كل استنتاج له بياناته",
+        "en": "Keep each conclusion within its evidence"
+      },
+      "actions": [
+        {
+          "id": "summary",
+          "label": {
+            "ar": "من القياس للحساب للاستنتاج",
+            "en": "From measurement to calculation to conclusion"
+          },
+          "meaning": "Identify sample,units,assumptions and limits; evidence supports each link."
+        },
+        {
+          "id": "label",
+          "label": {
+            "ar": "الاستخدام له شروط معتمدة",
+            "en": "Use has authorised conditions"
+          },
+          "meaning": "No spray recipe,dose change or shortened preharvest interval."
+        },
+        {
+          "id": "questions",
+          "label": {
+            "ar": "مطابقة غذاء وتقييم مخاطر",
+            "en": "Food compliance and risk assessment"
+          },
+          "meaning": "Different questions require applicable limit/residue/sample versus exposure/effects."
+        },
+        {
+          "id": "next",
+          "label": {
+            "ar": "حد الغذاء والمدخول اليومي",
+            "en": "Food limit and daily intake"
+          },
+          "meaning": "Next step separates food concentration from body-mass-normalised daily intake."
+        }
+      ],
+      "audio": {
+        "run": 40254395212,
+        "artifact": "fate-v2-full38-original-S01-06-en",
+        "file": "S01-06-en.wav",
+        "sha256": "b904bd5180f1ee5374fed041d931d98676cd1bb59d61092d7386d8a67fef039b"
+      },
+      "audioReview": {
+        "status": "clear",
+        "evidence": [
+          "production/diagnostic38-v1/artifacts/fate-v2-diagnostic38-S01-06-en/review-disposition.en.json"
+        ]
+      },
+      "image": {
+        "run": 40253298480,
+        "artifact": "fate-v2-image-result-versus-claim",
+        "file": "result-versus-claim.jpg",
+        "sha256": "b3fd228678f4c5e19df85ba30199ba81cb93da476195d3fcb90c164805bb3872"
+      },
+      "durationSeconds": 49.8
+    }
+  ],
+  "timingPolicy": "Actual-WAV ASR unit timestamps. Semantic model maps only supplied indices to actions/caption spans; never supplies a new clock. Numeral units may span several spoken words. Preserve unresolved point intervals explicitly; no phoneme-accuracy claim."
+}

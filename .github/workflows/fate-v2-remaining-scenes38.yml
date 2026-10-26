@@ -1,0 +1,59 @@
+name: Fate v2 remaining bilingual first-step scenes, preserve3.8 originals
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/remaining-scenes38/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/remaining-scenes38
+  EXPECTED_REQUEST_SHA256: 81ad8f29777db4d884727b86dcc3acd1b7ce7ee886e1d0ee4bb08e5f9203a8b0
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  scene:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        part: ["S01-02-ar-EG", "S01-02-en", "S01-03-ar-EG", "S01-03-en", "S01-04-ar-EG", "S01-04-en", "S01-05-ar-EG", "S01-05-en", "S01-06-ar-EG", "S01-06-en"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Install pinned actual-audio clock implementation
+        run: python -m pip install faster-whisper==1.2.1
+      - name: Verify originals, derive actual clocks and map semantic indices
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/prepare.py" "${{ matrix.part }}"
+      - name: Deliver each timing/diagnostic receipt before rendering
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-scene38-clock-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Install pinned existing renderer
+        working-directory: experiments/course-pipeline/rebuild/fate-course-v2/remaining-scenes38
+        run: npm ci --no-audit --no-fund
+      - name: Render explanatory checkpoints
+        run: node "$PACKAGE/render.cjs" stills
+      - name: Deliver checkpoint frames immediately
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-scene38-stills-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Render and decode-verify this single scene
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+          node "$PACKAGE/render.cjs" video
+      - name: Deliver each finished scene without waiting for the batch
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-scene38-video-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
