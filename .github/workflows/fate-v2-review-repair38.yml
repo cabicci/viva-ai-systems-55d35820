@@ -1,0 +1,55 @@
+name: Fate v2 bounded diagnostic repair, preserve speech
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/review-repair38/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/review-repair38
+  EXPECTED_REQUEST_SHA256: 43edda091057ec038e9b31ce15190e3d37f66c474be279f774e1dd2b4bb5d382
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  diagnostic:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        part: ["S01-02-ar-EG", "S01-03-ar-EG", "S01-03-en", "S01-05-ar-EG", "S01-05-en", "S01-06-ar-EG", "S01-06-en"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Review preserved original without TTS
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/worker.py" "${{ matrix.part }}"
+      - name: Save each diagnostic and original identity immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-diagnostic38-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+  english-acoustic-clock:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Install pinned ASR implementation for timing only
+        run: python -m pip install faster-whisper==1.2.1
+      - name: Derive actual English word clocks without changing speech
+        run: python "$PACKAGE/align_english.py"
+      - name: Preserve exact implementation versions
+        if: always()
+        run: python -m pip freeze > "$PACKAGE/output/dependency-versions.txt"
+      - name: Deliver actual corrected clock and preserved invalid preimage
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-english-clock38
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30

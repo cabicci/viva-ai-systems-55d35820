@@ -1,0 +1,21 @@
+import React,{useState,useEffect} from 'react';
+import {AbsoluteFill,Audio,Composition,Img,registerRoot,staticFile,useCurrentFrame,delayRender,continueRender,cancelRender} from 'remotion';
+import s from './render-data.json';
+const ink='#183b50',blue='#4f8eaa',mint='#d7eee5',clamp=(x:number)=>Math.max(0,Math.min(1,x));
+function Scene(){const f=useCurrentFrame(),t=f/30,ar=s.locale==='ar',T=(a:string,e:string)=>ar?a:e;
+ const [h]=useState(()=>delayRender('Cairo'));useEffect(()=>{new FontFace('Cairo',`url("${staticFile('Cairo.ttf')}")`).load().then(x=>{document.fonts.add(x);continueRender(h)}).catch(cancelRender)},[h]);
+ const cue=(id:string)=>clamp((t-(s.actions as any)[id].start)/.55),r=cue('sample-result'),e=cue('exposure'),k=cue('risk-evidence');const cap=s.captions.find(c=>t>=c.start&&t<c.end);
+ const card=(y:number,p:number,title:string,sub:string,bg:string)=> <div style={{position:'absolute',right:66,top:y,width:660,padding:'22px 28px',borderRadius:22,background:bg,border:'1px solid #c5dce4',boxShadow:'0 8px 24px #17394a0b',opacity:p,transform:`translateX(${(1-p)*45}px)`,direction:ar?'rtl':'ltr'}}><div style={{fontSize:36,fontWeight:800,lineHeight:1.6}}>{title}</div><div style={{fontSize:25,lineHeight:1.7,marginTop:5,color:'#456576'}}>{sub}</div></div>;
+ return <AbsoluteFill style={{fontFamily:'Cairo',background:'#f6fafb',color:ink}}>
+ <Audio src={staticFile(s.audioFile)}/><Img src={staticFile(s.imageFile)} style={{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover'}}/>
+ <div style={{position:'absolute',inset:0,background:'linear-gradient(0deg,rgba(247,251,251,.95),transparent 28%),linear-gradient(90deg,transparent 50%,rgba(247,251,251,.65) 78%)'}}/>
+ <Img src={staticFile('masaarat-logo-lockup.png')} style={{position:'absolute',left:50,top:22,width:190,height:98,objectFit:'contain'}}/>
+ <header style={{position:'absolute',right:65,top:32,width:1250,textAlign:ar?'right':'left',direction:ar?'rtl':'ltr'}}><div style={{fontSize:25,color:blue}}>{T('مسارات · مصير المبيدات في البيئة','Masaarat · Fate of pesticides in the environment')}</div><h1 style={{fontSize:46,lineHeight:1.7,margin:'6px 0'}}>{s.title}</h1></header>
+ {card(222,r,T('نتيجة في عيّنة','A sample result'),T('هوية المادة · أساس العيّنة · طريقة القياس','Identity · sample basis · analytical method'),'rgba(255,255,255,.96)')}
+ {card(420,e,T('التعرّض سؤال له بياناته','Exposure needs its own evidence'),T('مين؟ بأي طريق؟ قد إيه؟ لمدة قد إيه؟','Who? Which route? How much? How long?'),'rgba(235,246,248,.97)')}
+ {card(650,k,T('نربط دليل الضرر بدليل التعرّض','Connect effect and exposure evidence'),T('اسم المادة وحده مش تشخيص تسمّم','A substance name alone is not a poisoning diagnosis'),'rgba(225,241,232,.98)')}
+ <svg viewBox="0 0 1920 1080" style={{position:'absolute',inset:0,width:'100%',height:'100%',pointerEvents:'none'}}><g opacity={r*(1-e*.5)}><path d="M650 565 Q900 400 1110 310" stroke={blue} strokeWidth="4" strokeDasharray="8 8" fill="none" pathLength="1" strokeDashoffset={1-r}/><circle cx={650+clamp((t-s.actions['sample-result'].start)/1.4)*460} cy={565-clamp((t-s.actions['sample-result'].start)/1.4)*255} r="9" fill={blue}/></g><g opacity={k}><path d="M1160 600 V635" stroke={blue} strokeWidth="4" strokeDasharray="6 6"/><circle cx="1160" cy="622" r="20" fill="white" stroke={blue} strokeWidth="2"/><text x="1160" y="632" fontSize="27" textAnchor="middle" fill={ink}>?</text></g></svg>
+ <div style={{position:'absolute',left:52,bottom:176,width:920,fontSize:22,lineHeight:1.7,direction:ar?'rtl':'ltr',background:'rgba(248,252,251,.9)',padding:'10px 18px',borderRadius:12}}>{T('تصوّر تعليمي مُولّد؛ الصورة مش نتيجة تجربة. كل استنتاج محتاج دليله.','Generated teaching illustration, not experimental evidence. Each conclusion needs its own support.')}</div>
+ <div style={{position:'absolute',left:55,right:55,bottom:30,minHeight:116,display:'flex',alignItems:'center',justifyContent:'center',borderRadius:20,background:ink,color:'white',padding:'12px 30px',fontSize:33,lineHeight:1.65,textAlign:'center',direction:ar?'rtl':'ltr'}}>{cap?.text||''}</div>
+ </AbsoluteFill>}
+registerRoot(()=> <Composition id={s.id} component={Scene} durationInFrames={s.frames} fps={30} width={1920} height={1080}/>);

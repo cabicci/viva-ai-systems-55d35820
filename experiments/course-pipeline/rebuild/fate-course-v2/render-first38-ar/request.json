@@ -1,0 +1,47 @@
+{
+  "id": "fate-v2-first38-ar-sync-sample-v1",
+  "scope": "Only first complete scene; not the full lesson",
+  "sampleAuthorized": true,
+  "fullLessonRenderAllowed": false,
+  "newSpeechCalls": 0,
+  "scene": {
+    "id": "FateV2S01ArabicSample",
+    "sceneIndex": 1,
+    "locale": "ar",
+    "title": "نتيجة التحليل تجاوب أنهي سؤال؟",
+    "audio": {
+      "run": 40254395212,
+      "artifact": "fate-v2-full38-original-S01-01-ar-EG",
+      "file": "S01-01-ar-EG.wav",
+      "sha256": "c0e331b9a3b434ffa6a2b840e8315c292e1f49aeffa2fdd99d0efc5c86c85c7f"
+    },
+    "alignment": {
+      "run": 40254734962,
+      "artifact": "fate-v2-sync38-S01-01-ar-EG",
+      "file": "timing.json",
+      "sha256": "200b9b28c134dc7c8b863544f48182cc536fb694ff1ed20bb3ca65de37d996b4"
+    },
+    "image": {
+      "run": 40253298480,
+      "artifact": "fate-v2-image-result-versus-claim",
+      "file": "result-versus-claim.jpg",
+      "sha256": "b3fd228678f4c5e19df85ba30199ba81cb93da476195d3fcb90c164805bb3872"
+    },
+    "audioFrames": 1063680,
+    "textSHA256": "c6a68153b255a7895df5d5066522637a3bfa803b0076959efbd603e6df7b4acc",
+    "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656"
+  },
+  "brandAssets": [
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/Cairo.ttf",
+      "name": "Cairo.ttf",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/masaarat-logo-lockup.png",
+      "name": "masaarat-logo-lockup.png",
+      "sha256": "60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706"
+    }
+  ],
+  "method": "Actual-audio approximate word/action cues, no estimated timing or time stretching. Rendered3D-looking illustration, not native geometry."
+}

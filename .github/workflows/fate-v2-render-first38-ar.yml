@@ -1,0 +1,43 @@
+name: Fate v2 first Arabic3.8 synchronized sample
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/render-first38-ar/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/render-first38-ar
+  EXPECTED_REQUEST_SHA256: cb9d5c24fa89db77f7aff2f8f4849201a4735ef3223bcde4ada60f74b092236c
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  sample:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify exact originals and valid acoustic cues
+        run: python "$PACKAGE/prepare.py"
+      - name: Install pinned existing renderer dependencies
+        working-directory: experiments/course-pipeline/rebuild/fate-course-v2/render-first38-ar
+        run: npm ci --no-audit --no-fund
+      - name: Render explanatory checkpoints
+        run: node "$PACKAGE/render.cjs" stills
+      - name: Deliver each visible checkpoint immediately
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-ar-sync38-stills
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Render and decode-verify only the bounded sample
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+          node "$PACKAGE/render.cjs" video
+      - name: Deliver completed sample without waiting for other jobs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-ar-sync38-sample
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
