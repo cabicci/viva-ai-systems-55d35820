@@ -6,6 +6,10 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/api/public/stripe-live-webhook")({
   server: {
     handlers: {
+      GET: async ({ request }) => {
+        const { handleLiveWebhook } = await import("@/lib/billing/live/endpoints.server");
+        return handleLiveWebhook(request);
+      },
       POST: async ({ request }) => {
         const { handleLiveWebhook } = await import("@/lib/billing/live/endpoints.server");
         return handleLiveWebhook(request);

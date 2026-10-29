@@ -5,6 +5,10 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/api/stripe-live/checkout")({
   server: {
     handlers: {
+      GET: async ({ request }) => {
+        const { handleLiveCheckout } = await import("@/lib/billing/live/endpoints.server");
+        return handleLiveCheckout(request);
+      },
       POST: async ({ request }) => {
         const { handleLiveCheckout } = await import("@/lib/billing/live/endpoints.server");
         return handleLiveCheckout(request);

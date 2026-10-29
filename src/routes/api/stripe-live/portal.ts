@@ -5,6 +5,10 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/api/stripe-live/portal")({
   server: {
     handlers: {
+      GET: async ({ request }) => {
+        const { handleLivePortal } = await import("@/lib/billing/live/endpoints.server");
+        return handleLivePortal(request);
+      },
       POST: async ({ request }) => {
         const { handleLivePortal } = await import("@/lib/billing/live/endpoints.server");
         return handleLivePortal(request);
