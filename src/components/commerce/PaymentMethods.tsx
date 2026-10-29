@@ -10,7 +10,7 @@ import { OfferPhone } from "./OfferPhone";
 import { normalizeOfferPhone } from "@/lib/commerce/offer-input";
 import { adminOfferCopy, offerError } from "@/lib/commerce/admin-offer-copy";
 import { ReceiptUpload } from "./ReceiptUpload";
-import { StripeCheckoutTrust, stripeCardPaymentLabel } from "@/components/billing/StripeCheckoutTrust";
+import { StripeCheckoutTrust, stripeCardMethodLabel } from "@/components/billing/StripeCheckoutTrust";
 import { resolveCheckoutUrl, billingUnavailableMessage, type LiveCheckoutRequest } from "@/lib/billing/checkout-client";
 
 export function PaymentMethods({
@@ -189,7 +189,7 @@ export function PaymentMethods({
           }}
           disabled={disabled || busy}
         >
-          <option value="stripe">{stripeCardPaymentLabel(locale)}</option>
+          <option value="stripe">{stripeCardMethodLabel(locale)}</option>
           {["instapay", "wallet", "bank"].map((code) => {
             const configured = methods.find((m) => m.code === code),
               available =

@@ -17,6 +17,17 @@ const linkCopy = {
   en: "Link is optional. Choose “Pay without Link” to enter your card details.",
 };
 
+const methodCopy = {
+  "ar-EG": "كارت ائتمان/خصم · Stripe",
+  "ar-MSA": "بطاقة ائتمان/خصم · Stripe",
+  "ar-Gulf": "بطاقة ائتمان/خصم · Stripe",
+  en: "Credit/debit card · Stripe",
+};
+
+export function stripeCardMethodLabel(locale: SupportedLocale) {
+  return methodCopy[locale];
+}
+
 export function stripeCardPaymentLabel(locale: SupportedLocale) {
   return trustCopy[locale];
 }

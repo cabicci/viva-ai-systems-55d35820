@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Clarify secure credit/debit card payment in four locales with official Stripe marks across public selections/reviews; verify manual-rail attribution, accessibility and mobile layout without publication or billing changes.
+- [x] Clarify secure credit/debit card payment in four locales with official Stripe marks across public selections/reviews; 81 focused tests and 32 signed-in desktop/mobile pricing checks passed with manual attribution preserved; no publication or billing changes.
 
 - [x] Apply shared paid coupon customer counts, confirmed-Live eligibility and cross-rail attempt guard; native installed-SQL journeys and concurrent bank/InstaPay vs Live cap/key races pass; evidence in docs/billing/shared-coupon-rail-verification.md. Live remains off.
 
