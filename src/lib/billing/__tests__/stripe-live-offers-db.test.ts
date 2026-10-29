@@ -50,7 +50,13 @@ describe("Live offer reservation database rules (disposable PostgreSQL)", () => 
       await db.query("select public.consume_stripe_live_offer($1,$2,'sub_fixture','in_fixture','cus_fixture')", [first.id,user]);
       expect((await db.query<{n:number}>("select consumed_count as n from billing.commerce_offers")).rows[0]?.n).toBe(1);
       await expect(reserve()).rejects.toThrow("REPLAY_CONFLICT");
-      await expect(db.exec("UPDATE public.stripe_live_offer_mappings SET value_minor=20")).rejects.toThrow("IMMUTABLE");
+      await expect(db.exec("UPDATE public.stripe_live_offer_mappings SET value_minor=20")).rejects.toThrow(/IMMUTABLE|DEFINITION_MISMATCH/);
+      await expect(db.exec("UPDATE public.stripe_live_offer_mappings SET version=2")).rejects.toThrow("IMMUTABLE");
+      await db.exec(`INSERT INTO billing.account_deletion_lifecycle VALUES('${user}','learner_erased',NULL);
+        UPDATE billing.account_deletion_lifecycle SET stage='learner_erased' WHERE user_id='${user}'`);
+      expect((await db.query<{phone:string|null,email:string}>("select phone,recipient_email as email from public.stripe_live_offer_reservations")).rows[0]).toEqual({phone:null,email:""});
+      await db.exec(`UPDATE billing.account_deletion_lifecycle SET financial_purged_at=now() WHERE user_id='${user}'`);
+      expect((await db.query<{n:number}>("select count(*)::int as n from public.stripe_live_offer_reservations")).rows[0]?.n).toBe(0);
     } finally { await db.close(); }
   });
 });
