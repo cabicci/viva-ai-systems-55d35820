@@ -1,3 +1,3 @@
 # Architecture rules
 
-- Live payment-risk handling resolves the Stripe charge/payment/invoice/subscription/customer graph before access changes; risk events require an atomic durable hold RPC and must fail non-2xx until that persistence prerequisite exists, never inventing financial refunds.
+- Live payment-risk handling validates the Stripe payment graph and uses service-only atomic holds in the existing LC09-classified webhook ledger; Live writers share lifecycle/user locks, access guards prevent restoration, and ordinary events never release a hold or invent refunds.
