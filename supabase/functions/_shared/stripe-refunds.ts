@@ -2,6 +2,17 @@ type StripeObject = Record<string, any>;
 type StripeGet = (path: string) => Promise<StripeObject>;
 const id = (value: any): string | null => (typeof value === "string" ? value : (value?.id ?? null));
 
+/** Keys Masaarat writes on its own Stripe customers/subscriptions. Anything without them is another product. */
+export const MASAARAT_METADATA_KEYS = [
+  "app", "environment", "product_scope", "internal_subscription_id", "plan_version_id",
+  "market_price_id", "checkout_generation", "user_id", "plan_key",
+] as const;
+export function hasMasaaratMetadata(metadata: unknown): boolean {
+  if (!metadata || typeof metadata !== "object") return false;
+  const m = metadata as Record<string, unknown>;
+  return MASAARAT_METADATA_KEYS.some((k) => m[k] !== undefined && m[k] !== null && m[k] !== "");
+}
+
 /** Resolve money through Stripe's invoice-payment relation, never refund metadata. */
 export async function resolveStripeRefund(
   refundId: string,
@@ -12,11 +23,13 @@ export async function resolveStripeRefund(
   const envError = live ? "REFUND_LIVE_REQUIRED" : "REFUND_TEST_REQUIRED";
   if (!/^re_[A-Za-z0-9_]+$/.test(refundId)) throw new Error("REFUND_ID_INVALID");
   const refund = await get(`/refunds/${encodeURIComponent(refundId)}`);
-  // Stripe Refund objects do not promise a livemode field. The caller enforces
-  // the environment's API key and signed event; invoice/subscription/PaymentIntent
-  // below must each explicitly attest the expected livemode. Default is Test.
-  if (refund.id !== refundId || (live ? refund.livemode === false : refund.livemode === true))
-    throw new Error(envError);
+  if (refund.id !== refundId) throw new Error(envError);
+  // Strict environment attestation. When the Refund carries livemode it must be
+  // exactly the expected boolean (missing-but-present values such as null or
+  // "true" are rejected). Stripe's Refund shape may omit livemode; then the
+  // PaymentIntent below must attest it strictly before anything is returned.
+  const refundAttests = Object.prototype.hasOwnProperty.call(refund, "livemode");
+  if (refundAttests && refund.livemode !== live) throw new Error(envError);
   if (!["pending", "requires_action", "succeeded", "failed", "canceled"].includes(refund.status)) {
     throw new Error("REFUND_STATUS_INVALID");
   }
@@ -29,6 +42,8 @@ export async function resolveStripeRefund(
     paymentIntent = id(charge.payment_intent);
   }
   if (!paymentIntent) throw new Error("REFUND_PAYMENT_INTENT_MISSING");
+  const intent = await get(`/payment_intents/${encodeURIComponent(paymentIntent)}`);
+  if (intent.livemode !== live || intent.id !== paymentIntent) throw new Error(envError);
   const query = new URLSearchParams({
     "payment[type]": "payment_intent",
     "payment[payment_intent]": paymentIntent,
@@ -38,7 +53,14 @@ export async function resolveStripeRefund(
   const payments = await get(`/invoice_payments?${query}`);
   if (payments.has_more) throw new Error("REFUND_INVOICE_PAYMENTS_INCOMPLETE");
   if (!Array.isArray(payments.data)) throw new Error("REFUND_INVOICE_PAYMENTS_INVALID");
-  if (payments.data.length === 0) return null; // Non-invoice payment is outside this bridge.
+  if (payments.data.length === 0) {
+    // Non-invoice payment (e.g. a one-time payment of another product on the
+    // same account) is outside this bridge. In Live, a payment that belongs to
+    // a Masaarat customer but lacks invoice evidence must fail loudly instead.
+    if (live && (hasMasaaratMetadata(intent.metadata) || (await masaaratCustomer(id(intent.customer), get, live))))
+      throw new Error("REFUND_INVOICE_EVIDENCE_MISSING");
+    return null;
+  }
   if (payments.data.length !== 1) throw new Error("REFUND_INVOICE_AMBIGUOUS");
   const payment = payments.data[0];
   if (
@@ -54,15 +76,20 @@ export async function resolveStripeRefund(
   const invoice = await get(`/invoices/${encodeURIComponent(invoiceId)}`);
   const subscriptionId =
     id(invoice.parent?.subscription_details?.subscription) ?? id(invoice.subscription);
-  if (!subscriptionId) return null;
-  const subscription = await get(`/subscriptions/${encodeURIComponent(subscriptionId)}`);
-  if (
-    (!subscription.metadata?.internal_subscription_id &&
-      subscription.metadata?.product_scope !== "kids") ||
-    !subscription.metadata?.user_id
-  )
+  if (!subscriptionId) {
+    if (live && (hasMasaaratMetadata(invoice.metadata) || (await masaaratCustomer(id(invoice.customer), get, live))))
+      throw new Error("REFUND_SUBSCRIPTION_EVIDENCE_MISSING");
     return null;
-  const intent = await get(`/payment_intents/${encodeURIComponent(paymentIntent)}`);
+  }
+  const subscription = await get(`/subscriptions/${encodeURIComponent(subscriptionId)}`);
+  const meta = subscription.metadata ?? {};
+  if (live) {
+    // Unrelated product: acknowledge upstream. Masaarat with incomplete identity: fail.
+    if (!hasMasaaratMetadata(meta)) return null;
+    if (!meta.user_id) throw new Error("REFUND_SUBSCRIPTION_METADATA_INCOMPLETE");
+  } else if ((!meta.internal_subscription_id && meta.product_scope !== "kids") || !meta.user_id) {
+    return null;
+  }
   const customerId = id(subscription.customer);
   if (
     [invoice, subscription, intent].some((o) => o.livemode !== live) ||
@@ -99,4 +126,11 @@ export async function resolveStripeRefund(
       p_is_latest_invoice: id(subscription.latest_invoice) === invoice.id,
     },
   };
+}
+
+async function masaaratCustomer(customerId: string | null, get: StripeGet, live: boolean): Promise<boolean> {
+  if (!customerId) return false;
+  const customer = await get(`/customers/${encodeURIComponent(customerId)}`);
+  if (customer.livemode !== live) throw new Error(live ? "REFUND_LIVE_REQUIRED" : "REFUND_TEST_REQUIRED");
+  return hasMasaaratMetadata(customer.metadata);
 }

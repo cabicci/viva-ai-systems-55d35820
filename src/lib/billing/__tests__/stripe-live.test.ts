@@ -463,3 +463,92 @@ describe("Live webhook on a shared Stripe account", () => {
     expect(isMasaaratSubscription({ app: "masaarat" })).toBe(true);
   });
 });
+
+describe("Live refunds on a shared Stripe account", () => {
+  const renderIntent = { id: "pi_render", object: "payment_intent", livemode: true, status: "succeeded", customer: "cus_render",
+    currency: "usd", amount_received: 2000, metadata: {} };
+  const renderRefund = { id: "re_render", object: "refund", status: "succeeded", amount: 2000, currency: "usd", payment_intent: "pi_render" };
+
+  it("acknowledges a refund of an unrelated one-time Render payment with 200 and no database mutation", async () => {
+    const h = harness({
+      stripe: {
+        "GET /refunds/re_render": renderRefund,
+        "GET /payment_intents/pi_render": renderIntent,
+        "GET /invoice_payments": { object: "list", has_more: false, data: [] },
+        "GET /customers/cus_render": { id: "cus_render", object: "customer", livemode: true, metadata: {} },
+      },
+    });
+    const e = signedEvent({ id: "evt_render_refund", type: "refund.created", created: NOW, livemode: true, data: { object: { id: "re_render" } } });
+    expect(await handleLiveWebhookEvent(e.body, e.signature, h.deps)).toEqual({ status: 200, body: { received: true, ignored: true } });
+    expect(h.rpcCalls).toHaveLength(0);
+    expect(h.stripeCalls.some((c) => c.method !== "GET")).toBe(false);
+  });
+
+  it("acknowledges a refund of an unrelated Render subscription invoice without mutation", async () => {
+    const h = harness({
+      stripe: {
+        "GET /refunds/re_render": renderRefund,
+        "GET /payment_intents/pi_render": renderIntent,
+        "GET /invoice_payments": { object: "list", has_more: false, data: [{ livemode: true, status: "paid", currency: "usd", amount_paid: 2000, invoice: "in_render", payment: { type: "payment_intent", payment_intent: "pi_render" } }] },
+        "GET /invoices/in_render": { id: "in_render", object: "invoice", livemode: true, status: "paid", customer: "cus_render", currency: "usd", amount_paid: 2000, subscription: "sub_render" },
+        "GET /subscriptions/sub_render": { id: "sub_render", object: "subscription", livemode: true, status: "active", customer: "cus_render", metadata: {} },
+      },
+    });
+    const e = signedEvent({ id: "evt_render_refund2", type: "refund.created", created: NOW, livemode: true, data: { object: { id: "re_render" } } });
+    expect((await handleLiveWebhookEvent(e.body, e.signature, h.deps)).status).toBe(200);
+    expect(h.rpcCalls).toHaveLength(0);
+    expect(h.stripeCalls.some((c) => c.method !== "GET")).toBe(false);
+  });
+
+  const masaaratRefund = (sub: Record<string, any>, payments: any[] | null = null) => harness({
+    stripe: {
+      "GET /refunds/re_m": { id: "re_m", object: "refund", status: "succeeded", amount: 19900, currency: "egp", payment_intent: "pi_m" },
+      "GET /payment_intents/pi_m": { id: "pi_m", object: "payment_intent", livemode: true, status: "succeeded", customer: "cus_live1", currency: "egp", amount_received: 19900, metadata: {} },
+      "GET /invoice_payments": { object: "list", has_more: false, data: payments ?? [{ livemode: true, status: "paid", currency: "egp", amount_paid: 19900, invoice: "in_m", payment: { type: "payment_intent", payment_intent: "pi_m" } }] },
+      "GET /customers/cus_live1": { id: "cus_live1", object: "customer", livemode: true, metadata: { user_id: USER.id, environment: "live" } },
+      "GET /invoices/in_m": { id: "in_m", object: "invoice", livemode: true, status: "paid", customer: "cus_live1", currency: "egp", amount_paid: 19900, subscription: "sub_m" },
+      "GET /subscriptions/sub_m": { id: "sub_m", object: "subscription", livemode: true, status: "active", customer: "cus_live1", latest_invoice: "in_m", ...sub },
+      "DELETE /subscriptions/sub_m": { id: "sub_m", object: "subscription", livemode: true, status: "canceled" },
+    },
+  });
+  const refundEvent = (n: string) => signedEvent({ id: `evt_${n}`, type: "refund.created", created: NOW, livemode: true, data: { object: { id: "re_m" } } });
+
+  for (const [label, metadata] of [
+    ["missing environment", { app: "masaarat", product_scope: "kids", user_id: USER.id }],
+    ["environment=test", { app: "masaarat", product_scope: "academic", user_id: USER.id, environment: "test" }],
+    ["missing user_id", { app: "masaarat", product_scope: "technical", environment: "live" }],
+  ] as [string, Record<string, string>][]) {
+    it(`fails non-2xx for a Masaarat refund with ${label} and changes no access`, async () => {
+      const h = masaaratRefund({ metadata });
+      const res = await handleLiveWebhookEvent(refundEvent(label).body, refundEvent(label).signature, h.deps);
+      expect(res.status).toBe(500);
+      expect(h.rpcCalls.some((c) => c.name.startsWith("apply_"))).toBe(false);
+      expect(h.stripeCalls.some((c) => c.method === "DELETE")).toBe(false);
+    });
+  }
+
+  it("fails non-2xx when a Masaarat customer's refund has no invoice evidence", async () => {
+    const h = masaaratRefund({ metadata: { app: "masaarat", product_scope: "kids", user_id: USER.id, environment: "live" } }, []);
+    const e = refundEvent("noevidence");
+    expect((await handleLiveWebhookEvent(e.body, e.signature, h.deps)).status).toBe(500);
+    expect(h.rpcCalls).toHaveLength(0);
+    expect(h.stripeCalls.some((c) => c.method === "DELETE")).toBe(false);
+  });
+
+  it("fails non-2xx when Masaarat payment evidence does not match the refund", async () => {
+    const h = masaaratRefund({ metadata: { app: "masaarat", product_scope: "kids", user_id: USER.id, environment: "live" } },
+      [{ livemode: true, status: "paid", currency: "egp", amount_paid: 9900, invoice: "in_m", payment: { type: "payment_intent", payment_intent: "pi_m" } }]);
+    const e = refundEvent("mismatch");
+    expect((await handleLiveWebhookEvent(e.body, e.signature, h.deps)).status).toBe(500);
+    expect(h.rpcCalls).toHaveLength(0);
+    expect(h.stripeCalls.some((c) => c.method === "DELETE")).toBe(false);
+  });
+
+  it("revokes Academic access for a fully proven Live Masaarat refund (academic has no internal_subscription_id)", async () => {
+    const h = masaaratRefund({ metadata: { app: "masaarat", product_scope: "academic", user_id: USER.id, environment: "live" } });
+    (h.deps as any).rpc = async (name: string, body: any) => { h.rpcCalls.push({ name, body }); return name === "lc09_financial_expired" ? false : true; };
+    const e = refundEvent("academic");
+    expect(await handleLiveWebhookEvent(e.body, e.signature, h.deps)).toEqual({ status: 200, body: { received: true, revoked: true } });
+    expect(h.rpcCalls.find((c) => c.name === "apply_academic_stripe_refund")).toBeTruthy();
+  });
+});
