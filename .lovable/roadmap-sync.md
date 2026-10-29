@@ -4,7 +4,7 @@
 date: 2026-10-29
 scope: ui
 source: ai
-summary: Updated compact pricing badges in four locales and added 20 package/locale rail-selection accessibility regressions; secure card wording, official Stripe marks and Link-optional help remain presentation-only.
+summary: Completed official Stripe/card visual update; compact menu labels avoid mobile clipping while full localized secure-card statement stays visible. 81 UI regressions and 32 signed-in desktop/mobile page checks passed; manual attribution unchanged, no publication or billing settings changes.
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
