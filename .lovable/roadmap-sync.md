@@ -2,9 +2,9 @@
 
 [roadmap:dbeb62ce-0d28-4476-89dd-30c2f58a3263]
 date: 2026-10-29
-scope: db
+scope: other
 source: ai
-summary: [scope:db] Applied 0020 immutable renewal retry input, disabled/expired mapping replay rejection and nonnull invoice/subscription consumption identity
+summary: [scope:other] Added Session readback before binding; neutralized remaining Kids customer-facing Test labels; migration-backed tests now replay all 0014-0020 changes
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
