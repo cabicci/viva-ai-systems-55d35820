@@ -4,10 +4,10 @@
 import { supabase } from "@/integrations/supabase/client";
 import type { SupportedLocale as Locale } from "@/lib/locale/types";
 
-export type LiveCheckoutRequest =
+export type LiveCheckoutRequest = (
   | { product: "core"; planKey: "pro" | "pro_plus"; billingInterval: "month" | "year"; marketCode: "EG" | "INTL" }
   | { product: "kids" | "technical"; billingInterval: "month" | "year"; marketCode: "EG" | "INTL"; locale?: string }
-  | { product: "academic"; academicAssistant: boolean; billingInterval: "month" | "year"; marketCode: "EG" | "INTL"; locale?: string };
+  | { product: "academic"; academicAssistant: boolean; billingInterval: "month" | "year"; marketCode: "EG" | "INTL"; locale?: string }) & { offer?: { code: string; phone?: string; key: string; renewal?: boolean } };
 export type LivePortalScope = "core" | "kids" | "academic" | "technical";
 
 export class BillingUnavailableError extends Error {
@@ -68,6 +68,7 @@ export async function resolveCheckoutUrl(
   deps: BillingClientDeps = defaultDeps,
 ): Promise<string> {
   const mode = await serverMode("checkout", deps);
+  if (live.offer && mode !== "live") throw new BillingUnavailableError("LIVE_OFFER_NOT_AVAILABLE");
   if (mode === "test") return test();
   return postLive("/api/stripe-live/checkout", live, "https://checkout.stripe.com", deps);
 }

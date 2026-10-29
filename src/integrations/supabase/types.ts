@@ -2251,6 +2251,137 @@ export type Database = {
         }
         Relationships: []
       }
+      stripe_live_offer_mappings: {
+        Row: {
+          billing_interval: string
+          coupon_id: string
+          created_at: string
+          currency: string
+          duration: string
+          duration_in_months: number | null
+          enabled: boolean
+          id: string
+          kind: string
+          market_code: string
+          offer_id: string
+          package: string
+          price_id: string
+          product_id: string
+          promotion_code_id: string
+          reviewed_at: string | null
+          value_minor: number
+          version: number
+        }
+        Insert: {
+          billing_interval: string
+          coupon_id: string
+          created_at?: string
+          currency: string
+          duration: string
+          duration_in_months?: number | null
+          enabled?: boolean
+          id?: string
+          kind: string
+          market_code: string
+          offer_id: string
+          package: string
+          price_id: string
+          product_id: string
+          promotion_code_id: string
+          reviewed_at?: string | null
+          value_minor: number
+          version: number
+        }
+        Update: {
+          billing_interval?: string
+          coupon_id?: string
+          created_at?: string
+          currency?: string
+          duration?: string
+          duration_in_months?: number | null
+          enabled?: boolean
+          id?: string
+          kind?: string
+          market_code?: string
+          offer_id?: string
+          package?: string
+          price_id?: string
+          product_id?: string
+          promotion_code_id?: string
+          reviewed_at?: string | null
+          value_minor?: number
+          version?: number
+        }
+        Relationships: []
+      }
+      stripe_live_offer_reservations: {
+        Row: {
+          consumed_at: string | null
+          consumed_invoice_id: string | null
+          created_at: string
+          customer_id: string | null
+          expires_at: string
+          final_minor: number
+          id: string
+          mapping_id: string
+          offer_id: string
+          original_minor: number
+          phone: string | null
+          recipient_email: string
+          renewal: boolean
+          request_key: string
+          session_id: string | null
+          subscription_id: string | null
+          user_id: string
+        }
+        Insert: {
+          consumed_at?: string | null
+          consumed_invoice_id?: string | null
+          created_at?: string
+          customer_id?: string | null
+          expires_at: string
+          final_minor: number
+          id?: string
+          mapping_id: string
+          offer_id: string
+          original_minor: number
+          phone?: string | null
+          recipient_email: string
+          renewal?: boolean
+          request_key: string
+          session_id?: string | null
+          subscription_id?: string | null
+          user_id: string
+        }
+        Update: {
+          consumed_at?: string | null
+          consumed_invoice_id?: string | null
+          created_at?: string
+          customer_id?: string | null
+          expires_at?: string
+          final_minor?: number
+          id?: string
+          mapping_id?: string
+          offer_id?: string
+          original_minor?: number
+          phone?: string | null
+          recipient_email?: string
+          renewal?: boolean
+          request_key?: string
+          session_id?: string | null
+          subscription_id?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "stripe_live_offer_reservations_mapping_id_fkey"
+            columns: ["mapping_id"]
+            isOneToOne: false
+            referencedRelation: "stripe_live_offer_mappings"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       subscription_mail_outbox: {
         Row: {
           blocked: boolean
@@ -3107,6 +3238,15 @@ export type Database = {
           preferred_locale: string
         }[]
       }
+      bind_stripe_live_offer: {
+        Args: {
+          p_customer_id: string
+          p_reservation_id: string
+          p_session_id: string
+          p_user_id: string
+        }
+        Returns: boolean
+      }
       card_assistant_access: {
         Args: {
           p_area: string
@@ -3354,6 +3494,16 @@ export type Database = {
           reset_at: string
         }[]
       }
+      consume_stripe_live_offer: {
+        Args: {
+          p_customer_id: string
+          p_invoice_id: string
+          p_reservation_id: string
+          p_subscription_id: string
+          p_user_id: string
+        }
+        Returns: boolean
+      }
       delete_my_account_data: { Args: never; Returns: undefined }
       email_access_command: {
         Args: { p_action: string; p_data?: Json }
@@ -3444,6 +3594,10 @@ export type Database = {
         Returns: Json
       }
       get_stripe_live_enabled: { Args: never; Returns: boolean }
+      get_stripe_live_offer_evidence: {
+        Args: { p_reservation_id: string; p_user_id: string }
+        Returns: Json
+      }
       get_stripe_live_risk_hold: {
         Args: { p_subscription_id: string; p_user_id: string }
         Returns: boolean
@@ -4104,6 +4258,19 @@ export type Database = {
           p_lesson_id: string
           p_request_id: string
           p_units: number
+          p_user_id: string
+        }
+        Returns: Json
+      }
+      reserve_stripe_live_offer: {
+        Args: {
+          p_code: string
+          p_interval: string
+          p_key: string
+          p_market: string
+          p_package: string
+          p_phone: string
+          p_renewal?: boolean
           p_user_id: string
         }
         Returns: Json
