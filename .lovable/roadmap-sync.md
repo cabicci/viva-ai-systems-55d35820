@@ -4,7 +4,7 @@
 date: 2026-10-29
 scope: other
 source: ai
-summary: [scope:other] Match external refund test to mandatory funds verification and explicit order-access revocation
+summary: [scope:other] Add guarded native localhost fixture and genuine two-session manual-versus-Live cap/key race tests
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
