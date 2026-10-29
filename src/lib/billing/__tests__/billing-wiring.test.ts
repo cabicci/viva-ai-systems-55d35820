@@ -141,7 +141,7 @@ describe("Live route with the real checkout logic", () => {
   const deps = (o: Partial<LiveDeps> = {}): LiveDeps & { stripeCalls: string[] } => {
     const stripeCalls: string[] = [];
     return {
-      getEnv: (n) => ({ STRIPE_LIVE_ENABLED: "true" } as Record<string, string>)[n],
+      getEnv: (n: string) => ({ STRIPE_LIVE_ENABLED: "true" } as Record<string, string>)[n],
       databaseLiveEnabled: async () => true,
       rpc: async (name: string) => {
         if (name === "get_technical_stripe_checkout_context")
