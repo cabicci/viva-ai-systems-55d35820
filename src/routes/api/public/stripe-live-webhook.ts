@@ -6,15 +6,13 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/api/public/stripe-live-webhook")({
   server: {
     handlers: {
+      GET: async ({ request }) => {
+        const { handleLiveWebhook } = await import("@/lib/billing/live/endpoints.server");
+        return handleLiveWebhook(request);
+      },
       POST: async ({ request }) => {
-        const { liveRuntime } = await import("@/lib/billing/live/runtime.server");
-        const { handleLiveWebhookEvent } = await import("@/lib/billing/live/stripe-live");
-        const result = await handleLiveWebhookEvent(
-          await request.text(),
-          request.headers.get("stripe-signature"),
-          liveRuntime(),
-        );
-        return Response.json(result.body, { status: result.status });
+        const { handleLiveWebhook } = await import("@/lib/billing/live/endpoints.server");
+        return handleLiveWebhook(request);
       },
     },
   },
