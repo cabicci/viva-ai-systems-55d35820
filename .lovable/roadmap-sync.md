@@ -1,10 +1,10 @@
 # Roadmap sync marker
 
-[roadmap:dbeb62ce-0d28-4476-89dd-30c2f58a3263]
+[roadmap:8c6a6168-3630-4978-b273-b7244eaec792]
 date: 2026-10-29
 scope: other
-source: ai
-summary: [scope:other] Final validation: 449 passed/42 skipped/0 failed; automatic build OK 21:50:08; server DB gate false, mode unset/env off, 0 offers/mappings/reservations; launch blocked pending reviewed offers/Stripe IDs, expansions, reconciliation and hosted validation
+source: user
+summary: [scope:other] Owner defers hypothetical coded offers; verify static offers and current 28 Live prices with Kids family discount and RAK-compatible risk handling as launch priority
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
