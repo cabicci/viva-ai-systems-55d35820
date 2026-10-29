@@ -44,7 +44,16 @@ beforeAll(async () => {
   await db.exec(sql("scripts/email-access/email-access-candidate.sql"));
   await db.exec(sql("docs/billing/20260920_stripe_refunds.sql"));
   for (const name of ["0008_stripe_live_environment_separation.sql", "0009_stripe_live_guard_lifecycle.sql", "0010_stripe_live_rpc_environment.sql", "0011_stripe_live_atomic_risk_holds.sql", "0012_stripe_live_risk_guard_binding_closure.sql", "0013_stripe_live_refund_lock_order.sql", "0014_stripe_live_offer_mapping_prerequisite.sql", "0015_stripe_live_offer_reservations.sql", "0016_stripe_live_offer_retention_and_replay.sql", "0017_stripe_live_offer_retention_stage_fix.sql", "0018_stripe_live_offer_binding_lifetime_closure.sql", "0019_stripe_live_offer_catalogue_binding.sql", "0020_stripe_live_offer_retry_input_closure.sql", "0021_stripe_live_offer_cross_channel_phone_guard.sql"])
-    try { await db.exec(sql(`drizzle/migrations/${name}`)); }
+    try {
+      if (name === "0010_stripe_live_rpc_environment.sql") {
+        const names = Array.from(sql(`drizzle/migrations/${name}`).matchAll(/\('public','([^']+)'/g), match => match[1]);
+        const missing: string[] = [];
+        for (const fn of new Set(names))
+          if (!(await db.query("select 1 from pg_proc where pronamespace='public'::regnamespace and proname=$1", [fn])).rows.length) missing.push(fn);
+        if (missing.length) throw new Error(`Missing installed fixture prerequisites: ${missing.join(",")}`);
+      }
+      await db.exec(sql(`drizzle/migrations/${name}`));
+    }
     catch (error) { console.error("Fixture migration", name); throw error; }
   await db.exec(`INSERT INTO auth.users(id,email,email_confirmed_at) VALUES('${admin}','admin@example.test',now()),('${user}','member@example.test',now()),('${other}','other@example.test',now()); INSERT INTO public.user_roles VALUES('${admin}','admin');`);
 }, 30000);
