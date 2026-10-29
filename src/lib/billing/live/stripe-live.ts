@@ -20,9 +20,23 @@ import {
   STRIPE_SECRET_NAMES,
   type LiveGateDeps,
 } from "../../../../supabase/functions/_shared/stripe-environment";
+import { LIVE_SITE_HOSTS } from "./origin";
+
+const TRUSTED_APP_ORIGINS = new Set<string>(LIVE_SITE_HOSTS.map((h) => `https://${h}`));
 
 export const LIVE = "live" as const;
 export const LIVE_SUFFIX = "live-v1";
+// Explicit marker on every new Masaarat Live session/subscription, so account-wide
+// webhook events of unrelated products (e.g. Render) can be told apart.
+export const APP_MARKER = { key: "app", value: "masaarat" } as const;
+const MASAARAT_KEYS = [APP_MARKER.key, "environment", "product_scope", "internal_subscription_id", "plan_version_id",
+  "market_price_id", "checkout_generation", "user_id", "plan_key"];
+
+// Unrelated = carries none of the keys Masaarat ever writes.
+export function isMasaaratSubscription(metadata: Record<string, unknown> | null | undefined): boolean {
+  if (!metadata || typeof metadata !== "object") return false;
+  return MASAARAT_KEYS.some((k) => metadata[k] !== undefined && metadata[k] !== null && metadata[k] !== "");
+}
 
 type StripeMethod = "GET" | "POST" | "DELETE";
 export type LiveDeps = LiveGateDeps & {
@@ -91,6 +105,7 @@ export async function createLiveCheckout(
   appOrigin: string,
   deps: LiveDeps,
 ): Promise<LiveResult> {
+  if (!TRUSTED_APP_ORIGINS.has(appOrigin)) return { status: 403, body: { error: "UNTRUSTED_ORIGIN" } };
   try {
     await assertLiveCheckoutAllowed(LIVE, deps);
   } catch {
@@ -184,7 +199,7 @@ async function coreCheckout(
         user_id: user.id, internal_subscription_id: prepared.subscription_id,
         checkout_generation: prepared.checkout_generation, plan_version_id: context.plan_version_id,
         market_price_id: context.market_price_id, plan_key: context.plan_key, market_code: context.market_code,
-        billing_interval: context.billing_interval, environment: LIVE,
+        billing_interval: context.billing_interval, environment: LIVE, [APP_MARKER.key]: APP_MARKER.value,
       };
       const params = new URLSearchParams({
         mode: "subscription", customer: finalCustomer, client_reference_id: user.id,
@@ -268,7 +283,7 @@ async function scopedCheckout(
   params.set("line_items[0][quantity]", "1");
   const metadata: Record<string, string> = {
     product_scope: scope, user_id: user.id, market_code: context.market_code,
-    billing_interval: context.billing_interval, environment: LIVE,
+    billing_interval: context.billing_interval, environment: LIVE, [APP_MARKER.key]: APP_MARKER.value,
     ...(scope === "academic" ? { academic_assistant: context.includes_assistant ? "true" : "false", course_id: "AC-BUS" } : {}),
   };
   for (const [key, value] of Object.entries(metadata)) {
@@ -298,6 +313,7 @@ async function scopedCheckout(
 export type PortalScope = "core" | "kids" | "academic" | "technical";
 
 export async function createLivePortal(user: LiveUser, scope: PortalScope, appOrigin: string, deps: LiveDeps): Promise<LiveResult> {
+  if (!TRUSTED_APP_ORIGINS.has(appOrigin)) return { status: 403, body: { error: "UNTRUSTED_ORIGIN" } };
   try {
     const stripe = liveStripe(deps);
     const rpcName = { core: "get_stripe_portal_context", kids: "get_kids_stripe_portal_context",
@@ -365,6 +381,8 @@ export async function handleLiveWebhookEvent(rawBody: string, signature: string 
     if (["refund.created", "refund.updated", "refund.failed"].includes(event.type)) {
       const resolved = await resolveStripeRefund(String(event.data.object.id), (p) => get(p), LIVE);
       if (!resolved) return { status: 200, body: { received: true, ignored: true } };
+      if (!isMasaaratSubscription(resolved.subscription?.metadata))
+        return { status: 200, body: { received: true, ignored: true, unrelated: true } };
       if (await financialDeliveryExpired(resolved.subscription.metadata?.user_id, deps.rpc))
         return { status: 200, body: { received: true, ignored: true, financial_erased: true } };
       if (resolved.subscription.metadata?.environment !== LIVE) throw new Error("STRIPE_ENVIRONMENT_MISMATCH");
@@ -396,6 +414,8 @@ export async function handleLiveWebhookEvent(rawBody: string, signature: string 
       ? object : await get(`/subscriptions/${encodeURIComponent(gatewaySubscriptionId)}`);
     if (subscription.livemode !== true) throw new Error("STRIPE_ENVIRONMENT_MISMATCH");
     const metadata = subscription.metadata ?? {};
+    // Another product on the same Stripe account: acknowledge, write nothing.
+    if (!isMasaaratSubscription(metadata)) return { status: 200, body: { received: true, ignored: true, unrelated: true } };
     if (metadata.environment !== LIVE) throw new Error("STRIPE_ENVIRONMENT_MISMATCH");
     if (await financialDeliveryExpired(metadata.user_id, deps.rpc))
       return { status: 200, body: { received: true, ignored: true, financial_erased: true } };

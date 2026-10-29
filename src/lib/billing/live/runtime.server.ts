@@ -65,8 +65,4 @@ export async function authenticateBearer(request: Request): Promise<LiveUser | n
   return user.id && user.email ? { id: user.id, email: user.email } : null;
 }
 
-const ORIGINS = new Set(["https://masaarat.ai", "https://www.masaarat.ai"]);
-export function appOriginFor(request: Request): string {
-  const origin = request.headers.get("Origin");
-  return origin && ORIGINS.has(origin) ? origin : "https://masaarat.ai";
-}
+export { trustedLiveOriginFor } from "./origin";

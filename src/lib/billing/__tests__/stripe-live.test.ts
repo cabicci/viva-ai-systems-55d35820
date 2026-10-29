@@ -5,8 +5,10 @@ import {
   createLiveCheckout,
   createLivePortal,
   handleLiveWebhookEvent,
+  isMasaaratSubscription,
   type LiveDeps,
 } from "@/lib/billing/live/stripe-live";
+import { trustedLiveOrigin } from "@/lib/billing/live/origin";
 
 const SECRET = "whsec_live_fixture";
 const USER = { id: "11111111-1111-4111-8111-111111111111", email: "parent@example.com" };
@@ -139,6 +141,8 @@ describe("Live checkout when both switches are ON", () => {
     expect(session.params!.get("line_items[0][price]")).toBe("price_kids_bundle");
     expect(session.params!.get("automatic_tax[enabled]")).toBe("false");
     expect(session.params!.get("subscription_data[metadata][environment]")).toBe("live");
+    expect(session.params!.get("metadata[app]")).toBe("masaarat");
+    expect(session.params!.get("subscription_data[metadata][app]")).toBe("masaarat");
   });
 
   it("fails closed when no Live price is registered (scoped and core)", async () => {
@@ -385,5 +389,77 @@ describe("Live portal", () => {
   it("refuses a test-mode portal session", async () => {
     const h = portalHarness(PORTAL_ENV, config(), false);
     expect((await createLivePortal(USER, "academic", "https://masaarat.ai", h.deps)).status).toBe(503);
+  });
+});
+
+describe("Live origin allow-list", () => {
+  it("accepts only the published site with matching Host", () => {
+    expect(trustedLiveOrigin("https://masaarat.ai", "masaarat.ai")).toBe("https://masaarat.ai");
+    expect(trustedLiveOrigin("https://www.masaarat.ai", "www.masaarat.ai")).toBe("https://www.masaarat.ai");
+  });
+  for (const [origin, host] of [
+    [null, "masaarat.ai"], ["https://masaarat.ai", null], ["null", "masaarat.ai"],
+    ["https://id-preview--658adce0-747d-4c8e-90e3-d22225070b94.lovable.app", "id-preview--658adce0-747d-4c8e-90e3-d22225070b94.lovable.app"],
+    ["https://viva-ai-systems.lovable.app", "viva-ai-systems.lovable.app"],
+    ["https://masaarat.ai", "viva-ai-systems.lovable.app"], ["http://masaarat.ai", "masaarat.ai"],
+    ["https://masaarat.ai:8443", "masaarat.ai"], ["https://evil.masaarat.ai", "evil.masaarat.ai"],
+    ["https://masaarat.ai.evil.com", "masaarat.ai.evil.com"], ["http://localhost:8080", "localhost:8080"],
+  ] as [string | null, string | null][]) {
+    it(`refuses origin=${origin} host=${host}`, () => expect(trustedLiveOrigin(origin, host)).toBeNull());
+  }
+
+  it("refuses an untrusted origin before any database or Stripe call, even with both switches ON", async () => {
+    const h = harness({ env: { STRIPE_LIVE_ENABLED: "true" }, db: true });
+    const res = await createLiveCheckout(USER, { product: "kids", billingInterval: "month", marketCode: "EG" },
+      "https://id-preview--658adce0-747d-4c8e-90e3-d22225070b94.lovable.app", h.deps);
+    expect(res).toEqual({ status: 403, body: { error: "UNTRUSTED_ORIGIN" } });
+    expect(h.rpcCalls).toHaveLength(0);
+    expect(h.stripeCalls).toHaveLength(0);
+    expect(h.dbChecks()).toBe(0);
+    const p = harness({ env: { STRIPE_LIVE_PORTAL_CONFIGURATION_ID: "bpc_x" } });
+    expect((await createLivePortal(USER, "core", "https://viva-ai-systems.lovable.app", p.deps)).status).toBe(403);
+    expect(p.rpcCalls.length + p.stripeCalls.length).toBe(0);
+  });
+});
+
+describe("Live webhook on a shared Stripe account", () => {
+  const renderSub = { id: "sub_render", object: "subscription", livemode: true, status: "active", customer: "cus_render",
+    metadata: {}, items: { data: [{ price: { id: "price_render" } }] } };
+
+  it("acknowledges an unrelated Render subscription event with 200 and writes nothing", async () => {
+    const h = harness({});
+    const e = signedEvent({ id: "evt_render", type: "customer.subscription.updated", created: NOW, livemode: true, data: { object: renderSub } });
+    expect(await handleLiveWebhookEvent(e.body, e.signature, h.deps)).toEqual({ status: 200, body: { received: true, ignored: true, unrelated: true } });
+    expect(h.rpcCalls).toHaveLength(0);
+  });
+
+  it("acknowledges an unrelated Render invoice.paid without database writes", async () => {
+    const h = harness({ stripe: { "GET /subscriptions/sub_render": renderSub } });
+    const e = signedEvent({ id: "evt_render_inv", type: "invoice.paid", created: NOW, livemode: true,
+      data: { object: { id: "in_render", object: "invoice", subscription: "sub_render", status: "paid" } } });
+    expect((await handleLiveWebhookEvent(e.body, e.signature, h.deps)).status).toBe(200);
+    expect(h.rpcCalls).toHaveLength(0);
+  });
+
+  for (const [label, metadata] of [
+    ["missing environment", { app: "masaarat", product_scope: "kids", user_id: USER.id }],
+    ["environment=test", { app: "masaarat", environment: "test", internal_subscription_id: "isub", user_id: USER.id }],
+    ["legacy keys without environment", { product_scope: "academic", user_id: USER.id }],
+  ] as [string, Record<string, string>][]) {
+    it(`fails non-2xx for a Masaarat subscription with ${label}`, async () => {
+      const h = harness({});
+      const e = signedEvent({ id: `evt_${label}`, type: "customer.subscription.updated", created: NOW, livemode: true,
+        data: { object: { ...renderSub, id: "sub_m", metadata } } });
+      const res = await handleLiveWebhookEvent(e.body, e.signature, h.deps);
+      expect(res.status).toBe(500);
+      expect(h.rpcCalls.some((c) => c.name.startsWith("apply_"))).toBe(false);
+    });
+  }
+
+  it("classifies metadata", () => {
+    expect(isMasaaratSubscription({})).toBe(false);
+    expect(isMasaaratSubscription(null)).toBe(false);
+    expect(isMasaaratSubscription({ render_plan: "pro" })).toBe(false);
+    expect(isMasaaratSubscription({ app: "masaarat" })).toBe(true);
   });
 });
