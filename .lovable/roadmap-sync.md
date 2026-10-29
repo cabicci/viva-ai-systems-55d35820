@@ -4,7 +4,7 @@
 date: 2026-10-29
 scope: other
 source: ai
-summary: [scope:other] Include original installed refund SQL prerequisite in full coupon replay harness
+summary: [scope:other] Assert fixture original function inventory before environment rewrite
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
