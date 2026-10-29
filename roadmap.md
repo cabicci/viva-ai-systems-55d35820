@@ -1,11 +1,12 @@
 # Roadmap
 
-- [ ] Verify coherent manual-transfer and Stripe journeys independently; preserve manual rails and source attribution, report actual hosted status and owner-payment blockers without activating Live.
+- [x] Audit manual-transfer and Stripe journeys separately; repair lossy offer-page Stripe selection, verify shared capacity and preserve source attribution/access; publish evidence matrix in docs/billing/payment-rail-verification.md, no activation.
+- [ ] Complete hosted real-payment validation per rail and cross-rail concurrency before launch; blocked by owner-controlled transactions, unpublished latest source and bank configuration if bank is required.
 
 - [x] Install guarded Live coded-offer mapping/reservation source, strict invoice proof and neutral public billing copy; actual inventory has zero offers. No publication or activation.
 - [x] Operational Live coded offers: authorized immutable admin mapping workflow, explicit once/forever review, Session discount proof and idempotent terminal reservation reconciliation implemented; no customer code or Stripe object created.
 - [x] Audit existing Test/manual/admin access: one current admin-referenced Kids grant preserved despite refunded Test history; no current paid Stripe periods; non-destructive transition documented, environment-aware portal lookup preserves Test lock.
-- [ ] Before launch: owner provisions a real offer and pre-created Live Coupon/Promotion Code, verifies restricted-key expansion/rounding and signed paid invoice plus hosted concurrency; blocked by absent authorized offers/payment evidence.
+- [ ] When a paid code is configured: owner provisions its pre-created Live Coupon/Promotion Code and verifies restricted-key expansion/rounding, signed discounted invoice and hosted concurrency; no code currently exists and none will be invented.
 
 - [x] Audit 28 unique Live mappings with zero amount mismatches, including Kids family prices; adapt signed risk events to permitted payment graph reads; price and Invoice Payment GETs returned 200; public billing Test wording removed in source. Catalogue activation and full Stripe catalogue readback remain separate; absent hypothetical offers are not blockers.
 
