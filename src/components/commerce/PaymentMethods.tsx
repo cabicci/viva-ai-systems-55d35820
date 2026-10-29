@@ -10,6 +10,7 @@ import { OfferPhone } from "./OfferPhone";
 import { normalizeOfferPhone } from "@/lib/commerce/offer-input";
 import { adminOfferCopy, offerError } from "@/lib/commerce/admin-offer-copy";
 import { ReceiptUpload } from "./ReceiptUpload";
+import { StripeCheckoutTrust } from "@/components/billing/StripeCheckoutTrust";
 
 export function PaymentMethods({
   packageKey,
@@ -256,6 +257,7 @@ export function PaymentMethods({
       >
         {children}
       </Button>
+      {method === "stripe" && quote?.offer_kind !== "complimentary" && <StripeCheckoutTrust />}
       {error && (
         <p role="alert" className="text-destructive">
           {error}

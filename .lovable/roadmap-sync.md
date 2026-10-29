@@ -1,10 +1,10 @@
 # Roadmap sync marker
 
-[roadmap:49073428-998a-47e1-ac7a-f5f6c063524b]
+[roadmap:3d795651-5aa3-4f3e-ab1c-d2e7e2007a92]
 date: 2026-10-29
-scope: db
-source: ai
-summary: [scope:db] Applied 0013 common Live refund lock order; separated successful refund risk receipt identity to avoid ledger collision. Test paths and switches unchanged.
+scope: ui
+source: user
+summary: Localized Stripe trust lines verified in all four locales; 398 passed, 37 skipped; authenticated desktop/mobile checks passed
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

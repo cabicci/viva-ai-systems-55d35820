@@ -9,6 +9,7 @@ import { useUiString } from "@/lib/locale/use-ui-strings";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { getKidsCheckoutCopy } from "@/lib/kids/checkout-copy";
 import { PaymentMethods } from "@/components/commerce/PaymentMethods";
+import { StripeCheckoutTrust } from "./StripeCheckoutTrust";
 import { BillingUnavailableError, billingUnavailableMessage, resolveCheckoutUrl } from "@/lib/billing/checkout-client";
 
 type PaidPlanKey = "pro" | "pro_plus";
@@ -96,6 +97,7 @@ export function StripeCheckoutButtons({
           </span>
         </Button>
       </div>
+      {!pendingInterval && <StripeCheckoutTrust />}
       {pendingInterval && (
         <div
           role="group"
