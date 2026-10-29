@@ -10,12 +10,17 @@ const sql = (name: string) => readFileSync(name, "utf8");
 const actor = async (id: string, service = false) => {
   await db.query("select set_config('request.jwt.claim.sub',$1,false),set_config('request.jwt.claim.role',$2,false),set_config('masaarat.stripe_environment',$3,false)", [id, service ? "service_role" : "authenticated", service ? "live" : "test"]);
 };
-const command = async (action: string, data: Record<string, unknown> = {}) =>
-  (await db.query<{v: Record<string, any>}>("select public.commerce_command($1,$2::jsonb) v", [action, JSON.stringify(data)])).rows[0].v;
+async function recover<T>(run: () => Promise<T>): Promise<T> {
+  await db.exec("SAVEPOINT attempt");
+  try { const result = await run(); await db.exec("RELEASE SAVEPOINT attempt"); return result; }
+  catch (error) { await db.exec("ROLLBACK TO SAVEPOINT attempt; RELEASE SAVEPOINT attempt"); throw error; }
+}
+const command = async (action: string, data: Record<string, unknown> = {}) => recover(async () =>
+  (await db.query<{v: Record<string, any>}>("select public.commerce_command($1,$2::jsonb) v", [action, JSON.stringify(data)])).rows[0].v);
 const selection = { package: "pro", market: "EG", billing_interval: "month", code: "FIXTURE" };
 const reserve = async (key = randomUUID(), who = user, change: Record<string, unknown> = {}) => {
   await actor(who, true);
-  return (await db.query<{v: {id: string; final_minor: number}}>("select public.reserve_stripe_live_offer($1,$2,$3,$4,$5,$6,$7,$8) v", [who, change.code ?? "FIXTURE", change.package ?? "pro", change.market ?? "EG", change.interval ?? "month", change.phone ?? null, key, change.renewal ?? false])).rows[0].v;
+  return recover(async () => (await db.query<{v: {id: string; final_minor: number}}>("select public.reserve_stripe_live_offer($1,$2,$3,$4,$5,$6,$7,$8) v", [who, change.code ?? "FIXTURE", change.package ?? "pro", change.market ?? "EG", change.interval ?? "month", change.phone ?? null, key, change.renewal ?? false])).rows[0].v);
 };
 const manual = async (method: "bank" | "instapay", key = randomUUID(), who = user, change: Record<string, unknown> = {}) => {
   await actor(who);
@@ -61,6 +66,7 @@ beforeAll(async () => {
     }
     catch (error) { console.error("Fixture migration", name); throw error; }
   await db.exec(`INSERT INTO auth.users(id,email,email_confirmed_at) VALUES('${admin}','admin@example.test',now()),('${user}','member@example.test',now()),('${other}','other@example.test',now()); INSERT INTO public.user_roles VALUES('${admin}','admin');`);
+  await db.exec(sql("drizzle/migrations/0025_shared_coupon_rail_eligibility_and_attempts.sql"));
 }, 30000);
 afterAll(async () => db?.close());
 beforeEach(async () => {
