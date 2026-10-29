@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocale } from "@/lib/locale/locale-context";
 import { commerceCopy } from "@/lib/commerce/copy";
 import { adminOfferCopy } from "@/lib/commerce/admin-offer-copy";
@@ -16,6 +16,7 @@ export function RedeemOffer() {
     [market, setMarket] = useState<"EG" | "INTL">("EG"),
     [interval, setInterval] = useState<"month" | "year">("month");
   const [busy, setBusy] = useState(false), [error, setError] = useState("");
+  useEffect(() => { setError(""); }, [pack, market, interval]);
   async function checkout() {
     if (busy) return;
     setBusy(true);
