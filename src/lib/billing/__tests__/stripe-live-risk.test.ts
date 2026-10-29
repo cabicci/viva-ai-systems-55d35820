@@ -20,6 +20,8 @@ function setup(unrelated = false) {
     "/charges/ch_m": charge, "/payment_intents/pi_m": intent,
     "/customers/cus_m": unrelated ? { ...customer, metadata: {} } : customer,
     "/invoices/in_m": invoice, "/subscriptions/sub_m": subscription,
+    "/disputes/dp_m": { id: "dp_m", livemode: true, charge: "ch_m" },
+    "/radar/early_fraud_warnings/dp_m": { id: "dp_m", livemode: true, charge: "ch_m" },
   };
   let applied = false;
   const rpc = vi.fn(async (name: string) => {
@@ -49,12 +51,12 @@ describe("Live payment risk evidence and acknowledgement", () => {
   for (const type of ["charge.dispute.created", "charge.refunded", "radar.early_fraud_warning.created"]) {
     it(`${type}: ignores unrelated Render one-time payments without writes`, async () => {
       const h = setup(true);
-      expect(await h.send(type, type === "charge.refunded" ? { id: "ch_m" } : { charge: "ch_m" })).toEqual({ status: 200, body: { received: true, ignored: true, unrelated: true } });
+      expect(await h.send(type, type === "charge.refunded" ? { id: "ch_m" } : { id: "dp_m", charge: "ch_m" })).toEqual({ status: 200, body: { received: true, ignored: true, unrelated: true } });
       expect(h.rpc).not.toHaveBeenCalled();
     });
     it(`${type}: requires confirmed persistent access hold`, async () => {
       const h = setup();
-      expect((await h.send(type, type === "charge.refunded" ? { id: "ch_m" } : { charge: "ch_m" })).status).toBe(200);
+      expect((await h.send(type, type === "charge.refunded" ? { id: "ch_m" } : { id: "dp_m", charge: "ch_m" })).status).toBe(200);
       expect(h.held()).toBe(true);
       expect(h.rpc).toHaveBeenCalledWith("apply_stripe_live_risk_hold", expect.objectContaining({ p_reason: type, p_subscription_id: "sub_m", p_invoice_id: "in_m", p_charge_id: "ch_m" }));
     });
@@ -91,6 +93,18 @@ describe("Live payment risk evidence and acknowledgement", () => {
     const h = setup(true); h.objects["/customers/cus_m"] = customer;
     await expect(resolveLiveRiskPayment("ch_m", h.deps.stripe)).rejects.toThrow("RISK_MASAARAT_INVOICE_MISSING");
   });
+  it("rejects a dispute readback pointing to another charge", async () => {
+    const h = setup(); h.objects["/disputes/dp_m"] = { id: "dp_m", livemode: true, charge: "ch_other" };
+    expect((await h.send("charge.dispute.created")).status).toBe(500); expect(h.rpc).not.toHaveBeenCalled();
+  });
+  for (const scope of ["core", "kids", "academic", "technical"]) {
+    it(`records ${scope} risk identity and safely redelivers the event`, async () => {
+      const h = setup(); h.objects["/subscriptions/sub_m"] = { ...subscription, metadata: { ...subscription.metadata, product_scope: scope } };
+      expect((await h.send("charge.dispute.created")).status).toBe(200);
+      expect((await h.send("charge.dispute.created")).status).toBe(200);
+      expect(h.rpc).toHaveBeenCalledWith("apply_stripe_live_risk_hold", expect.objectContaining({ p_scope: scope, p_event_id: "evt_m" }));
+    });
+  }
 });
 
 describe("Signed fulfillment is invoice-owned", () => {

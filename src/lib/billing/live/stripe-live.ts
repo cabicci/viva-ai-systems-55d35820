@@ -386,6 +386,14 @@ export async function handleLiveWebhookEvent(rawBody: string, signature: string 
       const object = event.data.object;
       const chargeId = event.type === "charge.refunded" ? idOf(object) : idOf(object.charge);
       if (!chargeId) throw new Error("RISK_CHARGE_MISSING");
+      if (event.type !== "charge.refunded") {
+        const objectId = idOf(object);
+        if (!objectId) throw new Error("RISK_OBJECT_ID_MISSING");
+        const path = event.type === "charge.dispute.created" ? "/disputes/" : "/radar/early_fraud_warnings/";
+        const riskObject = await get(`${path}${encodeURIComponent(objectId)}`);
+        if (riskObject.id !== objectId || riskObject.livemode !== true || idOf(riskObject.charge) !== chargeId)
+          throw new Error("RISK_OBJECT_CHARGE_MISMATCH");
+      }
       const resolved = await resolveLiveRiskPayment(chargeId, get);
       if (!resolved) return { status: 200, body: { received: true, ignored: true, unrelated: true } };
       if (event.type === "charge.refunded" && (!Number.isSafeInteger(resolved.charge.amount_refunded)
@@ -467,11 +475,13 @@ export async function handleLiveWebhookEvent(rawBody: string, signature: string 
     // payments is exclusively the signed, validated invoice.paid lifecycle.
     const evidence = await paidEvidence(event, subscription, get);
     if (event.type === "invoice.paid" && evidence.error) throw new Error(evidence.error);
-    if (evidence.transition) {
-      const held = await deps.rpc<boolean>("get_stripe_live_risk_hold", {
-        p_subscription_id: gatewaySubscriptionId, p_user_id: metadata.user_id,
-      });
-      if (held !== false) throw new Error("PAYMENT_RISK_HOLD_OR_UNVERIFIED");
+    const held = await deps.rpc<boolean>("get_stripe_live_risk_hold", {
+      p_subscription_id: gatewaySubscriptionId, p_user_id: metadata.user_id,
+    });
+    if (held !== false && held !== true) throw new Error("PAYMENT_RISK_HOLD_UNVERIFIED");
+    if (held === true) {
+      // Do not let subscription.updated overwrite a scoped hold either.
+      throw new Error("PAYMENT_RISK_HOLD_OR_UNVERIFIED");
     }
     if (SCOPED.includes(metadata.product_scope)) {
       if (!metadata.user_id || idOf(subscription.customer) === null || !Array.isArray(subscription.items?.data)
