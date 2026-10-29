@@ -23,6 +23,17 @@ import {
 
 export const LIVE = "live" as const;
 export const LIVE_SUFFIX = "live-v1";
+// Explicit marker on every new Masaarat Live session/subscription, so account-wide
+// webhook events of unrelated products (e.g. Render) can be told apart.
+export const APP_MARKER = { key: "app", value: "masaarat" } as const;
+const MASAARAT_KEYS = [APP_MARKER.key, "environment", "product_scope", "internal_subscription_id", "plan_version_id",
+  "market_price_id", "checkout_generation", "user_id", "plan_key"];
+
+// Unrelated = carries none of the keys Masaarat ever writes.
+export function isMasaaratSubscription(metadata: Record<string, unknown> | null | undefined): boolean {
+  if (!metadata || typeof metadata !== "object") return false;
+  return MASAARAT_KEYS.some((k) => metadata[k] !== undefined && metadata[k] !== null && metadata[k] !== "");
+}
 
 type StripeMethod = "GET" | "POST" | "DELETE";
 export type LiveDeps = LiveGateDeps & {
@@ -184,7 +195,7 @@ async function coreCheckout(
         user_id: user.id, internal_subscription_id: prepared.subscription_id,
         checkout_generation: prepared.checkout_generation, plan_version_id: context.plan_version_id,
         market_price_id: context.market_price_id, plan_key: context.plan_key, market_code: context.market_code,
-        billing_interval: context.billing_interval, environment: LIVE,
+        billing_interval: context.billing_interval, environment: LIVE, [APP_MARKER.key]: APP_MARKER.value,
       };
       const params = new URLSearchParams({
         mode: "subscription", customer: finalCustomer, client_reference_id: user.id,
@@ -268,7 +279,7 @@ async function scopedCheckout(
   params.set("line_items[0][quantity]", "1");
   const metadata: Record<string, string> = {
     product_scope: scope, user_id: user.id, market_code: context.market_code,
-    billing_interval: context.billing_interval, environment: LIVE,
+    billing_interval: context.billing_interval, environment: LIVE, [APP_MARKER.key]: APP_MARKER.value,
     ...(scope === "academic" ? { academic_assistant: context.includes_assistant ? "true" : "false", course_id: "AC-BUS" } : {}),
   };
   for (const [key, value] of Object.entries(metadata)) {
@@ -365,6 +376,8 @@ export async function handleLiveWebhookEvent(rawBody: string, signature: string 
     if (["refund.created", "refund.updated", "refund.failed"].includes(event.type)) {
       const resolved = await resolveStripeRefund(String(event.data.object.id), (p) => get(p), LIVE);
       if (!resolved) return { status: 200, body: { received: true, ignored: true } };
+      if (!isMasaaratSubscription(resolved.subscription?.metadata))
+        return { status: 200, body: { received: true, ignored: true, unrelated: true } };
       if (await financialDeliveryExpired(resolved.subscription.metadata?.user_id, deps.rpc))
         return { status: 200, body: { received: true, ignored: true, financial_erased: true } };
       if (resolved.subscription.metadata?.environment !== LIVE) throw new Error("STRIPE_ENVIRONMENT_MISMATCH");
@@ -396,6 +409,8 @@ export async function handleLiveWebhookEvent(rawBody: string, signature: string 
       ? object : await get(`/subscriptions/${encodeURIComponent(gatewaySubscriptionId)}`);
     if (subscription.livemode !== true) throw new Error("STRIPE_ENVIRONMENT_MISMATCH");
     const metadata = subscription.metadata ?? {};
+    // Another product on the same Stripe account: acknowledge, write nothing.
+    if (!isMasaaratSubscription(metadata)) return { status: 200, body: { received: true, ignored: true, unrelated: true } };
     if (metadata.environment !== LIVE) throw new Error("STRIPE_ENVIRONMENT_MISMATCH");
     if (await financialDeliveryExpired(metadata.user_id, deps.rpc))
       return { status: 200, body: { received: true, ignored: true, financial_erased: true } };
