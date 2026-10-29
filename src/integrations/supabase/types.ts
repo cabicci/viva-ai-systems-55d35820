@@ -2965,6 +2965,21 @@ export type Database = {
         Args: { p_lesson_id: string; p_passed: boolean; p_user_id: string }
         Returns: undefined
       }
+      apply_stripe_live_risk_hold: {
+        Args: {
+          p_charge_id: string
+          p_customer_id: string
+          p_event_id: string
+          p_invoice_id: string
+          p_occurred_at: string
+          p_price_id: string
+          p_reason: string
+          p_scope: string
+          p_subscription_id: string
+          p_user_id: string
+        }
+        Returns: Json
+      }
       apply_stripe_refund_event: {
         Args: {
           p_amount_minor: number
@@ -3429,6 +3444,10 @@ export type Database = {
         Returns: Json
       }
       get_stripe_live_enabled: { Args: never; Returns: boolean }
+      get_stripe_live_risk_hold: {
+        Args: { p_subscription_id: string; p_user_id: string }
+        Returns: boolean
+      }
       get_stripe_portal_context: { Args: { p_user_id: string }; Returns: Json }
       get_technical_stripe_checkout_context: {
         Args: {
