@@ -1,7 +1,8 @@
 # Roadmap
 
 - [x] Install guarded Live coded-offer mapping/reservation source, strict invoice proof and neutral public billing copy; actual inventory has zero offers. No publication or activation.
-- [ ] Future task (deferred by owner): coded Live offers, only after actual offers exist and separate authorization; not a current launch prerequisite.
+- [ ] Operational Live coded offers (owner supersedes deferral): add verified admin mapping provisioning and terminal-attempt reconciliation; no customer code or Stripe object creation.
+- [ ] Audit existing Test/manual/admin access and recommend non-destructive Live transition; preserve every entitlement and keep all Live controls off.
 
 - [x] Audit 28 unique Live mappings with zero amount mismatches, including Kids family prices; adapt signed risk events to permitted payment graph reads; price and Invoice Payment GETs returned 200; public billing Test wording removed in source. Catalogue activation and full Stripe catalogue readback remain separate; absent hypothetical offers are not blockers.
 
