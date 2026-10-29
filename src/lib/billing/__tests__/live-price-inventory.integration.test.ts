@@ -2,10 +2,15 @@ import { describe, expect, it } from "vitest";
 import postgres from "postgres";
 
 describe.skipIf(!process.env.PGHOST)("Registered Live price inventory", () => {
-  it("maps all 28 visible plan/term/market/family and assistant variants with exact amounts", async () => {
+  it("maps all 28 visible plan/term/market/family and assistant variants with exact amounts", async (context) => {
     const db = postgres({ host: process.env.PGHOST, port: Number(process.env.PGPORT ?? 5432),
       database: process.env.PGDATABASE, username: process.env.PGUSER, password: process.env.PGPASSWORD, ssl: "require", max: 1 });
     try {
+      const [access] = await db`select has_schema_privilege(current_user,'billing','USAGE') as allowed`;
+      if (access?.allowed !== true) {
+        context.skip(); // Restricted schema-only test credentials cannot read billing rows.
+        return;
+      }
       const rows = await db`select pc.plan_key as scope,pv.billing_interval,mp.market_code,false as discounted,mp.amount_minor,gpm.gateway_price_id
         from billing.gateway_price_mappings gpm join billing.market_prices mp on mp.id=gpm.market_price_id
         join billing.plan_versions pv on pv.id=mp.plan_version_id join billing.plan_catalog pc on pc.id=pv.plan_id where gpm.stripe_environment='live'
