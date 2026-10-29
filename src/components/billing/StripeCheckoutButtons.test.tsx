@@ -14,8 +14,8 @@ vi.mock("@/lib/locale/use-locale-link-search", () => ({
   useLocaleLinkSearch: () => () => ({ locale: "en" }),
 }));
 vi.mock("@tanstack/react-router", () => ({
-  Link: ({ children, hash }: { children: React.ReactNode; hash?: string }) => (
-    <a href={`/pricing?locale=en#${hash}`}>{children}</a>
+  Link: ({ children, to, search }: { children: React.ReactNode; to: string; search?: { locale?: string } }) => (
+    <a href={`${to}${search?.locale ? `?locale=${search.locale}` : ""}`}>{children}</a>
   ),
 }));
 
@@ -29,7 +29,7 @@ describe("adult checkout Kids notice", () => {
     expect(screen.getByText("Interested in adding a Kids family plan?")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "View Kids prices" })).toHaveAttribute(
       "href",
-      "/pricing?locale=en#kids",
+      "/kids/pricing?locale=en",
     );
     fireEvent.click(screen.getByRole("button", { name: "pricing.cta.payMonthly" }));
     expect(
