@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 import { createHmac } from "node:crypto";
 import {
   assertKeyMatchesEnvironment,
+  assertLiveCheckoutAllowed,
   assertMetadataEnvironment,
   assertObjectEnvironment,
   assertRowEnvironment,
@@ -97,20 +98,33 @@ describe("live webhook endpoint", () => {
     expect(res.status).toBe(503);
   });
 
-  it("rejects events signed with the test secret", async () => {
-    expect((await handleLiveWebhook(signed(body, TEST_SECRET), deps(on))).status).toBe(400);
+  it("never returns 2xx while live processing is not built, even when ON and correctly signed", async () => {
+    const d = deps(on);
+    const res = await handleLiveWebhook(signed(body, LIVE_SECRET), d);
+    expect(res.status).toBe(503);
+    expect(await res.json()).toEqual({ error: "STRIPE_LIVE_PROCESSING_NOT_BUILT" });
   });
 
-  it("rejects test-mode events even when correctly signed", async () => {
+  it("still answers 503 for test-signed or test-mode events", async () => {
     const testBody = JSON.stringify({ id: "evt_2", livemode: false });
-    const res = await handleLiveWebhook(signed(testBody, LIVE_SECRET), deps(on));
-    expect(res.status).toBe(400);
-    expect(await res.json()).toEqual({ error: "TEST_EVENT_REJECTED" });
+    expect((await handleLiveWebhook(signed(body, TEST_SECRET), deps(on))).status).toBe(503);
+    expect((await handleLiveWebhook(signed(testBody, LIVE_SECRET), deps(on))).status).toBe(503);
+  });
+});
+
+describe("kill switch scope: new checkout only", () => {
+  it("blocks new live checkout while off", async () => {
+    await expect(assertLiveCheckoutAllowed("live", deps({}))).rejects.toThrow("STRIPE_LIVE_CHECKOUT_DISABLED");
+    await expect(
+      assertLiveCheckoutAllowed("live", deps({ STRIPE_LIVE_ENABLED: "true" }, false)),
+    ).rejects.toThrow("STRIPE_LIVE_CHECKOUT_DISABLED");
   });
 
-  it("acknowledges a verified live event without processing it", async () => {
-    const res = await handleLiveWebhook(signed(body, LIVE_SECRET), deps(on));
-    expect(res.status).toBe(202);
-    expect(await res.json()).toMatchObject({ processed: false });
+  it("allows new live checkout only when both switches are on", async () => {
+    await expect(assertLiveCheckoutAllowed("live", deps({ STRIPE_LIVE_ENABLED: "true" }, true))).resolves.toBeUndefined();
+  });
+
+  it("never gates test checkout", async () => {
+    await expect(assertLiveCheckoutAllowed("test", deps({}))).resolves.toBeUndefined();
   });
 });
