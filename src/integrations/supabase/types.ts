@@ -2328,6 +2328,7 @@ export type Database = {
           original_minor: number
           phone: string | null
           recipient_email: string
+          renewal: boolean
           request_key: string
           session_id: string | null
           subscription_id: string | null
@@ -2346,6 +2347,7 @@ export type Database = {
           original_minor: number
           phone?: string | null
           recipient_email: string
+          renewal?: boolean
           request_key: string
           session_id?: string | null
           subscription_id?: string | null
@@ -2364,6 +2366,7 @@ export type Database = {
           original_minor?: number
           phone?: string | null
           recipient_email?: string
+          renewal?: boolean
           request_key?: string
           session_id?: string | null
           subscription_id?: string | null
