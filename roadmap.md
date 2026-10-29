@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Add modest four-locale Stripe trust text beside package purchase controls without altering billing behavior; verify existing button/billing tests and automatic build.
+
 - [x] Audit Live fulfillment and add isolated, signature-verified async/risk handlers and focused tests.
 - [x] Apply and validate persistent Live risk holds through Lovable migrations, including atomic revocation, direct-write guards, duplicate/collision checks and concurrent renewal ordering.
 

@@ -4,6 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useLocale } from "@/lib/locale/locale-context";
 import { Button } from "@/components/ui/button";
 import { PaymentMethods } from "@/components/commerce/PaymentMethods";
+import { StripeCheckoutTrust } from "@/components/billing/StripeCheckoutTrust";
 import { BillingUnavailableError, billingUnavailableMessage, resolveCheckoutUrl } from "@/lib/billing/checkout-client";
 
 const copy = {
@@ -83,6 +84,11 @@ export function KidsCheckoutButtons({ market }: { market: "EG" | "INTL" }) {
       >
         {words.year}
       </Button>
+      {!selectedInterval && (
+        <div className="sm:col-span-2">
+          <StripeCheckoutTrust />
+        </div>
+      )}
       {selectedInterval && (
         <div className="sm:col-span-2">
           <PaymentMethods
