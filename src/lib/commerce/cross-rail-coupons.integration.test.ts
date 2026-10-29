@@ -1,10 +1,14 @@
 // @vitest-environment node
 import { readFileSync } from "node:fs";
 import { randomUUID } from "node:crypto";
+import postgres from "postgres";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
-import { accountDeletionTestDb } from "../__tests__/fixtures/account-deletion-db";
+import { accountDeletionTestDb, accountDeletionSchemaSql } from "../__tests__/fixtures/account-deletion-db";
 
-let db: Awaited<ReturnType<typeof accountDeletionTestDb>>;
+type Db = { query<T = Record<string, unknown>>(q: string, args?: unknown[]): Promise<{ rows: T[] }>; exec(q: string): Promise<unknown>; close(): Promise<void> };
+let db: Db;
+const nativeUrl = process.env.COUPON_RAIL_NATIVE_DATABASE_URL;
+let native: ReturnType<typeof postgres> | undefined;
 const admin = randomUUID(), user = randomUUID(), other = randomUUID();
 const sql = (name: string) => readFileSync(name, "utf8");
 const actor = async (id: string, service = false) => {
@@ -42,7 +46,14 @@ const consume = async (r: {id: string}, who = user) => {
 const count = async (query: string) => (await db.query<{n: number}>(query)).rows[0].n;
 
 beforeAll(async () => {
-  db = await accountDeletionTestDb(true);
+  if (nativeUrl) {
+    const url = new URL(nativeUrl);
+    if (!["localhost", "127.0.0.1"].includes(url.hostname) || url.pathname !== "/coupon_rail_test")
+      throw new Error("Disposable localhost coupon_rail_test required");
+    const client = postgres(nativeUrl, { max: 1 }); native = client;
+    db = { query: async <T>(q: string, args: unknown[] = []) => ({ rows: await client.unsafe(q, args as never) as unknown as T[] }), exec: q => client.unsafe(q), close: () => client.end() };
+    for (const statement of accountDeletionSchemaSql(true)) await db.exec(statement);
+  } else db = await accountDeletionTestDb(true);
   await db.exec("CREATE SCHEMA storage; CREATE TABLE storage.buckets(id text PRIMARY KEY,name text,public boolean,file_size_limit bigint,allowed_mime_types text[]); CREATE TABLE storage.objects(id uuid DEFAULT gen_random_uuid(),bucket_id text,name text,owner_id text);");
   for (const name of ["20261004010000_commerce_foundation.sql", "20261004011000_commerce_commands.sql", "20261004012000_commerce_access.sql", "20261004013000_commerce_receipts_mail.sql", "20261004014000_commerce_account_retention.sql", "20261004015000_commerce_payment_mail.sql", "20261004016000_commerce_simple_offers.sql", "20261005100000_technical_education_integration.sql", "20261005101000_technical_stripe_test.sql", "20261005102000_technical_subscription_mail.sql", "20261005110000_admin_kids_lesson_review.sql", "20261006110000_academic_commerce.sql", "20261006111000_academic_content.sql", "20261006112000_academic_stripe_test.sql", "20261006113000_academic_mail_retention.sql", "20261006120000_academic_admin_review.sql"])
     await db.exec(sql(`supabase/migrations/${name}`));
@@ -216,4 +227,32 @@ describe("real commerce coupon journey across payment rails", () => {
     expect(await count("select consumed_count::int n from billing.commerce_offers")).toBe(2);
     await expect(manual("bank")).rejects.toThrow(/LIMIT/);
   });
+  it.skipIf(!nativeUrl)("native two-session races never double-reserve a shared global cap or attempt key", async () => {
+    if (!nativeUrl || !native) throw new Error("Native fixture unavailable");
+    await db.exec("COMMIT"); // Publish only this disposable fixture to peer sessions.
+    for (const method of ["bank", "instapay"] as const) for (const sameKey of [false, true]) {
+      const code = `RACE_${method.toUpperCase()}_${sameKey ? "KEY" : "CAP"}`;
+      await db.query("INSERT INTO billing.commerce_offers(code,campaign,package,kind,value_minor,currency,duration_days,eligibility,renewals,valid_from,valid_until,max_redemptions,per_email_limit,enabled,billing_interval) SELECT $1,campaign,package,kind,value_minor,currency,duration_days,eligibility,renewals,valid_from,valid_until,$2,10,enabled,billing_interval FROM billing.commerce_offers WHERE code='FIXTURE'", [code, sameKey ? 10 : 1]);
+      await db.query("INSERT INTO public.stripe_live_offer_mappings(offer_id,version,package,market_code,currency,billing_interval,price_id,product_id,coupon_id,promotion_code_id,kind,value_minor,duration,reviewed_at,enabled) SELECT f.id,1,m.package,m.market_code,m.currency,m.billing_interval,m.price_id,m.product_id,m.coupon_id,m.promotion_code_id,m.kind,m.value_minor,m.duration,now(),true FROM billing.commerce_offers f CROSS JOIN public.stripe_live_offer_mappings m WHERE f.code=$1 LIMIT 1", [code]);
+      const key = randomUUID();
+      const run = async (live: boolean) => {
+        const peer = postgres(nativeUrl, { max: 1 });
+        try {
+          await peer.unsafe("BEGIN");
+          await peer.unsafe("select set_config('request.jwt.claim.sub',$1,false),set_config('request.jwt.claim.role',$2,false),set_config('masaarat.stripe_environment',$3,false)", [user, live ? "service_role" : "authenticated", live ? "live" : "test"]);
+          if (live) await peer.unsafe("select public.reserve_stripe_live_offer($1,$2,'pro','EG','month',NULL,$3,false)", [user, code, sameKey ? key : randomUUID()]);
+          else await peer.unsafe("select public.commerce_command('create_order',$1::jsonb)", [JSON.stringify({ ...selection, code, method, key })]);
+          await peer.unsafe("COMMIT"); return "reserved";
+        } catch (error) {
+          await peer.unsafe("ROLLBACK");
+          const message = error instanceof Error ? error.message : "";
+          if (!/COMMERCE_OFFER_LIMIT|RETRY_CONFLICT|REPLAY_CONFLICT/.test(message)) throw error;
+          return "blocked";
+        } finally { await peer.end(); }
+      };
+      expect((await Promise.all([run(false), run(true)])).sort()).toEqual(["blocked", "reserved"]);
+      const total = (await db.query<{n: number}>("select ((select count(*) from billing.commerce_orders where offer_id=f.id)+(select count(*) from public.stripe_live_offer_reservations where offer_id=f.id))::int n from billing.commerce_offers f where code=$1", [code])).rows[0].n;
+      expect(total).toBe(1);
+    }
+  }, 30000);
 });
