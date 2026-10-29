@@ -59,6 +59,7 @@ import { Route as TechnicalCurriculumRouteImport } from './routes/technical.curr
 import { Route as TechnicalPricingRouteImport } from './routes/technical.pricing'
 import { Route as AcademicLearnLessonIdRouteImport } from './routes/academic.learn.$lessonId'
 import { Route as AiPathsAppliedRouteImport } from './routes/ai.paths.applied'
+import { Route as ApiBillingModeRouteImport } from './routes/api/billing/mode'
 import { Route as ApiPublicStripeLiveWebhookRouteImport } from './routes/api/public/stripe-live-webhook'
 import { Route as ApiStripeLiveCheckoutRouteImport } from './routes/api/stripe-live/checkout'
 import { Route as ApiStripeLivePortalRouteImport } from './routes/api/stripe-live/portal'
@@ -324,6 +325,11 @@ const AiPathsAppliedRoute = AiPathsAppliedRouteImport.update({
   path: '/ai/paths/applied',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiBillingModeRoute = ApiBillingModeRouteImport.update({
+  id: '/api/billing/mode',
+  path: '/api/billing/mode',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPublicStripeLiveWebhookRoute =
   ApiPublicStripeLiveWebhookRouteImport.update({
     id: '/api/public/stripe-live-webhook',
@@ -451,6 +457,7 @@ export interface FileRoutesByFullPath {
   '/technical/': typeof TechnicalIndexRoute
   '/academic/learn/$lessonId': typeof AcademicLearnLessonIdRoute
   '/ai/paths/applied': typeof AiPathsAppliedRoute
+  '/api/billing/mode': typeof ApiBillingModeRoute
   '/api/public/stripe-live-webhook': typeof ApiPublicStripeLiveWebhookRoute
   '/api/stripe-live/checkout': typeof ApiStripeLiveCheckoutRoute
   '/api/stripe-live/portal': typeof ApiStripeLivePortalRoute
@@ -512,6 +519,7 @@ export interface FileRoutesByTo {
   '/technical': typeof TechnicalIndexRoute
   '/academic/learn/$lessonId': typeof AcademicLearnLessonIdRoute
   '/ai/paths/applied': typeof AiPathsAppliedRoute
+  '/api/billing/mode': typeof ApiBillingModeRoute
   '/api/public/stripe-live-webhook': typeof ApiPublicStripeLiveWebhookRoute
   '/api/stripe-live/checkout': typeof ApiStripeLiveCheckoutRoute
   '/api/stripe-live/portal': typeof ApiStripeLivePortalRoute
@@ -579,6 +587,7 @@ export interface FileRoutesById {
   '/technical/': typeof TechnicalIndexRoute
   '/academic/learn/$lessonId': typeof AcademicLearnLessonIdRoute
   '/ai/paths/applied': typeof AiPathsAppliedRoute
+  '/api/billing/mode': typeof ApiBillingModeRoute
   '/api/public/stripe-live-webhook': typeof ApiPublicStripeLiveWebhookRoute
   '/api/stripe-live/checkout': typeof ApiStripeLiveCheckoutRoute
   '/api/stripe-live/portal': typeof ApiStripeLivePortalRoute
@@ -647,6 +656,7 @@ export interface FileRouteTypes {
     | '/technical/'
     | '/academic/learn/$lessonId'
     | '/ai/paths/applied'
+    | '/api/billing/mode'
     | '/api/public/stripe-live-webhook'
     | '/api/stripe-live/checkout'
     | '/api/stripe-live/portal'
@@ -708,6 +718,7 @@ export interface FileRouteTypes {
     | '/technical'
     | '/academic/learn/$lessonId'
     | '/ai/paths/applied'
+    | '/api/billing/mode'
     | '/api/public/stripe-live-webhook'
     | '/api/stripe-live/checkout'
     | '/api/stripe-live/portal'
@@ -774,6 +785,7 @@ export interface FileRouteTypes {
     | '/technical/'
     | '/academic/learn/$lessonId'
     | '/ai/paths/applied'
+    | '/api/billing/mode'
     | '/api/public/stripe-live-webhook'
     | '/api/stripe-live/checkout'
     | '/api/stripe-live/portal'
@@ -826,6 +838,7 @@ export interface RootRouteChildren {
   AiIndexRoute: typeof AiIndexRoute
   RoadmapIndexRoute: typeof RoadmapIndexRoute
   AiPathsAppliedRoute: typeof AiPathsAppliedRoute
+  ApiBillingModeRoute: typeof ApiBillingModeRoute
   ApiPublicStripeLiveWebhookRoute: typeof ApiPublicStripeLiveWebhookRoute
   ApiStripeLiveCheckoutRoute: typeof ApiStripeLiveCheckoutRoute
   ApiStripeLivePortalRoute: typeof ApiStripeLivePortalRoute
@@ -1186,6 +1199,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AiPathsAppliedRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/billing/mode': {
+      id: '/api/billing/mode'
+      path: '/api/billing/mode'
+      fullPath: '/api/billing/mode'
+      preLoaderRoute: typeof ApiBillingModeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/stripe-live-webhook': {
       id: '/api/public/stripe-live-webhook'
       path: '/api/public/stripe-live-webhook'
@@ -1418,6 +1438,7 @@ const rootRouteChildren: RootRouteChildren = {
   AiIndexRoute: AiIndexRoute,
   RoadmapIndexRoute: RoadmapIndexRoute,
   AiPathsAppliedRoute: AiPathsAppliedRoute,
+  ApiBillingModeRoute: ApiBillingModeRoute,
   ApiPublicStripeLiveWebhookRoute: ApiPublicStripeLiveWebhookRoute,
   ApiStripeLiveCheckoutRoute: ApiStripeLiveCheckoutRoute,
   ApiStripeLivePortalRoute: ApiStripeLivePortalRoute,
