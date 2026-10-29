@@ -43,6 +43,9 @@ beforeAll(async () => {
     await db.exec(sql(`supabase/migrations/${name}`));
   await db.exec(sql("scripts/email-access/email-access-candidate.sql"));
   await db.exec(sql("docs/billing/20260920_stripe_refunds.sql"));
+  // Replay the exact installed commerce/assistant billing segment; RAG import
+  // functions after this boundary are unrelated to coupon journeys.
+  await db.exec(sql("scripts/academic-education/assistant-native-candidate.sql").split("CREATE FUNCTION public.academic_import_chunks")[0] + "COMMIT;");
   for (const name of ["0008_stripe_live_environment_separation.sql", "0009_stripe_live_guard_lifecycle.sql", "0010_stripe_live_rpc_environment.sql", "0011_stripe_live_atomic_risk_holds.sql", "0012_stripe_live_risk_guard_binding_closure.sql", "0013_stripe_live_refund_lock_order.sql", "0014_stripe_live_offer_mapping_prerequisite.sql", "0015_stripe_live_offer_reservations.sql", "0016_stripe_live_offer_retention_and_replay.sql", "0017_stripe_live_offer_retention_stage_fix.sql", "0018_stripe_live_offer_binding_lifetime_closure.sql", "0019_stripe_live_offer_catalogue_binding.sql", "0020_stripe_live_offer_retry_input_closure.sql", "0021_stripe_live_offer_cross_channel_phone_guard.sql"])
     try {
       if (name === "0010_stripe_live_rpc_environment.sql") {
