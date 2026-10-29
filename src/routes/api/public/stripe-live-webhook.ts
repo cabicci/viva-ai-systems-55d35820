@@ -7,14 +7,8 @@ export const Route = createFileRoute("/api/public/stripe-live-webhook")({
   server: {
     handlers: {
       POST: async ({ request }) => {
-        const { liveRuntime } = await import("@/lib/billing/live/runtime.server");
-        const { handleLiveWebhookEvent } = await import("@/lib/billing/live/stripe-live");
-        const result = await handleLiveWebhookEvent(
-          await request.text(),
-          request.headers.get("stripe-signature"),
-          liveRuntime(),
-        );
-        return Response.json(result.body, { status: result.status });
+        const { handleLiveWebhook } = await import("@/lib/billing/live/endpoints.server");
+        return handleLiveWebhook(request);
       },
     },
   },
