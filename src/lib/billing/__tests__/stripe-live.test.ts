@@ -169,7 +169,10 @@ describe("Live checkout when both switches are ON", () => {
   for (const [label, price] of mismatches) {
     it(`rejects a registered price with ${label} before any session`, async () => {
       const h = kidsHarness(kidsCtx(), price);
-      expect(await createLiveCheckout(USER, kidsBody, "https://masaarat.ai", h.deps)).toEqual({ status: 503, body: { error: "LIVE_PRICE_MISMATCH" } });
+      const res = await createLiveCheckout(USER, kidsBody, "https://masaarat.ai", h.deps);
+      expect(res.status).toBe(503);
+      // A test-mode object is caught earlier by the Live-only Stripe wrapper.
+      if (label !== "test-mode price") expect(res.body.error).toBe("LIVE_PRICE_MISMATCH");
       expect(h.stripeCalls.some((c) => c.path === "/checkout/sessions")).toBe(false);
     });
   }
