@@ -59,6 +59,7 @@ import { Route as TechnicalCurriculumRouteImport } from './routes/technical.curr
 import { Route as TechnicalPricingRouteImport } from './routes/technical.pricing'
 import { Route as AcademicLearnLessonIdRouteImport } from './routes/academic.learn.$lessonId'
 import { Route as AiPathsAppliedRouteImport } from './routes/ai.paths.applied'
+import { Route as ApiPublicStripeLiveWebhookRouteImport } from './routes/api/public/stripe-live-webhook'
 import { Route as KidsLevelIdIndexRouteImport } from './routes/kids.$levelId.index'
 import { Route as KidsLevelIdLessonNumberRouteImport } from './routes/kids.$levelId.$lessonNumber'
 import { Route as KidsLevelIdContentsRouteImport } from './routes/kids.$levelId.contents'
@@ -321,6 +322,12 @@ const AiPathsAppliedRoute = AiPathsAppliedRouteImport.update({
   path: '/ai/paths/applied',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicStripeLiveWebhookRoute =
+  ApiPublicStripeLiveWebhookRouteImport.update({
+    id: '/api/public/stripe-live-webhook',
+    path: '/api/public/stripe-live-webhook',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const KidsLevelIdIndexRoute = KidsLevelIdIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -432,6 +439,7 @@ export interface FileRoutesByFullPath {
   '/technical/': typeof TechnicalIndexRoute
   '/academic/learn/$lessonId': typeof AcademicLearnLessonIdRoute
   '/ai/paths/applied': typeof AiPathsAppliedRoute
+  '/api/public/stripe-live-webhook': typeof ApiPublicStripeLiveWebhookRoute
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/kids/$levelId/contents': typeof KidsLevelIdContentsRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
@@ -490,6 +498,7 @@ export interface FileRoutesByTo {
   '/technical': typeof TechnicalIndexRoute
   '/academic/learn/$lessonId': typeof AcademicLearnLessonIdRoute
   '/ai/paths/applied': typeof AiPathsAppliedRoute
+  '/api/public/stripe-live-webhook': typeof ApiPublicStripeLiveWebhookRoute
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/kids/$levelId/contents': typeof KidsLevelIdContentsRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
@@ -554,6 +563,7 @@ export interface FileRoutesById {
   '/technical/': typeof TechnicalIndexRoute
   '/academic/learn/$lessonId': typeof AcademicLearnLessonIdRoute
   '/ai/paths/applied': typeof AiPathsAppliedRoute
+  '/api/public/stripe-live-webhook': typeof ApiPublicStripeLiveWebhookRoute
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/kids/$levelId/contents': typeof KidsLevelIdContentsRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
@@ -619,6 +629,7 @@ export interface FileRouteTypes {
     | '/technical/'
     | '/academic/learn/$lessonId'
     | '/ai/paths/applied'
+    | '/api/public/stripe-live-webhook'
     | '/kids/$levelId/$lessonNumber'
     | '/kids/$levelId/contents'
     | '/learn/$pathId/$lessonId'
@@ -677,6 +688,7 @@ export interface FileRouteTypes {
     | '/technical'
     | '/academic/learn/$lessonId'
     | '/ai/paths/applied'
+    | '/api/public/stripe-live-webhook'
     | '/kids/$levelId/$lessonNumber'
     | '/kids/$levelId/contents'
     | '/learn/$pathId/$lessonId'
@@ -740,6 +752,7 @@ export interface FileRouteTypes {
     | '/technical/'
     | '/academic/learn/$lessonId'
     | '/ai/paths/applied'
+    | '/api/public/stripe-live-webhook'
     | '/kids/$levelId/$lessonNumber'
     | '/kids/$levelId/contents'
     | '/learn/$pathId/$lessonId'
@@ -789,6 +802,7 @@ export interface RootRouteChildren {
   AiIndexRoute: typeof AiIndexRoute
   RoadmapIndexRoute: typeof RoadmapIndexRoute
   AiPathsAppliedRoute: typeof AiPathsAppliedRoute
+  ApiPublicStripeLiveWebhookRoute: typeof ApiPublicStripeLiveWebhookRoute
   LearnPathIdLessonIdRoute: typeof LearnPathIdLessonIdRoute
   LovableEmailAuthPreviewRoute: typeof LovableEmailAuthPreviewRoute
   LovableEmailAuthWebhookRoute: typeof LovableEmailAuthWebhookRoute
@@ -1146,6 +1160,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AiPathsAppliedRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/stripe-live-webhook': {
+      id: '/api/public/stripe-live-webhook'
+      path: '/api/public/stripe-live-webhook'
+      fullPath: '/api/public/stripe-live-webhook'
+      preLoaderRoute: typeof ApiPublicStripeLiveWebhookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/kids/$levelId/': {
       id: '/kids/$levelId/'
       path: '/'
@@ -1357,6 +1378,7 @@ const rootRouteChildren: RootRouteChildren = {
   AiIndexRoute: AiIndexRoute,
   RoadmapIndexRoute: RoadmapIndexRoute,
   AiPathsAppliedRoute: AiPathsAppliedRoute,
+  ApiPublicStripeLiveWebhookRoute: ApiPublicStripeLiveWebhookRoute,
   LearnPathIdLessonIdRoute: LearnPathIdLessonIdRoute,
   LovableEmailAuthPreviewRoute: LovableEmailAuthPreviewRoute,
   LovableEmailAuthWebhookRoute: LovableEmailAuthWebhookRoute,
