@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Apply shared paid coupon customer counts, confirmed-Live eligibility and cross-rail attempt guard; native installed-SQL journeys and concurrent bank/InstaPay vs Live cap/key races pass; evidence in docs/billing/shared-coupon-rail-verification.md. Live remains off.
+
 - [x] Audit manual-transfer and Stripe journeys separately; repair lossy offer-page Stripe selection, verify shared capacity and preserve source attribution/access; publish evidence matrix in docs/billing/payment-rail-verification.md, no activation.
 - [ ] Complete hosted real-payment validation per rail and cross-rail concurrency before launch; blocked by owner-controlled transactions, unpublished latest source and bank configuration if bank is required.
 

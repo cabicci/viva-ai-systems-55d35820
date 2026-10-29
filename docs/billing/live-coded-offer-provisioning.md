@@ -34,6 +34,7 @@ No example ID in tests is a provisioning ID. Do not copy synthetic fixture IDs i
 
 - Service-only immutable mappings and private reservations are installed by migrations `0014`–`0021`.
 - Reservation/quote/manual-phone paths share commerce offer-row locks and capacity accounting. Retries bind immutable inputs; usage increments once on verified invoice consumption.
+- Shared rail rules additionally count manual orders and Live pending/consumed reservations against the same configured per-customer limit. Confirmed Live use participates in first-payment/new-customer eligibility on manual rails. One user/request key cannot create both a manual order and a Live reservation; changing rails requires a new attempt after safe cancellation/reconciliation. Phone-required offers retain their existing stricter one-identity/phone restriction.
 - Checkout sends one server-selected Promotion Code with `allow_promotion_codes=false`; no client amount, Stripe ID or mode is accepted. Existing exact-path hosted routes are reused.
 - Signed `invoice.paid` requires invoice → subscription → customer and reservation → Checkout Session relationships; one standard mapped price/quantity/period; expanded mapped coupon/promotion; exact discount and paid totals; no extra items, taxes, credits or stacking.
 - No separate commerce entitlement is granted. Existing Core/Kids/Academic/Technical paid writers and risk-hold guards remain authoritative. Verified current invoice-line periods must equal subscription item periods.
@@ -46,7 +47,7 @@ No example ID in tests is a provisioning ID. Do not copy synthetic fixture IDs i
 3. Verify `expand[]=discounts.source.coupon` and Checkout `line_items` expansion with the deployed Stripe API version and restricted key. No Coupons/Promotion Codes endpoint reads or permission broadening were added. If expansion is denied or evidence differs, fulfillment fails non-2xx.
 4. Percentage rounding must agree between the installed commerce integer quote and Stripe. Any mismatch fails closed; low-value/odd fractional variants need provisioning-time verification.
 5. Bound canceled/failed attempts reserve capacity conservatively. The admin terminal-Session readback flow now releases only provably expired unpaid Sessions without a payment graph; asynchronous or paid ambiguous attempts require separate investigation and cannot be manually forced through this workflow.
-6. Actual-database concurrent coded-redemption and signed real Live discounted invoice checks are **not verified**. Current database test credentials are schema-limited. Disposable PostgreSQL tests exercise installed migrations but are not proof of hosted concurrency.
+6. Native disposable PostgreSQL now verifies genuine concurrent bank/InstaPay versus Live reservation races for shared global caps and attempt keys. Hosted coded-redemption concurrency and signed real Live discounted invoice checks remain **not verified**; project database credentials used for verification are schema-limited. See `shared-coupon-rail-verification.md` for current evidence.
 7. Catalogue/webhook activation and publishing remain separate authorized work. No new revision was published in this task.
 
 ## Verification
