@@ -3,6 +3,7 @@ import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { liveOfferAdminSchema } from "./admin-offer-contracts";
 import { terminalOfferRelease } from "./offer-operations";
 import type { OfferEvidence } from "./offer-discounts";
+import type { Json } from "@/integrations/supabase/types";
 
 export const liveOfferAdmin = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
@@ -20,8 +21,8 @@ export const liveOfferAdmin = createServerFn({ method: "POST" })
       if (!evidence.session_id) throw new Error("LIVE_OFFER_NOT_BOUND");
       const session = await runtime.stripe<Record<string, unknown>>(`/checkout/sessions/${encodeURIComponent(evidence.session_id)}`);
       const terminal = terminalOfferRelease(evidence, session);
-      return runtime.rpc("stripe_live_offer_admin", { p_actor: context.userId, p_action: "release", p_data: { id: data.id, key: data.key, ...terminal } });
+      return runtime.rpc<Json>("stripe_live_offer_admin", { p_actor: context.userId, p_action: "release", p_data: { id: data.id, key: data.key, ...terminal } });
     }
     const { action, ...parameters } = data;
-    return runtime.rpc("stripe_live_offer_admin", { p_actor: context.userId, p_action: action, p_data: parameters });
+    return runtime.rpc<Json>("stripe_live_offer_admin", { p_actor: context.userId, p_action: action, p_data: parameters });
   });
