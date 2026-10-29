@@ -2251,6 +2251,69 @@ export type Database = {
         }
         Relationships: []
       }
+      stripe_live_offer_mappings: {
+        Row: {
+          billing_interval: string
+          coupon_id: string
+          created_at: string
+          currency: string
+          duration: string
+          duration_in_months: number | null
+          enabled: boolean
+          id: string
+          kind: string
+          market_code: string
+          offer_id: string
+          package: string
+          price_id: string
+          product_id: string
+          promotion_code_id: string
+          reviewed_at: string | null
+          value_minor: number
+          version: number
+        }
+        Insert: {
+          billing_interval: string
+          coupon_id: string
+          created_at?: string
+          currency: string
+          duration: string
+          duration_in_months?: number | null
+          enabled?: boolean
+          id?: string
+          kind: string
+          market_code: string
+          offer_id: string
+          package: string
+          price_id: string
+          product_id: string
+          promotion_code_id: string
+          reviewed_at?: string | null
+          value_minor: number
+          version: number
+        }
+        Update: {
+          billing_interval?: string
+          coupon_id?: string
+          created_at?: string
+          currency?: string
+          duration?: string
+          duration_in_months?: number | null
+          enabled?: boolean
+          id?: string
+          kind?: string
+          market_code?: string
+          offer_id?: string
+          package?: string
+          price_id?: string
+          product_id?: string
+          promotion_code_id?: string
+          reviewed_at?: string | null
+          value_minor?: number
+          version?: number
+        }
+        Relationships: []
+      }
       subscription_mail_outbox: {
         Row: {
           blocked: boolean
