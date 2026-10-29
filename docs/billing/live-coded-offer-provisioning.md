@@ -2,7 +2,9 @@
 
 ## Actual inventory — 2026-10-29
 
-The project's database returned **0 total `billing.commerce_offers` rows**, therefore **0 active paid coded offers**. No private codes, customer emails, names or phone numbers were selected. No offer-specific Stripe Coupons or Promotion Codes can be truthfully specified from this empty inventory.
+The project's database returned **0 total rows in each of `billing.commerce_offers`, `billing.coupon_definitions`, and `billing.admin_access_coupons`**, therefore **0 configured coded offers**. No private codes, customer emails, names or phone numbers were selected. No offer-specific Stripe Coupons or Promotion Codes are required for the current launch.
+
+Owner scope correction: the current launch covers currently visible/purchasable discounts, especially the Kids 10% family prices in the existing 28-price inventory. Future coded offers are a separately authorized future task, not a launch prerequisite. Do not create Stripe coupons or make further billing architecture changes for hypothetical offers.
 
 The 28 registered base/family/assistant price mappings are unchanged. No Stripe object was created, activated or updated. Public mode and Live switches were not changed.
 
@@ -27,7 +29,7 @@ No example ID in tests is a provisioning ID. Do not copy synthetic fixture IDs i
 - No separate commerce entitlement is granted. Existing Core/Kids/Academic/Technical paid writers and risk-hold guards remain authoritative. Verified current invoice-line periods must equal subscription item periods.
 - Personal reservation fields are anonymized at learner deletion and deleted at financial purge. Pending bound attempts conservatively retain capacity until reconciled.
 
-## Exact launch blockers
+## Future coded-offer prerequisites — not current launch blockers
 
 1. No actual offers or reviewed Coupon/Promotion Code mappings exist.
 2. Owner must choose explicit duration for each future offer. Repeating duration and coded Academic-with-assistant are unsupported and fail closed.
