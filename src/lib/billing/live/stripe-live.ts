@@ -388,6 +388,9 @@ export async function handleLiveWebhookEvent(rawBody: string, signature: string 
       if (!chargeId) throw new Error("RISK_CHARGE_MISSING");
       const resolved = await resolveLiveRiskPayment(chargeId, get);
       if (!resolved) return { status: 200, body: { received: true, ignored: true, unrelated: true } };
+      if (event.type === "charge.refunded" && (!Number.isSafeInteger(resolved.charge.amount_refunded)
+        || resolved.charge.amount_refunded <= 0 || resolved.charge.amount_refunded > resolved.charge.amount))
+        throw new Error("RISK_REFUND_EVIDENCE_INVALID");
       // A durable, atomic hold is required: do not fake a refund or acknowledge
       // the event when persistence/revocation is not available.
       const result = await deps.rpc<{ processed: boolean; held: boolean }>("apply_stripe_live_risk_hold", {
@@ -409,6 +412,20 @@ export async function handleLiveWebhookEvent(rawBody: string, signature: string 
       if (await financialDeliveryExpired(resolved.subscription.metadata?.user_id, deps.rpc))
         return { status: 200, body: { received: true, ignored: true, financial_erased: true } };
       if (resolved.subscription.metadata?.environment !== LIVE) throw new Error("STRIPE_ENVIRONMENT_MISMATCH");
+      if (resolved.refund.status === "succeeded") {
+        const chargeId = idOf(resolved.refund.charge);
+        if (!chargeId) throw new Error("RISK_REFUND_CHARGE_MISSING");
+        const risk = await resolveLiveRiskPayment(chargeId, get);
+        if (!risk || risk.subscription.id !== resolved.subscription.id || risk.invoice.id !== resolved.invoice.id)
+          throw new Error("RISK_REFUND_RELATIONSHIP_MISMATCH");
+        const hold = await deps.rpc<{ processed: boolean; held: boolean }>("apply_stripe_live_risk_hold", {
+          p_event_id: event.id, p_user_id: risk.subscription.metadata.user_id,
+          p_subscription_id: risk.subscription.id, p_customer_id: idOf(risk.subscription.customer),
+          p_scope: risk.subscription.metadata.product_scope ?? "core", p_price_id: idOf(risk.subscription.items?.data?.[0]?.price),
+          p_invoice_id: risk.invoice.id, p_charge_id: risk.charge.id, p_reason: "refund.succeeded", p_occurred_at: occurredAt,
+        });
+        if (hold?.processed !== true || hold.held !== true) throw new Error("RISK_HOLD_NOT_CONFIRMED");
+      }
       const scope = resolved.subscription.metadata?.product_scope ?? "";
       if (SCOPED.includes(scope)) {
         const revoked = await deps.rpc<boolean>(`apply_${scope}_stripe_refund`, {
@@ -450,6 +467,12 @@ export async function handleLiveWebhookEvent(rawBody: string, signature: string 
     // payments is exclusively the signed, validated invoice.paid lifecycle.
     const evidence = await paidEvidence(event, subscription, get);
     if (event.type === "invoice.paid" && evidence.error) throw new Error(evidence.error);
+    if (evidence.transition) {
+      const held = await deps.rpc<boolean>("get_stripe_live_risk_hold", {
+        p_subscription_id: gatewaySubscriptionId, p_user_id: metadata.user_id,
+      });
+      if (held !== false) throw new Error("PAYMENT_RISK_HOLD_OR_UNVERIFIED");
+    }
     if (SCOPED.includes(metadata.product_scope)) {
       if (!metadata.user_id || idOf(subscription.customer) === null || !Array.isArray(subscription.items?.data)
         || subscription.items.data.length !== 1) throw new Error("SCOPED_SUBSCRIPTION_EVIDENCE_MISSING");
