@@ -4,7 +4,7 @@
 date: 2026-10-29
 scope: infra
 source: user
-summary: 28 unique Live mappings and zero amount mismatches confirmed via project database; inventory test skips restricted schema-only credentials
+summary: Live offer and restricted-key audit complete: 28 unique mappings, zero mismatches; 415 passed 38 skipped; launch blockers recorded
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
