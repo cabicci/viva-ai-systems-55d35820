@@ -191,4 +191,29 @@ describe("real commerce coupon journey across payment rails", () => {
     await db.exec("INSERT INTO public.stripe_live_offer_mappings(offer_id,version,package,market_code,currency,billing_interval,price_id,product_id,coupon_id,promotion_code_id,kind,value_minor,duration,reviewed_at,enabled) SELECT id,1,'kids','EG','EGP','month','price_kidsfixture','prod_kidsfixture','coupon_kidsfixture','promo_kidsfixture','percent',20,'once',now(),true FROM billing.commerce_offers WHERE code='KIDS_FIXTURE'");
     expect((await reserve(randomUUID(), user, { package: "kids", code: "KIDS_FIXTURE" })).final_minor).toBe(15920);
   });
+  it.each(["bank", "instapay"] as const)("%s remains usable when a future coupon lacks its Live mapping", async method => {
+    await db.exec("UPDATE public.stripe_live_offer_mappings SET enabled=false");
+    await expect(reserve()).rejects.toThrow(/NOT_MAPPED/);
+    expect((await manual(method)).final_minor).toBe(13520);
+  });
+  it("disabled bank fails without blocking InstaPay or the reviewed Live mapping", async () => {
+    await db.exec("UPDATE billing.commerce_methods SET enabled=false WHERE code='bank'");
+    await expect(manual("bank")).rejects.toThrow(/METHOD_UNAVAILABLE/);
+    expect((await manual("instapay")).final_minor).toBe(13520);
+    expect((await reserve()).final_minor).toBe(13520);
+  });
+  it("manual refund does not restore coupon uses or consume a Stripe reservation", async () => {
+    const o = await manual("instapay");
+    const payment = await confirm(o, "instapay");
+    const r = await reserve();
+    await actor(admin);
+    const refund = { payment_id: payment.id, order_id: o.id, amount_minor: 13520, reference: "Fixture external refund", reason: "Fixture only", key: randomUUID() };
+    await command("refund", refund); await command("refund", refund);
+    expect(await count("select consumed_count::int n from billing.commerce_offers")).toBe(1);
+    expect(await count("select count(*)::int n from billing.commerce_refunds")).toBe(1);
+    expect(await count("select count(*)::int n from public.stripe_live_offer_reservations where consumed_at is not null")).toBe(0);
+    await consume(r);
+    expect(await count("select consumed_count::int n from billing.commerce_offers")).toBe(2);
+    await expect(manual("bank")).rejects.toThrow(/LIMIT/);
+  });
 });
