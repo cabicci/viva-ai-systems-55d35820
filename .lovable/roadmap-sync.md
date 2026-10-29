@@ -4,7 +4,7 @@
 date: 2026-10-29
 scope: infra
 source: user
-summary: Audited 28 Live mappings and replaced forbidden risk API reads with signed snapshot and permitted graph validation
+summary: Exact 28-price database inventory test and restricted-key signed risk handler verified; no activation
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
