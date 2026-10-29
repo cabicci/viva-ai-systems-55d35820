@@ -5,7 +5,7 @@
 
 - [x] Audit 28 unique Live mappings with zero amount mismatches, including Kids family prices; adapt signed risk events to permitted payment graph reads; price and Invoice Payment GETs returned 200; public billing Test wording removed in source. Catalogue activation and full Stripe catalogue readback remain separate; absent hypothetical offers are not blockers.
 
-- [ ] Verify owner scope correction: zero configured or static paid coded offers; reconfirm current 28-price inventory and restricted-key risk checks without billing architecture changes.
+- [x] Verify owner scope correction: direct counts zero for commerce_offers, coupon_definitions and admin_access_coupons; repository audit found no usable static coded offers or prohibited Disputes/Radar reads; focused tests 129 passed, 1 schema-access skip. Future codes are not current launch blockers.
 
 - [x] Complete method-aware hosted dispatch for all four billing routes; published mode 200 Test JSON, Live GET 405 JSON, unsigned checkout/portal POST 403 (trusted-origin/no bearer 401), unsigned webhook POST 400; both domains verified through canonical redirect, no payments.
 
