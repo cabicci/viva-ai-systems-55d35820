@@ -50,8 +50,8 @@ beforeAll(async () => {
     const url = new URL(nativeUrl);
     if (!["localhost", "127.0.0.1"].includes(url.hostname) || url.pathname !== "/coupon_rail_test")
       throw new Error("Disposable localhost coupon_rail_test required");
-    const client = postgres(nativeUrl, { max: 1 }); native = client;
-    db = { query: async <T>(q: string, args: unknown[] = []) => ({ rows: await client.unsafe(q, args as never) as unknown as T[] }), exec: q => client.unsafe(q), close: () => client.end() };
+    const client = postgres(nativeUrl, { max: 1, onnotice: () => {} }); native = client;
+    db = { query: async <T>(q: string, args: unknown[] = []) => ({ rows: await client.unsafe(q, args.map(v => typeof v === "string" && (v.startsWith("{") || v.startsWith("[")) ? client.json(JSON.parse(v)) : v) as never) as unknown as T[] }), exec: q => client.unsafe(q), close: () => client.end() };
     for (const statement of accountDeletionSchemaSql(true)) await db.exec(statement);
   } else db = await accountDeletionTestDb(true);
   await db.exec("CREATE SCHEMA storage; CREATE TABLE storage.buckets(id text PRIMARY KEY,name text,public boolean,file_size_limit bigint,allowed_mime_types text[]); CREATE TABLE storage.objects(id uuid DEFAULT gen_random_uuid(),bucket_id text,name text,owner_id text);");
@@ -241,7 +241,7 @@ describe("real commerce coupon journey across payment rails", () => {
           await peer.unsafe("BEGIN");
           await peer.unsafe("select set_config('request.jwt.claim.sub',$1,false),set_config('request.jwt.claim.role',$2,false),set_config('masaarat.stripe_environment',$3,false)", [user, live ? "service_role" : "authenticated", live ? "live" : "test"]);
           if (live) await peer.unsafe("select public.reserve_stripe_live_offer($1,$2,'pro','EG','month',NULL,$3,false)", [user, code, sameKey ? key : randomUUID()]);
-          else await peer.unsafe("select public.commerce_command('create_order',$1::jsonb)", [JSON.stringify({ ...selection, code, method, key })]);
+          else await peer.unsafe("select public.commerce_command('create_order',$1::jsonb)", [peer.json({ ...selection, code, method, key })]);
           await peer.unsafe("COMMIT"); return "reserved";
         } catch (error) {
           await peer.unsafe("ROLLBACK");
