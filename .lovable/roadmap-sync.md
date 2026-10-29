@@ -1,10 +1,10 @@
 # Roadmap sync marker
 
-[roadmap:5fe7fb76-3798-403d-8bd2-1c857f286359]
+[roadmap:c18f97be-b4af-4cd1-91f3-b8a691d59218]
 date: 2026-10-29
 scope: other
 source: user
-summary: [scope:ui] Added /api/billing/mode (STRIPE_BILLING_MODE + both Live switches), checkout-client resolver with no cross-mode fallback, wired Pro/Pro Plus/Kids/Academic(+assistant)/Technical checkout and all portal buttons; 72 wiring tests
+summary: [scope:ui] Test now expects the current /kids/pricing link; no UI change
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
