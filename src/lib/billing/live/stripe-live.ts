@@ -22,6 +22,7 @@ import {
 } from "../../../../supabase/functions/_shared/stripe-environment";
 import { LIVE_SITE_HOSTS } from "./origin";
 import { resolveLiveRiskPayment, validateSignedRiskObject, validateSignedRiskRelationship } from "./payment-risk";
+import { offerSessionParameters, verifyOfferInvoice, type OfferEvidence } from "./offer-discounts";
 
 const TRUSTED_APP_ORIGINS = new Set<string>(LIVE_SITE_HOSTS.map((h) => `https://${h}`));
 
@@ -95,10 +96,24 @@ export async function verifyLiveCustomer(stripe: LiveDeps["stripe"], customerId:
 }
 
 // ---------------------------------------------------------------- checkout
-export type LiveCheckoutBody =
+export type LiveCheckoutBody = (
   | { product: "core"; planKey: "pro" | "pro_plus"; billingInterval: "month" | "year"; marketCode: "EG" | "INTL" }
   | { product: "kids" | "technical"; billingInterval: "month" | "year"; marketCode: "EG" | "INTL"; locale?: string }
-  | { product: "academic"; academicAssistant: boolean; billingInterval: "month" | "year"; marketCode: "EG" | "INTL"; locale?: string };
+  | { product: "academic"; academicAssistant: boolean; billingInterval: "month" | "year"; marketCode: "EG" | "INTL"; locale?: string }) & { offer?: { code: string; phone?: string; key: string; renewal?: boolean } };
+
+async function reserveOffer(user: LiveUser, body: LiveCheckoutBody, deps: LiveDeps): Promise<OfferEvidence | null> {
+  if (!body.offer) return null;
+  if (deps.getEnv("STRIPE_BILLING_MODE")?.trim().toLowerCase() !== "live") throw new Error("LIVE_OFFER_MODE_REQUIRED");
+  if (body.product === "academic" && body.academicAssistant) throw new Error("LIVE_OFFER_ASSISTANT_NOT_MAPPED");
+  return deps.rpc<OfferEvidence>("reserve_stripe_live_offer", { p_user_id: user.id, p_code: body.offer.code,
+    p_package: body.product === "core" ? body.planKey : body.product, p_market: body.marketCode, p_interval: body.billingInterval,
+    p_phone: body.offer.phone ?? null, p_key: body.offer.key, p_renewal: body.offer.renewal ?? false });
+}
+
+async function bindOffer(offer: OfferEvidence | null, user: LiveUser, customer: string, session: { id: string }, deps: LiveDeps) {
+  if (offer && await deps.rpc("bind_stripe_live_offer", { p_reservation_id: offer.id, p_user_id: user.id,
+    p_customer_id: customer, p_session_id: session.id }) !== true) throw new Error("LIVE_OFFER_BINDING_FAILED");
+}
 
 export async function createLiveCheckout(
   user: LiveUser,
@@ -142,6 +157,7 @@ async function coreCheckout(
   deps: LiveDeps,
 ): Promise<LiveResult> {
   const stripe = liveStripe(deps);
+  const offer = await reserveOffer(user, body, deps);
   const context = await deps.rpc<CoreContext>("get_stripe_checkout_context", {
     p_user_id: user.id, p_plan_key: body.planKey, p_billing_interval: body.billingInterval, p_market_code: body.marketCode,
   });
@@ -149,6 +165,8 @@ async function coreCheckout(
     return { status: 409, body: { error: "SUBSCRIPTION_ALREADY_MANAGED" } };
 
   if (!context.gateway_price_id || !context.gateway_product_id) throw new Error("LIVE_PRICE_NOT_REGISTERED");
+  if (offer && (offer.mapping.price_id !== context.gateway_price_id || offer.mapping.product_id !== context.gateway_product_id
+    || Number(offer.original_minor) !== context.amount_minor)) throw new Error("LIVE_OFFER_PRICE_MISMATCH");
   const priceId = await verifyLivePrice(stripe, {
     priceId: context.gateway_price_id, productId: context.gateway_product_id, currency: context.currency_code,
     amountMinor: context.amount_minor, interval: context.billing_interval,
@@ -173,7 +191,7 @@ async function coreCheckout(
     return { status: 409, body: { error: "SUBSCRIPTION_ALREADY_MANAGED" } };
 
   const window = Math.floor(Date.now() / 300_000);
-  const nonce = `${user.id}:${body.planKey}:${body.billingInterval}:${body.marketCode}:${window}`;
+  const nonce = `${user.id}:${body.planKey}:${body.billingInterval}:${body.marketCode}:${offer?.id ?? window}`;
   const finalPrice = priceId;
   const finalCustomer = customerId;
   const session = await coordinateCheckout({
@@ -210,6 +228,7 @@ async function coreCheckout(
       });
       params.set("line_items[0][price]", finalPrice);
       params.set("line_items[0][quantity]", "1");
+      if (offer) offerSessionParameters(params, offer);
       for (const [key, value] of Object.entries(metadata)) {
         params.set(`metadata[${key}]`, value);
         params.set(`subscription_data[metadata][${key}]`, value);
@@ -219,6 +238,7 @@ async function coreCheckout(
       });
     },
   });
+  await bindOffer(offer, user, finalCustomer, session, deps);
   return { status: 200, body: { url: session.url, sessionId: session.id } };
 }
 
@@ -235,6 +255,7 @@ async function scopedCheckout(
   deps: LiveDeps,
 ): Promise<LiveResult> {
   const stripe = liveStripe(deps);
+  const offer = await reserveOffer(user, body, deps);
   const scope = body.product;
   const assistant = scope === "academic" && body.academicAssistant === true;
   const contextRpc = scope === "kids" ? "get_kids_stripe_checkout_context"
@@ -244,6 +265,13 @@ async function scopedCheckout(
     p_user_id: user.id, p_market_code: body.marketCode, p_billing_interval: body.billingInterval,
   });
   if (context.email !== user.email) throw new Error("PARENT_EMAIL_MISMATCH");
+  if (offer) {
+    // Guardian/market checks above still run; replace family price with standard mapped base.
+    context.gateway_price_id = offer.mapping.price_id;
+    context.gateway_product_id = offer.mapping.product_id;
+    context.amount_minor = Number(offer.original_minor);
+    context.discounted = false;
+  }
 
   if (!context.gateway_price_id || !context.gateway_product_id) throw new Error("LIVE_PRICE_NOT_REGISTERED");
   const priceId = await verifyLivePrice(stripe, {
@@ -282,6 +310,7 @@ async function scopedCheckout(
   });
   params.set("line_items[0][price]", priceId);
   params.set("line_items[0][quantity]", "1");
+  if (offer) offerSessionParameters(params, offer);
   const metadata: Record<string, string> = {
     product_scope: scope, user_id: user.id, market_code: context.market_code,
     billing_interval: context.billing_interval, environment: LIVE, [APP_MARKER.key]: APP_MARKER.value,
@@ -296,7 +325,7 @@ async function scopedCheckout(
   const session = await coordinateKidsCheckout({
     begin: () => deps.rpc("lc09_begin_kids_checkout", {
       p_user_id: user.id,
-      p_key: `${scope}-live-checkout-${user.id}-${context.market_code}-${context.billing_interval}-${variantKey}-${window}`,
+      p_key: `${scope}-live-checkout-${user.id}-${context.market_code}-${context.billing_interval}-${variantKey}-${offer?.id ?? window}`,
       p_parameters: params.toString(),
     }),
     create: (key) => stripe("/checkout/sessions", { method: "POST", params, idempotencyKey: key }),
@@ -307,6 +336,7 @@ async function scopedCheckout(
       method: "POST", params: new URLSearchParams(),
     }),
   });
+  await bindOffer(offer, user, customerId, session, deps);
   return { status: 200, body: { url: session.url, sessionId: session.id } };
 }
 
@@ -467,7 +497,7 @@ export async function handleLiveWebhookEvent(rawBody: string, signature: string 
 
     // Checkout is notification only. Fulfillment for initial and delayed
     // payments is exclusively the signed, validated invoice.paid lifecycle.
-    const evidence = await paidEvidence(event, subscription, get);
+    const evidence = await paidEvidence(event, subscription, get, deps);
     if (event.type === "invoice.paid" && evidence.error) throw new Error(evidence.error);
     const held = await deps.rpc<boolean>("get_stripe_live_risk_hold", {
       p_subscription_id: gatewaySubscriptionId, p_user_id: metadata.user_id,
@@ -477,6 +507,10 @@ export async function handleLiveWebhookEvent(rawBody: string, signature: string 
       // Do not let subscription.updated overwrite a scoped hold either.
       throw new Error("PAYMENT_RISK_HOLD_OR_UNVERIFIED");
     }
+    if (evidence.offer && await deps.rpc("consume_stripe_live_offer", {
+      p_reservation_id: evidence.offer.id, p_user_id: metadata.user_id, p_subscription_id: gatewaySubscriptionId,
+      p_invoice_id: object.id, p_customer_id: idOf(subscription.customer),
+    }) !== true) throw new Error("LIVE_OFFER_CONSUMPTION_FAILED");
     if (SCOPED.includes(metadata.product_scope)) {
       if (!metadata.user_id || idOf(subscription.customer) === null || !Array.isArray(subscription.items?.data)
         || subscription.items.data.length !== 1) throw new Error("SCOPED_SUBSCRIPTION_EVIDENCE_MISSING");
@@ -521,8 +555,8 @@ export async function handleLiveWebhookEvent(rawBody: string, signature: string 
       p_period_end: periodEnd ? new Date(periodEnd * 1000).toISOString() : null,
       p_cancel_at_period_end: Boolean(subscription.cancel_at_period_end),
       p_gateway_transaction_id: isPaidInvoice ? object.id : null,
-      p_amount_minor: isPaidInvoice ? Number(object.amount_paid ?? 0) : null,
-      p_currency_code: isPaidInvoice ? object.currency : null,
+      p_amount_minor: isPaidInvoice ? evidence.amountPaid ?? Number(object.amount_paid ?? 0) : null,
+      p_currency_code: isPaidInvoice ? evidence.currency ?? object.currency : null,
       p_payload_minimized: {
         stripe_event_type: event.type, stripe_status: subscription.status,
         checkout_generation: metadata.checkout_generation ?? null,
@@ -543,15 +577,27 @@ async function paidEvidence(
   event: StripeEvent,
   subscription: Record<string, any>,
   get: (path: string) => Promise<Record<string, any>>,
-): Promise<{ transition: "payment_succeeded" | null; priceId: string | null; error: string | null }> {
+  deps: LiveDeps,
+): Promise<{ transition: "payment_succeeded" | null; priceId: string | null; error: string | null; offer?: OfferEvidence; amountPaid?: number; currency?: string }> {
   if (event.type !== "invoice.paid") return { transition: null, priceId: null, error: null };
   const object = event.data.object;
   // Read the invoice back; a signature authenticates delivery but does not
   // replace object relationship validation or current payment status.
-  const invoice = await get(`/invoices/${encodeURIComponent(String(object.id))}`);
+  const reservation = subscription.metadata?.offer_reservation_id;
+  const invoice = await get(`/invoices/${encodeURIComponent(String(object.id))}${reservation ? "?expand[]=discounts.source.coupon" : ""}`);
   if (invoice.id !== object.id || invoice.livemode !== true || idOf(invoice.customer) !== idOf(subscription.customer)
     || !Number.isSafeInteger(invoice.amount_paid) || invoice.amount_paid <= 0
     || invoice.currency !== subscription.items?.data?.[0]?.price?.currency)
     return { transition: null, priceId: null, error: "PAID_INVOICE_CUSTOMER_MISMATCH" };
-  return decidePaidPlanEvidence({ eventType: event.type, object: invoice, subscription });
+  const decision = decidePaidPlanEvidence({ eventType: event.type, object: invoice, subscription });
+  if (decision.error) return decision;
+  if (!reservation) {
+    if ((invoice.discounts?.length ?? 0) || (invoice.total_discount_amounts?.length ?? 0)) throw new Error("UNMAPPED_LIVE_DISCOUNT");
+    return { ...decision, amountPaid: invoice.amount_paid, currency: invoice.currency };
+  }
+  const offer = await deps.rpc<OfferEvidence>("get_stripe_live_offer_evidence", { p_reservation_id: reservation, p_user_id: subscription.metadata.user_id });
+  if (!offer?.session_id) throw new Error("LIVE_OFFER_EVIDENCE_MISSING");
+  const session = await get(`/checkout/sessions/${encodeURIComponent(offer.session_id)}`);
+  const amountPaid = verifyOfferInvoice(offer, invoice, subscription, session);
+  return { ...decision, offer, amountPaid, currency: invoice.currency };
 }
