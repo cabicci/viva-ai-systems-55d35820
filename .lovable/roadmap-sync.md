@@ -4,7 +4,7 @@
 date: 2026-10-29
 scope: other
 source: ai
-summary: [scope:other] Updated cumulative DB test for catalogue-first rejection and added concrete learner anonymization/final financial purge assertions
+summary: [scope:other] Set cumulative PostgreSQL test timeout to accommodate parallel billing/commerce suites; no safety assertions removed
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
