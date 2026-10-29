@@ -35,6 +35,7 @@ function harness(opts: {
     rpc: async (name: string, body: any) => {
       rpcCalls.push({ name, body });
       if (name === "lc09_financial_expired") return false as any;
+      if (name === "get_stripe_live_risk_hold") return false as any;
       const handler = opts.rpc?.[name];
       if (!handler) throw new Error(`UNEXPECTED_RPC_${name}`);
       return handler(body);
@@ -140,6 +141,8 @@ describe("Live checkout when both switches are ON", () => {
     const session = h.stripeCalls.find((c) => c.path === "/checkout/sessions")!;
     expect(session.params!.get("line_items[0][price]")).toBe("price_kids_bundle");
     expect(session.params!.get("automatic_tax[enabled]")).toBe("false");
+    expect(session.params?.get("integration_identifier")).toBe("masaarat-live-v1");
+    expect(session.params?.has("payment_method_types[0]")).toBe(false);
     expect(session.params!.get("subscription_data[metadata][environment]")).toBe("live");
     expect(session.params!.get("metadata[app]")).toBe("masaarat");
     expect(session.params!.get("subscription_data[metadata][app]")).toBe("masaarat");
@@ -259,7 +262,8 @@ describe("Live webhook", () => {
           return true;
         },
       },
-      stripe: { "GET /subscriptions/sub_live1": liveKidsSub() },
+      stripe: { "GET /subscriptions/sub_live1": liveKidsSub({ items: { data: [{ price: { id: "price_kids_live", currency: "egp" }, current_period_start: NOW, current_period_end: NOW + 2_592_000 }] } }),
+        "GET /invoices/in_live2": { ...paidInvoice("in_live2"), customer: "cus_live1" } },
     });
     const e = signedEvent({ id: "evt_renew", type: "invoice.paid", created: NOW, livemode: true, data: { object: paidInvoice("in_live2") } });
     const first = await handleLiveWebhookEvent(e.body, e.signature, h.deps);
@@ -304,7 +308,7 @@ describe("Live webhook", () => {
     expect(h.rpcCalls.find((c) => c.name === "apply_kids_stripe_event")!.body).toMatchObject({ p_status: "canceled", p_paid: false });
   });
 
-  it("processes a full refund while checkout is OFF and cancels the subscription", async () => {
+  it("fails closed for a full refund without durable risk-hold payment evidence", async () => {
     const h = harness({
       rpc: { apply_kids_stripe_refund: () => true },
       stripe: {
@@ -318,8 +322,8 @@ describe("Live webhook", () => {
     });
     const e = signedEvent({ id: "evt_refund", type: "refund.created", created: NOW, livemode: true, data: { object: { id: "re_live" } } });
     const res = await handleLiveWebhookEvent(e.body, e.signature, h.deps);
-    expect(res).toEqual({ status: 200, body: { received: true, revoked: true } });
-    expect(h.stripeCalls.some((c) => c.method === "DELETE" && c.path === "/subscriptions/sub_live1")).toBe(true);
+    expect(res.status).toBe(500);
+    expect(h.stripeCalls.some((c) => c.method === "DELETE")).toBe(false);
   });
 
   it("rejects a Test refund object arriving on the Live endpoint", async () => {
@@ -544,11 +548,11 @@ describe("Live refunds on a shared Stripe account", () => {
     expect(h.stripeCalls.some((c) => c.method === "DELETE")).toBe(false);
   });
 
-  it("revokes Academic access for a fully proven Live Masaarat refund (academic has no internal_subscription_id)", async () => {
+  it("does not acknowledge an Academic refund without charge evidence required for a durable hold", async () => {
     const h = masaaratRefund({ metadata: { app: "masaarat", product_scope: "academic", user_id: USER.id, environment: "live" } });
     (h.deps as any).rpc = async (name: string, body: any) => { h.rpcCalls.push({ name, body }); return name === "lc09_financial_expired" ? false : true; };
     const e = refundEvent("academic");
-    expect(await handleLiveWebhookEvent(e.body, e.signature, h.deps)).toEqual({ status: 200, body: { received: true, revoked: true } });
-    expect(h.rpcCalls.find((c) => c.name === "apply_academic_stripe_refund")).toBeTruthy();
+    expect((await handleLiveWebhookEvent(e.body, e.signature, h.deps)).status).toBe(500);
+    expect(h.rpcCalls.find((c) => c.name === "apply_academic_stripe_refund")).toBeUndefined();
   });
 });

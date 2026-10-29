@@ -21,6 +21,7 @@ import {
   type LiveGateDeps,
 } from "../../../../supabase/functions/_shared/stripe-environment";
 import { LIVE_SITE_HOSTS } from "./origin";
+import { resolveLiveRiskPayment } from "./payment-risk";
 
 const TRUSTED_APP_ORIGINS = new Set<string>(LIVE_SITE_HOSTS.map((h) => `https://${h}`));
 
@@ -202,7 +203,7 @@ async function coreCheckout(
         billing_interval: context.billing_interval, environment: LIVE, [APP_MARKER.key]: APP_MARKER.value,
       };
       const params = new URLSearchParams({
-        mode: "subscription", customer: finalCustomer, client_reference_id: user.id,
+        mode: "subscription", customer: finalCustomer, client_reference_id: user.id, integration_identifier: "masaarat-live-v1",
         success_url: `${appOrigin}/account?payment=success&session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${appOrigin}/pricing?payment=canceled`,
         allow_promotion_codes: "false", billing_address_collection: "auto", "automatic_tax[enabled]": "false",
@@ -276,7 +277,7 @@ async function scopedCheckout(
     academic: { success: `/academic?payment=success&locale=${locale}`, cancel: "/academic/pricing?payment=canceled" },
   }[scope];
   const params = new URLSearchParams({
-    mode: "subscription", customer: customerId, client_reference_id: user.id, allow_promotion_codes: "false",
+    mode: "subscription", customer: customerId, client_reference_id: user.id, allow_promotion_codes: "false", integration_identifier: "masaarat-live-v1",
     billing_address_collection: "auto", "automatic_tax[enabled]": "false", success_url: `${appOrigin}${paths.success}`, cancel_url: `${appOrigin}${paths.cancel}`,
   });
   params.set("line_items[0][price]", priceId);
@@ -361,7 +362,9 @@ function transitionFor(event: StripeEvent, subscription: Record<string, any>): s
   return null;
 }
 
-const SUPPORTED = new Set(["checkout.session.completed", "invoice.paid", "invoice.payment_failed",
+const CHECKOUT_EVENTS = new Set(["checkout.session.completed", "checkout.session.async_payment_succeeded", "checkout.session.async_payment_failed"]);
+const RISK_EVENTS = new Set(["charge.dispute.created", "charge.refunded", "radar.early_fraud_warning.created"]);
+const SUPPORTED = new Set([...CHECKOUT_EVENTS, "invoice.paid", "invoice.payment_failed",
   "customer.subscription.updated", "customer.subscription.deleted"]);
 const SCOPED = ["kids", "technical", "academic"];
 
@@ -378,6 +381,37 @@ export async function handleLiveWebhookEvent(rawBody: string, signature: string 
   const get = (path: string, method: StripeMethod = "GET") => stripe<Record<string, any>>(path, { method });
   try {
     const occurredAt = new Date(event.created * 1000).toISOString();
+    if (!event.id || !event.data?.object || !Number.isSafeInteger(event.created)) throw new Error("STRIPE_EVENT_INVALID");
+    if (RISK_EVENTS.has(event.type)) {
+      const object = event.data.object;
+      const chargeId = event.type === "charge.refunded" ? idOf(object) : idOf(object.charge);
+      if (!chargeId) throw new Error("RISK_CHARGE_MISSING");
+      if (event.type !== "charge.refunded") {
+        const objectId = idOf(object);
+        if (!objectId) throw new Error("RISK_OBJECT_ID_MISSING");
+        const path = event.type === "charge.dispute.created" ? "/disputes/" : "/radar/early_fraud_warnings/";
+        const riskObject = await get(`${path}${encodeURIComponent(objectId)}`);
+        if (riskObject.id !== objectId || riskObject.livemode !== true || idOf(riskObject.charge) !== chargeId)
+          throw new Error("RISK_OBJECT_CHARGE_MISMATCH");
+      }
+      const resolved = await resolveLiveRiskPayment(chargeId, get);
+      if (!resolved) return { status: 200, body: { received: true, ignored: true, unrelated: true } };
+      if (event.type === "charge.refunded" && (!Number.isSafeInteger(resolved.charge.amount_refunded)
+        || resolved.charge.amount_refunded <= 0 || resolved.charge.amount_refunded > resolved.charge.amount))
+        throw new Error("RISK_REFUND_EVIDENCE_INVALID");
+      // A durable, atomic hold is required: do not fake a refund or acknowledge
+      // the event when persistence/revocation is not available.
+      const result = await deps.rpc<{ processed: boolean; held: boolean }>("apply_stripe_live_risk_hold", {
+        p_event_id: event.id, p_user_id: resolved.subscription.metadata.user_id,
+        p_subscription_id: resolved.subscription.id, p_customer_id: idOf(resolved.subscription.customer),
+        p_scope: resolved.subscription.metadata.product_scope ?? "core",
+        p_price_id: idOf(resolved.subscription.items?.data?.[0]?.price),
+        p_invoice_id: resolved.invoice.id, p_charge_id: resolved.charge.id,
+        p_reason: event.type, p_occurred_at: occurredAt,
+      });
+      if (result?.processed !== true || result.held !== true) throw new Error("RISK_HOLD_NOT_CONFIRMED");
+      return { status: 200, body: { received: true, held: true } };
+    }
     if (["refund.created", "refund.updated", "refund.failed"].includes(event.type)) {
       const resolved = await resolveStripeRefund(String(event.data.object.id), (p) => get(p), LIVE);
       if (!resolved) return { status: 200, body: { received: true, ignored: true } };
@@ -386,6 +420,20 @@ export async function handleLiveWebhookEvent(rawBody: string, signature: string 
       if (await financialDeliveryExpired(resolved.subscription.metadata?.user_id, deps.rpc))
         return { status: 200, body: { received: true, ignored: true, financial_erased: true } };
       if (resolved.subscription.metadata?.environment !== LIVE) throw new Error("STRIPE_ENVIRONMENT_MISMATCH");
+      if (resolved.refund.status === "succeeded") {
+        const chargeId = idOf(resolved.refund.charge);
+        if (!chargeId) throw new Error("RISK_REFUND_CHARGE_MISSING");
+        const risk = await resolveLiveRiskPayment(chargeId, get);
+        if (!risk || risk.subscription.id !== resolved.subscription.id || risk.invoice.id !== resolved.invoice.id)
+          throw new Error("RISK_REFUND_RELATIONSHIP_MISMATCH");
+        const hold = await deps.rpc<{ processed: boolean; held: boolean }>("apply_stripe_live_risk_hold", {
+          p_event_id: event.id, p_user_id: risk.subscription.metadata.user_id,
+          p_subscription_id: risk.subscription.id, p_customer_id: idOf(risk.subscription.customer),
+          p_scope: risk.subscription.metadata.product_scope ?? "core", p_price_id: idOf(risk.subscription.items?.data?.[0]?.price),
+          p_invoice_id: risk.invoice.id, p_charge_id: risk.charge.id, p_reason: "refund.succeeded", p_occurred_at: occurredAt,
+        });
+        if (hold?.processed !== true || hold.held !== true) throw new Error("RISK_HOLD_NOT_CONFIRMED");
+      }
       const scope = resolved.subscription.metadata?.product_scope ?? "";
       if (SCOPED.includes(scope)) {
         const revoked = await deps.rpc<boolean>(`apply_${scope}_stripe_refund`, {
@@ -409,7 +457,10 @@ export async function handleLiveWebhookEvent(rawBody: string, signature: string 
     if (!SUPPORTED.has(event.type)) return { status: 200, body: { received: true, ignored: true } };
     const object = event.data.object;
     const gatewaySubscriptionId = subscriptionIdFrom(object);
-    if (!gatewaySubscriptionId) return { status: 200, body: { received: true, ignored: true } };
+    if (!gatewaySubscriptionId) {
+      if (isMasaaratSubscription(object.metadata)) throw new Error("STRIPE_SUBSCRIPTION_EVIDENCE_MISSING");
+      return { status: 200, body: { received: true, ignored: true, unrelated: true } };
+    }
     const subscription = event.type.startsWith("customer.subscription.")
       ? object : await get(`/subscriptions/${encodeURIComponent(gatewaySubscriptionId)}`);
     if (subscription.livemode !== true) throw new Error("STRIPE_ENVIRONMENT_MISMATCH");
@@ -420,7 +471,18 @@ export async function handleLiveWebhookEvent(rawBody: string, signature: string 
     if (await financialDeliveryExpired(metadata.user_id, deps.rpc))
       return { status: 200, body: { received: true, ignored: true, financial_erased: true } };
 
+    // Checkout is notification only. Fulfillment for initial and delayed
+    // payments is exclusively the signed, validated invoice.paid lifecycle.
     const evidence = await paidEvidence(event, subscription, get);
+    if (event.type === "invoice.paid" && evidence.error) throw new Error(evidence.error);
+    const held = await deps.rpc<boolean>("get_stripe_live_risk_hold", {
+      p_subscription_id: gatewaySubscriptionId, p_user_id: metadata.user_id,
+    });
+    if (held !== false && held !== true) throw new Error("PAYMENT_RISK_HOLD_UNVERIFIED");
+    if (held === true) {
+      // Do not let subscription.updated overwrite a scoped hold either.
+      throw new Error("PAYMENT_RISK_HOLD_OR_UNVERIFIED");
+    }
     if (SCOPED.includes(metadata.product_scope)) {
       if (!metadata.user_id || idOf(subscription.customer) === null || !Array.isArray(subscription.items?.data)
         || subscription.items.data.length !== 1) throw new Error("SCOPED_SUBSCRIPTION_EVIDENCE_MISSING");
@@ -454,7 +516,7 @@ export async function handleLiveWebhookEvent(rawBody: string, signature: string 
       throw new Error("STRIPE_METADATA_INCOMPLETE");
     const periodStart = subscription.current_period_start ?? subscription.items?.data?.[0]?.current_period_start ?? null;
     const periodEnd = subscription.current_period_end ?? subscription.items?.data?.[0]?.current_period_end ?? null;
-    const transition = ["invoice.paid", "checkout.session.completed"].includes(event.type) ? evidence.transition : transitionFor(event, subscription);
+    const transition = event.type === "invoice.paid" ? evidence.transition : transitionFor(event, subscription);
     const isPaidInvoice = event.type === "invoice.paid";
     const result = await deps.rpc("apply_stripe_webhook_event", {
       p_gateway_event_id: event.id, p_event_type: event.type, p_effective_at: occurredAt, p_transition: transition,
@@ -488,11 +550,14 @@ async function paidEvidence(
   subscription: Record<string, any>,
   get: (path: string) => Promise<Record<string, any>>,
 ): Promise<{ transition: "payment_succeeded" | null; priceId: string | null; error: string | null }> {
-  if (!["invoice.paid", "checkout.session.completed"].includes(event.type)) return { transition: null, priceId: null, error: null };
+  if (event.type !== "invoice.paid") return { transition: null, priceId: null, error: null };
   const object = event.data.object;
-  const lines = event.type === "checkout.session.completed"
-    ? await get(`/checkout/sessions/${encodeURIComponent(String(object.id))}/line_items?limit=100`)
-    : undefined;
-  if (lines?.has_more) return { transition: null, priceId: null, error: "PAID_PLAN_LINES_INCOMPLETE" };
-  return decidePaidPlanEvidence({ eventType: event.type, object, subscription, checkoutLineItems: lines?.data });
+  // Read the invoice back; a signature authenticates delivery but does not
+  // replace object relationship validation or current payment status.
+  const invoice = await get(`/invoices/${encodeURIComponent(String(object.id))}`);
+  if (invoice.id !== object.id || invoice.livemode !== true || idOf(invoice.customer) !== idOf(subscription.customer)
+    || !Number.isSafeInteger(invoice.amount_paid) || invoice.amount_paid <= 0
+    || invoice.currency !== subscription.items?.data?.[0]?.price?.currency)
+    return { transition: null, priceId: null, error: "PAID_INVOICE_CUSTOMER_MISMATCH" };
+  return decidePaidPlanEvidence({ eventType: event.type, object: invoice, subscription });
 }
