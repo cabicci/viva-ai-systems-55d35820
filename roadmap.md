@@ -1,9 +1,11 @@
 # Roadmap
 
 - [x] Install guarded Live coded-offer mapping/reservation source, strict invoice proof and neutral public billing copy; actual inventory has zero offers. No publication or activation.
-- [ ] Launch coded Live offers — blocked by absent offer/Coupon/Promotion Code mappings, owner duration choices, RAK expansion verification, bound-attempt reconciliation and hosted concurrency/end-to-end validation.
+- [ ] Future task (deferred by owner): coded Live offers, only after actual offers exist and separate authorization; not a current launch prerequisite.
 
-- [x] Audit 28 unique Live mappings with zero amount mismatches; adapt signed risk events to permitted payment graph reads; price and Invoice Payment GETs returned 200; no publication/activation. Launch blockers: paid coupon codes remain manual-only, Test wording remains, sampled Live price inactive, catalogue-wide Stripe readback not performed.
+- [x] Audit 28 unique Live mappings with zero amount mismatches, including Kids family prices; adapt signed risk events to permitted payment graph reads; price and Invoice Payment GETs returned 200; public billing Test wording removed in source. Catalogue activation and full Stripe catalogue readback remain separate; absent hypothetical offers are not blockers.
+
+- [ ] Verify owner scope correction: zero configured or static paid coded offers; reconfirm current 28-price inventory and restricted-key risk checks without billing architecture changes.
 
 - [x] Complete method-aware hosted dispatch for all four billing routes; published mode 200 Test JSON, Live GET 405 JSON, unsigned checkout/portal POST 403 (trusted-origin/no bearer 401), unsigned webhook POST 400; both domains verified through canonical redirect, no payments.
 
