@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Complete method-aware hosted dispatch for mode, Live checkout, Live portal, and Live webhook; verify unsigned probes with Live disabled and no payments.
+
 - [x] Restore published billing mode exact-path Worker dispatch; verified checkout/portal 200 Test JSON and invalid intent 400 on the primary domain and the Lovable domain via its existing 302 canonical redirect; published Pro button selects Test with payment request blocked before reaching the server.
 
 - [x] Add modest four-locale Stripe trust text beside package purchase controls without altering billing behavior; verify existing button/billing tests and automatic build.
