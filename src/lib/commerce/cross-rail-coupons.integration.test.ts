@@ -207,7 +207,7 @@ describe("real commerce coupon journey across payment rails", () => {
     const payment = await confirm(o, "instapay");
     const r = await reserve();
     await actor(admin);
-    const refund = { payment_id: payment.id, order_id: o.id, amount_minor: 13520, reference: "Fixture external refund", reason: "Fixture only", key: randomUUID() };
+    const refund = { payment_id: payment.id, order_id: o.id, amount_minor: 13520, reference: "Fixture external refund", reason: "Fixture only", funds_verified: true, revoke_access: true, key: randomUUID() };
     await command("refund", refund); await command("refund", refund);
     expect(await count("select consumed_count::int n from billing.commerce_offers")).toBe(1);
     expect(await count("select count(*)::int n from billing.commerce_refunds")).toBe(1);
