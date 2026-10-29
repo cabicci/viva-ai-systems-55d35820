@@ -4,7 +4,7 @@ import { handleLiveWebhookEvent, type LiveDeps } from "../live/stripe-live";
 import { resolveLiveRiskPayment } from "../live/payment-risk";
 
 const now = Math.floor(Date.now() / 1000);
-const secret = "synthetic-webhook-signing-fixture";
+const secret = "whsec_synthetic_webhook_signing_fixture";
 const user = "11111111-1111-4111-8111-111111111111";
 const customer = { id: "cus_m", livemode: true, metadata: { environment: "live", user_id: user } };
 const subscription = { id: "sub_m", object: "subscription", livemode: true, customer: "cus_m", status: "active", latest_invoice: "in_m",
