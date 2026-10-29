@@ -69,6 +69,13 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
+      // The published Worker reaches this entry even when its bundled file-route
+      // dispatcher misses a server route. Only this public, read-only exact path
+      // is handled here; authenticated/Live endpoints retain their own guards.
+      if (new URL(request.url).pathname === "/api/billing/mode") {
+        const { handleBillingMode } = await import("./lib/billing/mode-endpoint.server");
+        return await handleBillingMode(request);
+      }
       if (new URL(request.url).pathname === "/api/internal/assistant-indexing") {
         const { handleAutomaticIndexing } = await import("./lib/assistant-automation/endpoint.server");
         return await handleAutomaticIndexing(request);

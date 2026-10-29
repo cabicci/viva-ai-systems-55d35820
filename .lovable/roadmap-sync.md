@@ -1,10 +1,10 @@
 # Roadmap sync marker
 
-[roadmap:3d795651-5aa3-4f3e-ab1c-d2e7e2007a92]
+[roadmap:6a3b736e-2e86-495c-a7d4-3f01e0057286]
 date: 2026-10-29
-scope: ui
+scope: infra
 source: user
-summary: Localized Stripe trust lines verified in all four locales; 398 passed, 37 skipped; authenticated desktop/mobile checks passed
+summary: Published billing route verified: primary 200 Test JSON, invalid 400; Lovable canonical redirect; Pro button Test callback intercepted without payment
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
