@@ -105,36 +105,96 @@ describe("Live checkout gate (default OFF)", () => {
 });
 
 describe("Live checkout when both switches are ON", () => {
-  it("creates a separate live price with live metadata and lookup key for Kids", async () => {
-    const h = harness({
-      env: { STRIPE_LIVE_ENABLED: "true" },
-      db: true,
-      rpc: {
-        get_kids_stripe_checkout_context: () => ({
-          amount_minor: 17910, currency_code: "egp", market_code: "EG", billing_interval: "month", discounted: true,
-          gateway_customer_id: "cus_live1", gateway_product_id: null, gateway_price_id: null, email: USER.email,
-        }),
-        register_kids_stripe_price: (b) => b.p_price_id,
-        lc09_begin_kids_checkout: () => ({ attempt_id: "a1", idempotency_key: "k1" }),
-        lc09_record_kids_checkout: () => true,
-      },
-      stripe: {
-        "GET /subscriptions": { object: "list", data: [], has_more: false },
-        "POST /products": { id: "prod_live", object: "product", livemode: true },
-        "POST /prices": { id: "price_live_bundle", object: "price", livemode: true },
-        "POST /checkout/sessions": { id: "cs_live", object: "checkout.session", livemode: true, status: "open", url: "https://checkout.stripe.com/c/x" },
-      },
-    });
-    const res = await createLiveCheckout(USER, { product: "kids", billingInterval: "month", marketCode: "EG" }, "https://masaarat.ai", h.deps);
+  const kidsCtx = (o: Record<string, any> = {}) => ({
+    amount_minor: 17910, currency_code: "egp", market_code: "EG", billing_interval: "month", discounted: true,
+    gateway_customer_id: "cus_live1", gateway_product_id: "prod_kids_live", gateway_price_id: "price_kids_bundle", email: USER.email, ...o,
+  });
+  const livePrice = (o: Record<string, any> = {}, p: Record<string, any> = {}) => ({
+    id: "price_kids_bundle", object: "price", livemode: true, active: true, type: "recurring", currency: "egp", unit_amount: 17910,
+    recurring: { interval: "month", interval_count: 1, usage_type: "licensed" }, tax_behavior: "exclusive", metadata: { environment: "live" },
+    product: { id: "prod_kids_live", object: "product", livemode: true, active: true, metadata: { environment: "live" }, ...p }, ...o,
+  });
+  const liveCustomer = (o: Record<string, any> = {}) => ({ id: "cus_live1", object: "customer", livemode: true, metadata: { user_id: USER.id, environment: "live" }, ...o });
+  const kidsHarness = (ctx = kidsCtx(), price: any = livePrice(), customer: any = liveCustomer()) => harness({
+    env: { STRIPE_LIVE_ENABLED: "true" }, db: true,
+    rpc: {
+      get_kids_stripe_checkout_context: () => ctx,
+      lc09_begin_kids_checkout: () => ({ attempt_id: "a1", idempotency_key: "k1" }),
+      lc09_record_kids_checkout: () => true,
+    },
+    stripe: {
+      "GET /prices/": price, "GET /customers/": customer,
+      "GET /subscriptions": { object: "list", data: [], has_more: false },
+      "POST /checkout/sessions": { id: "cs_live", object: "checkout.session", livemode: true, status: "open", url: "https://checkout.stripe.com/c/x" },
+    },
+  });
+  const kidsBody = { product: "kids", billingInterval: "month", marketCode: "EG" } as const;
+
+  it("uses the verified registered price and never creates products or prices", async () => {
+    const h = kidsHarness();
+    const res = await createLiveCheckout(USER, kidsBody, "https://masaarat.ai", h.deps);
     expect(res.status).toBe(200);
-    const price = h.stripeCalls.find((c) => c.path === "/prices")!;
-    expect(price.params!.get("lookup_key")).toBe("masaarat_kids_eg_month_bundle_live_v1");
-    expect(price.params!.get("unit_amount")).toBe("17910");
-    expect(price.params!.get("metadata[environment]")).toBe("live");
+    expect(h.stripeCalls.some((c) => c.method === "POST" && (c.path === "/products" || c.path === "/prices"))).toBe(false);
     const session = h.stripeCalls.find((c) => c.path === "/checkout/sessions")!;
+    expect(session.params!.get("line_items[0][price]")).toBe("price_kids_bundle");
+    expect(session.params!.get("automatic_tax[enabled]")).toBe("false");
     expect(session.params!.get("subscription_data[metadata][environment]")).toBe("live");
-    expect(session.params!.get("line_items[0][price]")).toBe("price_live_bundle");
-    expect(h.rpcCalls.find((c) => c.name === "lc09_begin_kids_checkout")!.body.p_key).toContain("kids-live-checkout-");
+  });
+
+  it("fails closed when no Live price is registered (scoped and core)", async () => {
+    const h = kidsHarness(kidsCtx({ gateway_price_id: null }));
+    expect(await createLiveCheckout(USER, kidsBody, "https://masaarat.ai", h.deps)).toEqual({ status: 503, body: { error: "LIVE_PRICE_NOT_REGISTERED" } });
+    expect(h.stripeCalls).toHaveLength(0);
+    const c = harness({ env: { STRIPE_LIVE_ENABLED: "true" }, db: true, rpc: { get_stripe_checkout_context: () => ({
+      plan_version_id: "pv", market_price_id: "mp", plan_key: "pro", plan_name: "Pro", billing_interval: "month", market_code: "EG",
+      currency_code: "egp", amount_minor: 16900, gateway_price_id: null, gateway_product_id: null, gateway_customer_id: null, access_state: null }) } });
+    expect((await createLiveCheckout(USER, { product: "core", planKey: "pro", billingInterval: "month", marketCode: "EG" }, "https://masaarat.ai", c.deps)).body.error).toBe("LIVE_PRICE_NOT_REGISTERED");
+    expect(c.stripeCalls).toHaveLength(0);
+  });
+
+  const mismatches: [string, any][] = [
+    ["inactive price", livePrice({ active: false })],
+    ["test-mode price", livePrice({ livemode: false })],
+    ["wrong currency", livePrice({ currency: "usd" })],
+    ["wrong amount", livePrice({ unit_amount: 19900 })],
+    ["wrong interval", livePrice({ recurring: { interval: "year", interval_count: 1 } })],
+    ["interval count 3", livePrice({ recurring: { interval: "month", interval_count: 3 } })],
+    ["inclusive tax", livePrice({ tax_behavior: "inclusive" })],
+    ["unspecified tax", livePrice({ tax_behavior: "unspecified" })],
+    ["price metadata test", livePrice({ metadata: { environment: "test" } })],
+    ["other product", livePrice({}, { id: "prod_render" })],
+    ["inactive product", livePrice({}, { active: false })],
+    ["product metadata missing", livePrice({}, { metadata: {} })],
+  ];
+  for (const [label, price] of mismatches) {
+    it(`rejects a registered price with ${label} before any session`, async () => {
+      const h = kidsHarness(kidsCtx(), price);
+      expect(await createLiveCheckout(USER, kidsBody, "https://masaarat.ai", h.deps)).toEqual({ status: 503, body: { error: "LIVE_PRICE_MISMATCH" } });
+      expect(h.stripeCalls.some((c) => c.path === "/checkout/sessions")).toBe(false);
+    });
+  }
+
+  for (const [label, customer] of [
+    ["another user", liveCustomer({ metadata: { user_id: "other", environment: "live" } })],
+    ["a test customer", liveCustomer({ livemode: false })],
+    ["no live metadata", liveCustomer({ metadata: { user_id: USER.id } })],
+    ["a deleted customer", liveCustomer({ deleted: true })],
+  ] as [string, any][]) {
+    it(`rejects a saved customer belonging to ${label}`, async () => {
+      const h = kidsHarness(kidsCtx(), livePrice(), customer);
+      const res = await createLiveCheckout(USER, kidsBody, "https://masaarat.ai", h.deps);
+      expect(res.status).toBe(503);
+      expect(h.stripeCalls.some((c) => c.path === "/checkout/sessions")).toBe(false);
+    });
+  }
+
+  it("verifies the core price against the plan context", async () => {
+    const h = harness({ env: { STRIPE_LIVE_ENABLED: "true" }, db: true,
+      rpc: { get_stripe_checkout_context: () => ({ plan_version_id: "pv", market_price_id: "mp", plan_key: "pro", plan_name: "Pro",
+        billing_interval: "year", market_code: "INTL", currency_code: "usd", amount_minor: 6990, gateway_price_id: "price_pro",
+        gateway_product_id: "prod_pro", gateway_customer_id: "cus_live1", access_state: null }) },
+      stripe: { "GET /prices/": livePrice({ id: "price_pro", currency: "usd", unit_amount: 6999, recurring: { interval: "year" } }, { id: "prod_pro" }) } });
+    expect((await createLiveCheckout(USER, { product: "core", planKey: "pro", billingInterval: "year", marketCode: "INTL" }, "https://masaarat.ai", h.deps)).body.error).toBe("LIVE_PRICE_MISMATCH");
   });
 
   it("rejects a Test object returned during a Live checkout", async () => {
@@ -148,7 +208,12 @@ describe("Live checkout when both switches are ON", () => {
           gateway_product_id: "prod_live_pro", gateway_customer_id: null, access_state: null,
         }),
       },
-      stripe: { "POST /customers": { id: "cus_test", object: "customer", livemode: false } },
+      stripe: {
+        "GET /prices/": { id: "price_live_pro", object: "price", livemode: true, active: true, type: "recurring", currency: "egp", unit_amount: 16900,
+          recurring: { interval: "month" }, tax_behavior: "exclusive", metadata: { environment: "live" },
+          product: { id: "prod_live_pro", livemode: true, active: true, metadata: { environment: "live" } } },
+        "POST /customers": { id: "cus_test", object: "customer", livemode: false },
+      },
     });
     const res = await createLiveCheckout(USER, { product: "core", planKey: "pro", billingInterval: "month", marketCode: "EG" }, "https://masaarat.ai", h.deps);
     expect(res.status).toBe(503);
@@ -273,21 +338,49 @@ describe("Live webhook", () => {
 });
 
 describe("Live portal", () => {
-  it("opens for an existing subscription while checkout is OFF", async () => {
-    const h = harness({
-      rpc: { get_academic_stripe_portal_context: () => ({ gateway_customer_id: "cus_live1", gateway_subscription_id: "sub_a" }) },
-      stripe: { "POST /billing_portal/sessions": { object: "billing_portal.session", livemode: true, url: "https://billing.stripe.com/p/x" } },
-    });
-    const res = await createLivePortal(USER, "academic", "https://masaarat.ai", h.deps);
-    expect(res).toEqual({ status: 200, body: { url: "https://billing.stripe.com/p/x" } });
-    expect(h.stripeCalls[0].params!.get("return_url")).toBe("https://masaarat.ai/academic/pricing");
+  const PORTAL_ENV = { STRIPE_LIVE_PORTAL_CONFIGURATION_ID: "bpc_live_masaarat" };
+  const config = (o: Record<string, any> = {}) => ({ id: "bpc_live_masaarat", object: "billing_portal.configuration", livemode: true, active: true,
+    features: { subscription_cancel: { enabled: true, mode: "at_period_end" } }, ...o });
+  const customer = { id: "cus_live1", object: "customer", livemode: true, metadata: { user_id: USER.id, environment: "live" } };
+  const portalHarness = (env: Record<string, string>, cfg: any = config(), sessionLive = true) => harness({
+    env,
+    rpc: { get_academic_stripe_portal_context: () => ({ gateway_customer_id: "cus_live1", gateway_subscription_id: "sub_a" }) },
+    stripe: {
+      "GET /billing_portal/configurations/": cfg, "GET /customers/": customer,
+      "POST /billing_portal/sessions": { object: "billing_portal.session", livemode: sessionLive, url: "https://billing.stripe.com/p/x" },
+    },
   });
 
-  it("refuses a test-mode portal session", async () => {
-    const h = harness({
-      rpc: { get_stripe_portal_context: () => ({ gateway_customer_id: "cus_x", gateway_subscription_id: "sub_x" }) },
-      stripe: { "POST /billing_portal/sessions": { object: "billing_portal.session", livemode: false, url: "https://billing.stripe.com/p/t" } },
+  it("opens with the dedicated Masaarat configuration while checkout is OFF", async () => {
+    const h = portalHarness(PORTAL_ENV);
+    const res = await createLivePortal(USER, "academic", "https://masaarat.ai", h.deps);
+    expect(res).toEqual({ status: 200, body: { url: "https://billing.stripe.com/p/x" } });
+    const call = h.stripeCalls.find((c) => c.path === "/billing_portal/sessions")!;
+    expect(call.params!.get("configuration")).toBe("bpc_live_masaarat");
+    expect(call.params!.get("return_url")).toBe("https://masaarat.ai/academic/pricing");
+  });
+
+  it("refuses to fall back to the default configuration when the id is missing", async () => {
+    const h = portalHarness({});
+    expect((await createLivePortal(USER, "academic", "https://masaarat.ai", h.deps)).status).toBe(503);
+    expect(h.stripeCalls).toHaveLength(0);
+  });
+
+  for (const [label, cfg] of [
+    ["test-mode", config({ livemode: false })],
+    ["inactive", config({ active: false })],
+    ["immediate cancel", config({ features: { subscription_cancel: { enabled: true, mode: "immediately" } } })],
+    ["cancel disabled", config({ features: { subscription_cancel: { enabled: false, mode: "at_period_end" } } })],
+  ] as [string, any][]) {
+    it(`refuses a ${label} portal configuration`, async () => {
+      const h = portalHarness(PORTAL_ENV, cfg);
+      expect((await createLivePortal(USER, "academic", "https://masaarat.ai", h.deps)).status).toBe(503);
+      expect(h.stripeCalls.some((c) => c.path === "/billing_portal/sessions")).toBe(false);
     });
-    expect((await createLivePortal(USER, "core", "https://masaarat.ai", h.deps)).status).toBe(503);
+  }
+
+  it("refuses a test-mode portal session", async () => {
+    const h = portalHarness(PORTAL_ENV, config(), false);
+    expect((await createLivePortal(USER, "academic", "https://masaarat.ai", h.deps)).status).toBe(503);
   });
 });
