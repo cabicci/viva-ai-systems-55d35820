@@ -89,7 +89,7 @@ describe("Stripe refund authoritative invoice correlation", () => {
     delete objects["/refunds/re_test"].livemode;
     expect((await resolveStripeRefund("re_test", get))?.rpc.p_gateway_invoice_id).toBe("in_test");
     objects["/payment_intents/pi_test"].livemode = true;
-    await expect(resolveStripeRefund("re_test", get)).rejects.toThrow("MISMATCH");
+    await expect(resolveStripeRefund("re_test", get)).rejects.toThrow("REFUND_TEST_REQUIRED");
   });
   it.each([null, "false", 0, true])("rejects a Test refund whose livemode is present but not strictly false: %s", async (value) => {
     const { objects, get } = fixture();

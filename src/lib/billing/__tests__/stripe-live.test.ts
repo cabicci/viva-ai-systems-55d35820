@@ -508,6 +508,7 @@ describe("Live refunds on a shared Stripe account", () => {
       "GET /customers/cus_live1": { id: "cus_live1", object: "customer", livemode: true, metadata: { user_id: USER.id, environment: "live" } },
       "GET /invoices/in_m": { id: "in_m", object: "invoice", livemode: true, status: "paid", customer: "cus_live1", currency: "egp", amount_paid: 19900, subscription: "sub_m" },
       "GET /subscriptions/sub_m": { id: "sub_m", object: "subscription", livemode: true, status: "active", customer: "cus_live1", latest_invoice: "in_m", ...sub },
+      "DELETE /subscriptions/sub_m": { id: "sub_m", object: "subscription", livemode: true, status: "canceled" },
     },
   });
   const refundEvent = (n: string) => signedEvent({ id: `evt_${n}`, type: "refund.created", created: NOW, livemode: true, data: { object: { id: "re_m" } } });
