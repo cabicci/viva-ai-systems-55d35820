@@ -4,7 +4,7 @@
 date: 2026-10-29
 scope: other
 source: ai
-summary: [scope:other] Add unmapped-code manual continuity, disabled-bank isolation and refund no-restored-capacity tests
+summary: [scope:other] Match external refund test to mandatory funds verification and explicit order-access revocation
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
