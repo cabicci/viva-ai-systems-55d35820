@@ -12,16 +12,17 @@ const subscription = { id: "sub_m", object: "subscription", livemode: true, cust
   items: { data: [{ price: { id: "price_m", currency: "egp" }, current_period_start: now, current_period_end: now + 2592000 }] } };
 const invoice = { id: "in_m", object: "invoice", livemode: true, customer: "cus_m", subscription: "sub_m", status: "paid",
   amount_paid: 100, amount_remaining: 0, currency: "egp", lines: { data: [{ price: { id: "price_m" }, subscription: "sub_m", amount: 100 }] } };
-const charge = { id: "ch_m", livemode: true, paid: true, status: "succeeded", payment_intent: "pi_m", customer: "cus_m", amount: 100, currency: "egp", amount_refunded: 10 };
+const charge = { id: "ch_m", object: "charge", livemode: true, paid: true, status: "succeeded", payment_intent: "pi_m", customer: "cus_m", amount: 100, currency: "egp", amount_refunded: 10 };
 const intent = { id: "pi_m", livemode: true, status: "succeeded", latest_charge: "ch_m", customer: "cus_m", amount_received: 100, currency: "egp" };
+const dispute = { id: "du_m", object: "dispute", livemode: true, charge: "ch_m", payment_intent: "pi_m", amount: 100, currency: "egp" };
+const warning = { id: "issfr_m", object: "radar.early_fraud_warning", livemode: true, charge: "ch_m", payment_intent: "pi_m", fraud_type: "misc", actionable: true };
+const riskObject = (type: string) => type === "charge.refunded" ? charge : type === "charge.dispute.created" ? dispute : warning;
 
 function setup(unrelated = false) {
   const objects: Record<string, unknown> = {
     "/charges/ch_m": charge, "/payment_intents/pi_m": intent,
     "/customers/cus_m": unrelated ? { ...customer, metadata: {} } : customer,
     "/invoices/in_m": invoice, "/subscriptions/sub_m": subscription,
-    "/disputes/dp_m": { id: "dp_m", livemode: true, charge: "ch_m" },
-    "/radar/early_fraud_warnings/dp_m": { id: "dp_m", livemode: true, charge: "ch_m" },
   };
   let applied = false;
   const rpc = vi.fn(async (name: string) => {
@@ -39,7 +40,7 @@ function setup(unrelated = false) {
     return objects[path];
   });
   const deps = { getEnv: () => secret, databaseLiveEnabled: async () => false, rpc, stripe } as unknown as LiveDeps;
-  const send = (type: string, object: unknown = { id: "dp_m", charge: "ch_m" }, signatureValid = true) => {
+  const send = (type: string, object: unknown = riskObject(type), signatureValid = true) => {
     const body = JSON.stringify({ id: "evt_m", type, created: now, livemode: true, data: { object } });
     const digest = createHmac("sha256", secret).update(`${now}.${body}`).digest("hex");
     return handleLiveWebhookEvent(body, `t=${now},v1=${signatureValid ? digest : "invalid"}`, deps);
@@ -51,12 +52,12 @@ describe("Live payment risk evidence and acknowledgement", () => {
   for (const type of ["charge.dispute.created", "charge.refunded", "radar.early_fraud_warning.created"]) {
     it(`${type}: ignores unrelated Render one-time payments without writes`, async () => {
       const h = setup(true);
-      expect(await h.send(type, type === "charge.refunded" ? { id: "ch_m" } : { id: "dp_m", charge: "ch_m" })).toEqual({ status: 200, body: { received: true, ignored: true, unrelated: true } });
+      expect(await h.send(type)).toEqual({ status: 200, body: { received: true, ignored: true, unrelated: true } });
       expect(h.rpc).not.toHaveBeenCalled();
     });
     it(`${type}: requires confirmed persistent access hold`, async () => {
       const h = setup();
-      expect((await h.send(type, type === "charge.refunded" ? { id: "ch_m" } : { id: "dp_m", charge: "ch_m" })).status).toBe(200);
+      expect((await h.send(type)).status).toBe(200);
       expect(h.held()).toBe(true);
       expect(h.rpc).toHaveBeenCalledWith("apply_stripe_live_risk_hold", expect.objectContaining({ p_reason: type, p_subscription_id: "sub_m", p_invoice_id: "in_m", p_charge_id: "ch_m" }));
     });
@@ -93,9 +94,26 @@ describe("Live payment risk evidence and acknowledgement", () => {
     const h = setup(true); h.objects["/customers/cus_m"] = customer;
     await expect(resolveLiveRiskPayment("ch_m", h.deps.stripe)).rejects.toThrow("RISK_MASAARAT_INVOICE_MISSING");
   });
-  it("rejects a dispute readback pointing to another charge", async () => {
-    const h = setup(); h.objects["/disputes/dp_m"] = { id: "dp_m", livemode: true, charge: "ch_other" };
-    expect((await h.send("charge.dispute.created")).status).toBe(500); expect(h.rpc).not.toHaveBeenCalled();
+  it("rejects signed dispute payment-intent mismatch", async () => {
+    const h = setup();
+    expect((await h.send("charge.dispute.created", { ...dispute, payment_intent: "pi_other" })).status).toBe(500);
+    expect(h.rpc).not.toHaveBeenCalled();
+  });
+  it.each(["charge.dispute.created", "radar.early_fraud_warning.created"])("%s needs no Disputes or Radar permissions", async (type) => {
+    const h = setup();
+    expect((await h.send(type)).status).toBe(200);
+    expect(h.stripe.mock.calls.some(([path]) => path.startsWith("/disputes/") || path.startsWith("/radar/"))).toBe(false);
+  });
+  it.each([dispute, warning])("rejects Test-mode signed risk snapshot", async (object) => {
+    const h = setup();
+    const type = object.object === "dispute" ? "charge.dispute.created" : "radar.early_fraud_warning.created";
+    expect((await h.send(type, { ...object, livemode: false })).status).toBe(500);
+    expect(h.stripe).not.toHaveBeenCalled(); expect(h.rpc).not.toHaveBeenCalled();
+  });
+  it("rejects wrong signed snapshot object type before readbacks", async () => {
+    const h = setup();
+    expect((await h.send("charge.dispute.created", warning)).status).toBe(500);
+    expect(h.stripe).not.toHaveBeenCalled(); expect(h.rpc).not.toHaveBeenCalled();
   });
   for (const scope of ["core", "kids", "academic", "technical"]) {
     it(`records ${scope} risk identity and safely redelivers the event`, async () => {

@@ -21,7 +21,7 @@ import {
   type LiveGateDeps,
 } from "../../../../supabase/functions/_shared/stripe-environment";
 import { LIVE_SITE_HOSTS } from "./origin";
-import { resolveLiveRiskPayment } from "./payment-risk";
+import { resolveLiveRiskPayment, validateSignedRiskObject, validateSignedRiskRelationship } from "./payment-risk";
 
 const TRUSTED_APP_ORIGINS = new Set<string>(LIVE_SITE_HOSTS.map((h) => `https://${h}`));
 
@@ -384,18 +384,10 @@ export async function handleLiveWebhookEvent(rawBody: string, signature: string 
     if (!event.id || !event.data?.object || !Number.isSafeInteger(event.created)) throw new Error("STRIPE_EVENT_INVALID");
     if (RISK_EVENTS.has(event.type)) {
       const object = event.data.object;
-      const chargeId = event.type === "charge.refunded" ? idOf(object) : idOf(object.charge);
-      if (!chargeId) throw new Error("RISK_CHARGE_MISSING");
-      if (event.type !== "charge.refunded") {
-        const objectId = idOf(object);
-        if (!objectId) throw new Error("RISK_OBJECT_ID_MISSING");
-        const path = event.type === "charge.dispute.created" ? "/disputes/" : "/radar/early_fraud_warnings/";
-        const riskObject = await get(`${path}${encodeURIComponent(objectId)}`);
-        if (riskObject.id !== objectId || riskObject.livemode !== true || idOf(riskObject.charge) !== chargeId)
-          throw new Error("RISK_OBJECT_CHARGE_MISMATCH");
-      }
+      const chargeId = validateSignedRiskObject(event.type, object);
       const resolved = await resolveLiveRiskPayment(chargeId, get);
       if (!resolved) return { status: 200, body: { received: true, ignored: true, unrelated: true } };
+      validateSignedRiskRelationship(object, resolved.charge);
       if (event.type === "charge.refunded" && (!Number.isSafeInteger(resolved.charge.amount_refunded)
         || resolved.charge.amount_refunded <= 0 || resolved.charge.amount_refunded > resolved.charge.amount))
         throw new Error("RISK_REFUND_EVIDENCE_INVALID");

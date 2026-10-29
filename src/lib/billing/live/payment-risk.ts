@@ -5,6 +5,28 @@ type Get = (path: string) => Promise<Record<string, any>>;
 const id = (v: any): string | null => typeof v === "string" ? v : typeof v?.id === "string" ? v.id : null;
 export const RISK_HOLD = "masaarat_payment_risk_hold";
 
+// These snapshots are authoritative only after verification of the raw Stripe
+// webhook signature. Disputes/Radar reads are deliberately not required.
+export function validateSignedRiskObject(type: string, object: Record<string, any>): string {
+  const expected = type === "charge.dispute.created" ? "dispute"
+    : type === "radar.early_fraud_warning.created" ? "radar.early_fraud_warning" : "charge";
+  if (object.object !== expected || object.livemode !== true || !id(object))
+    throw new Error("RISK_SIGNED_OBJECT_INVALID");
+  if (expected === "dispute" && (!Number.isSafeInteger(object.amount) || object.amount <= 0
+    || typeof object.currency !== "string" || !/^[a-z]{3}$/.test(object.currency)))
+    throw new Error("RISK_SIGNED_DISPUTE_INVALID");
+  if (expected === "radar.early_fraud_warning" && (typeof object.fraud_type !== "string" || !object.fraud_type
+    || typeof object.actionable !== "boolean")) throw new Error("RISK_SIGNED_WARNING_INVALID");
+  const chargeId = expected === "charge" ? id(object) : id(object.charge);
+  if (!chargeId || !/^ch_[A-Za-z0-9_]+$/.test(chargeId)) throw new Error("RISK_CHARGE_ID_INVALID");
+  return chargeId;
+}
+
+export function validateSignedRiskRelationship(object: Record<string, any>, charge: Record<string, any>): void {
+  if (object.payment_intent != null && id(object.payment_intent) !== id(charge.payment_intent))
+    throw new Error("RISK_SIGNED_PAYMENT_INTENT_MISMATCH");
+}
+
 // Resolve the provider's payment graph before using any metadata to select a user.
 export async function resolveLiveRiskPayment(chargeId: string, get: Get) {
   if (!/^ch_[A-Za-z0-9_]+$/.test(chargeId)) throw new Error("RISK_CHARGE_ID_INVALID");
