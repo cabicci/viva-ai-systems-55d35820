@@ -1,5 +1,6 @@
 # Architecture rules
 
 - Live payment-risk handling validates the Stripe payment graph and uses service-only atomic holds in the existing LC09-classified webhook ledger; Live writers share lifecycle/user locks, access guards prevent restoration, and ordinary events never release a hold or invent refunds.
+- Risk snapshots are trusted only after raw webhook signature verification; validate their object/environment and optional PaymentIntent binding against permitted payment graph readbacks instead of requiring Disputes or Radar API access.
 - Package payment attribution uses a shared presentation-only locale-aware component; selected-method attribution is rendered by PaymentMethods only for non-complimentary Stripe checkout so manual transfers are not attributed to Stripe.
 - Billing mode, Live checkout, Live portal, and Live webhook share server-only handlers between file routes and exact-path Worker-entry dispatch; explicit method checks avoid HTML fallthrough while the original mode, origin, auth, signature, and risk-hold guards remain authoritative.

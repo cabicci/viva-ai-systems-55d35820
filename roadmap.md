@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Audit all 28 registered Live pricing variants and visible code/discount paths; adapt signed risk handling to restricted-key permissions, verify read-only preflight and tests; do not publish or activate.
+
 - [x] Complete method-aware hosted dispatch for all four billing routes; published mode 200 Test JSON, Live GET 405 JSON, unsigned checkout/portal POST 403 (trusted-origin/no bearer 401), unsigned webhook POST 400; both domains verified through canonical redirect, no payments.
 
 - [x] Restore published billing mode exact-path Worker dispatch; verified checkout/portal 200 Test JSON and invalid intent 400 on the primary domain and the Lovable domain via its existing 302 canonical redirect; published Pro button selects Test with payment request blocked before reaching the server.
