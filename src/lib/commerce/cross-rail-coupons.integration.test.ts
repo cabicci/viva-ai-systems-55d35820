@@ -73,7 +73,7 @@ beforeEach(async () => {
   await actor(admin, true);
   const price = (await db.query<{id: string}>("select m.id from billing.market_prices m join billing.plan_versions v on v.id=m.plan_version_id join billing.plan_catalog p on p.id=v.plan_id where p.plan_key='pro' and v.billing_interval='month' and m.market_code='EG' and m.status='active' limit 1")).rows[0];
   if (!price) throw new Error("Missing published fixture price");
-  await db.query("select public.register_stripe_gateway_catalog($1,'prod_fixture','price_fixture')", [price.id]);
+  await db.query("select public.register_stripe_gateway_catalog($1,'price_fixture','prod_fixture')", [price.id]);
   await db.exec(`INSERT INTO public.stripe_live_offer_mappings(offer_id,version,package,market_code,currency,billing_interval,price_id,product_id,coupon_id,promotion_code_id,kind,value_minor,duration,reviewed_at,enabled)
     SELECT f.id,1,'pro','EG','EGP','month',g.gateway_price_id,g.gateway_product_id,'coupon_fixture','promo_fixture','percent',20,'once',now(),true FROM billing.commerce_offers f CROSS JOIN billing.gateway_price_mappings g JOIN billing.market_prices m ON m.id=g.market_price_id JOIN billing.plan_versions v ON v.id=m.plan_version_id JOIN billing.plan_catalog p ON p.id=v.plan_id WHERE f.code='FIXTURE' AND p.plan_key='pro' AND v.billing_interval='month' AND m.market_code='EG' LIMIT 1;`);
 });
