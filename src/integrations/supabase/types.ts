@@ -2251,6 +2251,36 @@ export type Database = {
         }
         Relationships: []
       }
+      stripe_live_offer_admin_audit: {
+        Row: {
+          action: string
+          actor_id: string
+          created_at: string
+          id: string
+          parameters: Json
+          request_key: string
+          target_id: string
+        }
+        Insert: {
+          action: string
+          actor_id: string
+          created_at?: string
+          id?: string
+          parameters: Json
+          request_key: string
+          target_id: string
+        }
+        Update: {
+          action?: string
+          actor_id?: string
+          created_at?: string
+          id?: string
+          parameters?: Json
+          request_key?: string
+          target_id?: string
+        }
+        Relationships: []
+      }
       stripe_live_offer_mappings: {
         Row: {
           billing_interval: string
@@ -4308,6 +4338,10 @@ export type Database = {
           isOneToOne: true
           isSetofReturn: false
         }
+      }
+      stripe_live_offer_admin: {
+        Args: { p_action: string; p_actor: string; p_data: Json }
+        Returns: Json
       }
       submit_mission_for_evaluation: {
         Args: { p_submission_id: string }
