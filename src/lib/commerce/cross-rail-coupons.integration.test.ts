@@ -127,4 +127,68 @@ describe("real commerce coupon journey across payment rails", () => {
     await db.exec("UPDATE billing.commerce_offers SET eligibility='new_customer',per_email_limit=10");
     await expect(manual("instapay")).rejects.toThrow(/INELIGIBLE/);
   });
+  it.each(["bank", "instapay"] as const)("shared global cap of one blocks %s after another customer's Live reservation", async method => {
+    await db.exec("UPDATE billing.commerce_offers SET max_redemptions=1");
+    await reserve(randomUUID(), other);
+    await expect(manual(method)).rejects.toThrow(/LIMIT/);
+    expect(await count("select count(*)::int n from billing.commerce_orders")).toBe(0);
+  });
+  it.each(["bank", "instapay"] as const)("pending %s reserves the global limit of one against another Live customer", async method => {
+    await db.exec("UPDATE billing.commerce_offers SET max_redemptions=1");
+    const o = await manual(method);
+    await expect(reserve(randomUUID(), other)).rejects.toThrow(/LIMIT/);
+    await actor(user); await command("cancel_order", { id: o.id });
+    expect((await reserve(randomUUID(), other)).final_minor).toBe(13520);
+    expect(await count("select consumed_count::int n from billing.commerce_offers")).toBe(0);
+  });
+  it.each(["bank", "instapay", "live"] as const)("%s rejects wrong plan, term, currency, targeted customer and expired codes", async rail => {
+    const attempt = (change: Record<string, unknown> = {}, who = user) => rail === "live"
+      ? reserve(randomUUID(), who, change) : manual(rail, randomUUID(), who, change);
+    await expect(attempt({ package: "pro_plus" })).rejects.toThrow(/INELIGIBLE/);
+    await expect(attempt(rail === "live" ? { interval: "year" } : { billing_interval: "year" })).rejects.toThrow(/INELIGIBLE/);
+    await expect(attempt({ market: "INTL" })).rejects.toThrow(/INELIGIBLE/);
+    await db.exec("UPDATE billing.commerce_offers SET email='member@example.test'");
+    await expect(attempt({}, other)).rejects.toThrow(/INELIGIBLE/);
+    await db.exec("UPDATE billing.commerce_offers SET valid_until=now()-interval '1 second'");
+    await expect(attempt()).rejects.toThrow(/INELIGIBLE/);
+    expect(await count("select count(*)::int n from public.stripe_live_offer_reservations")).toBe(0);
+    expect(await count("select count(*)::int n from billing.commerce_orders")).toBe(0);
+  });
+  it.each(["bank", "instapay"] as const)("%s and Live keep phone-required one-identity use independent of email cap", async rail => {
+    await db.exec("UPDATE billing.commerce_offers SET require_phone=true");
+    await manual(rail, randomUUID(), user, { phone: "+201000000001" });
+    await expect(reserve(randomUUID(), other, { phone: "+201000000001" })).rejects.toThrow(/ALREADY_USED/);
+    await expect(reserve(randomUUID(), user, { phone: "+201000000002" })).rejects.toThrow(/ALREADY_USED/);
+  });
+  it.each(["bank", "instapay"] as const)("Live phone use blocks %s on another customer", async rail => {
+    await db.exec("UPDATE billing.commerce_offers SET require_phone=true");
+    await reserve(randomUUID(), user, { phone: "+201000000001" });
+    await expect(manual(rail, randomUUID(), other, { phone: "+201000000001" })).rejects.toThrow(/ALREADY_USED/);
+  });
+  it("changing Live replay inputs cannot create another attempt or change quoted amount", async () => {
+    const key = randomUUID(); await reserve(key);
+    await expect(reserve(key, user, { renewal: true })).rejects.toThrow(/REPLAY_CONFLICT/);
+    expect(await count("select count(*)::int n from public.stripe_live_offer_reservations")).toBe(1);
+  });
+  it("manual expiry prevents confirmation and releases only the pending capacity", async () => {
+    await db.exec("UPDATE billing.commerce_offers SET max_redemptions=1");
+    const o = await manual("bank");
+    await db.query("UPDATE billing.commerce_orders SET expires_at=now()-interval '1 second' WHERE id=$1", [o.id]);
+    await expect(confirm(o, "bank")).rejects.toThrow(/NOT_CONFIRMABLE/);
+    expect(await count("select count(*)::int n from billing.commerce_payments")).toBe(0);
+    expect(await count("select count(*)::int n from billing.commerce_entitlements")).toBe(0);
+    expect((await reserve()).final_minor).toBe(13520);
+  });
+  it("Kids explicit discount replaces the family benefit for the shared quote and Live reservation", async () => {
+    await actor(admin);
+    await command("grant", { user_id: user, package: "pro", duration_days: 30, reason: "Fixture existing access", key: randomUUID() });
+    await command("create_offer", { code: "KIDS_FIXTURE", campaign: "Fixture only", package: "kids", kind: "percent", value_minor: 20, currency: "EGP", duration_days: 30, eligibility: "all", renewals: true, valid_from: new Date(Date.now()-10000).toISOString(), valid_until: new Date(Date.now()+86400000).toISOString(), max_redemptions: 10, per_email_limit: 2, enabled: true });
+    await actor(user);
+    expect((await command("quote", { package: "kids", market: "EG", billing_interval: "month" })).final_minor).toBe(17910);
+    expect((await command("quote", { package: "kids", market: "EG", billing_interval: "month", code: "KIDS_FIXTURE" })).final_minor).toBe(15920);
+    await actor(admin, true);
+    await db.exec("INSERT INTO public.kids_stripe_prices(market_code,billing_interval,discounted,currency_code,amount_minor,gateway_product_id,gateway_price_id,stripe_environment) VALUES('EG','month',false,'egp',19900,'prod_kidsfixture','price_kidsfixture','live')");
+    await db.exec("INSERT INTO public.stripe_live_offer_mappings(offer_id,version,package,market_code,currency,billing_interval,price_id,product_id,coupon_id,promotion_code_id,kind,value_minor,duration,reviewed_at,enabled) SELECT id,1,'kids','EG','EGP','month','price_kidsfixture','prod_kidsfixture','coupon_kidsfixture','promo_kidsfixture','percent',20,'once',now(),true FROM billing.commerce_offers WHERE code='KIDS_FIXTURE'");
+    expect((await reserve(randomUUID(), user, { package: "kids", code: "KIDS_FIXTURE" })).final_minor).toBe(15920);
+  });
 });
