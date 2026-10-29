@@ -3633,6 +3633,10 @@ export type Database = {
         Returns: boolean
       }
       get_stripe_portal_context: { Args: { p_user_id: string }; Returns: Json }
+      get_stripe_portal_environment: {
+        Args: { p_scope: string; p_user_id: string }
+        Returns: string
+      }
       get_technical_stripe_checkout_context: {
         Args: {
           p_billing_interval: string
