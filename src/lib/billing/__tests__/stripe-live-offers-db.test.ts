@@ -50,6 +50,12 @@ describe("Live offer reservation database rules (disposable PostgreSQL)", () => 
       await db.exec(`UPDATE billing.commerce_offers SET valid_until=now()-interval '1 second' WHERE id='${offer}'`);
       await expect(reserve()).rejects.toThrow("INELIGIBLE");
       await db.exec(`UPDATE billing.commerce_offers SET valid_until=now()+interval '1 day' WHERE id='${offer}'`);
+      // A pending manual order uses the same capacity, never a Stripe event.
+      await db.exec(`INSERT INTO billing.commerce_orders VALUES('${user}','fixture@example.invalid','${offer}',false,now()+interval '1 day','awaiting_receipt')`);
+      await expect(reserve()).rejects.toThrow(/LIMIT|ALREADY_USED/);
+      expect((await db.query<{n:number}>("select count(*)::int as n from public.stripe_live_offer_reservations")).rows[0]?.n).toBe(0);
+      expect((await db.query<{n:number}>("select consumed_count as n from billing.commerce_offers")).rows[0]?.n).toBe(0);
+      await db.exec("DELETE FROM billing.commerce_orders"); // Disposable fixture only.
       const first = (await reserve()).rows[0]?.value;
       if (!first) throw new Error("missing reservation");
       expect((await reserve()).rows[0]?.value.id).toBe(first.id);
