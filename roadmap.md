@@ -1,8 +1,9 @@
 # Roadmap
 
 - [x] Install guarded Live coded-offer mapping/reservation source, strict invoice proof and neutral public billing copy; actual inventory has zero offers. No publication or activation.
-- [ ] Operational Live coded offers (owner supersedes deferral): add verified admin mapping provisioning and terminal-attempt reconciliation; no customer code or Stripe object creation.
-- [ ] Audit existing Test/manual/admin access and recommend non-destructive Live transition; preserve every entitlement and keep all Live controls off.
+- [x] Operational Live coded offers: authorized immutable admin mapping workflow, explicit once/forever review, Session discount proof and idempotent terminal reservation reconciliation implemented; no customer code or Stripe object created.
+- [x] Audit existing Test/manual/admin access: one current admin-referenced Kids grant preserved despite refunded Test history; no current paid Stripe periods; non-destructive transition documented, environment-aware portal lookup preserves Test lock.
+- [ ] Before launch: owner provisions a real offer and pre-created Live Coupon/Promotion Code, verifies restricted-key expansion/rounding and signed paid invoice plus hosted concurrency; blocked by absent authorized offers/payment evidence.
 
 - [x] Audit 28 unique Live mappings with zero amount mismatches, including Kids family prices; adapt signed risk events to permitted payment graph reads; price and Invoice Payment GETs returned 200; public billing Test wording removed in source. Catalogue activation and full Stripe catalogue readback remain separate; absent hypothetical offers are not blockers.
 
@@ -20,6 +21,6 @@
 - [x] Stripe Live phase 1: environment column + DB kill switch (OFF) + guard triggers
 - [x] Shared server module for Test/Live separation + separate Live webhook route (Live OFF)
 - [x] Tests for separation and mixing rejection
-- [ ] Live checkout/portal/refund paths per product (blocked: owner approval + Live secrets)
-- [ ] Create Live prices in Cabicci LLC Stripe account (blocked: Live account access/approval)
+- [x] Live checkout/portal/refund source paths per product with gated hosted dispatch; latest changes remain unpublished.
+- [x] Register 28 Live price mappings including Kids family and Academic assistant variants; actual catalogue activation is separate.
 - [ ] Register Live webhook URL in Stripe + publish (blocked: owner approval)
