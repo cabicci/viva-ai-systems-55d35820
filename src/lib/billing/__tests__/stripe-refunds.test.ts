@@ -91,6 +91,22 @@ describe("Stripe refund authoritative invoice correlation", () => {
     objects["/payment_intents/pi_test"].livemode = true;
     await expect(resolveStripeRefund("re_test", get)).rejects.toThrow("MISMATCH");
   });
+  it.each([null, "false", 0, true])("rejects a Test refund whose livemode is present but not strictly false: %s", async (value) => {
+    const { objects, get } = fixture();
+    objects["/refunds/re_test"].livemode = value;
+    await expect(resolveStripeRefund("re_test", get)).rejects.toThrow("REFUND_TEST_REQUIRED");
+  });
+  it.each([null, "true", 1, false])("rejects a Live refund whose livemode is present but not strictly true: %s", async (value) => {
+    const { objects, get } = fixture();
+    objects["/refunds/re_test"].livemode = value;
+    await expect(resolveStripeRefund("re_test", get, "live")).rejects.toThrow("REFUND_LIVE_REQUIRED");
+  });
+  it("requires the PaymentIntent to attest the environment when the Refund omits livemode", async () => {
+    const { objects, get } = fixture();
+    await expect(resolveStripeRefund("re_test", get, "live")).rejects.toThrow("REFUND_LIVE_REQUIRED");
+    delete objects["/payment_intents/pi_test"].livemode;
+    await expect(resolveStripeRefund("re_test", get)).rejects.toThrow("REFUND_TEST_REQUIRED");
+  });
   it("supports charge-linked refunds and flags old invoices", async () => {
     const { objects, get } = fixture();
     objects["/refunds/re_test"].payment_intent = null;
