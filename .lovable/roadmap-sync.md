@@ -4,7 +4,7 @@
 date: 2026-10-29
 scope: other
 source: ai
-summary: [scope:other] Document shared coupon rules, 28 native tests and four actual two-session races; explicit bank, provisioning and real hosted payment limitations
+summary: [scope:other] Completed applied shared-coupon repair: 590 regression tests pass/43 skipped; separate native suite 28 passed with four two-session races; automatic build OK, Live OFF, no customer or Stripe objects/payments/publication
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
