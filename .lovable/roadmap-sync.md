@@ -2,9 +2,9 @@
 
 [roadmap:dbeb62ce-0d28-4476-89dd-30c2f58a3263]
 date: 2026-10-29
-scope: other
+scope: db
 source: ai
-summary: [scope:other] Set cumulative PostgreSQL test timeout to accommodate parallel billing/commerce suites; no safety assertions removed
+summary: [scope:db] Applied 0021 manual offer phone guard now checks Live reservations too; prevents different-email same-phone cross-channel duplicate redemption
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
