@@ -259,7 +259,8 @@ describe("Live webhook", () => {
           return true;
         },
       },
-      stripe: { "GET /subscriptions/sub_live1": liveKidsSub() },
+      stripe: { "GET /subscriptions/sub_live1": liveKidsSub({ items: { data: [{ price: { id: "price_kids_live", currency: "egp" }, current_period_start: NOW, current_period_end: NOW + 2_592_000 }] } }),
+        "GET /invoices/in_live2": { ...paidInvoice("in_live2"), customer: "cus_live1" } },
     });
     const e = signedEvent({ id: "evt_renew", type: "invoice.paid", created: NOW, livemode: true, data: { object: paidInvoice("in_live2") } });
     const first = await handleLiveWebhookEvent(e.body, e.signature, h.deps);
