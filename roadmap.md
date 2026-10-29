@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Implement trusted precreated Live coded-offer mappings, atomic reservations/redemption and discount invoice validation; revise public Test wording. Actual database inventory: zero offer rows. Await reviewed mapping/duration design; no publish or activation.
+
 - [x] Audit 28 unique Live mappings with zero amount mismatches; adapt signed risk events to permitted payment graph reads; price and Invoice Payment GETs returned 200; no publication/activation. Launch blockers: paid coupon codes remain manual-only, Test wording remains, sampled Live price inactive, catalogue-wide Stripe readback not performed.
 
 - [x] Complete method-aware hosted dispatch for all four billing routes; published mode 200 Test JSON, Live GET 405 JSON, unsigned checkout/portal POST 403 (trusted-origin/no bearer 401), unsigned webhook POST 400; both domains verified through canonical redirect, no payments.
