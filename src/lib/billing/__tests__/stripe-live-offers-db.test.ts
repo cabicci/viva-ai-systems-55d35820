@@ -20,12 +20,12 @@ describe("Live offer reservation database rules (disposable PostgreSQL)", () => 
         CREATE FUNCTION billing.current_stripe_environment() RETURNS text LANGUAGE sql AS $$select 'live'$$;
         CREATE FUNCTION billing.account_deletion_blocked(uuid) RETURNS boolean LANGUAGE sql AS $$select false$$;
         CREATE FUNCTION billing.commerce_assert_identity(uuid) RETURNS text LANGUAGE sql AS $$select 'fixture@example.invalid'$$;
-        CREATE FUNCTION billing.commerce_assert_offer_phone(uuid,text,text,uuid) RETURNS void LANGUAGE sql AS $$select$$;
+        CREATE FUNCTION billing.commerce_assert_offer_phone(uuid,text,text,uuid,uuid DEFAULT NULL,uuid DEFAULT NULL) RETURNS void LANGUAGE sql AS $$select$$;
         CREATE FUNCTION public.get_stripe_live_risk_hold(text,uuid) RETURNS boolean LANGUAGE sql AS $$select false$$;
         CREATE FUNCTION billing.commerce_quote(p text,m text,i text,c text,e text,r boolean DEFAULT false) RETURNS jsonb LANGUAGE plpgsql AS $$
           BEGIN IF m<>'EG' OR i<>'month' OR NOT EXISTS(SELECT 1 FROM billing.commerce_offers WHERE code=c AND enabled AND valid_until>now()) THEN RAISE EXCEPTION 'COMMERCE_OFFER_INELIGIBLE'; END IF;
           RETURN '{"original_minor":19900,"final_minor":17910,"offer_kind":"percent"}'::jsonb; END $$;`);
-      for (const file of ["0014_stripe_live_offer_mapping_prerequisite.sql", "0015_stripe_live_offer_reservations.sql", "0016_stripe_live_offer_retention_and_replay.sql", "0017_stripe_live_offer_retention_stage_fix.sql", "0018_stripe_live_offer_binding_lifetime_closure.sql", "0019_stripe_live_offer_catalogue_binding.sql", "0020_stripe_live_offer_retry_input_closure.sql"])
+      for (const file of ["0014_stripe_live_offer_mapping_prerequisite.sql", "0015_stripe_live_offer_reservations.sql", "0016_stripe_live_offer_retention_and_replay.sql", "0017_stripe_live_offer_retention_stage_fix.sql", "0018_stripe_live_offer_binding_lifetime_closure.sql", "0019_stripe_live_offer_catalogue_binding.sql", "0020_stripe_live_offer_retry_input_closure.sql", "0021_stripe_live_offer_cross_channel_phone_guard.sql"])
         await db.exec(readFileSync(`drizzle/migrations/${file}`, "utf8"));
       const offer = "11111111-1111-4111-8111-111111111111", user = "22222222-2222-4222-8222-222222222222", key = "33333333-3333-4333-8333-333333333333";
       await db.exec(`INSERT INTO public.kids_stripe_prices VALUES('live',false,'EG','month','price_fixture','prod_fixture',19900);
