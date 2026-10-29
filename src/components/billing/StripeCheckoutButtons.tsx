@@ -9,6 +9,7 @@ import { useUiString } from "@/lib/locale/use-ui-strings";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { getKidsCheckoutCopy } from "@/lib/kids/checkout-copy";
 import { PaymentMethods } from "@/components/commerce/PaymentMethods";
+import { BillingUnavailableError, billingUnavailableMessage, resolveCheckoutUrl } from "@/lib/billing/checkout-client";
 
 type PaidPlanKey = "pro" | "pro_plus";
 type BillingInterval = "month" | "year";
@@ -38,13 +39,19 @@ export function StripeCheckoutButtons({
         return;
       }
 
-      const { data, error } = await supabase.functions.invoke("billing-stripe-checkout", {
-        body: { planKey: plan, billingInterval, marketCode },
-      });
-      if (error || !data?.url) throw error ?? new Error("Missing Checkout URL");
-      window.location.assign(data.url);
-    } catch {
-      toast.error(t("pricing.checkout.error"));
+      const url = await resolveCheckoutUrl(
+        { product: "core", planKey: plan, billingInterval, marketCode },
+        async () => {
+          const { data, error } = await supabase.functions.invoke("billing-stripe-checkout", {
+            body: { planKey: plan, billingInterval, marketCode },
+          });
+          if (error || !data?.url) throw error ?? new Error("Missing Checkout URL");
+          return data.url as string;
+        },
+      );
+      window.location.assign(url);
+    } catch (e) {
+      toast.error(e instanceof BillingUnavailableError ? billingUnavailableMessage(locale) : t("pricing.checkout.error"));
       setLoading(null);
     }
   }
