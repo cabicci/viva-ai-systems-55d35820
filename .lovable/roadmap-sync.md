@@ -4,7 +4,7 @@
 date: 2026-10-29
 scope: infra
 source: user
-summary: Explicit file-route GET handlers delegate to shared POST-only guards to prevent hosted HTML fallback
+summary: All four hosted routes verified with guarded JSON responses; 410 passed, 37 skipped, Live state unchanged
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
