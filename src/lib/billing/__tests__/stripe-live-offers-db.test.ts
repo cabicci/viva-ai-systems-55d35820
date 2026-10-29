@@ -10,22 +10,26 @@ describe("Live offer reservation database rules (disposable PostgreSQL)", () => 
       await db.exec(`CREATE ROLE anon; CREATE ROLE authenticated; CREATE ROLE service_role;
         CREATE SCHEMA billing;
         CREATE TABLE billing.commerce_offers(id uuid primary key,code text,package text,kind text,value_minor bigint,currency text,enabled boolean,
-          valid_until timestamptz,max_redemptions int,consumed_count int,require_phone boolean);
+          valid_until timestamptz,max_redemptions int,consumed_count int,require_phone boolean,billing_interval text);
         CREATE TABLE billing.commerce_orders(user_id uuid,recipient_email text,offer_id uuid,offer_consumed boolean,expires_at timestamptz,review_status text);
         CREATE TABLE billing.commerce_control(enabled boolean); INSERT INTO billing.commerce_control VALUES(true);
+        CREATE TABLE billing.account_deletion_lifecycle(user_id uuid,stage text,financial_purged_at timestamptz);
+        CREATE TABLE public.kids_stripe_prices(stripe_environment text,discounted boolean,market_code text,billing_interval text,gateway_price_id text,gateway_product_id text,amount_minor bigint);
+        CREATE FUNCTION billing.commerce_price(text,text,text) RETURNS jsonb LANGUAGE sql AS $$select '{"original_minor":19900}'::jsonb$$;
         CREATE FUNCTION billing.is_service_role_caller() RETURNS boolean LANGUAGE sql AS $$select true$$;
         CREATE FUNCTION billing.current_stripe_environment() RETURNS text LANGUAGE sql AS $$select 'live'$$;
         CREATE FUNCTION billing.account_deletion_blocked(uuid) RETURNS boolean LANGUAGE sql AS $$select false$$;
         CREATE FUNCTION billing.commerce_assert_identity(uuid) RETURNS text LANGUAGE sql AS $$select 'fixture@example.invalid'$$;
-        CREATE FUNCTION billing.commerce_assert_offer_phone(uuid,text,text,uuid) RETURNS void LANGUAGE sql AS $$select$$;
+        CREATE FUNCTION billing.commerce_assert_offer_phone(uuid,text,text,uuid,uuid DEFAULT NULL,uuid DEFAULT NULL) RETURNS void LANGUAGE sql AS $$select$$;
         CREATE FUNCTION public.get_stripe_live_risk_hold(text,uuid) RETURNS boolean LANGUAGE sql AS $$select false$$;
         CREATE FUNCTION billing.commerce_quote(p text,m text,i text,c text,e text,r boolean DEFAULT false) RETURNS jsonb LANGUAGE plpgsql AS $$
           BEGIN IF m<>'EG' OR i<>'month' OR NOT EXISTS(SELECT 1 FROM billing.commerce_offers WHERE code=c AND enabled AND valid_until>now()) THEN RAISE EXCEPTION 'COMMERCE_OFFER_INELIGIBLE'; END IF;
           RETURN '{"original_minor":19900,"final_minor":17910,"offer_kind":"percent"}'::jsonb; END $$;`);
-      for (const file of ["0014_stripe_live_offer_mapping_prerequisite.sql", "0015_stripe_live_offer_reservations.sql"])
+      for (const file of ["0014_stripe_live_offer_mapping_prerequisite.sql", "0015_stripe_live_offer_reservations.sql", "0016_stripe_live_offer_retention_and_replay.sql", "0017_stripe_live_offer_retention_stage_fix.sql", "0018_stripe_live_offer_binding_lifetime_closure.sql", "0019_stripe_live_offer_catalogue_binding.sql", "0020_stripe_live_offer_retry_input_closure.sql", "0021_stripe_live_offer_cross_channel_phone_guard.sql"])
         await db.exec(readFileSync(`drizzle/migrations/${file}`, "utf8"));
       const offer = "11111111-1111-4111-8111-111111111111", user = "22222222-2222-4222-8222-222222222222", key = "33333333-3333-4333-8333-333333333333";
-      await db.exec(`INSERT INTO billing.commerce_offers VALUES('${offer}','SYNTHETIC','kids','percent',10,'EGP',true,now()+interval '1 day',1,0,false);
+      await db.exec(`INSERT INTO public.kids_stripe_prices VALUES('live',false,'EG','month','price_fixture','prod_fixture',19900);
+        INSERT INTO billing.commerce_offers VALUES('${offer}','SYNTHETIC','kids','percent',10,'EGP',true,now()+interval '1 day',1,0,false,'month');
         INSERT INTO public.stripe_live_offer_mappings(offer_id,version,package,market_code,currency,billing_interval,price_id,product_id,coupon_id,promotion_code_id,kind,value_minor,duration,reviewed_at,enabled)
         VALUES('${offer}',1,'kids','EG','EGP','month','price_fixture','prod_fixture','coupon_fixture','promo_fixture','percent',10,'once',now(),true);`);
       const reserve = (market = "EG", interval = "month", requestKey = key) => db.query<{value: {id: string}}>(
@@ -46,7 +50,13 @@ describe("Live offer reservation database rules (disposable PostgreSQL)", () => 
       await db.query("select public.consume_stripe_live_offer($1,$2,'sub_fixture','in_fixture','cus_fixture')", [first.id,user]);
       expect((await db.query<{n:number}>("select consumed_count as n from billing.commerce_offers")).rows[0]?.n).toBe(1);
       await expect(reserve()).rejects.toThrow("REPLAY_CONFLICT");
-      await expect(db.exec("UPDATE public.stripe_live_offer_mappings SET value_minor=20")).rejects.toThrow("IMMUTABLE");
+      await expect(db.exec("UPDATE public.stripe_live_offer_mappings SET value_minor=20")).rejects.toThrow(/IMMUTABLE|DEFINITION_MISMATCH/);
+      await expect(db.exec("UPDATE public.stripe_live_offer_mappings SET version=2")).rejects.toThrow("IMMUTABLE");
+      await db.exec(`INSERT INTO billing.account_deletion_lifecycle VALUES('${user}','learner_erased',NULL);
+        UPDATE billing.account_deletion_lifecycle SET stage='learner_erased' WHERE user_id='${user}'`);
+      expect((await db.query<{phone:string|null,email:string}>("select phone,recipient_email as email from public.stripe_live_offer_reservations")).rows[0]).toEqual({phone:null,email:""});
+      await db.exec(`UPDATE billing.account_deletion_lifecycle SET financial_purged_at=now() WHERE user_id='${user}'`);
+      expect((await db.query<{n:number}>("select count(*)::int as n from public.stripe_live_offer_reservations")).rows[0]?.n).toBe(0);
     } finally { await db.close(); }
-  });
+  }, 30000);
 });

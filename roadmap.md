@@ -1,6 +1,7 @@
 # Roadmap
 
-- [ ] Implement trusted precreated Live coded-offer mappings, atomic reservations/redemption and discount invoice validation; revise public Test wording. Actual database inventory: zero offer rows. Await reviewed mapping/duration design; no publish or activation.
+- [x] Install guarded Live coded-offer mapping/reservation source, strict invoice proof and neutral public billing copy; actual inventory has zero offers. No publication or activation.
+- [ ] Launch coded Live offers — blocked by absent offer/Coupon/Promotion Code mappings, owner duration choices, RAK expansion verification, bound-attempt reconciliation and hosted concurrency/end-to-end validation.
 
 - [x] Audit 28 unique Live mappings with zero amount mismatches; adapt signed risk events to permitted payment graph reads; price and Invoice Payment GETs returned 200; no publication/activation. Launch blockers: paid coupon codes remain manual-only, Test wording remains, sampled Live price inactive, catalogue-wide Stripe readback not performed.
 

@@ -64,12 +64,12 @@ export function KidsFamilyPricing() {
       </div>
       <p className="mt-6 border-t border-border/40 pt-5 text-sm leading-relaxed text-muted-foreground">
         {en
-          ? "Stripe uses test mode. Available manual transfers are real payments and require administrator verification. Prices exclude tax. The 10% discount applies to Kids while Pro or Pro Plus is active; adult prices stay the same. Annual billing costs the equivalent of 10 monthly payments. Choose the market matching the parent account's country."
+          ? "Review payment details before confirming. Manual transfers require administrator verification. Prices exclude tax. The 10% discount applies to Kids while Pro or Pro Plus is active; an explicit offer code replaces this discount. Adult prices stay the same. Annual billing costs the equivalent of 10 monthly payments. Choose the market matching the parent account's country."
           : eg
-            ? "Stripe تجريبي. التحويل اليدوي المتاح دفع فعلي وبيحتاج مراجعة الإدارة. الأسعار من غير ضرائب. خصم ١٠٪ على كيدز وقت ما تكون باقة Pro أو Pro Plus فعّالة، وسعر الكبار ما بيتغيرش. السنة بسعر ١٠ شهور. اختار سوق بلد حساب وليّ الأمر."
+            ? "راجع تفاصيل الدفع قبل التأكيد. التحويل اليدوي بيحتاج مراجعة الإدارة. الأسعار من غير ضرائب. خصم ١٠٪ على كيدز وقت ما تكون باقة Pro أو Pro Plus فعّالة؛ كود العرض بيحل محل الخصم ده. سعر الكبار ما بيتغيرش. السنة بسعر ١٠ شهور. اختار سوق بلد حساب وليّ الأمر."
             : gulf
-              ? "Stripe تجريبي. التحويل اليدوي المتاح دفع فعلي ويحتاج مراجعة الإدارة. الأسعار ما تشمل الضريبة. خصم ١٠٪ على كيدز إذا باقة Pro أو Pro Plus فعّالة، وسعر الكبار ما يتغير. السنة بسعر ١٠ شهور. اختر سوق بلد حساب وليّ الأمر."
-              : "Stripe تجريبي. التحويل اليدوي المتاح دفع فعلي ويستلزم مراجعة الإدارة. الأسعار لا تشمل الضرائب. خصم 10% يطبق على كيدز أثناء سريان Pro أو Pro Plus، وتبقى أسعار باقات الكبار كما هي. سعر السنة يعادل 10 أشهر. اختر سوق بلد حساب وليّ الأمر."}
+              ? "راجع تفاصيل الدفع قبل التأكيد. التحويل اليدوي يحتاج مراجعة الإدارة. الأسعار ما تشمل الضريبة. خصم ١٠٪ على كيدز إذا باقة Pro أو Pro Plus فعّالة؛ كود العرض يحل محل هالخصم. سعر الكبار ما يتغير. السنة بسعر ١٠ شهور. اختر سوق بلد حساب وليّ الأمر."
+              : "راجع تفاصيل الدفع قبل التأكيد. التحويل اليدوي يحتاج مراجعة الإدارة. الأسعار لا تشمل الضرائب. خصم 10% يطبق على كيدز أثناء سريان Pro أو Pro Plus؛ كود العرض يحل محل هذا الخصم. تبقى أسعار باقات الكبار كما هي. سعر السنة يعادل 10 أشهر. اختر سوق بلد حساب وليّ الأمر."}
       </p>
     </section>
   );
