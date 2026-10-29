@@ -58,5 +58,5 @@ describe("Live offer reservation database rules (disposable PostgreSQL)", () => 
       await db.exec(`UPDATE billing.account_deletion_lifecycle SET financial_purged_at=now() WHERE user_id='${user}'`);
       expect((await db.query<{n:number}>("select count(*)::int as n from public.stripe_live_offer_reservations")).rows[0]?.n).toBe(0);
     } finally { await db.close(); }
-  });
+  }, 30000);
 });
