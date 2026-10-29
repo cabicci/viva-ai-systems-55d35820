@@ -55,6 +55,30 @@ export function liveStripe(deps: LiveDeps): LiveDeps["stripe"] {
   };
 }
 
+// Live never creates catalog objects during checkout. The registered price is
+// read back from Stripe and must match the database context exactly.
+type ExpectedPrice = { priceId: string; productId: string; currency: string; amountMinor: number; interval: "month" | "year" };
+export async function verifyLivePrice(stripe: LiveDeps["stripe"], e: ExpectedPrice): Promise<string> {
+  const price = await stripe<any>(`/prices/${encodeURIComponent(e.priceId)}?${new URLSearchParams({ "expand[]": "product" })}`);
+  const product = price?.product && typeof price.product === "object" ? price.product : null;
+  const ok = price?.object === "price" && price.id === e.priceId && price.livemode === true && price.active === true
+    && price.type === "recurring" && String(price.currency).toLowerCase() === e.currency.toLowerCase()
+    && price.unit_amount === e.amountMinor && price.recurring?.interval === e.interval
+    && (price.recurring?.interval_count ?? 1) === 1 && price.recurring?.usage_type !== "metered"
+    && price.tax_behavior === "exclusive" && price.metadata?.environment === LIVE
+    && product?.id === e.productId && product.livemode === true && product.active === true && !product.deleted
+    && product.metadata?.environment === LIVE;
+  if (!ok) throw new Error("LIVE_PRICE_MISMATCH");
+  return price.id;
+}
+
+export async function verifyLiveCustomer(stripe: LiveDeps["stripe"], customerId: string, userId: string): Promise<void> {
+  const customer = await stripe<any>(`/customers/${encodeURIComponent(customerId)}`);
+  if (customer?.object !== "customer" || customer.id !== customerId || customer.livemode !== true || customer.deleted
+    || customer.metadata?.user_id !== userId || customer.metadata?.environment !== LIVE)
+    throw new Error("LIVE_CUSTOMER_MISMATCH");
+}
+
 // ---------------------------------------------------------------- checkout
 export type LiveCheckoutBody =
   | { product: "core"; planKey: "pro" | "pro_plus"; billingInterval: "month" | "year"; marketCode: "EG" | "INTL" }
@@ -81,6 +105,8 @@ export async function createLiveCheckout(
     console.error("stripe-live-checkout", message);
     if (["CHECKOUT_INTENT_SUPERSEDED", "CHECKOUT_IN_PROGRESS", "SUBSCRIPTION_ALREADY_MANAGED"].includes(message))
       return { status: 409, body: { error: message } };
+    if (["LIVE_PRICE_NOT_REGISTERED", "LIVE_PRICE_MISMATCH", "LIVE_CUSTOMER_MISMATCH"].includes(message))
+      return { status: 503, body: { error: message } };
     if (message === "PARENT_CONSENT_REQUIRED") return { status: 403, body: { error: message } };
     return { status: 503, body: { error: "LIVE_CHECKOUT_UNAVAILABLE" } };
   }
@@ -106,32 +132,15 @@ async function coreCheckout(
   if (["paid_active", "past_due", "canceled_at_period_end"].includes(context.access_state ?? ""))
     return { status: 409, body: { error: "SUBSCRIPTION_ALREADY_MANAGED" } };
 
-  let priceId = context.gateway_price_id;
-  if (!priceId || !context.gateway_product_id) {
-    const productParams = new URLSearchParams({ name: context.plan_name });
-    productParams.set("metadata[plan_key]", context.plan_key);
-    productParams.set("metadata[environment]", LIVE);
-    const product = await stripe<{ id: string }>("/products", {
-      method: "POST", params: productParams, idempotencyKey: `catalog-product-${context.plan_key}-${LIVE_SUFFIX}`,
-    });
-    const priceParams = new URLSearchParams({
-      product: product.id, currency: context.currency_code, unit_amount: String(context.amount_minor),
-      "recurring[interval]": context.billing_interval, tax_behavior: "exclusive",
-      lookup_key: `masaarat_${context.plan_key}_${context.market_code.toLowerCase()}_${context.billing_interval}_live_v1`,
-    });
-    priceParams.set("metadata[market_price_id]", context.market_price_id);
-    priceParams.set("metadata[environment]", LIVE);
-    const price = await stripe<{ id: string }>("/prices", {
-      method: "POST", params: priceParams, idempotencyKey: `catalog-price-${context.market_price_id}-${LIVE_SUFFIX}`,
-    });
-    const registered = await deps.rpc<{ gateway_price_id: string }>("register_stripe_gateway_catalog", {
-      p_market_price_id: context.market_price_id, p_gateway_price_id: price.id, p_gateway_product_id: product.id,
-    });
-    priceId = registered.gateway_price_id;
-  }
+  if (!context.gateway_price_id || !context.gateway_product_id) throw new Error("LIVE_PRICE_NOT_REGISTERED");
+  const priceId = await verifyLivePrice(stripe, {
+    priceId: context.gateway_price_id, productId: context.gateway_product_id, currency: context.currency_code,
+    amountMinor: context.amount_minor, interval: context.billing_interval,
+  });
 
   let customerId = context.gateway_customer_id;
-  if (!customerId) {
+  if (customerId) await verifyLiveCustomer(stripe, customerId, user.id);
+  else {
     const params = new URLSearchParams({ email: user.email });
     params.set("metadata[user_id]", user.id);
     params.set("metadata[environment]", LIVE);
@@ -181,7 +190,7 @@ async function coreCheckout(
         mode: "subscription", customer: finalCustomer, client_reference_id: user.id,
         success_url: `${appOrigin}/account?payment=success&session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${appOrigin}/pricing?payment=canceled`,
-        allow_promotion_codes: "false", billing_address_collection: "auto",
+        allow_promotion_codes: "false", billing_address_collection: "auto", "automatic_tax[enabled]": "false",
       });
       params.set("line_items[0][price]", finalPrice);
       params.set("line_items[0][quantity]", "1");
@@ -220,8 +229,15 @@ async function scopedCheckout(
   });
   if (context.email !== user.email) throw new Error("PARENT_EMAIL_MISMATCH");
 
+  if (!context.gateway_price_id || !context.gateway_product_id) throw new Error("LIVE_PRICE_NOT_REGISTERED");
+  const priceId = await verifyLivePrice(stripe, {
+    priceId: context.gateway_price_id, productId: context.gateway_product_id, currency: context.currency_code,
+    amountMinor: context.amount_minor, interval: context.billing_interval,
+  });
+
   let customerId = context.gateway_customer_id;
-  if (!customerId) {
+  if (customerId) await verifyLiveCustomer(stripe, customerId, user.id);
+  else {
     const params = new URLSearchParams({ email: user.email });
     params.set("metadata[user_id]", user.id);
     params.set("metadata[environment]", LIVE);
@@ -238,37 +254,6 @@ async function scopedCheckout(
   if (existing.data.some((s) => s.metadata?.product_scope === scope && MANAGED.includes(s.status)))
     return { status: 409, body: { error: `${scope.toUpperCase()}_SUBSCRIPTION_ALREADY_MANAGED` } };
 
-  let priceId = context.gateway_price_id;
-  if (!priceId) {
-    const names = { kids: "Masaarat Kids Family", technical: "Masaarat Carpentry and Furniture", academic: "Masaarat Academic" };
-    const productKey = { kids: "kids-family", technical: "technical-furniture", academic: "academic" }[scope];
-    const productParams = new URLSearchParams({ name: names[scope] });
-    productParams.set("metadata[product_scope]", scope);
-    productParams.set("metadata[environment]", LIVE);
-    const product = await stripe<{ id: string }>("/products", {
-      method: "POST", params: productParams, idempotencyKey: `catalog-product-${productKey}-${LIVE_SUFFIX}`,
-    });
-    const variant = scope === "kids"
-      ? `${context.market_code.toLowerCase()}_${context.billing_interval}_${context.discounted ? "bundle" : "standard"}`
-      : `${context.market_code.toLowerCase()}_${context.billing_interval}_${context.amount_minor}_${context.includes_assistant ? "assistant" : "standard"}`;
-    const priceParams = new URLSearchParams({
-      product: product.id, currency: context.currency_code, unit_amount: String(context.amount_minor),
-      tax_behavior: "exclusive", lookup_key: `masaarat_${scope}_${variant}_live_v1`, "recurring[interval]": context.billing_interval,
-    });
-    priceParams.set("metadata[product_scope]", scope);
-    priceParams.set("metadata[environment]", LIVE);
-    const price = await stripe<{ id: string }>("/prices", {
-      method: "POST", params: priceParams, idempotencyKey: `catalog-price-${scope}-${variant}-${LIVE_SUFFIX}`,
-    });
-    const registerRpc = scope === "kids" ? "register_kids_stripe_price"
-      : scope === "technical" ? "register_technical_stripe_price"
-        : context.includes_assistant ? "register_academic_assistant_stripe_price" : "register_academic_stripe_price";
-    priceId = await deps.rpc<string>(registerRpc, {
-      p_market_code: context.market_code, p_billing_interval: context.billing_interval, p_discounted: context.discounted,
-      p_currency_code: context.currency_code, p_amount_minor: context.amount_minor, p_product_id: product.id, p_price_id: price.id,
-    });
-  }
-
   const locale = "locale" in body && body.locale && LOCALES.includes(body.locale) ? body.locale : "ar-EG";
   const paths = {
     kids: { success: "/kids/family?payment=success", cancel: "/pricing?payment=canceled#kids" },
@@ -277,7 +262,7 @@ async function scopedCheckout(
   }[scope];
   const params = new URLSearchParams({
     mode: "subscription", customer: customerId, client_reference_id: user.id, allow_promotion_codes: "false",
-    billing_address_collection: "auto", success_url: `${appOrigin}${paths.success}`, cancel_url: `${appOrigin}${paths.cancel}`,
+    billing_address_collection: "auto", "automatic_tax[enabled]": "false", success_url: `${appOrigin}${paths.success}`, cancel_url: `${appOrigin}${paths.cancel}`,
   });
   params.set("line_items[0][price]", priceId);
   params.set("line_items[0][quantity]", "1");
@@ -319,9 +304,19 @@ export async function createLivePortal(user: LiveUser, scope: PortalScope, appOr
       academic: "get_academic_stripe_portal_context", technical: "get_technical_stripe_portal_context" }[scope];
     const context = await deps.rpc<{ gateway_customer_id?: string; gateway_subscription_id?: string }>(rpcName, { p_user_id: user.id });
     if (!context?.gateway_customer_id || !context.gateway_subscription_id) throw new Error("STRIPE_PORTAL_CONTEXT_INCOMPLETE");
+    const configurationId = deps.getEnv("STRIPE_LIVE_PORTAL_CONFIGURATION_ID");
+    if (!configurationId || !configurationId.startsWith("bpc_")) throw new Error("STRIPE_LIVE_PORTAL_CONFIGURATION_MISSING");
+    const configuration = await stripe<any>(`/billing_portal/configurations/${encodeURIComponent(configurationId)}`);
+    const cancel = configuration?.features?.subscription_cancel;
+    if (configuration?.id !== configurationId || configuration.livemode !== true || configuration.active !== true
+      || cancel?.enabled !== true || cancel.mode !== "at_period_end")
+      throw new Error("STRIPE_LIVE_PORTAL_CONFIGURATION_INVALID");
+    await verifyLiveCustomer(stripe, context.gateway_customer_id, user.id);
     const back = scope === "academic" ? "/academic/pricing" : scope === "technical" ? "/technical/pricing" : "/account";
     const session = await stripe<{ url?: string }>("/billing_portal/sessions", {
-      method: "POST", params: new URLSearchParams({ customer: context.gateway_customer_id, return_url: `${appOrigin}${back}` }),
+      method: "POST", params: new URLSearchParams({
+        customer: context.gateway_customer_id, configuration: configurationId, return_url: `${appOrigin}${back}`,
+      }),
     });
     if (!session.url) throw new Error("STRIPE_PORTAL_URL_MISSING");
     return { status: 200, body: { url: session.url } };
