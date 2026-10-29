@@ -11,6 +11,7 @@ import { normalizeOfferPhone } from "@/lib/commerce/offer-input";
 import { adminOfferCopy, offerError } from "@/lib/commerce/admin-offer-copy";
 import { ReceiptUpload } from "./ReceiptUpload";
 import { StripeCheckoutTrust } from "@/components/billing/StripeCheckoutTrust";
+import { resolveCheckoutUrl, billingUnavailableMessage, type LiveCheckoutRequest } from "@/lib/billing/checkout-client";
 
 export function PaymentMethods({
   packageKey,
@@ -86,7 +87,24 @@ export function PaymentMethods({
       setError(s.phoneError);
       return;
     }
-    if (code && method === "stripe" && !free) return;
+    if (code && method === "stripe" && !free) {
+      if (!quote?.live_stripe_available) return;
+      setBusy(true);
+      setError("");
+      try {
+        const selection: LiveCheckoutRequest = packageKey === "pro" || packageKey === "pro_plus"
+          ? { product: "core", planKey: packageKey, billingInterval: interval, marketCode: market }
+          : packageKey === "academic"
+            ? { product: "academic", academicAssistant, billingInterval: interval, marketCode: market, locale }
+            : { product: packageKey, billingInterval: interval, marketCode: market, locale };
+        const url = await resolveCheckoutUrl({ ...selection, offer: { code, key: requestKey, renewal,
+          ...(quote.phone_required ? { phone: normalizeOfferPhone(phone) ?? undefined } : {}) } },
+          async () => { throw new Error("CODED_TEST_CHECKOUT_FORBIDDEN"); });
+        window.location.assign(url);
+      } catch { setError(billingUnavailableMessage(locale)); }
+      finally { setBusy(false); }
+      return;
+    }
     if (method === "stripe" && !free) {
       stripe();
       return;
@@ -225,7 +243,7 @@ export function PaymentMethods({
             }}
           />
         )}
-        {code && quote && quote.offer_kind !== "complimentary" && method === "stripe" && (
+        {code && quote && quote.offer_kind !== "complimentary" && !quote.live_stripe_available && method === "stripe" && (
           <p>
             {w.methods}: {w.instapay} / {w.wallet}
           </p>
@@ -250,7 +268,7 @@ export function PaymentMethods({
           disabled ||
           busy ||
           ((method !== "stripe" || !!code) && !quote) ||
-          (!!code && method === "stripe" && quote?.offer_kind !== "complimentary") ||
+          (!!code && method === "stripe" && quote?.offer_kind !== "complimentary" && !quote?.live_stripe_available) ||
           (!!quote?.phone_required && !normalizeOfferPhone(phone))
         }
         onClick={() => void proceed()}

@@ -11,22 +11,22 @@ const copy = {
   "ar-EG": {
     month: "اشترك شهريًا",
     year: "اشترك سنويًا",
-    error: "تعذّر بدء الدفع التجريبي. حاول لاحقًا.",
+    error: "تعذّر بدء الدفع. حاول لاحقًا.",
   },
   "ar-MSA": {
     month: "اشترك شهريًا",
     year: "اشترك سنويًا",
-    error: "تعذر بدء الدفع التجريبي. حاول لاحقًا.",
+    error: "تعذر بدء الدفع. حاول لاحقًا.",
   },
   "ar-Gulf": {
     month: "اشترك شهريًا",
     year: "اشترك سنويًا",
-    error: "تعذر بدء الدفع التجريبي. حاول لاحقًا.",
+    error: "تعذر بدء الدفع. حاول لاحقًا.",
   },
   en: {
     month: "Subscribe monthly",
     year: "Subscribe yearly",
-    error: "Test checkout could not start. Try later.",
+    error: "Checkout could not start. Try later.",
   },
 };
 
