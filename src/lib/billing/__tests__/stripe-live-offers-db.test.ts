@@ -26,16 +26,23 @@ describe("Live offer reservation database rules (disposable PostgreSQL)", () => 
         CREATE FUNCTION billing.commerce_quote(p text,m text,i text,c text,e text,r boolean DEFAULT false) RETURNS jsonb LANGUAGE plpgsql AS $$
           BEGIN IF m<>'EG' OR i<>'month' OR NOT EXISTS(SELECT 1 FROM billing.commerce_offers WHERE code=c AND enabled AND valid_until>now()) THEN RAISE EXCEPTION 'COMMERCE_OFFER_INELIGIBLE'; END IF;
           RETURN '{"original_minor":19900,"final_minor":17910,"offer_kind":"percent"}'::jsonb; END $$;`);
-      for (const file of ["0014_stripe_live_offer_mapping_prerequisite.sql", "0015_stripe_live_offer_reservations.sql", "0016_stripe_live_offer_retention_and_replay.sql", "0017_stripe_live_offer_retention_stage_fix.sql", "0018_stripe_live_offer_binding_lifetime_closure.sql", "0019_stripe_live_offer_catalogue_binding.sql", "0020_stripe_live_offer_retry_input_closure.sql", "0021_stripe_live_offer_cross_channel_phone_guard.sql", "0022_live_offer_admin_operations.sql"])
+      for (const file of ["0014_stripe_live_offer_mapping_prerequisite.sql", "0015_stripe_live_offer_reservations.sql", "0016_stripe_live_offer_retention_and_replay.sql", "0017_stripe_live_offer_retention_stage_fix.sql", "0018_stripe_live_offer_binding_lifetime_closure.sql", "0019_stripe_live_offer_catalogue_binding.sql", "0020_stripe_live_offer_retry_input_closure.sql", "0021_stripe_live_offer_cross_channel_phone_guard.sql", "0022_live_offer_admin_operations.sql", "0024_live_offer_admin_list_alias_closure.sql"])
         await db.exec(readFileSync(`drizzle/migrations/${file}`, "utf8"));
       const offer = "11111111-1111-4111-8111-111111111111", user = "22222222-2222-4222-8222-222222222222", key = "33333333-3333-4333-8333-333333333333";
       const admin = "99999999-9999-4999-8999-999999999999";
+      expect((await db.query<{value:{offers:unknown[],mappings:unknown[],reservations:unknown[]}}>("select public.stripe_live_offer_admin($1,'list','{}') as value",[admin])).rows[0]?.value).toEqual({offers:[],mappings:[],reservations:[]});
       await expect(db.query("select public.stripe_live_offer_admin($1,'list','{}')", [user])).rejects.toThrow("ADMIN_REQUIRED");
       expect((await db.query<{allowed:boolean}>("select has_function_privilege('authenticated','public.stripe_live_offer_admin(uuid,text,jsonb)','EXECUTE') as allowed")).rows[0]?.allowed).toBe(false);
       await db.exec(`INSERT INTO public.kids_stripe_prices VALUES('live',false,'EG','month','price_fixture','prod_fixture',19900);
         INSERT INTO billing.commerce_offers VALUES('${offer}','SYNTHETIC','kids','percent',10,'EGP',true,now()+interval '1 day',1,0,false,'month');
         INSERT INTO public.stripe_live_offer_mappings(offer_id,version,package,market_code,currency,billing_interval,price_id,product_id,coupon_id,promotion_code_id,kind,value_minor,duration,reviewed_at,enabled)
         VALUES('${offer}',1,'kids','EG','EGP','month','price_fixture','prod_fixture','coupon_fixture','promo_fixture','percent',10,'once',now(),true);`);
+      const provision = { offer_id:offer,key:'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb',market:'EG',interval:'month',duration:'forever',price_id:'price_fixture',product_id:'prod_fixture',coupon_id:'coupon_fixture',promotion_code_id:'promo_fixture',reviewed:true,review_reference:'fixture review' };
+      const saved=(await db.query<{value:{id:string,version:number,enabled:boolean}}>("select public.stripe_live_offer_admin($1,'provision',$2) as value",[admin,JSON.stringify(provision)])).rows[0]?.value;
+      expect(saved?.version).toBe(2); expect(saved?.enabled).toBe(false);
+      expect((await db.query<{value:{id:string,replayed:boolean}}>("select public.stripe_live_offer_admin($1,'provision',$2) as value",[admin,JSON.stringify(provision)])).rows[0]?.value.id).toBe(saved?.id);
+      await expect(db.query("select public.stripe_live_offer_admin($1,'provision',$2)",[admin,JSON.stringify({...provision,key:'cccccccc-cccc-4ccc-8ccc-cccccccccccc',duration:'repeating'})])).rejects.toThrow('REVIEW_REQUIRED');
+      await expect(db.query("select public.stripe_live_offer_admin($1,'provision',$2)",[admin,JSON.stringify({...provision,key:'dddddddd-dddd-4ddd-8ddd-dddddddddddd',market:'INTL'})])).rejects.toThrow('DEFINITION_MISMATCH');
       const reserve = (market = "EG", interval = "month", requestKey = key) => db.query<{value: {id: string}}>(
         "select public.reserve_stripe_live_offer($1,'SYNTHETIC','kids',$2,$3,NULL,$4,false) as value", [user,market,interval,requestKey]);
       await expect(reserve("INTL")).rejects.toThrow("INELIGIBLE");
