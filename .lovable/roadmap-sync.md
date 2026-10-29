@@ -4,7 +4,7 @@
 date: 2026-10-29
 scope: other
 source: ai
-summary: [scope:other] Register fixture-only catalogue through original service RPC for mapping tests; no remote Stripe objects
+summary: [scope:other] Correct original catalogue RPC fixture argument order
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
