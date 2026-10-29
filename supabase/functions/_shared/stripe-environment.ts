@@ -117,22 +117,20 @@ function json(body: unknown, status: number): Response {
   return new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json" } });
 }
 
-// Live webhook: separate endpoint + separate secret. Phase 1 never mutates
-// billing data; once verified it acknowledges without processing.
-export async function handleLiveWebhook(request: Request, deps: LiveGateDeps): Promise<Response> {
+// The kill switch gates NEW checkout creation only. Webhooks, refunds,
+// portal sessions and price registration for existing Live objects are
+// lifecycle operations and must not be blocked by it.
+export async function assertLiveCheckoutAllowed(
+  environment: StripeEnvironment,
+  deps: LiveGateDeps,
+): Promise<void> {
+  if (environment === "live" && !(await isLiveEnabled(deps))) throw new Error("STRIPE_LIVE_CHECKOUT_DISABLED");
+}
+
+// Live webhook: separate endpoint + separate secret. Live event processing is
+// NOT built yet, so this ALWAYS answers 503 (never 2xx): Stripe keeps retrying
+// and no event is silently marked as delivered.
+export async function handleLiveWebhook(request: Request, _deps: LiveGateDeps): Promise<Response> {
   if (request.method !== "POST") return json({ error: "METHOD_NOT_ALLOWED" }, 405);
-  if (!(await isLiveEnabled(deps))) return json({ error: "STRIPE_LIVE_DISABLED" }, 503);
-  const secret = deps.getEnv(STRIPE_SECRET_NAMES.live.webhook);
-  if (!secret) return json({ error: "STRIPE_LIVE_NOT_CONFIGURED" }, 503);
-  const payload = await request.text();
-  const header = request.headers.get("stripe-signature") ?? "";
-  if (!(await verifyStripeSignature(payload, header, secret))) return json({ error: "INVALID_SIGNATURE" }, 400);
-  let event: { id?: string; livemode?: unknown };
-  try {
-    event = JSON.parse(payload);
-  } catch {
-    return json({ error: "INVALID_PAYLOAD" }, 400);
-  }
-  if (event.livemode !== true) return json({ error: "TEST_EVENT_REJECTED" }, 400);
-  return json({ received: true, processed: false, reason: "LIVE_PROCESSING_NOT_ENABLED" }, 202);
+  return json({ error: "STRIPE_LIVE_PROCESSING_NOT_BUILT" }, 503);
 }
