@@ -427,7 +427,9 @@ export async function handleLiveWebhookEvent(rawBody: string, signature: string 
         if (!risk || risk.subscription.id !== resolved.subscription.id || risk.invoice.id !== resolved.invoice.id)
           throw new Error("RISK_REFUND_RELATIONSHIP_MISMATCH");
         const hold = await deps.rpc<{ processed: boolean; held: boolean }>("apply_stripe_live_risk_hold", {
-          p_event_id: event.id, p_user_id: risk.subscription.metadata.user_id,
+          // Separate ledger identity from the financial refund receipt: both
+          // writes must remain independently idempotent across retry delivery.
+          p_event_id: `${event.id}_risk`, p_user_id: risk.subscription.metadata.user_id,
           p_subscription_id: risk.subscription.id, p_customer_id: idOf(risk.subscription.customer),
           p_scope: risk.subscription.metadata.product_scope ?? "core", p_price_id: idOf(risk.subscription.items?.data?.[0]?.price),
           p_invoice_id: risk.invoice.id, p_charge_id: risk.charge.id, p_reason: "refund.succeeded", p_occurred_at: occurredAt,
