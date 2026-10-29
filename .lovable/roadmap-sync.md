@@ -1,10 +1,10 @@
 # Roadmap sync marker
 
-[roadmap:8690bb60-fe8d-41b4-826e-4e18e8b1ed79]
+[roadmap:3d795651-5aa3-4f3e-ab1c-d2e7e2007a92]
 date: 2026-10-29
-scope: other
+scope: ui
 source: ai
-summary: [scope:other] Completed applied shared-coupon repair: 590 regression tests pass/43 skipped; separate native suite 28 passed with four two-session races; automatic build OK, Live OFF, no customer or Stripe objects/payments/publication
+summary: Owner-requested card-payment wording and authentic unmodified official Stripe wordmark asset import; all billing behavior unchanged.
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
