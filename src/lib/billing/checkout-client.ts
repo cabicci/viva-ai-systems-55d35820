@@ -27,10 +27,14 @@ const defaultDeps: BillingClientDeps = {
   accessToken: async () => (await supabase.auth.getSession()).data.session?.access_token ?? null,
 };
 
-async function serverMode(intent: "checkout" | "portal", deps: BillingClientDeps): Promise<"test" | "live"> {
+async function serverMode(intent: "checkout" | "portal", deps: BillingClientDeps, scope?: LivePortalScope): Promise<"test" | "live"> {
   let mode: unknown;
   try {
-    const res = await deps.fetch(`/api/billing/mode?intent=${intent}`, { cache: "no-store" });
+    const token = scope ? await deps.accessToken() : null;
+    if (scope && !token) throw new BillingUnavailableError("UNAUTHORIZED");
+    const res = await deps.fetch(`/api/billing/mode?intent=${intent}${scope ? `&scope=${scope}` : ""}`, {
+      cache: "no-store", ...(token ? { headers: { Authorization: `Bearer ${token}` } } : {}),
+    });
     mode = res.ok ? (await res.json())?.mode : null;
   } catch {
     mode = null;
@@ -78,7 +82,7 @@ export async function resolvePortalUrl(
   test: () => Promise<string>,
   deps: BillingClientDeps = defaultDeps,
 ): Promise<string> {
-  const mode = await serverMode("portal", deps);
+  const mode = await serverMode("portal", deps, scope);
   if (mode === "test") return test();
   return postLive("/api/stripe-live/portal", { scope }, "https://billing.stripe.com", deps);
 }
