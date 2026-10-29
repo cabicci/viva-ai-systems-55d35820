@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Verify future paid coupon eligibility and one shared redemption limit across Stripe Live, bank and InstaPay with full database journey tests; repair only demonstrated gaps, preserve rails and keep Live off.
+
 - [x] Audit manual-transfer and Stripe journeys separately; repair lossy offer-page Stripe selection, verify shared capacity and preserve source attribution/access; publish evidence matrix in docs/billing/payment-rail-verification.md, no activation.
 - [ ] Complete hosted real-payment validation per rail and cross-rail concurrency before launch; blocked by owner-controlled transactions, unpublished latest source and bank configuration if bank is required.
 
