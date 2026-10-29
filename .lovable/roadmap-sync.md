@@ -4,7 +4,7 @@
 date: 2026-10-29
 scope: other
 source: ai
-summary: [scope:other] Match native fixture JSON binding to existing postgres harness; quiet non-sensitive migration notices
+summary: [scope:other] Document shared coupon rules, 28 native tests and four actual two-session races; explicit bank, provisioning and real hosted payment limitations
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
