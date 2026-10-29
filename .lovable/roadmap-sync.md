@@ -4,7 +4,7 @@
 date: 2026-10-29
 scope: other
 source: ai
-summary: [scope:other] Add actual installed commerce and Live migration end-to-end tests for both manual rails, mixed per-customer cap, cross-rail request key and customer eligibility
+summary: [scope:other] Diagnose full migration replay fixture prerequisite rather than stubbing eligibility
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
