@@ -141,6 +141,8 @@ describe("Live checkout when both switches are ON", () => {
     const session = h.stripeCalls.find((c) => c.path === "/checkout/sessions")!;
     expect(session.params!.get("line_items[0][price]")).toBe("price_kids_bundle");
     expect(session.params!.get("automatic_tax[enabled]")).toBe("false");
+    expect(session.params?.get("integration_identifier")).toBe("masaarat-live-v1");
+    expect(session.params?.has("payment_method_types[0]")).toBe(false);
     expect(session.params!.get("subscription_data[metadata][environment]")).toBe("live");
     expect(session.params!.get("metadata[app]")).toBe("masaarat");
     expect(session.params!.get("subscription_data[metadata][app]")).toBe("masaarat");
