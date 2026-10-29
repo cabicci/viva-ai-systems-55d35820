@@ -4,7 +4,7 @@
 date: 2026-10-29
 scope: db
 source: ai
-summary: [scope:db] Applied 0012 binding/evidence closure; actual rolled-back core/Academic/Technical probes passed for holds, duplicate/collision, restore denial and Test environment rejection; proceeding to concurrency verification.
+summary: [scope:db] Actual database tests passed across core/Kids/Academic/Technical using rollback probes, concurrent hold vs renewal ended paused with one hold, fixture cleaned; added schema contract tests and documented applied architecture.
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
