@@ -20,6 +20,9 @@ import {
   STRIPE_SECRET_NAMES,
   type LiveGateDeps,
 } from "../../../../supabase/functions/_shared/stripe-environment";
+import { LIVE_SITE_HOSTS } from "./origin";
+
+const TRUSTED_APP_ORIGINS = new Set<string>(LIVE_SITE_HOSTS.map((h) => `https://${h}`));
 
 export const LIVE = "live" as const;
 export const LIVE_SUFFIX = "live-v1";
@@ -102,6 +105,7 @@ export async function createLiveCheckout(
   appOrigin: string,
   deps: LiveDeps,
 ): Promise<LiveResult> {
+  if (!TRUSTED_APP_ORIGINS.has(appOrigin)) return { status: 403, body: { error: "UNTRUSTED_ORIGIN" } };
   try {
     await assertLiveCheckoutAllowed(LIVE, deps);
   } catch {
@@ -309,6 +313,7 @@ async function scopedCheckout(
 export type PortalScope = "core" | "kids" | "academic" | "technical";
 
 export async function createLivePortal(user: LiveUser, scope: PortalScope, appOrigin: string, deps: LiveDeps): Promise<LiveResult> {
+  if (!TRUSTED_APP_ORIGINS.has(appOrigin)) return { status: 403, body: { error: "UNTRUSTED_ORIGIN" } };
   try {
     const stripe = liveStripe(deps);
     const rpcName = { core: "get_stripe_portal_context", kids: "get_kids_stripe_portal_context",
