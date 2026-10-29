@@ -4,7 +4,7 @@
 date: 2026-10-29
 scope: ui
 source: ai
-summary: Localized secure credit/debit card label, official unmodified slate/white Stripe wordmarks and optional Link help in shared pricing and Stripe-selected review presentation; no payment rules changed.
+summary: Updated compact pricing badges in four locales and added 20 package/locale rail-selection accessibility regressions; secure card wording, official Stripe marks and Link-optional help remain presentation-only.
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
