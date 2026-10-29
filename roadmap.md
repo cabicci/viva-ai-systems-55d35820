@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Verify coherent manual-transfer and Stripe journeys independently; preserve manual rails and source attribution, report actual hosted status and owner-payment blockers without activating Live.
+
 - [x] Install guarded Live coded-offer mapping/reservation source, strict invoice proof and neutral public billing copy; actual inventory has zero offers. No publication or activation.
 - [x] Operational Live coded offers: authorized immutable admin mapping workflow, explicit once/forever review, Session discount proof and idempotent terminal reservation reconciliation implemented; no customer code or Stripe object created.
 - [x] Audit existing Test/manual/admin access: one current admin-referenced Kids grant preserved despite refunded Test history; no current paid Stripe periods; non-destructive transition documented, environment-aware portal lookup preserves Test lock.
