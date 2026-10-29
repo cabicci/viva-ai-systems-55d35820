@@ -113,10 +113,6 @@ export async function verifyStripeSignature(
   return signatures.some((s) => secureEqual(s, expected));
 }
 
-function json(body: unknown, status: number): Response {
-  return new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json" } });
-}
-
 // The kill switch gates NEW checkout creation only. Webhooks, refunds,
 // portal sessions and price registration for existing Live objects are
 // lifecycle operations and must not be blocked by it.
@@ -127,10 +123,11 @@ export async function assertLiveCheckoutAllowed(
   if (environment === "live" && !(await isLiveEnabled(deps))) throw new Error("STRIPE_LIVE_CHECKOUT_DISABLED");
 }
 
-// Live webhook: separate endpoint + separate secret. Live event processing is
-// NOT built yet, so this ALWAYS answers 503 (never 2xx): Stripe keeps retrying
-// and no event is silently marked as delivered.
-export async function handleLiveWebhook(request: Request, _deps: LiveGateDeps): Promise<Response> {
-  if (request.method !== "POST") return json({ error: "METHOD_NOT_ALLOWED" }, 405);
-  return json({ error: "STRIPE_LIVE_PROCESSING_NOT_BUILT" }, 503);
+// Lifecycle operations (webhook/portal/refund) need the Live key but NOT the
+// kill switch, so existing Live subscriptions keep working when new checkout
+// is closed.
+export function resolveLifecycleKey(environment: StripeEnvironment, getEnv: (name: string) => string | undefined): string {
+  const value = getEnv(STRIPE_SECRET_NAMES[environment].key);
+  if (!value) throw new Error(`MISSING_${STRIPE_SECRET_NAMES[environment].key}`);
+  return assertKeyMatchesEnvironment(value, environment);
 }

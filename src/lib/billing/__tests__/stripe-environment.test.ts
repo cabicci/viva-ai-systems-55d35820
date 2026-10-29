@@ -6,7 +6,8 @@ import {
   assertMetadataEnvironment,
   assertObjectEnvironment,
   assertRowEnvironment,
-  handleLiveWebhook,
+  resolveLifecycleKey,
+  verifyStripeSignature,
   isLiveEnabled,
   lookupKeySuffix,
   resolveStripeKey,
@@ -89,26 +90,22 @@ describe("object/row mixing", () => {
   });
 });
 
-describe("live webhook endpoint", () => {
-  const body = JSON.stringify({ id: "evt_1", livemode: true });
-  const on = { STRIPE_LIVE_ENABLED: "true", STRIPE_LIVE_WEBHOOK_SECRET: LIVE_SECRET };
-
-  it("returns 503 while live is off, even with a valid signature", async () => {
-    const res = await handleLiveWebhook(signed(body, LIVE_SECRET), deps({ STRIPE_LIVE_WEBHOOK_SECRET: LIVE_SECRET }));
-    expect(res.status).toBe(503);
+describe("lifecycle key (not gated by the kill switch)", () => {
+  it("returns the live key while checkout is off, and never a test key", () => {
+    expect(resolveLifecycleKey("live", (n) => ({ STRIPE_LIVE_SECRET_KEY: "rk_live_x" })[n])).toBe("rk_live_x");
+    expect(() => resolveLifecycleKey("live", (n) => ({ STRIPE_LIVE_SECRET_KEY: "sk_test_x" })[n])).toThrow(
+      "STRIPE_LIVE_KEY_REQUIRED",
+    );
+    expect(() => resolveLifecycleKey("live", (n) => ({ STRIPE_SECRET_KEY: "rk_live_x" })[n])).toThrow(
+      "MISSING_STRIPE_LIVE_SECRET_KEY",
+    );
   });
-
-  it("never returns 2xx while live processing is not built, even when ON and correctly signed", async () => {
-    const d = deps(on);
-    const res = await handleLiveWebhook(signed(body, LIVE_SECRET), d);
-    expect(res.status).toBe(503);
-    expect(await res.json()).toEqual({ error: "STRIPE_LIVE_PROCESSING_NOT_BUILT" });
-  });
-
-  it("still answers 503 for test-signed or test-mode events", async () => {
-    const testBody = JSON.stringify({ id: "evt_2", livemode: false });
-    expect((await handleLiveWebhook(signed(body, TEST_SECRET), deps(on))).status).toBe(503);
-    expect((await handleLiveWebhook(signed(testBody, LIVE_SECRET), deps(on))).status).toBe(503);
+  it("signature helper rejects the wrong secret", async () => {
+    const body = "{}";
+    const req = signed(body, TEST_SECRET);
+    const header = req.headers.get("stripe-signature")!;
+    expect(await verifyStripeSignature(body, header, LIVE_SECRET)).toBe(false);
+    expect(await verifyStripeSignature(body, header, TEST_SECRET)).toBe(true);
   });
 });
 

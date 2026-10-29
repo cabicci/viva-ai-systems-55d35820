@@ -60,6 +60,8 @@ import { Route as TechnicalPricingRouteImport } from './routes/technical.pricing
 import { Route as AcademicLearnLessonIdRouteImport } from './routes/academic.learn.$lessonId'
 import { Route as AiPathsAppliedRouteImport } from './routes/ai.paths.applied'
 import { Route as ApiPublicStripeLiveWebhookRouteImport } from './routes/api/public/stripe-live-webhook'
+import { Route as ApiStripeLiveCheckoutRouteImport } from './routes/api/stripe-live/checkout'
+import { Route as ApiStripeLivePortalRouteImport } from './routes/api/stripe-live/portal'
 import { Route as KidsLevelIdIndexRouteImport } from './routes/kids.$levelId.index'
 import { Route as KidsLevelIdLessonNumberRouteImport } from './routes/kids.$levelId.$lessonNumber'
 import { Route as KidsLevelIdContentsRouteImport } from './routes/kids.$levelId.contents'
@@ -328,6 +330,16 @@ const ApiPublicStripeLiveWebhookRoute =
     path: '/api/public/stripe-live-webhook',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiStripeLiveCheckoutRoute = ApiStripeLiveCheckoutRouteImport.update({
+  id: '/api/stripe-live/checkout',
+  path: '/api/stripe-live/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiStripeLivePortalRoute = ApiStripeLivePortalRouteImport.update({
+  id: '/api/stripe-live/portal',
+  path: '/api/stripe-live/portal',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KidsLevelIdIndexRoute = KidsLevelIdIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -440,6 +452,8 @@ export interface FileRoutesByFullPath {
   '/academic/learn/$lessonId': typeof AcademicLearnLessonIdRoute
   '/ai/paths/applied': typeof AiPathsAppliedRoute
   '/api/public/stripe-live-webhook': typeof ApiPublicStripeLiveWebhookRoute
+  '/api/stripe-live/checkout': typeof ApiStripeLiveCheckoutRoute
+  '/api/stripe-live/portal': typeof ApiStripeLivePortalRoute
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/kids/$levelId/contents': typeof KidsLevelIdContentsRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
@@ -499,6 +513,8 @@ export interface FileRoutesByTo {
   '/academic/learn/$lessonId': typeof AcademicLearnLessonIdRoute
   '/ai/paths/applied': typeof AiPathsAppliedRoute
   '/api/public/stripe-live-webhook': typeof ApiPublicStripeLiveWebhookRoute
+  '/api/stripe-live/checkout': typeof ApiStripeLiveCheckoutRoute
+  '/api/stripe-live/portal': typeof ApiStripeLivePortalRoute
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/kids/$levelId/contents': typeof KidsLevelIdContentsRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
@@ -564,6 +580,8 @@ export interface FileRoutesById {
   '/academic/learn/$lessonId': typeof AcademicLearnLessonIdRoute
   '/ai/paths/applied': typeof AiPathsAppliedRoute
   '/api/public/stripe-live-webhook': typeof ApiPublicStripeLiveWebhookRoute
+  '/api/stripe-live/checkout': typeof ApiStripeLiveCheckoutRoute
+  '/api/stripe-live/portal': typeof ApiStripeLivePortalRoute
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/kids/$levelId/contents': typeof KidsLevelIdContentsRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
@@ -630,6 +648,8 @@ export interface FileRouteTypes {
     | '/academic/learn/$lessonId'
     | '/ai/paths/applied'
     | '/api/public/stripe-live-webhook'
+    | '/api/stripe-live/checkout'
+    | '/api/stripe-live/portal'
     | '/kids/$levelId/$lessonNumber'
     | '/kids/$levelId/contents'
     | '/learn/$pathId/$lessonId'
@@ -689,6 +709,8 @@ export interface FileRouteTypes {
     | '/academic/learn/$lessonId'
     | '/ai/paths/applied'
     | '/api/public/stripe-live-webhook'
+    | '/api/stripe-live/checkout'
+    | '/api/stripe-live/portal'
     | '/kids/$levelId/$lessonNumber'
     | '/kids/$levelId/contents'
     | '/learn/$pathId/$lessonId'
@@ -753,6 +775,8 @@ export interface FileRouteTypes {
     | '/academic/learn/$lessonId'
     | '/ai/paths/applied'
     | '/api/public/stripe-live-webhook'
+    | '/api/stripe-live/checkout'
+    | '/api/stripe-live/portal'
     | '/kids/$levelId/$lessonNumber'
     | '/kids/$levelId/contents'
     | '/learn/$pathId/$lessonId'
@@ -803,6 +827,8 @@ export interface RootRouteChildren {
   RoadmapIndexRoute: typeof RoadmapIndexRoute
   AiPathsAppliedRoute: typeof AiPathsAppliedRoute
   ApiPublicStripeLiveWebhookRoute: typeof ApiPublicStripeLiveWebhookRoute
+  ApiStripeLiveCheckoutRoute: typeof ApiStripeLiveCheckoutRoute
+  ApiStripeLivePortalRoute: typeof ApiStripeLivePortalRoute
   LearnPathIdLessonIdRoute: typeof LearnPathIdLessonIdRoute
   LovableEmailAuthPreviewRoute: typeof LovableEmailAuthPreviewRoute
   LovableEmailAuthWebhookRoute: typeof LovableEmailAuthWebhookRoute
@@ -1167,6 +1193,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicStripeLiveWebhookRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/stripe-live/checkout': {
+      id: '/api/stripe-live/checkout'
+      path: '/api/stripe-live/checkout'
+      fullPath: '/api/stripe-live/checkout'
+      preLoaderRoute: typeof ApiStripeLiveCheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/stripe-live/portal': {
+      id: '/api/stripe-live/portal'
+      path: '/api/stripe-live/portal'
+      fullPath: '/api/stripe-live/portal'
+      preLoaderRoute: typeof ApiStripeLivePortalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/kids/$levelId/': {
       id: '/kids/$levelId/'
       path: '/'
@@ -1379,6 +1419,8 @@ const rootRouteChildren: RootRouteChildren = {
   RoadmapIndexRoute: RoadmapIndexRoute,
   AiPathsAppliedRoute: AiPathsAppliedRoute,
   ApiPublicStripeLiveWebhookRoute: ApiPublicStripeLiveWebhookRoute,
+  ApiStripeLiveCheckoutRoute: ApiStripeLiveCheckoutRoute,
+  ApiStripeLivePortalRoute: ApiStripeLivePortalRoute,
   LearnPathIdLessonIdRoute: LearnPathIdLessonIdRoute,
   LovableEmailAuthPreviewRoute: LovableEmailAuthPreviewRoute,
   LovableEmailAuthWebhookRoute: LovableEmailAuthWebhookRoute,

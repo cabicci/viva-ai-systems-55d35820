@@ -85,7 +85,7 @@ export function KidsConsentControl() {
     paid_through: string | null;
   } | null>(null);
   const [access, setAccess] = useState<{
-    access_source: "stripe_test" | "test_grant" | "complimentary_email";
+    access_source: "stripe_test" | "stripe_live" | "test_grant" | "complimentary_email";
     active_until: string;
   } | null>(null);
   const [accessError, setAccessError] = useState(false);
