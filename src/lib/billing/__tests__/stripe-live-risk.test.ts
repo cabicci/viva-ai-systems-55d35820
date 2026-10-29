@@ -24,6 +24,7 @@ function setup(unrelated = false) {
   let applied = false;
   const rpc = vi.fn(async (name: string) => {
     if (name === "lc09_financial_expired") return false;
+    if (name === "get_stripe_live_risk_hold") return applied;
     if (name === "apply_stripe_live_risk_hold") { applied = true; return { processed: true, held: true }; }
     if (name === "apply_kids_stripe_event") return true;
     throw new Error("unexpected RPC");
@@ -106,6 +107,12 @@ describe("Signed fulfillment is invoice-owned", () => {
   });
   it("invoice.paid rejects a mismatching invoice customer", async () => {
     const h = setup(); h.objects["/invoices/in_m"] = { ...invoice, customer: "cus_other" };
+    expect((await h.send("invoice.paid", invoice)).status).toBe(500);
+    expect(h.rpc.mock.calls.some(([name]) => name.startsWith("apply_"))).toBe(false);
+  });
+  it("a later renewal cannot restore a held subscription", async () => {
+    const h = setup(); expect((await h.send("charge.dispute.created")).status).toBe(200);
+    h.rpc.mockClear();
     expect((await h.send("invoice.paid", invoice)).status).toBe(500);
     expect(h.rpc.mock.calls.some(([name]) => name.startsWith("apply_"))).toBe(false);
   });
