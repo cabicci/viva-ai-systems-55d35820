@@ -4,7 +4,17 @@
 
 The project's database returned **0 total rows in each of `billing.commerce_offers`, `billing.coupon_definitions`, and `billing.admin_access_coupons`**, therefore **0 configured coded offers**. No private codes, customer emails, names or phone numbers were selected. No offer-specific Stripe Coupons or Promotion Codes are required for the current launch.
 
-Owner scope correction: the current launch covers currently visible/purchasable discounts, especially the Kids 10% family prices in the existing 28-price inventory. Future coded offers are a separately authorized future task, not a launch prerequisite. Do not create Stripe coupons or make further billing architecture changes for hypothetical offers.
+Owner supersedes the narrower current-offers scope: the system must operationally support future configured paid codes as well as Kids family prices. No code or Stripe object should be invented. The existing checkout/fulfillment architecture is reused.
+
+## Admin operational workflow
+
+1. Create an actual offer through existing commerce administration, with reviewed audience, currency/market, interval, expiry/cap and redemption rules. 100%/free and admin access remain on existing non-Stripe grant paths. Legacy purchase coupon definitions are not automatically converted.
+2. In Cabicci LLC Live, an authorized owner separately pre-creates the exact product-restricted Coupon and Promotion Code defined below. The site's restricted key is not given Coupons/Promotion Codes write/read permissions.
+3. In commerce administration → offers → Live discount mappings, select the existing internal offer and enter real registered Price/Product and pre-created Coupon/Promotion Code IDs, explicit first-invoice-only or every-renewal duration, and review reference. Save a reviewed immutable version (initially unavailable). Server/database recheck the discount from the offer and catalogue, not a client amount.
+4. Approve mapping availability separately with a review reference. This is owner attestation, not a claim of Stripe readback verification. Global Live switches remain independent and OFF until launch authorization. Checkout binds capacity then verifies expanded Session promotion/coupon/product/totals before returning its URL; a denied or incomplete expansion is unavailable, never Test fallback. Signed invoices independently verify the actual discount and paid period before fulfillment.
+5. Use Verify terminal state on a bound reservation to perform read-only Stripe Session reconciliation. Only expired, unpaid Sessions with no subscription/payment and exact customer/reservation binding can release capacity. Completed async/unpaid, paid, missing or contradictory evidence stays held. Release is durable/idempotent and consumed reservations cannot be released or restored. Cancellation page visits are not proof.
+
+Administration records private durable review/release evidence. It never creates Stripe objects, enables global switches, or changes customer access.
 
 The 28 registered base/family/assistant price mappings are unchanged. No Stripe object was created, activated or updated. Public mode and Live switches were not changed.
 
@@ -35,7 +45,7 @@ No example ID in tests is a provisioning ID. Do not copy synthetic fixture IDs i
 2. Owner must choose explicit duration for each future offer. Repeating duration and coded Academic-with-assistant are unsupported and fail closed.
 3. Verify `expand[]=discounts.source.coupon` and Checkout `line_items` expansion with the deployed Stripe API version and restricted key. No Coupons/Promotion Codes endpoint reads or permission broadening were added. If expansion is denied or evidence differs, fulfillment fails non-2xx.
 4. Percentage rounding must agree between the installed commerce integer quote and Stripe. Any mismatch fails closed; low-value/odd fractional variants need provisioning-time verification.
-5. Bound canceled/failed/expired attempts reserve capacity conservatively; a reviewed Stripe-readback release/reconciliation flow is still required before capped coded offers launch.
+5. Bound canceled/failed attempts reserve capacity conservatively. The admin terminal-Session readback flow now releases only provably expired unpaid Sessions without a payment graph; asynchronous or paid ambiguous attempts require separate investigation and cannot be manually forced through this workflow.
 6. Actual-database concurrent coded-redemption and signed real Live discounted invoice checks are **not verified**. Current database test credentials are schema-limited. Disposable PostgreSQL tests exercise installed migrations but are not proof of hosted concurrency.
 7. Catalogue/webhook activation and publishing remain separate authorized work. No new revision was published in this task.
 

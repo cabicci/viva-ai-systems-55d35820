@@ -112,15 +112,19 @@ async function reserveOffer(user: LiveUser, body: LiveCheckoutBody, deps: LiveDe
 
 async function bindOffer(offer: OfferEvidence | null, user: LiveUser, customer: string, session: { id: string }, deps: LiveDeps) {
   if (offer) {
-    const actual = await liveStripe(deps)<any>(`/checkout/sessions/${encodeURIComponent(session.id)}?expand[]=line_items`);
+    // Bind before verification: an ambiguous Stripe result must keep capacity
+    // reserved for readback reconciliation, never silently release it.
+    if (await deps.rpc("bind_stripe_live_offer", { p_reservation_id: offer.id, p_user_id: user.id,
+      p_customer_id: customer, p_session_id: session.id }) !== true) throw new Error("LIVE_OFFER_BINDING_FAILED");
+    const actual = await liveStripe(deps)<any>(`/checkout/sessions/${encodeURIComponent(session.id)}?expand[]=line_items&expand[]=discounts.promotion_code.promotion.coupon`);
     if (actual.id !== session.id || actual.object !== "checkout.session" || actual.livemode !== true
       || idOf(actual.customer) !== customer || actual.metadata?.offer_reservation_id !== offer.id
       || actual.line_items?.has_more || actual.line_items?.data?.length !== 1
       || idOf(actual.line_items.data[0].price) !== offer.mapping.price_id || actual.line_items.data[0].quantity !== 1
       || actual.currency?.toUpperCase() !== offer.mapping.currency) throw new Error("LIVE_OFFER_SESSION_MISMATCH");
+    const { verifyOfferSession } = await import("./offer-operations");
+    verifyOfferSession(offer, actual, customer);
   }
-  if (offer && await deps.rpc("bind_stripe_live_offer", { p_reservation_id: offer.id, p_user_id: user.id,
-    p_customer_id: customer, p_session_id: session.id }) !== true) throw new Error("LIVE_OFFER_BINDING_FAILED");
 }
 
 export async function createLiveCheckout(
