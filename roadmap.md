@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Restore published billing mode exact-path Worker dispatch; verify both published domains and representative pricing controls without payments.
+
 - [x] Add modest four-locale Stripe trust text beside package purchase controls without altering billing behavior; verify existing button/billing tests and automatic build.
 
 - [x] Audit Live fulfillment and add isolated, signature-verified async/risk handlers and focused tests.
