@@ -1,90 +1,59 @@
-# Current coordination note — 3 October 2026
+# خطة ربط باقات مسارات بـ Stripe Live (منفصل عن Test، مقفول افتراضيًا)
 
-The owner cancelled additional Vault/token setup. Automatic lifecycle processing
-uses the existing protected account-welcome-job schedule and internal server
-permissions. Do not propose or reinstall a separate lifecycle/contact Vault
-binding or cron. Existing account/family/financial handlers and separate switches
-are preserved. The sole contact flag is CONTACT_MAIL_DIRECT_ENABLED; old contact
-resources are retired. Historical capability notes below are not current rollout
-instructions. Exact activation evidence and final acceptance belong to the two
-authoritative registers.
+## الخلاصة
+- كل مسارات الدفع الحالية **مقفولة على Test بالكود**: 5 دوال ترفض أي مفتاح غير `sk_/rk_test_`، وتكتب `metadata.environment="test"`، والـ webhook يرفض `livemode=true` (LIVE_EVENT_REJECTED)، والاستردادات تشترط `livemode=false`.
+- قاعدة البيانات **لا تحتوي عمود بيئة** (test/live) في أي جدول ربط؛ التمييز الوحيد هو `gateway_code='stripe_us'`. لذلك Live يحتاج فصلًا بنيويًا قبل أي مفتاح.
+- Live **غير جاهز**: لا مفتاح Live، لا سر webhook Live، لا أسعار Live، لا بوابة عملاء Live (كلها غير مُتحقَّق منها ويجب افتراض غيابها).
 
----
+## الحالة الحالية (مُتحقَّق منها)
+| المنتج | الدالة | جدول الأسعار | صفوف حالية |
+|---|---|---|---|
+| Pro / Pro Plus | billing-stripe-checkout + portal + webhook | billing.market_prices + gateway_price_mappings | 8 أسعار (EG/INTL × شهري/سنوي × باقتين)، كلها مربوطة Test |
+| Kids | kids-stripe-checkout | public.kids_stripe_prices | 1 (EG شهري 199 ج.م) |
+| الأكاديمي (+ المساعد) | academic-stripe-checkout | billing.academic_stripe_prices | 0 (تُنشأ عند أول دفع) |
+| التقني | technical-stripe-checkout | billing.technical_stripe_prices | 0 (تُنشأ عند أول دفع) |
 
-# فحص حالة قراءة فقط — بريد التواصل والترحيب
+- العملاء/الاشتراكات: billing.gateway_customers و gateway_subscriptions = 0 صف؛ webhook_events = 1. جداول kids/academic/technical لها جداول events/subscriptions خاصة.
+- الأسعار تُنشأ آليًا من الدالة (lookup_key ينتهي بـ `_test_v1`) ثم تُسجَّل في قاعدة البيانات — أي لا معرفات أسعار ثابتة في الكود.
+- المفاتيح في الخادم فقط (`STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`)؛ لا مفتاح في المتصفح.
 
-فحص حالة حالي بدون أي تعديل. النتائج:
+## عدد الأسعار المطلوبة في Live
+- Pro/Pro Plus: **8** (مؤكد).
+- Kids: **1 مؤكد**؛ أي أسواق/فترات إضافية غير مخزّنة = غير مُتحقَّق.
+- الأكاديمي: حسب الأسعار المعتمدة سابقًا (EGP 50/600، USD 1/12) × (عادي/مع المساعد) = حتى **8** لكل كورس — يحتاج تأكيد من سياق الدفع.
+- التقني: غير مُتحقَّق (0 صفوف) — يُستخرج من سياق الدفع.
+- **الإجمالي المؤكد 9، المتوقع ~17–25** بعد جرد الخطوة 1.
 
-## الدوال المنشورة (GET بدون مصادقة)
+## نقاط الخطر
+1. خلط Test وLive في نفس الجداول (لا عمود بيئة) → عميل Test يُستخدم في Live أو العكس.
+2. lookup_key ومفاتيح idempotency ثابتة على `test_v1` → تصادم إن غُيّر المفتاح فقط.
+3. تبديل `STRIPE_SECRET_KEY` لقيمة Live يكسر Test كليًا ويفقد سجلاته عمليًا.
+4. webhook واحد بسر واحد؛ Live يحتاج endpoint/سر منفصل.
+5. الاستردادات وحذف الحسابات (LC09، الاحتفاظ المالي 15 يوم) مبنية على Test فقط.
+6. Kids يتطلب موافقة ولي أمر؛ يجب أن يبقى الحارس مطبقًا في Live.
+7. البوابة (Customer Portal) تحتاج تفعيلًا يدويًا في لوحة Stripe Live.
+8. الضرائب: `tax_behavior=exclusive` قد يغيّر المبلغ النهائي في Live.
 
-- contact-mail-job: منشورة (405)
-- contact-mail-webhook: منشورة (405)
-- account-welcome-job: منشورة (405) — تشمل بريد الترحيب والاشتراك
-- account-deletion-job: غير منشورة (404)
+## خطوات التنفيذ (بعد موافقتك، كل خطوة بإذن منفصل)
+1. **جرد للقراءة فقط**: استخراج كل الأسعار من دوال سياق الدفع للأكاديمي والتقني والأطفال وتثبيت العدد النهائي.
+2. **فصل البيئة في قاعدة البيانات** (migration عبر GitHub): إضافة `environment` (test|live، افتراضي test) لجداول الأسعار/العملاء/الاشتراكات/الأحداث، تعبئة الصفوف الحالية بـ test، وفهارس فريدة تشمل البيئة. لا حذف لأي سجل Test.
+3. **مفتاح إيقاف**: إعداد `stripe_live_enabled=false` في جدول تحكم محمي (أدمن فقط) + فحصه داخل كل دالة قبل أي نداء Live.
+4. **أسرار منفصلة**: `STRIPE_LIVE_SECRET_KEY` (restricted key `rk_live_` بأقل صلاحيات) و`STRIPE_LIVE_WEBHOOK_SECRET` — يضيفها owner في الإعدادات. تبقى أسرار Test كما هي.
+5. **تعديل الدوال الست** (عبر PR مراجَع): اختيار المفتاح حسب البيئة، `metadata.environment` و lookup_key بلاحقة `_live_v1`، والتحقق المزدوج: مفتاح Live ⇔ `livemode=true`.
+6. **webhook Live منفصل** يقبل `livemode=true` فقط ويرفض أحداث Test، والعكس للحالي.
+7. **إنشاء الأسعار Live** مرة واحدة يدويًا بأداة Stripe أو سكربت خادمي، وتسجيل معرفاتها مسبقًا (لا إنشاء آلي عند أول دفع في Live).
+8. **تفعيل البوابة** في Stripe Live وربط return_url بـ masaarat.ai.
+9. نشر الدوال والموقع بإذن owner؛ المفتاح يبقى OFF.
 
-## الأعلام والأسرار (أسماء فقط، بدون قيم)
+## خطوات التحقق (بدون أي اشتراك مدفوع)
+- Test بعد التعديل: checkout/webhook/portal لكل منتج يعمل كما قبل، والسجلات القديمة باقية بنفس العدد.
+- Live والمفتاح OFF: كل دالة Live ترجع 403/409 دون أي نداء لـ Stripe.
+- مفتاح Test مع بيئة Live (والعكس) → رفض.
+- حدث Test على webhook Live (والعكس) → 400.
+- طلب بدون مصادقة → 401؛ مستخدم غير أدمن لا يغيّر المفتاح.
+- قراءة الأسعار Live من Stripe API (GET فقط) ومطابقة المبالغ/العملات/الفترات مع القاعدة.
+- فحص كود المتصفح: لا `sk_`/`rk_`/`whsec_`.
+- التفعيل الفعلي (أول عملية حقيقية) قرار owner منفصل خارج هذه الخطة.
 
-- CONTACT_MAIL_ENABLED: موجودة في الأسرار؛ القيمة الحالية غير قابلة للفحص بأمان — UNVERIFIED (آخر حالة موثقة: false)
-- مفتاح الإدخال في التطبيق (نفس الراية): UNVERIFIED لنفس السبب
-- RESEND_API_KEY: موجود
-- RESEND_WEBHOOK_SECRET: موجود (ربط التوقيع نجح سابقًا)
-- CONTACT_MAIL_JOB_SECRET: موجود
-- ACCOUNT_WELCOME_JOB_SECRET: موجود
-
-## الجداول المجدولة
-
-- masaarat-account-welcome-v1: موجودة ونشطة (كل 5 دقائق) — محفوظة
-- لا يوجد أي جدول مجدول لبريد التواصل
-
-## قابلية نشر account-deletion-job
-
-- نعم: بعد دمج/مزامنة مصدرها المراجع من GitHub في المشروع، يمكن نشرها عبر أداة نشر الدوال المعتمدة (نفس مسار contact-mail-job). هذا يختلف عن إنشاء عامل مؤقت جديد الذي رُفض سابقًا — النشر لدالة موجودة في المصدر مسموح. لا نشر الآن.
-
-## لا إجراءات
-
-لا تعديل كود، لا SQL، لا نشر، لا تغيير أسرار أو أعلام، لا بريد. تدوير الأسرار والإرسال الحقيقي ونشر الموقع بوابات إنتاج منفصلة.
-
-## Previous read-only explanation preserved
-
-# شرح تفصيلي: ليه الموقع كان بطيء وبقى سريع (بدون أي تنفيذ)
-
-القرار: **مفيش أي تعديل**. ده شرح للحالة الحالية بناءً على قراءة السجلات والملفات فقط.
-
-## اللي بيحصل عند أول فتح (الإقلاع البارد)
-
-التسلسل الفعلي من سجل خادم التطوير:
-
-```text
-1) توليد الأصول قبل التشغيل  → materialized: 400  (كتابة 400 صورة PNG على القرص)
-2) Vite ready                → 2299 ms  (وفي مرة تانية 3249 ms)
-3) أول زيارة للصفحة          → new dependencies optimized: h3-v2, @tanstack/router-core, ...
-4) optimized dependencies changed → reloading   ← الصفحة بتعيد التحميل في نص أول زيارة
-5) كل route وكل صورة بتتترجم عند أول طلب لها → الصور بتظهر بالتدريج
-```
-
-النتيجة اللي كنت شايفها: الصفحة الرئيسية بس هي اللي بتفتح (لأنها أول route اتترجم)، والصور بتفضل تتحمّل واحدة ورا التانية.
-
-## ليه بقى سريع دلوقتي
-
-- مجلد `node_modules/.vite/deps` موجود ومحدّث (آخر تحديث 10:57)، يعني خطوة optimize خلصت خلاص.
-- الـ400 صورة متولّدة بالفعل على القرص، والعلامة `.materialize-ok.json` بتقول `ok: true, materialized: 400`.
-- فمرحلة الـ`reloading` الوسطانية مش بتحصل، والصفحة بتفتح على طول.
-
-**مهم:** مفيش أي سطر كود اتغير. الفرق كله في الكاش (cache) مش في المشروع.
-
-## متى ترجع البطء تاني
-
-أي حاجة تمسح أو تبطّل الكاش:
-
-- إعادة تشغيل بيئة البريفيو أو الخادم
-- تغيير في `bun.lockb` — السجل شايف فعلاً: `Re-optimizing dependencies because lockfile has changed` الساعة 11:07
-- تثبيت أو تحديث أي حزمة
-
-## المصدر البنيوي للبطء (للعِلم فقط)
-
-- `src/lib/lesson-visuals/controlled-v1/runtime/controlledV1BrowserResolver.ts` بيستخدم `import.meta.glob` بـ `eager: true` على 400 أصل — في وضع التطوير ده بيخلي المتصفح يجيب مئات الموديولات كل واحد لوحده.
-- سكربت `controlled-visuals:materialize-runtime-assets` بيعيد كتابة 400 ملف في كل إقلاع حتى لو موجودين بالفعل.
-
-## الحالة
-
-مفيش أي تنفيذ مطلوب. لو حبيت بعدين نثبّت السرعة دايمًا، الحلول الثلاثة المعروفة: تخطّي إعادة التوليد لو الأصول موجودة، تحويل الـglob لـ lazy في التطوير، وإضافة الحزم لـ `optimizeDeps`.
+## غير مُتحقَّق (UNVERIFIED)
+حالة حساب Stripe Live (التفعيل، البنك، الضرائب)، وجود أي مفاتيح Live، عدد أسعار التقني والأكاديمي النهائي، إعداد البوابة في Live.
