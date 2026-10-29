@@ -3,13 +3,20 @@ type StripeGet = (path: string) => Promise<StripeObject>;
 const id = (value: any): string | null => (typeof value === "string" ? value : (value?.id ?? null));
 
 /** Resolve money through Stripe's invoice-payment relation, never refund metadata. */
-export async function resolveStripeRefund(refundId: string, get: StripeGet) {
+export async function resolveStripeRefund(
+  refundId: string,
+  get: StripeGet,
+  environment: "test" | "live" = "test",
+) {
+  const live = environment === "live";
+  const envError = live ? "REFUND_LIVE_REQUIRED" : "REFUND_TEST_REQUIRED";
   if (!/^re_[A-Za-z0-9_]+$/.test(refundId)) throw new Error("REFUND_ID_INVALID");
   const refund = await get(`/refunds/${encodeURIComponent(refundId)}`);
   // Stripe Refund objects do not promise a livemode field. The caller enforces
-  // a TEST API key and signed event; invoice/subscription/PaymentIntent below
-  // must each explicitly attest livemode=false. Never infer live mode here.
-  if (refund.id !== refundId || refund.livemode === true) throw new Error("REFUND_TEST_REQUIRED");
+  // the environment's API key and signed event; invoice/subscription/PaymentIntent
+  // below must each explicitly attest the expected livemode. Default is Test.
+  if (refund.id !== refundId || (live ? refund.livemode === false : refund.livemode === true))
+    throw new Error(envError);
   if (!["pending", "requires_action", "succeeded", "failed", "canceled"].includes(refund.status)) {
     throw new Error("REFUND_STATUS_INVALID");
   }
@@ -18,7 +25,7 @@ export async function resolveStripeRefund(refundId: string, get: StripeGet) {
   let paymentIntent = id(refund.payment_intent);
   if (!paymentIntent && id(refund.charge)) {
     const charge = await get(`/charges/${encodeURIComponent(id(refund.charge)!)}`);
-    if (charge.livemode !== false) throw new Error("REFUND_TEST_REQUIRED");
+    if (charge.livemode !== live) throw new Error(envError);
     paymentIntent = id(charge.payment_intent);
   }
   if (!paymentIntent) throw new Error("REFUND_PAYMENT_INTENT_MISSING");
@@ -35,7 +42,7 @@ export async function resolveStripeRefund(refundId: string, get: StripeGet) {
   if (payments.data.length !== 1) throw new Error("REFUND_INVOICE_AMBIGUOUS");
   const payment = payments.data[0];
   if (
-    payment.livemode !== false ||
+    payment.livemode !== live ||
     payment.status !== "paid" ||
     payment.payment?.type !== "payment_intent" ||
     id(payment.payment?.payment_intent) !== paymentIntent
@@ -58,7 +65,7 @@ export async function resolveStripeRefund(refundId: string, get: StripeGet) {
   const intent = await get(`/payment_intents/${encodeURIComponent(paymentIntent)}`);
   const customerId = id(subscription.customer);
   if (
-    [invoice, subscription, intent].some((o) => o.livemode !== false) ||
+    [invoice, subscription, intent].some((o) => o.livemode !== live) ||
     invoice.id !== invoiceId ||
     subscription.id !== subscriptionId ||
     intent.id !== paymentIntent ||
