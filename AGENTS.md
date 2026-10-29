@@ -1,3 +1,3 @@
 # Architecture rules
 
-- Live payment-risk handling resolves the Stripe charge/payment/invoice/subscription/customer graph before access changes; persist a subscription risk marker and enforce it on later fulfillment to prevent automatic restoration without inventing financial refunds.
+- Live payment-risk handling resolves the Stripe charge/payment/invoice/subscription/customer graph before access changes; risk events require an atomic durable hold RPC and must fail non-2xx until that persistence prerequisite exists, never inventing financial refunds.
