@@ -1,11 +1,13 @@
-// Server-owned Stripe mode selection. Browser code never decides the mode.
-//
-// STRIPE_BILLING_MODE (server setting) is the explicit selector:
+// Server-owned Stripe mode selection for the site. Browser code never decides
+// the mode. Parsing is shared with the backend functions so both runtimes
+// read STRIPE_BILLING_MODE identically.
 //   unset / "test"  -> Test flow, exactly as before.
 //   "live"          -> Live flow only. Never falls back to Test.
+//   anything else   -> unavailable (fail closed; Test functions also lock).
 // New Live checkout additionally needs STRIPE_LIVE_ENABLED=true AND the DB
-// switch; if either is OFF the answer is "live_unavailable" (fail closed).
-// The portal is lifecycle: in Live mode it opens even when checkout is OFF.
+// switch. The portal is lifecycle: in Live mode it opens even when checkout is OFF.
+import { billingModeSelector, isTestStripeLocked } from "../../../supabase/functions/_shared/billing-mode";
+
 export type BillingIntent = "checkout" | "portal";
 export type BillingModeAnswer = "test" | "live" | "live_unavailable";
 
@@ -14,9 +16,8 @@ export async function decideBillingMode(
   getEnv: (name: string) => string | undefined,
   databaseLiveEnabled: () => Promise<boolean>,
 ): Promise<BillingModeAnswer> {
-  const selector = (getEnv("STRIPE_BILLING_MODE") ?? "test").trim().toLowerCase();
-  if (selector === "" || selector === "test") return "test";
-  if (selector !== "live") return "live_unavailable"; // unknown value: fail closed, never Test
+  if (!isTestStripeLocked(getEnv)) return "test";
+  if (billingModeSelector(getEnv) !== "live") return "live_unavailable";
   if (intent === "portal") return "live";
   if (getEnv("STRIPE_LIVE_ENABLED") !== "true") return "live_unavailable";
   try {

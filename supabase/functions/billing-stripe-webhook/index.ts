@@ -179,6 +179,9 @@ Deno.serve(async (request) => {
     if (["refund.created", "refund.updated", "refund.failed"].includes(event.type)) {
       const resolved = await resolveStripeRefund(String(event.data.object.id), stripeGet);
       if (!resolved) return response({ received: true, ignored: true });
+      // A failed/cancelled refund could restore access: dropped while Test is locked.
+      if (isTestStripeLocked((name) => Deno.env.get(name)) && resolved.refund.status !== "succeeded")
+        return response({ received: true, ignored: true, reason: TEST_STRIPE_LOCKED });
       if (await financialDeliveryExpired(resolved.subscription.metadata?.user_id, rpc))
         return response({ received: true, ignored: true, financial_erased: true });
       if (
