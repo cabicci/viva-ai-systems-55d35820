@@ -43,6 +43,8 @@ beforeAll(async () => {
     await db.exec(sql(`supabase/migrations/${name}`));
   await db.exec(sql("scripts/email-access/email-access-candidate.sql"));
   await db.exec(sql("docs/billing/20260920_stripe_refunds.sql"));
+  const rag = sql("scripts/academic-education/assistant-rag-candidate.sql");
+  await db.exec("ALTER TABLE public.academic_courses ADD COLUMN assistant_review_enabled boolean NOT NULL DEFAULT false;" + rag.slice(rag.indexOf("CREATE TABLE public.academic_content_course_grants"), rag.indexOf("-- Return the authoritative access mode")));
   // Replay the exact installed commerce/assistant billing segment; RAG import
   // functions after this boundary are unrelated to coupon journeys.
   await db.exec(sql("scripts/academic-education/assistant-native-candidate.sql").split("CREATE FUNCTION public.academic_import_chunks")[0] + "COMMIT;");
