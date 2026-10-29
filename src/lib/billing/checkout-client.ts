@@ -2,7 +2,7 @@
 // The server picks Test or Live; a failed Live request is never retried on
 // Test and a failed Test request is never retried on Live.
 import { supabase } from "@/integrations/supabase/client";
-import type { Locale } from "@/lib/locale/locale-context";
+import type { SupportedLocale as Locale } from "@/lib/locale/types";
 
 export type LiveCheckoutRequest =
   | { product: "core"; planKey: "pro" | "pro_plus"; billingInterval: "month" | "year"; marketCode: "EG" | "INTL" }

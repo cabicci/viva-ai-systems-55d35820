@@ -16,6 +16,8 @@ import { useTechnicalProgress } from "@/lib/technical-education/client";
 import { adminOfferCopy } from "@/lib/commerce/admin-offer-copy";
 import { technicalUiCopy } from "@/lib/technical-education/ui-copy";
 import { Button } from "@/components/ui/button";
+import { BillingUnavailableError, billingUnavailableMessage, resolveCheckoutUrl, resolvePortalUrl } from "@/lib/billing/checkout-client";
+import { toast } from "sonner";
 export const Route = createFileRoute("/technical/pricing")({
   validateSearch: parseLocaleSearchParam,
   head: async ({ match }) =>
@@ -41,17 +43,21 @@ function TechnicalPricing() {
     setBusy(true);
     setError(false);
     try {
-      const { data, error } = await supabase.functions.invoke("billing-stripe-portal", {
-        body: { scope: "technical" },
+      const url = await resolvePortalUrl("technical", async () => {
+        const { data, error } = await supabase.functions.invoke("billing-stripe-portal", {
+          body: { scope: "technical" },
+        });
+        if (
+          error ||
+          typeof data?.url !== "string" ||
+          new URL(data.url).origin !== "https://billing.stripe.com"
+        )
+          throw new Error("Unavailable");
+        return data.url;
       });
-      if (
-        error ||
-        typeof data?.url !== "string" ||
-        new URL(data.url).origin !== "https://billing.stripe.com"
-      )
-        throw new Error("Unavailable");
-      window.location.assign(data.url);
-    } catch {
+      window.location.assign(url);
+    } catch (e) {
+      if (e instanceof BillingUnavailableError) toast.error(billingUnavailableMessage(locale));
       setError(true);
       setBusy(false);
     }
@@ -60,14 +66,21 @@ function TechnicalPricing() {
     setBusy(true);
     setError(false);
     try {
-      const { data, error } = await supabase.functions.invoke("technical-stripe-checkout", {
-        body: { marketCode: market, billingInterval: interval, locale },
-      });
-      if (error || typeof data?.url !== "string") throw new Error("Unavailable");
-      const url = new URL(data.url);
-      if (url.origin !== "https://checkout.stripe.com") throw new Error("Invalid checkout");
-      window.location.assign(url.href);
-    } catch {
+      const url = await resolveCheckoutUrl(
+        { product: "technical", billingInterval: interval, marketCode: market, locale },
+        async () => {
+          const { data, error } = await supabase.functions.invoke("technical-stripe-checkout", {
+            body: { marketCode: market, billingInterval: interval, locale },
+          });
+          if (error || typeof data?.url !== "string") throw new Error("Unavailable");
+          const testUrl = new URL(data.url);
+          if (testUrl.origin !== "https://checkout.stripe.com") throw new Error("Invalid checkout");
+          return testUrl.href;
+        },
+      );
+      window.location.assign(url);
+    } catch (e) {
+      if (e instanceof BillingUnavailableError) toast.error(billingUnavailableMessage(locale));
       setError(true);
       setBusy(false);
     }
