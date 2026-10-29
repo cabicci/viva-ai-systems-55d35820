@@ -4,7 +4,7 @@
 date: 2026-10-29
 scope: db
 source: ai
-summary: [scope:db] Applied 0018 strict Session/customer binding and conservative bound asynchronous reservation capacity; unresolved bound attempts never silently free a capped redemption
+summary: [scope:db] Applied 0019 mapping insert guard against registered Live catalogue and exact offer definition; Kids only standard price; deletion-safe mapping/reservation FKs
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
