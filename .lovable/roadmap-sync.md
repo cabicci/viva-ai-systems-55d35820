@@ -1,10 +1,10 @@
 # Roadmap sync marker
 
-[roadmap:3d795651-5aa3-4f3e-ab1c-d2e7e2007a92]
-date: 2026-10-29
+[roadmap:2dd3b1b3-9fb2-42c9-b8c5-117554e2600a]
+date: 2026-10-30
 scope: ui
-source: ai
-summary: Completed official Stripe/card visual update; compact menu labels avoid mobile clipping while full localized secure-card statement stays visible. 81 UI regressions and 32 signed-in desktop/mobile page checks passed; manual attribution unchanged, no publication or billing settings changes.
+source: user
+summary: [scope:ui] Sign-in page (privacy-sensitive) cleared TrustedSite script with window.location.reload() before browser URL updated, returning users to home; now loads the router destination URL instead. Test added.
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
