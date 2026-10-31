@@ -1,9 +1,11 @@
+import { assistantAuthFixture } from "@/test/assistant-auth-fixture";
 import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 const state = vi.hoisted(() => ({ userId: "user-a", ask: vi.fn() }));
 vi.mock("@tanstack/react-start", () => ({ useServerFn: (fn: unknown) => fn }));
 vi.mock("@/lib/academic-education/assistant.functions", () => ({ askAcademicAssistant: state.ask }));
-vi.mock("@/lib/auth-context", () => ({ useAuth: () => ({ user: { id: state.userId } }) }));
+const auth = assistantAuthFixture(() => state.userId);
+vi.mock("@/lib/auth-context", () => ({ useAuth: () => auth }));
 vi.mock("@/components/ui/button", () => ({ Button: (props: React.ComponentProps<"button">) => <button {...props} /> }));
 import { AcademicAssistantPanel } from "@/components/academic-education/AcademicAssistantPanel";
 

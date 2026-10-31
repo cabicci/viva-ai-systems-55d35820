@@ -19,6 +19,7 @@ concurrency:
 jobs:
   prepare-approved-content:
     if: >-
+      vars.MASAARAT_ASSISTANT_INDEXING_RELEASE_ENABLED == 'true' &&
       github.repository == 'cabicci/viva-ai-systems-55d35820' &&
       (github.event_name != 'workflow_run' ||
       (github.event.workflow_run.conclusion == 'success' &&

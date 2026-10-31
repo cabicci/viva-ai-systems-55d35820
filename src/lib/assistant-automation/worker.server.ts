@@ -22,14 +22,17 @@ export async function currentAutomaticPlans(): Promise<AutomaticPlan[]> {
   if (typeof __ASSISTANT_INDEXER_BUILD__ !== "string") throw new Error("AUTOMATION_BUILD_UNAVAILABLE");
   const { loadCurrentRelease } = await import("@/lib/rag/current-release/corpus.server");
   const ai = loadCurrentRelease();
+  const revisionsBefore = await automationRpc<Record<string, string>>("assistant_auto_source_revisions", { p_registry: CARD_REGISTRY });
   const [kids, technical, academicCourses, academic] = await Promise.all([
     metadata("kids_content_approvals", "level_id,lesson_number,locale,approved_sha256", ["level_id", "lesson_number", "locale"]),
     metadata("technical_lesson_content", "lesson_id,locale,source_sha256", ["lesson_id", "locale"]),
     metadata("academic_courses", "id,enabled,assistant_enabled,assistant_review_enabled", ["id"]),
     metadata("academic_lesson_content", "course_id,lesson_id,locale,approved,source_sha256", ["course_id", "locale", "lesson_id"]),
   ]);
+  const revisions = await automationRpc<Record<string, string>>("assistant_auto_source_revisions", { p_registry: CARD_REGISTRY });
+  if (JSON.stringify(revisionsBefore) !== JSON.stringify(revisions)) throw new Error("AUTOMATION_SOURCE_CHANGED");
   return automaticPlans(__ASSISTANT_INDEXER_BUILD__, { releaseId: ai.approval.releaseId, chunks: ai.chunks.length }, CARD_REGISTRY,
-    { kids, technical, academicCourses, academic } as SourceMetadata);
+    { kids, technical, academicCourses, academic } as SourceMetadata, revisions);
 }
 
 export async function executeAutomaticScope(lease: AutomaticLease): Promise<Record<string, unknown>> {
@@ -58,11 +61,13 @@ export async function executeAutomaticScope(lease: AutomaticLease): Promise<Reco
       executionId: status.executionId, confirmation: confirmationFor(operation, releaseId),
       ...(operation === "activate" ? { expectedActiveVersion: status.currentActiveVersion ?? null } : {}) }, deps);
     if (operation === "batch" && result.committed !== true && result.done !== true) throw new Error("AUTOMATION_BATCH_UNCONFIRMED");
+    if (operation === "activate" && result.activated !== true) throw new Error("AUTOMATION_ACTIVATION_UNCONFIRMED");
     return { operation, committed: result.committed === true, activated: result.activated === true,
       providerCalls: result.providerCalls ?? 0, reusedChunks: result.reusedChunks ?? 0 };
   }
   if (lease.offset === manifest.scopeCount - 1) {
-    await automationRpc(manifest.area === "academic" ? "assistant_auto_publish_academic" : "assistant_auto_publish_card", args);
+    const published = await automationRpc(manifest.area === "academic" ? "assistant_auto_publish_academic" : "assistant_auto_publish_card", args);
+    if (published !== true) throw new Error("AUTOMATION_PUBLICATION_UNCONFIRMED");
     return { activated: true };
   }
   const expected = manifest.scopes[lease.offset];
@@ -75,22 +80,45 @@ export async function executeAutomaticScope(lease: AutomaticLease): Promise<Reco
   return { proofs: result.proofs, embedded: result.embedded, reused: result.reused };
 }
 
-export async function automaticTick(requestId: string): Promise<Record<string, unknown>> {
-  const plans = await currentAutomaticPlans();
-  await automationRpc("assistant_auto_register", { p_jobs: plans.map(({ key, material }) => ({ key, material })), p_registry: CARD_REGISTRY });
-  const claim = await automationRpc<Record<string, unknown>>("assistant_auto_claim", { p_keys: plans.map(plan => plan.key), p_request: requestId });
+export type AutomaticTickDependencies = {
+  plans(): Promise<AutomaticPlan[]>;
+  rpc: typeof automationRpc;
+  execute(lease: AutomaticLease): Promise<Record<string, unknown>>;
+  registry: typeof CARD_REGISTRY;
+};
+
+/** Internal server ports permit a disposable DB transport without replacing the
+ * queue/receipt algorithm. They are never accepted from an HTTP request. */
+export async function automaticTick(requestId: string, dependencies?: AutomaticTickDependencies): Promise<Record<string, unknown>> {
+  const ports = dependencies ?? { plans: currentAutomaticPlans, rpc: automationRpc,
+    execute: executeAutomaticScope, registry: CARD_REGISTRY };
+  const plans = await ports.plans();
+  const keys = plans.map(plan => plan.key);
+  await ports.rpc("assistant_auto_register", { p_jobs: plans.map(({ key, material }) => ({ key, material })), p_registry: ports.registry });
+  await ports.rpc("assistant_auto_link_sources", { p_keys: keys });
+  const claim = await ports.rpc<Record<string, unknown>>("assistant_auto_claim", { p_keys: keys, p_request: requestId });
   if (claim.claimed !== true) return claim;
   const lease = claim as unknown as AutomaticLease;
   try {
-    const receipt = await executeAutomaticScope(lease);
+    const receipt = await ports.execute(lease);
     const done = lease.offset + 1 === lease.manifest.scopeCount;
-    await automationRpc("assistant_auto_finish", { ...leaseArguments(lease), p_done: done, p_receipt: receipt });
+    let confirmed = false;
+    try {
+      confirmed = await ports.rpc("assistant_auto_finish", { ...leaseArguments(lease), p_done: done, p_receipt: receipt }) === true;
+    } catch { /* The mutation may have committed. Never execute or finish again. */ }
+    if (!confirmed) {
+      try {
+        confirmed = await ports.rpc("assistant_auto_receipt", { p_job: lease.jobId, p_request: lease.requestId,
+          p_offset: lease.offset, p_receipt: receipt }) === true;
+      } catch { /* Unknown remains held for reconciliation, never success. */ }
+    }
+    if (!confirmed) throw new Error("AUTOMATION_FINISH_UNCONFIRMED");
     return { progressed: true, area: lease.manifest.area, cardId: lease.manifest.cardId, completedScopes: lease.offset + 1,
       totalScopes: lease.manifest.scopeCount, cardComplete: done };
   } catch (error) {
     const message = error instanceof Error ? error.message : "";
     const code = /^AUTOMATION_[A-Z0-9_]{1,64}$/.test(message) ? message : "AUTOMATION_OPERATION_UNAVAILABLE";
-    try { await automationRpc("assistant_auto_hold", { ...leaseArguments(lease), p_code: code }); } catch { /* durable lease remains held */ }
+    try { await ports.rpc("assistant_auto_hold", { ...leaseArguments(lease), p_code: code }); } catch { /* durable lease remains held */ }
     return { held: true, area: lease.manifest.area, cardId: lease.manifest.cardId, code };
   }
 }

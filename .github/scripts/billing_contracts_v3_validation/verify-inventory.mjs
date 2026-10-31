@@ -3,23 +3,35 @@ import { readFileSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-// Reviewed current TEST inventory: 15 suites / 175 tests; no Live isolation draft suites.
+// Reviewed current inventory:27 suites/447 tests, including Live isolation and native schema proofs.
 export const billingInventory = new Map([
   ["automatic-trial-absence.test.ts", 4],
   ["billing-concurrency.integration.test.ts", 3],
   ["billing-contracts-v3.test.ts", 36],
   ["billing-corrective-v3.integration.test.ts", 20],
   ["billing-foundation.test.ts", 15],
+  ["billing-mode-endpoint.test.ts", 6],
   ["billing-paid-quota-alignment.integration.test.ts", 14],
   ["billing-plan-lesson-contract.integration.test.ts", 4],
   ["billing-public-rpc-bridge.test.ts", 15],
   ["billing-service-role-auth.test.ts", 9],
+  ["billing-wiring.test.ts", 72],
+  ["live-endpoint-dispatch.test.ts", 6],
+  ["live-offer-operations.test.ts", 15],
+  ["live-price-inventory.integration.test.ts", 1],
   ["native-rehearsal-contract.test.ts", 5],
+  ["stripe-environment.test.ts", 13],
   ["stripe-generation-decisions.test.ts", 13],
   ["stripe-handlers.test.ts", 5],
+  ["stripe-live-offers-db.test.ts", 1],
+  ["stripe-live-offers.test.ts", 18],
+  ["stripe-live-risk-schema.integration.test.ts", 2],
+  ["stripe-live-risk.test.ts", 33],
+  ["stripe-live.test.ts", 65],
   ["stripe-refunds.integration.test.ts", 8],
-  ["stripe-refunds.test.ts", 14],
+  ["stripe-refunds.test.ts", 23],
   ["stripe-resubscription-generation.integration.test.ts", 10],
+  ["test-stripe-lockdown.test.ts", 31],
 ]);
 
 export const quizInventory = new Map([["quiz-attempt-db-acl.integration.test.ts", 1]]);

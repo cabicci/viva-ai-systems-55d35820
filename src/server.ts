@@ -69,6 +69,26 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
+      // The published Worker reaches this entry even when its bundled file-route
+      // dispatcher misses a server route. Each exact path shares its original
+      // guarded handler with the file route; no blanket API bypass is allowed.
+      if (new URL(request.url).pathname === "/api/billing/mode") {
+        const { handleBillingMode } = await import("./lib/billing/mode-endpoint.server");
+        return await handleBillingMode(request);
+      }
+      const pathname = new URL(request.url).pathname;
+      if (pathname === "/api/stripe-live/checkout") {
+        const { handleLiveCheckout } = await import("./lib/billing/live/endpoints.server");
+        return await handleLiveCheckout(request);
+      }
+      if (pathname === "/api/stripe-live/portal") {
+        const { handleLivePortal } = await import("./lib/billing/live/endpoints.server");
+        return await handleLivePortal(request);
+      }
+      if (pathname === "/api/public/stripe-live-webhook") {
+        const { handleLiveWebhook } = await import("./lib/billing/live/endpoints.server");
+        return await handleLiveWebhook(request);
+      }
       if (new URL(request.url).pathname === "/api/internal/assistant-indexing") {
         const { handleAutomaticIndexing } = await import("./lib/assistant-automation/endpoint.server");
         return await handleAutomaticIndexing(request);

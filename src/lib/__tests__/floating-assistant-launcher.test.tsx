@@ -143,7 +143,9 @@ describe("floating assistant activation", () => {
 
   it("keeps dragging separate from activation without suppressing the next click", () => {
     renderLauncher();
-    pointer("down", 860, 716);
+    // Start inside the actual RTL launcher, not the old hardcoded LTR end.
+    const start = launcher().getBoundingClientRect();
+    pointer("down", start.left + 20, start.top + 20);
     pointer("move", 100, 40);
     pointer("up", 100, 40);
     fireEvent.click(launcher(), { detail: 1 });

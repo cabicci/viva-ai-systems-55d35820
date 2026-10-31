@@ -43,7 +43,6 @@ export function Navbar({ variant = "public" }: { variant?: "public" | "account" 
   const [learningOpen, setLearningOpen] = useState(false);
   const aiLearningLinks = [
     { to: "/my-learning", label: c.learning },
-    { to: "/ai-assistant", label: t("sidebar.assistant") },
     { to: "/analytics", label: t("sidebar.analytics") },
   ];
   const links = line

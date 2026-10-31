@@ -7,6 +7,7 @@ on:
       - "src/routes/*commerce*"
       - "supabase/migrations/20261004*commerce*"
       - "scripts/email-access/**"
+      - "scripts/free-access/**"
       - "supabase/functions/_shared/email-access-mail-worker.ts"
       - "src/components/kids/KidsConsentControl.tsx"
       - "src/components/kids/KidsConsentControl.test.tsx"

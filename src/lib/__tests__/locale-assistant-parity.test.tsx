@@ -1,3 +1,4 @@
+import { assistantAuthFixture } from "@/test/assistant-auth-fixture";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it, vi } from "vitest";
@@ -28,13 +29,14 @@ vi.mock("@/lib/learner-context", () => ({
   useLearnerContext: () => baseCtxProvider(),
 }));
 
-vi.mock("@/lib/auth-context", () => ({
-  useAuth: () => ({ user: { id: "test-user" } }),
-}));
+const auth = assistantAuthFixture(() => "test-user");
+vi.mock("@/lib/auth-context", () => ({ useAuth: () => auth }));
 
 
 function baseCtxProvider(): Pick<
   LearnerContext,
+  | "currentUser"
+  | "currentRoute"
   | "currentPath"
   | "currentModule"
   | "currentLesson"
@@ -45,6 +47,8 @@ function baseCtxProvider(): Pick<
   | "isReady"
 > {
   return {
+    currentUser: { id: "test-user", email: null, isAuthenticated: true },
+    currentRoute: "/learn/intro/" + LESSON_ID,
     currentPath: { id: "intro", title: "Egyptian path" } as LearnerContext["currentPath"],
     currentModule: { id: "m1", title: "Egyptian module" } as LearnerContext["currentModule"],
     currentLesson: {

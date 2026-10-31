@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { applyTrustedSiteConsent } from "@/lib/trustedsite";
 
 const scriptSelector = 'script[src="https://cdn.ywxi.net/js/1.js"]';
@@ -22,5 +22,24 @@ describe("TrustedSite consent", () => {
     expect(scripts).toHaveLength(1);
     expect(scripts[0].async).toBe(true);
     expect(scripts[0].parentElement).toBe(document.body);
+  });
+
+  it("opens the destination page, not the previous one, when a sensitive page clears the script", () => {
+    applyTrustedSiteConsent("granted");
+    const assign = vi.fn();
+    const reload = vi.fn();
+    const original = window.location;
+    Object.defineProperty(window, "location", {
+      configurable: true,
+      value: { pathname: "/", search: "", hash: "", assign, reload },
+    });
+    try {
+      applyTrustedSiteConsent("denied", "/login?returnTo=%2Fmy-learning");
+    } finally {
+      Object.defineProperty(window, "location", { configurable: true, value: original });
+    }
+    expect(assign).toHaveBeenCalledWith("/login?returnTo=%2Fmy-learning");
+    expect(reload).not.toHaveBeenCalled();
+    expect(document.querySelector(scriptSelector)).toBeNull();
   });
 });

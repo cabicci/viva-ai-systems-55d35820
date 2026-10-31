@@ -218,6 +218,7 @@ export interface PaymentMethod {
   currencies: string[];
 }
 export interface Quote {
+  live_stripe_available?: boolean;
   original_minor: number;
   final_minor: number;
   currency: string;

@@ -1,3 +1,5 @@
+import { isTestStripeLocked, TEST_STRIPE_LOCKED } from "../_shared/billing-mode.ts";
+
 const ALLOWED_ORIGINS = new Set([
   "https://masaarat.ai",
   "https://www.masaarat.ai",
@@ -97,6 +99,8 @@ Deno.serve(async (request) => {
     return new Response(null, { status: 204, headers: corsHeaders(origin) });
   }
   if (request.method !== "POST") return json({ error: "METHOD_NOT_ALLOWED" }, 405, origin);
+  // The Test portal can resume a cancelled plan; closed while Live mode is selected.
+  if (isTestStripeLocked((name) => Deno.env.get(name))) return json({ error: TEST_STRIPE_LOCKED }, 503, origin);
 
   try {
     const user = await authenticate(request);

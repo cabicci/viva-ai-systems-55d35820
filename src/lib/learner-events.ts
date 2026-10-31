@@ -1,4 +1,5 @@
 import { supabase } from "@/integrations/supabase/client";
+import { ownsCurrentEffect, type OwnedEffectContext } from "./owned-effect-context";
 
 export type LearnerEventType =
   | "lesson_opened"
@@ -47,14 +48,17 @@ export interface LearnerEventInput {
 /* -------------------------------------------------------------- */
 let cachedUserId: string | null = null;
 let cacheInitialized = false;
+let authEpoch = 0;
 
 function initCache() {
   if (cacheInitialized || typeof window === "undefined") return;
   cacheInitialized = true;
+  const observedEpoch = authEpoch;
   supabase.auth.getSession().then(({ data }) => {
-    cachedUserId = data.session?.user?.id ?? null;
+    if (authEpoch === observedEpoch) cachedUserId = data.session?.user?.id ?? null;
   });
   supabase.auth.onAuthStateChange((_event, session) => {
+    authEpoch++;
     cachedUserId = session?.user?.id ?? null;
   });
 }
@@ -64,16 +68,18 @@ function initCache() {
  * Silent on failure (telemetry must never break the UX).
  * Skips when user is not signed in (RLS would reject anyway).
  */
-export async function logLearnerEvent(input: LearnerEventInput): Promise<void> {
+export async function logLearnerEvent(input: LearnerEventInput, context?: OwnedEffectContext): Promise<void> {
   try {
     initCache();
     let userId = cachedUserId;
+    const observedEpoch = authEpoch;
     if (!userId) {
       const { data } = await supabase.auth.getSession();
+      if (authEpoch !== observedEpoch) return;
       userId = data.session?.user?.id ?? null;
       cachedUserId = userId;
     }
-    if (!userId) return;
+    if (!userId || !ownsCurrentEffect(context, userId) || authEpoch !== observedEpoch) return;
 
     await supabase.from("learner_events").insert({
       user_id: userId,

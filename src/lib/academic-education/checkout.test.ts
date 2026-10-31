@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import ts from "typescript";
 import { beforeEach, expect, it, vi } from "vitest";
 import { coordinateKidsCheckout } from "../../../supabase/functions/_shared/checkout-coordinator";
+import * as billingMode from "../../../supabase/functions/_shared/billing-mode";
 let endpoint: (request: Request) => Promise<Response>;
 let calls: { url: string; body: unknown }[];
 let released: boolean;
@@ -18,7 +19,7 @@ beforeEach(() => {
     { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } },
   ).outputText;
   new Function("require", "Deno", "exports", "fetch", compiled)(
-    () => ({ coordinateKidsCheckout }),
+    (path: string) => (path.includes("billing-mode") ? billingMode : { coordinateKidsCheckout }),
     {
       env: {
         get: (name: string) =>

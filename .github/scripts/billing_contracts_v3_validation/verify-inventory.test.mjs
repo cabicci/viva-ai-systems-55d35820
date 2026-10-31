@@ -13,9 +13,9 @@ const validLog = [
   ` Tests  ${total} passed (${total})`,
 ].join("\n");
 
-test("accepts the reviewed 15-suite, 175-test inventory and the separate quiz ACL proof", () => {
-  assert.equal(total, 175);
-  assert.match(verifyInventory(validLog, "A", names), /15 named suites, 175 passing tests/);
+test("accepts the reviewed 27-suite, 447-test inventory and the separate quiz ACL proof", () => {
+  assert.equal(total, 447);
+  assert.match(verifyInventory(validLog, "A", names), /27 named suites, 447 passing tests/);
   const quiz = ` ✓ src/lib/__tests__/quiz-attempt-db-acl.integration.test.ts (1 test)\n Test Files  1 passed (1)\n Tests  1 passed (1)`;
   assert.match(verifyInventory(quiz, "C"), /1 named suites, 1 passing tests/);
   assert.equal(quizInventory.size, 1);

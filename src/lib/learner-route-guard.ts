@@ -18,3 +18,8 @@ export async function requireLearnerBeforeLoad(context?: {
   const search = parseAuthIntentSearch({ locale, returnTo: context?.location.pathname });
   throw redirect({ to: "/login", search, replace: true });
 }
+
+// Document requests cannot use the browser SDK session. Render only the pending
+// shell until hydration, then verify the server request BEFORE the lesson loader.
+// Neither authored content nor private loader data is emitted during SSR.
+export const learnerLessonAccess = { ssr: false, beforeLoad: requireLearnerBeforeLoad } as const;

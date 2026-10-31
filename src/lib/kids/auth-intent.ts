@@ -19,7 +19,9 @@ export const SAFE_LINE_RETURNS = [
 ] as const;
 type LearnerReturn =
   `/learn/${"intro" | "business" | "creator" | "analyst" | "automator" | "builder"}/${string}`;
-type SafeReturn = (typeof SAFE_LINE_RETURNS)[number] | LearnerReturn;
+type AcademicReturn = `/academic/learn/${string}`;
+type TechnicalReturn = `/technical/learn/${string}`;
+type SafeReturn = (typeof SAFE_LINE_RETURNS)[number] | LearnerReturn | AcademicReturn | TechnicalReturn;
 
 export function isLearnerAuthReturn(value: unknown): value is LearnerReturn {
   return (
@@ -31,6 +33,22 @@ export function isLearnerAuthReturn(value: unknown): value is LearnerReturn {
   );
 }
 
+export function isAcademicAuthReturn(value: unknown): value is AcademicReturn {
+  return (
+    typeof value === "string" &&
+    value === value.trim() &&
+    /^\/academic\/learn\/[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*-M[0-9]{2}-L[0-9]{2}$/.test(value)
+  );
+}
+
+export function isTechnicalAuthReturn(value: unknown): value is TechnicalReturn {
+  return (
+    typeof value === "string" &&
+    value === value.trim() &&
+    /^\/technical\/learn\/[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*$/.test(value)
+  );
+}
+
 /** Only fixed local paths or plain lesson paths; never URLs, queries or encoded redirects.
  * /build-logs always re-enters its mandatory server admin guard; it grants no access.
  */
@@ -38,7 +56,7 @@ export function isSafeAuthReturn(value: unknown): value is SafeReturn {
   return (
     typeof value === "string" &&
     (SAFE_LINE_RETURNS.includes(value as (typeof SAFE_LINE_RETURNS)[number]) ||
-      isLearnerAuthReturn(value))
+      isLearnerAuthReturn(value) || isAcademicAuthReturn(value) || isTechnicalAuthReturn(value))
   );
 }
 
@@ -61,8 +79,7 @@ export function parseAuthIntentSearch(raw: Record<string, unknown>): AuthIntentS
 
 export function kidsSignupRedirect(origin: string, search: AuthIntentSearch): string {
   if (search.intent !== "kids") {
-    if (!isSafeAuthReturn(search.returnTo)) return `${origin}/dashboard`;
-    const destination = new URL(search.returnTo, origin);
+    const destination = new URL(isSafeAuthReturn(search.returnTo) ? search.returnTo : "/dashboard", origin);
     if (search.locale) destination.searchParams.set("locale", search.locale);
     return destination.toString();
   }

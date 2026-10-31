@@ -1,5 +1,7 @@
 import { getUiString } from "@/lib/locale/ui-strings";
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "@tanstack/react-router";
+import type { ComponentProps } from "react";
 import { ArrowUpRight, BookOpen } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
@@ -51,6 +53,18 @@ type PathView = {
   onOpen?: () => void;
 };
 const panel = "rounded-3xl border border-border bg-card p-6 md:p-8";
+/** Keep the current auth provider and the server-fn bearer middleware on internal transitions. */
+function JourneyLink({ href, ...props }: ComponentProps<"a"> & { href: string }) {
+  const destination = new URL(href, "https://masaarat.invalid");
+  return (
+    <Link
+      to={destination.pathname}
+      search={Object.fromEntries(destination.searchParams)}
+      hash={destination.hash.slice(1)}
+      {...props}
+    />
+  );
+}
 function State({
   loading,
   error,
@@ -105,28 +119,27 @@ function PathCard({ path }: { path: PathView }) {
       {s.total > 0 && s.completed === s.total && <p className="mb-4 text-sm">{c.allDone}</p>}
       <div className="flex flex-wrap gap-3">
         {target && (
-          <a
+          <JourneyLink
             href={target.href}
             onClick={path.onOpen}
             className="inline-flex min-h-11 items-center gap-2 rounded-full bg-primary px-5 font-bold text-primary-foreground"
           >
             {s.resume ? c.resume : s.completed ? c.next : c.start}
             <ArrowUpRight className="h-4 w-4 rtl:-scale-x-100" />
-          </a>
+          </JourneyLink>
         )}
-        <a
+        <JourneyLink
           href={path.contents}
           onClick={path.onOpen}
           className="inline-flex min-h-11 items-center gap-2 rounded-full border border-border px-5 font-semibold"
         >
           <BookOpen className="h-4 w-4" />
           {c.contents}
-        </a>
+        </JourneyLink>
       </div>
       {path.line === "ai" && (
         <div className="mt-5 flex flex-wrap gap-5 text-sm font-semibold text-primary">
-          <a href={`/ai-assistant?locale=${locale}`}>{getUiString(locale, "sidebar.assistant")}</a>
-          <a href={`/analytics?locale=${locale}`}>{getUiString(locale, "sidebar.analytics")}</a>
+          <JourneyLink href={`/analytics?locale=${locale}`}>{getUiString(locale, "sidebar.analytics")}</JourneyLink>
         </div>
       )}
     </article>
@@ -202,6 +215,7 @@ export function JourneyPage() {
                   lessonId: l.id,
                   tier: ent.tier,
                   isAdmin: ent.isAdmin,
+                  freeLessonIds: ent.freeLessonIds,
                   introCompletedCount: introDone,
                   introTotal: intro.length,
                 }).kind === "open",
@@ -274,12 +288,12 @@ export function JourneyPage() {
               <p className="my-3">
                 {latest.path.title} · {latest.resume!.title}
               </p>
-              <a
+              <JourneyLink
                 href={latest.resume!.href}
                 className="inline-flex min-h-11 items-center rounded-full bg-primary px-6 font-bold text-primary-foreground"
               >
                 {c.resume}
-              </a>
+              </JourneyLink>
             </section>
           )}
         <section className="grid gap-6 md:grid-cols-2" aria-label={c.progress}>
@@ -338,24 +352,24 @@ function KidsJourneys({
         parent.state !== "unavailable" &&
         parent.profiles.length === 0 &&
         !admin && <p>{c.noChild}</p>}
-      <a
+      <JourneyLink
         className="inline-flex min-h-11 items-center font-bold text-primary underline"
         href={`/kids/family?locale=${locale}`}
       >
         {c.familyLink}
-      </a>
+      </JourneyLink>
       {admin && (
         <div className="grid gap-5 md:grid-cols-3">
           {KIDS_LEVELS.map((level) => (
             <article key={level.id} className={panel}>
               <h3 className="font-bold">{getPathDefinition("kids", locale, level.ages).title}</h3>
               <p className="my-3 text-sm">{c.previewNote}</p>
-              <a
+              <JourneyLink
                 className="inline-flex min-h-11 items-center font-bold text-primary underline"
                 href={`/kids/${level.id}/contents?locale=${locale}`}
               >
                 {c.preview}
-              </a>
+              </JourneyLink>
             </article>
           ))}
         </div>

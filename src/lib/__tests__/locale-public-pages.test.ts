@@ -102,7 +102,7 @@ describe("public page locale (pricing, terms, privacy, home, login, root)", () =
     }
   });
 
-  it("distinguishes Stripe test checkout from real manual transfers in every locale", () => {
+  it("states payment confirmation, renewal and manual-access verification in every locale", () => {
     const copyKeys = [
       "pricing.hero.subtitle",
       "pricing.legal.note",
@@ -114,18 +114,34 @@ describe("public page locale (pricing, terms, privacy, home, login, root)", () =
     for (const locale of SUPPORTED_LOCALES) {
       const blob = copyKeys.map((key) => getUiString(locale, key)).join(" ");
       if (locale === "en") {
-        expect(blob).toMatch(/test/i);
-        expect(blob).toMatch(/real money/i);
-        expect(getUiString(locale, "pricing.faq.2.a")).toMatch(/manual.*real money/i);
+        expect(blob).toMatch(/before confirm/i);
+        expect(getUiString(locale, "terms.section.subscription.body")).toMatch(
+          /Stripe subscriptions renew.*until canceled/i,
+        );
+        expect(getUiString(locale, "terms.section.subscription.body")).toMatch(
+          /receipt alone does not activate access/i,
+        );
+        expect(getUiString(locale, "pricing.faq.2.a")).toMatch(
+          /Manual transfers require a receipt/i,
+        );
         expect(getUiString(locale, "pricing.faq.2.a")).toMatch(/administrator.*verif/i);
       } else {
-        expect(blob).toMatch(/تجريبي/);
-        expect(blob).toMatch(/(?:فلوس|أموال)/);
+        expect(blob).toMatch(/قبل التأكيد/);
+        expect(getUiString(locale, "terms.section.subscription.body")).toMatch(
+          /اشتراكات Stripe تتجدد.*حتى الإلغاء/,
+        );
+        expect(getUiString(locale, "terms.section.subscription.body")).toMatch(
+          /الإيصال وحده لا يفعّل الباقة/,
+        );
         expect(getUiString(locale, "pricing.faq.2.a")).toMatch(/التحويل اليدوي/);
         expect(getUiString(locale, "pricing.faq.2.a")).toMatch(/مراجعة.*الإدارة/);
       }
 
-      for (const key of copyKeys) expect(getUiString(locale, key)).toContain("Stripe");
+      for (const key of copyKeys) {
+        const text = getUiString(locale, key);
+        expect(text).not.toBe(key);
+        expect(text).not.toMatch(/Stripe.*test mode|Stripe تجريبي/);
+      }
 
       expect(getUiString(locale, "pricing.badge.comingSoon")).not.toMatch(/coming soon|قريب/i);
       expect(getUiString(locale, "pricing.cta.paymentPending")).not.toMatch(/coming soon|قريب/i);

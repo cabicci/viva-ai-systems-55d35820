@@ -1,5 +1,6 @@
 import { decidePaidPlanEvidence } from "../_shared/stripe-generation-decisions.ts";
 import { resolveStripeRefund } from "../_shared/stripe-refunds.ts";
+import { isTestStripeLocked, testEventAllowedWhileLocked, TEST_STRIPE_LOCKED } from "../_shared/billing-mode.ts";
 import { financialDeliveryExpired } from "../_shared/account-financial-gate.ts";
 
 const STRIPE_API_VERSION = "2026-07-29.dahlia";
@@ -169,10 +170,18 @@ Deno.serve(async (request) => {
 
     const event = JSON.parse(rawBody) as StripeEvent;
     if (event.livemode) return response({ error: "LIVE_EVENT_REJECTED" }, 400);
+    // Live mode selected: signed Test events may only remove access (refunds,
+    // subscription deletion). Anything that could grant, extend or restore paid
+    // access is acknowledged and dropped with no database call.
+    if (isTestStripeLocked((name) => Deno.env.get(name)) && !testEventAllowedWhileLocked(event.type))
+      return response({ received: true, ignored: true, reason: TEST_STRIPE_LOCKED });
 
     if (["refund.created", "refund.updated", "refund.failed"].includes(event.type)) {
       const resolved = await resolveStripeRefund(String(event.data.object.id), stripeGet);
       if (!resolved) return response({ received: true, ignored: true });
+      // A failed/cancelled refund could restore access: dropped while Test is locked.
+      if (isTestStripeLocked((name) => Deno.env.get(name)) && resolved.refund.status !== "succeeded")
+        return response({ received: true, ignored: true, reason: TEST_STRIPE_LOCKED });
       if (await financialDeliveryExpired(resolved.subscription.metadata?.user_id, rpc))
         return response({ received: true, ignored: true, financial_erased: true });
       if (

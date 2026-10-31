@@ -143,7 +143,7 @@ describe("learning lines and shared account navigation", () => {
           within(learning)
             .getAllByRole("link")
             .map((link) => new URL(link.getAttribute("href")!, "https://test").pathname),
-        ).toEqual(["/my-learning", "/ai-assistant", "/analytics"]);
+        ).toEqual(["/my-learning", "/analytics"]);
         fireEvent.click(screen.getByRole("button", { name: c.learning }));
       }
       fireEvent.click(screen.getByRole("button", { name: "sidebar.account" }));
@@ -180,6 +180,7 @@ describe("learning lines and shared account navigation", () => {
         render(<Navbar variant={user ? "account" : "public"} />);
         fireEvent.click(screen.getByRole("button", { name: "nav.menu" }));
         const switcher = within(screen.getByRole("dialog")).getByRole("region", { name: c.switch });
+        expect(screen.getByRole("dialog").querySelector('a[href^="/ai-assistant"]')).toBeNull();
         expect(within(switcher).getAllByRole("link")).toHaveLength(LEARNING_LINES.length - 1);
         expect(within(switcher).queryByRole("link", { name: c[line] })).not.toBeInTheDocument();
         LEARNING_LINES.filter((item) => item !== line).forEach((item) =>
@@ -208,7 +209,7 @@ describe("learning lines and shared account navigation", () => {
             const learning = within(screen.getByRole("dialog")).getByRole("region", {
               name: c.learning,
             });
-            expect(within(learning).getAllByRole("link")).toHaveLength(3);
+            expect(within(learning).getAllByRole("link")).toHaveLength(2);
           } else {
             expect(
               within(screen.getByRole("dialog")).queryByRole("link", { name: "sidebar.assistant" }),

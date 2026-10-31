@@ -4,6 +4,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
 import { PATHS, getPath, type CurriculumPath } from "@/lib/curriculum-data";
 import { captureWarn } from "@/lib/error-capture";
+import { useFreeAccessSnapshot } from "@/lib/commerce/free-access-client";
+import { ownsCurrentEffect, type OwnedEffectContext } from "./owned-effect-context";
 import {
   isLessonIncludedInTier,
   lessonIdsForTier,
@@ -63,8 +65,11 @@ export function useEntitlement(): {
   isProPlus: boolean;
   isAdmin: boolean;
   isLoaded: boolean;
+  freeLessonIds: readonly string[];
+  freeTargets: readonly string[];
 } {
   const { user, loading } = useAuth();
+  const freeAccess = useFreeAccessSnapshot();
   const userId = user?.id ?? null;
 
   const {
@@ -118,6 +123,8 @@ export function useEntitlement(): {
     isPro: tier === "pro" || tier === "pro_plus",
     isProPlus: tier === "pro_plus",
     isAdmin: admin,
+    freeLessonIds: freeAccess.lessonIds,
+    freeTargets: freeAccess.targets,
     // C6 fix: simplified — when there's no user we're loaded; when there is,
     // we need BOTH the subscription query and the admin query to have settled.
     isLoaded: !loading && (!userId || (isSuccess && adminLoaded)),
@@ -140,6 +147,8 @@ export function useStreak() {
   const { user } = useAuth();
   const userId = user?.id ?? null;
   const qc = useQueryClient();
+  const currentUser = React.useRef(userId);
+  currentUser.current = userId;
 
   const { data, isLoading } = useQuery({
     queryKey: [...STREAK_QK, userId],
@@ -159,8 +168,10 @@ export function useStreak() {
   });
 
   const record = useMutation({
-    mutationFn: async () => {
-      if (!userId) return;
+    mutationFn: async (context?: OwnedEffectContext) => {
+      if (currentUser.current !== userId || !ownsCurrentEffect(context, userId)) return;
+      const session = await supabase.auth.getSession();
+      if (session.data.session?.user?.id !== userId || currentUser.current !== userId || !ownsCurrentEffect(context, userId)) return;
       const { data, error } = await supabase.rpc("record_user_activity");
       if (error) throw error;
       return data;
@@ -171,9 +182,9 @@ export function useStreak() {
   });
 
   const recordMutate = record.mutate;
-  const recordActivity = React.useCallback(() => {
-    if (!userId) return;
-    recordMutate();
+  const recordActivity = React.useCallback((context?: OwnedEffectContext) => {
+    if (!ownsCurrentEffect(context, userId)) return;
+    recordMutate(context);
   }, [userId, recordMutate]);
 
   return {
@@ -198,8 +209,10 @@ export function decideLessonGate(args: {
   isAdmin: boolean;
   introCompletedCount: number;
   introTotal: number;
+  freeLessonIds?: readonly string[];
 }): LessonGate {
   if (args.isAdmin) return { kind: "open" };
+  if (args.freeLessonIds?.includes(args.lessonId)) return { kind: "open" };
 
   if (args.tier !== "free") {
     return isLessonIncludedInTier(args.lessonId, args.tier)
@@ -235,6 +248,7 @@ export function useLessonGate(lessonId: string, introCompletedCount: number) {
     lessonId,
     tier: ent.tier,
     isAdmin: ent.isAdmin,
+    freeLessonIds: ent.freeLessonIds,
     introCompletedCount,
     introTotal,
   });

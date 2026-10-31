@@ -10,6 +10,7 @@ import {
 
 import type { Order, Invitation } from "./contracts";
 import { emailAccessDbCases } from "./email-access-db-cases";
+import { freeAccessDbCases } from "./free-access-db-cases";
 type CommandResult = Order & {
   enabled: boolean;
   [index: number]: Invitation & { error: string; enabled: boolean };
@@ -26,6 +27,7 @@ const admin = randomUUID(),
   user = randomUUID(),
   other = randomUUID();
 emailAccessDbCases(() => db, { admin, user, other });
+freeAccessDbCases(() => db, { admin, user, other });
 const command = async (action: string, data: unknown = {}) =>
   (
     await db.query<{ value: CommandResult }>(
@@ -101,6 +103,7 @@ beforeAll(async () => {
       throw error;
     }
   await db.exec(readFileSync("scripts/email-access/email-access-candidate.sql", "utf8"));
+  await db.exec(readFileSync("scripts/free-access/free-access-candidate.sql", "utf8"));
   await db.exec(`INSERT INTO auth.users(id,email,email_confirmed_at) VALUES('${admin}','admin@example.test',now()),('${user}','member@example.test',now()),('${other}','other@example.test',now());
       INSERT INTO public.user_roles VALUES('${admin}','admin');`);
 }, 30000);
@@ -1652,4 +1655,3 @@ it.skipIf(!nativeUrl)(
     }
   },
 );
-
