@@ -60,6 +60,9 @@ jobs:
       - name: Disposable schema-read TLS boundary (no connection)
         run: bunx vitest run src/test/billing-schema-ssl.test.ts
 
+      - name: Disposable prerequisite target and replay boundary (no connection)
+        run: bunx vitest run --config scripts/billing/vitest.prerequisites.config.ts
+
       - name: Setup Supabase CLI
         uses: supabase/setup-cli@ab058987d8d6c725971f6cf9d0b5c98467e30bd1
         with:

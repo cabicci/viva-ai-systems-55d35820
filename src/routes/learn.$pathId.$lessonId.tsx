@@ -404,7 +404,7 @@ function UnifiedLessonPage() {
   const nextLocked = isLessonNavigationMissionLocked(missionGate);
 
   const assistantContextOverride = useMemo(() => {
-    if (!isLocalizedPackagePage || !localizedPackage || missionShape === undefined) {
+    if (missionShape === undefined) {
       return null;
     }
     return buildLocalizedAssistantContextOverride({

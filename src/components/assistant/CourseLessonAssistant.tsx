@@ -9,7 +9,7 @@ import { CardPathAssistant } from "./CardPathAssistant";
 import { useAuth } from "@/lib/auth-context";
 
 type Props = { locale: SupportedLocale } & (
-  | { area: "ai"; contextOverride: AssistantContextOverride | null; pathId?: string; lessonId?: string }
+  | { area: "ai"; contextOverride: AssistantContextOverride | null; pathId: string; lessonId: string }
   | { area: "kids"; cardId: string; stepId: string; profileId: string }
   | { area: "technical"; cardId: string; stepId: string }
   | { area: "academic"; cardId: string; stepId: string }
@@ -20,13 +20,20 @@ type Props = { locale: SupportedLocale } & (
 export function CourseLessonAssistant(props: Props) {
   const { user } = useAuth();
   inheritedCoursePlatform(props.area);
+  const scopeMissing = props.area === "ai"
+    ? !props.contextOverride || !props.contextOverride.currentModuleId ||
+      props.contextOverride.currentPathId !== props.pathId ||
+      props.contextOverride.currentLessonId !== props.lessonId
+    : !props.cardId || !props.stepId || (props.area === "kids" && !props.profileId);
   const scopeKey = JSON.stringify([user?.id ?? null, props.area, props.locale,
     props.area === "ai" ? props.pathId ?? props.contextOverride?.currentPathId : props.cardId,
     props.area === "ai" ? props.lessonId ?? props.contextOverride?.currentLessonId : props.stepId,
     props.area === "kids" ? props.profileId : null]);
   return <FloatingAssistantLauncher key={scopeKey} fabLabel={getUiString(props.locale, "learn.assistant.fab")}
     fabAriaLabel={getUiString(props.locale, "learn.assistant.fabAria")} panelTitle={getUiString(props.locale, "sidebar.assistant")}>
-    {props.area === "academic" ? <AcademicAssistantPanel courseId={props.cardId} lessonId={props.stepId} locale={props.locale} /> :
+    {!user?.id || scopeMissing ? <p role="alert">{getUiString(props.locale, !user?.id
+      ? "assistant.panel.error.auth" : "assistant.panel.scope.open")}</p> :
+    props.area === "academic" ? <AcademicAssistantPanel courseId={props.cardId} lessonId={props.stepId} locale={props.locale} /> :
       props.area === "ai" ? <AssistantPanel compact contextOverride={props.contextOverride} /> :
       <CardPathAssistant area={props.area} cardId={props.cardId} stepId={props.stepId} locale={props.locale}
         {...(props.area === "kids" ? { profileId: props.profileId } : {})} compact />}

@@ -57,7 +57,8 @@ reset_disposable_db() {
   local reset_log="${REPORT_DIR}/db-reset.log"
   if (cd "$DISPOSABLE_ROOT" && npx supabase db reset --yes) \
     > "$reset_log" 2>&1; then
-    return 0
+    prepare_disposable_prerequisites
+    return $?
   fi
 
   echo "[billing-v3-harness] db reset attempt 1 failed; retrying once"
@@ -67,12 +68,20 @@ reset_disposable_db() {
   if (cd "$DISPOSABLE_ROOT" && npx supabase db reset --yes) \
     >> "$reset_log" 2>&1; then
     echo "[billing-v3-harness] db reset recovered on retry"
-    return 0
+    prepare_disposable_prerequisites
+    return $?
   fi
 
   echo "[billing-v3-harness] db reset FAILED after 2 attempts"
   tail -n 40 "$reset_log" || true
   return 1
+}
+
+prepare_disposable_prerequisites() {
+  # Supabase reset does not replay the later Drizzle/native billing baseline.
+  # Install exact existing SQL and synthetic catalogue rows only on loopback.
+  bun scripts/billing/prepare-disposable-prerequisites.ts \
+    > "${REPORT_DIR}/disposable-prerequisites.log" 2>&1
 }
 
 # ---------------------------------------------------------------------------
@@ -88,7 +97,7 @@ else
   if ! reset_disposable_db; then
     overall_status=1
     echo "- Result: FAIL (database reset before Phase A)" >> "$REPORT"
-  elif bunx vitest run --no-file-parallelism src/lib/billing/__tests__/ > "${REPORT_DIR}/unit.log" 2>&1; then
+  elif MIGRATIONS_PREAPPLIED=1 bunx vitest run --no-file-parallelism src/lib/billing/__tests__/ > "${REPORT_DIR}/unit.log" 2>&1; then
     # Strip ANSI so count matching is stable under CI color output.
     sed -E 's/\x1B\[[0-9;]*[A-Za-z]//g' "${REPORT_DIR}/unit.log" > "${REPORT_DIR}/unit.plain.log"
     # Verify the reviewed suite paths and per-file counts as well as the exact
@@ -124,7 +133,7 @@ if [ "${BILLING_DISPOSABLE_DB:-0}" = "1" ]; then
   if ! reset_disposable_db; then
     overall_status=1
     echo "- Result: FAIL (database reset before Phase B)" >> "$REPORT"
-  elif bun run scripts/billing/run-concurrency-proof.ts > "${REPORT_DIR}/concurrency.log" 2>&1; then
+  elif MIGRATIONS_PREAPPLIED=1 bun run scripts/billing/run-concurrency-proof.ts > "${REPORT_DIR}/concurrency.log" 2>&1; then
     echo "- Result: PASS" >> "$REPORT"
   else
     overall_status=1

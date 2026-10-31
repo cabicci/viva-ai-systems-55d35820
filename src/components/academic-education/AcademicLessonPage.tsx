@@ -142,7 +142,7 @@ function AuthorizedLesson({
   const labels: Record<string, string> = Object.fromEntries(
     (
       ["reading", "example", "video", "quiz", "practice", "faq", "downloads", "assistant"] as const
-    ).map((key) => [key, c[key]]),
+    ).filter((key) => key !== "assistant" || !delivery.assistantAllowed).map((key) => [key, c[key]]),
   );
   const practiceFields =
     normalizeAcademicPracticeValues(lesson.id, locale, lesson.assignment.fields.length, fields) ??
@@ -437,24 +437,24 @@ function AuthorizedLesson({
               )}
             </>
           )}
-          {tab === "assistant" &&
-            (delivery.assistantAllowed ? (
-              <CourseLessonAssistant
-                area="academic"
-                key={`${courseId}:${lesson.id}:${locale}`}
-                cardId={courseId}
-                stepId={lesson.id}
-                locale={locale}
-              />
-            ) : (
+          {tab === "assistant" && !delivery.assistantAllowed && (
               <p className="leading-8">
                 {en
                   ? "The assistant for this course requires separate access and activation."
                   : "مساعد هذا المسار يحتاج صلاحية مستقلة وتفعيل الخدمة."}
               </p>
-            ))}
+            )}
         </section>
       </div>
+      {delivery.assistantAllowed && (
+        <CourseLessonAssistant
+          area="academic"
+          key={`${courseId}:${lesson.id}:${locale}`}
+          cardId={courseId}
+          stepId={lesson.id}
+          locale={locale}
+        />
+      )}
       <AcademicAdjacentNavigation
         userId={user?.id}
         courseId={courseId}

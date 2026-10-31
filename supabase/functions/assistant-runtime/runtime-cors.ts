@@ -23,7 +23,8 @@ export function corsHeadersFor(req: Request, backendUrl?: string): Record<string
   // The independently identified staging preview is admitted only by its own
   // backend. A production deployment never inherits this staging origin.
   const staging = backendUrl?.replace(/\/$/, "") === "https://rifujqqlqtfmopaukghn.supabase.co" &&
-    origin === "https://id-preview--0d675f0a-ecc5-4c62-9217-54973c927902.lovable.app";
+    (origin === "https://id-preview--0d675f0a-ecc5-4c62-9217-54973c927902.lovable.app" ||
+      origin === "https://0d675f0a-ecc5-4c62-9217-54973c927902.lovableproject.com");
   const allowOrigin = ALLOWED_ORIGINS.has(origin) || staging ? origin : "";
   return {
     "Access-Control-Allow-Origin": allowOrigin,

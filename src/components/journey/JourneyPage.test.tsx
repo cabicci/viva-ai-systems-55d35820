@@ -1,5 +1,6 @@
 import { render, screen, waitFor, within, cleanup, fireEvent } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { createMemoryHistory, createRootRoute, createRouter, RouterProvider } from "@tanstack/react-router";
 import { beforeEach, afterEach, it, expect, vi } from "vitest";
 import { JourneyPage } from "./JourneyPage";
 const state = vi.hoisted(() => ({
@@ -79,9 +80,11 @@ vi.mock("@/lib/academic-education/client", () => ({
 }));
 function setup() {
   const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+  const root = createRootRoute({ component: JourneyPage });
+  const router = createRouter({ routeTree: root, history: createMemoryHistory({ initialEntries: ["/"] }) });
   const view = render(
     <QueryClientProvider client={client}>
-      <JourneyPage />
+      <RouterProvider router={router} />
     </QueryClientProvider>,
   );
   return { ...view, client };
@@ -120,6 +123,7 @@ it.each(["ar-EG", "ar-MSA", "ar-Gulf", "en"])(
     );
     for (const a of container.querySelectorAll("main a[href]"))
       expect(a.getAttribute("href")).toContain(`locale=${locale}`);
+    expect(container.querySelector('a[href^="/ai-assistant"]')).toBeNull();
   },
 );
 it("Pro excludes Builder and never resumes a formerly accessible Builder step", async () => {
