@@ -1,3 +1,4 @@
+import { billingSchemaReadSsl } from "../../../test/billing-schema-ssl";
 import { describe, expect, it } from "vitest";
 import postgres from "postgres";
 
@@ -9,7 +10,7 @@ describe.skipIf(!process.env.PGHOST)("Registered Live price inventory", () => {
       database: process.env.PGDATABASE,
       username: process.env.PGUSER,
       password: process.env.PGPASSWORD,
-      ssl: "require",
+      ssl: billingSchemaReadSsl(process.env),
       max: 1,
     });
     try {

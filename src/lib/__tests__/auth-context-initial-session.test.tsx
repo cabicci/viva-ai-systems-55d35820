@@ -1,3 +1,4 @@
+import { waitFor } from "@testing-library/react";
 import { act, createElement } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
@@ -112,8 +113,10 @@ describe("AuthProvider active-device ordering", () => {
     await act(async () => {
       notifyAuth("SIGNED_IN", confirmed);
     });
+    await waitFor(() => expect(mock.welcome).toHaveBeenCalledTimes(1));
     expect(mock.welcome).toHaveBeenCalledTimes(1);
     expect(mock.welcome).toHaveBeenCalledWith();
+    await waitFor(() => expect(mock.rpc).toHaveBeenCalledTimes(1));
     expect(mock.rpc).toHaveBeenCalledTimes(1);
     await act(async () => {
       ownClaimCompleted = true;
@@ -122,6 +125,7 @@ describe("AuthProvider active-device ordering", () => {
       notifyAuth("TOKEN_REFRESHED", { ...confirmed });
     });
     expect(mock.from).toHaveBeenCalledWith("user_active_device");
+    await waitFor(() => expect(mock.welcome).toHaveBeenCalledTimes(1));
     expect(mock.welcome).toHaveBeenCalledTimes(1);
     expect(mock.signOut).not.toHaveBeenCalled();
     await act(async () => {
@@ -143,6 +147,7 @@ describe("AuthProvider active-device ordering", () => {
         user: { ...session.user, email_confirmed_at: "2026-10-03T09:51:06Z" },
       });
     });
+    await waitFor(() => expect(mock.welcome).toHaveBeenCalledTimes(1));
     expect(mock.welcome).toHaveBeenCalledTimes(1);
     expect(mock.signOut).not.toHaveBeenCalled();
   });
@@ -150,6 +155,12 @@ describe("AuthProvider active-device ordering", () => {
     await act(async () => {
       notifyAuth("INITIAL_SESSION", session);
     });
+    await waitFor(() =>
+      expect(mock.rpc).toHaveBeenCalledWith("claim_active_device", {
+        p_device_id: "current-device",
+      }),
+    );
+    await waitFor(() => expect(mock.channel).toHaveBeenCalledTimes(1));
     expect(mock.rpc).toHaveBeenCalledWith("claim_active_device", { p_device_id: "current-device" });
     expect(mock.from).not.toHaveBeenCalled();
     expect(mock.signOut).not.toHaveBeenCalled();
@@ -158,6 +169,7 @@ describe("AuthProvider active-device ordering", () => {
     });
     expect(mock.signOut).not.toHaveBeenCalled();
     await completeClaimAndRestore();
+    await waitFor(() => expect(mock.rpc).toHaveBeenCalledTimes(1));
     expect(mock.rpc).toHaveBeenCalledTimes(1);
     expect(mock.from).toHaveBeenCalledWith("user_active_device");
     expect(mock.signOut).not.toHaveBeenCalled();
@@ -167,12 +179,14 @@ describe("AuthProvider active-device ordering", () => {
     await act(async () => {
       restore.resolve({ data: { session } });
     });
+    await waitFor(() => expect(mock.rpc).toHaveBeenCalledTimes(1));
     expect(mock.rpc).toHaveBeenCalledTimes(1);
     expect(mock.from).not.toHaveBeenCalled();
     await act(async () => {
       notifyAuth("INITIAL_SESSION", session);
     });
     await completeClaimAndRestore();
+    await waitFor(() => expect(mock.rpc).toHaveBeenCalledTimes(1));
     expect(mock.rpc).toHaveBeenCalledTimes(1);
     expect(mock.signOut).not.toHaveBeenCalled();
   });
@@ -186,11 +200,14 @@ describe("AuthProvider active-device ordering", () => {
     await act(async () => {
       notifyAuth("TOKEN_REFRESHED", session);
     });
+    await waitFor(() => expect(mock.rpc).toHaveBeenCalledTimes(1));
     expect(mock.rpc).toHaveBeenCalledTimes(1);
     expect(mock.signOut).not.toHaveBeenCalled();
+    await waitFor(() => expect(mock.channel).toHaveBeenCalledTimes(1));
     await act(async () => {
       notifyDevice({ new: { device_id: "another-device" } });
     });
+    await waitFor(() => expect(mock.signOut).toHaveBeenCalledTimes(1));
     expect(mock.signOut).toHaveBeenCalledTimes(1);
     // The displaced browser must not revoke the replacement browser's session.
     expect(mock.signOut).toHaveBeenCalledWith({ scope: "local" });

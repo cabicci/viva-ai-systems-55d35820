@@ -8,8 +8,15 @@ import dgram from "node:dgram";
 import { syncBuiltinESMExports } from "node:module";
 
 const runnerName = process.env.MASAARAT_LEGACY_FACT_TEST_RUNNER === "node" ? "node:test" : "vitest";
-const runner = await import(runnerName);
-const { describe, it, beforeEach } = runner;
+const runner = runnerName === "node:test" ? await import("node:test") : await import("vitest");
+// Both runners expose this shared registration surface; Node-only and
+// Vitest-only APIs below are imported from their actual runtime explicitly.
+type SharedRunner = {
+  describe(name: string, body: () => void): unknown;
+  it(name: string, body: () => unknown): unknown;
+  beforeEach(body: () => unknown): unknown;
+};
+const { describe, it, beforeEach } = runner as SharedRunner;
 const captureEvidence = runnerName === "node:test" && process.env.MASAARAT_LEGACY_FACT_SCHEMA_SAMPLES === "1";
 let invocations = 0, identityCalls = 0;
 let identity: () => Promise<unknown> = async () => null;
@@ -19,8 +26,8 @@ if (runnerName === "node:test") {
   mock.module(new URL("../ssr-request-auth.server.ts", import.meta.url), {
     namedExports: { resolveVerifiedRequestUser: resolver },
   });
-} else runner.vi.doMock("../ssr-request-auth.server.ts", () => ({ resolveVerifiedRequestUser: resolver }));
-if (captureEvidence) runner.after(() => console.log("# MASAARAT_LEGACY_FACT_INVOCATIONS " + invocations));
+} else (await import("vitest")).vi.doMock("../ssr-request-auth.server.ts", () => ({ resolveVerifiedRequestUser: resolver }));
+if (captureEvidence) (await import("node:test")).after(() => console.log("# MASAARAT_LEGACY_FACT_INVOCATIONS " + invocations));
 
 let forbidden: string[] = [];
 const diagnosticKeys = new Set(["FORCE_COLOR", "NO_COLOR", "NODE_DISABLE_COLORS", "NODE_V8_COVERAGE", "WATCH_REPORT_DEPENDENCIES", "NODE_TEST_CONTEXT"]);

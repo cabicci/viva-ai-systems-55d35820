@@ -1,3 +1,4 @@
+// @vitest-environment node
 import assert from "node:assert/strict";
 import http from "node:http";
 import https from "node:https";
@@ -11,11 +12,18 @@ import type { PersonalBookmarkAuthorityResult } from "./subject-authority.server
 // Default project path remains Vitest. The explicitly selected offline Node
 // runner uses the same cases, mocking the actual module BEFORE adapter import.
 const runnerName = process.env.MASAARAT_BOOKMARK_TEST_RUNNER === "node" ? "node:test" : "vitest";
-const runner = await import(runnerName);
-const { describe, it, beforeEach } = runner;
+const runner = runnerName === "node:test" ? await import("node:test") : await import("vitest");
+// Both runners expose this shared registration surface; Node-only and
+// Vitest-only APIs below are imported from their actual runtime explicitly.
+type SharedRunner = {
+  describe(name: string, body: () => void): unknown;
+  it(name: string, body: () => unknown): unknown;
+  beforeEach(body: () => unknown): unknown;
+};
+const { describe, it, beforeEach } = runner as SharedRunner;
 const captureProjectionEvidence = runnerName === "node:test" && process.env.MASAARAT_BOOKMARK_SCHEMA_SAMPLES === "1";
 let projectionInvocations = 0;
-if (captureProjectionEvidence) runner.after(() => console.log("# MASAARAT_PROJECTION_INVOCATIONS " + projectionInvocations));
+if (captureProjectionEvidence) (await import("node:test")).after(() => console.log("# MASAARAT_PROJECTION_INVOCATIONS " + projectionInvocations));
 let identityCalls = 0;
 let identity: () => Promise<unknown> = async () => null;
 const resolver = async () => { identityCalls++; return identity(); };
@@ -25,7 +33,7 @@ if (runnerName === "node:test") {
     namedExports: { resolveVerifiedRequestUser: resolver },
   });
 } else {
-  runner.vi.doMock("../ssr-request-auth.server.ts", () => ({ resolveVerifiedRequestUser: resolver }));
+  (await import("vitest")).vi.doMock("../ssr-request-auth.server.ts", () => ({ resolveVerifiedRequestUser: resolver }));
 }
 
 let externalAttempts: string[] = [];

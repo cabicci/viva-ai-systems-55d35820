@@ -1,3 +1,4 @@
+import { blockBrowserIO } from "@/test/blocked-browser-io";
 import React, { useEffect } from "react";
 import { act, cleanup, renderHook, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -56,15 +57,18 @@ import { useKidsCompletion } from "./client";
 type View = ReturnType<typeof useKidsCompletion>;
 const response = (lesson: number) => ({ data: [{ profile_id: "child", level_id: "raw-level", lesson_number: lesson, locale: "raw-locale", get private_extra() { throw new Error("private field read"); } }], error: null });
 let clients: QueryClient[] = [], events: string[] = [], trace: Record<string, unknown>;
+let io: ReturnType<typeof blockBrowserIO>;
 const onUnhandled = (reason: unknown) => { events.push("unhandledRejection:" + String(reason)); };
 const onHandled = () => { events.push("rejectionHandled"); };
-beforeEach(() => { f.reset(); events = []; trace = {}; globalThis.__r36IO.network = 0; globalThis.__r36IO.storage = 0; process.on("unhandledRejection", onUnhandled); process.on("rejectionHandled", onHandled); });
+beforeEach(() => { f.reset(); events = []; trace = {}; io = blockBrowserIO(); globalThis.__r36IO = io.counts; process.on("unhandledRejection", onUnhandled); process.on("rejectionHandled", onHandled); });
 afterEach(async context => {
   cleanup(); clients.forEach(c => c.clear()); clients = [];
   await new Promise<void>(resolve => setTimeout(resolve, 30));
   process.removeListener("unhandledRejection", onUnhandled); process.removeListener("rejectionHandled", onHandled);
-  console.log("R36_CASE_RECORD " + JSON.stringify({ id: context.task.name, ...trace, events, blocked_io: globalThis.__r36IO }));
+  console.log("R36_CASE_RECORD " + JSON.stringify({ id: context.task.name, ...trace, events, blocked_io: globalThis.__r36IO, io_guard_installed: io.installed, io_guard_absent: io.absent }));
+  try {
   expect(events).toEqual([]); expect(globalThis.__r36IO).toEqual({ network: 0, storage: 0 });
+  } finally { io.restore(); }
 });
 function mount(level = "raw-level") {
   const qc = new QueryClient({ defaultOptions: { queries: { retry: false, gcTime: Infinity } } }); clients.push(qc);
