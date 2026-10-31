@@ -84,7 +84,8 @@ describe("Child consent control", () => {
     expect(changed).toHaveBeenCalled();
     window.removeEventListener("kids-consent-changed", changed);
   });
-  it("distinguishes a refunded Stripe test payment from an independent active Kids grant", async () => {
+  it.each(["en", "ar-EG", "ar-MSA", "ar-Gulf"])("distinguishes a refunded Stripe payment from an independent active Kids grant in %s", async locale => {
+    mock.locale = locale;
     mock.rpc.mockImplementation((name) => {
       if (name === "kids_parent_privacy_record") {
         return Promise.resolve({
@@ -109,11 +110,18 @@ describe("Child consent control", () => {
       return Promise.resolve({ error: null });
     });
     render(<KidsConsentControl />);
-    expect(await screen.findByText(/Stripe test subscription: Refunded/)).toBeInTheDocument();
-    expect(
-      screen.getByText(/Paid Kids lesson access: Active until 2027-09-27 \(separate test grant\)/),
-    ).toBeInTheDocument();
-    expect(screen.queryByText(/Last paid period through/)).not.toBeInTheDocument();
+    expect(await screen.findByText(locale === "en"
+      ? /^Stripe subscription:\s*Refunded$/
+      : /^اشتراك Stripe:\s*مسترد$/)).toBeInTheDocument();
+    expect(screen.getByText(locale === "en"
+      ? /^Paid Kids lesson access: Active until 2027-09-27 \(separate access grant\)$/
+      : /^الوصول لدروس كيدز المدفوعة: نشط حتى 2027-09-27 \(منحة وصول منفصلة\)$/)).toBeInTheDocument();
+    expect(screen.queryByText(/Last paid period through|آخر فترة مدفوعة حتى/)).not.toBeInTheDocument();
+    // Refunded payment must not become an active Stripe subscription merely
+    // because the independent family grant still grants lesson access.
+    expect(screen.queryByRole("button")).not.toBeInTheDocument();
+    expect(mock.rpc).toHaveBeenCalledWith("get_my_kids_subscription");
+    expect(mock.rpc).toHaveBeenCalledWith("get_my_kids_access_status");
   });
 });
 
