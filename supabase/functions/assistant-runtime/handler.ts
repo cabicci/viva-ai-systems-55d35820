@@ -146,7 +146,6 @@ export interface AssistantRuntimeDeps {
   ): Promise<LocaleRetrieveResult>;
   callLlm(systemPrompt: string, userPrompt: string, modelKey: string): Promise<LlmResult>;
   env: {
-    OPENROUTER_API_KEY?: string;
     OPENAI_API_KEY?: string;
     SUPABASE_URL?: string;
     SUPABASE_SERVICE_ROLE_KEY?: string;
@@ -811,9 +810,9 @@ export async function handleAssistantRuntimeRequest(
 
   // Server env required before any billing/provider call — fail closed and
   // never leak which specific secret is missing. OPENAI_API_KEY is required
-  // for query embeddings; without it retrieval cannot run and must not fall
-  // through to ungrounded generation.
-  const modelKey = deps.env.OPENROUTER_API_KEY;
+  // for both query embeddings and grounded generation using the existing direct
+  // connection; missing configuration cannot fall through to another provider.
+  const modelKey = deps.env.OPENAI_API_KEY;
   const openaiKey = deps.env.OPENAI_API_KEY;
   const supabaseUrl = deps.env.SUPABASE_URL;
   const serviceRoleKey = deps.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -1114,7 +1113,7 @@ ${retrievalBlock}
         // ---- Answer provider attempt (LLM) — only after grounded citations exist. ----
         const registerAnswer = await deps.billingRpc("register_provider_attempt", {
           p_reservation_id: reservationId,
-          p_provider: "openrouter_llm",
+          p_provider: "openai_llm",
           p_provider_request_id: crypto.randomUUID(),
           p_attempt_idempotency_key: `${requestId}:answer`,
         });

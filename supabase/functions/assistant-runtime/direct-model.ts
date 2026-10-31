@@ -1,6 +1,6 @@
 import type { LlmResult } from "./handler.ts";
 
-/** Existing model through the owner's direct provider; never a credit gateway.
+/** Existing native OpenAI model/API contract, adapted to the Edge text answer.
  * Credentials stay in the server environment. There is no retry or fallback.
  */
 export async function callDirectAssistantModel(
@@ -9,10 +9,10 @@ export async function callDirectAssistantModel(
 ): Promise<LlmResult> {
   if (!key) return { ok: false, status: 503, error: "ASSISTANT_PROVIDER_UNAVAILABLE" };
   try {
-    const response = await request("https://openrouter.ai/api/v1/chat/completions", {
+    const response = await request("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${key}` },
-      body: JSON.stringify({ model: "google/gemini-3-flash-preview", temperature: 0.3,
+      body: JSON.stringify({ model: "gpt-4.1-mini-2025-04-14", temperature: 0.2,
         max_tokens: 1800, stream: false,
         messages: [{ role: "system", content: systemPrompt }, { role: "user", content: userPrompt }] }),
       signal: AbortSignal.timeout(30_000),

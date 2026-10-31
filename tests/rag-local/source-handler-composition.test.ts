@@ -32,7 +32,7 @@ function fixture(options:{corrupt?:boolean;withdraw?:boolean;throwModel?:boolean
   // deployed RLS is certified. The full real corpus admission prefix executes.
   verifyJwt:async()=>({ok:true,userId:"11111111-1111-4111-8111-111111111111"}),
   consumeRateLimit:async()=>({allowed:true,resetAt:new Date().toISOString()}),
-  env:{OPENAI_API_KEY:"fixture-only",OPENROUTER_API_KEY:"fixture-only",SUPABASE_URL:"https://fixture.invalid",SUPABASE_SERVICE_ROLE_KEY:"fixture-only"},
+  env:{OPENAI_API_KEY:"fixture-only",SUPABASE_URL:"https://fixture.invalid",SUPABASE_SERVICE_ROLE_KEY:"fixture-only"},
   billingRpc:async name=>({ok:true,data:name==="assistant_card_content_access"?{card_id:pkg.trackId,admin_review:false,lessons:{entitled_lesson_ids:allowed?[pkg.lessonId]:[]}}:
    name==="reserve_learner_ai_access"?{reservation_id:"22222222-2222-4222-8222-222222222222"}:{attempt_index:1}}),
   embedQuery:async()=>Array.from({length:1536},(_,i)=>i===0?1:0),

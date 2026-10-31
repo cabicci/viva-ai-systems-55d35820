@@ -31,12 +31,15 @@ Live risk holds and AI quotas remain separate mandatory gates. Open Kids deliver
 rechecks the protected gate on campaign expiry and retires the old request;
 independently paid families remain open. Failed reads close campaign access.
 
-The existing AI Edge model now uses the owner's direct OpenRouter connection,
-with no Lovable AI Gateway fallback. Its existing Gemini model, a 1,800-token
-output limit, timeout and no automatic retry are explicit. Missing direct
-configuration fails closed. Existing native Academic/Technical generation and
-embedding transports continue using their configured direct OpenAI capability.
-No provider credential is stored in this change.
+The AI Edge reuses the existing direct OpenAI connection and `OPENAI_API_KEY`
+for embeddings and grounded answers. Generation follows the established native
+`gpt-4.1-mini-2025-04-14` Chat Completions contract: temperature 0.2, 1,800 output
+tokens and a 30-second timeout. Edge answers retain their existing text format;
+no server-only or corpus module is imported into the Edge transport. There is
+no provider fallback or automatic retry. No new provider account/key is needed.
+OpenRouter in original01e613df was an implementation assumption, not a verified
+human-selected connection; prior wording claiming an owner's OpenRouter
+connection is superseded here. No provider credential is stored in this change.
 
 ## Database release order
 
@@ -65,15 +68,19 @@ No provider credential is stored in this change.
    permission to label old vectors as verified or to regenerate them blindly.
 5. Verify the matching server/Edge implementation with legitimate test accounts,
    real permissions, source/version/language/citations and a small approved
-   direct embedding/model request. Configure `OPENROUTER_API_KEY` and the
-   existing embedding `OPENAI_API_KEY` securely in the target server environment;
+   direct embedding/model request. Reuse the existing `OPENAI_API_KEY` securely
+   in each authorized target server/Edge environment;
    never copy keys into source, chat, fixtures, or a client bundle. Native server
-   transports also need their existing direct OpenAI configuration. The current
-   local process has no configured provider key and cannot certify this step.
+   transports also need their existing direct OpenAI configuration. No local fixture test certifies the configured target credential or real model.
 6. Only after those checks may an operator explicitly enable reviewed prepared
-   cards/worker policy. The existing trusted-main reconciliation workflow can
-   invoke the maintenance endpoint after main CI; the release owner must verify
-   its actual target and disabled policy before remote integration. Do not
+   cards/worker policy. The existing trusted-main reconciliation job is explicitly default-off.
+   Only an owner/operator may set repository variable
+   `MASAARAT_ASSISTANT_INDEXING_RELEASE_ENABLED` to exact string `true`, after
+   verified production publication and target/policy review. Missing/false
+   values skip scheduled, workflow-run and manual invocations alike. This
+   release gate preserves the original repository/main/OIDC guards and actual
+   indexing implementation; merging code does not activate the job. Do not
+   create/set that variable during staging or pre-release integration. Do not
    activate an offer, change dates, start mail, or resume cancelled schedules
    as part of merging this code.
 
@@ -123,7 +130,12 @@ after Bun could not resolve its executable wrapper. No build was deployed.
 Two constraint exceptions are explicitly retained in the evidence: an isolated
 test dependency installation without an explicit override of the no-install
 restriction, and execution of an original build guard that loaded excluded
-corpus dependencies. No further installs or corpus-loading rechecks follow.
-The product guard remains installed. These checks are not described as clean
-execution within every retained boundary. Production schema/configuration,
+corpus dependencies. Subsequent explicit owner authorization permitted the necessary isolated
+content-loading checks; it does not erase either historical exception. No new
+installation was needed for this follow-up. The product guard remains installed.
+The staging safety child passed a full build/typecheck with explicit public
+fixtures, plus8 target-guard tests and compiled chunk inspection. The subsequent
+common correction passed150 provider/handler/release-gate fixtures, the8
+combined staging target tests and full TypeScript. These are local fixtures,
+not configured-provider, signed-session or deployment evidence. Production schema/configuration,
 real provider/JWT verification and measured multi-session capacity remain open.

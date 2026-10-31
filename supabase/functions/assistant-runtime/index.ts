@@ -259,7 +259,6 @@ function buildRealDeps(): AssistantRuntimeDeps {
     localeSemanticRetrieve,
     callLlm,
     env: {
-      OPENROUTER_API_KEY: Deno.env.get("OPENROUTER_API_KEY") ?? undefined,
       OPENAI_API_KEY: Deno.env.get("OPENAI_API_KEY") ?? undefined,
       SUPABASE_URL: Deno.env.get("SUPABASE_URL") ?? undefined,
       SUPABASE_SERVICE_ROLE_KEY: Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? undefined,
