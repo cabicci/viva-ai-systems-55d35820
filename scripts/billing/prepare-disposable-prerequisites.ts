@@ -11,6 +11,17 @@ const BASELINE = [
   "scripts/academic-education/assistant-native-candidate.sql",
 ] as const;
 
+type CorePrice = { id: string; plan_key: string; billing_interval: string; market_code: string; amount_minor: string | number };
+export function academicFixturePrices(core: CorePrice[], market: string, interval: string, policy: Record<string, unknown>) {
+  const prices = core.filter((r) => r.plan_key === "pro_plus" && r.market_code === market && r.billing_interval === interval);
+  const base = Number(prices[0]?.amount_minor);
+  const extra = Number(policy[`${market === "EG" ? "eg" : "usd"}_${interval}_minor`]);
+  if (prices.length !== 1 || !Number.isSafeInteger(base) || base <= 0 || !Number.isSafeInteger(extra) || extra <= 0 ||
+      policy.sales_enabled !== false || policy.runtime_enabled !== false)
+    throw new Error("Unambiguous approved prices and disabled Academic activation required");
+  return { base, addon: base + extra };
+}
+
 export function requireDisposableTarget(env: NodeJS.ProcessEnv): void {
   if (env.BILLING_DISPOSABLE_DB !== "1" || env.PGHOST !== "127.0.0.1" ||
       env.PGPORT !== "54322" || env.PGDATABASE !== "postgres" || env.PGUSER !== "postgres" ||
@@ -50,8 +61,8 @@ export async function prepareDisposablePrerequisites(env: NodeJS.ProcessEnv, roo
     await db.begin(async (sql) => {
       await sql`select set_config('request.jwt.claims','{"role":"service_role"}',true),
         set_config('masaarat.stripe_environment','live',true)`;
-      const core = await sql`select distinct on (p.plan_key,v.billing_interval,m.market_code)
-        m.id,p.plan_key,v.billing_interval,m.market_code
+      const core = await sql<CorePrice[]>`select distinct on (p.plan_key,v.billing_interval,m.market_code)
+        m.id,p.plan_key,v.billing_interval,m.market_code,m.amount_minor
         from billing.market_prices m join billing.plan_versions v on v.id=m.plan_version_id
         join billing.plan_catalog p on p.id=v.plan_id
         where p.plan_key in ('pro','pro_plus') and p.is_active and v.status='published'
@@ -74,22 +85,20 @@ export async function prepareDisposablePrerequisites(env: NodeJS.ProcessEnv, roo
           const amount = discounted ? Math.round(base * 0.9) : base;
           await sql`select public.register_kids_stripe_price(${market},${interval},${discounted},${currency},${amount},${f.product},${f.price})`;
         }
-        for (const area of ["technical", "academic"]) {
-          const [quote] = await sql`select billing.commerce_price(${area},${market},${interval}) as value`;
-          const f = ids(), amount = Number(quote.value.original_minor);
-          if (area === "technical")
-            await sql`select public.register_technical_stripe_price(${market},${interval},false,${currency},${amount},${f.product},${f.price})`;
-          else {
-            await sql`select public.register_academic_stripe_price(${market},${interval},false,${currency},${amount},${f.product},${f.price})`;
-            const [policy] = await sql`select * from public.academic_assistant_policy where course_id='AC-BUS'`;
-            if (!policy || policy.sales_enabled || policy.runtime_enabled) throw new Error("Academic activation must remain OFF");
-            const extra = Number(policy[`${market === "EG" ? "eg" : "usd"}_${interval}_minor`]);
-            if (!Number.isSafeInteger(extra) || extra <= 0) throw new Error("Missing authoritative add-on amount");
-            const addon = ids();
-            await sql`insert into billing.academic_stripe_prices
-              (market_code,billing_interval,amount_minor,currency_code,gateway_product_id,gateway_price_id,includes_assistant,course_id)
-              values(${market},${interval},${amount + extra},${currency},${addon.product},${addon.price},true,'AC-BUS')`;
-          }
+        const [technical] = await sql`select billing.commerce_price('technical',${market},${interval}) as value`;
+        const tech = ids();
+        await sql`select public.register_technical_stripe_price(${market},${interval},false,${currency},${Number(technical.value.original_minor)},${tech.product},${tech.price})`;
+        const [policy] = await sql`select * from public.academic_assistant_policy where course_id='AC-BUS'`;
+        if (!policy) throw new Error("Missing disabled Academic policy");
+        // Academic sales remain closed: its purchase quote correctly refuses.
+        // Only fixture mappings use the existing Academic→Pro Plus base-price
+        // contract plus the disabled policy surcharge, without enabling sales.
+        const prices = academicFixturePrices(core, market, interval, policy);
+        for (const assistant of [false, true]) {
+          const f = ids();
+          await sql`insert into billing.academic_stripe_prices
+            (market_code,billing_interval,amount_minor,currency_code,gateway_product_id,gateway_price_id,includes_assistant,course_id)
+            values(${market},${interval},${assistant ? prices.addon : prices.base},${currency},${f.product},${f.price},${assistant},'AC-BUS')`;
         }
       }
       const [state] = await sql`select billing.stripe_live_enabled() as live,
