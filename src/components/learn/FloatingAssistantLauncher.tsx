@@ -13,6 +13,7 @@ import { getUiString } from "@/lib/locale/ui-strings";
 import { cn } from "@/lib/utils";
 import {
   clampAssistantLauncher,
+  avoidAssistantControls,
   positionAssistantPanel,
   type AssistantPanelPosition,
   type AssistantViewport,
@@ -73,11 +74,12 @@ function defaultLauncherPosition(
   width: number,
   height: number,
   viewport: AssistantViewport,
+  direction: "rtl" | "ltr",
 ): StoredPosition {
   const marginEnd =
     viewport.width >= 640 ? DEFAULT_MARGIN_END_SM_PX : DEFAULT_MARGIN_END_PX;
   return {
-    x: viewport.left + viewport.width - width - marginEnd,
+    x: direction === "rtl" ? viewport.left + marginEnd : viewport.left + viewport.width - width - marginEnd,
     y: viewport.top + viewport.height - height - DEFAULT_MARGIN_BOTTOM_PX,
   };
 }
@@ -119,6 +121,7 @@ export function FloatingAssistantLauncher({
   const [open, setOpen] = useState(false);
   const [position, setPosition] = useState<StoredPosition | null>(null);
   const [panelPosition, setPanelPosition] = useState<AssistantPanelPosition | null>(null);
+  const [flowFallback, setFlowFallback] = useState(false);
 
   useEffect(() => {
     setPortalRoot(document.body);
@@ -130,14 +133,22 @@ export function FloatingAssistantLauncher({
     const rect = el.getBoundingClientRect();
     const viewport = visibleViewport();
     const stored = readStoredPosition();
-    const initial = defaultLauncherPosition(rect.width, rect.height, viewport);
-    const next = clampAssistantLauncher(
+    const initial = defaultLauncherPosition(rect.width, rect.height, viewport, dir);
+    const desired = clampAssistantLauncher(
       stored?.x ?? initial.x,
       stored?.y ?? initial.y,
       rect.width,
       rect.height,
       viewport,
     );
+    const controls = Array.from(document.querySelectorAll<HTMLElement>("button,a[href],input,textarea,select,video,[data-assistant-avoid]"))
+      .filter(control => control !== el && !panelRef.current?.contains(control) && control.getClientRects().length > 0)
+      .map(control => control.getBoundingClientRect())
+      .filter(r => r.width > 0 && r.height > 0 && r.bottom > viewport.top && r.top < viewport.top + viewport.height &&
+        r.right > viewport.left && r.left < viewport.left + viewport.width);
+    const next = avoidAssistantControls(desired, rect.width, rect.height, viewport, controls);
+    setFlowFallback(next === null);
+    if (!next) return;
     setPosition((current) =>
       current?.x === next.x && current.y === next.y ? current : next,
     );
@@ -149,7 +160,7 @@ export function FloatingAssistantLauncher({
     } catch {
       /* ignore quota / private mode */
     }
-  }, []);
+  }, [dir]);
 
   useLayoutEffect(() => {
     syncLauncherPosition();
@@ -180,11 +191,16 @@ export function FloatingAssistantLauncher({
       syncPanelPosition();
     };
     const viewport = window.visualViewport;
+    const changes = new MutationObserver(() => syncLauncherPosition());
+    changes.observe(document.body, { childList: true, subtree: true });
     window.addEventListener("resize", onResize);
+    window.addEventListener("scroll", onResize, { passive: true });
     viewport?.addEventListener("resize", onResize);
     viewport?.addEventListener("scroll", onResize);
     return () => {
       window.removeEventListener("resize", onResize);
+      window.removeEventListener("scroll", onResize);
+      changes.disconnect();
       viewport?.removeEventListener("resize", onResize);
       viewport?.removeEventListener("scroll", onResize);
     };
@@ -296,6 +312,7 @@ export function FloatingAssistantLauncher({
     } catch {
       /* capture may have been released by the browser */
     }
+    syncLauncherPosition();
   };
 
   const onLauncherClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -317,7 +334,13 @@ export function FloatingAssistantLauncher({
 
   if (!portalRoot) return null;
 
-  return createPortal(
+  return <>
+    {flowFallback ? <button ref={launcherRef} type="button" onClick={onLauncherClick}
+      aria-label={fabAriaLabel} aria-controls={panelId} aria-expanded={open} aria-haspopup="dialog"
+      dir={dir} className="inline-flex min-h-[44px] items-center gap-2 rounded-full border px-4 py-3 focus-visible:ring-2">
+      <MessageCircle className="h-4 w-4" /><span>{fabLabel}</span>
+    </button> : null}
+    {createPortal(
     <>
       {open ? (
         <div
@@ -364,7 +387,7 @@ export function FloatingAssistantLauncher({
         </div>
       ) : null}
 
-      <button
+      {!flowFallback ? <button
         ref={launcherRef}
         type="button"
         aria-label={fabAriaLabel}
@@ -391,8 +414,9 @@ export function FloatingAssistantLauncher({
       >
         <MessageCircle className="h-4 w-4 shrink-0 text-primary" />
         <span>{fabLabel}</span>
-      </button>
+      </button> : null}
     </>,
     portalRoot,
-  );
+    )}
+  </>;
 }

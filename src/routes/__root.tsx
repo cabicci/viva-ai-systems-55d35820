@@ -7,7 +7,7 @@ import { AuthProvider } from "@/lib/auth-context";
 import { Toaster } from "@/components/ui/sonner";
 import { BackToDashboard } from "@/components/site/BackToDashboard";
 import { RouteError, RouteNotFound } from "@/components/site/route-boundaries";
-import { CloudHydration } from "@/components/site/CloudHydration";
+import { CloudHydration, OwnedJourneyReadBoundary } from "@/components/site/CloudHydration";
 import { AnalyticsConsentGate } from "@/components/site/AnalyticsConsent";
 import { LocaleRouterProvider } from "@/lib/locale/locale-router-provider";
 import { useLocale } from "@/lib/locale/locale-context";
@@ -26,7 +26,7 @@ type RootLoaderData = {
   serverUrlLocale?: string;
 };
 
-export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+export const Route = createRootRouteWithContext<{ queryClient: QueryClient; journeyReadMode?: "legacy" | "read-only-shadow" }>()({
   validateSearch: (raw: Record<string, unknown>) => parseLocaleSearchParam(raw),
   head: async ({ match }) => {
     const locale = await resolveRouteHeadLocale({
@@ -132,7 +132,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  const { queryClient } = Route.useRouteContext();
+  const { queryClient, journeyReadMode } = Route.useRouteContext();
   const { effectiveLocale, serverCountryCode, serverCookieLocale, serverUrlLocale } =
     useRootLoaderDataSafe();
 
@@ -145,11 +145,22 @@ function RootComponent() {
         serverUrlLocale={serverUrlLocale}
       >
         <AuthProvider>
-          <CloudHydration />
-          <AnalyticsConsentGate />
-          <Outlet />
-          <BackToDashboard />
-          <LocaleToaster />
+          {journeyReadMode === undefined || journeyReadMode === "legacy" ? (
+            <>
+              <CloudHydration />
+              <AnalyticsConsentGate />
+              <Outlet />
+              <BackToDashboard />
+              <LocaleToaster />
+            </>
+          ) : (
+            <OwnedJourneyReadBoundary enabled={journeyReadMode === "read-only-shadow"}>
+              <AnalyticsConsentGate />
+              <Outlet />
+              <BackToDashboard />
+              <LocaleToaster />
+            </OwnedJourneyReadBoundary>
+          )}
         </AuthProvider>
       </LocaleRouterProvider>
     </QueryClientProvider>

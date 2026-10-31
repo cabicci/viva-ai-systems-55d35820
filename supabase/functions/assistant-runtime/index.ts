@@ -1,3 +1,4 @@
+import { callDirectAssistantModel } from "./direct-model.ts";
 // Assistant Runtime — secure backend entry point.
 //
 // Thin Deno wiring layer: builds real (network-calling) dependencies and
@@ -247,63 +248,7 @@ async function localeSemanticRetrieve(
   }
 }
 
-async function callLlm(
-  systemPrompt: string,
-  userPrompt: string,
-  lovableKey: string,
-): Promise<LlmResult> {
-  try {
-    const aiRes = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${lovableKey}`,
-      },
-      body: JSON.stringify({
-        model: "google/gemini-3-flash-preview",
-        temperature: 0.3,
-        messages: [
-          { role: "system", content: systemPrompt },
-          { role: "user", content: userPrompt },
-        ],
-      }),
-    });
-
-    if (!aiRes.ok) {
-      const errText = await aiRes.text();
-      if (aiRes.status === 429) {
-        return {
-          ok: false,
-          status: 429,
-          error: "وصلنا الحد الأقصى من الطلبات، حاول تاني بعد شوية.",
-        };
-      }
-      if (aiRes.status === 402) {
-        return {
-          ok: false,
-          status: 402,
-          error: "الرصيد خلص — لازم تشحن workspace الـ Lovable AI.",
-        };
-      }
-      return {
-        ok: false,
-        status: 502,
-        error: `AI provider error (${aiRes.status})`,
-        detail: errText.slice(0, 500),
-      };
-    }
-
-    const aiJson = await aiRes.json();
-    const answer: string = aiJson?.choices?.[0]?.message?.content?.trim() ?? "لم يتم توليد إجابة.";
-    return { ok: true, answer };
-  } catch (err) {
-    return {
-      ok: false,
-      status: 500,
-      error: err instanceof Error ? err.message : "Unknown error",
-    };
-  }
-}
+const callLlm = callDirectAssistantModel;
 
 function buildRealDeps(): AssistantRuntimeDeps {
   return {
@@ -314,7 +259,7 @@ function buildRealDeps(): AssistantRuntimeDeps {
     localeSemanticRetrieve,
     callLlm,
     env: {
-      LOVABLE_API_KEY: Deno.env.get("LOVABLE_API_KEY") ?? undefined,
+      OPENROUTER_API_KEY: Deno.env.get("OPENROUTER_API_KEY") ?? undefined,
       OPENAI_API_KEY: Deno.env.get("OPENAI_API_KEY") ?? undefined,
       SUPABASE_URL: Deno.env.get("SUPABASE_URL") ?? undefined,
       SUPABASE_SERVICE_ROLE_KEY: Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? undefined,

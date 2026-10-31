@@ -1,4 +1,5 @@
 import { JourneyVisitRecorder } from "@/components/journey/JourneyVisitRecorder";
+import { stampFreeDelivery, useFreeDeliveryDeadline } from "@/lib/commerce/free-access-client";
 import { useEffect, useRef, useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Navbar } from "@/components/site/Navbar";
@@ -32,9 +33,17 @@ export function AcademicLessonPage({ courseId, lessonId }: { courseId: string; l
   const query = useQuery({
     queryKey: academicQueryKey(user?.id, courseId, lessonId, locale),
     enabled: !!user?.id,
-    queryFn: () => academicCommand<AcademicDelivery>("lesson", courseId, lessonId, locale),
+    queryFn: async () => {
+      const requestedAt = performance.now();
+      return stampFreeDelivery(
+        await academicCommand<AcademicDelivery>("lesson", courseId, lessonId, locale),
+        requestedAt,
+      );
+    },
     staleTime: 0,
+    structuralSharing: false,
   });
+  const deliveryCurrent = useFreeDeliveryDeadline(query.data, query.refetch);
   return (
     <div className="min-h-dvh">
       <Navbar variant="account" />
@@ -42,7 +51,7 @@ export function AcademicLessonPage({ courseId, lessonId }: { courseId: string; l
         {loading || (!!user && query.isPending) ? (
           <p role="status">{en ? "Loading lesson…" : "جارٍ تحميل الدرس…"}</p>
         ) : !user ? (
-          <a href={`/login?locale=${locale}`} className="underline">
+          <a href={`/login?locale=${encodeURIComponent(locale)}&returnTo=${encodeURIComponent(`/academic/learn/${lessonId}`)}`} className="underline">
             {en ? "Sign in to continue" : "سجّل الدخول للمتابعة"}
           </a>
         ) : query.isError ? (
@@ -50,7 +59,7 @@ export function AcademicLessonPage({ courseId, lessonId }: { courseId: string; l
             <p>{en ? "The lesson could not be loaded." : "تعذر تحميل الدرس."}</p>
             <Button onClick={() => void query.refetch()}>{en ? "Retry" : "أعد المحاولة"}</Button>
           </div>
-        ) : !query.data?.allowed ? (
+        ) : !deliveryCurrent || !query.data?.allowed ? (
           <p>
             {en
               ? "This lesson requires an active Academic subscription."

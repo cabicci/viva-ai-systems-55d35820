@@ -1,5 +1,6 @@
 import { useServerFn } from "@tanstack/react-start";
 import { useAuth } from "@/lib/auth-context";
+import { courseStepRoute } from "@/lib/course-system/contract";
 import { askCardAssistant } from "@/lib/card-assistant/assistant.functions";
 import { registeredStep } from "@/lib/card-assistant/registry";
 import type { SupportedLocale } from "@/lib/locale/types";
@@ -14,7 +15,13 @@ export function CardPathAssistant({ area, cardId, stepId, locale, profileId, com
   registeredStep(area, cardId, stepId);
   return <AssistantConversationPanel accountId={user?.id} compact={compact}
     scope={{ area, cardId, stepId, locale, ...(profileId ? { profileId } : {}) }}
-    ask={({ query, requestId, history }) => ask({ data: {
-      scope: { area, cardId, stepId, locale, ...(profileId ? { profileId } : {}) }, query, requestId, history,
-    } })} />;
+    ask={async ({ query, requestId, history }) => {
+      if (!user?.id) return { status: 401 };
+      const reply = await ask({ data: {
+        scope: { area, cardId, stepId, locale, ...(profileId ? { profileId } : {}) },
+        query, requestId, history, expectedAccountId: user.id,
+      } });
+      return { ...reply, citations: reply.citations?.map(citation => ({ ...citation,
+        href: `${courseStepRoute(area, cardId, citation.stepId)}?locale=${encodeURIComponent(locale)}` })) };
+    }} />;
 }

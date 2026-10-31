@@ -43,36 +43,8 @@ const [AUTHORITATIVE_CORPUS_LOOKUP_JSON, CURRENT_CORPUS_JSON] = await Promise.al
   decodePackedCorpus(AUTHORITATIVE_CORPUS_PACK), decodePackedCorpus(CURRENT_CORPUS_PACK),
 ]);
 
-// Restrict CORS to known origins (preview + published + local dev).
-const ALLOWED_ORIGINS = new Set<string>([
-  // Current project (viva-ai-systems)
-  "https://viva-ai-systems.lovable.app",
-  "https://658adce0-747d-4c8e-90e3-d22225070b94.lovableproject.com",
-  "https://id-preview--658adce0-747d-4c8e-90e3-d22225070b94.lovable.app",
-  "https://project--658adce0-747d-4c8e-90e3-d22225070b94.lovable.app",
-  "https://project--658adce0-747d-4c8e-90e3-d22225070b94-dev.lovable.app",
-  // Custom domain
-  "https://masaarat.ai",
-  "https://www.masaarat.ai",
-  // Legacy / other previews kept for compatibility
-  "https://ai-ecosystem-hub-72.lovable.app",
-  "https://id-preview--db3e0659-63cc-4b7e-8985-61692a4adc4a.lovable.app",
-  // Local dev
-  "http://localhost:5173",
-  "http://localhost:3000",
-  "http://localhost:8080",
-]);
-
-export function corsHeadersFor(req: Request): Record<string, string> {
-  const origin = req.headers.get("Origin") ?? "";
-  const allowOrigin = ALLOWED_ORIGINS.has(origin) ? origin : "";
-  return {
-    "Access-Control-Allow-Origin": allowOrigin,
-    "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
-    Vary: "Origin",
-  };
-}
+import { corsHeadersFor } from "./runtime-cors.ts";
+export { corsHeadersFor } from "./runtime-cors.ts";
 
 function jsonResponse(
   body: unknown,
@@ -172,9 +144,9 @@ export interface AssistantRuntimeDeps {
     contentVersion: string | null,
     allowModuleFallback: boolean,
   ): Promise<LocaleRetrieveResult>;
-  callLlm(systemPrompt: string, userPrompt: string, lovableKey: string): Promise<LlmResult>;
+  callLlm(systemPrompt: string, userPrompt: string, modelKey: string): Promise<LlmResult>;
   env: {
-    LOVABLE_API_KEY?: string;
+    OPENROUTER_API_KEY?: string;
     OPENAI_API_KEY?: string;
     SUPABASE_URL?: string;
     SUPABASE_SERVICE_ROLE_KEY?: string;
@@ -695,7 +667,7 @@ export async function handleAssistantRuntimeRequest(
   req: Request,
   deps: AssistantRuntimeDeps,
 ): Promise<Response> {
-  const corsHeaders = corsHeadersFor(req);
+  const corsHeaders = corsHeadersFor(req, deps.env.SUPABASE_URL);
 
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -841,11 +813,11 @@ export async function handleAssistantRuntimeRequest(
   // never leak which specific secret is missing. OPENAI_API_KEY is required
   // for query embeddings; without it retrieval cannot run and must not fall
   // through to ungrounded generation.
-  const lovableKey = deps.env.LOVABLE_API_KEY;
+  const modelKey = deps.env.OPENROUTER_API_KEY;
   const openaiKey = deps.env.OPENAI_API_KEY;
   const supabaseUrl = deps.env.SUPABASE_URL;
   const serviceRoleKey = deps.env.SUPABASE_SERVICE_ROLE_KEY;
-  if (!lovableKey || !openaiKey || !supabaseUrl || !serviceRoleKey) {
+  if (!modelKey || !openaiKey || !supabaseUrl || !serviceRoleKey) {
     return jsonResponse(
       {
         ok: false,
@@ -949,6 +921,57 @@ export async function handleAssistantRuntimeRequest(
   let llmResult: LlmResult | null = null;
   let embeddingAttempted = false;
   let retrievalAttempted = false;
+  let llmAttempted = false;
+
+  // Re-read the existing verified-subject/card policy at asynchronous boundaries.
+  // Every authoritative prompt source must remain allowed, including uncited ones.
+  const currentAccessUserId = auth.userId;
+  async function hasCurrentContentAccess(): Promise<boolean> {
+    try {
+      const current = await deps.billingRpc("assistant_card_content_access", {
+        p_user_id: currentAccessUserId,
+        p_card_id: resolvedPathId,
+      });
+      if (!current.ok || !current.data || current.data.card_id !== resolvedPathId ||
+        typeof current.data.admin_review !== "boolean") return false;
+      const requiredIds: unknown[] = [
+        ...(resolvedLessonId === null ? [] : [resolvedLessonId]),
+        ...authoritative.map((chunk) => chunk.lessonId),
+      ];
+      if (!requiredIds.every((id) => typeof id === "string" && cardLessons.has(id))) return false;
+      // Only the current gateway response can authorize the existing admin policy.
+      if (current.data.admin_review === true) return true;
+      const lessons = current.data.lessons;
+      const ids = lessons && typeof lessons === "object"
+        ? (lessons as Record<string, unknown>).entitled_lesson_ids : null;
+      if (!Array.isArray(ids) || !ids.every((id) => typeof id === "string" && id.trim().length > 0)) return false;
+      const allowed = new Set<string>(ids);
+      return [...cardLessons.keys()].some((id) => allowed.has(id)) &&
+        requiredIds.every((id) => typeof id === "string" && allowed.has(id));
+    } catch {
+      // Gateway diagnostics may contain private content; do not return them.
+      return false;
+    }
+  }
+
+  function contentAccessDenied(): Response {
+    return jsonResponse(
+      {
+        ok: false,
+        error: "AI_ACCESS_DENIED",
+        reason: "card_content_not_entitled",
+        citations: [],
+        providersCalled: {
+          embedding: embeddingAttempted,
+          retrievalRpc: retrievalAttempted,
+          llm: llmAttempted,
+        },
+      },
+      403,
+      corsHeaders,
+    );
+  }
+
   let groundingFailClosed: {
     reason: typeof INSUFFICIENT_GROUNDING_REASON | "embedding_failed" | "retrieval_rpc_failed";
     status: number;
@@ -1049,6 +1072,11 @@ export async function handleAssistantRuntimeRequest(
         };
       }
 
+      // Revalidate retrieval context before sending it to generation.
+      if (!groundingFailClosed && !(await hasCurrentContentAccess())) {
+        return contentAccessDenied();
+      }
+
       if (!groundingFailClosed) {
         const retrievalBlock = buildEvidenceBlock(authoritative);
         const systemPrompt = buildSystemPrompt();
@@ -1086,7 +1114,7 @@ ${retrievalBlock}
         // ---- Answer provider attempt (LLM) — only after grounded citations exist. ----
         const registerAnswer = await deps.billingRpc("register_provider_attempt", {
           p_reservation_id: reservationId,
-          p_provider: "lovable_llm",
+          p_provider: "openrouter_llm",
           p_provider_request_id: crypto.randomUUID(),
           p_attempt_idempotency_key: `${requestId}:answer`,
         });
@@ -1094,7 +1122,8 @@ ${retrievalBlock}
           providerStarted = true;
           const answerAttemptIndex = Number(registerAnswer.data.attempt_index);
           try {
-            llmResult = await deps.callLlm(systemPrompt, userPrompt, lovableKey);
+            llmAttempted = true;
+            llmResult = await deps.callLlm(systemPrompt, userPrompt, modelKey);
           } finally {
             await deps.billingRpc("finalize_provider_attempt", {
               p_reservation_id: reservationId,
@@ -1124,16 +1153,25 @@ ${retrievalBlock}
       }
     }
   } catch (err) {
+    // Provider exceptions also precede I;do not return diagnostics after withdrawal.
+    if (!(await hasCurrentContentAccess())) return contentAccessDenied();
     return jsonResponse(
       {
         ok: false,
         runtime: "disconnected",
-        error: err instanceof Error ? err.message : "Unknown error",
+        error: "Assistant request unavailable",
+        reason: "runtime_unavailable",
+        providersCalled: { embedding: embeddingAttempted, retrievalRpc: retrievalAttempted, llm: llmAttempted },
       },
       500,
       corsHeaders,
     );
   }
+
+  // I guards successful answers below. Guard only its earlier failure responses here,
+  // after existing provider finalization and quota settlement.
+  if ((groundingFailClosed || !llmResult || !llmResult.ok) &&
+    !(await hasCurrentContentAccess())) return contentAccessDenied();
 
   const nowFn = deps.now ?? (() => new Date());
   const noResultReason = citations.length === 0 ? "no_locale_results" : null;
@@ -1203,17 +1241,58 @@ ${retrievalBlock}
       {
         ok: false,
         runtime: "disconnected",
-        error: llmResult?.error ?? "Assistant runtime failed to answer",
-        detail: llmResult && "detail" in llmResult ? llmResult.detail : undefined,
+        error: "Assistant runtime failed to answer",
         retrieval: retrievalTelemetry,
         citations,
         providersCalled: {
           embedding: embeddingAttempted,
           retrievalRpc: retrievalAttempted,
-          llm: true,
+          llm: llmAttempted,
         },
       },
       llmResult?.status ?? 502,
+      corsHeaders,
+    );
+  }
+
+  // Recheck current content authority after generation;the existing quota has already settled.
+  let finalContentAllowed = false;
+  try {
+    const currentEntitlement = await deps.billingRpc("assistant_card_content_access", {
+      p_user_id: auth.userId,
+      p_card_id: resolvedPathId,
+    });
+    const currentData = currentEntitlement.ok ? currentEntitlement.data : null;
+    const currentScope = currentData !== null && typeof currentData === "object" &&
+      !Array.isArray(currentData) && currentData.card_id === resolvedPathId;
+    const currentLessons = currentData?.lessons;
+    const currentIds = currentLessons && typeof currentLessons === "object" && !Array.isArray(currentLessons)
+      ? (currentLessons as Record<string, unknown>).entitled_lesson_ids : null;
+    const currentAdminReview = currentScope && currentData?.admin_review === true;
+    const currentEntitledLessonIds = new Set<string>(currentAdminReview ? cardLessons.keys() :
+      currentScope && Array.isArray(currentIds) && currentIds.every((id) => typeof id === "string")
+        ? currentIds : []);
+    // This is the normalized subset supplied to the evidence builder,not raw matches or citations alone.
+    finalContentAllowed = currentScope &&
+      (resolvedLessonId === null || currentEntitledLessonIds.has(resolvedLessonId)) &&
+      authoritative.every((chunk) => typeof chunk.lessonId === "string" && currentEntitledLessonIds.has(chunk.lessonId));
+  } catch {
+    // An unavailable current decision cannot authorize returning the generated answer.
+  }
+  if (!finalContentAllowed) {
+    return jsonResponse(
+      {
+        ok: false,
+        error: "AI_ACCESS_DENIED",
+        reason: "card_content_not_entitled",
+        citations: [],
+        providersCalled: {
+          embedding: embeddingAttempted,
+          retrievalRpc: retrievalAttempted,
+          llm: llmAttempted,
+        },
+      },
+      403,
       corsHeaders,
     );
   }

@@ -4,6 +4,7 @@ export type AutomaticScope = { stepId: string; locale: string; sourceSha: string
 export type AutomaticManifest = {
   schemaVersion: "assistant-auto-v1"; build: string; area: "ai" | "kids" | "technical" | "academic";
   cardId: string; scopes: AutomaticScope[]; scopeCount: number; issue: string | null; releaseId?: string;
+  sourceRevision?: string;
 };
 export type AutomaticPlan = { key: string; material: string; manifest: AutomaticManifest };
 export type SourceMetadata = {
@@ -15,7 +16,8 @@ export type SourceMetadata = {
 const locales = ["ar-EG", "ar-MSA", "ar-Gulf", "en"];
 const hash = /^[a-f0-9]{64}$/;
 /** Metadata only; no lesson body or learner identity enters the queue manifest. */
-export async function automaticPlans(build: string, ai: { releaseId: string; chunks: number }, cards: RegisteredCard[], source: SourceMetadata): Promise<AutomaticPlan[]> {
+export async function automaticPlans(build: string, ai: { releaseId: string; chunks: number }, cards: RegisteredCard[], source: SourceMetadata,
+  sourceRevisions: Record<string, string> = {}): Promise<AutomaticPlan[]> {
   if (!hash.test(build) || !hash.test(ai.releaseId) || !Number.isSafeInteger(ai.chunks) || ai.chunks < 1)
     throw new Error("AUTOMATION_BUILD_UNAVAILABLE");
   const manifests: AutomaticManifest[] = [{ schemaVersion: "assistant-auto-v1", build, area: "ai", cardId: "current",
@@ -46,6 +48,11 @@ export async function automaticPlans(build: string, ai: { releaseId: string; chu
   if (manifests.length > 200 || manifests.some(item => item.scopeCount < 1 || item.scopeCount > 20001)) throw new Error("AUTOMATION_SCOPE_LIMIT");
   const result: AutomaticPlan[] = [];
   for (const manifest of manifests) {
+    const revision = sourceRevisions[`${manifest.area}:${manifest.cardId}`];
+    if (revision !== undefined) {
+      if (!/^[0-9]{1,20}$/.test(revision)) throw new Error("AUTOMATION_SOURCE_REVISION_INVALID");
+      manifest.sourceRevision = revision;
+    }
     const material = canonicalJson(manifest);
     if (new TextEncoder().encode(material).length > 3000000) throw new Error("AUTOMATION_SCOPE_LIMIT");
     result.push({ key: await sha256(material), material, manifest });

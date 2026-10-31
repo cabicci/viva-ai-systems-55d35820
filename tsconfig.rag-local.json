@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "types": ["vite/client", "node"] },
+  "include": [
+    "src/lib/assistant-automation/worker.server.ts",
+    "src/lib/assistant-automation/manifest.ts",
+    "src/components/learn/FloatingAssistantLauncher.tsx",
+    "src/components/learn/assistant-launcher-position.ts",
+    "src/components/assistant/CourseLessonAssistant.tsx",
+    "src/routes/learn.$pathId.$lessonId.tsx",
+    "src/routeTree.gen.ts",
+    "supabase/functions/assistant-runtime/handler.ts",
+    "tests/rag-local/*.test.ts",
+    "tests/rag-local/*.test.tsx"
+  ]
+}

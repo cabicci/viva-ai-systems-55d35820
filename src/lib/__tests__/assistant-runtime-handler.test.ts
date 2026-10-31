@@ -137,7 +137,7 @@ function buildDeps(overrides: Partial<AssistantRuntimeDeps> = {}): AssistantRunt
     })),
     callLlm: vi.fn(async () => ({ ok: true as const, answer: "default answer" })),
     env: {
-      LOVABLE_API_KEY: "lovable-key",
+      OPENROUTER_API_KEY: "lovable-key",
       OPENAI_API_KEY: "openai-key",
       SUPABASE_URL: "https://project.supabase.co",
       SUPABASE_SERVICE_ROLE_KEY: "service-role-key",
@@ -851,7 +851,7 @@ describe("handleAssistantRuntimeRequest — rate limiting and provider gating", 
     expect(deps.billingRpc as ReturnType<typeof vi.fn>).not.toHaveBeenCalled();
   });
 
-  it("returns 500 when LOVABLE_API_KEY is missing, before any reservation", async () => {
+  it("returns 500 when OPENROUTER_API_KEY is missing, before any reservation", async () => {
     const deps = buildDeps({
       env: {
         OPENAI_API_KEY: "openai-key",
@@ -871,7 +871,7 @@ describe("handleAssistantRuntimeRequest — rate limiting and provider gating", 
   it("returns 500 when SUPABASE_SERVICE_ROLE_KEY is missing, before any reservation", async () => {
     const deps = buildDeps({
       env: {
-        LOVABLE_API_KEY: "lovable-key",
+        OPENROUTER_API_KEY: "lovable-key",
         OPENAI_API_KEY: "openai-key",
         SUPABASE_URL: "https://project.supabase.co",
       },
@@ -977,7 +977,7 @@ describe("Chat 4 Billing bridge — lifecycle", () => {
 
   it("fails closed before any provider when service-role/Supabase env is missing", async () => {
     const deps = buildDeps({
-      env: { LOVABLE_API_KEY: "lovable-key", OPENAI_API_KEY: "openai-key" },
+      env: { OPENROUTER_API_KEY: "lovable-key", OPENAI_API_KEY: "openai-key" },
     });
     const res = await handleAssistantRuntimeRequest(
       buildRequest({ query: "what is AI?", learnerContext: { locale: "en", currentPath: "analyst" } }),
@@ -1045,7 +1045,7 @@ describe("Chat 4 Billing bridge — lifecycle", () => {
             order.push(fnName);
             nextIndex += 1;
             if (body.p_provider === "openai_embedding") embedAttemptIndex = nextIndex;
-            if (body.p_provider === "lovable_llm") answerAttemptIndex = nextIndex;
+            if (body.p_provider === "openrouter_llm") answerAttemptIndex = nextIndex;
             return {
               ok: true,
               data: { reservation_id: body.p_reservation_id, attempt_index: nextIndex },
@@ -1093,10 +1093,12 @@ describe("Chat 4 Billing bridge — lifecycle", () => {
       "embedQuery",
       "finalize:embed",
       "localeSemanticRetrieve",
+      "assistant_card_content_access",
       "register_provider_attempt",
       "callLlm",
       "finalize:answer",
       "commit_ai_quota",
+      "assistant_card_content_access",
     ]);
     expect(embedAttemptIndex).toBe(1);
     expect(answerAttemptIndex).toBe(2);
@@ -1116,7 +1118,7 @@ describe("Chat 4 Billing bridge — lifecycle", () => {
       localeSemanticRetrieve,
       callLlm,
       env: {
-        LOVABLE_API_KEY: "lovable-key",
+        OPENROUTER_API_KEY: "lovable-key",
         SUPABASE_URL: "https://project.supabase.co",
         SUPABASE_SERVICE_ROLE_KEY: "service-role-key",
       },

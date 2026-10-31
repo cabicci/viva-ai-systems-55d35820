@@ -17,6 +17,8 @@ import { AdminLiveOffers } from "@/components/commerce/AdminLiveOffers";
 import { adminOfferCopy, offerError } from "@/lib/commerce/admin-offer-copy";
 import { AdminGroups } from "@/components/commerce/AdminGroups";
 import { AdminEmailAccess } from "@/components/commerce/AdminEmailAccess";
+import { AdminFreeAccess } from "@/components/commerce/AdminFreeAccess";
+import { freeAccessCopy } from "@/lib/commerce/free-access";
 import { emailAccessCopy } from "@/lib/commerce/email-access";
 import { Select } from "@/components/commerce/AdminShared";
 import { exportCommerce } from "@/lib/commerce/report";
@@ -96,6 +98,7 @@ function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
             ["payments", w.payments],
             ["groups", adminOfferCopy(locale).title],
             ["email-access", emailAccessCopy(locale).title],
+            ["free-access", freeAccessCopy(locale).title],
             ["settings", w.settings],
             ["audit", w.audit],
           ].map(([id, title]) => (
@@ -114,7 +117,7 @@ function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
             {w.refresh}
           </Button>
         </nav>
-        {tab !== "groups" && tab !== "email-access" && (
+        {tab !== "groups" && tab !== "email-access" && tab !== "free-access" && (
           <div className="flex flex-wrap gap-3">
             <input
               aria-label={w.search}
@@ -160,13 +163,14 @@ function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
             </Button>
           </div>
         )}
-        {tab !== "email-access" && (error || result.error) && (
+        {tab !== "email-access" && tab !== "free-access" && (error || result.error) && (
           <p role="alert" className="text-destructive">
             {error || w.disabled}
           </p>
         )}
         {notice && <p role="status">{notice}</p>}
         {tab === "email-access" && <AdminEmailAccess />}
+        {tab === "free-access" && <AdminFreeAccess />}
         {data && tab === "payments" && (
           <div className="flex items-center gap-3">
             <Button variant="outline" disabled={page === 0} onClick={() => setPage(page - 1)}>
@@ -266,4 +270,3 @@ function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
     </div>
   );
 }
-

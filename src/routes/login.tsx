@@ -1,5 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useAuth, type AuthGeneration } from "@/lib/auth-context";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -29,28 +30,116 @@ function LoginPage() {
   const t = useUiString();
   const navigate = useNavigate();
   const { locale } = useLocale();
+  const auth = useAuth();
   const search: AuthIntentSearch & ReturnType<typeof parsePaymentLoginSearch> = Route.useSearch();
+  const isOrdinaryReturn = search.intent !== "kids" && !(search.paymentView && search.order);
+  const returnKey = JSON.stringify({ ...search, locale: search.locale ?? locale });
+  const liveReturnKey = useRef(returnKey);
+  liveReturnKey.current = returnKey;
   const recoverySearch = parseRecoveryIntentSearch({ ...search, locale: search.locale ?? locale });
   const [email, setEmail] = useState(search.email ?? "");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [failure, setFailure] = useState<ReturnType<typeof loginErrorPresentation> | null>(null);
+  type ReturnIntent = {
+    active: boolean;
+    startedGeneration: AuthGeneration;
+    expectedUserId: string | null;
+    publishedUsers: Set<string | null>;
+    search: typeof search;
+    key: string;
+  };
+  const alive = useRef(false);
+  const latestReturn = useRef<ReturnIntent | null>(null);
+  const [pendingReturn, setPendingReturn] = useState<{ intent: ReturnIntent } | null>(null);
+  const owns = (intent: ReturnIntent) =>
+    alive.current && intent.active && latestReturn.current === intent &&
+    liveReturnKey.current === intent.key;
+  const retire = (intent: ReturnIntent | null) => {
+    if (!intent) return;
+    intent.active = false;
+    if (latestReturn.current !== intent) return;
+    latestReturn.current = null;
+    if (alive.current) {
+      setPendingReturn(null);
+      setLoading(false);
+    }
+  };
+  useLayoutEffect(() => {
+    alive.current = true;
+    return () => {
+      alive.current = false;
+      retire(latestReturn.current);
+    };
+  }, []);
+  useLayoutEffect(() => {
+    const intent = latestReturn.current;
+    if (intent && intent.key !== returnKey) retire(intent);
+  }, [returnKey]);
+  useLayoutEffect(() => {
+    const intent = latestReturn.current;
+    if (!intent || !owns(intent) || auth.loading ||
+      auth.authGeneration === intent.startedGeneration) return;
+    intent.publishedUsers.add(auth.user?.id ?? null);
+    if (intent.expectedUserId &&
+      [...intent.publishedUsers].some(id => id !== intent.expectedUserId)) retire(intent);
+  }, [auth.user?.id, auth.loading, auth.authGeneration]);
+  useEffect(() => {
+    const intent = pendingReturn?.intent;
+    if (!isOrdinaryReturn || !intent || !owns(intent) || !intent.expectedUserId ||
+      auth.loading || auth.authGeneration === intent.startedGeneration) return;
+    if (
+      auth.user?.id !== intent.expectedUserId ||
+      [...intent.publishedUsers].some(id => id !== intent.expectedUserId) ||
+      !auth.isAuthGenerationCurrent(auth.authGeneration)
+    ) { retire(intent); return; }
+    retire(intent);
+    navigate(authReturnNavigation(intent.search));
+  }, [pendingReturn, auth, navigate, isOrdinaryReturn]);
+
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (isOrdinaryReturn && (loading || pendingReturn)) return;
+    let intent: ReturnIntent | null = null;
+    if (isOrdinaryReturn) {
+      retire(latestReturn.current);
+      intent = {
+        active: true,
+        startedGeneration: auth.authGeneration,
+        expectedUserId: null,
+        publishedUsers: new Set(),
+        search: { ...search, locale: search.locale ?? locale },
+        key: returnKey,
+      };
+      latestReturn.current = intent;
+      setPendingReturn({ intent });
+    }
     setFailure(null);
     setLoading(true);
     try {
-      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+      if (intent && !owns(intent)) return;
       if (error) throw error;
+      if (intent) {
+        intent.expectedUserId = data.user!.id;
+        if ([...intent.publishedUsers].some(id => id !== intent!.expectedUserId)) {
+          retire(intent);
+          return;
+        }
+        setPendingReturn({ intent });
+      }
     } catch (error) {
+      if (intent && !owns(intent)) return;
+      if (intent) retire(intent);
       const presentation = loginErrorPresentation(error);
       setFailure(presentation);
       toast.error(t(presentation.key));
       return;
     } finally {
-      setLoading(false);
+      if (!intent || owns(intent)) setLoading(false);
     }
+    if (intent && !owns(intent)) return;
     toast.success(t("auth.login.toast.success"));
     if (search.intent === "kids") {
       navigate({ to: "/kids/family", search: { locale: search.locale }, replace: true });
@@ -60,8 +149,6 @@ function LoginPage() {
         search: { order: search.order, locale: search.locale },
         replace: true,
       });
-    } else {
-      navigate(authReturnNavigation({ ...search, locale: search.locale ?? locale }));
     }
   }
 
@@ -96,8 +183,8 @@ function LoginPage() {
             required
           />
         </div>
-        <Button type="submit" variant="hero" size="lg" className="w-full" disabled={loading}>
-          {loading ? (
+        <Button type="submit" variant="hero" size="lg" className="w-full" disabled={loading || (isOrdinaryReturn && pendingReturn !== null)}>
+          {loading || (isOrdinaryReturn && pendingReturn !== null) ? (
             t("auth.login.submitting")
           ) : (
             <>
@@ -105,6 +192,11 @@ function LoginPage() {
             </>
           )}
         </Button>
+        {isOrdinaryReturn && pendingReturn && (
+          <Button type="button" variant="glass" onClick={() => retire(pendingReturn.intent)}>
+            {locale === "en" ? "Cancel continuation" : "إلغاء المتابعة"}
+          </Button>
+        )}
       </form>
       {failure && (
         <div

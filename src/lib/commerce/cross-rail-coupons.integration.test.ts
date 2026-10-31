@@ -4,12 +4,14 @@ import { randomUUID } from "node:crypto";
 import postgres from "postgres";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import { accountDeletionTestDb, accountDeletionSchemaSql } from "../__tests__/fixtures/account-deletion-db";
+import { freeAccessDbCases } from "./free-access-db-cases";
 
 type Db = { query<T = Record<string, unknown>>(q: string, args?: unknown[]): Promise<{ rows: T[] }>; exec(q: string): Promise<unknown>; close(): Promise<void> };
 let db: Db;
 const nativeUrl = process.env.COUPON_RAIL_NATIVE_DATABASE_URL;
 let native: ReturnType<typeof postgres> | undefined;
 const admin = randomUUID(), user = randomUUID(), other = randomUUID();
+freeAccessDbCases(() => db, { admin, user, other });
 const sql = (name: string) => readFileSync(name, "utf8");
 const actor = async (id: string, service = false) => {
   await db.query("select set_config('request.jwt.claim.sub',$1,false),set_config('request.jwt.claim.role',$2,false),set_config('masaarat.stripe_environment',$3,false)", [id, service ? "service_role" : "authenticated", service ? "live" : "test"]);
@@ -78,6 +80,11 @@ beforeAll(async () => {
     catch (error) { console.error("Fixture migration", name); throw error; }
   await db.exec(`INSERT INTO auth.users(id,email,email_confirmed_at) VALUES('${admin}','admin@example.test',now()),('${user}','member@example.test',now()),('${other}','other@example.test',now()); INSERT INTO public.user_roles VALUES('${admin}','admin');`);
   await db.exec(sql("drizzle/migrations/0025_shared_coupon_rail_eligibility_and_attempts.sql"));
+  // Rehearse free access on the actual current payment/risk wrapper stack,
+  // preserving all offer, portal and cross-rail contracts before composition.
+  for (const name of ["0022_live_offer_admin_operations.sql", "0023_billing_portal_environment_continuity.sql", "0024_live_offer_admin_list_alias_closure.sql"])
+    await db.exec(sql(`drizzle/migrations/${name}`));
+  await db.exec(sql("scripts/free-access/free-access-candidate.sql"));
 }, 30000);
 afterAll(async () => db?.close());
 beforeEach(async () => {

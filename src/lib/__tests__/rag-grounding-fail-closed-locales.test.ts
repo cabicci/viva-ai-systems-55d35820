@@ -100,7 +100,7 @@ function buildDeps(overrides: Partial<AssistantRuntimeDeps> = {}): AssistantRunt
     })),
     callLlm: vi.fn(async () => ({ ok: true as const, answer: "grounded answer" })),
     env: {
-      LOVABLE_API_KEY: "lovable-key",
+      OPENROUTER_API_KEY: "lovable-key",
       OPENAI_API_KEY: "openai-key",
       SUPABASE_URL: "https://project.supabase.co",
       SUPABASE_SERVICE_ROLE_KEY: "service-role-key",

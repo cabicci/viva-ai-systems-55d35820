@@ -3,6 +3,7 @@ import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 
 const question = z.object({
+  expectedAccountId: z.string().min(1).max(128),
   courseId: z.string().regex(/^AC-[A-Z0-9]+$/),
   lessonId: z.string().regex(/^AC-[A-Z0-9]+-M[0-9]{2}-L[0-9]{2}$/),
   locale: z.enum(["ar-EG", "ar-MSA", "ar-Gulf", "en"]),
@@ -18,6 +19,7 @@ export const askAcademicAssistant = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .validator((input: unknown) => question.parse(input))
   .handler(async ({ data, context }) => {
+    if (data.expectedAccountId !== context.userId) return { status: 403, error: "ACADEMIC_REQUESTER_CHANGED" };
     const { runAcademicAssistant } = await import("./assistant.server");
     return runAcademicAssistant(data, context);
   });

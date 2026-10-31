@@ -3,6 +3,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
 import { captureWarn } from "@/lib/error-capture";
 import type { BuildLog, BuildLogType } from "@/lib/build-logs";
+import { JourneyReadProvider, useJourneyReadController, boxJourneyRead, type JourneyReadOperation, type JourneyReadBox, type JourneyReadData, type JourneyCloudLog, type JourneyCloudMission } from "@/lib/journey-current-user-context";
 
 /**
  * Pulls cloud-persisted state (build logs + mission state) into the
@@ -171,4 +172,115 @@ export function CloudHydration() {
   }, [user, loading]);
 
   return null;
+}
+// Opt-in, private in-memory read branch. The legacy implementation above is
+// intentionally preserved and is never called or co-mounted by this branch.
+function ownedRecord(value: unknown): object {
+  if (value === null || typeof value !== "object") throw new Error("Malformed cloud read object");
+  return value;
+}
+function ownedString(operation: JourneyReadOperation, value: object, key: string): string {
+  const field = operation.read(() => Reflect.get(value, key));
+  if (typeof field !== "string") throw new Error("Malformed cloud field: " + key);
+  return field;
+}
+function ownedNullableString(operation: JourneyReadOperation, value: object, key: string): string | null {
+  const field = operation.read(() => Reflect.get(value, key));
+  if (field !== null && typeof field !== "string") throw new Error("Malformed cloud field: " + key);
+  return field;
+}
+function ownedMetadata(operation: JourneyReadOperation, value: unknown): JourneyCloudLog["metadata"] {
+  if (value === null) return null;
+  const metadata = ownedRecord(value);
+  if (Array.isArray(metadata)) throw new Error("Malformed log metadata");
+  const localId = operation.read(() => Reflect.get(metadata, "local_id"));
+  const moduleId = operation.read(() => Reflect.get(metadata, "module_id"));
+  const localTimestamp = operation.read(() => Reflect.get(metadata, "local_timestamp"));
+  if (localId !== undefined && typeof localId !== "string") throw new Error("Malformed local log id");
+  if (moduleId !== undefined && moduleId !== null && typeof moduleId !== "string") throw new Error("Malformed module id");
+  if (localTimestamp !== undefined && typeof localTimestamp !== "number") throw new Error("Malformed local log timestamp");
+  return Object.freeze({
+    ...(localId === undefined ? {} : { local_id: localId }),
+    ...(moduleId === undefined ? {} : { module_id: moduleId }),
+    ...(localTimestamp === undefined ? {} : { local_timestamp: localTimestamp }),
+  });
+}
+function ownedData(operation: JourneyReadOperation, response: unknown) {
+  const result = ownedRecord(response);
+  const error = operation.read(() => Reflect.get(result, "error"));
+  if (error) throw error;
+  const data = operation.read(() => Reflect.get(result, "data"));
+  if (!Array.isArray(data)) throw new Error("Cloud response is not an array");
+  return data;
+}
+async function readOwnedCloud(operation: JourneyReadOperation): Promise<JourneyReadBox<JourneyReadData>> {
+  const fromLogs = operation.read(() => supabase.from);
+  const bindFromLogs = operation.read(() => fromLogs.bind<typeof fromLogs>);
+  const boundFromLogs = operation.read(() => bindFromLogs.call(fromLogs, supabase));
+  const tableLogs = operation.read(() => boundFromLogs("build_logs"));
+  const selectLogs = operation.read(() => tableLogs.select);
+  const bindSelectLogs = operation.read(() => selectLogs.bind<typeof selectLogs>);
+  const boundSelectLogs = operation.read(() => bindSelectLogs.call(selectLogs, tableLogs));
+  const selectedLogs = operation.read(() => boundSelectLogs("id, type, lesson_id, title, short_description, created_at, metadata"));
+  const eqLogs = operation.read(() => selectedLogs.eq);
+  const bindEqLogs = operation.read(() => eqLogs.bind<typeof eqLogs>);
+  const boundEqLogs = operation.read(() => bindEqLogs.call(eqLogs, selectedLogs));
+  const actorLogs = operation.read(() => boundEqLogs("user_id", operation.actor));
+  const orderLogs = operation.read(() => actorLogs.order);
+  const bindOrderLogs = operation.read(() => orderLogs.bind<typeof orderLogs>);
+  const boundOrderLogs = operation.read(() => bindOrderLogs.call(orderLogs, actorLogs));
+  const orderedLogs = operation.read(() => boundOrderLogs("created_at", { ascending: false }));
+  const limitLogs = operation.read(() => orderedLogs.limit);
+  const bindLimitLogs = operation.read(() => limitLogs.bind<typeof limitLogs>);
+  const boundLimitLogs = operation.read(() => bindLimitLogs.call(limitLogs, orderedLogs));
+  const pendingLogs = operation.read(() => boundLimitLogs(500));
+  const logsBox = await operation.adopt(pendingLogs); operation.requireCurrent();
+  const logRows = ownedData(operation, logsBox.value);
+  const logLength = operation.read(() => logRows.length);
+  if (!Number.isSafeInteger(logLength) || logLength < 0) throw new Error("Invalid cloud log length");
+  const logs: JourneyCloudLog[] = [];
+  for (let i = 0; i < Math.min(logLength, 500); i++) {
+    const row = ownedRecord(operation.read(() => logRows[i]));
+    logs.push(Object.freeze({
+      id: ownedString(operation, row, "id"), type: ownedString(operation, row, "type"),
+      lesson_id: ownedNullableString(operation, row, "lesson_id"), title: ownedString(operation, row, "title"),
+      short_description: ownedString(operation, row, "short_description"), created_at: ownedString(operation, row, "created_at"),
+      metadata: ownedMetadata(operation, operation.read(() => Reflect.get(row, "metadata"))),
+    }));
+  }
+  operation.requireCurrent();
+  const fromMissions = operation.read(() => supabase.from);
+  const bindFromMissions = operation.read(() => fromMissions.bind<typeof fromMissions>);
+  const boundFromMissions = operation.read(() => bindFromMissions.call(fromMissions, supabase));
+  const tableMissions = operation.read(() => boundFromMissions("user_mission_state"));
+  const selectMissions = operation.read(() => tableMissions.select);
+  const bindSelectMissions = operation.read(() => selectMissions.bind<typeof selectMissions>);
+  const boundSelectMissions = operation.read(() => bindSelectMissions.call(selectMissions, tableMissions));
+  const selectedMissions = operation.read(() => boundSelectMissions("mission_id, state, created_at, updated_at"));
+  const eqMissions = operation.read(() => selectedMissions.eq);
+  const bindEqMissions = operation.read(() => eqMissions.bind<typeof eqMissions>);
+  const boundEqMissions = operation.read(() => bindEqMissions.call(eqMissions, selectedMissions));
+  const pendingMissions = operation.read(() => boundEqMissions("user_id", operation.actor));
+  const missionsBox = await operation.adopt(pendingMissions); operation.requireCurrent();
+  const missionRows = ownedData(operation, missionsBox.value);
+  const missionLength = operation.read(() => missionRows.length);
+  if (!Number.isSafeInteger(missionLength) || missionLength < 0) throw new Error("Invalid mission result length");
+  const missions: JourneyCloudMission[] = [];
+  for (let i = 0; i < missionLength; i++) {
+    const row = ownedRecord(operation.read(() => missionRows[i]));
+    missions.push(Object.freeze({
+      mission_id: ownedString(operation, row, "mission_id"), state: ownedString(operation, row, "state"),
+      created_at: ownedString(operation, row, "created_at"), updated_at: ownedString(operation, row, "updated_at"),
+    }));
+  }
+  operation.requireCurrent();
+  return boxJourneyRead(Object.freeze({ logs: Object.freeze(logs), missions: Object.freeze(missions) }));
+}
+function OwnedCloudRead() {
+  const controller = useJourneyReadController();
+  React.useEffect(() => controller?.installReader(readOwnedCloud), [controller]);
+  return null;
+}
+export function OwnedJourneyReadBoundary({ enabled, children }: { enabled: boolean; children: React.ReactNode }) {
+  return <JourneyReadProvider enabled={enabled}><OwnedCloudRead />{children}</JourneyReadProvider>;
 }

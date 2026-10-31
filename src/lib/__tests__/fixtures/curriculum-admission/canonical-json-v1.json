@@ -1,0 +1,62 @@
+{
+  "profile": "masaarat-course-canonical-json/1",
+  "scope": "Handwritten synthetic parsed-data golden values, strings and hex; not educational material or a production budget default.",
+  "testLimits": {
+    "maxDepth": 32,
+    "maxNodes": 1000,
+    "maxUtf8Bytes": 10000
+  },
+  "vectors": [
+    {
+      "id": "numeric-looking-keys",
+      "inputJson": "{\"2\":2,\"10\":10,\"a\":1}",
+      "canonical": "{\"10\":10,\"2\":2,\"a\":1}",
+      "utf8Hex": "7b223130223a31302c2232223a322c2261223a317d"
+    },
+    {
+      "id": "nested-array-order",
+      "inputJson": "{\"z\":[3,{\"b\":2,\"a\":1}],\"a\":true}",
+      "canonical": "{\"a\":true,\"z\":[3,{\"a\":1,\"b\":2}]}",
+      "utf8Hex": "7b2261223a747275652c227a223a5b332c7b2261223a312c2262223a327d5d7d"
+    },
+    {
+      "id": "utf8-not-utf16-key-order",
+      "inputJson": "{\"😀\":1,\"\\ue000\":2,\"é\":3,\"a\":4}",
+      "canonical": "{\"a\":4,\"é\":3,\"\":2,\"😀\":1}",
+      "utf8Hex": "7b2261223a342c22c3a9223a332c22ee8080223a322c22f09f9880223a317d"
+    },
+    {
+      "id": "key-prefix",
+      "inputJson": "{\"ab\":1,\"a\":2}",
+      "canonical": "{\"a\":2,\"ab\":1}",
+      "utf8Hex": "7b2261223a322c226162223a317d"
+    },
+    {
+      "id": "arabic-english-combining",
+      "inputJson": "{\"text\":\"مصر / English é é\"}",
+      "canonical": "{\"text\":\"مصر / English é é\"}",
+      "utf8Hex": "7b2274657874223a22d985d8b5d8b1202f20456e676c6973682065cc8120c3a9227d"
+    },
+    {
+      "id": "control-escaping",
+      "inputJson": "\"\\b\\t\\n\\f\\r\\u0000\\u001f\\\"\\\\/\\u2028\\u2029\"",
+      "canonical": "\"\\b\\t\\n\\f\\r\\u0000\\u001f\\\"\\\\/  \"",
+      "utf8Hex": "225c625c745c6e5c665c725c75303030305c75303031665c225c5c2fe280a8e280a922"
+    },
+    {
+      "id": "finite-number-boundaries",
+      "inputJson": "[-0,1e-7,1e-6,1e20,1e21,5e-324,1.7976931348623157e308,0.1,333333333.33333329]",
+      "canonical": "[0,1e-7,0.000001,100000000000000000000,1e+21,5e-324,1.7976931348623157e+308,0.1,333333333.3333333]"
+    },
+    {
+      "id": "numeric-text-is-text",
+      "inputJson": "{\"n\":1.2300,\"s\":\"1.2300\"}",
+      "canonical": "{\"n\":1.23,\"s\":\"1.2300\"}"
+    },
+    {
+      "id": "empty-and-primitives",
+      "inputJson": "[{},[],null,true,false,\"\"]",
+      "canonical": "[{},[],null,true,false,\"\"]"
+    }
+  ]
+}

@@ -54,7 +54,7 @@ export const Route = createFileRoute("/curriculum")({
 
 function CurriculumPage() {
   const { store, getStatus } = useLessonProgress();
-  const { tier, isPro, isAdmin } = useEntitlement();
+  const { tier, isPro, isAdmin, freeLessonIds } = useEntitlement();
   const t = useUiString();
   const { locale } = useLocale();
   const localeSearch = useLocaleLinkSearch();
@@ -129,6 +129,7 @@ function CurriculumPage() {
               isPro={isPro}
               tier={tier}
               isAdmin={isAdmin}
+              freeLessonIds={freeLessonIds}
               introCompletedCount={introCompletedCount}
               introTotal={introIds.length}
             />
@@ -148,6 +149,7 @@ function PathBlock({
   isPro,
   tier,
   isAdmin,
+  freeLessonIds,
   introCompletedCount,
   introTotal,
 }: {
@@ -158,6 +160,7 @@ function PathBlock({
   isPro: boolean;
   tier: Tier;
   isAdmin: boolean;
+  freeLessonIds: readonly string[];
   introCompletedCount: number;
   introTotal: number;
 }) {
@@ -339,6 +342,7 @@ function PathBlock({
                       getStatus={getStatus}
                       tier={tier}
                       isAdmin={isAdmin}
+                      freeLessonIds={freeLessonIds}
                       introCompletedCount={introCompletedCount}
                       introTotal={introTotal}
                     />
@@ -385,6 +389,7 @@ function LessonRow({
   getStatus,
   tier,
   isAdmin,
+  freeLessonIds,
   introCompletedCount,
   introTotal,
 }: {
@@ -395,6 +400,7 @@ function LessonRow({
   getStatus: (id: string) => LessonStatus;
   tier: Tier;
   isAdmin: boolean;
+  freeLessonIds: readonly string[];
   introCompletedCount: number;
   introTotal: number;
 }) {
@@ -407,6 +413,7 @@ function LessonRow({
   const isAvailable = access.isAvailable;
   const lessonGate = decideLessonGate({
     lessonId: lesson.id,
+    freeLessonIds,
     tier,
     isAdmin,
     introCompletedCount,
