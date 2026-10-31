@@ -1,3 +1,5 @@
+import { assistantAuthFixture } from "@/test/assistant-auth-fixture";
+import { boxedAssistantFixture } from "@/test/boxed-assistant-runtime-fixture";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { act, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { AssistantPanel } from "@/components/assistant/AssistantPanel";
@@ -9,8 +11,11 @@ const { callRuntime, account } = vi.hoisted(() => ({
 vi.mock("@/integrations/supabase/client", () => ({
   supabase: { auth: { onAuthStateChange: vi.fn() } },
 }));
-vi.mock("@/lib/assistant-runtime", () => ({ callAssistantRuntime: callRuntime }));
-vi.mock("@/lib/auth-context", () => ({ useAuth: () => ({ user: account }) }));
+vi.mock("@/lib/assistant-runtime", () => ({
+  callGuardedAssistantRuntimeBoxed: (...args: unknown[]) => boxedAssistantFixture(callRuntime(...args)),
+}));
+const auth = assistantAuthFixture(() => account.id);
+vi.mock("@/lib/auth-context", () => ({ useAuth: () => auth }));
 vi.mock("@/lib/curriculum-data", () => ({
   PATHS: ["intro", "future-card"].map((id) => ({ id, title: id, status: "open", modules: [] })),
 }));
@@ -19,6 +24,7 @@ vi.mock("@/lib/locale-curriculum/resolve-curriculum-label", () => ({
   getCurriculumLessonLabel: (_locale: string, id: string) => id,
 }));
 vi.mock("@/lib/learner-context", () => ({ useLearnerContext: () => ({
+  currentUser: { id: account.id, email: null, isAuthenticated: true },
   currentRoute: "/ai-assistant", currentPath: null, currentModule: null, currentLesson: null,
   currentMission: null, completedLessonsCount: 0, totalLessonsCount: 0, nextLesson: null,
   overallNextLesson: { id: "other-card-step", title: "Other card" },

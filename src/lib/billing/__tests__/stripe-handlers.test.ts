@@ -81,7 +81,9 @@ describe("Stripe deployed handler boundaries", () => {
         get: (key: string) =>
           key === "STRIPE_BILLING_MODE"
             ? undefined // Test mode: setting unset
-            : key === "STRIPE_SECRET_KEY" ? "sk_test_fixture_only" : "https://db.example.test",
+            : key === "STRIPE_SECRET_KEY"
+              ? "sk_test_fixture_only"
+              : "https://db.example.test",
       },
     });
     await import(checkoutModule);

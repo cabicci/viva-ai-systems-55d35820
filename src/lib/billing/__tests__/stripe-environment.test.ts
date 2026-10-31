@@ -33,8 +33,12 @@ function signed(body: string, secret: string) {
 
 describe("Stripe key separation", () => {
   it("rejects a live key in test and a test key in live", () => {
-    expect(() => assertKeyMatchesEnvironment("sk_live_x", "test")).toThrow("STRIPE_TEST_KEY_REQUIRED");
-    expect(() => assertKeyMatchesEnvironment("rk_test_x", "live")).toThrow("STRIPE_LIVE_KEY_REQUIRED");
+    expect(() => assertKeyMatchesEnvironment("sk_live_x", "test")).toThrow(
+      "STRIPE_TEST_KEY_REQUIRED",
+    );
+    expect(() => assertKeyMatchesEnvironment("rk_test_x", "live")).toThrow(
+      "STRIPE_LIVE_KEY_REQUIRED",
+    );
     expect(() => assertKeyMatchesEnvironment("pk_live_x", "live")).toThrow();
     expect(assertKeyMatchesEnvironment("rk_live_x", "live")).toBe("rk_live_x");
   });
@@ -64,9 +68,9 @@ describe("Live kill switch (default OFF)", () => {
   });
 
   it("refuses to hand out the live key while off", async () => {
-    await expect(resolveStripeKey("live", deps({ STRIPE_LIVE_SECRET_KEY: "rk_live_x" }))).rejects.toThrow(
-      "STRIPE_LIVE_DISABLED",
-    );
+    await expect(
+      resolveStripeKey("live", deps({ STRIPE_LIVE_SECRET_KEY: "rk_live_x" })),
+    ).rejects.toThrow("STRIPE_LIVE_DISABLED");
   });
 
   it("never returns the test key for live, even when on", async () => {
@@ -75,14 +79,20 @@ describe("Live kill switch (default OFF)", () => {
   });
 
   it("keeps test checkout working with the test key", async () => {
-    expect(await resolveStripeKey("test", deps({ STRIPE_SECRET_KEY: "sk_test_x" }))).toBe("sk_test_x");
+    expect(await resolveStripeKey("test", deps({ STRIPE_SECRET_KEY: "sk_test_x" }))).toBe(
+      "sk_test_x",
+    );
   });
 });
 
 describe("object/row mixing", () => {
   it("rejects objects, metadata and rows from the other environment", () => {
-    expect(() => assertObjectEnvironment({ livemode: false }, "live")).toThrow("STRIPE_ENVIRONMENT_MISMATCH");
-    expect(() => assertObjectEnvironment({ livemode: true }, "test")).toThrow("STRIPE_ENVIRONMENT_MISMATCH");
+    expect(() => assertObjectEnvironment({ livemode: false }, "live")).toThrow(
+      "STRIPE_ENVIRONMENT_MISMATCH",
+    );
+    expect(() => assertObjectEnvironment({ livemode: true }, "test")).toThrow(
+      "STRIPE_ENVIRONMENT_MISMATCH",
+    );
     expect(() => assertObjectEnvironment({}, "test")).toThrow("STRIPE_ENVIRONMENT_MISMATCH");
     expect(() => assertMetadataEnvironment({ environment: "test" }, "live")).toThrow();
     expect(() => assertRowEnvironment({ stripe_environment: "test" }, "live")).toThrow();
@@ -92,13 +102,15 @@ describe("object/row mixing", () => {
 
 describe("lifecycle key (not gated by the kill switch)", () => {
   it("returns the live key while checkout is off, and never a test key", () => {
-    expect(resolveLifecycleKey("live", (n) => ({ STRIPE_LIVE_SECRET_KEY: "rk_live_x" })[n])).toBe("rk_live_x");
-    expect(() => resolveLifecycleKey("live", (n) => ({ STRIPE_LIVE_SECRET_KEY: "sk_test_x" })[n])).toThrow(
-      "STRIPE_LIVE_KEY_REQUIRED",
+    expect(resolveLifecycleKey("live", (n) => ({ STRIPE_LIVE_SECRET_KEY: "rk_live_x" })[n])).toBe(
+      "rk_live_x",
     );
-    expect(() => resolveLifecycleKey("live", (n) => ({ STRIPE_SECRET_KEY: "rk_live_x" })[n])).toThrow(
-      "MISSING_STRIPE_LIVE_SECRET_KEY",
-    );
+    expect(() =>
+      resolveLifecycleKey("live", (n) => ({ STRIPE_LIVE_SECRET_KEY: "sk_test_x" })[n]),
+    ).toThrow("STRIPE_LIVE_KEY_REQUIRED");
+    expect(() =>
+      resolveLifecycleKey("live", (n) => ({ STRIPE_SECRET_KEY: "rk_live_x" })[n]),
+    ).toThrow("MISSING_STRIPE_LIVE_SECRET_KEY");
   });
   it("signature helper rejects the wrong secret", async () => {
     const body = "{}";
@@ -111,14 +123,18 @@ describe("lifecycle key (not gated by the kill switch)", () => {
 
 describe("kill switch scope: new checkout only", () => {
   it("blocks new live checkout while off", async () => {
-    await expect(assertLiveCheckoutAllowed("live", deps({}))).rejects.toThrow("STRIPE_LIVE_CHECKOUT_DISABLED");
+    await expect(assertLiveCheckoutAllowed("live", deps({}))).rejects.toThrow(
+      "STRIPE_LIVE_CHECKOUT_DISABLED",
+    );
     await expect(
       assertLiveCheckoutAllowed("live", deps({ STRIPE_LIVE_ENABLED: "true" }, false)),
     ).rejects.toThrow("STRIPE_LIVE_CHECKOUT_DISABLED");
   });
 
   it("allows new live checkout only when both switches are on", async () => {
-    await expect(assertLiveCheckoutAllowed("live", deps({ STRIPE_LIVE_ENABLED: "true" }, true))).resolves.toBeUndefined();
+    await expect(
+      assertLiveCheckoutAllowed("live", deps({ STRIPE_LIVE_ENABLED: "true" }, true)),
+    ).resolves.toBeUndefined();
   });
 
   it("never gates test checkout", async () => {

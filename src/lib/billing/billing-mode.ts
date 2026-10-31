@@ -6,7 +6,10 @@
 //   anything else   -> unavailable (fail closed; Test functions also lock).
 // New Live checkout additionally needs STRIPE_LIVE_ENABLED=true AND the DB
 // switch. The portal is lifecycle: in Live mode it opens even when checkout is OFF.
-import { billingModeSelector, isTestStripeLocked } from "../../../supabase/functions/_shared/billing-mode";
+import {
+  billingModeSelector,
+  isTestStripeLocked,
+} from "../../../supabase/functions/_shared/billing-mode";
 
 export type BillingIntent = "checkout" | "portal";
 export type BillingModeAnswer = "test" | "live" | "live_unavailable";

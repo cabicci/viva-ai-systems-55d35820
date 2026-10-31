@@ -5,9 +5,26 @@ import { supabase } from "@/integrations/supabase/client";
 import type { SupportedLocale as Locale } from "@/lib/locale/types";
 
 export type LiveCheckoutRequest = (
-  | { product: "core"; planKey: "pro" | "pro_plus"; billingInterval: "month" | "year"; marketCode: "EG" | "INTL" }
-  | { product: "kids" | "technical"; billingInterval: "month" | "year"; marketCode: "EG" | "INTL"; locale?: string }
-  | { product: "academic"; academicAssistant: boolean; billingInterval: "month" | "year"; marketCode: "EG" | "INTL"; locale?: string }) & { offer?: { code: string; phone?: string; key: string; renewal?: boolean } };
+  | {
+      product: "core";
+      planKey: "pro" | "pro_plus";
+      billingInterval: "month" | "year";
+      marketCode: "EG" | "INTL";
+    }
+  | {
+      product: "kids" | "technical";
+      billingInterval: "month" | "year";
+      marketCode: "EG" | "INTL";
+      locale?: string;
+    }
+  | {
+      product: "academic";
+      academicAssistant: boolean;
+      billingInterval: "month" | "year";
+      marketCode: "EG" | "INTL";
+      locale?: string;
+    }
+) & { offer?: { code: string; phone?: string; key: string; renewal?: boolean } };
 export type LivePortalScope = "core" | "kids" | "academic" | "technical";
 
 export class BillingUnavailableError extends Error {
@@ -27,23 +44,38 @@ const defaultDeps: BillingClientDeps = {
   accessToken: async () => (await supabase.auth.getSession()).data.session?.access_token ?? null,
 };
 
-async function serverMode(intent: "checkout" | "portal", deps: BillingClientDeps, scope?: LivePortalScope): Promise<"test" | "live"> {
+async function serverMode(
+  intent: "checkout" | "portal",
+  deps: BillingClientDeps,
+  scope?: LivePortalScope,
+): Promise<"test" | "live"> {
   let mode: unknown;
   try {
     const token = scope ? await deps.accessToken() : null;
     if (scope && !token) throw new BillingUnavailableError("UNAUTHORIZED");
-    const res = await deps.fetch(`/api/billing/mode?intent=${intent}${scope ? `&scope=${scope}` : ""}`, {
-      cache: "no-store", ...(token ? { headers: { Authorization: `Bearer ${token}` } } : {}),
-    });
+    const res = await deps.fetch(
+      `/api/billing/mode?intent=${intent}${scope ? `&scope=${scope}` : ""}`,
+      {
+        cache: "no-store",
+        ...(token ? { headers: { Authorization: `Bearer ${token}` } } : {}),
+      },
+    );
     mode = res.ok ? (await res.json())?.mode : null;
   } catch {
     mode = null;
   }
   if (mode === "test" || mode === "live") return mode;
-  throw new BillingUnavailableError(mode === "live_unavailable" ? "LIVE_UNAVAILABLE" : "MODE_UNKNOWN");
+  throw new BillingUnavailableError(
+    mode === "live_unavailable" ? "LIVE_UNAVAILABLE" : "MODE_UNKNOWN",
+  );
 }
 
-async function postLive(path: string, body: unknown, expectedOrigin: string, deps: BillingClientDeps): Promise<string> {
+async function postLive(
+  path: string,
+  body: unknown,
+  expectedOrigin: string,
+  deps: BillingClientDeps,
+): Promise<string> {
   const token = await deps.accessToken();
   if (!token) throw new BillingUnavailableError("UNAUTHORIZED");
   let res: Response;
@@ -57,10 +89,17 @@ async function postLive(path: string, body: unknown, expectedOrigin: string, dep
     throw new BillingUnavailableError("LIVE_NETWORK_ERROR");
   }
   const data = await res.json().catch(() => null);
-  if (!res.ok) throw new BillingUnavailableError(typeof data?.error === "string" ? data.error : "LIVE_UNAVAILABLE");
+  if (!res.ok)
+    throw new BillingUnavailableError(
+      typeof data?.error === "string" ? data.error : "LIVE_UNAVAILABLE",
+    );
   const url = typeof data?.url === "string" ? data.url : "";
   let origin = "";
-  try { origin = new URL(url).origin; } catch { /* invalid */ }
+  try {
+    origin = new URL(url).origin;
+  } catch {
+    /* invalid */
+  }
   if (origin !== expectedOrigin) throw new BillingUnavailableError("LIVE_URL_INVALID");
   return url;
 }

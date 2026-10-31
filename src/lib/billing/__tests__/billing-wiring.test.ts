@@ -11,38 +11,79 @@ import {
 import { liveCheckoutSchema } from "@/lib/billing/live/schemas";
 import { createLiveCheckout, type LiveDeps } from "@/lib/billing/live/stripe-live";
 
-vi.mock("@/integrations/supabase/client", () => ({ supabase: { auth: { getSession: async () => ({ data: { session: null } }) } } }));
+vi.mock("@/integrations/supabase/client", () => ({
+  supabase: { auth: { getSession: async () => ({ data: { session: null } }) } },
+}));
 
 const env = (values: Record<string, string>) => (n: string) => values[n];
 
 describe("server-owned billing mode", () => {
   it("defaults to Test when no mode is set, without touching the database", async () => {
     const db = vi.fn(async () => true);
-    expect(await decideBillingMode("checkout", env({ STRIPE_LIVE_ENABLED: "true" }), db)).toBe("test");
+    expect(await decideBillingMode("checkout", env({ STRIPE_LIVE_ENABLED: "true" }), db)).toBe(
+      "test",
+    );
     expect(await decideBillingMode("portal", env({}), db)).toBe("test");
     expect(db).not.toHaveBeenCalled();
   });
   it("Live mode with either checkout switch OFF is unavailable, never Test", async () => {
-    expect(await decideBillingMode("checkout", env({ STRIPE_BILLING_MODE: "live" }), async () => true)).toBe("live_unavailable");
-    expect(await decideBillingMode("checkout", env({ STRIPE_BILLING_MODE: "live", STRIPE_LIVE_ENABLED: "true" }), async () => false)).toBe("live_unavailable");
-    expect(await decideBillingMode("checkout", env({ STRIPE_BILLING_MODE: "live", STRIPE_LIVE_ENABLED: "true" }), async () => { throw new Error("db"); })).toBe("live_unavailable");
-    expect(await decideBillingMode("checkout", env({ STRIPE_BILLING_MODE: "live", STRIPE_LIVE_ENABLED: "true" }), async () => true)).toBe("live");
+    expect(
+      await decideBillingMode("checkout", env({ STRIPE_BILLING_MODE: "live" }), async () => true),
+    ).toBe("live_unavailable");
+    expect(
+      await decideBillingMode(
+        "checkout",
+        env({ STRIPE_BILLING_MODE: "live", STRIPE_LIVE_ENABLED: "true" }),
+        async () => false,
+      ),
+    ).toBe("live_unavailable");
+    expect(
+      await decideBillingMode(
+        "checkout",
+        env({ STRIPE_BILLING_MODE: "live", STRIPE_LIVE_ENABLED: "true" }),
+        async () => {
+          throw new Error("db");
+        },
+      ),
+    ).toBe("live_unavailable");
+    expect(
+      await decideBillingMode(
+        "checkout",
+        env({ STRIPE_BILLING_MODE: "live", STRIPE_LIVE_ENABLED: "true" }),
+        async () => true,
+      ),
+    ).toBe("live");
   });
   it("unknown mode values fail closed", async () => {
-    expect(await decideBillingMode("checkout", env({ STRIPE_BILLING_MODE: "LIVE-ish" }), async () => true)).toBe("live_unavailable");
+    expect(
+      await decideBillingMode(
+        "checkout",
+        env({ STRIPE_BILLING_MODE: "LIVE-ish" }),
+        async () => true,
+      ),
+    ).toBe("live_unavailable");
   });
   it("Live portal stays available for existing subscribers when checkout is OFF", async () => {
-    expect(await decideBillingMode("portal", env({ STRIPE_BILLING_MODE: "live" }), async () => false)).toBe("live");
+    expect(
+      await decideBillingMode("portal", env({ STRIPE_BILLING_MODE: "live" }), async () => false),
+    ).toBe("live");
   });
 });
 
-function client(mode: string, live: { status: number; body: any } = { status: 200, body: { url: "https://checkout.stripe.com/c/live" } }) {
+function client(
+  mode: string,
+  live: { status: number; body: any } = {
+    status: 200,
+    body: { url: "https://checkout.stripe.com/c/live" },
+  },
+) {
   const calls: { url: string; init?: RequestInit }[] = [];
   const deps = {
     accessToken: async () => "jwt",
     fetch: (async (url: string, init?: RequestInit) => {
       calls.push({ url, init });
-      if (url.startsWith("/api/billing/mode")) return new Response(JSON.stringify({ mode }), { status: 200 });
+      if (url.startsWith("/api/billing/mode"))
+        return new Response(JSON.stringify({ mode }), { status: 200 });
       return new Response(JSON.stringify(live.body), { status: live.status });
     }) as any,
   };
@@ -56,8 +97,20 @@ for (const marketCode of ["EG", "INTL"] as const)
     VARIANTS.push({ product: "core", planKey: "pro", billingInterval, marketCode });
     VARIANTS.push({ product: "core", planKey: "pro_plus", billingInterval, marketCode });
     VARIANTS.push({ product: "kids", billingInterval, marketCode, locale: "ar-EG" });
-    VARIANTS.push({ product: "academic", academicAssistant: false, billingInterval, marketCode, locale: "en" });
-    VARIANTS.push({ product: "academic", academicAssistant: true, billingInterval, marketCode, locale: "en" });
+    VARIANTS.push({
+      product: "academic",
+      academicAssistant: false,
+      billingInterval,
+      marketCode,
+      locale: "en",
+    });
+    VARIANTS.push({
+      product: "academic",
+      academicAssistant: true,
+      billingInterval,
+      marketCode,
+      locale: "en",
+    });
     VARIANTS.push({ product: "technical", billingInterval, marketCode, locale: "ar-MSA" });
   }
 
@@ -96,7 +149,9 @@ describe("purchase buttons", () => {
     it(`a failed Live request (${label}) never falls back to Test`, async () => {
       const { deps } = client("live", live);
       const test = vi.fn(async () => "https://checkout.stripe.com/c/test");
-      await expect(resolveCheckoutUrl(VARIANTS[0], test, deps)).rejects.toBeInstanceOf(BillingUnavailableError);
+      await expect(resolveCheckoutUrl(VARIANTS[0], test, deps)).rejects.toBeInstanceOf(
+        BillingUnavailableError,
+      );
       expect(test).not.toHaveBeenCalled();
     });
   }
@@ -104,21 +159,38 @@ describe("purchase buttons", () => {
   it("Live unavailable at the mode check calls neither Live nor Test", async () => {
     const { deps, calls } = client("live_unavailable");
     const test = vi.fn(async () => "x");
-    await expect(resolveCheckoutUrl(VARIANTS[2], test, deps)).rejects.toMatchObject({ code: "LIVE_UNAVAILABLE" });
+    await expect(resolveCheckoutUrl(VARIANTS[2], test, deps)).rejects.toMatchObject({
+      code: "LIVE_UNAVAILABLE",
+    });
     expect(test).not.toHaveBeenCalled();
     expect(calls).toHaveLength(1);
   });
 
   it("an unreachable mode check fails closed instead of guessing Test", async () => {
     const test = vi.fn(async () => "x");
-    const deps = { accessToken: async () => "jwt", fetch: (async () => { throw new Error("offline"); }) as any };
-    await expect(resolveCheckoutUrl(VARIANTS[0], test, deps)).rejects.toBeInstanceOf(BillingUnavailableError);
+    const deps = {
+      accessToken: async () => "jwt",
+      fetch: (async () => {
+        throw new Error("offline");
+      }) as any,
+    };
+    await expect(resolveCheckoutUrl(VARIANTS[0], test, deps)).rejects.toBeInstanceOf(
+      BillingUnavailableError,
+    );
     expect(test).not.toHaveBeenCalled();
   });
 
   it("a failed Test request is never retried on Live", async () => {
     const { deps, calls } = client("test");
-    await expect(resolveCheckoutUrl(VARIANTS[0], async () => { throw new Error("test down"); }, deps)).rejects.toThrow("test down");
+    await expect(
+      resolveCheckoutUrl(
+        VARIANTS[0],
+        async () => {
+          throw new Error("test down");
+        },
+        deps,
+      ),
+    ).rejects.toThrow("test down");
     expect(calls.some((c) => c.url.startsWith("/api/stripe-live"))).toBe(false);
   });
 });
@@ -129,9 +201,13 @@ describe("manage-subscription buttons", () => {
       const ok = client("live", { status: 200, body: { url: "https://billing.stripe.com/p/x" } });
       const test = vi.fn(async () => "x");
       expect(await resolvePortalUrl(scope, test, ok.deps)).toBe("https://billing.stripe.com/p/x");
-      expect(JSON.parse(String(ok.calls.find((c) => c.url === "/api/stripe-live/portal")!.init!.body))).toEqual({ scope });
+      expect(
+        JSON.parse(String(ok.calls.find((c) => c.url === "/api/stripe-live/portal")!.init!.body)),
+      ).toEqual({ scope });
       const bad = client("live", { status: 503, body: { error: "LIVE_PORTAL_UNAVAILABLE" } });
-      await expect(resolvePortalUrl(scope, test, bad.deps)).rejects.toBeInstanceOf(BillingUnavailableError);
+      await expect(resolvePortalUrl(scope, test, bad.deps)).rejects.toBeInstanceOf(
+        BillingUnavailableError,
+      );
       expect(test).not.toHaveBeenCalled();
     });
   }
@@ -141,15 +217,27 @@ describe("Live route with the real checkout logic", () => {
   const deps = (o: Partial<LiveDeps> = {}): LiveDeps & { stripeCalls: string[] } => {
     const stripeCalls: string[] = [];
     return {
-      getEnv: (n: string) => ({ STRIPE_LIVE_ENABLED: "true" } as Record<string, string>)[n],
+      getEnv: (n: string) => (({ STRIPE_LIVE_ENABLED: "true" }) as Record<string, string>)[n],
       databaseLiveEnabled: async () => true,
       rpc: async (name: string) => {
         if (name === "get_technical_stripe_checkout_context")
-          return { amount_minor: 30900, currency_code: "egp", market_code: "EG", billing_interval: "month", discounted: false,
-            gateway_customer_id: null, gateway_product_id: null, gateway_price_id: null, email: "u@example.com" } as any;
+          return {
+            amount_minor: 30900,
+            currency_code: "egp",
+            market_code: "EG",
+            billing_interval: "month",
+            discounted: false,
+            gateway_customer_id: null,
+            gateway_product_id: null,
+            gateway_price_id: null,
+            email: "u@example.com",
+          } as any;
         throw new Error("UNEXPECTED_" + name);
       },
-      stripe: async (path: string) => { stripeCalls.push(path); throw new Error("UNEXPECTED_STRIPE"); },
+      stripe: async (path: string) => {
+        stripeCalls.push(path);
+        throw new Error("UNEXPECTED_STRIPE");
+      },
       stripeCalls,
       ...o,
     } as any;
@@ -164,23 +252,42 @@ describe("Live route with the real checkout logic", () => {
   });
   it("wrong origin: 403 before anything", async () => {
     const d = deps();
-    expect(await createLiveCheckout(user, body, "https://viva-ai-systems.lovable.app", d)).toEqual({ status: 403, body: { error: "UNTRUSTED_ORIGIN" } });
+    expect(await createLiveCheckout(user, body, "https://viva-ai-systems.lovable.app", d)).toEqual({
+      status: 403,
+      body: { error: "UNTRUSTED_ORIGIN" },
+    });
     expect(d.stripeCalls).toHaveLength(0);
   });
   it("missing Live price: closed, and no product/price is created", async () => {
     const d = deps();
-    expect(await createLiveCheckout(user, body, "https://masaarat.ai", d)).toEqual({ status: 503, body: { error: "LIVE_PRICE_NOT_REGISTERED" } });
+    expect(await createLiveCheckout(user, body, "https://masaarat.ai", d)).toEqual({
+      status: 503,
+      body: { error: "LIVE_PRICE_NOT_REGISTERED" },
+    });
     expect(d.stripeCalls).toHaveLength(0);
   });
 });
 
 describe("site wiring", () => {
   const files = {
-    "src/components/billing/StripeCheckoutButtons.tsx": ["resolveCheckoutUrl", "billing-stripe-checkout"],
+    "src/components/billing/StripeCheckoutButtons.tsx": [
+      "resolveCheckoutUrl",
+      "billing-stripe-checkout",
+    ],
     "src/components/kids/KidsCheckoutButtons.tsx": ["resolveCheckoutUrl", "kids-stripe-checkout"],
     "src/components/billing/StripePortalButton.tsx": ["resolvePortalUrl", "billing-stripe-portal"],
-    "src/routes/academic.pricing.tsx": ["resolveCheckoutUrl", "resolvePortalUrl", "academic-stripe-checkout", 'product: "academic", academicAssistant: withAssistant'],
-    "src/routes/technical.pricing.tsx": ["resolveCheckoutUrl", "resolvePortalUrl", "technical-stripe-checkout", 'product: "technical"'],
+    "src/routes/academic.pricing.tsx": [
+      "resolveCheckoutUrl",
+      "resolvePortalUrl",
+      "academic-stripe-checkout",
+      'product: "academic", academicAssistant: withAssistant',
+    ],
+    "src/routes/technical.pricing.tsx": [
+      "resolveCheckoutUrl",
+      "resolvePortalUrl",
+      "technical-stripe-checkout",
+      'product: "technical"',
+    ],
   };
   for (const [file, needles] of Object.entries(files)) {
     it(`${file} routes its Test call through the server-owned mode`, () => {

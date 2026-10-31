@@ -32,9 +32,17 @@ export function liveRuntime(): LiveDeps {
   const getEnv = (name: string) => process.env[name];
   return {
     getEnv,
-    databaseLiveEnabled: async () => (await liveRpc<boolean>("get_stripe_live_enabled", {})) === true,
+    databaseLiveEnabled: async () =>
+      (await liveRpc<boolean>("get_stripe_live_enabled", {})) === true,
     rpc: liveRpc,
-    stripe: async <T>(path: string, options: { method?: "GET" | "POST" | "DELETE"; params?: URLSearchParams; idempotencyKey?: string } = {}) => {
+    stripe: async <T>(
+      path: string,
+      options: {
+        method?: "GET" | "POST" | "DELETE";
+        params?: URLSearchParams;
+        idempotencyKey?: string;
+      } = {},
+    ) => {
       const key = resolveLifecycleKey("live", getEnv);
       const method = options.method ?? "GET";
       const response = await fetch(`https://api.stripe.com/v1${path}`, {
