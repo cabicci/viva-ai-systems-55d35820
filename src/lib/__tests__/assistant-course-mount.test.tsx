@@ -4,6 +4,7 @@ import { CourseLessonAssistant } from "@/components/assistant/CourseLessonAssist
 import type { ReactNode } from "react";
 const auth = vi.hoisted(() => ({ user: { id: "lesson-user" } as { id: string } | null }));
 vi.mock("@/lib/auth-context", () => ({ useAuth: () => auth }));
+vi.mock("@/components/assistant/LessonAssistantAccess", () => ({ LessonAssistantAccess: ({ children }: { children: ReactNode }) => <>{children}</> }));
 
 vi.mock("@/components/learn/FloatingAssistantLauncher", () => ({ FloatingAssistantLauncher: ({ children }: { children: ReactNode }) => <aside data-testid="shared-launcher">{children}</aside> }));
 vi.mock("@/components/assistant/AssistantPanel", () => ({ AssistantPanel: (props: { compact: boolean; contextOverride: { currentPathId: string; currentLessonId: string } }) =>

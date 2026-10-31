@@ -7,6 +7,7 @@ import { AcademicAssistantPanel } from "@/components/academic-education/Academic
 import { AssistantPanel } from "./AssistantPanel";
 import { CardPathAssistant } from "./CardPathAssistant";
 import { useAuth } from "@/lib/auth-context";
+import { LessonAssistantAccess } from "./LessonAssistantAccess";
 
 type Props = { locale: SupportedLocale } & (
   | { area: "ai"; contextOverride: AssistantContextOverride | null; pathId: string; lessonId: string }
@@ -34,7 +35,9 @@ export function CourseLessonAssistant(props: Props) {
     {!user?.id || scopeMissing ? <p role="alert">{getUiString(props.locale, !user?.id
       ? "assistant.panel.error.auth" : "assistant.panel.scope.open")}</p> :
     props.area === "academic" ? <AcademicAssistantPanel courseId={props.cardId} lessonId={props.stepId} locale={props.locale} /> :
-      props.area === "ai" ? <AssistantPanel compact contextOverride={props.contextOverride} /> :
+      props.area === "ai" ? <LessonAssistantAccess pathId={props.pathId} lessonId={props.lessonId} locale={props.locale}>
+        <AssistantPanel compact contextOverride={props.contextOverride} />
+      </LessonAssistantAccess> :
       <CardPathAssistant area={props.area} cardId={props.cardId} stepId={props.stepId} locale={props.locale}
         {...(props.area === "kids" ? { profileId: props.profileId } : {})} compact />}
   </FloatingAssistantLauncher>;

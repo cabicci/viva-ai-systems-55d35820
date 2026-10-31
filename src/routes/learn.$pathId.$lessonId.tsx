@@ -18,9 +18,9 @@ import type { LucideIcon } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useEffect, useLayoutEffect, useRef } from "react";
 import { Sidebar } from "@/components/dashboard/Sidebar";
-import { AuthSessionGate } from "@/lib/auth-route-guard";
+import { AuthSessionGate, AuthLoadingShell } from "@/lib/auth-route-guard";
 import { parseAuthIntentSearch } from "@/lib/kids/auth-intent";
-import { requireLearnerBeforeLoad } from "@/lib/learner-route-guard";
+import { learnerLessonAccess } from "@/lib/learner-route-guard";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { useLessonProgress } from "@/lib/lesson-progress";
@@ -148,7 +148,8 @@ function preserveLocaleSearch(
 }
 
 export const Route = createFileRoute("/learn/$pathId/$lessonId")({
-  beforeLoad: requireLearnerBeforeLoad,
+  ...learnerLessonAccess,
+  pendingComponent: AuthLoadingShell,
   validateSearch: (raw: Record<string, unknown>) => parseLessonPreviewSearch(raw),
   head: async ({ params, match, loaderData }) => {
     const locale = await resolveRouteHeadLocale({
