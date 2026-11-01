@@ -174,7 +174,7 @@ function AccountContent() {
   });
 
   const isPro = ent.isPro;
-  const planLabel = ent.tier === "pro_plus" ? "Pro Plus" : ent.tier === "pro" ? "Pro" : "Free";
+  const planLabel = admin ? t("account.profile.adminBadge") : ent.tier === "pro_plus" ? "Pro Plus" : ent.tier === "pro" ? "Pro" : "Free";
 
   const handleSendReset = async () => {
     if (!email) return;
@@ -275,9 +275,10 @@ function AccountContent() {
           <section className="glass min-w-0 max-w-full break-words rounded-2xl p-6 border border-border/50 flex flex-col">
             <div className="flex items-start justify-between gap-3">
               <div className="min-w-0 flex-1">
-                <p className="text-xs text-muted-foreground">{t("account.subscription.label")}</p>
+                <p className="text-xs text-muted-foreground">{t(admin ? "account.subscription.adminRoleLabel" : "account.subscription.label")}</p>
                 <div className="mt-1 flex min-w-0 flex-wrap items-center gap-2">
                   <h2 className="text-2xl font-black">{planLabel}</h2>
+                  {!admin && (
                   <span
                     className={`rounded-full px-2 py-0.5 text-[10px] font-mono uppercase tracking-widest ${
                       isPro
@@ -289,6 +290,7 @@ function AccountContent() {
                       ? t("account.subscription.status.active")
                       : t("account.subscription.status.free")}
                   </span>
+                  )}
                 </div>
               </div>
               <BadgeCheck
@@ -299,7 +301,7 @@ function AccountContent() {
             <div className="mt-4 space-y-2 text-sm flex-1">
               {admin ? (
                 <div className="rounded-xl border border-primary/30 bg-primary/[0.05] p-3 text-xs text-primary">
-                  {t("account.subscription.adminBypass")}
+                  {t("account.subscription.adminAccessNotice")}
                 </div>
               ) : (
                 <>
