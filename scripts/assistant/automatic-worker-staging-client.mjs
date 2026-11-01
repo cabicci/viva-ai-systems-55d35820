@@ -1,10 +1,3 @@
-// source/supabase/functions/assistant-runtime/staging-target.ts
-var STAGING_DATABASE_REF = "rifujqqlqtfmopaukghn";
-var STAGING_DATABASE_ORIGIN = `https://${STAGING_DATABASE_REF}.supabase.co`;
-
-// candidate/src/lib/assistant-automation/staging-endpoint.ts
-var INDEXER_ENDPOINT = `${STAGING_DATABASE_ORIGIN}/functions/v1/assistant-indexing`;
-
 // source/src/lib/assistant-automation/driver.ts
 async function runAutomaticDriver(deps) {
   let ready = false;
@@ -59,7 +52,8 @@ async function runAutomaticDriver(deps) {
   return "paused";
 }
 
-// candidate/scripts/assistant/automatic-worker-staging-client.ts
+// native-caller-source.ts
+var endpoint = "https://project--0d675f0a-ecc5-4c62-9217-54973c927902.lovable.app/api/public/assistant-indexing";
 var identity;
 async function token() {
   if (identity && identity.until > Date.now())
@@ -67,7 +61,7 @@ async function token() {
   const url = new URL(process.env.ACTIONS_ID_TOKEN_REQUEST_URL ?? "");
   if (url.protocol !== "https:" || !url.hostname.endsWith(".actions.githubusercontent.com") || !process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN)
     throw new Error("AUTOMATION_IDENTITY_UNAVAILABLE");
-  url.searchParams.set("audience", INDEXER_ENDPOINT);
+  url.searchParams.set("audience", endpoint);
   const response = await fetch(url, {
     headers: { Authorization: `Bearer ${process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN}` },
     signal: AbortSignal.timeout(15000),
@@ -83,7 +77,7 @@ async function token() {
   return data.value;
 }
 async function call(operation) {
-  const response = await fetch(INDEXER_ENDPOINT, {
+  const response = await fetch(endpoint, {
     method: "POST",
     redirect: "error",
     signal: AbortSignal.timeout(operation === "status" ? 20000 : 125000),
