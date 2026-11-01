@@ -27,6 +27,9 @@ describe("short-lived automatic-indexing principal", () => {
   it.each([
     { repository_id: "another-repository" }, { repository_owner_id: "another-owner" }, { ref: "refs/heads/other" },
     { event_name: "pull_request" }, { workflow_ref: "cabicci/viva-ai-systems-55d35820/.github/workflows/other.yml@refs/heads/main" },
+    { workflow_ref: "cabicci/viva-ai-systems-55d35820/.github/workflows/assistant-auto-index-staging.yml@refs/heads/main" },
+    { aud: "https://project--0d675f0a-ecc5-4c62-9217-54973c927902.lovable.app/api/public/assistant-indexing" },
+    { aud: "https://masaarat.ai/api/internal/assistant-indexing" },
     { aud: "another-service" }, { iss: "https://attacker.invalid" }, { exp: now / 1000 - 1 },
     { iat: now / 1000 - 601 }, { nbf: now / 1000 + 100 }, { exp: now / 1000 + 1000 },
   ])("rejects a signed but out-of-scope identity: %j", async change => {

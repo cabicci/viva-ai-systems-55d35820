@@ -5,9 +5,11 @@ export type AutomaticManifest = {
   schemaVersion: "assistant-auto-v1"; build: string; area: "ai" | "kids" | "technical" | "academic";
   cardId: string; scopes: AutomaticScope[]; scopeCount: number; issue: string | null; releaseId?: string;
   sourceRevision?: string;
+  preparationOnly?: boolean;
 };
 export type AutomaticPlan = { key: string; material: string; manifest: AutomaticManifest };
 export type SourceMetadata = {
+  academicPolicies: { course_id: string }[];
   kids: { level_id: string; lesson_number: number; locale: string; approved_sha256: string }[];
   technical: { lesson_id: string; locale: string; source_sha256: string }[];
   academicCourses: { id: string; enabled: boolean; assistant_enabled: boolean; assistant_review_enabled: boolean }[];
@@ -34,7 +36,8 @@ export async function automaticPlans(build: string, ai: { releaseId: string; chu
     manifests.push({ schemaVersion: "assistant-auto-v1", build, area: card.area, cardId: card.id, scopes,
       scopeCount: scopes.length + 1, issue: scopes.some(scope => !scope.sourceSha) ? "AUTOMATION_SOURCE_UNAPPROVED" : null });
   }
-  for (const course of source.academicCourses.filter(row => row.assistant_review_enabled || (row.enabled && row.assistant_enabled))) {
+  for (const course of source.academicCourses.filter(row => row.assistant_review_enabled || (row.enabled && row.assistant_enabled) ||
+    source.academic.some(lesson => lesson.course_id === row.id && lesson.approved))) {
     const rows = source.academic.filter(row => row.course_id === course.id).sort((a, b) =>
       a.locale < b.locale ? -1 : a.locale > b.locale ? 1 : a.lesson_id < b.lesson_id ? -1 : a.lesson_id > b.lesson_id ? 1 : 0);
     const scopes = rows.map(row => ({ stepId: row.lesson_id, locale: row.locale,
@@ -43,7 +46,9 @@ export async function automaticPlans(build: string, ai: { releaseId: string; chu
     const complete = ids.length > 0 && rows.length === ids.length * locales.length &&
       ids.every(id => locales.every(locale => rows.filter(row => row.lesson_id === id && row.locale === locale).length === 1));
     manifests.push({ schemaVersion: "assistant-auto-v1", build, area: "academic", cardId: course.id, scopes,
-      scopeCount: scopes.length + 1, issue: !complete || scopes.some(scope => !scope.sourceSha) ? "AUTOMATION_SOURCE_UNAPPROVED" : null });
+      preparationOnly: !(course.assistant_review_enabled || (course.enabled && course.assistant_enabled)),
+      scopeCount: scopes.length + 1, issue: !complete || scopes.some(scope => !scope.sourceSha) ? "AUTOMATION_SOURCE_UNAPPROVED"
+        : !source.academicPolicies?.some(policy => policy.course_id === course.id) ? "AUTOMATION_POLICY_MISSING" : null });
   }
   if (manifests.length > 200 || manifests.some(item => item.scopeCount < 1 || item.scopeCount > 20001)) throw new Error("AUTOMATION_SCOPE_LIMIT");
   const result: AutomaticPlan[] = [];

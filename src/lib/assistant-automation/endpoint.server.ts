@@ -1,5 +1,5 @@
 import { verifyIndexerIdentity } from "./github-identity.server";
-export const AUTOMATIC_INDEXING_PATH = "/api/internal/assistant-indexing";
+export const AUTOMATIC_INDEXING_PATH = "/api/public/assistant-indexing";
 type EndpointDependencies = {
   authorize?: (request: Request) => Promise<unknown>;
   status?: () => Promise<unknown>;

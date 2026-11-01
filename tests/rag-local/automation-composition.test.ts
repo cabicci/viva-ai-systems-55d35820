@@ -14,7 +14,7 @@ let db: PGlite;
 const evidence: Record<string, unknown> = { boundary: "embedded PostgreSQL; fixture source metadata and indexing executor; no provider", checks: [] };
 const sha = "a".repeat(64), build = "b".repeat(64), release = "c".repeat(64);
 const ai = { releaseId: release, chunks: 1 };
-const noSources = { kids: [], technical: [], academicCourses: [], academic: [] };
+const noSources = { kids: [], technical: [], academicCourses: [], academic: [], academicPolicies: [] };
 const dbPath = `../evidence/automation-pg-${Date.now()}`;
 const registry: RegisteredCard[] = [{ area: "technical", id: "local-proof", steps: [
   { id: "T01", stationId: "M01", preview: false, source: { adapter: "technical", lessonId: "T01" } },

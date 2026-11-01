@@ -1,0 +1,9 @@
+This owner-operated transport reuses the already accepted trial vectors for the exact compiled 0c0f release. It never calls a model or reserves a provider attempt. The source and original target project/backend are fixed in `core.ts`; existing server credentials stay in their own environment.
+
+Export runs in the authorized trial server and validates all 3,851 active rows. Transfer the resulting private gzip and its SHA-256 through the authorized private attachment path. Do not commit vectors, attachments, checkpoints or credentials.
+
+In the original server, run `import.ts` with the exact original `--project`, private `--input`, `--expected-sha256` and private `--checkpoint`. Supported modes are `preflight`, `import`, `reconcile`, `validate` and `activate`. Import defaults to one batch per invocation; `--max-batches` is bounded at 61. Activation also requires the exact original `--expected-active` pointer.
+
+Every mutation UUID is written before its call. A missing response is reconciled against the genuine request receipt, batch and exact stored vectors. An unconfirmed operation stops and retains its checkpoint; do not generate a new request, retry a mutation, reset a lease or clear the historical UNKNOWN. Checkpoints are written atomically with mode 0600.
+
+Operational retirement is a separate explicit owner operation installed by the reviewed canonical migration. It requires complete active original 0c0f coverage, the exact old execution/request/audit pin and all 64 exact chunk and package replacements. It adds an immutable receipt, fences every old mutable RPC and keeps the entire historical release/batch/request audit unchanged with provider outcome UNKNOWN. Future automation accepts only positively revalidated coverage; another unresolved release remains blocked.

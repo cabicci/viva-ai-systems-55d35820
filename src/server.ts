@@ -89,9 +89,9 @@ export default {
         const { handleLiveWebhook } = await import("./lib/billing/live/endpoints.server");
         return await handleLiveWebhook(request);
       }
-      if (new URL(request.url).pathname === "/api/internal/assistant-indexing") {
-        const { handleAutomaticIndexing } = await import("./lib/assistant-automation/endpoint.server");
-        return await handleAutomaticIndexing(request);
+      if (new URL(request.url).pathname === "/api/public/assistant-indexing") {
+        const { handlePublicAutomaticIndexing } = await import("./lib/assistant-automation/public-endpoint.server");
+        return await handlePublicAutomaticIndexing(request);
       }
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);

@@ -48,7 +48,10 @@ jobs:
         run: bun run assistant:verify
 
       - name: Shared assistant behavior and access (isolated clients, no paid calls)
-        run: bun run test:assistant
+        run: |
+          bun run test:assistant
+          node --test scripts/assistant/indexer-build.test.mjs
+          bunx vitest run scripts/assistant/automatic-worker-client.test.ts
 
       - name: TypeScript check
         run: bunx tsc --noEmit

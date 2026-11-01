@@ -6,6 +6,7 @@ const locales = ["ar-EG", "ar-MSA", "ar-Gulf", "en"];
 const cards: RegisteredCard[] = [{ area: "kids", id: "level-1", steps: [{ id: "1", stationId: "level-1", preview: false, source: { adapter: "kids", levelId: "level-1", lessonNumber: 1 } }] }];
 const metadata = (): SourceMetadata => ({ kids: locales.map(locale => ({ level_id: "level-1", lesson_number: 1, locale, approved_sha256: "a".repeat(64) })),
   technical: [], academicCourses: [{ id: "AC-NEW", enabled: true, assistant_enabled: true, assistant_review_enabled: false }],
+  academicPolicies: [{ course_id: "AC-NEW" }],
   academic: locales.map(locale => ({ course_id: "AC-NEW", lesson_id: "AC-NEW-M01-L01", locale, approved: true, source_sha256: "b".repeat(64) })) });
 const plans = (source = metadata(), build = "c".repeat(64)) => automaticPlans(build, { releaseId: "d".repeat(64), chunks: 100 }, cards, source);
 describe("automatic incremental source admission", () => {

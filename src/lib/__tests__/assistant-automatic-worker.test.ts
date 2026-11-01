@@ -12,6 +12,7 @@ vi.mock("@/lib/rag/current-release/executor.server", () => ({ executeCurrentRele
 vi.mock("@/lib/card-assistant/registry", () => ({ CARD_REGISTRY: [] }));
 vi.mock("@/integrations/supabase/client.server", () => ({ supabaseAdmin: { from: mocks.from } }));
 import { executeAutomaticScope } from "../assistant-automation/worker.server";
+import { loadCurrentRelease } from "../rag/current-release/corpus.server";
 const sha = "a".repeat(64);
 function lease(area: "kids" | "academic" | "ai" = "kids", offset = 0): AutomaticLease {
   return { jobId: sha, requestId: "00000000-0000-4000-8000-000000000001", leaseToken: "00000000-0000-4000-8000-000000000002", offset,
@@ -51,9 +52,15 @@ describe("automatic worker isolation and guarded publication", () => {
     expect(mocks.rpc).not.toHaveBeenCalled();
   });
   it.each(["kids", "academic"] as const)("delegates final %s activation to the atomic database coverage guard", async area => {
-    expect(await executeAutomaticScope(lease(area, 1))).toEqual({ activated: true });
+    expect(await executeAutomaticScope(lease(area, 1))).toEqual(area === "academic" ? { prepared: true, activated: true } : { activated: true });
     expect(mocks.rpc).toHaveBeenCalledWith(area === "kids" ? "assistant_auto_publish_card" : "assistant_auto_publish_academic", expect.any(Object));
     expect(mocks.native).not.toHaveBeenCalled(); expect(mocks.academic).not.toHaveBeenCalled();
+  });
+  it("finalizes a preparation-only Academic index without claiming runtime activation", async () => {
+    const l = lease("academic", 1); l.manifest.preparationOnly = true;
+    expect(await executeAutomaticScope(l)).toEqual({ prepared: true, activated: false });
+    expect(mocks.rpc).toHaveBeenCalledWith("assistant_auto_publish_academic", expect.any(Object));
+    expect(mocks.academic).not.toHaveBeenCalled(); expect(mocks.reserve).not.toHaveBeenCalled();
   });
   it("never retries a legacy uncertain AI request after its lease expires", async () => {
     mocks.rpc.mockResolvedValue(false);
@@ -95,6 +102,34 @@ describe("automatic worker isolation and guarded publication", () => {
     await expect(executeAutomaticScope(lease("ai", 1))).resolves.toEqual({ alreadyActive: true });
     expect(mocks.from).not.toHaveBeenCalled(); expect(mocks.executeAI).not.toHaveBeenCalled();
     expect(mocks.reserve).not.toHaveBeenCalled();
+  });
+  it.each([0, 1, 62])("reuses actual compiled active 0c0f at offset %s without touching historical UNKNOWN", async offset => {
+    const current = loadCurrentRelease();
+    const l = lease("ai", offset); l.manifest.releaseId = current.approval.releaseId; l.manifest.scopeCount = 63;
+    mocks.prior.mockResolvedValue({ data: [{ release_id: "11930da0902e92e5ae6db0f4e3e7f4e23c2fe9a6bef974bb50f04feb946b39f5" }], error: null });
+    mocks.deps.mockResolvedValue({ load: () => current,
+      rpc: vi.fn().mockResolvedValue({ executionId: "ready-transfer-execution", currentActiveVersion: current.approval.indexVersion }) });
+    await expect(executeAutomaticScope(l)).resolves.toEqual({ alreadyActive: true });
+    expect(current.approval.releaseId).toBe("0c0f31b61c596fd6b8687bb156911f8d28613581af0fcf5f7ac4063dce3c1b85");
+    expect(mocks.from).not.toHaveBeenCalled(); expect(mocks.executeAI).not.toHaveBeenCalled();
+    expect(mocks.reserve).not.toHaveBeenCalled(); expect(mocks.rpc).not.toHaveBeenCalled();
+  });
+  it("allows a different future release only after positive database revalidation of every prior retirement", async () => {
+    mocks.prior.mockResolvedValue({ data: [{ release_id: "11930-UNKNOWN" }], error: null });
+    const rpc = vi.fn(async (name: string) => name === "rag_current_status"
+      ? { executionId: "future-execution", currentActiveVersion: "previous" } : true);
+    mocks.deps.mockResolvedValue({ load: () => ({ approval: { releaseId: sha, indexVersion: "next" } }), rpc });
+    await expect(executeAutomaticScope(lease("ai", 0))).resolves.toMatchObject({ operation: "initialize" });
+    expect(rpc).toHaveBeenCalledWith("rag_current_prior_ai_clear", { p_release_id: sha });
+    expect(mocks.executeAI).toHaveBeenCalledOnce();
+  });
+  it("a prior retirement never clears an uncertain batch of the current release", async () => {
+    mocks.prior.mockResolvedValue({ data: [{ release_id: "11930-UNKNOWN" }], error: null });
+    mocks.deps.mockResolvedValue({ load: () => ({ approval: { releaseId: sha, indexVersion: "next" } }),
+      rpc: vi.fn(async (name: string) => name === "rag_current_status" ? { executionId: "future-execution", currentActiveVersion: "previous" } : true) });
+    mocks.rpc.mockResolvedValue(false);
+    await expect(executeAutomaticScope(lease("ai", 1))).rejects.toThrow("AUTOMATION_AI_REQUEST_NEEDS_REVIEW");
+    expect(mocks.executeAI).not.toHaveBeenCalled(); expect(mocks.reserve).not.toHaveBeenCalled();
   });
 
 });
