@@ -29,7 +29,9 @@ it("fails closed without a configured direct key and never calls a fallback", as
 it.each([402, 429, 500])("contains provider status %s without returning its private body or retrying", async status => {
   const request = vi.fn<typeof fetch>().mockResolvedValue(new Response("PRIVATE_PROVIDER_BODY", { status }));
   const result = await callDirectAssistantModel("source", "question", "test-only", request);
-  expect(result).toEqual({ ok: false, status: status === 429 ? 429 : 502, error: "ASSISTANT_PROVIDER_UNAVAILABLE" });
+  expect(result).toEqual({ ok: false, status: status === 429 ? 429 : 502, error: "ASSISTANT_PROVIDER_UNAVAILABLE",
+    detail: `upstream_http_${status}` });
+  expect(JSON.stringify(result)).not.toContain("PRIVATE_PROVIDER_BODY");
   expect(request).toHaveBeenCalledTimes(1);
 });
 

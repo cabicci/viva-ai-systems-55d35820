@@ -248,7 +248,8 @@ async function localeSemanticRetrieve(
   }
 }
 
-const callLlm = callDirectAssistantModel;
+const callLlm: AssistantRuntimeDeps["callLlm"] = (systemPrompt, userPrompt, modelKey, admittedSourceIds) =>
+  callDirectAssistantModel(systemPrompt, userPrompt, modelKey, fetch, admittedSourceIds);
 
 function buildRealDeps(): AssistantRuntimeDeps {
   return {

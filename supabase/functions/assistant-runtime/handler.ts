@@ -118,6 +118,18 @@ export type LlmResult =
   // Successful transport carries the serialized decision, validated again by the handler.
   { ok: true; answer: string } | { ok: false; status: number; error: string; detail?: string };
 
+const SAFE_FAILURE_DETAIL = /^(?:upstream_http_\d{1,3}|timeout|network|body_unreadable|key_missing|finish_[a-z_]{1,20}|refusal_present|content_missing|schema_invalid|source_id_not_admitted)$/;
+
+/** Content-free answer-stage diagnostics: enumerated category plus server request UUID only. */
+export function logAnswerFailure(requestId: string, result: LlmResult,
+  counts: { candidateCitations: number; unknownSourceIds: number }) {
+  if (result.ok) return;
+  const detail = typeof result.detail === "string" && SAFE_FAILURE_DETAIL.test(result.detail) ? result.detail : "unclassified";
+  console.warn(JSON.stringify({ event: "assistant_answer_failed", requestId, status: result.status,
+    error: result.error === "ASSISTANT_PROVIDER_INVALID_RESPONSE" ? result.error : "ASSISTANT_PROVIDER_UNAVAILABLE",
+    detail, candidateCitations: counts.candidateCitations, unknownSourceIds: counts.unknownSourceIds }));
+}
+
 /** Result of calling a billing-schema RPC (Accept/Content-Profile: billing). */
 export type BillingRpcResult =
   { ok: true; data: Record<string, unknown> } | { ok: false; status: number; error: string };
@@ -147,7 +159,8 @@ export interface AssistantRuntimeDeps {
     contentVersion: string | null,
     allowModuleFallback: boolean,
   ): Promise<LocaleRetrieveResult>;
-  callLlm(systemPrompt: string, userPrompt: string, modelKey: string): Promise<LlmResult>;
+  /** admittedSourceIds: the exact citation chunk IDs the answer may select. */
+  callLlm(systemPrompt: string, userPrompt: string, modelKey: string, admittedSourceIds: readonly string[]): Promise<LlmResult>;
   env: {
     OPENAI_API_KEY?: string;
     SUPABASE_URL?: string;
@@ -1128,13 +1141,16 @@ ${retrievalBlock}
           const answerAttemptIndex = Number(registerAnswer.data.attempt_index);
           try {
             llmAttempted = true;
-            llmResult = await deps.callLlm(systemPrompt, userPrompt, modelKey);
+            llmResult = await deps.callLlm(systemPrompt, userPrompt, modelKey, citations.map(c => c.chunkId));
             if (llmResult.ok) {
               answerDecision = parseAssistantAnswer(llmResult.answer);
               const selected = answerDecision?.sourceIds;
               if (!answerDecision || !selected || selected.some(id => !citations.some(c => c.chunkId === id))) {
+                const detail = !answerDecision ? "schema_invalid" : "source_id_not_admitted";
+                const unknownSourceIds = selected ? selected.filter(id => !citations.some(c => c.chunkId === id)).length : 0;
                 answerDecision = null;
-                llmResult = { ok: false, status: 502, error: "ASSISTANT_PROVIDER_INVALID_RESPONSE" };
+                llmResult = { ok: false, status: 502, error: "ASSISTANT_PROVIDER_INVALID_RESPONSE", detail };
+                logAnswerFailure(requestId, llmResult, { candidateCitations: citations.length, unknownSourceIds });
                 citations = [];
               } else {
                 // Provider IDs select only admitted metadata; no provider-created
@@ -1142,6 +1158,7 @@ ${retrievalBlock}
                 citations = selected.map(id => citations.find(c => c.chunkId === id)!);
               }
             } else {
+              logAnswerFailure(requestId, llmResult, { candidateCitations: citations.length, unknownSourceIds: 0 });
               citations = [];
             }
           } finally {

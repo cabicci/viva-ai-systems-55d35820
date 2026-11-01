@@ -23,6 +23,27 @@ export const ASSISTANT_ANSWER_FORMAT = {
   },
 } as const;
 
+/** Per-request strict schema: sourceIds may only be exact admitted chunk IDs, so the
+ * provider cannot emit lookalike IDs. The handler still rejects any unknown ID. */
+export function buildAssistantAnswerFormat(admittedSourceIds: readonly string[]) {
+  const ids = [...new Set(admittedSourceIds.filter(id => typeof id === "string" && id.trim() !== "" && id.length <= 512))];
+  if (ids.length === 0) return ASSISTANT_ANSWER_FORMAT;
+  const base = ASSISTANT_ANSWER_FORMAT.json_schema;
+  return {
+    type: "json_schema",
+    json_schema: {
+      ...base,
+      schema: {
+        ...base.schema,
+        properties: {
+          ...base.schema.properties,
+          sourceIds: { type: "array", items: { type: "string", enum: ids }, maxItems: Math.min(8, ids.length) },
+        },
+      },
+    },
+  } as const;
+}
+
 /** Validate independently of provider schema enforcement; no legacy text fallback. */
 export function parseAssistantAnswer(raw: string): AssistantAnswerDecision | null {
   try {

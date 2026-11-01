@@ -176,7 +176,7 @@ describe("answer grounding belongs to the current turn", () => {
     const request = vi.fn<typeof fetch>().mockResolvedValue(new Response(JSON.stringify({
       choices: [{ finish_reason: "stop", message: { content: JSON.stringify({ grounding: "insufficient", answer: "No evidence.", sourceIds: [] }) } }],
     })));
-    vi.mocked(f.deps.callLlm).mockImplementation((system, user, key) => callDirectAssistantModel(system, user, key, request));
+    vi.mocked(f.deps.callLlm).mockImplementation((system, user, key, admitted) => callDirectAssistantModel(system, user, key, request, admitted));
     const response = await handleAssistantRuntimeRequest(f.request("Recipe?"), f.deps);
     const body = await response.json();
     expect(response.status).toBe(200);
@@ -187,6 +187,29 @@ describe("answer grounding belongs to the current turn", () => {
     expect(payload.messages[0].content).toContain("CURRENT QUESTION");
     expect(payload.messages[0].content).toContain('grounding="insufficient"');
     expect(payload.messages[1].content).toContain(f.chunks[0].sourceId);
+    expect(payload.response_format.json_schema.schema.properties.sourceIds.items.enum).toEqual(f.chunks.map(c => c.sourceId));
     expect(vi.mocked(f.deps.billingRpc).mock.calls.filter(([name]) => name === "commit_ai_quota")).toHaveLength(1);
+  });
+});
+
+describe("source-ID transport", () => {
+  it("passes exactly the admitted citation IDs to the model and still rejects an unknown ID", async () => {
+    const f = fixture();
+    const warning = vi.spyOn(console, "warn").mockImplementation(() => undefined);
+    vi.mocked(f.deps.callLlm).mockResolvedValue(result({ grounding: "supported", answer: "PRIVATE_MODEL_PROSE", sourceIds: [`${f.chunks[0].sourceId}-x`] }));
+    const response = await handleAssistantRuntimeRequest(f.request("Explain this concept"), f.deps);
+    expect(vi.mocked(f.deps.callLlm).mock.calls[0][3]).toEqual(f.chunks.map(c => c.sourceId));
+    expect(response.status).toBe(502);
+    expect((await response.json()).citations ?? []).toEqual([]);
+    expect(f.deps.callLlm).toHaveBeenCalledTimes(1);
+    const logged = JSON.parse(String(warning.mock.calls[0][0]));
+    expect(logged).toEqual({ event: "assistant_answer_failed", requestId: expect.stringMatching(/^[0-9a-f-]{36}$/),
+      status: 502, error: "ASSISTANT_PROVIDER_INVALID_RESPONSE", detail: "source_id_not_admitted",
+      candidateCitations: f.chunks.length, unknownSourceIds: 1 });
+    expect(JSON.stringify(warning.mock.calls)).not.toContain("PRIVATE_MODEL_PROSE");
+    expect(JSON.stringify(warning.mock.calls)).not.toContain("Explain this concept");
+    expect(JSON.stringify(warning.mock.calls)).not.toContain("fixture-only");
+    for (const chunk of f.chunks) expect(JSON.stringify(warning.mock.calls)).not.toContain(chunk.sourceId);
+    warning.mockRestore();
   });
 });

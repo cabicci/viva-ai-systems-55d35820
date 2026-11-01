@@ -28,7 +28,8 @@ it("requests the strict schema from the same bounded direct model and validates 
 it.each(["length", "content_filter", "tool_calls", ""])("rejects unfinished/filtered output %s even if its JSON parses", async finish => {
   const request = provider(JSON.stringify(decision), finish);
   expect(await callDirectAssistantModel("Policy", "Question", "fixture-only", request))
-    .toEqual({ ok: false, status: 502, error: "ASSISTANT_PROVIDER_INVALID_RESPONSE" });
+    .toEqual({ ok: false, status: 502, error: "ASSISTANT_PROVIDER_INVALID_RESPONSE",
+      detail: `finish_${finish === "" ? "other" : finish}` });
   expect(request).toHaveBeenCalledTimes(1);
 });
 
@@ -56,4 +57,14 @@ it("accepts an explicit empty-citation insufficient decision without guessing fr
     .toEqual({ grounding: "insufficient", answer: "Any locale wording", sourceIds: [] });
   expect(parseAssistantAnswer(JSON.stringify({ ...decision, answer: "  Trimmed explanation  " }))?.answer)
     .toBe("Trimmed explanation");
+});
+
+it("constrains provider sourceIds to the exact admitted IDs while keeping the strict schema", async () => {
+  const admitted = ["ar-EG/intro-m1-l6-learn-without-fear/s1/c0", "ar-EG/intro-m1-l6-learn-without-fear/s2/c0"];
+  const request = provider(JSON.stringify({ ...decision, sourceIds: [admitted[0]] }));
+  await callDirectAssistantModel("Policy", "Question", "fixture-only", request, admitted);
+  const format = JSON.parse(String(request.mock.calls[0][1]!.body)).response_format;
+  expect(format.json_schema.strict).toBe(true);
+  expect(format.json_schema.schema.additionalProperties).toBe(false);
+  expect(format.json_schema.schema.properties.sourceIds).toEqual({ type: "array", items: { type: "string", enum: admitted }, maxItems: 2 });
 });
