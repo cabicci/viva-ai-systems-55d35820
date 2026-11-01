@@ -214,11 +214,21 @@ export function KidsLessonPage() {
     if (!selection.profileId || !selectionCurrent(selection)) return;
     retireRequest(selection.request);
     if (!selectionCurrent(selection)) return;
+    const retainedIntent = assistantIntent.current;
+    const intent = retainedIntent && retainedIntent.scope === assistantScope &&
+      retainedIntent.profileId === selection.profileId ? retainedIntent : {
+        scope: assistantScope, profileId: selection.profileId, open: false,
+      };
+    assistantIntent.current = intent;
+    const intentLife = life.current;
     const ticket: LessonRequest = {
       selection, id: ++sequence.current, bodyContext: null, active: true, stop: () => {},
-      assistantInitiallyOpen: assistantIntent.current?.open === true,
+      assistantInitiallyOpen: intent.open,
       onAssistantOpenChange: (open) => {
-        if (requestCurrent(ticket)) assistantIntent.current = { scope: assistantScope, profileId: selection.profileId, open };
+        // A click may arrive after parent refresh retires this delivery. Only
+        // the non-sensitive UI intent survives, never its request authority.
+        if (intentLife && life.current === intentLife && assistantIntent.current === intent &&
+          isAuthGenerationCurrent(intent.scope.generation)) intent.open = open;
       },
     };
     selection.request = ticket;
@@ -355,6 +365,7 @@ export function KidsLessonPage() {
     return () => {
       if (life.current !== mounted) return;
       life.current = null;
+      assistantIntent.current = null;
       retireOwner(owner.current);
     };
   }, []);
