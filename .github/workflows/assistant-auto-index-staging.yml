@@ -1,0 +1,47 @@
+name: Staging automatic assistant indexing
+
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: assistant-indexing-staging-0d675f0a
+  cancel-in-progress: false
+
+jobs:
+  reconcile-staging:
+    if: >-
+      vars.MASAARAT_STAGING_ASSISTANT_INDEXING_ENABLED == 'true' &&
+      vars.MASAARAT_STAGING_PROJECT_ID == '0d675f0a-ecc5-4c62-9217-54973c927902' &&
+      github.repository == 'cabicci/viva-ai-systems-55d35820' &&
+      github.ref == 'refs/heads/main' &&
+      (github.event_name != 'workflow_run' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.event == 'push' &&
+       github.event.workflow_run.head_branch == 'main' &&
+       github.event.workflow_run.head_repository.full_name == github.repository))
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout reviewed trusted main
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Set up pinned Node runtime
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "24.22.1"
+      - name: Reconcile the one staging assistant service
+        run: node scripts/assistant/automatic-worker-staging-client.mjs
