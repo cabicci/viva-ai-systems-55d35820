@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom/vitest";
 import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
-import { StrictMode } from "react";
+import { StrictMode, useEffect, useState } from "react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { KidsLessonPage } from "../../routes/kids.$levelId.$lessonNumber";
 
@@ -21,6 +21,8 @@ const mock = vi.hoisted(() => ({
   parseLessonRead: undefined as (() => void) | undefined,
   parsePlaybackRead: undefined as (() => void) | undefined,
   actualBody: false, freshFunctions: false, receivers: [] as object[], bodyCalls: [] as unknown[],
+  actualAssistant: false, panelInstances: 0, panelLive: 0, panelSends: 0,
+  pendingAnswer: undefined as Promise<string> | undefined,
 }));
 vi.mock("@tanstack/react-router", () => ({
   createFileRoute: () => (options: object) => ({ ...options, useParams: () => mock.params }),
@@ -31,7 +33,29 @@ vi.mock("@/components/site/Navbar", () => ({ Navbar: () => null }));
 vi.mock("@/components/site/Footer", () => ({ Footer: () => null }));
 vi.mock("@/components/journey/JourneyVisitRecorder", () => ({ JourneyVisitRecorder: () => null }));
 vi.mock("@/components/journey/KidsStepCompletion", () => ({ KidsStepCompletion: () => null }));
-vi.mock("@/components/assistant/CourseLessonAssistant", () => ({ CourseLessonAssistant: () => null }));
+vi.mock("@/components/assistant/CourseLessonAssistant", async () => {
+  const actual = await vi.importActual<typeof import("@/components/assistant/CourseLessonAssistant")>("@/components/assistant/CourseLessonAssistant");
+  return { CourseLessonAssistant: (props: React.ComponentProps<typeof actual.CourseLessonAssistant>) =>
+    mock.actualAssistant ? <actual.CourseLessonAssistant {...props} /> : null };
+});
+vi.mock("@/lib/course-system/contract", () => ({ inheritedCoursePlatform: () => undefined }));
+vi.mock("@/lib/locale/ui-strings", () => ({ getUiString: (_locale: string, key: string) => ({
+  "learn.assistant.fab": "Ask AI", "learn.assistant.fabAria": "Ask AI",
+  "sidebar.assistant": "Fixture assistant", "dashboard.hint.close": "Close assistant",
+} as Record<string, string>)[key] ?? key }));
+vi.mock("@/components/academic-education/AcademicAssistantPanel", () => ({ AcademicAssistantPanel: () => null }));
+vi.mock("@/components/assistant/AssistantPanel", () => ({ AssistantPanel: () => null }));
+vi.mock("@/components/assistant/LessonAssistantAccess", () => ({ LessonAssistantAccess: () => null }));
+vi.mock("lucide-react", () => ({ MessageCircle: () => null, X: () => null }));
+vi.mock("@/components/assistant/CardPathAssistant", () => ({ CardPathAssistant: () => {
+  const [instance] = useState(() => ++mock.panelInstances);
+  const [answer, setAnswer] = useState("");
+  useEffect(() => { mock.panelLive++; return () => { mock.panelLive--; }; }, []);
+  return <section data-testid="fixture-conversation" data-instance={instance}>
+    <button onClick={() => { mock.panelSends++; void mock.pendingAnswer?.then(setAnswer); }}>Start fixture reply</button>
+    <output>{answer}</output>
+  </section>;
+} }));
 vi.mock("@/components/kids/KidsLessonBody", async () => {
   const actual = await vi.importActual<typeof import("@/components/kids/KidsLessonBody")>("@/components/kids/KidsLessonBody");
   return {
@@ -110,6 +134,7 @@ beforeEach(() => {
   mock.parentStateRead = mock.parentProfilesRead = mock.functionsRead = mock.invokeRead = undefined;
   mock.parseLessonRead = mock.parsePlaybackRead = undefined;
   mock.actualBody = false; mock.freshFunctions = false; mock.receivers = []; mock.bodyCalls = [];
+  mock.actualAssistant = false; mock.panelInstances = 0; mock.panelLive = 0; mock.panelSends = 0; mock.pendingAnswer = undefined;
   localStorage.clear();
   mock.params = { levelId: "level-2", lessonNumber: "1" };
   mock.invoke.mockResolvedValue({ data: {}, error: null });
@@ -123,6 +148,145 @@ beforeEach(() => {
   setParent({ state: "ready", profiles: [] });
 });
 afterEach(() => cleanup());
+
+describe("Kids assistant window revalidation", () => {
+  type BodyContext = { actionContext: { incarnation: object; isCurrent(): boolean } };
+  const dialog = () => screen.queryByRole("dialog", { name: "Fixture assistant" });
+  const launcher = () => screen.getByRole("button", { name: "Ask AI" });
+  const latestBody = () => mock.bodyCalls.at(-1) as BodyContext;
+  const profiles = () => setParent({ state: "ready", profiles: [profile,
+    { ...profile, id: "profile-2", display_name: "Second fixture" }] });
+  async function begin(child = false) {
+    mock.actualBody = true; mock.actualAssistant = true; mock.isAdmin = true;
+    mock.parseLesson.mockImplementation(() => ({ locale: mock.locale, title: "Window fixture", hints: [], quiz: [] }));
+    profiles(); localStorage.setItem(preferenceKey("parent-1"), profile.id);
+    const page = render(<KidsLessonPage />);
+    await screen.findByRole("button", { name: "Ask AI" });
+    if (child) {
+      fireEvent.click(screen.getByRole("button", { name: "Child profile" }));
+      await screen.findByRole("button", { name: "Ask AI" });
+    }
+    expect(dialog()).toBeNull();
+    fireEvent.click(launcher());
+    expect(dialog()).toBeInTheDocument();
+    return page;
+  }
+  async function resolvePair(calls: ReturnType<typeof queuedCalls>) {
+    expect(calls).toHaveLength(2);
+    await settle(() => calls[0].result.resolve({ data: {}, error: null }));
+    expect(dialog()).toBeNull();
+    await settle(() => calls[1].result.resolve({ data: {}, error: null }));
+    await screen.findByRole("button", { name: "Ask AI" });
+  }
+
+  it.each([false, true])("restores only the open window after successful same-context revalidation (child=%s)", async child => {
+    const page = await begin(child);
+    const oldBody = latestBody(), instance = screen.getByTestId("fixture-conversation").getAttribute("data-instance");
+    const pending = deferred<string>(); mock.pendingAnswer = pending.promise;
+    fireEvent.click(screen.getByRole("button", { name: "Start fixture reply" }));
+    const calls = queuedCalls();
+    if (child) {
+      setParent({ state: "checking", profiles: [] }); page.rerender(<KidsLessonPage />);
+      expect(dialog()).toBeNull();
+      profiles(); page.rerender(<KidsLessonPage />);
+    } else act(() => window.dispatchEvent(new Event("focus")));
+    expect(oldBody.actionContext.isCurrent()).toBe(false);
+    expect(dialog()).toBeNull(); expect(mock.panelLive).toBe(0);
+    await resolvePair(calls);
+    expect(dialog()).toBeInTheDocument();
+    expect(screen.getByTestId("fixture-conversation").getAttribute("data-instance")).not.toBe(instance);
+    expect(latestBody().actionContext.incarnation).not.toBe(oldBody.actionContext.incarnation);
+    expect(mock.panelSends).toBe(1);
+    await settle(() => pending.resolve("RETIRED_REPLY_MUST_NOT_RETURN"));
+    expect(screen.queryByText("RETIRED_REPLY_MUST_NOT_RETURN")).toBeNull();
+  });
+
+  it("keeps an explicitly closed window closed after revalidation", async () => {
+    await begin();
+    fireEvent.click(screen.getByRole("button", { name: "Close assistant" }));
+    expect(dialog()).toBeNull();
+    const calls = queuedCalls(); act(() => window.dispatchEvent(new Event("focus")));
+    await resolvePair(calls);
+    expect(dialog()).toBeNull(); expect(launcher()).toHaveAttribute("aria-expanded", "false");
+  });
+
+  it("retains only open intent through transient auth checking in the same session", async () => {
+    const page = await begin(), oldBody = latestBody();
+    const calls = queuedCalls();
+    mock.authLoading = true; page.rerender(<KidsLessonPage />);
+    expect(oldBody.actionContext.isCurrent()).toBe(false);
+    expect(dialog()).toBeNull(); expect(mock.panelLive).toBe(0);
+    mock.authLoading = false; page.rerender(<KidsLessonPage />);
+    await resolvePair(calls);
+    expect(dialog()).toBeInTheDocument();
+    expect(latestBody().actionContext.incarnation).not.toBe(oldBody.actionContext.incarnation);
+  });
+
+  it.each(["account", "session", "lesson", "locale", "profile", "preview"])("starts closed after changing %s", async change => {
+    const page = await begin(true), oldBody = latestBody();
+    if (change === "account" || change === "session") {
+      rotateAuth(change === "account" ? "other-fixture-account" : "parent-1");
+      setParent({ state: "pending", profiles: [] }); page.rerender(<KidsLessonPage />);
+    } else if (change === "lesson") {
+      mock.params = { ...mock.params, lessonNumber: "2" }; page.rerender(<KidsLessonPage />);
+    } else if (change === "locale") {
+      mock.locale = "ar-EG"; page.rerender(<KidsLessonPage />);
+    } else if (change === "profile") {
+      fireEvent.click(screen.getByRole("button", { name: "Exit child profile" }));
+      fireEvent.change(screen.getByLabelText("Choose a profile for this path"), { target: { value: "profile-2" } });
+    } else fireEvent.click(screen.getByRole("button", { name: "Administrator preview" }));
+    await act(async () => { for (let i = 0; i < 12; i++) await Promise.resolve(); });
+    await screen.findByRole("button", { name: "Ask AI" });
+    expect(oldBody.actionContext.isCurrent()).toBe(false);
+    expect(dialog()).toBeNull(); expect(launcher()).toHaveAttribute("aria-expanded", "false");
+    expect(mock.panelLive).toBe(0);
+  });
+
+  it("does not resurrect an older lesson's open intent after A to B to A", async () => {
+    const page = await begin(true);
+    mock.params = { ...mock.params, lessonNumber: "2" }; page.rerender(<KidsLessonPage />);
+    await screen.findByRole("button", { name: "Ask AI" });
+    mock.params = { ...mock.params, lessonNumber: "1" }; page.rerender(<KidsLessonPage />);
+    await screen.findByRole("button", { name: "Ask AI" });
+    expect(dialog()).toBeNull(); expect(launcher()).toHaveAttribute("aria-expanded", "false");
+  });
+
+  it("forgets open intent after protected denial even if a later read succeeds", async () => {
+    await begin();
+    mock.invoke.mockResolvedValue({ data: null, error: new Error("Synthetic protected denial") });
+    act(() => window.dispatchEvent(new Event("focus")));
+    await screen.findByText("This step is not ready. Video and content were not loaded.");
+    expect(dialog()).toBeNull(); expect(mock.panelLive).toBe(0);
+    mock.invoke.mockResolvedValue({ data: {}, error: null });
+    act(() => window.dispatchEvent(new Event("focus")));
+    await screen.findByRole("button", { name: "Ask AI" });
+    expect(dialog()).toBeNull();
+  });
+
+  it("forgets open intent after parent withdrawal before restoring the same child's access", async () => {
+    const page = await begin(true);
+    setParent({ state: "pending", profiles: [] }); page.rerender(<KidsLessonPage />);
+    expect(dialog()).toBeNull(); expect(mock.panelLive).toBe(0);
+    profiles(); page.rerender(<KidsLessonPage />);
+    await screen.findByRole("button", { name: "Ask AI" });
+    expect(dialog()).toBeNull();
+  });
+
+  it("forgets open intent after campaign revocation and subsequent fresh validation", async () => {
+    mock.freeTargets = ["kids"];
+    const page = await begin(true);
+    await waitFor(() => expect(mock.campaignRpc).toHaveBeenCalled());
+    mock.campaignRpc.mockResolvedValue({ data: false, error: null });
+    mock.freeTargets = []; page.rerender(<KidsLessonPage />);
+    await waitFor(() => expect(dialog()).toBeNull());
+    expect(mock.panelLive).toBe(0);
+    mock.campaignRpc.mockResolvedValue({ data: true, error: null });
+    setParent({ state: "checking", profiles: [] }); page.rerender(<KidsLessonPage />);
+    profiles(); page.rerender(<KidsLessonPage />);
+    await screen.findByRole("button", { name: "Ask AI" });
+    expect(dialog()).toBeNull();
+  });
+});
 
 describe("Kids dual-role parent context", () => {
   type BodyContext = { profileId: string; actionContext: { kind: string; isCurrent(): boolean } };
