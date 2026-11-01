@@ -11,7 +11,8 @@
 //   3) Authoritative grounding comes ONLY from server-side locale-aware semantic
 //      retrieval (localeSemanticRetrieve) — there is no legacy retrieval path.
 //   4) Retrieved lesson text is untrusted data, delimited outside system policy.
-//   5) Evidence AND citations are built from the exact same authoritative subset.
+//   5) Evidence comes from the authoritative subset; response citations are only
+//      its server-owned members selected by a validated supported-answer decision.
 //   6) Cryptographic admission requires registered freeze SHA, package/chunk
 //      identity/card membership, and recomputed canonical content checksums.
 //   7) The explicit current card is immutable across query/history. All its
@@ -38,6 +39,7 @@ import CARD_MEMBERSHIP_JSON from "./current-card-membership.json" with { type: "
 import CURRENT_CORPUS_PACK from "./current-corpus-approval.packed.json" with { type: "json" };
 import { isValidCurrentApproval, matchesCurrentApprovedContent, isCurrentReleaseRow, type CurrentCorpusApproval } from "./current-corpus-admission.ts";
 import { decodePackedCorpus } from "./packed-corpus.ts";
+import { ASSISTANT_ANSWER_POLICY, parseAssistantAnswer, type AssistantAnswerDecision } from "./answer-contract.ts";
 
 const [AUTHORITATIVE_CORPUS_LOOKUP_JSON, CURRENT_CORPUS_JSON] = await Promise.all([
   decodePackedCorpus(AUTHORITATIVE_CORPUS_PACK), decodePackedCorpus(CURRENT_CORPUS_PACK),
@@ -113,6 +115,7 @@ export interface RagCitation {
 }
 
 export type LlmResult =
+  // Successful transport carries the serialized decision, validated again by the handler.
   { ok: true; answer: string } | { ok: false; status: number; error: string; detail?: string };
 
 /** Result of calling a billing-schema RPC (Accept/Content-Profile: billing). */
@@ -544,7 +547,7 @@ function wrapUntrustedEvidence(body: string): string {
   return `${UNTRUSTED_EVIDENCE_START}\n${body}\n${UNTRUSTED_EVIDENCE_END}`;
 }
 
-/** Evidence block built ONLY from the authoritative subset — same array as citations. */
+/** Evidence uses admitted sources; the answer may cite only selected members. */
 function buildEvidenceBlock(authoritative: SemanticChunk[]): string {
   if (authoritative.length === 0) {
     return wrapUntrustedEvidence("— no authoritative server-side evidence —");
@@ -596,6 +599,8 @@ function buildSystemPrompt(): string {
   return `أنت مساعد منصة مسارات (masaarat.ai).
 
 ${UNTRUSTED_CONTENT_POLICY}
+
+${ASSISTANT_ANSWER_POLICY}
 
 قواعدك:
 - رد بنفس لغة/لهجة طلب المتعلم (ar-EG عامية مصرية، ar-MSA فصحى، ar-Gulf خليجية، en إنجليزية).
@@ -764,7 +769,6 @@ export async function handleAssistantRuntimeRequest(
   if (conversationHistory === null) {
     return jsonResponse({ ok: false, error: "Invalid conversation history" }, 400, corsHeaders);
   }
-  const lastQuestion = conversationHistory.at(-1)?.question ?? "";
   const scope = resolveCardScope(localeGate.locale, learnerContext);
   if (!scope.ok) {
     return jsonResponse(
@@ -778,11 +782,10 @@ export async function handleAssistantRuntimeRequest(
       corsHeaders,
     );
   }
-  const retrievalQuery =
-    lastQuestion &&
-    query.length < 100
-      ? `${lastQuestion}\n${query}`
-      : query;
+  // Retrieve for the current question. Unconditionally prepending a short
+  // turn's predecessor can make an unrelated new question retrieve old support.
+  // Validated history remains delimited context for generation, never evidence.
+  const retrievalQuery = query;
 
   // Rate limit: hourly + daily + monthly cost caps per user (not entitlement).
   for (const bucket of [
@@ -918,6 +921,8 @@ export async function handleAssistantRuntimeRequest(
   let crossCardLeakage = 0;
   let unentitledExcluded = 0;
   let llmResult: LlmResult | null = null;
+  let answerDecision: AssistantAnswerDecision | null = null;
+  let candidateCitationCount = 0;
   let embeddingAttempted = false;
   let retrievalAttempted = false;
   let llmAttempted = false;
@@ -1057,6 +1062,7 @@ export async function handleAssistantRuntimeRequest(
           crossCardLeakage,
           unentitledExcluded,
         } = normalizeAuthoritativeChunks(resolvedLocale, resolvedPathId, resolvedLessonId, entitledLessonIds, semanticChunks));
+        candidateCitationCount = citations.length;
       }
 
       // ---- Fail closed: zero grounded chunks or zero citations → no generation. ----
@@ -1123,6 +1129,21 @@ ${retrievalBlock}
           try {
             llmAttempted = true;
             llmResult = await deps.callLlm(systemPrompt, userPrompt, modelKey);
+            if (llmResult.ok) {
+              answerDecision = parseAssistantAnswer(llmResult.answer);
+              const selected = answerDecision?.sourceIds;
+              if (!answerDecision || !selected || selected.some(id => !citations.some(c => c.chunkId === id))) {
+                answerDecision = null;
+                llmResult = { ok: false, status: 502, error: "ASSISTANT_PROVIDER_INVALID_RESPONSE" };
+                citations = [];
+              } else {
+                // Provider IDs select only admitted metadata; no provider-created
+                // title, URL, source body or history citation can enter this reply.
+                citations = selected.map(id => citations.find(c => c.chunkId === id)!);
+              }
+            } else {
+              citations = [];
+            }
           } finally {
             await deps.billingRpc("finalize_provider_attempt", {
               p_reservation_id: reservationId,
@@ -1132,6 +1153,7 @@ ${retrievalBlock}
           }
         } else {
           llmResult = { ok: false, status: registerAnswer.status, error: registerAnswer.error };
+          citations = [];
         }
       }
     } finally {
@@ -1173,12 +1195,14 @@ ${retrievalBlock}
     !(await hasCurrentContentAccess())) return contentAccessDenied();
 
   const nowFn = deps.now ?? (() => new Date());
-  const noResultReason = citations.length === 0 ? "no_locale_results" : null;
+  const noResultReason = answerDecision?.grounding === "insufficient"
+    ? INSUFFICIENT_GROUNDING_REASON : authoritative.length === 0 ? "no_locale_results" : null;
 
   const retrievalTelemetry = {
     semanticCount: authoritative.length,
     keywordCount: 0,
     citationCount: citations.length,
+    candidateCitationCount,
     locale: resolvedLocale,
     retrievalMode: "locale" as const,
     lessonScoped,
@@ -1242,7 +1266,7 @@ ${retrievalBlock}
         runtime: "disconnected",
         error: "Assistant runtime failed to answer",
         retrieval: retrievalTelemetry,
-        citations,
+        citations: [],
         providersCalled: {
           embedding: embeddingAttempted,
           retrievalRpc: retrievalAttempted,
@@ -1299,7 +1323,11 @@ ${retrievalBlock}
   const payload = {
     ok: true,
     runtime: "connected" as const,
-    answer: llmResult.answer,
+    // Insufficient evidence is a valid refusal, not a generated factual answer.
+    // Use locale-owned copy rather than returning unsupported provider prose.
+    answer: answerDecision!.grounding === "insufficient"
+      ? insufficientGroundingMessage(resolvedLocale) : answerDecision!.answer,
+    answerGrounding: answerDecision!.grounding,
     receivedQuery: query,
     retrievalCount: authoritative.length,
     contextDetected,

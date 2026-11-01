@@ -5,11 +5,12 @@ import path from "node:path";
 import { callDirectAssistantModel } from "../../../supabase/functions/assistant-runtime/direct-model";
 
 it("uses the established native OpenAI model and direct endpoint with a bounded response and no retry", async () => {
+  const decision = JSON.stringify({ grounding: "supported", answer: "Grounded explanation", sourceIds: ["source-1"] });
   const request = vi.fn<typeof fetch>().mockResolvedValue(new Response(JSON.stringify({
-    choices: [{ message: { content: " Grounded explanation " } }],
+    choices: [{ finish_reason: "stop", message: { content: decision } }],
   })));
   expect(await callDirectAssistantModel("approved source", "short question", "test-only", request))
-    .toEqual({ ok: true, answer: "Grounded explanation" });
+    .toEqual({ ok: true, answer: decision });
   expect(request).toHaveBeenCalledTimes(1);
   const [url, options] = request.mock.calls[0];
   expect(options?.headers).toMatchObject({ Authorization: "Bearer test-only" });

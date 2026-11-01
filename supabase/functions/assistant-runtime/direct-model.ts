@@ -1,6 +1,7 @@
 import type { LlmResult } from "./handler.ts";
+import { ASSISTANT_ANSWER_FORMAT, parseAssistantAnswer } from "./answer-contract.ts";
 
-/** Existing native OpenAI model/API contract, adapted to the Edge text answer.
+/** Existing native OpenAI model/API with a strict grounded-answer output contract.
  * Credentials stay in the server environment. There is no retry or fallback.
  */
 export async function callDirectAssistantModel(
@@ -13,7 +14,7 @@ export async function callDirectAssistantModel(
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${key}` },
       body: JSON.stringify({ model: "gpt-4.1-mini-2025-04-14", temperature: 0.2,
-        max_tokens: 1800, stream: false,
+        max_tokens: 1800, stream: false, response_format: ASSISTANT_ANSWER_FORMAT,
         messages: [{ role: "system", content: systemPrompt }, { role: "user", content: userPrompt }] }),
       signal: AbortSignal.timeout(30_000),
     });
@@ -23,8 +24,10 @@ export async function callDirectAssistantModel(
         error: "ASSISTANT_PROVIDER_UNAVAILABLE" };
     }
     const body = await response.json();
-    const answer = body?.choices?.[0]?.message?.content;
-    if (typeof answer !== "string" || !answer.trim() || answer.length > 16_000)
+    const choice = body?.choices?.[0];
+    const answer = choice?.message?.content;
+    if (choice?.finish_reason !== "stop" || choice?.message?.refusal != null ||
+      typeof answer !== "string" || !parseAssistantAnswer(answer))
       return { ok: false, status: 502, error: "ASSISTANT_PROVIDER_INVALID_RESPONSE" };
     return { ok: true, answer: answer.trim() };
   } catch {

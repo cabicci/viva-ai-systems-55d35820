@@ -24,6 +24,7 @@ import { CONTENT_FREEZE_SHA, RAG_INDEX_VERSION } from "@/lib/rag/constants";
 import { sha256CanonicalHex } from "@/lib/rag/canonical-checksum";
 import cardMembership from "../../../supabase/functions/assistant-runtime/current-card-membership.json";
 import { currentSample, CURRENT_CHUNKS } from "./helpers/current-assistant-corpus";
+import { groundedAnswerFixture } from "./helpers/assistant-answer";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
 const FIXED_NOW = new Date("2026-01-01T00:00:00.000Z");
@@ -98,7 +99,7 @@ function buildDeps(overrides: Partial<AssistantRuntimeDeps> = {}): AssistantRunt
       ok: true as const,
       chunks: [] as SemanticChunk[],
     })),
-    callLlm: vi.fn(async () => ({ ok: true as const, answer: "grounded answer" })),
+    callLlm: vi.fn(async (_system: string, user: string) => groundedAnswerFixture(user, "grounded answer")),
     env: {
       OPENAI_API_KEY: "openai-key",
       SUPABASE_URL: "https://project.supabase.co",
