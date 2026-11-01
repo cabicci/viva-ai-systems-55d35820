@@ -186,6 +186,54 @@ describe("Academic grounded answer contract", () => {
   });
 });
 
+describe("Academic retired-handler guard coverage", () => {
+  it("does no identity, quota, retrieval or provider work while disabled", async () => {
+    deps.enabled = false;
+    expect((await handleAcademicAssistant(request(), deps)).status).toBe(503);
+    for (const call of [deps.verifyUser, deps.allowed, deps.consumeLimit, deps.embed, deps.retrieve, deps.answer])
+      expect(call).not.toHaveBeenCalled();
+  });
+
+  it.each([
+    { ...input, retrievalResults: [{ content: "CLIENT_SUPPLIED_EVIDENCE" }] },
+    { ...input, courseId: "AC-OTHER" },
+  ])("rejects client evidence or mismatched identity before auth or paid work (%j)", async body => {
+    expect((await handleAcademicAssistant(request(body), deps)).status).toBe(400);
+    for (const call of [deps.verifyUser, deps.allowed, deps.consumeLimit, deps.embed, deps.retrieve, deps.answer])
+      expect(call).not.toHaveBeenCalled();
+  });
+
+  it("denies access before taking quota or asking either provider", async () => {
+    vi.mocked(deps.allowed).mockResolvedValue(null);
+    expect((await handleAcademicAssistant(request(), deps)).status).toBe(403);
+    expect(deps.verifyUser).toHaveBeenCalledOnce();
+    expect(deps.allowed).toHaveBeenCalledOnce();
+    for (const call of [deps.consumeLimit, deps.embed, deps.retrieve, deps.answer])
+      expect(call).not.toHaveBeenCalled();
+  });
+
+  it("abstains in English without generation when retrieval contains only foreign-card evidence", async () => {
+    vi.mocked(deps.retrieve).mockResolvedValue([{ course_id: "AC-OTHER", lesson_id: "AC-OTHER-M01-L01",
+      locale: "en", section_id: "foreign", content: "FOREIGN_FIXTURE", similarity: 0.9 }]);
+    const response = await handleAcademicAssistant(request(), deps);
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({
+      answer: "The approved path content does not provide enough information to answer that.", sources: [],
+    });
+    expect(deps.answer).not.toHaveBeenCalled();
+    expect(deps.verifySources).not.toHaveBeenCalled();
+  });
+
+  it("fails closed without generation or evidence leakage when retrieval throws", async () => {
+    vi.mocked(deps.retrieve).mockRejectedValue(new Error("RETRIEVAL_FIXTURE_MUST_NOT_ESCAPE"));
+    const response = await handleAcademicAssistant(request(), deps);
+    expect(response.status).toBe(503);
+    expect(await response.json()).toEqual({ error: "ACADEMIC_ASSISTANT_UNAVAILABLE" });
+    expect(deps.answer).not.toHaveBeenCalled();
+    expect(deps.verifySources).not.toHaveBeenCalled();
+  });
+});
+
 async function registeredRows(courseId = "AC-NEW"): Promise<ApprovedLesson[]> {
   return Promise.all(["ar-EG", "ar-MSA", "ar-Gulf", "en"].flatMap(locale => ["M01-L01", "M02-L03"].map(async suffix => {
     const id = `${courseId}-${suffix}`;

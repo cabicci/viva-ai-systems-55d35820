@@ -5,7 +5,6 @@ import { ACADEMIC_EMBEDDING_MODEL, approvedChunks, canonicalJson, sha256,
 const state = vi.hoisted(() => ({ lessons: [] as unknown[], existing: [] as unknown[],
   filters: [] as [string, unknown][], admin: true, adminCalls: 0, revoke: false,
   sync: vi.fn(), adminCheck: vi.fn() }));
-vi.mock("@/lib/ai-providers.server", () => ({ callAI: vi.fn() }));
 vi.mock("@/integrations/supabase/client.server", () => ({ supabaseAdmin: {
   from: (table: string) => {
     const builder = {
