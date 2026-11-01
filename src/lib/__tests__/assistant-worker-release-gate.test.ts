@@ -11,12 +11,14 @@ const workflow = yaml.load(readFileSync(path.join(root, ".github/workflows/assis
 const job = workflow.jobs["prepare-approved-content"];
 const repository = "cabicci/viva-ai-systems-55d35820";
 const enabled = "MASAARAT_ASSISTANT_INDEXING_RELEASE_ENABLED";
+const projectVariable = "MASAARAT_ASSISTANT_PROJECT_ID";
+const originalProject = "658adce0-747d-4c8e-90e3-d22225070b94";
 
 // Evaluate the actual checked-in condition with virtual GitHub/vars contexts.
 // No GitHub call, variable mutation, OIDC token, workflow or worker is run.
-function admitted(value?: string, overrides: Record<string, unknown> = {}) {
+function admitted(value?: string, overrides: Record<string, unknown> = {}, target: string | null = originalProject) {
   const github = { repository, event_name: "schedule", event: {}, ...overrides };
-  const vars = value === undefined ? {} : { [enabled]: value };
+  const vars = { ...(value === undefined ? {} : { [enabled]: value }), ...(target === null ? {} : { [projectVariable]: target }) };
   return vm.runInNewContext("Boolean(" + job.if + ")", { github, vars }, { timeout: 100 });
 }
 
@@ -25,7 +27,12 @@ it.each([undefined, "", "false", "False", "1", "true "])("skips production maint
     expect(admitted(value, { event_name })).toBe(false);
 });
 
-it("retains trusted successful main-CI admission only after explicit release enablement", () => {
+it.each([null, "", "0d675f0a-ecc5-4c62-9217-54973c927902", "other-project"])("skips maintenance for missing or different project %s", target => {
+  for (const event_name of ["schedule", "workflow_dispatch", "workflow_run"])
+    expect(admitted("true", { event_name }, target)).toBe(false);
+});
+
+it("retains trusted successful main-CI admission after explicit release enablement for the original project", () => {
   expect(admitted("true")).toBe(true);
   expect(admitted("true", { event_name: "workflow_dispatch" })).toBe(true);
   const run = { conclusion: "success", event: "push", head_branch: "main", head_repository: { full_name: repository } };
@@ -43,3 +50,4 @@ it("preserves automatic indexing, trusted-main checkout and existing OIDC permis
   expect(job.permissions).toEqual({ contents: "read", "id-token": "write" });
   expect(job.steps.at(-1).run).toBe("bun run scripts/assistant/automatic-worker-client.ts");
 });
+
