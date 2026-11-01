@@ -860,7 +860,9 @@ describe("handleAssistantRuntimeRequest — rate limiting and provider gating", 
     );
     expect(res.status).toBe(200);
     expect(deps.embedQuery).toHaveBeenCalledWith(expect.any(String), "openai-key");
-    expect(deps.callLlm).toHaveBeenCalledWith(expect.any(String), expect.any(String), "openai-key");
+    expect(deps.callLlm).toHaveBeenCalledWith(expect.any(String), expect.any(String), "openai-key",
+      ["en/analyst-m1-l1-from-automation-to-insight/s0/c0"]);
+    expect(deps.callLlm).toHaveBeenCalledTimes(1);
     expect(deps.billingRpc).toHaveBeenCalledWith("register_provider_attempt", expect.objectContaining({ p_provider: "openai_llm" }));
   });
 
