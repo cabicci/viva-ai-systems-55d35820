@@ -48,11 +48,6 @@ export function AcademicCataloguePage({
       title={course ? getPathStoryCopy(locale).contents : undefined}
       subtitle={course ? course.title : getLineCopy(locale).academicIntro}
     >
-      {query.data?.some((item) => item.reviewOnly) && (
-        <p role="status" className="rounded-xl border p-4">
-          {c.reviewOnly}
-        </p>
-      )}
       {query.isPending ? (
         <p role="status">{c.loading}</p>
       ) : query.isError ? (
