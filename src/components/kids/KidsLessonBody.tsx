@@ -1,6 +1,6 @@
 import { JourneyVisitRecorder } from "@/components/journey/JourneyVisitRecorder";
 import { KidsStepCompletion } from "@/components/journey/KidsStepCompletion";
-import { useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { getKidsJourneyCopy } from "@/lib/kids/journey-copy";
 import type { KidsLesson } from "@/lib/kids/lesson-client";
@@ -15,102 +15,354 @@ type Props = {
   levelId: KidsLevelId;
   lessonNumber: number;
   profileId: string;
+  actionContext: KidsBodyActionContext;
 };
 
+export type KidsBodyActionContext = Readonly<{
+  incarnation: object;
+  kind: "administrator_preview" | "kids_profile";
+  isCurrent: () => boolean;
+}>;
+type BodyScope = {
+  incarnation: object | null; kind: KidsBodyActionContext["kind"] | null;
+  lesson: KidsLesson; embedUrl: string; locale: SupportedLocale;
+  levelId: KidsLevelId; lessonNumber: number; profileId: string;
+};
+type ActionTicket = {
+  model: BodyModel; kind: "quiz" | "hint"; key: string; selection: object;
+  active: boolean; pending: boolean;
+};
+type QuizValue = { correct: boolean; explanation?: string };
+type BodyModel = {
+  scope: BodyScope; life: object; active: boolean;
+  choices: Record<string, number>; choiceVersions: Record<string, object>;
+  latestQuiz: Record<string, ActionTicket>;
+  checked: Record<string, { selection: object; value: QuizValue }>;
+  quizBusy: ActionTicket | null; quizError: ActionTicket | null;
+  hintVersion: object; hintLatest: ActionTicket | null;
+  hint: { ticket: ActionTicket; id: string; answer: string } | null;
+  hintError: ActionTicket | null; hintBusy: ActionTicket | null;
+};
+type BodyView = BodyModel & { model: BodyModel };
+
+/** Fence lazy adoption itself, not only the continuation after await. */
+function adoptBodyAction<T>(
+  pending: T | PromiseLike<T>, requireCurrent: () => void,
+): Promise<{ value: T }> {
+  return new Promise((resolve, reject) => {
+    const fail = (error: unknown) => {
+      try { Reflect.apply(Promise.prototype.then, pending, [() => undefined, () => undefined]); }
+      catch { /* Only an already-started native Promise passes the intrinsic brand check. */ }
+      reject(error);
+    };
+    try { requireCurrent(); } catch (error) { fail(error); return; }
+    queueMicrotask(() => {
+      try {
+        requireCurrent();
+        const then = pending !== null &&
+          (typeof pending === "object" || typeof pending === "function")
+          ? (pending as PromiseLike<T>).then : undefined;
+        requireCurrent();
+        if (typeof then === "function") {
+          const derived = Reflect.apply(then, pending, [(value: T) => resolve({ value }), reject]);
+          try { Reflect.apply(Promise.prototype.then, derived, [() => undefined, () => undefined]); }
+          catch { /* Never adopt an arbitrary lazy return value just to observe it. */ }
+        } else resolve({ value: pending as T });
+      } catch (error) { fail(error); }
+    });
+  });
+}
+
 export function KidsLessonBody({
-  lesson,
-  embedUrl,
-  locale,
-  levelId,
-  lessonNumber,
-  profileId,
+  lesson, embedUrl, locale, levelId, lessonNumber, profileId, actionContext,
 }: Props) {
   const copy = getKidsJourneyCopy(locale);
-  const [choices, setChoices] = useState<Record<string, number>>({});
-  const [checked, setChecked] = useState<
-    Record<string, { correct: boolean; explanation?: string }>
-  >({});
-  const [checkingKey, setCheckingKey] = useState<string | null>(null);
-  const [quizError, setQuizError] = useState<string | null>(null);
-  const [hint, setHint] = useState<{ id: string; answer: string } | null>(null);
-  const [hintError, setHintError] = useState(false);
-  const [loadingHint, setLoadingHint] = useState(false);
+  let incarnation: object | null = null;
+  let kind: KidsBodyActionContext["kind"] | null = null;
+  try {
+    if (actionContext && typeof actionContext.incarnation === "object" &&
+      actionContext.incarnation !== null) incarnation = actionContext.incarnation;
+    if (actionContext?.kind === "administrator_preview" || actionContext?.kind === "kids_profile")
+      kind = actionContext.kind;
+  } catch { /* No missing/unreadable context success fallback. */ }
+  const scope = useMemo<BodyScope>(() => ({
+    incarnation, kind, lesson, embedUrl, locale, levelId, lessonNumber, profileId,
+  }), [incarnation, kind, lesson, embedUrl, locale, levelId, lessonNumber, profileId]);
+  const latest = useRef({ scope, context: actionContext });
+  latest.current = { scope, context: actionContext };
+  const life = useRef<object | null>(null);
+  const model = useRef<BodyModel | null>(null);
+  const [view, setView] = useState<BodyView | null>(null);
+  const modelCurrent = (captured: BodyModel) => {
+    const owned = () => captured.active && model.current === captured &&
+      life.current === captured.life && latest.current.scope === captured.scope;
+    if (!owned() || !captured.scope.incarnation || !captured.scope.kind) return false;
+    for (let attempt = 0; attempt < 2; attempt += 1) {
+      try {
+        const context = latest.current.context;
+        if (!context || !owned()) return false;
+        const identity = context.incarnation;
+        if (!owned()) return false;
+        const selector = context.kind;
+        if (!owned()) return false;
+        const predicate = context.isCurrent;
+        if (!owned() || identity !== captured.scope.incarnation ||
+          selector !== captured.scope.kind || typeof predicate !== "function") return false;
+        const current = Reflect.apply(predicate, context, []) === true;
+        if (!owned()) return false;
+        // Identity is only a reason to reread the live predicate, never permission.
+        if (latest.current.context !== context) continue;
+        return current;
+      } catch { return false; }
+    }
+    return false;
+  };
+  const ticketCurrent = (ticket: ActionTicket) => {
+    const matches = () => ticket.active && (ticket.kind === "quiz"
+      ? ticket.model.latestQuiz[ticket.key] === ticket &&
+        ticket.model.choiceVersions[ticket.key] === ticket.selection
+      : ticket.model.hintLatest === ticket && ticket.model.hintVersion === ticket.selection);
+    return matches() && modelCurrent(ticket.model) && matches();
+  };
+  const publish = (captured: BodyModel, ticket?: ActionTicket) => {
+    if (!modelCurrent(captured) || (ticket && !ticketCurrent(ticket))) return;
+    setView((previous) => {
+      // Guard actual updater execution, then copy latest private channel state.
+      if (!modelCurrent(captured) || (ticket && !ticketCurrent(ticket))) return previous;
+      return { ...captured, model: captured, choices: { ...captured.choices },
+        choiceVersions: { ...captured.choiceVersions }, latestQuiz: { ...captured.latestQuiz },
+        checked: { ...captured.checked } };
+    });
+  };
+  const retire = (captured: BodyModel) => {
+    captured.active = false;
+    for (const ticket of Object.values(captured.latestQuiz)) ticket.active = false;
+    if (captured.hintLatest) captured.hintLatest.active = false;
+    if (model.current === captured) model.current = null;
+  };
+  useEffect(() => {
+    const mounted = {};
+    life.current = mounted;
+    return () => {
+      if (life.current !== mounted) return;
+      life.current = null;
+      if (model.current) retire(model.current);
+    };
+  }, []);
+  useEffect(() => {
+    const mounted = life.current;
+    if (!mounted) return;
+    const current: BodyModel = {
+      scope, life: mounted, active: true, choices: {}, choiceVersions: {}, latestQuiz: {},
+      checked: {}, quizBusy: null, quizError: null, hintVersion: {}, hintLatest: null,
+      hint: null, hintError: null, hintBusy: null,
+    };
+    model.current = current;
+    publish(current);
+    return () => retire(current);
+  }, [scope]);
+  const requireModel = (captured: BodyModel) => {
+    if (!modelCurrent(captured)) throw new Error("Retired Kids body action");
+  };
+  const requireTicket = (ticket: ActionTicket) => {
+    if (!ticketCurrent(ticket)) throw new Error("Retired Kids body action");
+  };
+  const field = (value: unknown, key: string | number, current: () => void): unknown => {
+    current();
+    const found = value !== null && (typeof value === "object" || typeof value === "function")
+      ? Reflect.get(value, key) : undefined;
+    current();
+    return found;
+  };
+  const invoke = async (
+    ticket: ActionTicket, name: "kids-lesson-help" | "kids-lesson-content",
+    body: Record<string, unknown>,
+  ) => {
+    const current = () => requireTicket(ticket);
+    current();
+    const functions = supabase.functions;
+    current();
+    const call = functions.invoke;
+    current();
+    const started = Reflect.apply(call, functions, [name, { body }]);
+    const response = await adoptBodyAction(started, current);
+    current();
+    return response;
+  };
+  const changeChoice = (
+    captured: BodyModel, key: string, selectedIndex: number,
+    expectedChoice: object | undefined, expectedRequest: ActionTicket | undefined,
+  ) => {
+    const current = () => modelCurrent(captured) &&
+      captured.choiceVersions[key] === expectedChoice && captured.latestQuiz[key] === expectedRequest;
+    try {
+      if (!current()) return;
+      const quiz = field(captured.scope.lesson, "quiz", () => { if (!current()) throw new Error("Retired choice"); });
+      if (!current() || !Array.isArray(quiz)) return;
+      const question = quiz.find((candidate) => candidate?.id === key);
+      if (!current() || !question || !Number.isInteger(selectedIndex) ||
+        selectedIndex < 0 || selectedIndex >= question.options.length) return;
+      if (!current()) return;
+      const old = captured.latestQuiz[key];
+      if (old) old.active = false;
+      if (captured.quizBusy === old) captured.quizBusy = null;
+      captured.choiceVersions[key] = {};
+      captured.choices[key] = selectedIndex;
+      delete captured.checked[key];
+      captured.quizError = null;
+      publish(captured);
+    } catch { /* Retired/unreadable authored selections cannot mutate a newer view. */ }
+  };
+  async function showHint(captured: BodyModel, index: number, expectedVersion: object) {
+    let ticket: ActionTicket | null = null;
+    try {
+      const current = () => {
+        requireModel(captured);
+        if (captured.hintVersion !== expectedVersion) throw new Error("Retired hint selection");
+      };
+      current();
+      if (captured.hintBusy?.pending && ticketCurrent(captured.hintBusy)) return;
+      const hints = field(captured.scope.lesson, "hints", current);
+      const authored = field(hints, index, current);
+      const sourceScene = field(authored, "sourceScene", current);
+      const sourceId = sourceScene ?? field(authored, "source", current);
+      const question = field(authored, "question", current);
+      current();
+      if (captured.hintLatest) captured.hintLatest.active = false;
+      const selection = {};
+      captured.hintVersion = selection;
+      ticket = { model: captured, kind: "hint", key: "hint-" + (index + 1),
+        selection, active: true, pending: true };
+      captured.hintLatest = ticket;
+      captured.hintBusy = ticket;
+      captured.hint = null;
+      captured.hintError = null;
+      publish(captured, ticket);
+      const owned = () => requireTicket(ticket!);
+      const { value: response } = await invoke(ticket, "kids-lesson-help", {
+        profileId: captured.scope.profileId, levelId: captured.scope.levelId,
+        lessonNumber: captured.scope.lessonNumber, locale: captured.scope.locale, hintId: ticket.key,
+      });
+      owned();
+      const error = field(response, "error", owned);
+      const data = field(response, "data", owned);
+      const citation = field(data, "citation", owned);
+      const answer = field(data, "answer", owned);
+      const returnedQuestion = field(data, "question", owned);
+      const product = field(citation, "product", owned);
+      const returnedLevel = field(citation, "levelId", owned);
+      const returnedLesson = field(citation, "lessonNumber", owned);
+      const returnedLocale = field(citation, "locale", owned);
+      const returnedSource = field(citation, "sourceId", owned);
+      owned();
+      if (error || typeof answer !== "string" || !answer.trim() ||
+        typeof sourceId !== "string" || returnedQuestion !== question ||
+        product !== "kids" || returnedLevel !== captured.scope.levelId ||
+        returnedLesson !== captured.scope.lessonNumber || returnedLocale !== captured.scope.locale ||
+        returnedSource !== sourceId) throw new Error("Invalid protected hint");
+      owned();
+      captured.hint = { ticket, id: ticket.key, answer };
+      publish(captured, ticket);
+    } catch {
+      if (ticket && ticketCurrent(ticket)) {
+        captured.hintError = ticket;
+        publish(captured, ticket);
+      }
+    } finally {
+      if (ticket && ticketCurrent(ticket)) {
+        ticket.pending = false;
+        if (captured.hintBusy === ticket) captured.hintBusy = null;
+        publish(captured, ticket);
+      }
+    }
+  }
+  async function checkQuiz(
+    captured: BodyModel, questionId: string, selectedIndex: number,
+    expectedChoice: object | undefined, expectedRequest: ActionTicket | undefined,
+  ) {
+    let ticket: ActionTicket | null = null;
+    try {
+      const current = () => {
+        requireModel(captured);
+        if (captured.choiceVersions[questionId] !== expectedChoice ||
+          captured.latestQuiz[questionId] !== expectedRequest ||
+          captured.choices[questionId] !== selectedIndex) throw new Error("Retired quiz selection");
+      };
+      current();
+      if (!expectedChoice || (captured.quizBusy?.pending && ticketCurrent(captured.quizBusy))) return;
+      const quiz = field(captured.scope.lesson, "quiz", current);
+      current();
+      const authored = Array.isArray(quiz) ? quiz.find((candidate) => candidate?.id === questionId) : undefined;
+      current();
+      const authoredId = field(authored, "id", current);
+      const options = field(authored, "options", current);
+      field(authored, "question", current);
+      current();
+      if (authoredId !== questionId || !Array.isArray(options) || !Number.isInteger(selectedIndex) ||
+        selectedIndex < 0 || selectedIndex >= options.length) return;
+      if (expectedRequest) expectedRequest.active = false;
+      ticket = { model: captured, kind: "quiz", key: questionId,
+        selection: expectedChoice, active: true, pending: true };
+      captured.latestQuiz[questionId] = ticket;
+      captured.quizBusy = ticket;
+      captured.quizError = null;
+      publish(captured, ticket);
+      const owned = () => requireTicket(ticket!);
+      const { value: response } = await invoke(ticket, "kids-lesson-content", {
+        profileId: captured.scope.profileId, levelId: captured.scope.levelId,
+        lessonNumber: captured.scope.lessonNumber, locale: captured.scope.locale,
+        action: "quiz-check", questionId: authoredId, selectedIndex,
+      });
+      owned();
+      const error = field(response, "error", owned);
+      const data = field(response, "data", owned);
+      const citation = field(data, "citation", owned);
+      const correct = field(data, "correct", owned);
+      const explanation = field(data, "explanation", owned);
+      const product = field(citation, "product", owned);
+      const returnedLevel = field(citation, "levelId", owned);
+      const returnedLesson = field(citation, "lessonNumber", owned);
+      const returnedLocale = field(citation, "locale", owned);
+      owned();
+      if (error || typeof correct !== "boolean" || product !== "kids" ||
+        returnedLevel !== captured.scope.levelId || returnedLesson !== captured.scope.lessonNumber ||
+        returnedLocale !== captured.scope.locale) throw new Error("Invalid protected quiz result");
+      owned();
+      captured.checked[questionId] = { selection: expectedChoice, value: {
+        correct, explanation: typeof explanation === "string" ? explanation : undefined,
+      } };
+      publish(captured, ticket);
+    } catch {
+      if (ticket && ticketCurrent(ticket)) {
+        captured.quizError = ticket;
+        publish(captured, ticket);
+      }
+    } finally {
+      if (ticket && ticketCurrent(ticket)) {
+        ticket.pending = false;
+        if (captured.quizBusy === ticket) captured.quizBusy = null;
+        publish(captured, ticket);
+      }
+    }
+  }
+  const visible = view && modelCurrent(view.model) && view.scope === scope ? view : null;
+  const choices = visible?.choices ?? {};
+  const checked: Record<string, QuizValue> = {};
+  if (visible) for (const [key, answer] of Object.entries(visible.checked))
+    if (visible.model.choiceVersions[key] === answer.selection) checked[key] = answer.value;
+  const checkingKey = visible?.quizBusy && ticketCurrent(visible.quizBusy) && visible.quizBusy.pending
+    ? visible.quizBusy.key : null;
+  const quizError = visible?.quizError && ticketCurrent(visible.quizError) ? visible.quizError.key : null;
+  const hint = visible?.hint && ticketCurrent(visible.hint.ticket) ? visible.hint : null;
+  const hintError = !!(visible?.hintError && ticketCurrent(visible.hintError));
+  const loadingHint = !!(visible?.hintBusy && ticketCurrent(visible.hintBusy) && visible.hintBusy.pending);
+  if (!visible || !modelCurrent(visible.model)) return null;
   const playerUrl = new URL(embedUrl);
   playerUrl.searchParams.set("autoplay", "false");
+  if (!modelCurrent(visible.model)) return null;
 
-  async function showHint(index: number) {
-    const hintId = `hint-${index + 1}`;
-    const sourceId = lesson.hints?.[index]?.sourceScene ?? lesson.hints?.[index]?.source;
-    setHint(null);
-    setHintError(false);
-    setLoadingHint(true);
-    try {
-      const { data, error } = await supabase.functions.invoke("kids-lesson-help", {
-        body: { profileId, levelId, lessonNumber, locale, hintId },
-      });
-      const citation = data?.citation;
-      if (
-        error ||
-        typeof data?.answer !== "string" ||
-        !data.answer.trim() ||
-        typeof sourceId !== "string" ||
-        data.question !== lesson.hints?.[index]?.question ||
-        citation?.product !== "kids" ||
-        citation?.levelId !== levelId ||
-        citation?.lessonNumber !== lessonNumber ||
-        citation?.locale !== locale ||
-        citation?.sourceId !== sourceId
-      )
-        throw new Error("Invalid protected hint");
-      setHint({ id: hintId, answer: data.answer });
-    } catch {
-      setHintError(true);
-    } finally {
-      setLoadingHint(false);
-    }
-  }
 
-  async function checkQuiz(questionId: string, selectedIndex: number) {
-    setCheckingKey(questionId);
-    setQuizError(null);
-    try {
-      const { data, error } = await supabase.functions.invoke("kids-lesson-content", {
-        body: {
-          profileId,
-          levelId,
-          lessonNumber,
-          locale,
-          action: "quiz-check",
-          questionId,
-          selectedIndex,
-        },
-      });
-      const citation = data?.citation;
-      if (
-        error ||
-        typeof data?.correct !== "boolean" ||
-        citation?.product !== "kids" ||
-        citation?.levelId !== levelId ||
-        citation?.lessonNumber !== lessonNumber ||
-        citation?.locale !== locale
-      ) {
-        throw new Error("Invalid protected quiz result");
-      }
-      setChecked((value) => ({
-        ...value,
-        [questionId]: {
-          correct: data.correct,
-          explanation: typeof data.explanation === "string" ? data.explanation : undefined,
-        },
-      }));
-    } catch {
-      setQuizError(questionId);
-    } finally {
-      setCheckingKey(null);
-    }
-  }
-
-  return (
+  const content = (
     <div className="space-y-8">
       <JourneyVisitRecorder
         line="kids"
@@ -219,15 +471,8 @@ export function KidsLessonBody({
                           name={`kids-quiz-${key}`}
                           checked={selected === optionIndex}
                           disabled={checkingKey === key}
-                          onChange={() => {
-                            setQuizError(null);
-                            setChoices((value) => ({ ...value, [key]: optionIndex }));
-                            setChecked((value) => {
-                              const next = { ...value };
-                              delete next[key];
-                              return next;
-                            });
-                          }}
+                          onChange={() => changeChoice(visible.model, key, optionIndex,
+                            visible.choiceVersions[key], visible.latestQuiz[key])}
                         />
                         <span>{option}</span>
                       </label>
@@ -237,7 +482,8 @@ export function KidsLessonBody({
                     type="button"
                     disabled={selected === undefined || checkingKey !== null}
                     onClick={() => {
-                      if (selected !== undefined) void checkQuiz(key, selected);
+                      if (selected !== undefined) void checkQuiz(visible.model, key, selected,
+                        visible.choiceVersions[key], visible.latestQuiz[key]);
                     }}
                     className="mt-4 min-h-11 rounded-full border border-primary px-5 text-sm font-bold text-primary disabled:opacity-50"
                   >
@@ -287,7 +533,7 @@ export function KidsLessonBody({
                 key={index}
                 type="button"
                 disabled={loadingHint}
-                onClick={() => showHint(index)}
+                onClick={() => { void showHint(visible.model, index, visible.hintVersion); }}
                 className="min-h-11 rounded-full border border-primary px-4 text-sm font-semibold text-primary disabled:opacity-50"
               >
                 {item.question ?? `${copy.loadHint} ${index + 1}`}
@@ -315,4 +561,5 @@ export function KidsLessonBody({
       <CourseLessonAssistant area="kids" cardId={levelId} stepId={String(lessonNumber)} locale={locale} profileId={profileId} />
     </div>
   );
+  return modelCurrent(visible.model) ? content : null;
 }

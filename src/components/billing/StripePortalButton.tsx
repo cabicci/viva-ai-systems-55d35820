@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { useLocale } from "@/lib/locale/locale-context";
 import { useUiString } from "@/lib/locale/use-ui-strings";
+import { BillingUnavailableError, billingUnavailableMessage, resolvePortalUrl } from "@/lib/billing/checkout-client";
 
 const LABELS = {
   "ar-EG": "إدارة الاشتراك والترقية",
@@ -28,13 +29,16 @@ export function StripePortalButton({ scope = "adult" }: { scope?: "adult" | "kid
         return;
       }
 
-      const { data, error } = await supabase.functions.invoke("billing-stripe-portal", {
-        body: { scope },
+      const url = await resolvePortalUrl(scope === "kids" ? "kids" : "core", async () => {
+        const { data, error } = await supabase.functions.invoke("billing-stripe-portal", {
+          body: { scope },
+        });
+        if (error || !data?.url) throw error ?? new Error("Missing portal URL");
+        return data.url as string;
       });
-      if (error || !data?.url) throw error ?? new Error("Missing portal URL");
-      window.location.assign(data.url);
-    } catch {
-      toast.error(t("pricing.checkout.error"));
+      window.location.assign(url);
+    } catch (e) {
+      toast.error(e instanceof BillingUnavailableError ? billingUnavailableMessage(locale) : t("pricing.checkout.error"));
       setLoading(false);
     }
   }

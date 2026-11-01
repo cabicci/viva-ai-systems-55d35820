@@ -34,6 +34,25 @@ export const commerceCommand = createServerFn({ method: "POST" })
       { p_action: data.action, p_data: data.data } as never,
     );
     if (error) throw new Error(error.message);
+    if (data.action === "quote" && result && typeof result === "object" && !Array.isArray(result)) {
+      const quote = result as Record<string, import("@/integrations/supabase/types").Json | undefined>;
+      if (quote.offer_id && quote.offer_kind !== "complimentary") {
+        const { liveRuntime } = await import("@/lib/billing/live/runtime.server");
+        const runtime = liveRuntime();
+        let available = false;
+        if (runtime.getEnv("STRIPE_BILLING_MODE")?.trim().toLowerCase() === "live"
+          && runtime.getEnv("STRIPE_LIVE_ENABLED") === "true" && await runtime.databaseLiveEnabled()) {
+          const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+          const selection = data.data as { package: string; market: string; billing_interval: string; academicAssistant?: boolean };
+          const mapped = await supabaseAdmin.from("stripe_live_offer_mappings").select("id")
+            .eq("offer_id", String(quote.offer_id)).eq("enabled", true).eq("package", selection.package)
+            .eq("market_code", selection.market).eq("billing_interval", selection.billing_interval)
+            .in("duration", ["once", "forever"]).limit(1);
+          available = !selection.academicAssistant && !mapped.error && !!mapped.data?.length;
+        }
+        return { ...quote, live_stripe_available: available } as import("@/integrations/supabase/types").Json;
+      }
+    }
     if (data.action === "confirm" || data.action === "allocate") {
       // Payment is already committed. A mail failure must never roll it back or
       // prompt the administrator to create another payment. Batch retries use

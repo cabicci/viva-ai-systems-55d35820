@@ -1,6 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import { readFileSync, readdirSync, writeFileSync } from "node:fs";
-import { join, relative } from "node:path";
+import { join, relative, sep } from "node:path";
 import { createHash } from "node:crypto";
 import { getPilotCopy } from "./source/furniture-pilot/content";
 import catalog from "../../src/lib/technical-education/catalog.json";
@@ -78,7 +78,9 @@ function walk(dir: string): string[] {
 const assets = walk("scripts/technical-education/assets")
   .filter((p) => p.endsWith(".pdf"))
   .map((local) => {
-    const original = "public/experiments/" + relative("scripts/technical-education/assets", local);
+    const original =
+      "public/experiments/" +
+      relative("scripts/technical-education/assets", local).split(sep).join("/");
     const parts = original.split("/");
     const locale = parts[3];
     const lesson_id = parts[2] === "furniture-pilot" ? "M04-L02" : parts[4];

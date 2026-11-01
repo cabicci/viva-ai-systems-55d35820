@@ -5,6 +5,7 @@ import { registeredStep, registeredCard } from "./registry";
 
 const locale = z.enum(["ar-EG", "ar-MSA", "ar-Gulf", "en"]);
 export const cardQuestionSchema = z.object({
+  expectedAccountId: z.string().min(1).max(128),
   scope: z.object({ area: z.enum(["kids", "technical"]), cardId: z.string().min(1).max(80),
     stepId: z.string().min(1).max(80), locale, profileId: z.string().uuid().optional() }).strict(),
   query: z.string().trim().min(2).max(1500), requestId: z.string().uuid(),
@@ -18,6 +19,7 @@ export const askCardAssistant = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .validator((input: unknown) => cardQuestionSchema.parse(input))
   .handler(async ({ data, context }) => {
+    if (data.expectedAccountId !== context.userId) return { status: 403, error: "CARD_REQUESTER_CHANGED" };
     const { runCardAssistant } = await import("./assistant.server");
     return runCardAssistant(data, context);
   });

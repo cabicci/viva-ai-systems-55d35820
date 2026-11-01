@@ -3,7 +3,7 @@ import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import manifest from "../runtime/contextualV2BrowserManifest.json";
-import { restoreExactEditorialGenerationSource } from "./audit-source-compatibility";
+import { restoreCurrentModelParentSource, restoreExactEditorialGenerationSource } from "./audit-source-compatibility";
 import revisions from "../runtime/contextualV2AuditRevisions.json";
 import { resolveAuditedContextualRevision } from "../runtime/contextualV2AuditRevisionResolver";
 import type { ContextualV2ManifestEntry } from "../runtime/contextualV2BrowserResolver";
@@ -202,11 +202,14 @@ const imageGenerationSourceBytes = (
   entry: { sourcePath: string; sourceSha256: string; sourceBlob: string },
   bytes: Buffer,
 ): Buffer => {
-  const editorialRestored = restoreExactEditorialGenerationSource(entry, bytes);
-  if (!editorialRestored.equals(bytes)) return editorialRestored;
-  const boldRestored = imageGenerationBoldSourceBytes(entry, bytes);
-  if (!boldRestored.equals(bytes)) return boldRestored;
-  return imageGenerationQuizSourceBytes(entry, bytes);
+  // Restore this exact new stage before the existing editorial/B021 chain.
+  // Every original image and generation digest is still checked below.
+  const parent = restoreCurrentModelParentSource(entry, bytes);
+  const editorialRestored = restoreExactEditorialGenerationSource(entry, parent);
+  if (!editorialRestored.equals(parent)) return editorialRestored;
+  const boldRestored = imageGenerationBoldSourceBytes(entry, parent);
+  if (!boldRestored.equals(parent)) return boldRestored;
+  return imageGenerationQuizSourceBytes(entry, parent);
 };
 
 // END EXACT VERIFIED SOURCE COMPATIBILITY

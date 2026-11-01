@@ -278,7 +278,7 @@ describe("central1 auth integration", () => {
         mocks.getSession.mockResolvedValue({ data: { session: SESSION }, error: null });
         mocks.assertLearnerSession.mockResolvedValue({ userId: SESSION.user.id });
         mocks.authListener?.("SIGNED_IN", SESSION);
-        return { data: { session: SESSION }, error: null };
+        return { data: { session: SESSION, user: SESSION.user }, error: null };
       });
       fillLoginForm();
       fireEvent.click(screen.getByRole("button", { name: "auth.login.submit" }));
@@ -294,7 +294,7 @@ describe("central1 auth integration", () => {
       mocks.signInWithPassword.mockImplementation(async () => {
         mocks.getSession.mockResolvedValue({ data: { session: SESSION }, error: null });
         mocks.authListener?.("SIGNED_IN", SESSION);
-        return { data: { session: SESSION }, error: null };
+        return { data: { session: SESSION, user: SESSION.user }, error: null };
       });
       fillLoginForm();
       fireEvent.click(screen.getByRole("button", { name: "auth.login.submit" }));
@@ -318,7 +318,7 @@ describe("central1 auth integration", () => {
     mocks.signInWithPassword.mockImplementation(async () => {
       mocks.getSession.mockResolvedValue({ data: { session: SESSION }, error: null });
       mocks.authListener?.("SIGNED_IN", SESSION);
-      return { data: { session: SESSION }, error: null };
+      return { data: { session: SESSION, user: SESSION.user }, error: null };
     });
     fillLoginForm();
     fireEvent.click(screen.getByRole("button", { name: "auth.login.submit" }));
@@ -426,7 +426,7 @@ describe("central1 auth integration", () => {
     mocks.signInWithPassword.mockRejectedValueOnce(new TypeError("Failed to fetch"));
     mocks.signInWithPassword.mockImplementationOnce(async () => {
       mocks.authListener?.("SIGNED_IN", SESSION);
-      return { data: { session: SESSION }, error: null };
+      return { data: { session: SESSION, user: SESSION.user }, error: null };
     });
     const router = await renderAt("/login");
     fillLoginForm();

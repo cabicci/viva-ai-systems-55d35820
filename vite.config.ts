@@ -34,11 +34,13 @@ const SUPABASE_PUBLISHABLE_KEY_FALLBACK = "sb_publishable_3MyGQEicwQZylzNYIufi8g
 export default defineConfig({
   vite: {
     resolve: {
-      alias: {
-        "entities/lib/decode.js": path.resolve(__dirname, "node_modules/entities/lib/decode.js"),
-        "entities/lib/encode.js": path.resolve(__dirname, "node_modules/entities/lib/encode.js"),
-        entities: path.resolve(__dirname, "node_modules/entities"),
-      },
+      alias: [
+        { find: "entities/lib/decode.js", replacement: path.resolve(__dirname, "node_modules/entities/lib/decode.js") },
+        { find: "entities/lib/encode.js", replacement: path.resolve(__dirname, "node_modules/entities/lib/encode.js") },
+        // Bind the bare legacy entry only. Modern htmlparser2 must resolve its
+        // own entities/decode export instead of being redirected to entities 4.
+        { find: /^entities$/, replacement: path.resolve(__dirname, "node_modules/entities") },
+      ],
     },
     define: {
       __ASSISTANT_INDEXER_BUILD__: JSON.stringify(assistantIndexerBuild),

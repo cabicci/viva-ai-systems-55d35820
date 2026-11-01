@@ -370,6 +370,8 @@ export type Database = {
           content_version: string
           course_id: string
           embedding: string
+          embedding_dimensions: number | null
+          embedding_model: string | null
           lesson_id: string
           locale: string
           section_id: string
@@ -381,6 +383,8 @@ export type Database = {
           content_version: string
           course_id: string
           embedding: string
+          embedding_dimensions?: number | null
+          embedding_model?: string | null
           lesson_id: string
           locale: string
           section_id: string
@@ -392,6 +396,8 @@ export type Database = {
           content_version?: string
           course_id?: string
           embedding?: string
+          embedding_dimensions?: number | null
+          embedding_model?: string | null
           lesson_id?: string
           locale?: string
           section_id?: string
@@ -406,7 +412,7 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "academic_rag_chunks_course_id_lesson_id_locale_fkey"
+            foreignKeyName: "academic_rag_current_lesson_fk"
             columns: ["course_id", "lesson_id", "locale"]
             isOneToOne: false
             referencedRelation: "academic_lesson_content"
@@ -456,6 +462,113 @@ export type Database = {
         }
         Relationships: []
       }
+      assistant_auto_attempts: {
+        Row: {
+          created_at: string
+          job_id: string
+          provider_reserved: boolean
+          receipt: Json | null
+          request_id: string
+          scope_offset: number
+          state: string
+        }
+        Insert: {
+          created_at?: string
+          job_id: string
+          provider_reserved?: boolean
+          receipt?: Json | null
+          request_id: string
+          scope_offset: number
+          state: string
+        }
+        Update: {
+          created_at?: string
+          job_id?: string
+          provider_reserved?: boolean
+          receipt?: Json | null
+          request_id?: string
+          scope_offset?: number
+          state?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "assistant_auto_attempts_job_id_fkey"
+            columns: ["job_id"]
+            isOneToOne: false
+            referencedRelation: "assistant_auto_jobs"
+            referencedColumns: ["job_id"]
+          },
+        ]
+      }
+      assistant_auto_jobs: {
+        Row: {
+          area: string
+          card_id: string
+          created_at: string
+          error_code: string | null
+          job_id: string
+          lease_token: string | null
+          lease_until: string | null
+          manifest: Json
+          material: string
+          next_offset: number
+          provider_calls: number
+          request_id: string | null
+          scope_count: number
+          state: string
+        }
+        Insert: {
+          area: string
+          card_id: string
+          created_at?: string
+          error_code?: string | null
+          job_id: string
+          lease_token?: string | null
+          lease_until?: string | null
+          manifest: Json
+          material: string
+          next_offset?: number
+          provider_calls?: number
+          request_id?: string | null
+          scope_count: number
+          state: string
+        }
+        Update: {
+          area?: string
+          card_id?: string
+          created_at?: string
+          error_code?: string | null
+          job_id?: string
+          lease_token?: string | null
+          lease_until?: string | null
+          manifest?: Json
+          material?: string
+          next_offset?: number
+          provider_calls?: number
+          request_id?: string | null
+          scope_count?: number
+          state?: string
+        }
+        Relationships: []
+      }
+      assistant_auto_policy: {
+        Row: {
+          enabled: boolean
+          excluded_cards: Json
+          singleton: boolean
+        }
+        Insert: {
+          enabled?: boolean
+          excluded_cards?: Json
+          singleton?: boolean
+        }
+        Update: {
+          enabled?: boolean
+          excluded_cards?: Json
+          singleton?: boolean
+        }
+        Relationships: []
+      }
       build_logs: {
         Row: {
           created_at: string
@@ -491,6 +604,159 @@ export type Database = {
           user_id?: string
         }
         Relationships: []
+      }
+      card_assistant_chunks: {
+        Row: {
+          area: string
+          card_id: string
+          chunk_id: string
+          content: string
+          content_sha256: string
+          embedding: string
+          embedding_dimensions: number
+          embedding_model: string
+          locale: string
+          payload_sha256: string
+          source_sha256: string
+          step_id: string
+          title: string
+        }
+        Insert: {
+          area: string
+          card_id: string
+          chunk_id: string
+          content: string
+          content_sha256: string
+          embedding: string
+          embedding_dimensions: number
+          embedding_model: string
+          locale: string
+          payload_sha256: string
+          source_sha256: string
+          step_id: string
+          title: string
+        }
+        Update: {
+          area?: string
+          card_id?: string
+          chunk_id?: string
+          content?: string
+          content_sha256?: string
+          embedding?: string
+          embedding_dimensions?: number
+          embedding_model?: string
+          locale?: string
+          payload_sha256?: string
+          source_sha256?: string
+          step_id?: string
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "card_assistant_chunks_area_card_id_step_id_fkey"
+            columns: ["area", "card_id", "step_id"]
+            isOneToOne: false
+            referencedRelation: "card_assistant_steps"
+            referencedColumns: ["area", "card_id", "step_id"]
+          },
+        ]
+      }
+      card_assistant_policy: {
+        Row: {
+          area: string
+          card_id: string
+          questions_per_hour: number
+          runtime_enabled: boolean
+        }
+        Insert: {
+          area: string
+          card_id: string
+          questions_per_hour?: number
+          runtime_enabled?: boolean
+        }
+        Update: {
+          area?: string
+          card_id?: string
+          questions_per_hour?: number
+          runtime_enabled?: boolean
+        }
+        Relationships: []
+      }
+      card_assistant_question_windows: {
+        Row: {
+          area: string
+          card_id: string
+          request_ids: string[]
+          user_id: string
+          window_start: string
+        }
+        Insert: {
+          area: string
+          card_id: string
+          request_ids?: string[]
+          user_id: string
+          window_start: string
+        }
+        Update: {
+          area?: string
+          card_id?: string
+          request_ids?: string[]
+          user_id?: string
+          window_start?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "card_assistant_question_windows_area_card_id_fkey"
+            columns: ["area", "card_id"]
+            isOneToOne: false
+            referencedRelation: "card_assistant_policy"
+            referencedColumns: ["area", "card_id"]
+          },
+        ]
+      }
+      card_assistant_steps: {
+        Row: {
+          area: string
+          card_id: string
+          kids_lesson: number | null
+          kids_level: string | null
+          preview: boolean
+          source_key: string
+          station_id: string
+          step_id: string
+          technical_lesson: string | null
+        }
+        Insert: {
+          area: string
+          card_id: string
+          kids_lesson?: number | null
+          kids_level?: string | null
+          preview: boolean
+          source_key: string
+          station_id: string
+          step_id: string
+          technical_lesson?: string | null
+        }
+        Update: {
+          area?: string
+          card_id?: string
+          kids_lesson?: number | null
+          kids_level?: string | null
+          preview?: boolean
+          source_key?: string
+          station_id?: string
+          step_id?: string
+          technical_lesson?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "card_assistant_steps_area_card_id_fkey"
+            columns: ["area", "card_id"]
+            isOneToOne: false
+            referencedRelation: "card_assistant_policy"
+            referencedColumns: ["area", "card_id"]
+          },
+        ]
       }
       client_error_logs: {
         Row: {
@@ -1130,16 +1396,19 @@ export type Database = {
           event_id: string
           parent_id: string
           received_at: string
+          stripe_environment: string
         }
         Insert: {
           event_id: string
           parent_id: string
           received_at?: string
+          stripe_environment?: string
         }
         Update: {
           event_id?: string
           parent_id?: string
           received_at?: string
+          stripe_environment?: string
         }
         Relationships: []
       }
@@ -1152,6 +1421,7 @@ export type Database = {
           gateway_price_id: string
           gateway_product_id: string
           market_code: string
+          stripe_environment: string
         }
         Insert: {
           amount_minor: number
@@ -1161,6 +1431,7 @@ export type Database = {
           gateway_price_id: string
           gateway_product_id: string
           market_code: string
+          stripe_environment?: string
         }
         Update: {
           amount_minor?: number
@@ -1170,6 +1441,7 @@ export type Database = {
           gateway_price_id?: string
           gateway_product_id?: string
           market_code?: string
+          stripe_environment?: string
         }
         Relationships: []
       }
@@ -1180,6 +1452,7 @@ export type Database = {
           parent_id: string
           refund_id: string
           status: string
+          stripe_environment: string
         }
         Insert: {
           amount_minor: number
@@ -1187,6 +1460,7 @@ export type Database = {
           parent_id: string
           refund_id: string
           status: string
+          stripe_environment?: string
         }
         Update: {
           amount_minor?: number
@@ -1194,6 +1468,7 @@ export type Database = {
           parent_id?: string
           refund_id?: string
           status?: string
+          stripe_environment?: string
         }
         Relationships: []
       }
@@ -1207,6 +1482,7 @@ export type Database = {
           paid_through: string | null
           parent_id: string
           status: string
+          stripe_environment: string
           updated_at: string
         }
         Insert: {
@@ -1218,6 +1494,7 @@ export type Database = {
           paid_through?: string | null
           parent_id: string
           status: string
+          stripe_environment?: string
           updated_at?: string
         }
         Update: {
@@ -1229,6 +1506,7 @@ export type Database = {
           paid_through?: string | null
           parent_id?: string
           status?: string
+          stripe_environment?: string
           updated_at?: string
         }
         Relationships: [
@@ -1616,6 +1894,106 @@ export type Database = {
         }
         Relationships: []
       }
+      rag_current_batches: {
+        Row: {
+          chunk_ids: Json
+          lease_token: string | null
+          lease_until: string | null
+          ordinal: number
+          provider_reserved: boolean
+          release_id: string
+          request_id: string | null
+          state: string
+        }
+        Insert: {
+          chunk_ids: Json
+          lease_token?: string | null
+          lease_until?: string | null
+          ordinal: number
+          provider_reserved?: boolean
+          release_id: string
+          request_id?: string | null
+          state?: string
+        }
+        Update: {
+          chunk_ids?: Json
+          lease_token?: string | null
+          lease_until?: string | null
+          ordinal?: number
+          provider_reserved?: boolean
+          release_id?: string
+          request_id?: string | null
+          state?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "rag_current_batches_release_id_fkey"
+            columns: ["release_id"]
+            isOneToOne: false
+            referencedRelation: "rag_current_releases"
+            referencedColumns: ["release_id"]
+          },
+        ]
+      }
+      rag_current_releases: {
+        Row: {
+          approval: Json
+          created_at: string
+          execution_id: string
+          material: string
+          previous_version: string | null
+          provider_attempts: number
+          release_id: string
+        }
+        Insert: {
+          approval: Json
+          created_at?: string
+          execution_id?: string
+          material: string
+          previous_version?: string | null
+          provider_attempts?: number
+          release_id: string
+        }
+        Update: {
+          approval?: Json
+          created_at?: string
+          execution_id?: string
+          material?: string
+          previous_version?: string | null
+          provider_attempts?: number
+          release_id?: string
+        }
+        Relationships: []
+      }
+      rag_current_requests: {
+        Row: {
+          operation: string
+          release_id: string
+          request_id: string
+          result: Json
+        }
+        Insert: {
+          operation: string
+          release_id: string
+          request_id: string
+          result: Json
+        }
+        Update: {
+          operation?: string
+          release_id?: string
+          request_id?: string
+          result?: Json
+        }
+        Relationships: [
+          {
+            foreignKeyName: "rag_current_requests_release_id_fkey"
+            columns: ["release_id"]
+            isOneToOne: false
+            referencedRelation: "rag_current_releases"
+            referencedColumns: ["release_id"]
+          },
+        ]
+      }
       rag_import_batches: {
         Row: {
           accepted_row_count: number
@@ -1872,6 +2250,167 @@ export type Database = {
           user_id?: string
         }
         Relationships: []
+      }
+      stripe_live_offer_admin_audit: {
+        Row: {
+          action: string
+          actor_id: string
+          created_at: string
+          id: string
+          parameters: Json
+          request_key: string
+          target_id: string
+        }
+        Insert: {
+          action: string
+          actor_id: string
+          created_at?: string
+          id?: string
+          parameters: Json
+          request_key: string
+          target_id: string
+        }
+        Update: {
+          action?: string
+          actor_id?: string
+          created_at?: string
+          id?: string
+          parameters?: Json
+          request_key?: string
+          target_id?: string
+        }
+        Relationships: []
+      }
+      stripe_live_offer_mappings: {
+        Row: {
+          billing_interval: string
+          coupon_id: string
+          created_at: string
+          currency: string
+          duration: string
+          duration_in_months: number | null
+          enabled: boolean
+          id: string
+          kind: string
+          market_code: string
+          offer_id: string
+          package: string
+          price_id: string
+          product_id: string
+          promotion_code_id: string
+          reviewed_at: string | null
+          value_minor: number
+          version: number
+        }
+        Insert: {
+          billing_interval: string
+          coupon_id: string
+          created_at?: string
+          currency: string
+          duration: string
+          duration_in_months?: number | null
+          enabled?: boolean
+          id?: string
+          kind: string
+          market_code: string
+          offer_id: string
+          package: string
+          price_id: string
+          product_id: string
+          promotion_code_id: string
+          reviewed_at?: string | null
+          value_minor: number
+          version: number
+        }
+        Update: {
+          billing_interval?: string
+          coupon_id?: string
+          created_at?: string
+          currency?: string
+          duration?: string
+          duration_in_months?: number | null
+          enabled?: boolean
+          id?: string
+          kind?: string
+          market_code?: string
+          offer_id?: string
+          package?: string
+          price_id?: string
+          product_id?: string
+          promotion_code_id?: string
+          reviewed_at?: string | null
+          value_minor?: number
+          version?: number
+        }
+        Relationships: []
+      }
+      stripe_live_offer_reservations: {
+        Row: {
+          consumed_at: string | null
+          consumed_invoice_id: string | null
+          created_at: string
+          customer_id: string | null
+          expires_at: string
+          final_minor: number
+          id: string
+          mapping_id: string
+          offer_id: string
+          original_minor: number
+          phone: string | null
+          recipient_email: string
+          renewal: boolean
+          request_key: string
+          session_id: string | null
+          subscription_id: string | null
+          user_id: string
+        }
+        Insert: {
+          consumed_at?: string | null
+          consumed_invoice_id?: string | null
+          created_at?: string
+          customer_id?: string | null
+          expires_at: string
+          final_minor: number
+          id?: string
+          mapping_id: string
+          offer_id: string
+          original_minor: number
+          phone?: string | null
+          recipient_email: string
+          renewal?: boolean
+          request_key: string
+          session_id?: string | null
+          subscription_id?: string | null
+          user_id: string
+        }
+        Update: {
+          consumed_at?: string | null
+          consumed_invoice_id?: string | null
+          created_at?: string
+          customer_id?: string | null
+          expires_at?: string
+          final_minor?: number
+          id?: string
+          mapping_id?: string
+          offer_id?: string
+          original_minor?: number
+          phone?: string | null
+          recipient_email?: string
+          renewal?: boolean
+          request_key?: string
+          session_id?: string | null
+          subscription_id?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "stripe_live_offer_reservations_mapping_id_fkey"
+            columns: ["mapping_id"]
+            isOneToOne: false
+            referencedRelation: "stripe_live_offer_mappings"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       subscription_mail_outbox: {
         Row: {
@@ -2486,7 +3025,6 @@ export type Database = {
         }
         Returns: Json
       }
-      academic_import_chunks: { Args: { p_rows: Json }; Returns: number }
       academic_mail_command: {
         Args: { p_action: string; p_data?: Json }
         Returns: Json
@@ -2509,6 +3047,10 @@ export type Database = {
       }
       academic_review_allowed: { Args: { p_course: string }; Returns: boolean }
       academic_storage_allowed: { Args: { p_path: string }; Returns: boolean }
+      academic_sync_chunks: {
+        Args: { p_course: string; p_rows: Json; p_scopes: Json }
+        Returns: number
+      }
       account_phone_command: {
         Args: { p_action: string; p_actor: string; p_data?: Json }
         Returns: Json
@@ -2584,6 +3126,21 @@ export type Database = {
         Args: { p_lesson_id: string; p_passed: boolean; p_user_id: string }
         Returns: undefined
       }
+      apply_stripe_live_risk_hold: {
+        Args: {
+          p_charge_id: string
+          p_customer_id: string
+          p_event_id: string
+          p_invoice_id: string
+          p_occurred_at: string
+          p_price_id: string
+          p_reason: string
+          p_scope: string
+          p_subscription_id: string
+          p_user_id: string
+        }
+        Returns: Json
+      }
       apply_stripe_refund_event: {
         Args: {
           p_amount_minor: number
@@ -2655,12 +3212,134 @@ export type Database = {
         }
         Returns: boolean
       }
+      assistant_auto_ai_clear: { Args: { p_release: string }; Returns: boolean }
+      assistant_auto_check: {
+        Args: { p_job: string; p_lease: string; p_request: string }
+        Returns: boolean
+      }
+      assistant_auto_claim: {
+        Args: { p_keys: Json; p_request: string }
+        Returns: Json
+      }
+      assistant_auto_finish: {
+        Args: {
+          p_done: boolean
+          p_job: string
+          p_lease: string
+          p_receipt: Json
+          p_request: string
+        }
+        Returns: boolean
+      }
+      assistant_auto_hold: {
+        Args: {
+          p_code: string
+          p_job: string
+          p_lease: string
+          p_request: string
+        }
+        Returns: boolean
+      }
+      assistant_auto_publish_academic: {
+        Args: { p_job: string; p_lease: string; p_request: string }
+        Returns: boolean
+      }
+      assistant_auto_publish_card: {
+        Args: { p_job: string; p_lease: string; p_request: string }
+        Returns: boolean
+      }
+      assistant_auto_register: {
+        Args: { p_jobs: Json; p_registry: Json }
+        Returns: Json
+      }
+      assistant_auto_reserve: {
+        Args: { p_job: string; p_lease: string; p_request: string }
+        Returns: boolean
+      }
+      assistant_auto_status: { Args: never; Returns: Json }
+      assistant_card_content_access: {
+        Args: { p_card_id: string; p_user_id: string }
+        Returns: Json
+      }
       auth_signup_email_profile: {
         Args: { p_email: string }
         Returns: {
           full_name: string
           preferred_locale: string
         }[]
+      }
+      bind_stripe_live_offer: {
+        Args: {
+          p_customer_id: string
+          p_reservation_id: string
+          p_session_id: string
+          p_user_id: string
+        }
+        Returns: boolean
+      }
+      card_assistant_access: {
+        Args: {
+          p_area: string
+          p_card: string
+          p_locale: string
+          p_profile?: string
+          p_step: string
+        }
+        Returns: boolean
+      }
+      card_assistant_chunk_json: {
+        Args: {
+          c: Database["public"]["Tables"]["card_assistant_chunks"]["Row"]
+        }
+        Returns: Json
+      }
+      card_assistant_existing: {
+        Args: {
+          p_area: string
+          p_card: string
+          p_locale: string
+          p_step: string
+        }
+        Returns: Json
+      }
+      card_assistant_match: {
+        Args: {
+          p_area: string
+          p_card: string
+          p_embedding: string
+          p_limit?: number
+          p_locale: string
+        }
+        Returns: Json
+      }
+      card_assistant_previous_advance: {
+        Args: { p_lease_token: string; p_next_stage: string; p_user_id: string }
+        Returns: Json
+      }
+      card_assistant_review_allowed: { Args: never; Returns: boolean }
+      card_assistant_sync_source: {
+        Args: {
+          p_area: string
+          p_card: string
+          p_locale: string
+          p_payload: Json
+          p_payload_sha: string
+          p_rows: Json
+          p_source_sha: string
+          p_step: string
+        }
+        Returns: number
+      }
+      card_assistant_take_question: {
+        Args: {
+          p_area: string
+          p_card: string
+          p_locale: string
+          p_profile: string
+          p_request: string
+          p_step: string
+        }
+        Returns: boolean
       }
       claim_account_welcome_email: {
         Args: { p_user: string }
@@ -2845,6 +3524,16 @@ export type Database = {
           reset_at: string
         }[]
       }
+      consume_stripe_live_offer: {
+        Args: {
+          p_customer_id: string
+          p_invoice_id: string
+          p_reservation_id: string
+          p_subscription_id: string
+          p_user_id: string
+        }
+        Returns: boolean
+      }
       delete_my_account_data: { Args: never; Returns: undefined }
       email_access_command: {
         Args: { p_action: string; p_data?: Json }
@@ -2934,7 +3623,20 @@ export type Database = {
         }
         Returns: Json
       }
+      get_stripe_live_enabled: { Args: never; Returns: boolean }
+      get_stripe_live_offer_evidence: {
+        Args: { p_reservation_id: string; p_user_id: string }
+        Returns: Json
+      }
+      get_stripe_live_risk_hold: {
+        Args: { p_subscription_id: string; p_user_id: string }
+        Returns: boolean
+      }
       get_stripe_portal_context: { Args: { p_user_id: string }; Returns: Json }
+      get_stripe_portal_environment: {
+        Args: { p_scope: string; p_user_id: string }
+        Returns: string
+      }
       get_technical_stripe_checkout_context: {
         Args: {
           p_billing_interval: string
@@ -3387,6 +4089,73 @@ export type Database = {
         Args: { p_lease_token: string; p_rows: Json }
         Returns: Json
       }
+      rag_current_activate: {
+        Args: {
+          p_execution_id: string
+          p_expected_active: string
+          p_release_id: string
+          p_request_id: string
+        }
+        Returns: Json
+      }
+      rag_current_claim: {
+        Args: {
+          p_execution_id: string
+          p_release_id: string
+          p_request_id: string
+        }
+        Returns: Json
+      }
+      rag_current_commit: {
+        Args: {
+          p_execution_id: string
+          p_lease_token: string
+          p_release_id: string
+          p_request_id: string
+          p_rows: Json
+        }
+        Returns: Json
+      }
+      rag_current_fail: {
+        Args: {
+          p_execution_id: string
+          p_lease_token: string
+          p_release_id: string
+          p_request_id: string
+        }
+        Returns: Json
+      }
+      rag_current_initialize: {
+        Args: { p_material: string; p_release_id: string; p_request_id: string }
+        Returns: Json
+      }
+      rag_current_reserve_provider: {
+        Args: {
+          p_execution_id: string
+          p_lease_token: string
+          p_release_id: string
+          p_request_id: string
+        }
+        Returns: Json
+      }
+      rag_current_rollback: {
+        Args: {
+          p_execution_id: string
+          p_expected_active: string
+          p_release_id: string
+          p_request_id: string
+        }
+        Returns: Json
+      }
+      rag_current_row_valid: {
+        Args: {
+          a: Json
+          k: Database["public"]["Tables"]["knowledge_chunks"]["Row"]
+          p_id: string
+        }
+        Returns: boolean
+      }
+      rag_current_status: { Args: { p_release_id: string }; Returns: Json }
       rag_deactivate_first_active_version: {
         Args: { p_version_key: string }
         Returns: Json
@@ -3417,6 +4186,7 @@ export type Database = {
         }[]
       }
       rag_require_service_role: { Args: never; Returns: undefined }
+      rag_reusable_embeddings: { Args: { p_requests: Json }; Returns: Json }
       rag_rollback_index_upgrade: {
         Args: { p_active_version_key: string; p_restore_version_key: string }
         Returns: Json
@@ -3526,6 +4296,19 @@ export type Database = {
         }
         Returns: Json
       }
+      reserve_stripe_live_offer: {
+        Args: {
+          p_code: string
+          p_interval: string
+          p_key: string
+          p_market: string
+          p_package: string
+          p_phone: string
+          p_renewal?: boolean
+          p_user_id: string
+        }
+        Returns: Json
+      }
       resolve_stripe_subscription_plan: {
         Args: { p_gateway_price_id: string }
         Returns: Json
@@ -3559,6 +4342,10 @@ export type Database = {
           isOneToOne: true
           isSetofReturn: false
         }
+      }
+      stripe_live_offer_admin: {
+        Args: { p_action: string; p_actor: string; p_data: Json }
+        Returns: Json
       }
       submit_mission_for_evaluation: {
         Args: { p_submission_id: string }

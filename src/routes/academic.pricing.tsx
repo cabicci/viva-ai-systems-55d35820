@@ -17,6 +17,8 @@ import { useQuery } from "@tanstack/react-query";
 import { adminOfferCopy } from "@/lib/commerce/admin-offer-copy";
 
 import { Button } from "@/components/ui/button";
+import { BillingUnavailableError, billingUnavailableMessage, resolveCheckoutUrl, resolvePortalUrl } from "@/lib/billing/checkout-client";
+import { toast } from "sonner";
 export const Route = createFileRoute("/academic/pricing")({
   validateSearch: parseLocaleSearchParam,
   head: async ({ match }) =>
@@ -61,17 +63,21 @@ function AcademicPricing() {
     setBusy(true);
     setError(false);
     try {
-      const { data, error } = await supabase.functions.invoke("billing-stripe-portal", {
-        body: { scope: "academic" },
+      const url = await resolvePortalUrl("academic", async () => {
+        const { data, error } = await supabase.functions.invoke("billing-stripe-portal", {
+          body: { scope: "academic" },
+        });
+        if (
+          error ||
+          typeof data?.url !== "string" ||
+          new URL(data.url).origin !== "https://billing.stripe.com"
+        )
+          throw new Error("Unavailable");
+        return data.url;
       });
-      if (
-        error ||
-        typeof data?.url !== "string" ||
-        new URL(data.url).origin !== "https://billing.stripe.com"
-      )
-        throw new Error("Unavailable");
-      window.location.assign(data.url);
-    } catch {
+      window.location.assign(url);
+    } catch (e) {
+      if (e instanceof BillingUnavailableError) toast.error(billingUnavailableMessage(locale));
       setError(true);
       setBusy(false);
     }
@@ -80,14 +86,21 @@ function AcademicPricing() {
     setBusy(true);
     setError(false);
     try {
-      const { data, error } = await supabase.functions.invoke("academic-stripe-checkout", {
-        body: { marketCode: market, billingInterval: interval, locale, academicAssistant: withAssistant },
-      });
-      if (error || typeof data?.url !== "string") throw new Error("Unavailable");
-      const url = new URL(data.url);
-      if (url.origin !== "https://checkout.stripe.com") throw new Error("Invalid checkout");
-      window.location.assign(url.href);
-    } catch {
+      const url = await resolveCheckoutUrl(
+        { product: "academic", academicAssistant: withAssistant, billingInterval: interval, marketCode: market, locale },
+        async () => {
+          const { data, error } = await supabase.functions.invoke("academic-stripe-checkout", {
+            body: { marketCode: market, billingInterval: interval, locale, academicAssistant: withAssistant },
+          });
+          if (error || typeof data?.url !== "string") throw new Error("Unavailable");
+          const testUrl = new URL(data.url);
+          if (testUrl.origin !== "https://checkout.stripe.com") throw new Error("Invalid checkout");
+          return testUrl.href;
+        },
+      );
+      window.location.assign(url);
+    } catch (e) {
+      if (e instanceof BillingUnavailableError) toast.error(billingUnavailableMessage(locale));
       setError(true);
       setBusy(false);
     }

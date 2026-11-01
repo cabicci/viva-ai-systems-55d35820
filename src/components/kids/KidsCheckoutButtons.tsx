@@ -4,27 +4,29 @@ import { supabase } from "@/integrations/supabase/client";
 import { useLocale } from "@/lib/locale/locale-context";
 import { Button } from "@/components/ui/button";
 import { PaymentMethods } from "@/components/commerce/PaymentMethods";
+import { StripeCheckoutTrust } from "@/components/billing/StripeCheckoutTrust";
+import { BillingUnavailableError, billingUnavailableMessage, resolveCheckoutUrl } from "@/lib/billing/checkout-client";
 
 const copy = {
   "ar-EG": {
     month: "اشترك شهريًا",
     year: "اشترك سنويًا",
-    error: "تعذّر بدء الدفع التجريبي. حاول لاحقًا.",
+    error: "تعذّر بدء الدفع. حاول لاحقًا.",
   },
   "ar-MSA": {
     month: "اشترك شهريًا",
     year: "اشترك سنويًا",
-    error: "تعذر بدء الدفع التجريبي. حاول لاحقًا.",
+    error: "تعذر بدء الدفع. حاول لاحقًا.",
   },
   "ar-Gulf": {
     month: "اشترك شهريًا",
     year: "اشترك سنويًا",
-    error: "تعذر بدء الدفع التجريبي. حاول لاحقًا.",
+    error: "تعذر بدء الدفع. حاول لاحقًا.",
   },
   en: {
     month: "Subscribe monthly",
     year: "Subscribe yearly",
-    error: "Test checkout could not start. Try later.",
+    error: "Checkout could not start. Try later.",
   },
 };
 
@@ -49,15 +51,22 @@ export function KidsCheckoutButtons({ market }: { market: "EG" | "INTL" }) {
         window.location.assign(`/kids/family?locale=${locale}`);
         return;
       }
-      const { data, error } = await supabase.functions.invoke("kids-stripe-checkout", {
-        body: { marketCode: market, billingInterval },
-      });
-      if (error || !data?.url) throw error ?? new Error("Checkout URL missing");
-      if (!data.url.startsWith("https://checkout.stripe.com/"))
-        throw new Error("Invalid checkout URL");
-      window.location.assign(data.url);
-    } catch {
-      toast.error(words.error);
+      // The 10% family variant is decided on the server from the parent's account.
+      const url = await resolveCheckoutUrl(
+        { product: "kids", billingInterval, marketCode: market, locale },
+        async () => {
+          const { data, error } = await supabase.functions.invoke("kids-stripe-checkout", {
+            body: { marketCode: market, billingInterval },
+          });
+          if (error || !data?.url) throw error ?? new Error("Checkout URL missing");
+          if (!data.url.startsWith("https://checkout.stripe.com/"))
+            throw new Error("Invalid checkout URL");
+          return data.url as string;
+        },
+      );
+      window.location.assign(url);
+    } catch (e) {
+      toast.error(e instanceof BillingUnavailableError ? billingUnavailableMessage(locale) : words.error);
       setPending(false);
     }
   }
@@ -75,6 +84,11 @@ export function KidsCheckoutButtons({ market }: { market: "EG" | "INTL" }) {
       >
         {words.year}
       </Button>
+      {!selectedInterval && (
+        <div className="sm:col-span-2">
+          <StripeCheckoutTrust />
+        </div>
+      )}
       {selectedInterval && (
         <div className="sm:col-span-2">
           <PaymentMethods

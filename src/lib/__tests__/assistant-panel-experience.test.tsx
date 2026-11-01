@@ -1,3 +1,5 @@
+import { assistantAuthFixture } from "@/test/assistant-auth-fixture";
+import { boxedAssistantFixture } from "@/test/boxed-assistant-runtime-fixture";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { AssistantPanel } from "@/components/assistant/AssistantPanel";
@@ -14,13 +16,13 @@ vi.mock("@/integrations/supabase/client", () => ({
   supabase: { auth: { onAuthStateChange: vi.fn() } },
 }));
 vi.mock("@/lib/assistant-runtime", () => ({
-  callAssistantRuntime: (...args: unknown[]) => callRuntime(...args),
+  callGuardedAssistantRuntimeBoxed: (...args: unknown[]) => boxedAssistantFixture(callRuntime(...args)),
 }));
-vi.mock("@/lib/auth-context", () => ({
-  useAuth: () => ({ user: { id: "experience-test" } }),
-}));
+const auth = assistantAuthFixture(() => "experience-test");
+vi.mock("@/lib/auth-context", () => ({ useAuth: () => auth }));
 vi.mock("@/lib/learner-context", () => ({
   useLearnerContext: () => ({
+    currentUser: { id: "experience-test", email: null, isAuthenticated: true },
     currentRoute: "/ai-assistant",
     currentPath: null,
     currentModule: null,

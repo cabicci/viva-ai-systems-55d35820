@@ -3,15 +3,15 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   FloatingAssistantLauncher,
   LEARN_ASSISTANT_LAUNCHER_POSITION_KEY,
+  LEARN_ASSISTANT_LAUNCHER_MANUAL_POSITION_KEY,
 } from "@/components/learn/FloatingAssistantLauncher";
 import {
   clampAssistantLauncher,
   positionAssistantPanel,
 } from "@/components/learn/assistant-launcher-position";
 
-vi.mock("@/lib/locale/locale-context", () => ({
-  useLocale: () => ({ locale: "ar-EG", dir: "rtl" }),
-}));
+const testLocale = vi.hoisted(() => ({ locale: "ar-EG", dir: "rtl" as "rtl" | "ltr" }));
+vi.mock("@/lib/locale/locale-context", () => ({ useLocale: () => testLocale }));
 vi.mock("@/lib/locale/ui-strings", () => ({ getUiString: () => "إغلاق" }));
 vi.mock("@/lib/utils", () => ({
   cn: (...values: unknown[]) => values.filter(Boolean).join(" "),
@@ -28,23 +28,26 @@ function setViewport(width: number, height: number) {
   Object.defineProperty(window, "innerHeight", { configurable: true, value: height });
 }
 
-function renderLauncher() {
-  return render(
+function launcherTree(panelId = "lesson-assistant") {
+  return (
     <div style={{ transform: "translateY(20px)", overflow: "hidden" }}>
       <FloatingAssistantLauncher
-        fabLabel="المساعد"
-        fabAriaLabel="افتح المساعد"
+        panelId={panelId}
+        fabLabel={testLocale.locale === "en" ? "Ask AI" : "اسأل AI"}
+        fabAriaLabel={testLocale.locale === "en" ? "Ask AI" : "اسأل AI"}
         panelTitle="مساعد المسار"
       >
         <label htmlFor="test-question">سؤالك</label>
         <textarea id="test-question" />
       </FloatingAssistantLauncher>
-    </div>,
+    </div>
   );
 }
 
+function renderLauncher(panelId?: string) { return render(launcherTree(panelId)); }
+
 function launcher() {
-  return screen.getByRole("button", { name: "افتح المساعد" });
+  return screen.getByRole("button", { name: testLocale.locale === "en" ? "Ask AI" : "اسأل AI" });
 }
 
 function pointer(type: "down" | "move" | "up" | "cancel", x: number, y: number) {
@@ -57,6 +60,7 @@ function pointer(type: "down" | "move" | "up" | "cancel", x: number, y: number) 
 
 beforeEach(() => {
   localStorage.clear();
+  testLocale.locale = "ar-EG"; testLocale.dir = "rtl";
   setViewport(1024, 768);
   Object.defineProperty(window, "visualViewport", { configurable: true, value: undefined });
   panelHeight = 420;
@@ -112,7 +116,7 @@ describe("floating assistant activation", () => {
     fireEvent.click(launcher(), { detail: 1 });
     const dialog = screen.getByRole("dialog", { name: "مساعد المسار" });
     expect(launcher().getAttribute("aria-expanded")).toBe("true");
-    expect(dialog.style.top).toBe("264px");
+    expect(dialog.style.top).toBe("8px");
     expect(dialog.style.transform).toBe("");
     expect(dialog.getBoundingClientRect().bottom).toBeLessThan(launcher().getBoundingClientRect().top);
     expect(dialog.parentElement).toBe(document.body);
@@ -143,13 +147,16 @@ describe("floating assistant activation", () => {
 
   it("keeps dragging separate from activation without suppressing the next click", () => {
     renderLauncher();
-    pointer("down", 860, 716);
+    // Start inside the actual RTL launcher, not the old hardcoded LTR end.
+    const start = launcher().getBoundingClientRect();
+    pointer("down", start.left + 20, start.top + 20);
     pointer("move", 100, 40);
     pointer("up", 100, 40);
     fireEvent.click(launcher(), { detail: 1 });
     expect(screen.queryByRole("dialog")).toBeNull();
     expect(Number.parseFloat(launcher().style.top)).toBeLessThan(100);
-    expect(JSON.parse(localStorage.getItem(LEARN_ASSISTANT_LAUNCHER_POSITION_KEY)!)).toEqual({ x: 80, y: 20 });
+    expect(JSON.parse(localStorage.getItem(LEARN_ASSISTANT_LAUNCHER_MANUAL_POSITION_KEY)!)).toEqual({ version: 2, kind: "user-drag", x: 80, y: 20 });
+    expect(localStorage.getItem(LEARN_ASSISTANT_LAUNCHER_POSITION_KEY)).toBeNull();
     pointer("down", 100, 40);
     pointer("up", 100, 40);
     fireEvent.click(launcher(), { detail: 1 });
@@ -192,10 +199,10 @@ describe("floating assistant activation", () => {
     renderLauncher();
     fireEvent.click(launcher());
     const dialog = screen.getByRole("dialog");
-    expect(dialog.style.top).toBe("524px");
+    expect(dialog.style.top).toBe("188px");
     panelHeight = 500;
     act(() => resizeCallbacks.forEach((callback) => callback()));
-    expect(dialog.style.top).toBe("184px");
+    expect(dialog.style.top).toBe("8px");
     setViewport(480, 320);
     fireEvent(window, new Event("resize"));
     expect(dialog.getBoundingClientRect().top).toBeGreaterThanOrEqual(8);
@@ -221,7 +228,7 @@ describe("floating assistant activation", () => {
 
   it("keeps a centered launcher clear of the form and restores room when it is dragged down", () => {
     setViewport(320, 360);
-    localStorage.setItem(LEARN_ASSISTANT_LAUNCHER_POSITION_KEY, JSON.stringify({ x: 80, y: 156 }));
+    localStorage.setItem(LEARN_ASSISTANT_LAUNCHER_MANUAL_POSITION_KEY, JSON.stringify({ version: 2, kind: "user-drag", x: 80, y: 156 }));
     renderLauncher();
     fireEvent.click(launcher());
     const dialog = screen.getByRole("dialog");
@@ -273,4 +280,109 @@ describe("assistant panel viewport placement", () => {
     expect(result.top).toBeGreaterThanOrEqual(viewport.top + 8);
     expect(result.top + result.maxHeight).toBeLessThanOrEqual(viewport.top + viewport.height - 8);
   });
+});
+
+
+describe("manual-only midpoint placement", () => {
+  it("stays at the RTL midpoint despite crowded controls and scrolling, without writing automatic coordinates", () => {
+    const legacy = JSON.stringify({ x: 850, y: 690 });
+    localStorage.setItem(LEARN_ASSISTANT_LAUNCHER_POSITION_KEY, legacy);
+    localStorage.setItem("unrelated-owner-data", "keep");
+    const write = vi.spyOn(Storage.prototype, "setItem");
+    renderLauncher();
+    const control = document.createElement("button");
+    control.style.left = "24px"; control.style.top = "360px";
+    control.setAttribute("data-assistant-avoid", "");
+    Object.defineProperty(control, "getClientRects", { value: () => [control.getBoundingClientRect()] });
+    document.body.appendChild(control);
+    fireEvent(window, new Event("scroll"));
+    expect(launcher().style.position).toBe(""); // Fixed positioning is provided by its class.
+    expect(launcher().className).toContain("fixed");
+    expect(launcher().parentElement).toBe(document.body);
+    expect(launcher().textContent).toBe("اسأل AI");
+    expect(launcher().getAttribute("aria-label")).toBe(launcher().textContent);
+    expect(launcher().getBoundingClientRect().left).toBe(24);
+    expect(launcher().getBoundingClientRect().top + 24).toBe(768 / 2);
+    expect(write).not.toHaveBeenCalled();
+    expect(localStorage.getItem(LEARN_ASSISTANT_LAUNCHER_POSITION_KEY)).toBe(legacy);
+    expect(localStorage.getItem(LEARN_ASSISTANT_LAUNCHER_MANUAL_POSITION_KEY)).toBeNull();
+    expect(localStorage.getItem("unrelated-owner-data")).toBe("keep");
+    control.remove();
+  });
+
+  it("changes side with language before a drag and recomputes the visible midpoint on resize", () => {
+    const view = renderLauncher();
+    expect(launcher().style.left).toBe("24px");
+    testLocale.locale = "en"; testLocale.dir = "ltr";
+    view.rerender(launcherTree());
+    expect(launcher().style.left).toBe("840px");
+    expect(launcher().style.top).toBe("360px");
+    expect(launcher().textContent).toBe("Ask AI");
+    expect(launcher().getAttribute("aria-label")).toBe("Ask AI");
+    setViewport(375, 700); fireEvent(window, new Event("resize"));
+    expect(launcher().style.left).toBe("199px");
+    expect(launcher().style.top).toBe("326px");
+    testLocale.locale = "ar-Gulf"; testLocale.dir = "rtl";
+    view.rerender(launcherTree());
+    expect(launcher().style.left).toBe("16px");
+    expect(localStorage.getItem(LEARN_ASSISTANT_LAUNCHER_MANUAL_POSITION_KEY)).toBeNull();
+  });
+
+  it("retains a real drag across reload, lesson remount and language changes without touching the legacy key", () => {
+    const legacy = JSON.stringify({ x: 9, y: 99 });
+    localStorage.setItem(LEARN_ASSISTANT_LAUNCHER_POSITION_KEY, legacy);
+    const view = renderLauncher();
+    const start = launcher().getBoundingClientRect();
+    pointer("down", start.left + 20, start.top + 20);
+    pointer("move", 220, 220); pointer("up", 220, 220);
+    fireEvent.click(launcher(), { detail: 1 });
+    expect(screen.queryByRole("dialog")).toBeNull();
+    const manual = localStorage.getItem(LEARN_ASSISTANT_LAUNCHER_MANUAL_POSITION_KEY);
+    expect(JSON.parse(manual!)).toEqual({ version: 2, kind: "user-drag", x: 200, y: 200 });
+    view.unmount();
+    testLocale.locale = "en"; testLocale.dir = "ltr";
+    renderLauncher("next-lesson-assistant");
+    expect(launcher().style.left).toBe("200px"); expect(launcher().style.top).toBe("200px");
+    expect(launcher().getAttribute("aria-controls")).toBe("next-lesson-assistant");
+    fireEvent(window, new Event("scroll"));
+    expect(launcher().style.top).toBe("200px");
+    expect(localStorage.getItem(LEARN_ASSISTANT_LAUNCHER_MANUAL_POSITION_KEY)).toBe(manual);
+    expect(localStorage.getItem(LEARN_ASSISTANT_LAUNCHER_POSITION_KEY)).toBe(legacy);
+    fireEvent.click(launcher(), { detail: 0 });
+    expect(screen.getByRole("dialog")).toBeTruthy();
+  });
+
+  it("clamps a manual choice on resize without overwriting that choice with automatic bounds", () => {
+    const manual = JSON.stringify({ version: 2, kind: "user-drag", x: 800, y: 600 });
+    localStorage.setItem(LEARN_ASSISTANT_LAUNCHER_MANUAL_POSITION_KEY, manual);
+    const write = vi.spyOn(Storage.prototype, "setItem");
+    renderLauncher();
+    setViewport(320, 360); fireEvent(window, new Event("resize"));
+    expect(launcher().style.left).toBe("152px"); expect(launcher().style.top).toBe("304px");
+    fireEvent.click(launcher());
+    const rect = screen.getByRole("dialog").getBoundingClientRect();
+    expect(rect.left).toBeGreaterThanOrEqual(8); expect(rect.right).toBeLessThanOrEqual(312);
+    expect(rect.top).toBeGreaterThanOrEqual(8); expect(rect.bottom).toBeLessThanOrEqual(352);
+    setViewport(1024, 768); fireEvent(window, new Event("resize"));
+    expect(launcher().style.left).toBe("800px"); expect(launcher().style.top).toBe("600px");
+    expect(write).not.toHaveBeenCalled();
+    expect(localStorage.getItem(LEARN_ASSISTANT_LAUNCHER_MANUAL_POSITION_KEY)).toBe(manual);
+  });
+
+  it("does not mark a click or sub-threshold movement as a saved manual choice", () => {
+    renderLauncher(); const r = launcher().getBoundingClientRect();
+    pointer("down", r.left + 10, r.top + 10);
+    pointer("move", r.left + 13, r.top + 12); pointer("up", r.left + 13, r.top + 12);
+    fireEvent.click(launcher(), { detail: 1 });
+    expect(screen.getByRole("dialog")).toBeTruthy();
+    expect(localStorage.getItem(LEARN_ASSISTANT_LAUNCHER_MANUAL_POSITION_KEY)).toBeNull();
+  });
+
+  it.each(["{invalid", JSON.stringify({ x: 80, y: 20 }), JSON.stringify({ version: 2, kind: "user-drag", x: "80", y: 20 })])(
+    "ignores an invalid manual record without deleting or rewriting it: %s", raw => {
+      localStorage.setItem(LEARN_ASSISTANT_LAUNCHER_MANUAL_POSITION_KEY, raw);
+      renderLauncher();
+      expect(launcher().style.top).toBe("360px");
+      expect(localStorage.getItem(LEARN_ASSISTANT_LAUNCHER_MANUAL_POSITION_KEY)).toBe(raw);
+    });
 });

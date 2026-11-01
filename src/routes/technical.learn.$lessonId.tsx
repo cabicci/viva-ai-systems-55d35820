@@ -1,4 +1,5 @@
 import { JourneyVisitRecorder } from "@/components/journey/JourneyVisitRecorder";
+import { stampFreeDelivery, useFreeDeliveryDeadline } from "@/lib/commerce/free-access-client";
 import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { Navbar } from "@/components/site/Navbar";
@@ -32,9 +33,17 @@ export function TechnicalLessonPage() {
   const query = useQuery({
     queryKey: ["technical-lesson", user?.id, lessonId, locale],
     enabled: !!user?.id && !!record,
-    queryFn: () => technicalCommand<Delivery>("lesson", lessonId, locale),
+    queryFn: async () => {
+      const requestedAt = performance.now();
+      return stampFreeDelivery(
+        await technicalCommand<Delivery>("lesson", lessonId, locale),
+        requestedAt,
+      );
+    },
     staleTime: 0,
+    structuralSharing: false,
   });
+  const deliveryCurrent = useFreeDeliveryDeadline(query.data, query.refetch);
   const href = (id: string) => `/technical/learn/${encodeURIComponent(id)}?locale=${locale}`;
   return (
     <div className="min-h-dvh">
@@ -46,7 +55,7 @@ export function TechnicalLessonPage() {
       ) : !user ? (
         <main className="container py-10">
           <h1 className="text-2xl font-bold">{record?.title[locale] ?? c.error}</h1>
-          <a className="mt-5 inline-block underline" href={`/login?locale=${locale}`}>
+          <a className="mt-5 inline-block underline" href={`/login?locale=${encodeURIComponent(locale)}&returnTo=${encodeURIComponent(`/technical/learn/${lessonId}`)}`}>
             {c.login}
           </a>
         </main>
@@ -55,7 +64,7 @@ export function TechnicalLessonPage() {
           <p role="alert">{c.error}</p>
           <Button onClick={() => void query.refetch()}>{c.retry}</Button>
         </main>
-      ) : !query.data?.allowed ? (
+      ) : !deliveryCurrent || !query.data?.allowed ? (
         <main className="container py-10">
           <h1 className="text-2xl font-bold">{record.title[locale]}</h1>
           <p className="my-5">{c.locked}</p>
@@ -101,8 +110,12 @@ export function TechnicalLessonPage() {
               />
             </main>
           )}
-          <CourseLessonAssistant area="technical" cardId={sourceOwner({ adapter: "technical", lessonId }).id}
-            stepId={lessonId} locale={locale} />
+          <CourseLessonAssistant
+            area="technical"
+            cardId={sourceOwner({ adapter: "technical", lessonId }).id}
+            stepId={lessonId}
+            locale={locale}
+          />
           <nav
             aria-label={c.back}
             className="mx-auto flex max-w-7xl justify-between gap-4 px-4 py-8"

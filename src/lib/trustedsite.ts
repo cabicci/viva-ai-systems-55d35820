@@ -3,8 +3,21 @@ import type { AnalyticsConsent } from "@/lib/analytics";
 const TRUSTEDSITE_SCRIPT_ID = "masaarat-trustedsite-script";
 const TRUSTEDSITE_SCRIPT_URL = "https://cdn.ywxi.net/js/1.js";
 
-/** TrustedSite counts visits with a tracking cookie, so load it only after consent. */
-export function applyTrustedSiteConsent(consent: AnalyticsConsent): void {
+function currentBrowserHref(): string {
+  const { pathname, search, hash } = window.location;
+  return `${pathname}${search}${hash}`;
+}
+
+/**
+ * TrustedSite counts visits with a tracking cookie, so load it only after consent.
+ * `destinationHref` is the router's target URL. During client navigation the router
+ * state changes before the browser URL, so a plain reload would return to the previous
+ * page (e.g. tapping "login" bounced back to home). Load the destination instead.
+ */
+export function applyTrustedSiteConsent(
+  consent: AnalyticsConsent,
+  destinationHref?: string,
+): void {
   if (typeof document === "undefined") return;
 
   const existing = document.getElementById(TRUSTEDSITE_SCRIPT_ID);
@@ -12,8 +25,12 @@ export function applyTrustedSiteConsent(consent: AnalyticsConsent): void {
     if (existing) {
       existing.remove();
       // The vendor can leave a floating widget and running code after its script loads.
-      // Reloading clears that runtime without making another vendor request.
-      window.location.reload();
+      // A fresh document load clears that runtime without making another vendor request.
+      if (destinationHref && destinationHref !== currentBrowserHref()) {
+        window.location.assign(destinationHref);
+      } else {
+        window.location.reload();
+      }
     }
     return;
   }

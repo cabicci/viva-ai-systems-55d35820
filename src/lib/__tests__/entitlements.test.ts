@@ -184,6 +184,24 @@ describe("entitlements: decideLessonGate", () => {
 });
 
 describe("entitlements: isAdminEmail (deprecated no-op)", () => {
+  it("opens only offered lessons, preserves unrelated gates and falls back when the window disappears", () => {
+    const base = { tier: "free" as const, isAdmin: false, introCompletedCount: 10, introTotal: 10 };
+    const lessonId = "builder-m1-l2-tokens-training";
+    expect(decideLessonGate({ ...base, lessonId, freeLessonIds: [lessonId] })).toEqual({
+      kind: "open",
+    });
+    expect(decideLessonGate({ ...base, lessonId, freeLessonIds: [] })).toEqual({ kind: "paywall" });
+    expect(
+      decideLessonGate({
+        ...base,
+        lessonId,
+        freeLessonIds: ["business-m1-l2-reactive-vs-proactive"],
+      }),
+    ).toEqual({ kind: "paywall" });
+    expect(decideLessonGate({ ...base, tier: "pro_plus", lessonId, freeLessonIds: [] })).toEqual({
+      kind: "open",
+    });
+  });
   it("always returns false regardless of input", () => {
     expect(isAdminEmail(null)).toBe(false);
     expect(isAdminEmail(undefined)).toBe(false);

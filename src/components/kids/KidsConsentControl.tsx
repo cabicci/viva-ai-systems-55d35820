@@ -85,7 +85,7 @@ export function KidsConsentControl() {
     paid_through: string | null;
   } | null>(null);
   const [access, setAccess] = useState<{
-    access_source: "stripe_test" | "test_grant" | "complimentary_email";
+    access_source: "stripe_test" | "stripe_live" | "test_grant" | "complimentary_email";
     active_until: string;
   } | null>(null);
   const [accessError, setAccessError] = useState(false);
@@ -165,7 +165,7 @@ export function KidsConsentControl() {
       {subscription && loadedFor === userId && (
         <div className="text-sm">
           <p>
-            {locale === "en" ? "Stripe test subscription" : "اشتراك Stripe التجريبي"}:{" "}
+            {locale === "en" ? "Stripe subscription" : "اشتراك Stripe"}:{" "}
             {subscriptionLabels[subscription.status]?.[locale === "en" ? "en" : "ar"] ??
               subscription.status}
           </p>
@@ -193,13 +193,13 @@ export function KidsConsentControl() {
                   : `${locale === "en" ? "Active until" : "نشط حتى"} ${access.active_until.slice(0, 10)}`} (${
                   access.access_source === "stripe_test"
                     ? locale === "en"
-                      ? "Stripe test payment"
-                      : "دفع Stripe التجريبي"
+                      ? "Stripe payment"
+                      : "دفع Stripe"
                     : access.access_source === "complimentary_email"
                       ? locale === "en" ? "email access grant" : "منحة وصول بالبريد"
                     : locale === "en"
-                      ? "separate test grant"
-                      : "منحة اختبار منفصلة"
+                      ? "separate access grant"
+                      : "منحة وصول منفصلة"
                 })`
               : locale === "en"
                 ? "No active family grant"

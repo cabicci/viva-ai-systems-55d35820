@@ -7,7 +7,7 @@ import {
 } from "@/components/intro/lessons";
 import { adaptLocalizedPackageToIntroContent } from "@/lib/locale-lessons/adapt-localized-package-to-intro-content";
 import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
-import { LocaleProvider } from "@/lib/locale/locale-context";
+import { LocaleProvider, useLocale } from "@/lib/locale/locale-context";
 import { getUiString } from "@/lib/locale/ui-strings";
 
 type PackageInput = Pick<
@@ -20,6 +20,7 @@ type PackageInput = Pick<
  * with package text and strict composite Bunny lookup for video.
  */
 export function LocalePackageLessonRenderer({ pkg }: { pkg: PackageInput }) {
+  const { locale: uiLocale } = useLocale();
   const [canonical, setCanonical] = useState<
     IntroLessonContent | null | undefined
   >(undefined);
@@ -40,19 +41,19 @@ export function LocalePackageLessonRenderer({ pkg }: { pkg: PackageInput }) {
 
   const content = useMemo(() => {
     if (canonical === undefined) return undefined;
-    return adaptLocalizedPackageToIntroContent(pkg, canonical);
-  }, [pkg, canonical]);
+    return adaptLocalizedPackageToIntroContent(pkg, canonical, uiLocale);
+  }, [pkg, canonical, uiLocale]);
 
   if (content === undefined) {
     return (
       <div className="rounded-2xl border border-border/40 bg-muted/20 p-8 text-center text-sm text-muted-foreground">
-        {getUiString(pkg.locale, "learn.loading.access")}
+        {getUiString(uiLocale, "learn.loading.access")}
       </div>
     );
   }
 
   return (
-    <LocaleProvider effectiveLocale={pkg.locale}>
+    <LocaleProvider effectiveLocale={uiLocale}>
       <IntroLessonRenderer
         content={content}
         lessonId={pkg.lessonId}

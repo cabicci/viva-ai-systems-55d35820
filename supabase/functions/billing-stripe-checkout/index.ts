@@ -1,4 +1,5 @@
 import { coordinateCheckout, type CheckoutIntent } from "../_shared/stripe-checkout-intent.ts";
+import { isTestStripeLocked, TEST_STRIPE_LOCKED } from "../_shared/billing-mode.ts";
 
 const ALLOWED_ORIGINS = new Set([
   "https://masaarat.ai",
@@ -226,6 +227,8 @@ Deno.serve(async (request) => {
     return new Response(null, { status: 204, headers: corsHeaders(origin) });
   }
   if (request.method !== "POST") return json({ error: "METHOD_NOT_ALLOWED" }, 405, origin);
+  // Server-owned mode: no Test session while Live mode is selected (before any DB/Stripe call).
+  if (isTestStripeLocked((name) => Deno.env.get(name))) return json({ error: TEST_STRIPE_LOCKED }, 503, origin);
 
   try {
     const user = await authenticate(request);

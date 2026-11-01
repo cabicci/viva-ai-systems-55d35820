@@ -1,0 +1,44 @@
+{
+  "migration": "drizzle/migrations/0026_assistant_source_events_and_free_access.sql",
+  "sha256": "a3ca78427e47ed4e6b92d29bc0ae07ee5c9e34bff47cbfd659a032baaedd4acd",
+  "transaction": "one atomic migration; original internal envelopes removed",
+  "sources": [
+    {
+      "file": "scripts/card-assistant/assistant-candidate.sql",
+      "sha256": "27fb91a1d301c6469c9e0acab8a5c60714020677c01b7713cf0d29e80062eb70"
+    },
+    {
+      "file": "scripts/card-assistant/assistant-registry-seed.sql",
+      "sha256": "8077c012a88e7bdb2e44cb85073e67bbd291ff9ad54d60e9dc537651b3088f27"
+    },
+    {
+      "file": "scripts/rag/incremental-embedding-reuse-candidate.sql",
+      "sha256": "9bd1942885376ab75b56525c602fa60c47550fcc6c27123d89146962534eaa7f"
+    },
+    {
+      "file": "scripts/rag/current-release-candidate.sql",
+      "sha256": "eab702eebc2dd2d70758bc923fb8300be32f1825972769c3432b1963cf6ca9c4"
+    },
+    {
+      "file": "scripts/academic-education/assistant-card-index-maintenance-candidate.sql",
+      "sha256": "64f3f8b533d77b4b8054f68dfae5ee6ec31f6974d4734bed1bea1e84d525bb97"
+    },
+    {
+      "file": "scripts/assistant/automatic-indexing-candidate.sql",
+      "sha256": "4860f9473f85c74ef2bcdf01219ee3d3a2f26db82ce2be3974a11d5b6844c09a"
+    },
+    {
+      "file": "scripts/assistant/automatic-publication-candidate.sql",
+      "sha256": "4073bb75beaaa55dc2e91ceae5f4cfbda8072ae1916f5aced9d0b581840b0eda"
+    },
+    {
+      "file": "scripts/assistant/automatic-source-events-candidate.sql",
+      "sha256": "a7700348715ede28c7b58dc68087701be5b4d326846012455f0c5e33602d7757"
+    },
+    {
+      "file": "scripts/free-access/free-access-candidate.sql",
+      "sha256": "9a30f203d8e5b9f5fe47954493bb9cc672c415ca2512eab93bbf1e72459e9bc8"
+    }
+  ],
+  "activation": "separate reviewed source/index/provider/access verification; never enabled by installation"
+}

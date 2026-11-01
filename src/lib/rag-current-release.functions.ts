@@ -44,12 +44,13 @@ export const runCurrentRagRelease = createServerFn({ method: "POST" }).middlewar
         committed: result.committed === true, activated: result.activated === true, rolledBack: result.rolledBack === true,
         providerCalls: typeof result.providerCalls === "number" ? result.providerCalls : 0,
         reusedChunks: typeof result.reusedChunks === "number" ? result.reusedChunks : 0,
-        errorCode: null,
+        errorCode: null, errorDiagnostic: null,
       };
     } catch (error) {
+      const { currentReleaseFailureDiagnostic } = await import("@/lib/rag/current-release/failure.server");
       // Auth was checked above. A failure never implies zero paid provider work.
       return { executionId: null, done: false, replayed: false, committed: false,
         activated: false, rolledBack: false, providerCalls: null, reusedChunks: null,
-        errorCode: currentReleaseFailureCode(error) };
+        errorCode: currentReleaseFailureCode(error), errorDiagnostic: currentReleaseFailureDiagnostic(error) };
     }
   });

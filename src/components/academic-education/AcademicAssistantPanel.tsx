@@ -13,9 +13,10 @@ export function AcademicAssistantPanel({ courseId, lessonId, locale }: {
   return <AssistantConversationPanel accountId={user?.id}
     scope={{ area: "academic", cardId: courseId, stepId: lessonId, locale }}
     ask={async ({ scope, query, requestId, history }) => {
+      if (!user?.id) return { status: 401 };
       if (scope.area !== "academic" || !scope.stepId) return { status: 400 };
       const data = await askQuestion({ data: { courseId: scope.cardId, lessonId: scope.stepId,
-        locale: scope.locale, query, requestId, history } });
+        locale: scope.locale, query, requestId, history, expectedAccountId: user.id } });
       const sources = Array.isArray(data.sources) ? data.sources : [];
       if (sources.some(source => !source || typeof source.lessonId !== "string" ||
         !/^AC-[A-Z0-9]+-M\d{2}-L\d{2}$/.test(source.lessonId) ||

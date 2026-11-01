@@ -1,0 +1,24 @@
+diff --git a/dist/esm/index.d.ts b/dist/esm/index.d.ts
+index 2247bba1b3d19e4de64150ba4d44bd82de532d5f..656cc8ff1341000fcd1eacc3445b57f75c98282b 100644
+--- a/dist/esm/index.d.ts
++++ b/dist/esm/index.d.ts
+@@ -182,4 +182,6 @@ export declare class Minimatch {
+ export { escape } from './escape.js';
+ export { unescape } from './unescape.js';
+ export type { Form };
++// Preserve legacy ESLint ESM default imports; the fixed v11 matcher is unchanged.
++export default minimatch;
+ //# sourceMappingURL=index.d.ts.map
+\ No newline at end of file
+diff --git a/dist/esm/index.js b/dist/esm/index.js
+index ab804c2db6951836630594a59844233756d3957c..5290ae31a093ce982bbf3f66889d25d23e3ea41f 100644
+--- a/dist/esm/index.js
++++ b/dist/esm/index.js
+@@ -1498,4 +1498,6 @@ export { unescape } from './unescape.js';
+ minimatch.Minimatch = Minimatch;
+ minimatch.escape = escape;
+ minimatch.unescape = unescape;
++// Preserve legacy ESLint ESM default imports; the fixed v11 matcher is unchanged.
++export default minimatch;
+ //# sourceMappingURL=index.js.map
+\ No newline at end of file

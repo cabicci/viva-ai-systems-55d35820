@@ -1,5 +1,5 @@
 import { JourneyVisitRecorder } from "@/components/journey/JourneyVisitRecorder";
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-router";
 import {
   ArrowLeft,
   ArrowRight,
@@ -16,14 +16,17 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { useMemo, useState } from "react";
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { Sidebar } from "@/components/dashboard/Sidebar";
-import { AuthSessionGate } from "@/lib/auth-route-guard";
+import { AuthSessionGate, AuthLoadingShell } from "@/lib/auth-route-guard";
 import { parseAuthIntentSearch } from "@/lib/kids/auth-intent";
-import { requireLearnerBeforeLoad } from "@/lib/learner-route-guard";
+import { learnerLessonAccess } from "@/lib/learner-route-guard";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { useLessonProgress } from "@/lib/lesson-progress";
+import { LessonProgressFeedback } from "@/components/learn/LessonProgressFeedback";
+import { AiLessonCompletionAction, type AiCompletionContext } from "@/components/learn/AiLessonCompletionAction";
+import { useAuth } from "@/lib/auth-context";
 import { IntroLessonRenderer } from "@/components/intro/IntroLessonRenderer";
 import { loadIntroLessonContent } from "@/components/intro/lessons";
 import { getContinuityForLocale } from "@/lib/locale-curriculum/resolve-continuity";
@@ -145,7 +148,8 @@ function preserveLocaleSearch(
 }
 
 export const Route = createFileRoute("/learn/$pathId/$lessonId")({
-  beforeLoad: requireLearnerBeforeLoad,
+  ...learnerLessonAccess,
+  pendingComponent: AuthLoadingShell,
   validateSearch: (raw: Record<string, unknown>) => parseLessonPreviewSearch(raw),
   head: async ({ params, match, loaderData }) => {
     const locale = await resolveRouteHeadLocale({
@@ -265,9 +269,10 @@ function UnifiedLessonPage() {
   const effectiveAccess = lessonAccess;
   const isLocalizedPackagePage =
     effectiveAccess.contentSource === "locale-package-json" && localizedPackage !== null;
-  const [egyptianContent, setEgyptianContent] = useState<
-    Awaited<ReturnType<typeof loadIntroLessonContent>> | undefined
-  >(undefined);
+  const [egyptianContent, setEgyptianContent] = useState<{
+    lessonSlug: string;
+    content: Awaited<ReturnType<typeof loadIntroLessonContent>>;
+  } | null | undefined>(undefined);
 
   useEffect(() => {
     if (isLocalizedPackagePage) {
@@ -275,16 +280,24 @@ function UnifiedLessonPage() {
       return;
     }
     let cancelled = false;
-    void loadIntroLessonContent(lesson.slug).then((loaded) => {
-      if (!cancelled) setEgyptianContent(loaded);
+    const lessonSlug = lesson.slug;
+    void loadIntroLessonContent(lessonSlug).then((loaded) => {
+      if (!cancelled) setEgyptianContent({ lessonSlug, content: loaded });
     });
     return () => {
       cancelled = true;
     };
   }, [lesson.slug, isLocalizedPackagePage]);
 
-  const content = isLocalizedPackagePage ? null : egyptianContent;
-  const { getStatus, setStatus, isLoaded: isProgressLoaded } = useLessonProgress();
+  const content = isLocalizedPackagePage
+    ? null
+    : egyptianContent?.lessonSlug === lesson.slug
+      ? egyptianContent.content
+      : undefined;
+  const progress = useLessonProgress();
+  const { getStatus, isLoaded: isProgressLoaded } = progress;
+  const auth = useAuth();
+  const navigate = useNavigate();
   const { recordActivity } = useStreak();
   const { isAdmin } = useEntitlement();
   const meta = PATH_META[pathId];
@@ -317,6 +330,60 @@ function UnifiedLessonPage() {
     .replace("{total}", String(total))
     .replace("{pct}", String(pct));
   const isCompleted = getStatus(lesson.id) === "completed";
+  // Presentation ownership is independent of read success and optimistic progress.
+  const completionViewKey = JSON.stringify([
+    auth.user?.id ?? null, pathId, lesson.moduleId, lesson.id, locale,
+  ]);
+  const actionContextKey = JSON.stringify([
+    completionViewKey, auth.authGeneration.value, next?.slug ?? "/dashboard",
+  ]);
+  const completionMode = useRef({ key: completionViewKey, explicitIntent: false });
+  if (completionMode.current.key !== completionViewKey) {
+    completionMode.current = { key: completionViewKey, explicitIntent: false };
+  }
+  const currentActionKey = useRef(actionContextKey);
+  currentActionKey.current = actionContextKey;
+  const capturedAuthGeneration = auth.authGeneration;
+  const isCompletionCurrent = (context: AiCompletionContext) =>
+    currentActionKey.current === context.actionContextKey &&
+    context.actionContextKey === actionContextKey &&
+    context.userId === auth.user?.id && context.lessonId === lesson.id &&
+    auth.isAuthGenerationCurrent(capturedAuthGeneration) && context.isCurrent();
+  const ownWritePending = progress.writeState?.lessonId === lesson.id &&
+    progress.writeState.status === "pending";
+  const ordinaryCompleted = isCompleted &&
+    !completionMode.current.explicitIntent && !ownWritePending;
+  const [completionReceipt, setCompletionReceipt] = useState<AiCompletionContext | null>(null);
+  const confirmedCompletion = completionReceipt !== null && isCompletionCurrent(completionReceipt);
+  const completionControlsRef = useRef<HTMLDivElement>(null);
+  const pendingCompletionFocus = useRef<{
+    actionContextKey: string;
+    origin: HTMLButtonElement;
+  } | null>(null);
+
+  useLayoutEffect(() => {
+    const request = pendingCompletionFocus.current;
+    if (request === null) return;
+    if (request.actionContextKey !== actionContextKey) {
+      pendingCompletionFocus.current = null;
+      return;
+    }
+    if (!completionReceipt || !isCompletionCurrent(completionReceipt)) return;
+    pendingCompletionFocus.current = null;
+    const buttons = completionControlsRef.current?.querySelectorAll<HTMLButtonElement>("button");
+    const target = buttons?.[1] ?? null;
+    const doc = request.origin.ownerDocument;
+    if (
+      target === null || !target.isConnected || target.ownerDocument !== doc ||
+      target.disabled || target.getAttribute("aria-disabled") === "true" ||
+      target.tabIndex < 0 || target.getClientRects().length === 0
+    ) return;
+    const active = doc.activeElement;
+    if (
+      (active === request.origin || active === doc.body) &&
+      isCompletionCurrent(completionReceipt)
+    ) target.focus();
+  });
 
   const [copied, setCopied] = useState(false);
   const copyLessonId = async () => {
@@ -338,7 +405,7 @@ function UnifiedLessonPage() {
   const nextLocked = isLessonNavigationMissionLocked(missionGate);
 
   const assistantContextOverride = useMemo(() => {
-    if (!isLocalizedPackagePage || !localizedPackage || missionShape === undefined) {
+    if (missionShape === undefined) {
       return null;
     }
     return buildLocalizedAssistantContextOverride({
@@ -380,21 +447,31 @@ function UnifiedLessonPage() {
   const { gate, isLoaded: isGateLoaded } = useLessonGate(lesson.id, introDone);
   const isGateReady = isProgressLoaded && isGateLoaded;
 
-  const markCompleted = () => {
-    if (isCompleted) return;
-    // Mastery gate: if the lesson ships a gated mission, the user can't
-    // self-mark complete until the mission is actually passed.
-    if (missionShape?.hasRubric && nextLocked) return;
-    setStatus(lesson.id, "completed");
-    // Only record streak activity on the actual transition to completed,
-    // not on every "Next" click of an already-completed lesson.
-    recordActivity();
-    logLearnerEvent({
+  // Best-effort effects are separate from the owned progress acknowledgement.
+  // Actor transport and effect persistence are not acknowledged by these calls.
+  const recordConfirmedActivity = (context: AiCompletionContext) => {
+    if (isCompletionCurrent(context)) recordActivity(context);
+  };
+  const recordConfirmedLesson = (context: AiCompletionContext) => {
+    if (!isCompletionCurrent(context)) return;
+    void logLearnerEvent({
       type: "lesson_completed",
       pathId,
       moduleId: lesson.moduleId,
-      lessonId: lesson.id,
-    });
+      lessonId: context.lessonId,
+    }, context);
+  };
+  const continueConfirmedLesson = (context: AiCompletionContext) => {
+    if (!isCompletionCurrent(context)) return;
+    if (next) {
+      void navigate({
+        to: "/learn/$pathId/$lessonId",
+        params: { pathId, lessonId: next.slug },
+        search: localeNavSearch,
+      });
+    } else {
+      void navigate({ to: "/dashboard", search: localeSearch() });
+    }
   };
 
   // Fire `lesson_opened` once per mount per lesson.
@@ -414,19 +491,22 @@ function UnifiedLessonPage() {
     <div className="min-h-dvh flex flex-col overflow-x-clip" dir={dir}>
       <Sidebar />
       <ReadingProgressBar />
-      <CompletionReward
-        lessonId={lesson.id}
-        isCompleted={isCompleted}
-        completedCount={completedCount}
-      />
-      <main className="flex-1 min-w-0 max-w-[48rem] mx-auto w-full px-4 sm:px-6 py-8 md:py-12">
+      {(ordinaryCompleted || confirmedCompletion) && (
+        <CompletionReward
+          key={actionContextKey}
+          lessonId={lesson.id}
+          isCompleted={true}
+          completedCount={completedCount}
+        />
+      )}
+      <main className="flex-1 min-w-0 max-w-[48rem] mx-auto w-full px-4 sm:px-6 pt-8 pb-28 md:pt-12 xl:pb-12">
         <Link
           to="/curriculum"
           search={localeSearch({ module: lesson.moduleId, lesson: lesson.id })}
           aria-label={t("learn.backToMap")}
           className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md"
         >
-          <ArrowLeft className="h-4 w-4" />
+          <PreviousNavIcon className="h-4 w-4" />
           <span className="truncate">{t("learn.backToMap")}</span>
         </Link>
 
@@ -476,6 +556,16 @@ function UnifiedLessonPage() {
             />
           </div>
         </header>
+
+        <LessonProgressFeedback
+          progress={{
+            isLoaded: progress.isLoaded,
+            isError: progress.isError,
+            isFetching: progress.isFetching,
+            refetch: progress.refetch,
+          }}
+          lessonId={lesson.id}
+        />
 
         {!isGateReady ? (
           <div className="rounded-2xl border border-border/40 bg-muted/20 p-8 text-center text-sm text-muted-foreground">
@@ -544,7 +634,7 @@ function UnifiedLessonPage() {
                 })}
               </p>
               {next && nextLessonTitle && (
-                <p className="text-xs text-muted-foreground mt-2 font-mono">→ {nextLessonTitle}</p>
+                <p className="text-xs text-muted-foreground mt-2 font-mono">{dir === "rtl" ? "←" : "→"} {nextLessonTitle}</p>
               )}
             </section>
 
@@ -567,58 +657,84 @@ function UnifiedLessonPage() {
               </div>
 
               <div className="flex gap-2">
-                {!isCompleted && (
-                  <Button
-                    variant="glass"
-                    size="sm"
-                    onClick={markCompleted}
-                    disabled={nextLocked && !!missionShape?.hasRubric}
-                    title={
-                      nextLocked && missionShape?.hasRubric
-                        ? t("learn.missionGate.finishFirst")
-                        : undefined
-                    }
-                  >
-                    <CheckCircle2 className="h-4 w-4" />
-                    {t("learn.nav.markComplete")}
-                  </Button>
-                )}
-                {next ? (
-                  <Button
-                    asChild
-                    variant="violet"
-                    size="sm"
-                    onClick={markCompleted}
-                    disabled={nextLocked}
-                    title={nextLocked ? t("learn.missionGate.finishFirst") : undefined}
-                  >
-                    {nextLocked ? (
-                      <span className="inline-flex items-center gap-1.5 opacity-60 cursor-not-allowed">
-                        <Lock className="h-3.5 w-3.5" />
-                        {t("learn.nav.next")}
-                      </span>
-                    ) : (
-                      <Link
-                        to="/learn/$pathId/$lessonId"
-                        params={{ pathId, lessonId: next.slug }}
-                        search={localeNavSearch}
-                      >
-                        {t("learn.nav.next")}
-                        <NextNavIcon className="h-4 w-4" />
+                {ordinaryCompleted ? (
+                  next ? (
+                    <Button
+                      asChild variant="violet" size="sm" disabled={nextLocked}
+                      title={nextLocked ? t("learn.missionGate.finishFirst") : undefined}
+                    >
+                      {nextLocked ? (
+                        <span className="inline-flex items-center gap-1.5 opacity-60 cursor-not-allowed">
+                          <Lock className="h-3.5 w-3.5" />{t("learn.nav.next")}
+                        </span>
+                      ) : (
+                        <Link
+                          to="/learn/$pathId/$lessonId"
+                          params={{ pathId, lessonId: next.slug }}
+                          search={localeNavSearch}
+                        >
+                          {t("learn.nav.next")}<NextNavIcon className="h-4 w-4" />
+                        </Link>
+                      )}
+                    </Button>
+                  ) : (
+                    <Button asChild variant="violet" size="sm">
+                      <Link to="/dashboard" search={localeSearch()}>
+                        {t("learn.backToDashboard")}<NextNavIcon className="h-4 w-4" />
                       </Link>
-                    )}
-                  </Button>
+                    </Button>
+                  )
                 ) : (
-                  <Button asChild variant="violet" size="sm" onClick={markCompleted}>
-                    <Link to="/dashboard" search={localeSearch()}>
-                      {t("learn.backToDashboard")}
-                      <NextNavIcon className="h-4 w-4" />
-                    </Link>
-                  </Button>
+                  <div
+                    ref={completionControlsRef}
+                    onClickCapture={(event) => {
+                      const button = event.target instanceof Element
+                        ? event.target.closest<HTMLButtonElement>("button")
+                        : null;
+                      if (!button || button.disabled || !event.currentTarget.contains(button)) return;
+                      completionMode.current.explicitIntent = true;
+                      pendingCompletionFocus.current =
+                        event.detail === 0 &&
+                        event.currentTarget.querySelector("button") === button &&
+                        button.ownerDocument.activeElement === button
+                          ? { actionContextKey, origin: button }
+                          : null;
+                    }}
+                  >
+                    <AiLessonCompletionAction
+                      progress={progress}
+                      lessonId={lesson.id}
+                      actionContextKey={actionContextKey}
+                      completeLabel={t("learn.nav.markComplete")}
+                      continueLabel={next ? t("learn.nav.next") : t("learn.backToDashboard")}
+                      disabled={nextLocked && !!missionShape?.hasRubric}
+                      onRecordActivity={recordConfirmedActivity}
+                      onLessonCompleted={recordConfirmedLesson}
+                      onConfirmed={(context) => {
+                        if (isCompletionCurrent(context)) setCompletionReceipt(context);
+                      }}
+                      onContinue={nextLocked && (next || missionShape?.hasRubric)
+                        ? undefined
+                        : continueConfirmedLesson}
+                    />
+                    {!next && nextLocked && missionShape?.hasRubric && (
+                      <Button asChild variant="violet" size="sm">
+                        <Link to="/dashboard" search={localeSearch()}>
+                          {t("learn.backToDashboard")}<NextNavIcon className="h-4 w-4" />
+                        </Link>
+                      </Button>
+                    )}
+                    {nextLocked && next && (
+                      <Button variant="violet" size="sm" disabled
+                        title={t("learn.missionGate.finishFirst")}>
+                        <Lock className="h-3.5 w-3.5" />{t("learn.nav.next")}
+                      </Button>
+                    )}
+                  </div>
                 )}
               </div>
             </nav>
-            <CourseLessonAssistant area="ai" locale={locale} contextOverride={assistantContextOverride} />
+            <CourseLessonAssistant area="ai" locale={locale} pathId={pathId} lessonId={lesson.slug} contextOverride={assistantContextOverride} />
           </>
         )}
       </main>

@@ -1,3 +1,8 @@
+import { createElement } from "react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { afterEach } from "vitest";
+import { assistantAuthFixture } from "@/test/assistant-auth-fixture";
+import { historyKey, readHistory } from "@/lib/card-assistant/history";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { beforeEach, describe, expect, it, vi } from "vitest";
@@ -27,6 +32,32 @@ vi.mock("@/integrations/supabase/client", () => ({
     },
   },
 }));
+
+const componentAuth = assistantAuthFixture(() => "wire-contract-user");
+vi.mock("@/lib/auth-context", () => ({ useAuth: () => componentAuth }));
+vi.mock("@/lib/learner-context", () => ({ useLearnerContext: () => ({
+  ...baseCtx(), currentUser: { id: "wire-contract-user", email: null, isAuthenticated: true },
+  currentRoute: "/learn/intro/intro-m1-l1-what-is-ai", isReady: true,
+}) }));
+afterEach(cleanup);
+
+async function submitActualPanel(answer: string, citations: unknown[] = []) {
+  localStorage.clear(); getSession.mockReset(); invoke.mockReset();
+  getSession.mockResolvedValue({ data: { session: {
+    access_token: "explicit-component-fixture", user: { id: "wire-contract-user" },
+  } }, error: null });
+  invoke.mockResolvedValue({ data: { ok: true, answer, citations }, error: null });
+  const { AssistantPanel } = await import("@/components/assistant/AssistantPanel");
+  const { LocaleProvider } = await import("@/lib/locale/locale-context");
+  render(createElement(LocaleProvider, { effectiveLocale: "en", children: createElement(AssistantPanel, { compact: true }) }));
+  fireEvent.change(screen.getByRole("textbox"), { target: { value: "Explain the current lesson" } });
+  fireEvent.click(screen.getByRole("button", { name: "Send" }));
+  await screen.findByText(answer);
+  expect(getSession).toHaveBeenCalledTimes(1);
+  expect(invoke).toHaveBeenCalledTimes(1);
+  expect(invoke.mock.calls[0][0]).toBe("assistant-runtime");
+  return invoke.mock.calls[0][1].body as AssistantRuntimeRequestPayload;
+}
 
 function read(rel: string): string {
   return readFileSync(path.join(REPO_ROOT, rel), "utf8");
@@ -263,19 +294,19 @@ describe("callAssistantRuntime invoke boundary", () => {
   });
 });
 
+// These two integration cases now enter the real guarded transport rather than
+// checking source symbol names. Keep a bounded budget for its nested currentness
+// checks on Windows; existing test/assertion timeouts elsewhere are unchanged.
 describe("shared production builder and transport wiring", () => {
-  it("AssistantPanel uses shared builder and transport without sending retrievalResults", () => {
-    const source = read("src/components/assistant/AssistantPanel.tsx");
-    expect(source).toContain("buildAssistantRuntimePayload");
-    expect(source).toContain("callAssistantRuntime");
-    expect(source).not.toContain("searchPlatformContent");
-    expect(source).toMatch(
-      /buildAssistantRuntimePayload\(\s*query\s*,\s*resolvedContext\s*,\s*history\s*\)/,
-    );
-    expect(source).not.toMatch(
-      /buildAssistantRuntimePayload\(\s*query\s*,\s*resolvedContext\s*,\s*retrievalResults\s*\)/,
-    );
-  });
+  it("AssistantPanel uses the actual shared builder and guarded SDK transport without retrievalResults", async () => {
+    const body = await submitActualPanel("Built and transported answer");
+    expect(body.query).toBe("Explain the current lesson");
+    expect(body.learnerContext).toMatchObject({ locale: "en", currentPath: "intro",
+      currentModule: "intro-m1", currentLesson: "intro-m1-l1-what-is-ai",
+      currentPathTitle: "Path Title", currentLessonTitle: "Lesson Title" });
+    expect(body).not.toHaveProperty("retrievalResults");
+    expect(read("src/components/assistant/AssistantPanel.tsx")).not.toContain("searchPlatformContent");
+  }, 20_000);
 
   it("administrative assistant-runtime route uses shared builder and transport", () => {
     const source = read("src/routes/assistant-runtime.tsx");
@@ -297,18 +328,20 @@ describe("shared production builder and transport wiring", () => {
     );
   });
 
-  it("uses only server-authoritative citations for display", () => {
-    const panel = read("src/components/assistant/AssistantPanel.tsx");
-    expect(panel).not.toContain("searchPlatformContent");
-    expect(panel).toContain("reply.citations");
-    expect(panel).toMatch(
-      /buildAssistantRuntimePayload\(\s*query\s*,\s*resolvedContext\s*,\s*history\s*\)/,
-    );
-
-    const builder = read("src/lib/assistant/resolve-assistant-learner-context.ts");
-    expect(builder).toContain("export function buildAssistantRuntimePayload");
-    expect(builder).not.toMatch(/retrievalResults/);
-  });
+  it("preserves only server-authoritative citation identity and routes through the actual panel", async () => {
+    const body = await submitActualPanel("Server-authoritative answer", [{
+      lessonId: "intro-m1-l1-what-is-ai", title: "Authoritative source",
+      chunkId: "server-chunk", citationId: "server-citation",
+      productionRoute: "/learn/intro/intro-m1-l1-what-is-ai",
+    }]);
+    expect(body).not.toHaveProperty("retrievalResults");
+    expect(screen.getByRole("link", { name: "Authoritative source" })).toHaveAttribute(
+      "href", "/learn/intro/intro-m1-l1-what-is-ai?locale=en");
+    const history = readHistory(historyKey({ area: "ai", cardId: "intro", locale: "en" }, "wire-contract-user"));
+    expect(history.at(-1)?.citations[0]).toMatchObject({ id: "server-citation", sourceId: "server-chunk",
+      stepId: "intro-m1-l1-what-is-ai", label: "Authoritative source" });
+    expect(read("src/lib/assistant/resolve-assistant-learner-context.ts")).not.toMatch(/retrievalResults/);
+  }, 20_000);
 });
 
 // These tests exercise assistant requests and locale rendering, not lazy lesson bodies.

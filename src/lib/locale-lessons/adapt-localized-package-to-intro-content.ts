@@ -216,6 +216,7 @@ function buildMissionBlock(
   pkg: LocalizedPackageInput,
   section: LocalizedLessonSection,
   missionIndex: number,
+  uiLocale: Parameters<typeof getUiString>[0],
 ): IntroBlock | null {
   if (!section.mission) return null;
   try {
@@ -228,8 +229,8 @@ function buildMissionBlock(
       kind: "mission",
       intro: live.intro,
       prompt: live.prompt,
-      buttonLabel: getUiString(pkg.locale, "mission.copy.cta"),
-      copiedLabel: getUiString(pkg.locale, "mission.copy.done"),
+      buttonLabel: getUiString(uiLocale, "mission.copy.cta"),
+      copiedLabel: getUiString(uiLocale, "mission.copy.done"),
       rubric: live.rubric,
       missionId: live.missionId,
       lessonId: pkg.lessonId,
@@ -243,6 +244,7 @@ function buildIntroBlockFromSection(
   pkg: LocalizedPackageInput,
   section: LocalizedLessonSection,
   counters: { quiz: number; mission: number },
+  uiLocale: Parameters<typeof getUiString>[0],
 ): IntroBlock | null {
   const role = section.role;
 
@@ -267,7 +269,7 @@ function buildIntroBlockFromSection(
   }
 
   if (normalizeRole(role).includes("mission")) {
-    const block = buildMissionBlock(pkg, section, counters.mission);
+    const block = buildMissionBlock(pkg, section, counters.mission, uiLocale);
     if (block) counters.mission += 1;
     return block;
   }
@@ -310,12 +312,13 @@ type PackageIntroSection = IntroLessonSection & { packageRole: string };
 
 function buildPackageIntroSections(
   pkg: LocalizedPackageInput,
+  uiLocale: Parameters<typeof getUiString>[0],
 ): PackageIntroSection[] {
   const sections: PackageIntroSection[] = [];
   const counters = { quiz: 0, mission: 0 };
 
   for (const section of pkg.sections) {
-    const block = buildIntroBlockFromSection(pkg, section, counters);
+    const block = buildIntroBlockFromSection(pkg, section, counters, uiLocale);
     if (!block) continue;
 
     sections.push({
@@ -654,8 +657,9 @@ export function introContentBlockKinds(
 export function adaptLocalizedPackageToIntroContent(
   pkg: LocalizedPackageInput,
   canonical: IntroLessonContent | null,
+  uiLocale: Parameters<typeof getUiString>[0] = pkg.locale,
 ): IntroLessonContent {
-  const packageSections = buildPackageIntroSections(pkg);
+  const packageSections = buildPackageIntroSections(pkg, uiLocale);
   if (canonical?.length) {
     return alignPackageToCanonicalStructure(packageSections, canonical, pkg);
   }

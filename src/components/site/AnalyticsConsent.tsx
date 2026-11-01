@@ -58,8 +58,10 @@ export function AnalyticsConsentGate() {
     if (!hydrated) return;
     const effectiveConsent = onKidsPage || sensitivePage ? "denied" : consent;
     applyAnalyticsConsent(effectiveConsent);
-    applyTrustedSiteConsent(effectiveConsent);
+    applyTrustedSiteConsent(effectiveConsent, locationHref);
     if (consent !== "granted" || onKidsPage) clearPendingRegistration();
+    // locationHref is read only when the gating inputs change.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [consent, hydrated, onKidsPage, sensitivePage]);
 
   useEffect(() => {

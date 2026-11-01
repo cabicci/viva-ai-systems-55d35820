@@ -7,6 +7,7 @@ import { normalizeCanonicalText, sha256CanonicalHex, sha256CanonicalJson } from 
 import type { ApprovedPackageRecord, ChunkManifest, PackageManifest, RagChunkRecord } from "./types";
 import type { RagLocalizedLessonPackage } from "@/lib/locale-lessons/types";
 import { packCorpusJson } from "../../../scripts/assistant/edge-corpus-packaging";
+import { assertCurrentLessonPackageParity } from "./current-lesson-parity";
 
 export type CurrentAiPackage = {
   locale: string; lessonId: string; trackId: string; moduleId: string; contextModuleIds: string[];
@@ -34,6 +35,7 @@ export function buildCurrentAiRelease(sources: CurrentAiSource[]) {
   const stations = new Map<string, Set<string>>();
   const payload: RagChunkRecord[] = [];
   for (const { record: r, payload: p, raw } of sources) {
+    assertCurrentLessonPackageParity(p, r.canonicalVersion);
     if (!(APPROVED_LOCALES as readonly string[]).includes(r.locale) || p.locale !== r.locale ||
       p.lessonId !== r.lessonId || p.pathId !== r.trackId || p.moduleId !== r.moduleId ||
       !r.trackId || r.trackId === "unknown" || !r.moduleId || r.moduleId === "unknown" ||

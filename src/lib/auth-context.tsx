@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import type { Session, User } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
 import { syncAccessTokenCookie } from "@/lib/auth-access-token-cookie";
@@ -55,11 +55,20 @@ function getDeviceId(): string {
   return id;
 }
 
+/** Per-provider local equality hint. It is neither a token nor a permission epoch. */
+export type AuthGeneration = Readonly<{ value: number }>;
+
+/** Local uninterrupted-principal observation for UI text only, never async authority or server-session identity. */
+export type AuthContinuity = Readonly<{ continuity: number }>;
 type AuthCtx = {
   user: User | null;
   session: Session | null;
   loading: boolean;
   signOut: () => Promise<void>;
+  authGeneration: AuthGeneration;
+  authContinuity: AuthContinuity;
+  isAuthGenerationCurrent: (captured: AuthGeneration) => boolean;
+  authError: "session_unavailable" | "invalid_session" | null;
 };
 
 const Ctx = createContext<AuthCtx>({
@@ -67,169 +76,302 @@ const Ctx = createContext<AuthCtx>({
   session: null,
   loading: true,
   signOut: async () => {},
+  authGeneration: Object.freeze({ value: 0 }),
+  authContinuity: Object.freeze({ continuity: 0 }),
+  isAuthGenerationCurrent: () => false,
+  authError: null,
 });
+
+type Claim = { generation: AuthGeneration; started: boolean; promise: Promise<void> };
+type AuthControl = {
+  defer: (captured: AuthGeneration, work: () => void, cancelled?: () => void) => () => void;
+  signOut: (captured: AuthGeneration, scope?: "local") => Promise<void>;
+};
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
-  // Track which user ids we've already claimed the active-device row for,
-  // so token refreshes / tab focus events don't re-fire `claim_active_device`.
+  const [authError, setAuthError] = useState<AuthCtx["authError"]>(null);
+  const generationRef = useRef<AuthGeneration>(Object.freeze({ value: 0 }));
+  const [authGeneration, setAuthGeneration] = useState(generationRef.current);
+  const continuityRef = useRef<AuthContinuity>(Object.freeze({ continuity: 0 }));
+  const [authContinuity, setAuthContinuity] = useState(continuityRef.current);
+  const lifecycle = useRef<object | null>(null);
+  const observation = useRef(0);
+  const currentSession = useRef<Session | null>(null);
+  const control = useRef<AuthControl | null>(null);
   const claimedUserIds = useRef<Set<string>>(new Set());
-  // Promise that resolves once the claim RPC for the current user finished,
-  // so the device-watcher effect won't read a stale row mid-login and sign us out.
-  const claimPromises = useRef<Map<string, Promise<void>>>(new Map());
+  const claimPromises = useRef<Map<string, Claim>>(new Map());
   const welcomeAttempted = useRef<Set<string>>(new Set());
+
+  const isAuthGenerationCurrent = useCallback((captured: AuthGeneration) =>
+    lifecycle.current !== null && generationRef.current === captured, []);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const { data: sub } = supabase.auth.onAuthStateChange((e, s) => {
-      // Guard against malformed/legacy tokens that would later trip
-      // "Invalid Compact JWS" on the server. A real Supabase JWT has 3
-      // dot-separated segments — anything else means a stale storage row.
-      if (s?.access_token && s.access_token.split(".").length !== 3) {
-        supabase.auth.signOut();
-        syncAccessTokenCookie(null);
-        setSession(null);
-        setLoading(false);
-        return;
-      }
-      syncAccessTokenCookie(s?.access_token);
-      setSession(s);
-      setLoading(false);
-      // INITIAL_SESSION can reach React before the separate getSession() call
-      // settles. Register the claim now so the device watcher waits for it.
-      if (
-        (e === "SIGNED_IN" || e === "INITIAL_SESSION") &&
-        s?.user &&
-        !claimedUserIds.current.has(s.user.id)
-      ) {
-        claimedUserIds.current.add(s.user.id);
-        const deviceId = getDeviceId();
-        const p = Promise.resolve(
-          supabase.rpc("claim_active_device", { p_device_id: deviceId }),
-        ).then(({ error }) => {
-          if (error) captureError("auth:claim_active_device", error);
-        });
-        claimPromises.current.set(s.user.id, p);
-      }
-      if (e === "SIGNED_OUT") {
-        claimedUserIds.current.clear();
-        claimPromises.current.clear();
-        welcomeAttempted.current.clear();
-        syncAccessTokenCookie(null);
-      }
+    const life = {};
+    lifecycle.current = life;
+    const live = () => lifecycle.current === life;
+    const current = (captured: AuthGeneration) => live() && generationRef.current === captured;
+    const rotate = () => {
+      generationRef.current = Object.freeze({ value: generationRef.current.value + 1 });
+      return generationRef.current;
+    };
+    const breakContinuity = () => {
+      continuityRef.current = Object.freeze({ continuity: continuityRef.current.continuity + 1 });
+      return continuityRef.current;
+    };
+    const clearClaims = () => {
+      claimedUserIds.current.clear();
+      claimPromises.current.clear();
+      welcomeAttempted.current.clear();
+    };
+    // StrictMode replay is a new local lifecycle even though React retains refs/state.
+    const initialGeneration = rotate();
+    setAuthContinuity(breakContinuity());
+    observation.current += 1;
+    currentSession.current = null;
+    clearClaims();
+    setAuthGeneration(initialGeneration);
+    setSession(null);
+    setLoading(true);
+    setAuthError(null);
+    let nonInitialObserved = false;
+    let logoutIntent: AuthGeneration | null = null;
+    const jobs = new Map<ReturnType<typeof setTimeout>, () => void>();
+    const defer: AuthControl["defer"] = (captured, work, cancelled = () => {}) => {
+      if (!current(captured)) { cancelled(); return () => {}; }
+      // SDK work stays outside onAuthStateChange's synchronous, SDK-lock-held callback.
+      const handle = setTimeout(() => {
+        jobs.delete(handle);
+        if (current(captured)) work();
+        else cancelled();
+      }, 0);
+      jobs.set(handle, cancelled);
+      return () => {
+        if (!jobs.has(handle)) return;
+        clearTimeout(handle);
+        jobs.delete(handle);
+        cancelled();
+      };
+    };
+    const sdkSignOut = (captured: AuthGeneration, scope?: "local") => new Promise<void>((resolve, reject) => {
+      defer(captured, () => {
+        if (!current(captured)) { resolve(); return; }
+        try {
+          const pending = scope === "local" ? supabase.auth.signOut({ scope: "local" }) : supabase.auth.signOut();
+          // No cookie/state/log continuation: a later login must never be cleared here.
+          void Promise.resolve(pending).then(() => resolve(), reject);
+        } catch (error) { reject(error); }
+      }, resolve);
     });
-    supabase.auth.getSession().then(({ data }) => {
-      const s = data.session;
-      if (s?.access_token && s.access_token.split(".").length !== 3) {
-        supabase.auth.signOut();
-        syncAccessTokenCookie(null);
-        setSession(null);
-      } else {
-        syncAccessTokenCookie(s?.access_token);
-        setSession(s);
-        // Also claim the device on initial load — otherwise the device
-        // watcher reads a stale row (from a previous device/origin) and
-        // signs the user out right after the page loads.
-        if (s?.user && !claimedUserIds.current.has(s.user.id)) {
-          claimedUserIds.current.add(s.user.id);
+    const registerClaim = (userId: string, captured: AuthGeneration) => {
+      if (!current(captured)) return;
+      const old = claimPromises.current.get(userId);
+      // Already-started same-user claims are not duplicated on refresh/repeated SIGNED_IN.
+      if (claimedUserIds.current.has(userId) || old?.started || old?.generation === captured) return;
+      let settle!: () => void;
+      const entry: Claim = { generation: captured, started: false, promise: new Promise<void>(resolve => { settle = resolve; }) };
+      // Register before publishing state, so the watcher can never overtake the claim.
+      claimPromises.current.set(userId, entry);
+      defer(captured, () => {
+        if (!current(captured) || currentSession.current?.user.id !== userId) { settle(); return; }
+        try {
           const deviceId = getDeviceId();
-          const p = Promise.resolve(
-            supabase.rpc("claim_active_device", { p_device_id: deviceId }),
-          ).then(({ error }) => {
-            if (error) captureError("auth:claim_active_device", error);
-          });
-          claimPromises.current.set(s.user.id, p);
+          if (!current(captured)) { settle(); return; }
+          entry.started = true;
+          claimedUserIds.current.add(userId);
+          const pending = supabase.rpc("claim_active_device", { p_device_id: deviceId });
+          void Promise.resolve(pending).then(({ error }) => {
+            if (error && current(captured)) captureError("auth:claim_active_device", { reason: "device claim failed" });
+          }, () => {
+            if (current(captured)) captureError("auth:claim_active_device", { reason: "device claim failed" });
+          }).then(settle, settle);
+        } catch {
+          if (current(captured)) captureError("auth:claim_active_device", { reason: "device claim failed" });
+          settle();
         }
+      }, settle);
+    };
+    const publish = (nextSession: Session | null, event: string, seen: number, error: AuthCtx["authError"] = null) => {
+      if (!live() || observation.current !== seen) return;
+      const invalid = !!nextSession?.access_token && nextSession.access_token.split(".").length !== 3;
+      const nextSessionValue = invalid ? null : nextSession;
+      const previousId = currentSession.current?.user.id;
+      const nextId = nextSessionValue?.user.id;
+      // SIGNED_IN may be repeated by the SDK. Rotate a conservative LOCAL hint;
+      // it does not prove a new server session, and does not reset same-user claim/welcome suppression.
+      const captured = previousId !== nextId || !nextSessionValue || event === "SIGNED_IN" ? rotate() : generationRef.current;
+      // Observe every principal break synchronously, including transitions React may coalesce.
+      if (previousId !== nextId || !nextSessionValue) {
+        breakContinuity();
+        clearClaims();
       }
-      setLoading(false);
+      setAuthContinuity(continuityRef.current);
+      currentSession.current = nextSessionValue;
+      logoutIntent = invalid ? captured : null;
+      const frame = () => current(captured) && observation.current === seen;
+      if (nextId && frame()) registerClaim(nextId, captured);
+      if (frame()) syncAccessTokenCookie(nextSessionValue?.access_token ?? null);
+      if (frame()) setSession(nextSessionValue);
+      if (frame()) setLoading(false);
+      if (frame()) setAuthError(invalid ? "invalid_session" : error);
+      if (frame()) setAuthGeneration(captured);
+      if (invalid && frame()) void sdkSignOut(captured).catch(() => {
+        if (current(captured)) captureWarn("auth:invalid_session", { reason: "local session cleanup deferred" });
+      });
+    };
+    const localControl: AuthControl = {
+      defer,
+      signOut: (expected, scope) => {
+        if (!current(expected)) return Promise.resolve();
+        const seen = ++observation.current;
+        const captured = rotate();
+        currentSession.current = null;
+        logoutIntent = captured;
+        setAuthContinuity(breakContinuity());
+        clearClaims();
+        const frame = () => current(captured) && observation.current === seen;
+        // Intent invalidates synchronously, before any SDK promise or callback can complete.
+        if (frame()) syncAccessTokenCookie(null);
+        if (frame()) setSession(null);
+        if (frame()) setLoading(false);
+        if (frame()) setAuthError(null);
+        if (frame()) setAuthGeneration(captured);
+        return sdkSignOut(captured, scope);
+      },
+    };
+    control.current = localControl;
+    const bootstrapObservation = observation.current;
+    const bootstrapGeneration = generationRef.current;
+    const bootstrapCurrent = () => current(bootstrapGeneration) && observation.current === bootstrapObservation;
+    const { data: sub } = supabase.auth.onAuthStateChange((event, nextSession) => {
+      if (!live()) return;
+      const seen = ++observation.current;
+      // The initial SDK notification is another bootstrap source, never a rollback after a later event.
+      if (event === "INITIAL_SESSION" && nonInitialObserved) return;
+      if (event !== "INITIAL_SESSION") nonInitialObserved = true;
+      // A refresh/initial snapshot cannot silently undo a local logout intent. Explicit sign-in is fresh.
+      if (logoutIntent && nextSession && event !== "SIGNED_IN") return;
+      publish(event === "SIGNED_OUT" ? null : nextSession, event, seen);
     });
-    return () => sub.subscription.unsubscribe();
+    if (bootstrapCurrent()) {
+      try {
+        void Promise.resolve(supabase.auth.getSession()).then(({ data, error }) => {
+          if (!bootstrapCurrent()) return;
+          publish(error ? null : data.session, "bootstrap", bootstrapObservation, error ? "session_unavailable" : null);
+        }, () => {
+          if (!bootstrapCurrent()) return;
+          publish(null, "bootstrap", bootstrapObservation, "session_unavailable");
+        });
+      } catch {
+        if (bootstrapCurrent()) publish(null, "bootstrap", bootstrapObservation, "session_unavailable");
+      }
+    }
+    return () => {
+      if (live()) {
+        lifecycle.current = null;
+        observation.current += 1;
+        rotate();
+        breakContinuity();
+        currentSession.current = null;
+        clearClaims();
+        if (control.current === localControl) control.current = null;
+      }
+      for (const [handle, cancelled] of jobs) { clearTimeout(handle); cancelled(); }
+      jobs.clear();
+      sub.subscription.unsubscribe();
+    };
   }, []);
 
-  // After the token cookie is synced, attempt only this confirmed account's
-  // stored welcome. Never hold up device claiming, rendering or sign-in.
+  // Welcome remains non-blocking and idempotent for the current confirmed user.
   useEffect(() => {
     const userId = session?.user?.id;
-    if (!userId || !session.user.email_confirmed_at || welcomeAttempted.current.has(userId)) return;
-    welcomeAttempted.current.add(userId);
-    void requestAccountWelcome().catch(() => {
-      captureWarn("auth:welcome_deferred", { reason: "scheduled retry retained" });
+    const captured = authGeneration;
+    if (!userId || !session.user.email_confirmed_at || !isAuthGenerationCurrent(captured) || welcomeAttempted.current.has(userId)) return;
+    return control.current?.defer(captured, () => {
+      if (!isAuthGenerationCurrent(captured) || currentSession.current?.user.id !== userId || welcomeAttempted.current.has(userId)) return;
+      welcomeAttempted.current.add(userId);
+      try {
+        void Promise.resolve(requestAccountWelcome()).catch(() => {
+          if (isAuthGenerationCurrent(captured)) captureWarn("auth:welcome_deferred", { reason: "scheduled retry retained" });
+        });
+      } catch {
+        if (isAuthGenerationCurrent(captured)) captureWarn("auth:welcome_deferred", { reason: "scheduled retry retained" });
+      }
     });
-  }, [session?.user?.id, session?.user?.email_confirmed_at]);
+  }, [session?.user?.id, session?.user?.email_confirmed_at, authGeneration, isAuthGenerationCurrent]);
 
-  // Single-device enforcement: only kicks AFTER our own claim has settled,
-  // so we never race our own login and false-sign-out.
+  // Keep claim-before-check and local-only displaced-session signout. Captures include
+  // the incarnation hint, so a same-UUID out/in cannot keep an old watcher alive.
   useEffect(() => {
-    if (!session?.user) return;
-    const userId = session.user.id;
-    const deviceId = getDeviceId();
+    const userId = session?.user?.id;
+    const captured = authGeneration;
+    if (!userId || !isAuthGenerationCurrent(captured)) return;
+    const pending = claimPromises.current.get(userId)?.promise;
+    if (!pending) return;
     let cancelled = false;
     let claimSettled = false;
-
+    const current = () => !cancelled && isAuthGenerationCurrent(captured) && currentSession.current?.user.id === userId;
+    let deviceId: string;
+    try { deviceId = getDeviceId(); }
+    catch { return; }
     const enforce = (rowDeviceId: string | null | undefined) => {
-      if (cancelled || !claimSettled) return;
-      if (rowDeviceId && rowDeviceId !== deviceId) {
-        captureWarn("auth:active_device_mismatch", {
-          reason: "another device claimed the session — signing out",
-        });
-        // Only retire this displaced session; global sign-out would revoke
-        // the newly signed-in device as well.
-        supabase.auth.signOut({ scope: "local" });
-      }
+      if (!current() || !claimSettled || !rowDeviceId || rowDeviceId === deviceId) return;
+      captureWarn("auth:active_device_mismatch", { reason: "another device claimed the session — signing out" });
+      if (!current()) return;
+      void control.current?.signOut(captured, "local").catch(() => {
+        // No stale logging or cookie cleanup when a newer context has arrived.
+        if (isAuthGenerationCurrent(captured)) captureWarn("auth:device_signout", { reason: "local signout deferred" });
+      });
     };
-
-    // Wait for our own claim RPC to finish, then verify the row reflects us.
-    const pending = claimPromises.current.get(userId) ?? Promise.resolve();
-    pending.then(() => {
-      if (cancelled) return;
+    void pending.then(() => {
+      if (!current()) return;
       claimSettled = true;
-      supabase
-        .from("user_active_device")
-        .select("device_id")
-        .eq("user_id", userId)
-        .maybeSingle()
-        .then(({ data }) => enforce(data?.device_id));
+      try {
+        if (!current()) return;
+        const query = supabase.from("user_active_device");
+        if (!current()) return;
+        const selected = query.select("device_id");
+        if (!current()) return;
+        const scoped = selected.eq("user_id", userId);
+        if (!current()) return;
+        void Promise.resolve(scoped.maybeSingle()).then(({ data }) => {
+          if (current()) enforce(data?.device_id);
+        }, () => {});
+      } catch { /* Existing best-effort watcher; no invented permission from query failure. */ }
     });
-
-    const channel = supabase
-      .channel(`uad:${userId}`)
-      .on(
-        "postgres_changes",
-        {
-          event: "*",
-          schema: "public",
-          table: "user_active_device",
-          filter: `user_id=eq.${userId}`,
-        },
-        (payload) => {
+    let channel: ReturnType<typeof supabase.channel> | undefined;
+    const cancelChannel = control.current?.defer(captured, () => {
+      try {
+        if (current()) channel = supabase.channel(`uad:${userId}`);
+        if (current() && channel) channel.on("postgres_changes", {
+          event: "*", schema: "public", table: "user_active_device", filter: `user_id=eq.${userId}`,
+        }, payload => {
+          if (!current()) return;
           const row = (payload.new ?? payload.old) as { device_id?: string } | null;
           enforce(row?.device_id);
-        },
-      )
-      .subscribe();
-
+        });
+        if (current() && channel) channel.subscribe();
+      } catch { /* No signout or authority inference from subscription failure. */ }
+    });
     return () => {
       cancelled = true;
-      supabase.removeChannel(channel);
+      cancelChannel?.();
+      // This is cleanup of this effect's exact owned resource, never the new watcher's channel.
+      if (channel) {
+        try { void Promise.resolve(supabase.removeChannel(channel)).catch(() => {}); }
+        catch { /* already removed */ }
+      }
     };
-  }, [session?.user?.id]);
+  }, [session?.user?.id, authGeneration, isAuthGenerationCurrent]);
 
+  const signOut = useCallback(() => control.current?.signOut(authGeneration) ?? Promise.resolve(), [authGeneration]);
   return (
-    <Ctx.Provider
-      value={{
-        user: session?.user ?? null,
-        session,
-        loading,
-        signOut: async () => {
-          await supabase.auth.signOut();
-          syncAccessTokenCookie(null);
-        },
-      }}
-    >
+    <Ctx.Provider value={{ user: session?.user ?? null, session, loading, signOut,
+      authGeneration, authContinuity, isAuthGenerationCurrent, authError }}>
       {children}
     </Ctx.Provider>
   );
 }
-
 export const useAuth = () => useContext(Ctx);

@@ -42,6 +42,26 @@ export function clampAssistantLauncher(
   };
 }
 
+/** Keep the closed launcher off visible lesson actions. Candidates lie just
+ * outside each control, with the nearest free position winning deterministically.
+ * A null result means the viewport has no room; the caller uses normal flow. */
+export function avoidAssistantControls(
+  desired: { x: number; y: number }, width: number, height: number,
+  viewport: AssistantViewport, controls: AssistantLauncherRect[],
+): { x: number; y: number } | null {
+  const gap = ASSISTANT_VIEWPORT_PADDING;
+  const overlaps = (p: { x: number; y: number }) => controls.some(r =>
+    p.x < r.left + r.width + gap && p.x + width + gap > r.left &&
+    p.y < r.top + r.height + gap && p.y + height + gap > r.top);
+  const xs = [desired.x, viewport.left + gap, viewport.left + viewport.width - width - gap];
+  const ys = [desired.y, viewport.top + gap, viewport.top + viewport.height - height - gap];
+  for (const r of controls) { xs.push(r.left - width - gap, r.left + r.width + gap); ys.push(r.top - height - gap, r.top + r.height + gap); }
+  const candidates = xs.flatMap(x => ys.map(y => clampAssistantLauncher(x, y, width, height, viewport)))
+    .filter(p => !overlaps(p));
+  candidates.sort((a, b) => Math.hypot(a.x - desired.x, a.y - desired.y) - Math.hypot(b.x - desired.x, b.y - desired.y));
+  return candidates[0] ?? null;
+}
+
 /** Anchor once, then keep the complete dialog inside the visible viewport. */
 export function positionAssistantPanel(
   launcher: AssistantLauncherRect,

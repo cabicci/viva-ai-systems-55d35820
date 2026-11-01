@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import specification from "./audit-source-compatibility.json";
 import revision42 from "./audit-source-revision-42-20261019.json";
 import revisionCopy from "./audit-source-revision-43-54-141-142-20261019.json";
+import modelRevision from "./current-model-source-revision-20261101.json";
 
 type SourceIdentity = { sourcePath: string; sourceSha256: string; sourceBlob: string };
 const sha256 = (bytes: Buffer) => createHash("sha256").update(bytes).digest("hex");
@@ -11,13 +12,28 @@ const blob = (bytes: Buffer) =>
     .update(bytes)
     .digest("hex");
 
+/** Exact parent bytes for image provenance only; never a learner/RAG source rewrite.
+ * The candidate source stage still requires ROOT's independent source/media review.
+ */
+export function restoreCurrentModelParentSource(entry: SourceIdentity, bytes: Buffer): Buffer {
+  if (modelRevision.role !== "current-model-source-stage-candidate") return bytes;
+  const matches = modelRevision.entries.filter((item) =>
+    item.sourcePath === entry.sourcePath &&
+    item.generationSourceSha256 === entry.sourceSha256 &&
+    item.generationSourceBlob === entry.sourceBlob &&
+    item.currentSha256 === sha256(bytes) && item.currentBlob === blob(bytes),
+  );
+  if (matches.length !== 1) return bytes;
+  const change = matches[0], parent = Buffer.from(change.beforeSource, "utf8");
+  return sha256(parent) === change.beforeSha256 && blob(parent) === change.beforeBlob ? parent : bytes;
+}
 
 /** Reverse later reviewed stages while preserving the original generation identity. */
 export function restoreReviewedEditorialParentSource(
   entry: SourceIdentity,
   bytes: Buffer,
 ): Buffer {
-  let current = bytes;
+  let current = restoreCurrentModelParentSource(entry, bytes);
   const stages = [revision42, revisionCopy];
   const seen = new Set<string>();
   for (let depth = 0; depth < stages.length; depth += 1) {

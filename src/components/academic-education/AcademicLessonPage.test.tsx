@@ -17,6 +17,8 @@ vi.mock("@/components/journey/JourneyVisitRecorder", () => ({
   JourneyVisitRecorder: () => <span data-testid="journey-visit" />,
 }));
 vi.mock("@/components/site/Footer", () => ({ Footer: () => <footer>Masaarat</footer> }));
+vi.mock("@/components/assistant/CourseLessonAssistant", () => ({ CourseLessonAssistant: (props: { cardId: string; stepId: string; locale: string }) =>
+  <aside data-testid="lesson-assistant" data-card={props.cardId} data-step={props.stepId} data-locale={props.locale} /> }));
 vi.mock("@/lib/academic-education/client", () => ({
   academicCommand: state.command,
   academicCatalogue: state.catalogue,
@@ -71,6 +73,21 @@ beforeEach(() => {
   );
 });
 afterEach(() => cleanup());
+it("offers the assistant immediately in an authorized lesson without changing its course or locale", async () => {
+  state.command.mockImplementation(async (action: string) => action === "lesson"
+    ? { ...delivery, assistantAllowed: true } : { progress: {} });
+  setup();
+  const assistant = await screen.findByTestId("lesson-assistant");
+  expect(assistant).toHaveAttribute("data-card", "AC-BUS");
+  expect(assistant).toHaveAttribute("data-step", delivery.lesson.id);
+  expect(assistant).toHaveAttribute("data-locale", "en");
+  expect(screen.getByText("Paid lesson explanation")).toBeVisible();
+});
+it("does not mount the assistant without the delivery's independent permission", async () => {
+  setup();
+  await screen.findByText("Paid lesson explanation");
+  expect(screen.queryByTestId("lesson-assistant")).toBeNull();
+});
 it("reveals a changed section hidden above the header and keeps practice drafts", async () => {
   const originalScroll = Element.prototype.scrollIntoView;
   const scroll = vi.fn();

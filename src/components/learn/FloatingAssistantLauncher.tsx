@@ -21,10 +21,12 @@ import {
 export const LEARN_ASSISTANT_LAUNCHER_POSITION_KEY =
   "masaarat:learn-assistant-launcher-position";
 
+export const LEARN_ASSISTANT_LAUNCHER_MANUAL_POSITION_KEY =
+  `${LEARN_ASSISTANT_LAUNCHER_POSITION_KEY}:manual-v2`;
+
 const DRAG_THRESHOLD_PX = 8;
 const DEFAULT_MARGIN_END_PX = 16;
 const DEFAULT_MARGIN_END_SM_PX = 24;
-const DEFAULT_MARGIN_BOTTOM_PX = 24;
 
 interface StoredPosition {
   x: number;
@@ -42,16 +44,17 @@ export interface FloatingAssistantLauncherProps {
 function readStoredPosition(): StoredPosition | null {
   if (typeof window === "undefined") return null;
   try {
-    const raw = window.localStorage.getItem(LEARN_ASSISTANT_LAUNCHER_POSITION_KEY);
+    const raw = window.localStorage.getItem(LEARN_ASSISTANT_LAUNCHER_MANUAL_POSITION_KEY);
     if (!raw) return null;
-    const parsed = JSON.parse(raw) as StoredPosition;
+    const parsed = JSON.parse(raw) as StoredPosition & { version?: number; kind?: string };
     if (
+      parsed?.version === 2 && parsed.kind === "user-drag" &&
       typeof parsed.x === "number" &&
       Number.isFinite(parsed.x) &&
       typeof parsed.y === "number" &&
       Number.isFinite(parsed.y)
     ) {
-      return parsed;
+      return { x: parsed.x, y: parsed.y };
     }
   } catch {
     /* ignore corrupt storage */
@@ -73,12 +76,13 @@ function defaultLauncherPosition(
   width: number,
   height: number,
   viewport: AssistantViewport,
+  direction: "rtl" | "ltr",
 ): StoredPosition {
   const marginEnd =
     viewport.width >= 640 ? DEFAULT_MARGIN_END_SM_PX : DEFAULT_MARGIN_END_PX;
   return {
-    x: viewport.left + viewport.width - width - marginEnd,
-    y: viewport.top + viewport.height - height - DEFAULT_MARGIN_BOTTOM_PX,
+    x: direction === "rtl" ? viewport.left + marginEnd : viewport.left + viewport.width - width - marginEnd,
+    y: viewport.top + (viewport.height - height) / 2,
   };
 }
 
@@ -114,6 +118,9 @@ export function FloatingAssistantLauncher({
     moved: boolean;
   } | null>(null);
   const suppressPointerClickRef = useRef(false);
+  // Legacy coordinates mix automatic placement with real drags. Preserve that
+  // key; only explicitly marked user drags in the new key override the default.
+  const manualPositionRef = useRef<StoredPosition | null | undefined>(undefined);
 
   const [portalRoot, setPortalRoot] = useState<HTMLElement | null>(null);
   const [open, setOpen] = useState(false);
@@ -129,8 +136,9 @@ export function FloatingAssistantLauncher({
     if (!el) return;
     const rect = el.getBoundingClientRect();
     const viewport = visibleViewport();
-    const stored = readStoredPosition();
-    const initial = defaultLauncherPosition(rect.width, rect.height, viewport);
+    if (manualPositionRef.current === undefined) manualPositionRef.current = readStoredPosition();
+    const stored = manualPositionRef.current;
+    const initial = defaultLauncherPosition(rect.width, rect.height, viewport, dir);
     const next = clampAssistantLauncher(
       stored?.x ?? initial.x,
       stored?.y ?? initial.y,
@@ -141,15 +149,7 @@ export function FloatingAssistantLauncher({
     setPosition((current) =>
       current?.x === next.x && current.y === next.y ? current : next,
     );
-    try {
-      window.localStorage.setItem(
-        LEARN_ASSISTANT_LAUNCHER_POSITION_KEY,
-        JSON.stringify(next),
-      );
-    } catch {
-      /* ignore quota / private mode */
-    }
-  }, []);
+  }, [dir]);
 
   useLayoutEffect(() => {
     syncLauncherPosition();
@@ -180,15 +180,20 @@ export function FloatingAssistantLauncher({
       syncPanelPosition();
     };
     const viewport = window.visualViewport;
+    const launcherSize = typeof ResizeObserver === "undefined" ? null : new ResizeObserver(onResize);
+    if (launcherRef.current) launcherSize?.observe(launcherRef.current);
     window.addEventListener("resize", onResize);
+    window.addEventListener("scroll", onResize, { passive: true });
     viewport?.addEventListener("resize", onResize);
     viewport?.addEventListener("scroll", onResize);
     return () => {
       window.removeEventListener("resize", onResize);
+      window.removeEventListener("scroll", onResize);
+      launcherSize?.disconnect();
       viewport?.removeEventListener("resize", onResize);
       viewport?.removeEventListener("scroll", onResize);
     };
-  }, [syncLauncherPosition, syncPanelPosition]);
+  }, [portalRoot, syncLauncherPosition, syncPanelPosition]);
 
   useLayoutEffect(() => {
     if (!open) {
@@ -226,11 +231,12 @@ export function FloatingAssistantLauncher({
   }, [open, closePanel]);
 
   const persistPosition = useCallback((next: StoredPosition) => {
+    manualPositionRef.current = next;
     setPosition(next);
     try {
       window.localStorage.setItem(
-        LEARN_ASSISTANT_LAUNCHER_POSITION_KEY,
-        JSON.stringify(next),
+        LEARN_ASSISTANT_LAUNCHER_MANUAL_POSITION_KEY,
+        JSON.stringify({ version: 2, kind: "user-drag", ...next }),
       );
     } catch {
       /* ignore */
@@ -296,6 +302,7 @@ export function FloatingAssistantLauncher({
     } catch {
       /* capture may have been released by the browser */
     }
+    syncLauncherPosition();
   };
 
   const onLauncherClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -386,7 +393,7 @@ export function FloatingAssistantLauncher({
           "backdrop-blur-md transition hover:border-primary/30 hover:bg-background/95 hover:text-foreground",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40",
           "sm:max-w-none",
-          position == null && "bottom-6 end-4 sm:end-6 opacity-0",
+          position == null && "top-1/2 end-4 sm:end-6 opacity-0",
         )}
       >
         <MessageCircle className="h-4 w-4 shrink-0 text-primary" />

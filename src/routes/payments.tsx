@@ -15,7 +15,15 @@ import { RedeemOffer } from "@/components/commerce/RedeemOffer";
 import { ReceiptUpload, ReceiptView } from "@/components/commerce/ReceiptUpload";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 export const Route = createFileRoute("/payments")({
-  head: () => ({ meta: [{ name: "robots", content: "noindex, nofollow" }] }),
+  head: () => ({ meta: [
+    { title: "Orders and package access | Masaarat" },
+    { name: "description", content: "Your Masaarat transfer orders, payment review and package access." },
+    { property: "og:title", content: "Orders and package access | Masaarat" },
+    { property: "og:description", content: "Your Masaarat transfer orders, payment review and package access." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary" },
+    { name: "robots", content: "noindex, nofollow" },
+  ] }),
   validateSearch: parsePaymentSearch,
   beforeLoad: ({ search }) => guardPaymentLink(requireAuthBeforeLoad, search.order, "customer"),
   component: PaymentRoute,
