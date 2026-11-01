@@ -24,12 +24,13 @@ export const EXPECTED_HIST_BLOB = "d185dd59549f611fcb984bcb3459c9d5d6969ef5";
 export const HIST_MIGRATION_NAME = "20260526105117_25fc4182-0343-4234-a231-0cf38569014a.sql";
 export const REALTIME_OWNER_OP = "ALTER TABLE realtime.messages ENABLE ROW LEVEL SECURITY";
 
-// These three reviewed patches target the existing original assistant catalog/data.
+// These four reviewed patches target the existing original assistant catalog/data.
 // Their strict production pins cannot describe a fresh deletion/privacy fixture.
 export const ORIGINAL_ASSISTANT_OPERATIONAL_PATCHES: Readonly<Record<string, string>> = Object.freeze({
   "20261101213301_original_assistant_source_events.sql": "ba9948ec2efabd3c420d252c8a0f132d00c947f34531891edb4277802d6d9bd2",
   "20261101214105_original_assistant_publication_epoch_and_preparation.sql": "50250030ede50ad691bcbccc12d95af0f6a08c54d1bfa8edce3a45619bbc6c8b",
-  "20261101221201_original_ai_verified_retirement.sql": "fbea964e4d1015605e90cc894d01af77f448b4f345f58f7669728e44d746f7e6",
+  "20261101234350_original_ai_bounded_validation.sql": "cc70945bbf9dea9783aa073fc3ba99006b4357279af51ae03c1ea175a40572c8",
+  "20261101234733_original_ai_verified_retirement.sql": "eb45060e535507165a583a043f962147652174d79560d33d56cd3f4fc98d5ce1",
 });
 
 function disposableOriginalAssistantNotice(name: string, sha256: string): string {

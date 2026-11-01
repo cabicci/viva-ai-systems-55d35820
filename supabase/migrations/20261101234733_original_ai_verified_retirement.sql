@@ -7,7 +7,7 @@ SET LOCAL lock_timeout='3s'; SET LOCAL statement_timeout='60s'; SET LOCAL search
 DO $retirement_migration$
 DECLARE observed text; mode text; snapshot jsonb; routine record; before_owner oid; before_acl aclitem[]; before_oid oid;
 BEGIN
- IF md5(pg_get_functiondef('public.rag_current_row_valid(public.knowledge_chunks,jsonb,text)'::regprocedure)) IS DISTINCT FROM '8ad7d49ac7d8eb01a6b2a2044380f2a1' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_ROW_VALIDATOR_CHANGED'; END IF;
+ IF md5(pg_get_functiondef('public.rag_current_row_valid(public.knowledge_chunks,jsonb,text)'::regprocedure)) IS DISTINCT FROM '9f61e033e9f0cfc7f6604075b69d9ec1' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_ROW_VALIDATOR_CHANGED'; END IF;
  SELECT md5(pg_get_functiondef(to_regprocedure('public.rag_current_activate(text,uuid,uuid,text)'))) INTO observed;
  IF observed='e6ed37c096ce632aa769ae3c88f7802c' THEN
   IF mode='post' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_PARTIAL_INSTALL'; END IF; mode:='pre';
@@ -25,9 +25,9 @@ BEGIN
  IF NOT EXISTS(SELECT 1 FROM pg_proc WHERE oid=to_regprocedure('public.rag_current_claim(text,uuid,uuid)') AND pg_get_userbyid(proowner)='postgres'
   AND proacl::text='{postgres=X/postgres,service_role=X/postgres}') THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_MUTATOR_ACL_CHANGED'; END IF;
  SELECT md5(pg_get_functiondef(to_regprocedure('public.rag_current_commit(text,uuid,uuid,uuid,jsonb)'))) INTO observed;
- IF observed='ebfe85c84dfbe9037e8a87085b0c82a7' THEN
+ IF observed='7281478f1c22cf39c89609cf1c23869e' THEN
   IF mode='post' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_PARTIAL_INSTALL'; END IF; mode:='pre';
- ELSIF observed='0edc34f40768f69fc8722d738a50275c' THEN
+ ELSIF observed='500beddc2986ceb72c2711e74f202973' THEN
   IF mode='pre' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_PARTIAL_INSTALL'; END IF; mode:='post';
  ELSE RAISE EXCEPTION 'CURRENT_RETIREMENT_MUTATOR_PREIMAGE_CHANGED:rag_current_commit'; END IF;
  IF NOT EXISTS(SELECT 1 FROM pg_proc WHERE oid=to_regprocedure('public.rag_current_commit(text,uuid,uuid,uuid,jsonb)') AND pg_get_userbyid(proowner)='postgres'
@@ -379,8 +379,10 @@ BEGIN
    p->>'locale',p->>'packagePath',p_release_id,p->>'packageChecksum',c->>'textChecksum',p->>'canonicalVersion',v,'staging',
    (c->>'sectionIndex')::integer,c->>'sectionRole',(c->>'chunkIndex')::integer,c->>'contentType',p->>'productionRoute',false);
  END LOOP;
- IF EXISTS(SELECT 1 FROM public.knowledge_chunks k WHERE k.index_version=v AND k.source_id IN(SELECT jsonb_array_elements_text(b.chunk_ids))
-  AND NOT public.rag_current_row_valid(k,r.approval,k.source_id)) THEN RAISE EXCEPTION 'CURRENT_STORED_CONTENT_INVALID'; END IF;
+ IF EXISTS(WITH batch_rows AS MATERIALIZED (
+  SELECT k AS row_data FROM public.knowledge_chunks k WHERE k.index_version=v
+   AND k.source_id IN(SELECT jsonb_array_elements_text(b.chunk_ids))
+ ) SELECT 1 FROM batch_rows scoped WHERE NOT public.rag_current_row_valid(scoped.row_data,r.approval,(scoped.row_data).source_id)) THEN RAISE EXCEPTION 'CURRENT_STORED_CONTENT_INVALID'; END IF;
  UPDATE public.rag_current_batches SET state='done' WHERE release_id=p_release_id AND ordinal=b.ordinal;
  result:=jsonb_build_object('committed',true,'ordinal',b.ordinal,'acceptedRows',jsonb_array_length(p_rows));
  UPDATE public.rag_current_requests SET result=jsonb_build_object('committed',true,'ordinal',b.ordinal,'acceptedRows',jsonb_array_length(p_rows),'done',true) WHERE request_id=p_request_id;
@@ -532,7 +534,7 @@ $fenced_mutator$;
  IF md5(snapshot::text) IS DISTINCT FROM '6ba1c22153baebc1d2fb2b627a1a7110' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FRESH_POSTIMAGE_CHANGED'; END IF;
  IF md5(pg_get_functiondef('public.rag_current_activate(text,uuid,uuid,text)'::regprocedure)) IS DISTINCT FROM '60b81e35d2c54cabfee03f48880d6061' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FENCE_POSTIMAGE_CHANGED'; END IF;
  IF md5(pg_get_functiondef('public.rag_current_claim(text,uuid,uuid)'::regprocedure)) IS DISTINCT FROM '1028f8e41ffa8db6c330490b2a7497d5' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FENCE_POSTIMAGE_CHANGED'; END IF;
- IF md5(pg_get_functiondef('public.rag_current_commit(text,uuid,uuid,uuid,jsonb)'::regprocedure)) IS DISTINCT FROM '0edc34f40768f69fc8722d738a50275c' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FENCE_POSTIMAGE_CHANGED'; END IF;
+ IF md5(pg_get_functiondef('public.rag_current_commit(text,uuid,uuid,uuid,jsonb)'::regprocedure)) IS DISTINCT FROM '500beddc2986ceb72c2711e74f202973' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FENCE_POSTIMAGE_CHANGED'; END IF;
  IF md5(pg_get_functiondef('public.rag_current_fail(text,uuid,uuid,uuid)'::regprocedure)) IS DISTINCT FROM 'f5bf5fb681f6bb0fe5dc96701cf2be3e' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FENCE_POSTIMAGE_CHANGED'; END IF;
  IF md5(pg_get_functiondef('public.rag_current_initialize(text,text,uuid)'::regprocedure)) IS DISTINCT FROM '24b7753ce323c84027f725f1bedb4b42' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FENCE_POSTIMAGE_CHANGED'; END IF;
  IF md5(pg_get_functiondef('public.rag_current_reserve_provider(text,uuid,uuid,uuid)'::regprocedure)) IS DISTINCT FROM 'b2b1de1412d9c653e60dfc8773f2d22d' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FENCE_POSTIMAGE_CHANGED'; END IF;

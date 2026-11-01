@@ -20,6 +20,8 @@ it('retires only proven obsolete source, fences all seven writers, and preserves
    CREATE UNIQUE INDEX one_active ON rag_index_versions(status) WHERE status='active';
    CREATE TABLE knowledge_chunks(source_type text,source_id text,path_id text,module_id text,lesson_id text,title text,content text,metadata jsonb,embedding extensions.vector(1536),locale text,package_path text,source_sha text,package_checksum text,chunk_checksum text,content_version text,index_version text,index_state text,section_index integer,section_role text,chunk_position integer,content_type text,production_route text,indexing_failed boolean,UNIQUE(source_type,source_id,index_version));`);
   await db.exec(read('scripts/rag/current-release-candidate.sql'));
+  const optimizer=readdirSync(new URL('supabase/migrations/',root)).find(x=>x.endsWith('_original_ai_bounded_validation.sql'))!;
+  await db.exec(read('supabase/migrations/'+optimizer));
   const approval=JSON.parse(read('artifacts/rag/current/approval-snapshot.json'));
   const sourceChunks=JSON.parse(read('artifacts/rag/current/chunks.json')).slice(0,64);
   const {releaseId:originalRelease,indexVersion:originalVersion,...body}=approval;
@@ -73,7 +75,10 @@ it('retires only proven obsolete source, fences all seven writers, and preserves
   const other='f'.repeat(64);await db.query("INSERT INTO rag_current_releases(release_id,material,approval) VALUES($1,'{}','{}')",[other]);await db.query("INSERT INTO rag_current_batches(release_id,ordinal,chunk_ids,state,provider_reserved) VALUES($1,0,'[]','inflight',true)",[other]);
   expect((await q('SELECT rag_current_prior_ai_clear($1) value',['e'.repeat(64)])).value).toBe(false);
   expect((await q("SELECT has_table_privilege('service_role','rag_current_retirements','INSERT,UPDATE,DELETE') value")).value).toBe(false);
+  const installed=(await db.query<any>("SELECT oid::text,xmin::text,ctid::text,proname,proowner::text,proacl::text,md5(pg_get_functiondef(oid)) digest FROM pg_proc WHERE proname LIKE 'rag_current_%' ORDER BY proname")).rows;
+  await db.exec(read('supabase/migrations/'+optimizer));
   await db.exec(sql);
+  expect((await db.query<any>("SELECT oid::text,xmin::text,ctid::text,proname,proowner::text,proacl::text,md5(pg_get_functiondef(oid)) digest FROM pg_proc WHERE proname LIKE 'rag_current_%' ORDER BY proname")).rows).toEqual(installed);
   expect((await q('SELECT rag_current_legacy_audit($1) value',[legacy])).value).toEqual(audit);
  }finally{await db.close();}
 },30000);

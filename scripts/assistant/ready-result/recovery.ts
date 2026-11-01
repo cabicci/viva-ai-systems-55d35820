@@ -2,9 +2,9 @@ import {createHash} from 'node:crypto';
 import {Buffer} from 'node:buffer';
 import {RELEASE,VERSION,release,canonical,sha} from './core';
 import {exactOne,rpc} from './client';
-import {FIXED_RECOVERY as pin} from './recovery-pins';
+import {RECOVERY_CASES} from './recovery-pins';
 import type {Checkpoint,Pending} from './import-core';
-export type RecoveryPlan={schemaVersion:'ready-result-recovery-plan-v1';priorCheckpointSha256:string;priorPending:Pending;priorRequestSha256:string;nextRequestId:string;preparedAt:string};
+export type RecoveryPlan={schemaVersion:'ready-result-recovery-plan-v1';priorCheckpointSha256:string;priorPending:Pending;priorRequestSha256:string;priorHistorySha256?:string;nextRequestId:string;preparedAt:string};
 export type RecoveryRecord=RecoveryPlan&{proof:Record<string,unknown>;recoveredAt:string};
 const md5=(s:string)=>createHash('md5').update(s).digest('hex');
 // PostgreSQL jsonb orders object keys by UTF8 length then bytes. This bounded
@@ -17,9 +17,13 @@ export function claimJsonbText(v:any):string{
 export const checkpointSha=(c:Checkpoint)=>sha(JSON.stringify(c,null,2)+'\n');
 export async function recoverReady(options:{db:any;checkpoint:Checkpoint;mode:'prepare-recovery'|'readback-recovery';checkpointRawSha256?:string;save(c:Checkpoint):void;log(v:unknown):void}){
  const{db,checkpoint:cp}=options;
+ const pin=RECOVERY_CASES.find(p=>cp.pending?.requestId===p.priorRequestId&&cp.pending?.ordinal===p.ordinal);
+ if(!pin)throw Error('READY_RECOVERY_SCOPE_CHANGED');
  if(cp.executionId!==pin.executionId||cp.artifactSha256!==pin.artifactSha256)throw Error('READY_RECOVERY_SCOPE_CHANGED');
  const status=await rpc(db,'rag_current_status',{p_release_id:RELEASE});
- if(status.executionId!==pin.executionId||status.state!=='staging'||status.currentActiveVersion!==cp.expectedActive||status.providerAttempts!==0||status.completedBatches!==4||status.totalBatches!==61)throw Error('READY_RECOVERY_TARGET_CHANGED');
+ if(status.executionId!==pin.executionId||status.state!=='staging'||status.currentActiveVersion!==cp.expectedActive||status.providerAttempts!==0||status.completedBatches!==pin.ordinal||status.totalBatches!==61)throw Error('READY_RECOVERY_TARGET_CHANGED');
+ if((cp.recoveryHistory?.length??0)!==pin.priorHistoryLength)throw Error('READY_RECOVERY_HISTORY_CHANGED');
+ const historySha=sha(JSON.stringify(cp.recoveryHistory??[]));
  const ids=release.chunks.slice(pin.ordinal*64,(pin.ordinal+1)*64).map(c=>c.chunkId);
  const prior=await exactOne(db,'rag_current_requests','request_id,release_id,operation,result','request_id',pin.priorRequestId);
  if(!prior||prior.release_id!==RELEASE||prior.operation!=='batch'||md5(claimJsonbText(prior))!==pin.priorRequestMd5)throw Error('READY_RECOVERY_PRIOR_REQUEST_CHANGED');
@@ -29,15 +33,16 @@ export async function recoverReady(options:{db:any;checkpoint:Checkpoint;mode:'p
  if(count.error||count.count!==0)throw Error('READY_RECOVERY_ROWS_NOT_EMPTY');
  const next=await exactOne(db,'rag_current_requests','request_id,release_id,operation,result','request_id',pin.nextRequestId);
  if(options.mode==='prepare-recovery'){
-  if(cp.recoveryPending||cp.recoveryHistory?.length||options.checkpointRawSha256!==pin.priorCheckpointSha256)throw Error('READY_RECOVERY_EXACT_CHECKPOINT_REQUIRED');
+  if(cp.recoveryPending||options.checkpointRawSha256!==pin.priorCheckpointSha256)throw Error('READY_RECOVERY_EXACT_CHECKPOINT_REQUIRED');
   const p=cp.pending;
   if(!p||p.operation!=='commit'||p.requestId!==pin.priorRequestId||p.ordinal!==pin.ordinal||!p.leaseToken||md5(p.leaseToken)!==pin.priorLeaseMd5||canonical(p.chunkIds)!==canonical(ids)
    ||batch.data.request_id!==p.requestId||batch.data.lease_token!==p.leaseToken||!Number.isFinite(Date.parse(batch.data.lease_until))||Date.parse(batch.data.lease_until)>=Date.now()||next)throw Error('READY_RECOVERY_PREIMAGE_NOT_PROVEN');
   if(canonical(prior.result)!==canonical({leaseToken:p.leaseToken,chunkIds:ids,ordinal:pin.ordinal}))throw Error('READY_RECOVERY_PRIOR_REQUEST_CHANGED');
-  cp.recoveryPending={schemaVersion:'ready-result-recovery-plan-v1',priorCheckpointSha256:pin.priorCheckpointSha256,priorPending:structuredClone(p),priorRequestSha256:sha(canonical(prior)),nextRequestId:pin.nextRequestId,preparedAt:new Date().toISOString()};
+  cp.recoveryPending={schemaVersion:'ready-result-recovery-plan-v1',priorCheckpointSha256:pin.priorCheckpointSha256,priorPending:structuredClone(p),priorRequestSha256:sha(canonical(prior)),priorHistorySha256:historySha,nextRequestId:pin.nextRequestId,preparedAt:new Date().toISOString()};
   options.save(cp);const result={planId:pin.nextRequestId,checkpointSha256:checkpointSha(cp)};options.log(result);return result;
  }
  const plan=cp.recoveryPending;
+ if(plan?.priorHistorySha256!==historySha)throw Error('READY_RECOVERY_HISTORY_CHANGED');
  if(!plan||plan.schemaVersion!=='ready-result-recovery-plan-v1'||plan.priorCheckpointSha256!==pin.priorCheckpointSha256||plan.nextRequestId!==pin.nextRequestId||plan.priorPending.operation!=='commit'||plan.priorPending.requestId!==pin.priorRequestId||canonical(cp.pending)!==canonical(plan.priorPending)||sha(canonical(prior))!==plan.priorRequestSha256)throw Error('READY_RECOVERY_PLAN_REQUIRED');
  if(!next||next.release_id!==RELEASE||next.operation!=='batch')throw Error('READY_RECOVERY_NOT_RECORDED_NO_RETRY');
  const proof=next.result?.recovery;
