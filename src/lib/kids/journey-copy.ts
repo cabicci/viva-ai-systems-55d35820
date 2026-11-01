@@ -2,6 +2,9 @@ import type { SupportedLocale } from "@/lib/locale/types";
 
 const ar = {
   parentTitle: "مساحة وليّ الأمر",
+  viewAs: "طريقة عرض الخطوة",
+  childView: "ملف طفل",
+  administratorPreview: "معاينة الإدارة",
   familyIntro:
     "من هنا تدير ملفات الأطفال وخطواتهم من حساب مسارات نفسه. تجد سجل الموافقة في بيانات الحساب.",
   manageFamily: "الانتقال إلى مساحة وليّ الأمر",
@@ -63,6 +66,9 @@ const ar = {
 type Copy = { [K in keyof typeof ar]: string };
 const egyptian: Copy = {
   parentTitle: "مساحة وليّ الأمر",
+  viewAs: "عرض الخطوة",
+  childView: "بروفايل طفل",
+  administratorPreview: "معاينة الإدارة",
   familyIntro:
     "من هنا تدير ملفات الأطفال وخطواتهم من نفس حساب مسارات. سجل موافقتك موجود في بيانات الحساب.",
   manageFamily: "روح لمساحة وليّ الأمر",
@@ -123,6 +129,9 @@ const egyptian: Copy = {
 };
 const gulf: Copy = {
   parentTitle: "مساحة وليّ الأمر",
+  viewAs: "عرض الخطوة",
+  childView: "ملف طفل",
+  administratorPreview: "معاينة الإدارة",
   familyIntro:
     "من هنا تدير ملفات الأطفال وخطواتهم من حساب مسارات نفسه. سجل الموافقة تلقاه في بيانات الحساب.",
   manageFamily: "روح لمساحة وليّ الأمر",
@@ -183,6 +192,9 @@ const gulf: Copy = {
 };
 const en: Copy = {
   parentTitle: "Parent space",
+  viewAs: "View this step as",
+  childView: "Child profile",
+  administratorPreview: "Administrator preview",
   familyIntro:
     "Manage child profiles and steps here with your Masaarat account. Your consent record is in account details.",
   manageFamily: "Go to parent space",
