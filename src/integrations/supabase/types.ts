@@ -569,6 +569,47 @@ export type Database = {
         }
         Relationships: []
       }
+      assistant_auto_source_events: {
+        Row: {
+          area: string
+          created_at: string
+          event_id: number
+          job_id: string | null
+          locale: string
+          source_key: string
+          source_sha: string | null
+          withdrawn: boolean
+        }
+        Insert: {
+          area: string
+          created_at?: string
+          event_id?: number
+          job_id?: string | null
+          locale: string
+          source_key: string
+          source_sha?: string | null
+          withdrawn: boolean
+        }
+        Update: {
+          area?: string
+          created_at?: string
+          event_id?: number
+          job_id?: string | null
+          locale?: string
+          source_key?: string
+          source_sha?: string | null
+          withdrawn?: boolean
+        }
+        Relationships: [
+          {
+            foreignKeyName: "assistant_auto_source_events_job_id_fkey"
+            columns: ["job_id"]
+            isOneToOne: false
+            referencedRelation: "assistant_auto_jobs"
+            referencedColumns: ["job_id"]
+          },
+        ]
+      }
       build_logs: {
         Row: {
           created_at: string
@@ -2986,7 +3027,31 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      assistant_auto_intake_status: {
+        Row: {
+          area: string | null
+          created_at: string | null
+          error_code: string | null
+          event_id: number | null
+          job_id: string | null
+          locale: string | null
+          next_offset: number | null
+          scope_count: number | null
+          source_key: string | null
+          source_sha: string | null
+          state: string | null
+          withdrawn: boolean | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "assistant_auto_source_events_job_id_fkey"
+            columns: ["job_id"]
+            isOneToOne: false
+            referencedRelation: "assistant_auto_jobs"
+            referencedColumns: ["job_id"]
+          },
+        ]
+      }
     }
     Functions: {
       academic_assistant_access: {
@@ -3240,12 +3305,22 @@ export type Database = {
         }
         Returns: boolean
       }
+      assistant_auto_link_sources: { Args: { p_keys: Json }; Returns: boolean }
       assistant_auto_publish_academic: {
         Args: { p_job: string; p_lease: string; p_request: string }
         Returns: boolean
       }
       assistant_auto_publish_card: {
         Args: { p_job: string; p_lease: string; p_request: string }
+        Returns: boolean
+      }
+      assistant_auto_receipt: {
+        Args: {
+          p_job: string
+          p_offset: number
+          p_receipt: Json
+          p_request: string
+        }
         Returns: boolean
       }
       assistant_auto_register: {
@@ -3255,6 +3330,10 @@ export type Database = {
       assistant_auto_reserve: {
         Args: { p_job: string; p_lease: string; p_request: string }
         Returns: boolean
+      }
+      assistant_auto_source_revisions: {
+        Args: { p_registry: Json }
+        Returns: Json
       }
       assistant_auto_status: { Args: never; Returns: Json }
       assistant_card_content_access: {
