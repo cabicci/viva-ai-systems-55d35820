@@ -1,7 +1,9 @@
 import{randomUUID}from"node:crypto";
 import{RELEASE,VERSION,LEGACY_RELEASE,SOURCE_PROJECT,SOURCE_ORIGIN,TARGET_PROJECT,MODEL,DIMENSIONS,COUNT,release,canonical,sha,checkRows,rowsDigest,checkStoredRow,STORED_COLUMNS,type ReadyRow}from"./core";
-import{rpc,exactOne}from"./client";
-export type Checkpoint={schemaVersion:"masaarat-ready-import-checkpoint-v1";targetProject:string;artifactSha256:string;rowsDigest:string;legacyDigest:string;expectedActive:string;executionId?:string;pending?:{operation:"initialize"|"claim"|"claimed"|"commit"|"activate";requestId:string;leaseToken?:string;ordinal?:number;chunkIds?:string[]};confirmed:{requestId:string;operation:string;ordinal?:number}[]};
+import{rpc,exactOne,safeRpcDiagnostic}from"./client";
+import{recoverReady,type RecoveryPlan,type RecoveryRecord}from"./recovery";
+export type Pending={operation:"initialize"|"claim"|"claimed"|"commit"|"activate";requestId:string;leaseToken?:string;ordinal?:number;chunkIds?:string[]};
+export type Checkpoint={schemaVersion:"masaarat-ready-import-checkpoint-v1";targetProject:string;artifactSha256:string;rowsDigest:string;legacyDigest:string;expectedActive:string;executionId?:string;pending?:Pending;confirmed:{requestId:string;operation:string;ordinal?:number}[];recoveryPending?:RecoveryPlan;recoveryHistory?:RecoveryRecord[];lastRpcFailure?:Record<string,unknown>};
 export function validateEnvelope(e:any){
  if(!e||e.schemaVersion!=="masaarat-ready-result-transfer-v1"||e.sourceProject!==SOURCE_PROJECT||e.sourceOrigin!==SOURCE_ORIGIN||e.releaseId!==RELEASE||e.indexVersion!==VERSION||e.embeddingModel!==MODEL||e.embeddingDimensions!==DIMENSIONS||e.rowsCount!==COUNT||e.material!==release.material||e.materialSha256!==sha(release.material)||e.sourceStatus?.currentActiveVersion!==VERSION||e.sourceStatus?.state!=="active"||e.sourceStatus?.completedBatches!==61||e.sourceStatus?.totalBatches!==61||typeof e.sourceExecutionId!=="string"||!uuid(e.sourceExecutionId))throw new Error("READY_ARTIFACT_PROVENANCE_INVALID");
  checkRows(e.rows);if(rowsDigest(e.rows)!==e.rowSetDigest)throw new Error("READY_ARTIFACT_ROWS_DIGEST_MISMATCH");return e.rows as ReadyRow[];
@@ -23,7 +25,7 @@ export async function proveComplete(db:any,rows:ReadyRow[],state:"staging"|"acti
  if(batches.length!==61||batches.some((b,i)=>b.ordinal!==i||b.state!=="done"||b.provider_reserved!==false||canonical(b.chunk_ids)!==canonical(release.chunks.slice(i*64,i*64+64).map(c=>c.chunkId))))throw new Error("READY_TARGET_BATCH_PROOF_INVALID");
  const actual=await targetRows(db,state);checkRows(actual);if(rowsDigest(actual)!==rowsDigest(rows))throw new Error("READY_TARGET_VECTOR_READBACK_MISMATCH");return status;
 }
-export async function readyImport(options:{db:any;rows:ReadyRow[];artifactSha256:string;mode:"preflight"|"import"|"validate"|"activate"|"reconcile";maxBatches:number;expectedActive?:string;checkpoint?:Checkpoint;save(c:Checkpoint):void;log(v:unknown):void}){
+export async function readyImport(options:{db:any;rows:ReadyRow[];artifactSha256:string;mode:"preflight"|"import"|"validate"|"activate"|"reconcile"|"prepare-recovery"|"readback-recovery";maxBatches:number;expectedActive?:string;checkpoint?:Checkpoint;checkpointRawSha256?:string;save(c:Checkpoint):void;log(v:unknown):void}){
  const{db,rows}=options;checkRows(rows);const digest=rowsDigest(rows),oldDigest=await legacyDigest(db);
  let cp=options.checkpoint;
  const status=await rpc(db,"rag_current_status",{p_release_id:RELEASE});
@@ -45,6 +47,9 @@ export async function readyImport(options:{db:any;rows:ReadyRow[];artifactSha256
   cp={schemaVersion:"masaarat-ready-import-checkpoint-v1",targetProject:TARGET_PROJECT,artifactSha256:options.artifactSha256,rowsDigest:digest,legacyDigest:oldDigest,expectedActive:status.currentActiveVersion,confirmed:[]};options.save(cp);
  }
  const checkpoint=cp;
+ if(options.mode==='prepare-recovery'||options.mode==='readback-recovery')return recoverReady({db,checkpoint,mode:options.mode,checkpointRawSha256:options.checkpointRawSha256,save:options.save,log:options.log});
+ if(checkpoint.recoveryPending)throw Error('READY_RECOVERY_REQUIRES_EXPLICIT_READBACK');
+ function diagnostic(error:unknown){checkpoint.lastRpcFailure=safeRpcDiagnostic(error);options.save(checkpoint);options.log({rpcFailure:checkpoint.lastRpcFailure,willRetry:false});}
  const byId=new Map(rows.map(r=>[r.chunkId,r]));
  async function audit(){if(await legacyDigest(db)!==checkpoint.legacyDigest)throw new Error("READY_LEGACY_AUDIT_CHANGED");}
  async function requestRecord(id:string){return exactOne(db,"rag_current_requests","request_id,release_id,operation,result","request_id",id);}
@@ -82,7 +87,7 @@ export async function readyImport(options:{db:any;rows:ReadyRow[];artifactSha256
  if(!checkpoint.executionId){
   if(options.mode!=="import")throw new Error("READY_TARGET_EXECUTION_REQUIRED");
   checkpoint.pending={operation:"initialize",requestId:randomUUID()};options.save(checkpoint);
-  try{await rpc(db,"rag_current_initialize",{p_release_id:RELEASE,p_material:release.material,p_request_id:checkpoint.pending.requestId});}catch{/* Readback decides; never repeat initialize. */}
+  try{await rpc(db,"rag_current_initialize",{p_release_id:RELEASE,p_material:release.material,p_request_id:checkpoint.pending.requestId});}catch(error){diagnostic(error);/* Readback decides; never repeat initialize. */}
   await reconcile();
  }
  if(options.mode==="import"){
@@ -92,12 +97,12 @@ export async function readyImport(options:{db:any;rows:ReadyRow[];artifactSha256
    if(current.state!=="staging"||current.executionId!==checkpoint.executionId||current.providerAttempts!==0)throw new Error("READY_TARGET_STATE_CHANGED");
    if(current.completedBatches===61)break;
    if(!checkpoint.pending){checkpoint.pending={operation:"claim",requestId:randomUUID()};options.save(checkpoint);
-    try{await rpc(db,"rag_current_claim",{p_release_id:RELEASE,p_execution_id:checkpoint.executionId,p_request_id:checkpoint.pending.requestId});}catch{/* Readback only; no second claim. */}await reconcile();}
+    try{await rpc(db,"rag_current_claim",{p_release_id:RELEASE,p_execution_id:checkpoint.executionId,p_request_id:checkpoint.pending.requestId});}catch(error){diagnostic(error);/* Readback only; no second claim. */}await reconcile();}
    const p=checkpoint.pending;if(!p||p.operation!=="claimed"||!p.chunkIds||!p.leaseToken)throw new Error("READY_CLAIM_PROOF_REQUIRED");
    const selected=p.chunkIds.map(id=>{const value=byId.get(id);if(!value)throw new Error("READY_UNEXPORTED_CHUNK");return value;});
    checkpoint.pending={...p,operation:"commit"};options.save(checkpoint);
    // Existing validator commits existing vectors. There is deliberately no reserve/embed/AI dependency.
-   try{await rpc(db,"rag_current_commit",{p_release_id:RELEASE,p_execution_id:checkpoint.executionId,p_request_id:p.requestId,p_lease_token:p.leaseToken,p_rows:selected});}catch{/* Exact committed receipt + stored vectors decide; no second commit. */}
+   try{await rpc(db,"rag_current_commit",{p_release_id:RELEASE,p_execution_id:checkpoint.executionId,p_request_id:p.requestId,p_lease_token:p.leaseToken,p_rows:selected});}catch(error){diagnostic(error);/* Exact committed receipt + stored vectors decide; no second commit. */}
    await reconcile();committed++;options.log({committedBatchesThisRun:committed,ordinal:p.ordinal,providerCalls:0});
   }
   await audit();const current=await rpc(db,"rag_current_status",{p_release_id:RELEASE});if(current.completedBatches===61)await proveComplete(db,rows,"staging",checkpoint.executionId);
@@ -107,6 +112,6 @@ export async function readyImport(options:{db:any;rows:ReadyRow[];artifactSha256
  if(options.mode!=="activate"||options.expectedActive!==checkpoint.expectedActive)throw new Error("READY_EXACT_EXPECTED_ACTIVE_REQUIRED");
  await proveComplete(db,rows,"staging",checkpoint.executionId);await audit();
  checkpoint.pending={operation:"activate",requestId:randomUUID()};options.save(checkpoint);
- try{await rpc(db,"rag_current_activate",{p_release_id:RELEASE,p_execution_id:checkpoint.executionId,p_request_id:checkpoint.pending.requestId,p_expected_active:checkpoint.expectedActive});}catch{/* Exact activation receipt/readback only; no second active switch. */}
+ try{await rpc(db,"rag_current_activate",{p_release_id:RELEASE,p_execution_id:checkpoint.executionId,p_request_id:checkpoint.pending.requestId,p_expected_active:checkpoint.expectedActive});}catch(error){diagnostic(error);/* Exact activation receipt/readback only; no second active switch. */}
  await reconcile();const r={activated:true,indexVersion:VERSION,rows:COUNT,providerCalls:0,legacyAuditUnchanged:true};options.log(r);return r;
 }
