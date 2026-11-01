@@ -52,7 +52,7 @@ export async function runTrustedAutomaticClient() {
   console.log(`Automatic indexing: ${state}.`);
   return state;
 }
-if (import.meta.main) await runTrustedAutomaticClient().catch(() => {
+if ((import.meta as ImportMeta & { main?: boolean }).main) await runTrustedAutomaticClient().catch(() => {
   console.error("Automatic indexing stopped safely. Inspect sanitized job status before any uncertain request is retried.");
   process.exitCode = 1;
 });

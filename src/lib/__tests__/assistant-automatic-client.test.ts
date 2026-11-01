@@ -1,6 +1,7 @@
+// @vitest-environment node
 import {afterEach,beforeEach,expect,it,vi} from 'vitest';
 const build='a'.repeat(64),deployment='b'.repeat(64);
-vi.mock('./indexer-build.mjs',()=>({computeAssistantBuildIdentities:()=>({indexerBuild:'a'.repeat(64),deploymentFingerprint:'b'.repeat(64)})}));
+vi.mock('../../../scripts/assistant/indexer-build.mjs',()=>({computeAssistantBuildIdentities:()=>({indexerBuild:'a'.repeat(64),deploymentFingerprint:'b'.repeat(64)})}));
 let calls:{operation:string;headers:Headers}[];
 let published:Record<string,unknown>,http:number,tickFails:boolean;
 beforeEach(()=>{vi.resetModules();calls=[];published={schemaVersion:'assistant-auto-v1',enabled:true,indexerBuild:build,deploymentFingerprint:deployment};http=200;tickFails=false;
@@ -11,7 +12,7 @@ beforeEach(()=>{vi.resetModules();calls=[];published={schemaVersion:'assistant-a
  if(body.operation==='status')return Response.json(published,{status:http});if(tickFails)throw Error('ACK uncertain');return Response.json({done:true});}));
 });
 afterEach(()=>{vi.restoreAllMocks();vi.unstubAllGlobals();vi.unstubAllEnvs();});
-const run=async()=> (await import('./automatic-worker-client')).runTrustedAutomaticClient();
+const run=async()=> (await import('../../../scripts/assistant/automatic-worker-client')).runTrustedAutomaticClient();
 it.each([403,404])('waits for publication on HTTP %i without any tick',async status=>{http=status;expect(await run()).toBe('awaiting-publication');expect(calls.map(x=>x.operation)).toEqual(['status']);});
 it.each(['missing','algorithm','source'])('waits for publication on %s identity mismatch without any tick',async mode=>{if(mode==='missing')delete published.deploymentFingerprint;else published[mode==='algorithm'?'indexerBuild':'deploymentFingerprint']='c'.repeat(64);expect(await run()).toBe('awaiting-publication');expect(calls).toHaveLength(1);});
 it.each([401,503])('fails a real authentication/database HTTP %i immediately',async status=>{http=status;await expect(run()).rejects.toThrow('AUTOMATION_REQUEST_UNCONFIRMED');expect(calls.map(x=>x.operation)).toEqual(['status']);});
