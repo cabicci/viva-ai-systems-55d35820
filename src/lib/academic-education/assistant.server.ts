@@ -1,7 +1,7 @@
 import { handleAcademicAssistant, type Locale, type Chunk, type AcademicHistoryTurn } from "../../../supabase/functions/academic-assistant/handler";
 import { ACADEMIC_EMBEDDING_DIMENSIONS, ACADEMIC_EMBEDDING_MODEL, approvedChunks,
   planAcademicChunkUpdates, validateAcademicCorpus, type ApprovedLesson, type IndexedAcademicChunk } from "./assistant-corpus";
-import { callAI } from "@/lib/ai-providers.server";
+import { callDirectAssistantModel } from "../../../supabase/functions/assistant-runtime/direct-model";
 
 type RpcClient = { rpc(name: never, body: never): PromiseLike<{ data: unknown; error: unknown }> };
 type Context = { userId: string; supabase: RpcClient };
@@ -73,11 +73,11 @@ export async function runAcademicAssistant(data: {courseId:string; lessonId:stri
       p_course:course,p_locale:locale,p_embedding:JSON.stringify(embedding),p_limit:6,
     }),
     verifySources,
-    answer: async (system,user) => {
+    answer: async (system,user,admittedSourceIds) => {
       const mode = await access();
       if (mode !== "admin" && mode !== "learner") throw new Error("ACADEMIC_ACCESS_REVOKED");
-      return (await callAI({model:"openai/gpt-4.1-mini-2025-04-14",temperature:0.2,maxTokens:1800,
-        messages:[{role:"system",content:system},{role:"user",content:user}]})).content;
+      const result = await callDirectAssistantModel(system, user, process.env.OPENAI_API_KEY ?? "", fetch, admittedSourceIds);
+      return result.ok ? result.answer : null;
     },
   });
   return {status:result.status,...await result.json()} as {status:number;answer?:string;sources?:{lessonId:string;sectionId:string;label?:string}[];error?:string};

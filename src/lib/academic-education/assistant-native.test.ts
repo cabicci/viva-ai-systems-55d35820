@@ -14,7 +14,7 @@ vi.mock("@/integrations/supabase/client.server", () => ({ supabaseAdmin: {
   },
   rpc: async () => ({ data: state.chunks, error: null }),
 } }));
-vi.mock("@/lib/ai-providers.server", () => ({ callAI: state.answer }));
+vi.mock("../../../supabase/functions/assistant-runtime/direct-model", () => ({ callDirectAssistantModel: state.answer }));
 import { runAcademicAssistant } from "./assistant.server";
 const context = { userId: "verified-user", supabase: { rpc: async (name:string) => {
   if (name === "academic_assistant_access") {
@@ -27,7 +27,8 @@ const input = {courseId:"AC-BUS",lessonId:"AC-BUS-M01-L01",locale:"en" as const,
   query:"Explain cash flow",requestId:"a441f8ba-ccac-4c82-8f87-413e04b469ce"};
 beforeEach(async () => {
   state.mode="admin";state.enabled=true;state.quota=true;state.accessCalls=0;state.revokeAfterFirst=false;
-  state.quotaCall.mockReset();state.answer.mockReset().mockResolvedValue({content:"Course answer"});
+  state.quotaCall.mockReset();state.answer.mockReset().mockResolvedValue({ok:true,
+    answer:JSON.stringify({grounding:"supported",answer:"Course answer",sourceIds:["S1"]})});
   const payload = { id: "AC-BUS-M02-L03", locale: "en", version: "1", sections: [{ id: "concept-1", title: "Cash flow", text: "Cash flow is money in and out." }] };
   state.source = { course_id: "AC-BUS", lesson_id: payload.id, locale: "en", approved: true, payload, source_sha256: await sha256(canonicalJson(payload)) };
   state.chunks=[{course_id:"AC-BUS",lesson_id:"AC-BUS-M02-L03",locale:"en",section_id:"concept-1",content:"Cash flow\nCash flow is money in and out.",similarity:0.8}];
@@ -39,7 +40,8 @@ it("uses verified admin identity with the independent operational guard and can 
   const r=await runAcademicAssistant(input,context);
   expect(r.status).toBe(200);expect(r.sources?.[0].lessonId).toBe("AC-BUS-M02-L03");
   expect(state.quotaCall).toHaveBeenCalledOnce();expect(state.answer).toHaveBeenCalledOnce();
-  expect(state.answer).toHaveBeenCalledWith(expect.objectContaining({model:"openai/gpt-4.1-mini-2025-04-14"}));
+  expect(state.answer).toHaveBeenCalledWith(expect.stringContaining("ANSWER CONTRACT (mandatory)"),
+    expect.any(String),"fixture-not-a-secret",fetch,["S1"]);
 });
 it("denies a learner without the course add-on before either provider",async()=>{
   state.mode="none";expect((await runAcademicAssistant(input,context)).status).toBe(403);
@@ -76,7 +78,7 @@ it.each([
   state.source!.locale=locale; state.source!.payload.locale=locale;
   state.source!.source_sha256=await sha256(canonicalJson(state.source!.payload));
   expect((await runAcademicAssistant({...input,locale},context)).status).toBe(200);
-  expect(state.answer.mock.calls[0][0].messages[0].content).toContain(register);
+  expect(state.answer.mock.calls[0][0]).toContain(register);
 });
 
 it.each(["access", "runtime", "approval", "source"])("drops the generated answer when %s changes during generation", async kind => {
@@ -88,9 +90,10 @@ it.each(["access", "runtime", "approval", "source"])("drops the generated answer
       state.source!.payload.version = "2";
       state.source!.source_sha256 = await sha256(canonicalJson(state.source!.payload));
     }
-    return { content: "MUST_NOT_ESCAPE" };
+    return { ok: true, answer: JSON.stringify({grounding:"supported",answer:"MUST_NOT_ESCAPE",sourceIds:["S1"]}) };
   });
   const result = await runAcademicAssistant(input, context);
+  expect(state.answer).toHaveBeenCalledOnce();
   expect(result.status).toBe(kind === "access" ? 403 : 422);
   expect(result.answer).toBeUndefined();
   expect(result.sources).toBeUndefined();
