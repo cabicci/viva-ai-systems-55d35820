@@ -42,9 +42,15 @@ it('retires only proven obsolete source, fences all seven writers, and preserves
   const filename=readdirSync(new URL('supabase/migrations/',root)).find(x=>x.endsWith('_original_ai_verified_retirement.sql'))!;
   // Production cardinalities/identity pins are substituted ONLY in this isolated small fixture.
   // The owner preparation packet separately validates the full actual 3851-row/61-batch shape.
-  const sql=read('supabase/migrations/'+filename).replaceAll('11930da0902e92e5ae6db0f4e3e7f4e23c2fe9a6bef974bb50f04feb946b39f5',legacy)
+  let sql=read('supabase/migrations/'+filename).replaceAll('11930da0902e92e5ae6db0f4e3e7f4e23c2fe9a6bef974bb50f04feb946b39f5',legacy)
    .replaceAll(originalRelease,successor).replaceAll('1cd729044620ec9c1fd475fb36271085',before)
    .replace(/\b3851\b/g,'64').replace(/\b400\b/g,String(Object.keys(body.packages).length)).replaceAll('<>61','<>1');
+  // Derive the expected fixture-only catalog pin in a rolled-back transaction.
+  const snapshotQuery=sql.match(/ SELECT \((SELECT jsonb_build_object[\s\S]+?)\) INTO snapshot;/)![1];
+  const productionPost=sql.match(/IF md5\(snapshot::text\) IS DISTINCT FROM '([a-f0-9]{32})'/)![1];
+  await db.exec('BEGIN');await db.exec(sql.match(/EXECUTE \$new_retirement_objects\$([\s\S]+?)\$new_retirement_objects\$;/)![1]);
+  const localPost=(await q('SELECT md5(('+snapshotQuery+')::text) value')).value;await db.exec('ROLLBACK');
+  sql=sql.replaceAll(productionPost,localPost);
   const oldCatalog=(await db.query<any>("SELECT oid::text,proname,proowner::text,proacl::text FROM pg_proc WHERE proname LIKE 'rag_current_%'")).rows;
   await db.exec(sql);
   const afterCatalog=(await db.query<any>("SELECT oid::text,proname,proowner::text,proacl::text FROM pg_proc WHERE proname LIKE 'rag_current_%'")).rows;
@@ -67,10 +73,7 @@ it('retires only proven obsolete source, fences all seven writers, and preserves
   const other='f'.repeat(64);await db.query("INSERT INTO rag_current_releases(release_id,material,approval) VALUES($1,'{}','{}')",[other]);await db.query("INSERT INTO rag_current_batches(release_id,ordinal,chunk_ids,state,provider_reserved) VALUES($1,0,'[]','inflight',true)",[other]);
   expect((await q('SELECT rag_current_prior_ai_clear($1) value',['e'.repeat(64)])).value).toBe(false);
   expect((await q("SELECT has_table_privilege('service_role','rag_current_retirements','INSERT,UPDATE,DELETE') value")).value).toBe(false);
-  const snapshotQuery=sql.match(/ SELECT \((SELECT jsonb_build_object[\s\S]+?)\) INTO snapshot;/)![1];
-  const localPost=(await q('SELECT md5(('+snapshotQuery+')::text) value')).value;
-  const productionPost=sql.match(/IF md5\(snapshot::text\) IS DISTINCT FROM '([a-f0-9]{32})'/)![1];
-  await db.exec(sql.replaceAll(productionPost,localPost));
+  await db.exec(sql);
   expect((await q('SELECT rag_current_legacy_audit($1) value',[legacy])).value).toEqual(audit);
  }finally{await db.close();}
 },30000);

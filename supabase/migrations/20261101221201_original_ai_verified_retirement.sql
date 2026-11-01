@@ -3,7 +3,7 @@
 -- Installs code and fences only. Actual retirement requires explicit, freshly pinned owner call
 -- after complete original 0c0f ready transport/activation. No provider, row clearing or automatic retry.
 BEGIN;
-SET LOCAL lock_timeout='3s'; SET LOCAL statement_timeout='60s';
+SET LOCAL lock_timeout='3s'; SET LOCAL statement_timeout='60s'; SET LOCAL search_path=public,extensions;
 DO $retirement_migration$
 DECLARE observed text; mode text; snapshot jsonb; routine record; before_owner oid; before_acl aclitem[]; before_oid oid;
 BEGIN
@@ -517,5 +517,25 @@ END $function$
 $fenced_mutator$;
  IF NOT EXISTS(SELECT 1 FROM pg_proc WHERE oid=before_oid AND proowner=before_owner AND proacl IS NOT DISTINCT FROM before_acl)
   THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_MUTATOR_IDENTITY_CHANGED'; END IF;
+ SELECT (SELECT jsonb_build_object(
+ 'routines',(SELECT jsonb_agg(jsonb_build_object('signature',p.oid::regprocedure::text,'definition',md5(pg_get_functiondef(p.oid)),
+  'owner',pg_get_userbyid(p.proowner),'acl',p.proacl::text) ORDER BY p.oid::regprocedure::text) FROM pg_proc p
+  WHERE p.pronamespace='public'::regnamespace AND p.proname IN('rag_current_retirement_immutable','rag_current_legacy_audit',
+   'rag_current_retirement_coverage','rag_current_retirement_valid','rag_current_prior_ai_clear','rag_current_retire_verified','rag_current_require_unretired')),
+ 'relation',(SELECT jsonb_build_object('kind',c.relkind,'owner',pg_get_userbyid(c.relowner),'acl',c.relacl::text,'rls',c.relrowsecurity,'force',c.relforcerowsecurity)
+  FROM pg_class c WHERE c.oid=to_regclass('public.rag_current_retirements')),
+ 'columns',(SELECT jsonb_agg(jsonb_build_object('name',a.attname,'type',format_type(a.atttypid,a.atttypmod),'notnull',a.attnotnull,'default',pg_get_expr(d.adbin,d.adrelid)) ORDER BY a.attnum)
+  FROM pg_attribute a LEFT JOIN pg_attrdef d ON d.adrelid=a.attrelid AND d.adnum=a.attnum WHERE a.attrelid=to_regclass('public.rag_current_retirements') AND a.attnum>0 AND NOT a.attisdropped),
+ 'constraints',(SELECT jsonb_agg(pg_get_constraintdef(oid) ORDER BY conname) FROM pg_constraint WHERE conrelid=to_regclass('public.rag_current_retirements') AND contype<>'n'),
+ 'triggers',(SELECT jsonb_agg(jsonb_build_object('definition',pg_get_triggerdef(oid),'enabled',tgenabled) ORDER BY tgname) FROM pg_trigger WHERE tgrelid=to_regclass('public.rag_current_retirements') AND NOT tgisinternal),
+ 'policies',(SELECT jsonb_agg(jsonb_build_object('name',polname,'roles',polroles::text,'command',polcmd,'using',pg_get_expr(polqual,polrelid),'check',pg_get_expr(polwithcheck,polrelid)) ORDER BY polname) FROM pg_policy WHERE polrelid=to_regclass('public.rag_current_retirements')))) INTO snapshot;
+ IF md5(snapshot::text) IS DISTINCT FROM '6ba1c22153baebc1d2fb2b627a1a7110' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FRESH_POSTIMAGE_CHANGED'; END IF;
+ IF md5(pg_get_functiondef('public.rag_current_activate(text,uuid,uuid,text)'::regprocedure)) IS DISTINCT FROM '60b81e35d2c54cabfee03f48880d6061' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FENCE_POSTIMAGE_CHANGED'; END IF;
+ IF md5(pg_get_functiondef('public.rag_current_claim(text,uuid,uuid)'::regprocedure)) IS DISTINCT FROM '1028f8e41ffa8db6c330490b2a7497d5' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FENCE_POSTIMAGE_CHANGED'; END IF;
+ IF md5(pg_get_functiondef('public.rag_current_commit(text,uuid,uuid,uuid,jsonb)'::regprocedure)) IS DISTINCT FROM '0edc34f40768f69fc8722d738a50275c' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FENCE_POSTIMAGE_CHANGED'; END IF;
+ IF md5(pg_get_functiondef('public.rag_current_fail(text,uuid,uuid,uuid)'::regprocedure)) IS DISTINCT FROM 'f5bf5fb681f6bb0fe5dc96701cf2be3e' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FENCE_POSTIMAGE_CHANGED'; END IF;
+ IF md5(pg_get_functiondef('public.rag_current_initialize(text,text,uuid)'::regprocedure)) IS DISTINCT FROM '24b7753ce323c84027f725f1bedb4b42' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FENCE_POSTIMAGE_CHANGED'; END IF;
+ IF md5(pg_get_functiondef('public.rag_current_reserve_provider(text,uuid,uuid,uuid)'::regprocedure)) IS DISTINCT FROM 'b2b1de1412d9c653e60dfc8773f2d22d' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FENCE_POSTIMAGE_CHANGED'; END IF;
+ IF md5(pg_get_functiondef('public.rag_current_rollback(text,uuid,uuid,text)'::regprocedure)) IS DISTINCT FROM '59afffd3540f542ac2a9e19a7a64da0a' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FENCE_POSTIMAGE_CHANGED'; END IF;
 END $retirement_migration$;
 COMMIT;
