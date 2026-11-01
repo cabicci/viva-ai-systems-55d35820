@@ -149,6 +149,98 @@ beforeEach(() => {
 });
 afterEach(() => cleanup());
 
+describe("Kids assistant click overlapping revalidation", () => {
+  const child = { id: "synthetic-click-child", level_id: "level-1", display_name: "Synthetic child" };
+  const dialog = () => screen.queryByRole("dialog", { name: "Fixture assistant" });
+  function ready() { return setParent({ state: "ready", profiles: [child] }); }
+  async function closedChild() {
+    mock.actualBody = true; mock.actualAssistant = true; mock.isAdmin = true; mock.locale = "ar-EG";
+    mock.params = { levelId: "level-1", lessonNumber: "1" };
+    mock.parseLesson.mockImplementation(() => ({ locale: mock.locale, title: "Click fixture", hints: [], quiz: [] }));
+    ready(); localStorage.setItem(preferenceKey("parent-1"), child.id);
+    const page = render(<KidsLessonPage />);
+    await screen.findByRole("button", { name: "Ask AI" });
+    fireEvent.click(screen.getByRole("button", { name: "بروفايل طفل" }));
+    const button = await screen.findByRole("button", { name: "Ask AI" });
+    expect(dialog()).toBeNull();
+    return { page, button };
+  }
+
+  it("captures a click after synchronous parent retirement but before the DOM unmounts", async () => {
+    const { page, button } = await closedChild();
+    const old = mock.bodyCalls.at(-1) as { actionContext: { isCurrent(): boolean } };
+    const generation = mock.authRef.current;
+    const calls = queuedCalls();
+    act(() => {
+      // Parent focus revalidation invalidates its captured getters immediately.
+      // The old visible button's click can still be delivered before React commits.
+      setParent({ state: "checking", profiles: [] });
+      expect(old.actionContext.isCurrent()).toBe(false);
+      fireEvent.click(button);
+      page.rerender(<KidsLessonPage />);
+    });
+    expect(mock.authRef.current).toBe(generation);
+    expect(dialog()).toBeNull(); expect(mock.panelLive).toBe(0);
+    expect(screen.getByRole("status", { name: "بنفتح الخطوة..." })).toBeInTheDocument();
+    ready(); page.rerender(<KidsLessonPage />);
+    expect(calls).toHaveLength(2);
+    for (const call of calls) expect(call.body).toEqual({ profileId: child.id, levelId: "level-1", lessonNumber: 1, locale: "ar-EG" });
+    await settle(() => calls[0].result.resolve({ data: {}, error: null }));
+    expect(dialog()).toBeNull();
+    await settle(() => calls[1].result.resolve({ data: {}, error: null }));
+    await screen.findByRole("button", { name: "Ask AI" });
+    expect(screen.getByText(/Synthetic child/)).toBeInTheDocument();
+    expect(dialog()).toBeInTheDocument();
+    expect(mock.panelSends).toBe(0);
+  });
+
+  it.each(["request-denial", "parent-withdrawal", "preview", "generation"])("cannot revive an invalidated UI intent after %s", async change => {
+    const { page, button } = await closedChild();
+    const old = mock.bodyCalls.at(-1) as { actionContext: { isCurrent(): boolean }; onAssistantOpenChange(open: boolean): void };
+    const calls = queuedCalls();
+    act(() => {
+      setParent({ state: "checking", profiles: [] });
+      fireEvent.click(button);
+      page.rerender(<KidsLessonPage />);
+    });
+    expect(old.actionContext.isCurrent()).toBe(false);
+    expect(dialog()).toBeNull(); expect(mock.panelLive).toBe(0);
+    if (change === "request-denial") {
+      ready(); page.rerender(<KidsLessonPage />);
+      expect(calls).toHaveLength(2);
+      await settle(() => {
+        calls[0].result.resolve({ data: null, error: new Error("Synthetic protected denial") });
+        calls[1].result.resolve({ data: {}, error: null });
+      });
+      expect(dialog()).toBeNull();
+      act(() => old.onAssistantOpenChange(true));
+      setParent({ state: "checking", profiles: [] }); page.rerender(<KidsLessonPage />);
+      ready(); page.rerender(<KidsLessonPage />);
+    } else if (change === "parent-withdrawal") {
+      setParent({ state: "pending", profiles: [] }); page.rerender(<KidsLessonPage />);
+      act(() => old.onAssistantOpenChange(true));
+      ready(); page.rerender(<KidsLessonPage />);
+    } else if (change === "preview") {
+      fireEvent.click(screen.getByRole("button", { name: "معاينة الإدارة" }));
+    } else {
+      rotateAuth();
+      expect(old.actionContext.isCurrent()).toBe(false);
+      act(() => old.onAssistantOpenChange(true));
+      setParent({ state: "pending", profiles: [] }); page.rerender(<KidsLessonPage />);
+    }
+    const offset = change === "request-denial" ? 2 : 0;
+    expect(calls).toHaveLength(offset + 2);
+    // A late UI callback is not a private request capability or a new intent owner.
+    act(() => old.onAssistantOpenChange(true));
+    await settle(() => calls[offset].result.resolve({ data: {}, error: null }));
+    expect(dialog()).toBeNull();
+    await settle(() => calls[offset + 1].result.resolve({ data: {}, error: null }));
+    const freshButton = await screen.findByRole("button", { name: "Ask AI" });
+    expect(dialog()).toBeNull(); expect(freshButton).toHaveAttribute("aria-expanded", "false");
+    expect(mock.panelSends).toBe(0);
+  });
+});
+
 describe("Kids assistant window revalidation", () => {
   type BodyContext = { actionContext: { incarnation: object; isCurrent(): boolean } };
   const dialog = () => screen.queryByRole("dialog", { name: "Fixture assistant" });
