@@ -26,8 +26,8 @@ const dependencies = () => ({ authorized:vi.fn(async()=>true), load:vi.fn(()=>co
   }) });
 describe('current source release and bounded executor',()=>{
   it('admits all current approved sources without changing historical snapshots',()=>{
-    const full=loadCurrentRelease(); expect(full.chunks).toHaveLength(3849);
-    expect(full.approval.releaseId).toBe('11930da0902e92e5ae6db0f4e3e7f4e23c2fe9a6bef974bb50f04feb946b39f5');
+    const full=loadCurrentRelease(); expect(full.chunks).toHaveLength(3851);
+    expect(full.approval.releaseId).toBe('0c0f31b61c596fd6b8687bb156911f8d28613581af0fcf5f7ac4063dce3c1b85');
   });
   it('is independent of discovery order and the number of cards',()=>{
     expect(buildCurrentAiRelease([...selected].reverse())).toEqual(release);

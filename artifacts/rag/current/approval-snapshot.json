@@ -1408,11 +1408,11 @@
         "intro-m1"
       ],
       "packagePath": "src/lib/locale-lessons/ar-EG/lessons/intro-m1-l1-what-is-ai.json",
-      "packageChecksum": "5695a29d90c1d5c5d84f484048214fcd4f68e60de769d5b8f98bdfca1c4b0e98",
-      "payloadChecksum": "6a8056d718434cb8ac4d225f05f4374b7e5b08ad14dd748424a8c16a1ba5fdfe",
-      "canonicalVersion": "curriculum-freeze-ar-eg-ts-v1",
+      "packageChecksum": "c3d457f1797c0f96e03d92e5881ac3d57518f8d4aa1426f8a25b326c59ebd02a",
+      "payloadChecksum": "5cc9e8958d5164b49b0c85fab36e36f24baa2ffa78796f9a80ec3ae796f8649d",
+      "canonicalVersion": "current-lesson-content-sha256-c3f8020043109f1b4b5e117635a27172ebf57603d8cbb97da1863c3b385f5566",
       "productionRoute": "/learn/intro/intro-m1-l1-what-is-ai",
-      "chunkCount": 10
+      "chunkCount": 11
     },
     "ar-EG|intro-m1-l2-first-prompt": {
       "locale": "ar-EG",
@@ -2909,9 +2909,9 @@
         "intro-m1"
       ],
       "packagePath": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l1-what-is-ai.json",
-      "packageChecksum": "be70e47993c694ecf721c87adc2a663c17eccd5540629a162e9dc9e5b0d20892",
-      "payloadChecksum": "6b16619fd6fd2b144958756bf439790220c6f73e3dce9a2da14a7588ec8ebc2b",
-      "canonicalVersion": "2026-06-18.1-polished",
+      "packageChecksum": "1731eeea7ebb4ec89324e1b3814ca51ff76a983cb7dc4626c9e31bb3f5e79d5a",
+      "payloadChecksum": "aa593f60980c7898c3dcb6421142503940856b4ce5d7b6bda680de89ee982672",
+      "canonicalVersion": "current-lesson-content-sha256-a978c29f14e85c3d1e062d88513c06fb62bedf3d6b052f7fb4102362a99d8524",
       "productionRoute": "/learn/intro/intro-m1-l1-what-is-ai",
       "chunkCount": 10
     },
@@ -4410,9 +4410,9 @@
         "intro-m1"
       ],
       "packagePath": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l1-what-is-ai.json",
-      "packageChecksum": "ae76da4bad2a41f78599e2bd0f4fab1b610e33e5b769a6e6dab57135ac0d1a37",
-      "payloadChecksum": "0f5e267e8937b028c4f1096d4c0ec4c53add324aeeb1781624b8efdfad83c5b3",
-      "canonicalVersion": "2026-06-18.1-polished",
+      "packageChecksum": "2b4ab8547bfed2970927329841e4a5bd1b03de4124eb1f46a11442228139ae92",
+      "payloadChecksum": "f97b6524071ebfebb9da5facd7e07e0c8ba0e9423543bfac1636b9a6efa02ad1",
+      "canonicalVersion": "current-lesson-content-sha256-fc7afa6461638e565fd570b6e139c762422ed7301e535a659010d8c97a578325",
       "productionRoute": "/learn/intro/intro-m1-l1-what-is-ai",
       "chunkCount": 10
     },
@@ -5911,11 +5911,11 @@
         "intro-m1"
       ],
       "packagePath": "src/lib/locale-lessons/en/lessons/intro-m1-l1-what-is-ai.json",
-      "packageChecksum": "f7f6a50e9e43f77daa56593a78b116d72ee990423c69c69421895e91890e166a",
-      "payloadChecksum": "62659317507e97ba54162c970d1e2594fa53c32d734336061497f8b8e346071f",
-      "canonicalVersion": "2026-06-18.1-polished",
+      "packageChecksum": "8706ee31859bc565227c70a001dbe63976cd7605a24e78daf490267d2f1133ee",
+      "payloadChecksum": "93bdb8071003852df9b320f5de63b18805860ce0d023cf5ed4c0efdc428130c6",
+      "canonicalVersion": "current-lesson-content-sha256-67c7fd9249d266841550494b3e6562cbcf35d1383466bf760256693ecf24e31d",
       "productionRoute": "/learn/intro/intro-m1-l1-what-is-ai",
-      "chunkCount": 10
+      "chunkCount": 11
     },
     "en|intro-m1-l2-first-prompt": {
       "locale": "en",
@@ -15591,13 +15591,23 @@
     },
     "ar-EG/intro-m1-l1-what-is-ai/s3/c0": {
       "packageKey": "ar-EG|intro-m1-l1-what-is-ai",
-      "textChecksum": "efe2c0acb50b63e9220714e32c53f0d78bda91d731c66da258d696be4545899a",
+      "textChecksum": "fc2a341e24d6b889b8ad9a3db7f22b1b2ed194d3a439e2502eef830903031f08",
       "sectionIndex": 3,
       "sectionRole": "كلمتين بس",
       "chunkIndex": 0,
       "sectionHeading": "مصطلحين هتسمعهم كتير",
       "contentType": "other",
-      "charCount": 867
+      "charCount": 1200
+    },
+    "ar-EG/intro-m1-l1-what-is-ai/s3/c1": {
+      "packageKey": "ar-EG|intro-m1-l1-what-is-ai",
+      "textChecksum": "6ebd4172cabe1762207a45d7ba2bdb84f302703ca676b2fa30ca002f761919ba",
+      "sectionIndex": 3,
+      "sectionRole": "كلمتين بس",
+      "chunkIndex": 1,
+      "sectionHeading": "مصطلحين هتسمعهم كتير",
+      "contentType": "other",
+      "charCount": 210
     },
     "ar-EG/intro-m1-l1-what-is-ai/s4/c0": {
       "packageKey": "ar-EG|intro-m1-l1-what-is-ai",
@@ -24651,13 +24661,13 @@
     },
     "ar-Gulf/intro-m1-l1-what-is-ai/s3/c0": {
       "packageKey": "ar-Gulf|intro-m1-l1-what-is-ai",
-      "textChecksum": "4841236fb3701a4b49a85256db4605e5cd63f570ae5fd01f48fe94caa166a6ce",
+      "textChecksum": "037995a8261bc80b45fdd3c1311af43a6f33cc702994b565db47b96764a037f2",
       "sectionIndex": 3,
       "sectionRole": "Glossary",
       "chunkIndex": 0,
       "sectionHeading": "المصطلحات — مصطلحان أساسيان",
       "contentType": "glossary",
-      "charCount": 696
+      "charCount": 988
     },
     "ar-Gulf/intro-m1-l1-what-is-ai/s4/c0": {
       "packageKey": "ar-Gulf|intro-m1-l1-what-is-ai",
@@ -33661,13 +33671,13 @@
     },
     "ar-MSA/intro-m1-l1-what-is-ai/s3/c0": {
       "packageKey": "ar-MSA|intro-m1-l1-what-is-ai",
-      "textChecksum": "92c9a1bfd29109c2a61c9abe36c6e2abe973aa5aeeb1adc2585e7e5dbab8874c",
+      "textChecksum": "3877aef8d0d09dd5889f21b57a8505a02a1f853a96bfd65a67c3f9684ba21bb1",
       "sectionIndex": 3,
       "sectionRole": "Glossary",
       "chunkIndex": 0,
       "sectionHeading": "Glossary — مصطلحان أساسيان",
       "contentType": "glossary",
-      "charCount": 701
+      "charCount": 1025
     },
     "ar-MSA/intro-m1-l1-what-is-ai/s4/c0": {
       "packageKey": "ar-MSA|intro-m1-l1-what-is-ai",
@@ -43811,13 +43821,23 @@
     },
     "en/intro-m1-l1-what-is-ai/s3/c0": {
       "packageKey": "en|intro-m1-l1-what-is-ai",
-      "textChecksum": "28d36bd8d47c3f8f06231a85f3be4369a56db00910b587e92f35b4ef70c321c2",
+      "textChecksum": "3326554b3e747604983763e0588e18c9143518624d6b730a76829044c0525b12",
       "sectionIndex": 3,
       "sectionRole": "Glossary",
       "chunkIndex": 0,
       "sectionHeading": "Glossary",
       "contentType": "glossary",
-      "charCount": 825
+      "charCount": 1200
+    },
+    "en/intro-m1-l1-what-is-ai/s3/c1": {
+      "packageKey": "en|intro-m1-l1-what-is-ai",
+      "textChecksum": "c61cf2384ce604258404d13671084018846998bc56d8ec3f3e735444f03a5c86",
+      "sectionIndex": 3,
+      "sectionRole": "Glossary",
+      "chunkIndex": 1,
+      "sectionHeading": "Glossary",
+      "contentType": "glossary",
+      "charCount": 134
     },
     "en/intro-m1-l1-what-is-ai/s4/c0": {
       "packageKey": "en|intro-m1-l1-what-is-ai",
@@ -44500,6 +44520,6 @@
       "charCount": 689
     }
   },
-  "releaseId": "11930da0902e92e5ae6db0f4e3e7f4e23c2fe9a6bef974bb50f04feb946b39f5",
-  "indexVersion": "rag-current-v1-11930da0902e92e5ae6db0f4e3e7f4e23c2fe9a6bef974bb50f04feb946b39f5"
+  "releaseId": "0c0f31b61c596fd6b8687bb156911f8d28613581af0fcf5f7ac4063dce3c1b85",
+  "indexVersion": "rag-current-v1-0c0f31b61c596fd6b8687bb156911f8d28613581af0fcf5f7ac4063dce3c1b85"
 }

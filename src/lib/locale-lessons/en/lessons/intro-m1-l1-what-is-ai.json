@@ -1,7 +1,7 @@
 {
   "locale": "en",
   "lessonId": "intro-m1-l1-what-is-ai",
-  "canonicalVersion": "2026-06-18.1-polished",
+  "canonicalVersion": "current-lesson-content-sha256-67c7fd9249d266841550494b3e6562cbcf35d1383466bf760256693ecf24e31d",
   "pathId": "intro",
   "moduleId": "intro-m1",
   "productionRoute": "/learn/intro/intro-m1-l1-what-is-ai",
@@ -47,7 +47,7 @@
       "role": "Glossary",
       "heading": "Glossary",
       "subtitle": "Key Terms",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **AI (artificial intelligence)** | A program that helps you with a specific task — writing, summarizing, organizing ideas | When you ask ChatGPT to write a message — that’s using AI |\n| **Model** | The name of the specific program you are talking to | ChatGPT, Gemini, and Claude — each one is a different model, but the idea is the same |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **AI (artificial intelligence)** | A program that helps you with a specific task — writing, summarizing, organizing ideas | When you ask ChatGPT to write a message — that’s using AI |\n| **Model** | An AI system trained on data and examples that uses the patterns it learned to generate a response to your request. It is different from the chat application you use. | ChatGPT is a chat application that runs AI models; the model processes your request and generates the response. The application name and the model name are not the same thing. |",
       "bullets": [],
       "tables": [
         {
@@ -64,8 +64,8 @@
             ],
             [
               "**Model**",
-              "The name of the specific program you are talking to",
-              "ChatGPT, Gemini, and Claude — each one is a different model, but the idea is the same"
+              "An AI system trained on data and examples that uses the patterns it learned to generate a response to your request. It is different from the chat application you use.",
+              "ChatGPT is a chat application that runs AI models; the model processes your request and generates the response. The application name and the model name are not the same thing."
             ]
           ]
         }
@@ -185,7 +185,7 @@
       "tables": []
     }
   ],
-  "generatedAt": "2026-07-07T01:23:06.919Z",
+  "generatedAt": "2026-11-01T00:00:00.000Z",
   "adaptedFrom": {
     "locale": "ar-MSA",
     "lessonId": "intro-m1-l1-what-is-ai",

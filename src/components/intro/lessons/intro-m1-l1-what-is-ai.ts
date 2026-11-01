@@ -10,6 +10,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
+import { CURRENT_INTRO_MODEL_CONCEPT } from "@/lib/locale-lessons/current-intro-model-concept";
 
 /**
  * Intro · Lesson 01 — AI يعني إيه فعلًا (v3: Lesson Shape pilot)
@@ -68,13 +69,7 @@ export const WHAT_IS_AI_CONTENT: IntroLessonContent = [
           meaning: "برنامج بيساعدك في حاجة محددة — كتابة، تلخيص، تنظيم أفكار.",
           example: "لما تطلب من ChatGPT يكتبلك رسالة — ده استخدام AI.",
         },
-        {
-          term: "Model (موديل)",
-          meaning:
-            "نظام ذكاء اصطناعي اتدرّب على بيانات وأمثلة، وبيستخدم الأنماط اللي اتعلمها عشان يولّد رد على طلبك. ده غير تطبيق الدردشة اللي بتستخدمه.",
-          example:
-            "ChatGPT تطبيق دردشة بيشغّل موديلات؛ الموديل هو اللي بيعالج طلبك ويولّد الرد. اسم التطبيق واسم الموديل مش نفس الحاجة.",
-        },
+        CURRENT_INTRO_MODEL_CONCEPT,
       ],
     },
   },

@@ -1,14 +1,14 @@
 {
   "schemaVersion": "chunk-manifest-v1",
-  "indexVersion": "rag-current-v1-11930da0902e92e5ae6db0f4e3e7f4e23c2fe9a6bef974bb50f04feb946b39f5",
-  "sourceSha": "11930da0902e92e5ae6db0f4e3e7f4e23c2fe9a6bef974bb50f04feb946b39f5",
+  "indexVersion": "rag-current-v1-0c0f31b61c596fd6b8687bb156911f8d28613581af0fcf5f7ac4063dce3c1b85",
+  "sourceSha": "0c0f31b61c596fd6b8687bb156911f8d28613581af0fcf5f7ac4063dce3c1b85",
   "generatedAt": "1970-01-01T00:00:00.000Z",
   "embeddingModel": "text-embedding-3-small",
   "embeddingDimensions": 1536,
-  "chunkCount": 3849,
+  "chunkCount": 3851,
   "localeCounts": {
-    "ar-EG": 1026,
-    "en": 1021,
+    "ar-EG": 1027,
+    "en": 1022,
     "ar-MSA": 902,
     "ar-Gulf": 900
   },
@@ -13435,8 +13435,22 @@
       "sectionRole": "كلمتين بس",
       "chunkIndex": 0,
       "contentType": "other",
-      "textChecksum": "efe2c0acb50b63e9220714e32c53f0d78bda91d731c66da258d696be4545899a",
-      "charCount": 867,
+      "textChecksum": "fc2a341e24d6b889b8ad9a3db7f22b1b2ed194d3a439e2502eef830903031f08",
+      "charCount": 1200,
+      "packagePath": "src/lib/locale-lessons/ar-EG/lessons/intro-m1-l1-what-is-ai.json"
+    },
+    {
+      "chunkId": "ar-EG/intro-m1-l1-what-is-ai/s3/c1",
+      "lessonId": "intro-m1-l1-what-is-ai",
+      "locale": "ar-EG",
+      "moduleId": "intro-m1",
+      "trackId": "intro",
+      "sectionIndex": 3,
+      "sectionRole": "كلمتين بس",
+      "chunkIndex": 1,
+      "contentType": "other",
+      "textChecksum": "6ebd4172cabe1762207a45d7ba2bdb84f302703ca676b2fa30ca002f761919ba",
+      "charCount": 210,
       "packagePath": "src/lib/locale-lessons/ar-EG/lessons/intro-m1-l1-what-is-ai.json"
     },
     {
@@ -26119,8 +26133,8 @@
       "sectionRole": "Glossary",
       "chunkIndex": 0,
       "contentType": "glossary",
-      "textChecksum": "4841236fb3701a4b49a85256db4605e5cd63f570ae5fd01f48fe94caa166a6ce",
-      "charCount": 696,
+      "textChecksum": "037995a8261bc80b45fdd3c1311af43a6f33cc702994b565db47b96764a037f2",
+      "charCount": 988,
       "packagePath": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l1-what-is-ai.json"
     },
     {
@@ -38733,8 +38747,8 @@
       "sectionRole": "Glossary",
       "chunkIndex": 0,
       "contentType": "glossary",
-      "textChecksum": "92c9a1bfd29109c2a61c9abe36c6e2abe973aa5aeeb1adc2585e7e5dbab8874c",
-      "charCount": 701,
+      "textChecksum": "3877aef8d0d09dd5889f21b57a8505a02a1f853a96bfd65a67c3f9684ba21bb1",
+      "charCount": 1025,
       "packagePath": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l1-what-is-ai.json"
     },
     {
@@ -52943,8 +52957,22 @@
       "sectionRole": "Glossary",
       "chunkIndex": 0,
       "contentType": "glossary",
-      "textChecksum": "28d36bd8d47c3f8f06231a85f3be4369a56db00910b587e92f35b4ef70c321c2",
-      "charCount": 825,
+      "textChecksum": "3326554b3e747604983763e0588e18c9143518624d6b730a76829044c0525b12",
+      "charCount": 1200,
+      "packagePath": "src/lib/locale-lessons/en/lessons/intro-m1-l1-what-is-ai.json"
+    },
+    {
+      "chunkId": "en/intro-m1-l1-what-is-ai/s3/c1",
+      "lessonId": "intro-m1-l1-what-is-ai",
+      "locale": "en",
+      "moduleId": "intro-m1",
+      "trackId": "intro",
+      "sectionIndex": 3,
+      "sectionRole": "Glossary",
+      "chunkIndex": 1,
+      "contentType": "glossary",
+      "textChecksum": "c61cf2384ce604258404d13671084018846998bc56d8ec3f3e735444f03a5c86",
+      "charCount": 134,
       "packagePath": "src/lib/locale-lessons/en/lessons/intro-m1-l1-what-is-ai.json"
     },
     {
@@ -53900,5 +53928,5 @@
       "packagePath": "src/lib/locale-lessons/en/lessons/intro-m1-l7-choose-your-path.json"
     }
   ],
-  "manifestChecksum": "d5fdf2cdbb314c248e71fbea41a34476240474f9bf8870a4c3dfcbdde0b7842f"
+  "manifestChecksum": "31aa4d5e316b0510080d6bcd863d7393d97f5c5dfe7746789b82da27f455687c"
 }
