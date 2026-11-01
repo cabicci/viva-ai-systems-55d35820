@@ -40,6 +40,8 @@ export interface FloatingAssistantLauncherProps {
   panelTitle: string;
   children: ReactNode;
   initialOpen?: boolean;
+  panelAvailable?: boolean;
+  isPanelAvailable?: () => boolean;
   onOpenChange?: (open: boolean) => void;
 }
 
@@ -107,6 +109,8 @@ export function FloatingAssistantLauncher({
   panelTitle,
   children,
   initialOpen = false,
+  panelAvailable = true,
+  isPanelAvailable,
   onOpenChange,
 }: FloatingAssistantLauncherProps) {
   const { dir, locale } = useLocale();
@@ -128,6 +132,7 @@ export function FloatingAssistantLauncher({
 
   const [portalRoot, setPortalRoot] = useState<HTMLElement | null>(null);
   const [open, setOpen] = useState(initialOpen);
+  const panelOpen = open && panelAvailable && (isPanelAvailable?.() ?? true);
   const [position, setPosition] = useState<StoredPosition | null>(null);
   const [panelPosition, setPanelPosition] = useState<AssistantPanelPosition | null>(null);
 
@@ -200,21 +205,21 @@ export function FloatingAssistantLauncher({
   }, [portalRoot, syncLauncherPosition, syncPanelPosition]);
 
   useLayoutEffect(() => {
-    if (!open) {
+    if (!panelOpen) {
       setPanelPosition(null);
       return;
     }
     syncPanelPosition();
-  }, [open, position, panelTitle, children, syncPanelPosition]);
+  }, [panelOpen, position, panelTitle, children, syncPanelPosition]);
 
   useEffect(() => {
-    if (!open || typeof ResizeObserver === "undefined") return;
+    if (!panelOpen || typeof ResizeObserver === "undefined") return;
     const observer = new ResizeObserver(syncPanelPosition);
     if (panelRef.current) observer.observe(panelRef.current);
     if (panelContentRef.current) observer.observe(panelContentRef.current);
     if (launcherRef.current) observer.observe(launcherRef.current);
     return () => observer.disconnect();
-  }, [open, syncPanelPosition]);
+  }, [panelOpen, syncPanelPosition]);
 
   const closePanel = useCallback(() => {
     setOpen(false);
@@ -224,7 +229,7 @@ export function FloatingAssistantLauncher({
 
   useEffect(() => {
     if (!open) return;
-    panelRef.current?.focus({ preventScroll: true });
+    if (panelAvailable) panelRef.current?.focus({ preventScroll: true });
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         event.preventDefault();
@@ -233,7 +238,7 @@ export function FloatingAssistantLauncher({
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [open, closePanel]);
+  }, [open, panelAvailable, closePanel]);
 
   const persistPosition = useCallback((next: StoredPosition) => {
     manualPositionRef.current = next;
@@ -334,7 +339,7 @@ export function FloatingAssistantLauncher({
 
   return createPortal(
     <>
-      {open ? (
+      {panelOpen ? (
         <div
           ref={panelRef}
           id={panelId}
@@ -384,7 +389,7 @@ export function FloatingAssistantLauncher({
         type="button"
         aria-label={fabAriaLabel}
         aria-controls={panelId}
-        aria-expanded={open}
+        aria-expanded={panelOpen}
         aria-haspopup="dialog"
         dir={dir}
         onClick={onLauncherClick}

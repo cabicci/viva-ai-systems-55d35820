@@ -149,6 +149,151 @@ beforeEach(() => {
 });
 afterEach(() => cleanup());
 
+describe("Kids assistant pointer across revalidation", () => {
+  const child = { id: "synthetic-pointer-child", level_id: "level-1", display_name: "Synthetic pointer child" };
+  const dialog = () => screen.queryByRole("dialog", { name: "Fixture assistant" });
+  const ready = () => setParent({ state: "ready", profiles: [child] });
+  // jsdom has no native pointer synthesis. Dispatch real DOM pointer-shaped
+  // events to the actual launcher; never inject click into a detached target.
+  function pointer(button: HTMLElement, type: string, x = 30, y = 40) {
+    const event = new MouseEvent(type, { bubbles: true, button: 0, clientX: x, clientY: y });
+    Object.defineProperties(event, { pointerId: { value: 7 }, isPrimary: { value: true } });
+    fireEvent(button, event);
+  }
+  function release(button: HTMLElement) {
+    if (!button.isConnected) { pointer(document.body, "pointerup"); return false; }
+    pointer(button, "pointerup");
+    fireEvent.click(button, { detail: 1 });
+    return true;
+  }
+  async function closedChild() {
+    mock.actualBody = true; mock.actualAssistant = true; mock.isAdmin = true; mock.locale = "ar-EG";
+    mock.params = { levelId: "level-1", lessonNumber: "1" };
+    mock.parseLesson.mockImplementation(() => ({ locale: mock.locale, title: "Pointer fixture private lesson", hints: [], quiz: [] }));
+    ready(); localStorage.setItem(preferenceKey("parent-1"), child.id);
+    const page = render(<KidsLessonPage />);
+    await screen.findByRole("button", { name: "Ask AI" });
+    fireEvent.click(screen.getByRole("button", { name: "بروفايل طفل" }));
+    await screen.findByText("Pointer fixture private lesson");
+    const button = await screen.findByRole("button", { name: "Ask AI" });
+    let captured = false;
+    Object.defineProperties(button, {
+      setPointerCapture: { value: vi.fn(() => { captured = true; }) },
+      hasPointerCapture: { value: () => captured },
+      releasePointerCapture: { value: () => { captured = false; } },
+    });
+    expect(dialog()).toBeNull();
+    return { page, button };
+  }
+  function revalidate(page: ReturnType<typeof render>) {
+    setParent({ state: "checking", profiles: [] }); page.rerender(<KidsLessonPage />);
+    expect(screen.getByRole("status", { name: "بنفتح الخطوة..." })).toBeInTheDocument();
+    expect(screen.queryByText("Pointer fixture private lesson")).toBeNull();
+    expect(dialog()).toBeNull(); expect(mock.panelLive).toBe(0);
+  }
+  async function replies(calls: ReturnType<typeof queuedCalls>) {
+    expect(calls).toHaveLength(2);
+    await settle(() => calls[0].result.resolve({ data: {}, error: null }));
+    expect(dialog()).toBeNull(); expect(mock.panelLive).toBe(0);
+    await settle(() => calls[1].result.resolve({ data: {}, error: null }));
+    await screen.findByRole("button", { name: "Ask AI" });
+  }
+
+  it("completes the original pointer press across protected body removal", async () => {
+    const { page, button } = await closedChild();
+    const old = mock.bodyCalls.at(-1) as { actionContext: { isCurrent(): boolean } };
+    const generation = mock.authRef.current;
+    const calls = queuedCalls();
+    pointer(button, "pointerdown");
+    expect(button.setPointerCapture).toHaveBeenCalledWith(7);
+    expect(dialog()).toBeNull(); expect(mock.panelSends).toBe(0);
+    revalidate(page);
+    expect(old.actionContext.isCurrent()).toBe(false);
+    const completed = release(button);
+    expect(dialog()).toBeNull(); expect(mock.panelLive).toBe(0); expect(mock.panelSends).toBe(0);
+    ready(); page.rerender(<KidsLessonPage />);
+    for (const call of calls) expect(call.body).toEqual({ profileId: child.id, levelId: "level-1", lessonNumber: 1, locale: "ar-EG" });
+    await replies(calls);
+    expect(dialog()).toBeInTheDocument();
+    expect(completed).toBe(true);
+    expect(screen.getByRole("button", { name: "Ask AI" })).toBe(button);
+    expect(mock.authRef.current).toBe(generation); expect(mock.panelSends).toBe(0);
+  });
+
+  it("blocks conversation mount before the parent render commits", async () => {
+    const { page, button } = await closedChild(); const calls = queuedCalls();
+    pointer(button, "pointerdown");
+    // Only the child launcher's state update renders here. The captured protected
+    // getter is already retired, even though route props still say available.
+    setParent({ state: "checking", profiles: [] });
+    release(button);
+    expect(dialog()).toBeNull(); expect(mock.panelLive).toBe(0); expect(mock.panelInstances).toBe(0);
+    expect(mock.panelSends).toBe(0);
+    page.rerender(<KidsLessonPage />);
+    ready(); page.rerender(<KidsLessonPage />); await replies(calls);
+    expect(dialog()).toBeInTheDocument(); expect(mock.panelInstances).toBe(1);
+  });
+
+  it.each(["drag", "cancel", "lost-capture"])("does not open after a %s during revalidation", async kind => {
+    const { page, button } = await closedChild(); const calls = queuedCalls();
+    pointer(button, "pointerdown"); revalidate(page);
+    expect(screen.getByRole("button", { name: "Ask AI" })).toBe(button);
+    if (kind === "drag") { pointer(button, "pointermove", 60, 80); pointer(button, "pointermove"); }
+    else pointer(button, kind === "cancel" ? "pointercancel" : "lostpointercapture");
+    release(button);
+    expect(dialog()).toBeNull(); expect(mock.panelLive).toBe(0);
+    ready(); page.rerender(<KidsLessonPage />); await replies(calls);
+    expect(dialog()).toBeNull(); expect(mock.panelSends).toBe(0);
+    // Keyboard/assistive activation remains usable after a cancelled gesture.
+    fireEvent.click(screen.getByRole("button", { name: "Ask AI" }), { detail: 0 });
+    expect(dialog()).toBeInTheDocument();
+  });
+
+  it("removes the old conversation while retaining only the launcher", async () => {
+    const { page, button } = await closedChild();
+    const pending = deferred<string>(); mock.pendingAnswer = pending.promise;
+    fireEvent.click(button); const instance = screen.getByTestId("fixture-conversation").dataset.instance;
+    fireEvent.click(screen.getByRole("button", { name: "Start fixture reply" }));
+    expect(mock.panelSends).toBe(1);
+    const calls = queuedCalls(); revalidate(page);
+    expect(screen.getByRole("button", { name: "Ask AI" })).toBe(button);
+    expect(screen.queryByTestId("fixture-conversation")).toBeNull();
+    await settle(() => pending.resolve("RETIRED PRIVATE FIXTURE ANSWER"));
+    expect(screen.queryByText("RETIRED PRIVATE FIXTURE ANSWER")).toBeNull();
+    ready(); page.rerender(<KidsLessonPage />); await replies(calls);
+    expect(dialog()).toBeInTheDocument();
+    expect(screen.getByTestId("fixture-conversation").dataset.instance).not.toBe(instance);
+    expect(screen.queryByText("RETIRED PRIVATE FIXTURE ANSWER")).toBeNull(); expect(mock.panelSends).toBe(1);
+  });
+
+  it.each(["generation", "profile", "lesson", "locale", "preview", "withdrawal", "denial"])("retires the in-flight press on %s change", async change => {
+    const { page, button } = await closedChild(); const calls = queuedCalls();
+    pointer(button, "pointerdown"); revalidate(page);
+    if (change === "generation") rotateAuth();
+    if (change === "profile") {
+      const other = { ...child, id: "synthetic-other-pointer-child" };
+      localStorage.setItem(preferenceKey("parent-1"), other.id); setParent({ state: "ready", profiles: [other] });
+    } else if (change === "lesson") { mock.params = { levelId: "level-1", lessonNumber: "2" }; ready(); }
+    else if (change === "locale") { mock.locale = "en"; ready(); }
+    else if (change === "withdrawal") setParent({ state: "pending", profiles: [] });
+    else if (change === "preview") fireEvent.click(screen.getByRole("button", { name: "معاينة الإدارة" }));
+    else ready();
+    page.rerender(<KidsLessonPage />);
+    if (change === "denial") {
+      expect(calls).toHaveLength(2);
+      await settle(() => { calls[0].result.resolve({ data: null, error: new Error("Synthetic denial") }); calls[1].result.resolve({ data: {}, error: null }); });
+    }
+    expect(button.isConnected).toBe(false);
+    // Even hostile late delivery to the detached node cannot revive its owner.
+    pointer(button, "pointerup"); fireEvent.click(button, { detail: 1 });
+    expect(dialog()).toBeNull(); expect(mock.panelLive).toBe(0);
+    if (change === "withdrawal" || change === "denial") { ready(); page.rerender(<KidsLessonPage />); }
+    for (const call of calls) await settle(() => call.result.resolve({ data: {}, error: null }));
+    await screen.findByRole("button", { name: "Ask AI" });
+    expect(dialog()).toBeNull(); expect(mock.panelSends).toBe(0);
+  });
+});
+
 describe("Kids assistant click overlapping revalidation", () => {
   const child = { id: "synthetic-click-child", level_id: "level-1", display_name: "Synthetic child" };
   const dialog = () => screen.queryByRole("dialog", { name: "Fixture assistant" });

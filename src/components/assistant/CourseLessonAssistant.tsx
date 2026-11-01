@@ -12,7 +12,8 @@ import { LessonAssistantAccess } from "./LessonAssistantAccess";
 type Props = { locale: SupportedLocale } & (
   | { area: "ai"; contextOverride: AssistantContextOverride | null; pathId: string; lessonId: string }
   | { area: "kids"; cardId: string; stepId: string; profileId: string;
-      assistantInitiallyOpen?: boolean; onAssistantOpenChange?: (open: boolean) => void }
+      assistantInitiallyOpen?: boolean; onAssistantOpenChange?: (open: boolean) => void;
+      assistantAvailable?: boolean; assistantIsCurrent?: () => boolean; assistantDeliveryKey?: number }
   | { area: "technical"; cardId: string; stepId: string }
   | { area: "academic"; cardId: string; stepId: string }
 );
@@ -33,14 +34,15 @@ export function CourseLessonAssistant(props: Props) {
     props.area === "kids" ? props.profileId : null]);
   return <FloatingAssistantLauncher key={scopeKey} fabLabel={getUiString(props.locale, "learn.assistant.fab")}
     fabAriaLabel={getUiString(props.locale, "learn.assistant.fabAria")} panelTitle={getUiString(props.locale, "sidebar.assistant")}
-    {...(props.area === "kids" ? { initialOpen: props.assistantInitiallyOpen, onOpenChange: props.onAssistantOpenChange } : {})}>
-    {!user?.id || scopeMissing ? <p role="alert">{getUiString(props.locale, !user?.id
+    {...(props.area === "kids" ? { initialOpen: props.assistantInitiallyOpen, onOpenChange: props.onAssistantOpenChange,
+      panelAvailable: props.assistantAvailable, isPanelAvailable: props.assistantIsCurrent } : {})}>
+    {props.area === "kids" && props.assistantAvailable === false ? null : !user?.id || scopeMissing ? <p role="alert">{getUiString(props.locale, !user?.id
       ? "assistant.panel.error.auth" : "assistant.panel.scope.open")}</p> :
     props.area === "academic" ? <AcademicAssistantPanel courseId={props.cardId} lessonId={props.stepId} locale={props.locale} /> :
       props.area === "ai" ? <LessonAssistantAccess pathId={props.pathId} lessonId={props.lessonId} locale={props.locale}>
         <AssistantPanel compact contextOverride={props.contextOverride} />
       </LessonAssistantAccess> :
-      <CardPathAssistant area={props.area} cardId={props.cardId} stepId={props.stepId} locale={props.locale}
+      <CardPathAssistant key={props.area === "kids" ? props.assistantDeliveryKey : undefined} area={props.area} cardId={props.cardId} stepId={props.stepId} locale={props.locale}
         {...(props.area === "kids" ? { profileId: props.profileId } : {})} compact />}
   </FloatingAssistantLauncher>;
 }

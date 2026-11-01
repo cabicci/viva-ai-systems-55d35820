@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
+import { CourseLessonAssistant } from "@/components/assistant/CourseLessonAssistant";
 import { KidsLessonBody, type KidsBodyActionContext } from "@/components/kids/KidsLessonBody";
 import { KIDS_LEVELS, type KidsLevelId } from "@/lib/kids/catalogue";
 import { getKidsJourneyCopy } from "@/lib/kids/journey-copy";
@@ -113,7 +114,7 @@ export function KidsLessonPage() {
   const latestScope = useRef(scope);
   latestScope.current = scope;
   // UI intent only. No lesson, answer, request or authority survives revalidation.
-  const assistantIntent = useRef<{ scope: typeof assistantScope; profileId: string; open: boolean } | null>(null);
+  const assistantIntent = useRef<{ id: number; scope: typeof assistantScope; profileId: string; open: boolean } | null>(null);
   if (assistantIntent.current?.scope !== assistantScope) assistantIntent.current = null;
   const life = useRef<object | null>(null);
   const owner = useRef<LessonOwner | null>(null);
@@ -217,7 +218,7 @@ export function KidsLessonPage() {
     const retainedIntent = assistantIntent.current;
     const intent = retainedIntent && retainedIntent.scope === assistantScope &&
       retainedIntent.profileId === selection.profileId ? retainedIntent : {
-        scope: assistantScope, profileId: selection.profileId, open: false,
+        id: ++sequence.current, scope: assistantScope, profileId: selection.profileId, open: false,
       };
     assistantIntent.current = intent;
     const intentLife = life.current;
@@ -476,6 +477,13 @@ export function KidsLessonPage() {
   const visibleResult = selected && renderedView?.result && renderedView.request &&
     requestCurrent(renderedView.request) ? renderedView.result : null;
   const lessonKey = renderedView?.request?.id ?? 0;
+  const launcherIntent = assistantIntent.current;
+  // Keep only the non-sensitive launcher through a same-scope parent recheck.
+  // Private body and conversation still require fresh protected delivery.
+  const showLauncher = launcherIntent && launcherIntent.scope === assistantScope &&
+    !!user?.id && !authLoading && isAuthGenerationCurrent(assistantScope.generation) && !denied &&
+    (adminReview || state === "checking" || (state === "ready" &&
+      availableProfiles.some(profile => profile.id === launcherIntent.profileId)));
   const openingLesson = (!adminReview && state === "checking") ||
     ((adminReview || state === "ready") &&
       (!profileChecked || (selected && !denied && !visibleResult)));
@@ -527,6 +535,7 @@ export function KidsLessonPage() {
               lessonNumber={lessonNumber}
               profileId={profileId}
               actionContext={renderedView!.request!.bodyContext!}
+              assistantManagedByRoute
               assistantInitiallyOpen={renderedView!.request!.assistantInitiallyOpen}
               onAssistantOpenChange={renderedView!.request!.onAssistantOpenChange}
             />
@@ -679,6 +688,17 @@ export function KidsLessonPage() {
           )}
         </div>
       </main>
+      {showLauncher && launcherIntent && (
+        <CourseLessonAssistant key={launcherIntent.id} area="kids" cardId={level}
+          stepId={String(lessonNumber)} locale={locale} profileId={launcherIntent.profileId}
+          assistantInitiallyOpen={launcherIntent.open} assistantAvailable={!!visibleResult}
+          assistantIsCurrent={renderedView?.request?.bodyContext?.isCurrent}
+          assistantDeliveryKey={lessonKey}
+          onAssistantOpenChange={(open) => {
+            if (life.current && assistantIntent.current === launcherIntent &&
+              isAuthGenerationCurrent(launcherIntent.scope.generation)) launcherIntent.open = open;
+          }} />
+      )}
       <Footer />
     </div>
   );
