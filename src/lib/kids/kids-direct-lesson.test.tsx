@@ -127,8 +127,8 @@ afterEach(() => cleanup());
 describe("Kids dual-role parent context", () => {
   type BodyContext = { profileId: string; actionContext: { kind: string; isCurrent(): boolean } };
   const latestBody = () => mock.bodyCalls.at(-1) as BodyContext;
-  const childButton = () => screen.getByRole("button", { name: "Child profile", exact: true });
-  const previewButton = () => screen.getByRole("button", { name: "Administrator preview", exact: true });
+  const childButton = () => screen.getByRole("button", { name: "Child profile" });
+  const previewButton = () => screen.getByRole("button", { name: "Administrator preview" });
 
   it("uses an explicitly chosen owned child without changing the admin role", async () => {
     mock.isAdmin = true; readyParent();
