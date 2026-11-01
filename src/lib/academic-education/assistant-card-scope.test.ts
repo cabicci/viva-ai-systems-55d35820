@@ -16,7 +16,7 @@ beforeEach(() => {
     embed: vi.fn().mockResolvedValue(Array(1536).fill(0.1)),
     retrieve: vi.fn().mockResolvedValue([{ course_id: "AC-NEW", lesson_id: "AC-NEW-M05-L03",
       locale: "en", section_id: "concept-1", content: "Approved same-card evidence", similarity: 0.9 }]),
-    answer: vi.fn().mockResolvedValue("An answer from the approved sections."),
+    answer: vi.fn().mockResolvedValue(JSON.stringify({ grounding: "supported", answer: "An answer from the approved sections.", sourceIds: ["S1"] })),
     verifySources: vi.fn().mockResolvedValue(true),
   };
 });
@@ -100,6 +100,89 @@ describe("Academic assistant card scope", () => {
     expect(deps.consumeLimit).not.toHaveBeenCalled();
     expect(deps.embed).not.toHaveBeenCalled();
     expect(deps.answer).not.toHaveBeenCalled();
+  });
+});
+
+describe("Academic grounded answer contract", () => {
+  const answer = (grounding: "supported" | "insufficient", sourceIds: string[], text = "Fixture explanation") =>
+    JSON.stringify({ grounding, answer: text, sourceIds });
+
+  it("returns only selected authorized evidence in model-selected order with server-owned metadata", async () => {
+    vi.mocked(deps.retrieve).mockResolvedValue([1, 2, 3].map(index => ({
+      course_id: "AC-NEW", lesson_id: `AC-NEW-M05-L0${index}`, locale: "en",
+      section_id: `concept-${index}`, content: `Fixture heading ${index}\nFixture evidence ${index}`, similarity: 0.9,
+    })));
+    vi.mocked(deps.answer).mockResolvedValue(answer("supported", ["S3", "S1"]));
+    const response = await handleAcademicAssistant(request(), deps);
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({ answer: "Fixture explanation", sources: [
+      { lessonId: "AC-NEW-M05-L03", sectionId: "concept-3", label: "Fixture heading 3" },
+      { lessonId: "AC-NEW-M05-L01", sectionId: "concept-1", label: "Fixture heading 1" },
+    ] });
+    const [system, user, ids] = vi.mocked(deps.answer).mock.calls[0];
+    expect(ids).toEqual(["S1", "S2", "S3"]);
+    expect(JSON.parse(user).evidence.map((item: { id: string }) => item.id)).toEqual(ids);
+    expect(system).toContain('grounding="insufficient"');
+    expect(deps.allowed).toHaveBeenCalledTimes(2);
+    expect(deps.verifySources).toHaveBeenCalledTimes(2);
+  });
+
+  it.each([
+    ["ar-EG", "المعلومة دي مش موجودة في محتوى المسار المعتمد حاليًا."],
+    ["ar-MSA", "هذه المعلومة غير موجودة في محتوى المسار المعتمد حاليًا."],
+    ["ar-Gulf", "هالمعلومة مو موجودة في محتوى المسار المعتمد حاليًا."],
+    ["en", "The approved path content does not provide enough information to answer that."],
+  ])("uses the existing %s insufficient message with no citations or provider text", async (locale, expected) => {
+    vi.mocked(deps.retrieve).mockResolvedValue([{ course_id: "AC-NEW", lesson_id: "AC-NEW-M05-L03",
+      locale, section_id: "concept-1", content: "Fixture evidence", similarity: 0.9 } as Chunk]);
+    vi.mocked(deps.answer).mockResolvedValue(answer("insufficient", [], "DO_NOT_RETURN_PROVIDER_TEXT"));
+    const response = await handleAcademicAssistant(request({ ...input, locale }), deps);
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({ answer: expected, sources: [] });
+    expect(deps.allowed).toHaveBeenCalledTimes(2);
+    expect(deps.verifySources).toHaveBeenCalledTimes(2);
+  });
+
+  it.each([
+    null,
+    "I cannot answer that unrelated question. DO_NOT_LEAK",
+    '{"grounding":"supported",',
+    answer("supported", []),
+    answer("supported", ["S99"]),
+    answer("supported", ["S1", "S1"]),
+    answer("insufficient", ["S1"]),
+    JSON.stringify({ grounding: "supported", answer: "DO_NOT_LEAK", sourceIds: [1] }),
+    JSON.stringify({ grounding: "supported", answer: "DO_NOT_LEAK", sourceIds: ["S1"], sources: [{ label: "FORGED" }] }),
+  ])("rejects malformed, refusal or forged output without returning it (%j)", async raw => {
+    vi.mocked(deps.answer).mockResolvedValue(raw);
+    const response = await handleAcademicAssistant(request(), deps);
+    expect(response.status).toBe(503);
+    expect(await response.json()).toEqual({ error: "ACADEMIC_ANSWER_UNAVAILABLE" });
+  });
+
+  it.each(["supported", "insufficient"] as const)("rechecks access before returning a %s decision", async grounding => {
+    vi.mocked(deps.answer).mockResolvedValue(answer(grounding, grounding === "supported" ? ["S1"] : []));
+    vi.mocked(deps.allowed).mockResolvedValueOnce("admin").mockResolvedValueOnce(null);
+    const response = await handleAcademicAssistant(request(), deps);
+    expect(response.status).toBe(403);
+    expect(await response.json()).toEqual({ error: "ACADEMIC_ASSISTANT_ACCESS_REQUIRED" });
+  });
+
+  it.each(["supported", "insufficient"] as const)("rechecks all supplied sources before returning a %s decision", async grounding => {
+    vi.mocked(deps.answer).mockResolvedValue(answer(grounding, grounding === "supported" ? ["S1"] : []));
+    vi.mocked(deps.verifySources).mockResolvedValueOnce(true).mockResolvedValueOnce(false);
+    const response = await handleAcademicAssistant(request(), deps);
+    expect(response.status).toBe(422);
+    expect(await response.json()).toEqual({ error: "ACADEMIC_GROUNDING_REQUIRED" });
+    expect(vi.mocked(deps.verifySources).mock.calls[1][0]).toEqual(vi.mocked(deps.verifySources).mock.calls[0][0]);
+  });
+
+  it("never inherits support from untrusted conversation history", async () => {
+    const history = [{ question: "Old unrelated topic", answer: "Old unsupported answer with S99" }];
+    vi.mocked(deps.answer).mockResolvedValue(answer("insufficient", []));
+    const response = await handleAcademicAssistant(request({ ...input, query: "Another unrelated request", history }), deps);
+    expect(await response.json()).toEqual({ answer: "The approved path content does not provide enough information to answer that.", sources: [] });
+    expect(JSON.parse(vi.mocked(deps.answer).mock.calls[0][1]).untrustedConversation).toEqual(history);
   });
 });
 
