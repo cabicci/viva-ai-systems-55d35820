@@ -2,13 +2,15 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { AutomaticLease } from "../assistant-automation/store.server";
 const mocks = vi.hoisted(() => ({ rpc: vi.fn(), check: vi.fn(), reserve: vi.fn(), native: vi.fn(), academic: vi.fn(),
-  deps: vi.fn(), executeAI: vi.fn() }));
+  deps: vi.fn(), executeAI: vi.fn(), prior: vi.fn(), from: vi.fn(), select: vi.fn(), neq: vi.fn(), or: vi.fn() }));
 vi.mock("../assistant-automation/store.server", () => ({ automationRpc: mocks.rpc, checkAutomaticLease: mocks.check,
   reserveAutomaticProvider: mocks.reserve, leaseArguments: (l: AutomaticLease) => ({ p_job: l.jobId, p_request: l.requestId, p_lease: l.leaseToken }) }));
 vi.mock("@/lib/card-assistant/assistant.server", () => ({ indexCardBatchWithAuthority: mocks.native }));
 vi.mock("@/lib/academic-education/assistant.server", () => ({ indexAcademicBatchWithAuthority: mocks.academic }));
 vi.mock("@/lib/rag/current-release/dependencies.server", () => ({ currentReleaseDependencies: mocks.deps }));
 vi.mock("@/lib/rag/current-release/executor.server", () => ({ executeCurrentRelease: mocks.executeAI }));
+vi.mock("@/lib/card-assistant/registry", () => ({ CARD_REGISTRY: [] }));
+vi.mock("@/integrations/supabase/client.server", () => ({ supabaseAdmin: { from: mocks.from } }));
 import { executeAutomaticScope } from "../assistant-automation/worker.server";
 const sha = "a".repeat(64);
 function lease(area: "kids" | "academic" | "ai" = "kids", offset = 0): AutomaticLease {
@@ -18,7 +20,13 @@ function lease(area: "kids" | "academic" | "ai" = "kids", offset = 0): Automatic
       issue: null, ...(area === "ai" ? { releaseId: sha } : {}) } };
 }
 beforeEach(() => {
-  vi.clearAllMocks(); mocks.check.mockResolvedValue(undefined); mocks.reserve.mockResolvedValue(undefined); mocks.rpc.mockResolvedValue(true);
+  vi.clearAllMocks();
+  const query = { select: mocks.select, neq: mocks.neq, or: mocks.or, limit: mocks.prior };
+  mocks.from.mockReturnValue(query); mocks.select.mockReturnValue(query);
+  mocks.neq.mockReturnValue(query); mocks.or.mockReturnValue(query);
+  mocks.prior.mockResolvedValue({ data: [], error: null });
+  mocks.executeAI.mockResolvedValue({ committed: true, activated: true, providerCalls: 0 });
+  mocks.check.mockResolvedValue(undefined); mocks.reserve.mockResolvedValue(undefined); mocks.rpc.mockResolvedValue(true);
   const result = { proofs: [{ stepId: "1", locale: "en", sourceSha: sha, chunks: [] }], embedded: 1, reused: 0 };
   mocks.native.mockResolvedValue(result); mocks.academic.mockResolvedValue(result);
   mocks.deps.mockResolvedValue({ load: () => ({ approval: { releaseId: sha, indexVersion: "next" } }), rpc: vi.fn().mockResolvedValue({ executionId: "execution", currentActiveVersion: "previous" }) });
@@ -52,4 +60,41 @@ describe("automatic worker isolation and guarded publication", () => {
     await expect(executeAutomaticScope(lease("ai", 1))).rejects.toThrow("AUTOMATION_AI_REQUEST_NEEDS_REVIEW");
     expect(mocks.executeAI).not.toHaveBeenCalled(); expect(mocks.reserve).not.toHaveBeenCalled();
   });
+  it.each([0, 1, 2])("holds AI operation at offset %s when another release has unresolved work", async offset => {
+    mocks.prior.mockResolvedValue({ data: [{ release_id: "previous-release" }], error: null });
+    await expect(executeAutomaticScope(lease("ai", offset))).rejects.toThrow("AUTOMATION_AI_REQUEST_NEEDS_REVIEW");
+    expect(mocks.executeAI).not.toHaveBeenCalled(); expect(mocks.reserve).not.toHaveBeenCalled();
+    expect(mocks.rpc).not.toHaveBeenCalled();
+    expect(mocks.from).toHaveBeenCalledWith("rag_current_batches");
+    expect(mocks.select).toHaveBeenCalledWith("release_id");
+    expect(mocks.neq.mock.calls).toEqual([["release_id", sha], ["state", "done"]]);
+    expect(mocks.or).toHaveBeenCalledWith("state.eq.inflight,provider_reserved.eq.true");
+    expect(mocks.prior).toHaveBeenCalledWith(1);
+  });
+  it.each([
+    { data: null, error: { message: "unavailable" } },
+    { data: null, error: null },
+    { data: {}, error: null },
+  ])("holds AI work when prior-release status is unavailable or malformed (%j)", async result => {
+    mocks.prior.mockResolvedValue(result);
+    await expect(executeAutomaticScope(lease("ai", 1))).rejects.toThrow("AUTOMATION_AI_REQUEST_NEEDS_REVIEW");
+    expect(mocks.executeAI).not.toHaveBeenCalled(); expect(mocks.reserve).not.toHaveBeenCalled();
+  });
+  it.each([[0, "initialize"], [1, "batch"], [2, "activate"]] as const)(
+    "allows AI %s only when the prior-release guard is clear", async (offset, operation) => {
+      await expect(executeAutomaticScope(lease("ai", offset))).resolves.toMatchObject({ operation });
+      expect(mocks.executeAI).toHaveBeenCalledOnce();
+      expect(mocks.executeAI.mock.calls[0][0]).toMatchObject({ operation, releaseId: sha });
+      if (operation === "batch")
+        expect(mocks.rpc).toHaveBeenCalledWith("assistant_auto_ai_clear", { p_release: sha });
+    },
+  );
+  it("does not restart an already active AI release", async () => {
+    mocks.deps.mockResolvedValue({ load: () => ({ approval: { releaseId: sha, indexVersion: "next" } }),
+      rpc: vi.fn().mockResolvedValue({ executionId: "execution", currentActiveVersion: "next" }) });
+    await expect(executeAutomaticScope(lease("ai", 1))).resolves.toEqual({ alreadyActive: true });
+    expect(mocks.from).not.toHaveBeenCalled(); expect(mocks.executeAI).not.toHaveBeenCalled();
+    expect(mocks.reserve).not.toHaveBeenCalled();
+  });
+
 });

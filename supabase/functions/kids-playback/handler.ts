@@ -4,6 +4,7 @@ const ALLOWED_ORIGINS = new Set([
   "https://masaarat.ai",
   "https://www.masaarat.ai",
   "https://id-preview--658adce0-747d-4c8e-90e3-d22225070b94.lovable.app",
+  "https://658adce0-747d-4c8e-90e3-d22225070b94.lovableproject.com",
 ]);
 function headersFor(request: Request): HeadersInit {
   const origin = request.headers.get("Origin") ?? "";

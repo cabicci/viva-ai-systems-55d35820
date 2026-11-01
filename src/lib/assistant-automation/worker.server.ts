@@ -51,6 +51,14 @@ export async function executeAutomaticScope(lease: AutomaticLease): Promise<Reco
     const releaseId = release.approval.releaseId;
     const status = await deps.rpc("rag_current_status", { p_release_id: releaseId }) as { executionId?: string; currentActiveVersion?: string };
     if (status.currentActiveVersion === release.approval.indexVersion) return { alreadyActive: true };
+    // Expired manual work from a prior release is not represented by an
+    // automatic attempt. A new release must not bypass that unresolved work.
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    const prior = await supabaseAdmin.from("rag_current_batches" as never).select("release_id")
+      .neq("release_id", releaseId).neq("state", "done")
+      .or("state.eq.inflight,provider_reserved.eq.true").limit(1);
+    if (prior.error || !Array.isArray(prior.data) || prior.data.length !== 0)
+      throw new Error("AUTOMATION_AI_REQUEST_NEEDS_REVIEW");
     // A legacy/manual uncertain batch is never reissued automatically, even
     // after its lease expires. An operator must reconcile its actual outcome.
     if (lease.offset > 0 && lease.offset < manifest.scopeCount - 1 &&
