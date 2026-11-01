@@ -39,6 +39,8 @@ export interface FloatingAssistantLauncherProps {
   fabAriaLabel: string;
   panelTitle: string;
   children: ReactNode;
+  initialOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
 }
 
 function readStoredPosition(): StoredPosition | null {
@@ -104,6 +106,8 @@ export function FloatingAssistantLauncher({
   fabAriaLabel,
   panelTitle,
   children,
+  initialOpen = false,
+  onOpenChange,
 }: FloatingAssistantLauncherProps) {
   const { dir, locale } = useLocale();
   const launcherRef = useRef<HTMLButtonElement>(null);
@@ -123,7 +127,7 @@ export function FloatingAssistantLauncher({
   const manualPositionRef = useRef<StoredPosition | null | undefined>(undefined);
 
   const [portalRoot, setPortalRoot] = useState<HTMLElement | null>(null);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(initialOpen);
   const [position, setPosition] = useState<StoredPosition | null>(null);
   const [panelPosition, setPanelPosition] = useState<AssistantPanelPosition | null>(null);
 
@@ -214,8 +218,9 @@ export function FloatingAssistantLauncher({
 
   const closePanel = useCallback(() => {
     setOpen(false);
+    onOpenChange?.(false);
     launcherRef.current?.focus({ preventScroll: true });
-  }, []);
+  }, [onOpenChange]);
 
   useEffect(() => {
     if (!open) return;
@@ -311,7 +316,10 @@ export function FloatingAssistantLauncher({
     // Keyboard and assistive-technology activation use detail=0, even after a drag.
     if (suppress && event.detail !== 0) return;
     if (open) closePanel();
-    else setOpen(true);
+    else {
+      setOpen(true);
+      onOpenChange?.(true);
+    }
   };
 
   const launcherStyle =

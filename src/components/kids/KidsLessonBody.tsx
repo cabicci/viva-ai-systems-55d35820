@@ -16,6 +16,8 @@ type Props = {
   lessonNumber: number;
   profileId: string;
   actionContext: KidsBodyActionContext;
+  assistantInitiallyOpen?: boolean;
+  onAssistantOpenChange?: (open: boolean) => void;
 };
 
 export type KidsBodyActionContext = Readonly<{
@@ -75,6 +77,7 @@ function adoptBodyAction<T>(
 
 export function KidsLessonBody({
   lesson, embedUrl, locale, levelId, lessonNumber, profileId, actionContext,
+  assistantInitiallyOpen, onAssistantOpenChange,
 }: Props) {
   const copy = getKidsJourneyCopy(locale);
   let incarnation: object | null = null;
@@ -558,7 +561,8 @@ export function KidsLessonBody({
         lesson={lessonNumber}
         locale={locale}
       />
-      <CourseLessonAssistant area="kids" cardId={levelId} stepId={String(lessonNumber)} locale={locale} profileId={profileId} />
+      <CourseLessonAssistant area="kids" cardId={levelId} stepId={String(lessonNumber)} locale={locale} profileId={profileId}
+        assistantInitiallyOpen={assistantInitiallyOpen} onAssistantOpenChange={onAssistantOpenChange} />
     </div>
   );
   return modelCurrent(visible.model) ? content : null;

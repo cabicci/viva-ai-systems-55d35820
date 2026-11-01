@@ -71,6 +71,8 @@ type LessonRequest = {
   selection: LessonSelection;
   id: number;
   bodyContext: KidsBodyActionContext | null;
+  assistantInitiallyOpen: boolean;
+  onAssistantOpenChange: (open: boolean) => void;
   active: boolean;
   stop: () => void;
 };
@@ -102,9 +104,17 @@ export function KidsLessonPage() {
     kind: adminReview ? "administrator_preview" : "kids_profile",
     level, lessonNumber, locale,
   }), [authGeneration, user?.id, authLoading, adminReview, levelId, lessonText, locale]);
+  const assistantScope = useMemo<Omit<LessonScope, "authLoading">>(() => ({
+    generation: authGeneration, actorId: user?.id,
+    kind: adminReview ? "administrator_preview" : "kids_profile",
+    level, lessonNumber, locale,
+  }), [authGeneration, user?.id, adminReview, levelId, lessonText, locale]);
   // A new local route incarnation also records A -> B -> A. It is not a grant.
   const latestScope = useRef(scope);
   latestScope.current = scope;
+  // UI intent only. No lesson, answer, request or authority survives revalidation.
+  const assistantIntent = useRef<{ scope: typeof assistantScope; profileId: string; open: boolean } | null>(null);
+  if (assistantIntent.current?.scope !== assistantScope) assistantIntent.current = null;
   const life = useRef<object | null>(null);
   const owner = useRef<LessonOwner | null>(null);
   const sequence = useRef(0);
@@ -193,6 +203,7 @@ export function KidsLessonPage() {
     retireSelection(captured.selection);
     if (!ownerCurrent(captured)) return null;
     const next: LessonSelection = { owner: captured, profileId, active: true, request: null };
+    if (profileId && assistantIntent.current?.profileId !== profileId) assistantIntent.current = null;
     captured.selection = next;
     return next;
   };
@@ -205,6 +216,10 @@ export function KidsLessonPage() {
     if (!selectionCurrent(selection)) return;
     const ticket: LessonRequest = {
       selection, id: ++sequence.current, bodyContext: null, active: true, stop: () => {},
+      assistantInitiallyOpen: assistantIntent.current?.open === true,
+      onAssistantOpenChange: (open) => {
+        if (requestCurrent(ticket)) assistantIntent.current = { scope: assistantScope, profileId: selection.profileId, open };
+      },
     };
     selection.request = ticket;
     ticket.bodyContext = Object.freeze({
@@ -265,6 +280,7 @@ export function KidsLessonPage() {
       const playbackError = playbackResponse.error;
       if (!requestCurrent(ticket)) return;
       if (lessonError || playbackError) {
+        assistantIntent.current = null;
         denied = true;
         commit();
         return;
@@ -281,11 +297,15 @@ export function KidsLessonPage() {
       if (!requestCurrent(ticket)) return;
       const embedUrl = parsePlayback(playbackData);
       if (!requestCurrent(ticket)) return;
-      if (!lesson || !embedUrl) denied = true;
+      if (!lesson || !embedUrl) {
+        assistantIntent.current = null;
+        denied = true;
+      }
       else result = { lesson, embedUrl };
       commit();
     })().catch(() => {
       if (!requestCurrent(ticket)) return;
+      assistantIntent.current = null;
       denied = true;
       commit();
     }).finally(() => {
@@ -297,6 +317,7 @@ export function KidsLessonPage() {
 
   const exitProfile = (captured: LessonView | null) => {
     if (!viewCurrent(captured) || captured.selection.owner.scope.kind !== "kids_profile") return;
+    assistantIntent.current = null;
     const next = replaceSelection(captured.selection.owner, "");
     if (!next || !selectionCurrent(next)) return;
     const clear = clearActiveKidsProfile;
@@ -322,6 +343,7 @@ export function KidsLessonPage() {
 
   const chooseView = (child: boolean) => {
     if (!canReview || authLoading || !scopeCurrent(scope)) return;
+    assistantIntent.current = null;
     retireOwner(owner.current);
     setView(null);
     setChildViewOwner(child ? { generation: authGeneration, actorId: user?.id } : null);
@@ -347,10 +369,13 @@ export function KidsLessonPage() {
       if (view) setView(null);
       return;
     }
-    if (scope.kind === "kids_profile" &&
-      readParent(parent, () => scopeCurrent(scope)).state !== "ready") {
-      if (view) setView(null);
-      return;
+    if (scope.kind === "kids_profile") {
+      const parentState = readParent(parent, () => scopeCurrent(scope)).state;
+      if (parentState !== "ready") {
+        if (parentState !== "checking") assistantIntent.current = null;
+        if (view) setView(null);
+        return;
+      }
     }
     const next: LessonOwner = { scope, life: life.current, parent, active: true, selection: null };
     owner.current = next;
@@ -375,6 +400,7 @@ export function KidsLessonPage() {
       if (!selectionCurrent(seed)) return;
     }
     if (!restored) {
+      assistantIntent.current = null;
       idle(seed);
       return;
     }
@@ -402,6 +428,7 @@ export function KidsLessonPage() {
     const current = () => !cancelled && requestCurrent(ticket);
     const revokeCampaignDelivery = () => {
       if (!current()) return;
+      assistantIntent.current = null;
       const selection = ticket.selection;
       retireRequest(ticket);
       selection.request = null;
@@ -489,6 +516,8 @@ export function KidsLessonPage() {
               lessonNumber={lessonNumber}
               profileId={profileId}
               actionContext={renderedView!.request!.bodyContext!}
+              assistantInitiallyOpen={renderedView!.request!.assistantInitiallyOpen}
+              onAssistantOpenChange={renderedView!.request!.onAssistantOpenChange}
             />
           ) : (
             <section className="rounded-3xl border border-primary/20 bg-card p-6 md:p-9">

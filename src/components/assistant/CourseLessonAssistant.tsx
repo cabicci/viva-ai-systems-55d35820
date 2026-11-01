@@ -11,7 +11,8 @@ import { LessonAssistantAccess } from "./LessonAssistantAccess";
 
 type Props = { locale: SupportedLocale } & (
   | { area: "ai"; contextOverride: AssistantContextOverride | null; pathId: string; lessonId: string }
-  | { area: "kids"; cardId: string; stepId: string; profileId: string }
+  | { area: "kids"; cardId: string; stepId: string; profileId: string;
+      assistantInitiallyOpen?: boolean; onAssistantOpenChange?: (open: boolean) => void }
   | { area: "technical"; cardId: string; stepId: string }
   | { area: "academic"; cardId: string; stepId: string }
 );
@@ -31,7 +32,8 @@ export function CourseLessonAssistant(props: Props) {
     props.area === "ai" ? props.lessonId ?? props.contextOverride?.currentLessonId : props.stepId,
     props.area === "kids" ? props.profileId : null]);
   return <FloatingAssistantLauncher key={scopeKey} fabLabel={getUiString(props.locale, "learn.assistant.fab")}
-    fabAriaLabel={getUiString(props.locale, "learn.assistant.fabAria")} panelTitle={getUiString(props.locale, "sidebar.assistant")}>
+    fabAriaLabel={getUiString(props.locale, "learn.assistant.fabAria")} panelTitle={getUiString(props.locale, "sidebar.assistant")}
+    {...(props.area === "kids" ? { initialOpen: props.assistantInitiallyOpen, onOpenChange: props.onAssistantOpenChange } : {})}>
     {!user?.id || scopeMissing ? <p role="alert">{getUiString(props.locale, !user?.id
       ? "assistant.panel.error.auth" : "assistant.panel.scope.open")}</p> :
     props.area === "academic" ? <AcademicAssistantPanel courseId={props.cardId} lessonId={props.stepId} locale={props.locale} /> :
