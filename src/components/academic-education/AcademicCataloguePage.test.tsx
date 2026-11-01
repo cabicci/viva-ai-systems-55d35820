@@ -45,7 +45,7 @@ it("shows the review course and curriculum without retaining administrator catal
     "href",
     "/academic/courses/AC-BUS?locale=en",
   );
-  expect(screen.getByText("Administrator review — not yet released to learners.")).toBeTruthy();
+  expect(screen.queryByText("Administrator review — not yet released to learners.")).toBeNull();
   view.rerender(page("AC-BUS"));
   expect(await screen.findByRole("link", { name: "Explore path steps" })).toHaveAttribute(
     "href",
