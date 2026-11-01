@@ -27,7 +27,7 @@ describe("locale learn route chrome (Phase 12.4A)", () => {
     expect(getUiString("en", "learn.backToDashboard")).toBe("Back to My journey");
     expect(getUiString("en", "learn.nav.previous")).toBe("Previous");
     expect(getUiString("en", "learn.nav.next")).toBe("Next step");
-    expect(getUiString("en", "learn.assistant.fab")).toBe("Ask assistant");
+    expect(getUiString("en", "learn.assistant.fab")).toBe("Ask AI");
   });
 
   it("prefers localized package title for H1 with safe fallback", () => {
@@ -50,4 +50,11 @@ describe("locale learn route chrome (Phase 12.4A)", () => {
     expect(LEARN_ROUTE_SOURCE).toContain('learn.path.intro');
     expect(LEARN_ROUTE_SOURCE).not.toMatch(/>\s*رجوع للخريطة\s*</);
   });
+});
+
+
+it.each(SUPPORTED_LOCALES)("aligns the lesson assistant visible and accessible Ask AI name in %s", locale => {
+  const label = locale === "en" ? "Ask AI" : "اسأل AI";
+  expect(getUiString(locale, "learn.assistant.fab")).toBe(label);
+  expect(getUiString(locale, "learn.assistant.fabAria")).toBe(label);
 });
