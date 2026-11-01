@@ -93,7 +93,10 @@ export function KidsLessonPage() {
   const { user, loading: authLoading, authGeneration, isAuthGenerationCurrent } = useAuth();
   const { isAdmin, freeTargets = [] } = useEntitlement();
   const hadFreeWindow = useRef(false);
-  const adminReview = !!user?.id && isAdmin;
+  const canReview = !!user?.id && isAdmin;
+  const [childViewOwner, setChildViewOwner] = useState<Pick<LessonScope, "generation" | "actorId"> | null>(null);
+  const childViewChosen = childViewOwner?.generation === authGeneration && childViewOwner?.actorId === user?.id;
+  const adminReview = canReview && !childViewChosen;
   const scope = useMemo<LessonScope>(() => ({
     generation: authGeneration, actorId: user?.id, authLoading,
     kind: adminReview ? "administrator_preview" : "kids_profile",
@@ -317,6 +320,13 @@ export function KidsLessonPage() {
     if (selectionCurrent(next)) startRequest(next);
   };
 
+  const chooseView = (child: boolean) => {
+    if (!canReview || authLoading || !scopeCurrent(scope)) return;
+    retireOwner(owner.current);
+    setView(null);
+    setChildViewOwner(child ? { generation: authGeneration, actorId: user?.id } : null);
+  };
+
   useEffect(() => {
     const mounted = {};
     life.current = mounted;
@@ -446,6 +456,29 @@ export function KidsLessonPage() {
           >
             {copy.backLevel}
           </Link>
+          {canReview && (
+            <fieldset className="flex flex-wrap items-center gap-3 rounded-2xl border border-primary/20 bg-card p-4">
+              <legend className="px-2 text-sm font-bold">{copy.viewAs}</legend>
+              <button
+                type="button"
+                aria-pressed={!adminReview}
+                disabled={authLoading || !adminReview}
+                onClick={() => chooseView(true)}
+                className="min-h-11 rounded-full border border-primary px-5 text-sm font-bold text-primary aria-pressed:bg-primary/10 disabled:opacity-60"
+              >
+                {copy.childView}
+              </button>
+              <button
+                type="button"
+                aria-pressed={adminReview}
+                disabled={authLoading || adminReview}
+                onClick={() => chooseView(false)}
+                className="min-h-11 rounded-full border border-primary px-5 text-sm font-bold text-primary aria-pressed:bg-primary/10 disabled:opacity-60"
+              >
+                {copy.administratorPreview}
+              </button>
+            </fieldset>
+          )}
           {visibleResult ? (
             <KidsLessonBody
               key={lessonKey}

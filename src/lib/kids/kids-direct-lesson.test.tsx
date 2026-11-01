@@ -124,6 +124,136 @@ beforeEach(() => {
 });
 afterEach(() => cleanup());
 
+describe("Kids dual-role parent context", () => {
+  type BodyContext = { profileId: string; actionContext: { kind: string; isCurrent(): boolean } };
+  const latestBody = () => mock.bodyCalls.at(-1) as BodyContext;
+  const childButton = () => screen.getByRole("button", { name: "Child profile", exact: true });
+  const previewButton = () => screen.getByRole("button", { name: "Administrator preview", exact: true });
+
+  it("uses an explicitly chosen owned child without changing the admin role", async () => {
+    mock.isAdmin = true; readyParent();
+    render(<KidsLessonPage />);
+    expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
+    const preview = latestBody();
+    expect(preview.actionContext.kind).toBe("administrator_preview");
+    fireEvent.click(childButton());
+    expect(preview.actionContext.isCurrent()).toBe(false);
+    fireEvent.change(screen.getByLabelText("Choose a profile for this path"), { target: { value: profile.id } });
+    expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
+    expect(latestBody().profileId).toBe(profile.id);
+    expect(latestBody().actionContext.kind).toBe("kids_profile");
+    expect(latestBody().actionContext.isCurrent()).toBe(true);
+    expect(childButton()).toHaveAttribute("aria-pressed", "true");
+    expect(previewButton()).toHaveAttribute("aria-pressed", "false");
+    expect(mock.isAdmin).toBe(true);
+    for (const [name, options] of mock.invoke.mock.calls.slice(-2)) {
+      expect(["kids-lesson-content", "kids-playback"]).toContain(name);
+      expect(options.body.profileId).toBe(profile.id);
+    }
+  });
+
+  it.each(["not-owned", "owned-other-level"])("refuses a forged %s child selection even for admin", async value => {
+    mock.isAdmin = true;
+    setParent({ state: "ready", profiles: [profile,
+      { id: "owned-other-level", level_id: "level-1", display_name: "Other fixture" }] });
+    if (value === "not-owned") localStorage.setItem(preferenceKey("parent-1"), value);
+    render(<KidsLessonPage />);
+    expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
+    fireEvent.click(childButton());
+    const select = screen.getByLabelText("Choose a profile for this path");
+    const key = Object.keys(select).find(name => name.startsWith("__reactProps$"))!;
+    const change = (select as unknown as Record<string, { onChange(event: { target: { value: string } }): void }>)[key].onChange;
+    act(() => change({ target: { value } }));
+    expect(mock.invoke).toHaveBeenCalledTimes(2);
+    expect(mock.setActive).not.toHaveBeenCalled();
+    expect(screen.queryByText("Opened protected lesson")).toBeNull();
+    expect(childButton()).toHaveAttribute("aria-pressed", "true");
+    if (value === "not-owned") expect(mock.clearActive).toHaveBeenCalledWith("parent-1");
+  });
+
+  it("retires the child view on parent revalidation and removal without falling back to admin", async () => {
+    mock.isAdmin = true; readyParent(); mock.getActive.mockReturnValue(profile.id);
+    const page = render(<KidsLessonPage />);
+    expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
+    fireEvent.click(childButton());
+    expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
+    const child = latestBody();
+    expect(child.actionContext.kind).toBe("kids_profile");
+    setParent({ state: "checking", profiles: [] }); page.rerender(<KidsLessonPage />);
+    expect(child.actionContext.isCurrent()).toBe(false);
+    expect(screen.queryByText("Opened protected lesson")).toBeNull();
+    setParent({ state: "ready", profiles: [] }); page.rerender(<KidsLessonPage />);
+    expect(screen.getByText("No profile for this path.")).toBeInTheDocument();
+    expect(mock.invoke).toHaveBeenCalledTimes(4);
+    expect(childButton()).toHaveAttribute("aria-pressed", "true");
+    expect(mock.isAdmin).toBe(true);
+  });
+
+  it("honors protected endpoint denial for an owned child without administrator retry", async () => {
+    mock.isAdmin = true; readyParent(); mock.getActive.mockReturnValue(profile.id);
+    render(<KidsLessonPage />);
+    expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
+    mock.invoke.mockResolvedValue({ data: null, error: new Error("Synthetic protected denial") });
+    fireEvent.click(childButton());
+    expect(await screen.findByText("This step is not ready. Video and content were not loaded.")).toBeInTheDocument();
+    expect(screen.queryByText("Opened protected lesson")).toBeNull();
+    expect(mock.invoke).toHaveBeenCalledTimes(4);
+    for (const [, options] of mock.invoke.mock.calls.slice(-2)) expect(options.body.profileId).toBe(profile.id);
+    expect(childButton()).toHaveAttribute("aria-pressed", "true");
+  });
+
+  it("keeps preview separate and ignores its late responses after switching back to the owned child", async () => {
+    mock.isAdmin = true; readyParent(); mock.getActive.mockReturnValue(profile.id);
+    render(<KidsLessonPage />);
+    expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
+    fireEvent.click(childButton());
+    expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
+    const oldChild = latestBody();
+    const calls = queuedCalls();
+    fireEvent.click(previewButton());
+    expect(oldChild.actionContext.isCurrent()).toBe(false);
+    expect(calls).toHaveLength(2);
+    expect(calls.slice(0, 2).every(call => call.body.profileId === "parent-1")).toBe(true);
+    fireEvent.click(childButton());
+    expect(calls).toHaveLength(4);
+    expect(calls.slice(2, 4).every(call => call.body.profileId === profile.id)).toBe(true);
+    await settle(() => { for (const call of calls.slice(0, 2)) call.result.resolve({ data: { tag: "Retired preview" }, error: null }); });
+    expect(screen.queryByText("Opened protected lesson")).toBeNull();
+    await settle(() => { for (const call of calls.slice(2, 4)) call.result.resolve({ data: { tag: "Current child" }, error: null }); });
+    expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
+    expect(latestBody().profileId).toBe(profile.id);
+    expect(latestBody().actionContext.kind).toBe("kids_profile");
+    expect(screen.getByTestId("opened-context")).toHaveTextContent("Current child");
+  });
+
+  it("retires child intent and body context on a new authentication incarnation of the same account", async () => {
+    mock.isAdmin = true; readyParent(); mock.getActive.mockReturnValue(profile.id);
+    const page = render(<KidsLessonPage />);
+    expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
+    fireEvent.click(childButton());
+    expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
+    const child = latestBody();
+    rotateAuth();
+    expect(child.actionContext.isCurrent()).toBe(false);
+    readyParent(); page.rerender(<KidsLessonPage />);
+    expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
+    expect(latestBody().actionContext.kind).toBe("administrator_preview");
+    expect(latestBody().profileId).toBe("parent-1");
+  });
+
+  it("does not use administrator privileges as parent readiness when child view is explicit", async () => {
+    mock.isAdmin = true; setParent({ state: "pending", profiles: [] });
+    render(<KidsLessonPage />);
+    expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
+    fireEvent.click(childButton());
+    expect(screen.queryByText("Opened protected lesson")).toBeNull();
+    expect(screen.getByRole("link", { name: "Go to parent space" })).toBeInTheDocument();
+    expect(mock.invoke).toHaveBeenCalledTimes(2);
+    expect(mock.getActive).not.toHaveBeenCalled();
+    expect(childButton()).toHaveAttribute("aria-pressed", "true");
+  });
+});
+
 
 describe("campaign expiry composed with current Kids ownership", () => {
   it("retires an open delivery on campaign expiry while a separately paid family remains open", async () => {
