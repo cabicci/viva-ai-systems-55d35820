@@ -12,6 +12,8 @@ owner-backlog: Stage 3 curriculum intake/assignment must require the curriculum-
 
 Post-application verification: owner-approved native entries42/43 match their canonical hashes and increasing timestamps. Preserve all native migration/snapshot/journal/type commits. Independent learning/commerce/RAG content fingerprints match; only the tested account's ordinary authentication updated_at advanced before application. The same authenticated preview displays prior journeys, child profiles and course activity models. A real report is saved/visible with package counter1/2; no question credit was used. Align the isolated migrator proof to the actual applied0032 and remove its temporary input. Final main integration/checks and owner publication remain pending; this is not restricted-learner cross-device or live acceptance.
 
+Prepublication follow-up: native bookkeeping merged62c082c66 after passing checks. Authenticated locale testing identified an actual40P01 family/lifecycle lock inversion between established account readers and the shared commercial lock. Prepare a guarded forward-only family-first ordering fix, preserving all four existing commercial locks and every permission/eligibility authority. Reuse existing loopback-only C01 PostgreSQL for a deterministic two-connection regression; no new environment, learner rows or production writes. The correction is not yet applied and publication remains pending.
+
 [roadmap:2dd3b1b3-9fb2-42c9-b8c5-117554e2600a]
 date: 2026-10-30
 scope: ui
