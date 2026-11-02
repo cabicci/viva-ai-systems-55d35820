@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createMemoryHistory, createRootRoute, createRouter, RouterProvider } from "@tanstack/react-router";
 import { beforeEach, afterEach, it, expect, vi } from "vitest";
 import { JourneyPage } from "./JourneyPage";
+vi.mock("./LearningRecordPanel", () => ({ LearningRecordPanel: () => <section data-testid="learning-record-panel" /> }));
 const state = vi.hoisted(() => ({
   locale: "en",
   tier: "pro_plus",

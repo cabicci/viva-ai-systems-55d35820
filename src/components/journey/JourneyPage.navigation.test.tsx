@@ -220,3 +220,4 @@ it.each(["missing SDK session", "unverifiable claims"])("blocks a stale journey 
   expect(router.state.location.search).toMatchObject({ locale: "ar-EG", returnTo: lessonPath });
   expect(state.loader).not.toHaveBeenCalled();
 });
+vi.mock("./LearningRecordPanel", () => ({ LearningRecordPanel: () => <section data-testid="learning-record-panel" /> }));

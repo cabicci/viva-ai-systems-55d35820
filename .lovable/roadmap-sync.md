@@ -1,5 +1,15 @@
 # Roadmap sync marker
 
+[roadmap:phase-2-learning-records]
+
+date: 2026-11-02
+scope: other
+source: user
+state: implementation-and-local-verification; production roadmap update deferred to release
+summary: Account/child course records, private notes and reading position, immutable assessment history/content versions, scoped recovery and two monthly AI reports per package. Existing shared-drive accepted fixes reused selectively. Changes remain on codex/student-learning-records-20261102; no production schema application, merge or publication is asserted by this marker.
+
+owner-backlog: Stage 3 curriculum intake/assignment must require the curriculum-specific student activity model and its assessment/completion rules before approval. Owner explicitly deferred that intake step on 2026-11-02 and requested continuation of phase 2. No intake UI or mandatory new-course gate is implemented by this phase-2 change.
+
 [roadmap:2dd3b1b3-9fb2-42c9-b8c5-117554e2600a]
 date: 2026-10-30
 scope: ui

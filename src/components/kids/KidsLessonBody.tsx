@@ -36,6 +36,7 @@ type ActionTicket = {
   active: boolean; pending: boolean;
 };
 type QuizValue = { correct: boolean; explanation?: string };
+const quizAttemptIds = new WeakMap<object, string>();
 type BodyModel = {
   scope: BodyScope; life: object; active: boolean;
   choices: Record<string, number>; choiceVersions: Record<string, object>;
@@ -312,10 +313,15 @@ export function KidsLessonBody({
       captured.quizError = null;
       publish(captured, ticket);
       const owned = () => requireTicket(ticket!);
+      let requestId = quizAttemptIds.get(expectedChoice);
+      if (!requestId && captured.scope.kind === "kids_profile") {
+        requestId = crypto.randomUUID(); quizAttemptIds.set(expectedChoice, requestId);
+      }
       const { value: response } = await invoke(ticket, "kids-lesson-content", {
         profileId: captured.scope.profileId, levelId: captured.scope.levelId,
         lessonNumber: captured.scope.lessonNumber, locale: captured.scope.locale,
         action: "quiz-check", questionId: authoredId, selectedIndex,
+        ...(requestId ? { requestId } : {}),
       });
       owned();
       const error = field(response, "error", owned);

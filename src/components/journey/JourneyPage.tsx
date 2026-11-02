@@ -1,4 +1,5 @@
 import { getUiString } from "@/lib/locale/ui-strings";
+import { LearningRecordPanel } from "./LearningRecordPanel";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "@tanstack/react-router";
 import type { ComponentProps } from "react";
@@ -323,6 +324,7 @@ export function JourneyPage() {
           ))}
         </section>
         <KidsJourneys locale={locale} visits={visits.data ?? []} admin={ent.isAdmin} />
+        <LearningRecordPanel />
       </main>
       <Footer />
     </div>
