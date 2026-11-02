@@ -111,6 +111,8 @@ describe("email access contracts and isolated invitation delivery", () => {
       expect(single.text).toContain(locale === "en" ? "from acceptance" : "من قبول الدعوة");
       expect(single.text).not.toContain("Pro Plus");
       expect(single.text).not.toContain("automatically");
+      expect(single.text).not.toMatch(/Kids|\bchild(?:ren)?\b|الأطفال|طفل|ولي الأمر/i);
+      expect(comprehensive.text).toContain(locale === "en" ? "guardian consent" : "ولي الأمر");
     },
   );
   it.each(["ar-EG", "ar-MSA", "ar-Gulf", "en"])(
