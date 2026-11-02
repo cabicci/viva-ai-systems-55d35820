@@ -12,7 +12,7 @@ const start = source.indexOf("CREATE FUNCTION billing.commercial_lock(");
 const end = source.indexOf("--> statement-breakpoint", start);
 if (start < 0 || end <= start) throw new Error("Original commercial lock source is missing");
 const original = source.slice(start, end).trim();
-const repair = read("scripts/release/commercial-family-lock-order.sql");
+const repair = read("drizzle/migrations/0033_commercial_family_lock_order.sql");
 const familyCall = "PERFORM pg_advisory_xact_lock(hashtextextended(p_user::text,751603));";
 const legacyPrefixes = [
   "account-lifecycle:",
