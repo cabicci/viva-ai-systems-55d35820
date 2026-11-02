@@ -155,7 +155,7 @@ beforeAll(async () => {
   );
   await db.exec(sql("drizzle/migrations/0027_commercial_policy_20261102.sql"));
   await db.exec(sql("drizzle/migrations/0028_commercial_offer_policy.sql"));
-  await db.exec(sql("scripts/release/unified-manual-purchase-rails.sql"));
+  await db.exec(sql("drizzle/migrations/0030_unified_manual_purchase_rails.sql"));
 }, 60000);
 afterAll(async () => db?.close());
 beforeEach(async () => {
