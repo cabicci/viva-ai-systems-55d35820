@@ -1,12 +1,20 @@
 -- Additive learning records; existing product tables remain authoritative.
 -- Applied only by the native Drizzle runner after release review.
 SET LOCAL lock_timeout = '5s';
+--> statement-breakpoint
+
 ALTER TABLE public.lesson_quiz_attempts ADD COLUMN locale text,
  ADD COLUMN content_version text, ADD COLUMN source_snapshot jsonb;
+--> statement-breakpoint
+
 CREATE SCHEMA IF NOT EXISTS learning_private;
+--> statement-breakpoint
+
 -- Existing kids_journey is an explicitly granted invoker bridge in this
 -- schema. Preserve its authenticated USAGE and EXECUTE grants.
 REVOKE ALL ON SCHEMA learning_private FROM PUBLIC,anon;
+--> statement-breakpoint
+
 
 -- The record is shared; learning/assessment contracts belong to each course.
 -- Publishing a different model creates a new version, preserving old rules.
@@ -18,16 +26,24 @@ CREATE TABLE learning_private.course_models (
  is_current boolean NOT NULL DEFAULT true,
  PRIMARY KEY(area,course,version)
 );
+--> statement-breakpoint
+
 CREATE UNIQUE INDEX learning_current_model ON learning_private.course_models(area,course) WHERE is_current;
+--> statement-breakpoint
+
 INSERT INTO learning_private.course_models VALUES
  ('ai','ai','initial-1',ARRAY['reading','notes','mission','questions'],'{"authority":"lesson_progress","required":["explicit_lesson_completion"],"optional":["notes","mission","questions"]}',true),
  ('technical','furniture','initial-1',ARRAY['reading','questions','practice'],'{"authority":"technical_command","required":["read","quiz_passed","practice_reviewed"]}',true),
  ('kids','level-1','initial-1',ARRAY['reading','questions','practice'],'{"authority":"complete_kids_step","required":["explicit_activity_completion"],"mastery_inferred":false}',true),
  ('kids','level-2','initial-1',ARRAY['reading','questions','practice'],'{"authority":"complete_kids_step","required":["explicit_activity_completion"],"mastery_inferred":false}',true),
  ('kids','level-3','initial-1',ARRAY['reading','questions','practice'],'{"authority":"complete_kids_step","required":["explicit_activity_completion"],"mastery_inferred":false}',true);
+--> statement-breakpoint
+
 INSERT INTO learning_private.course_models(area,course,version,activities,completion)
  SELECT 'academic',id,'initial-1',ARRAY['reading','questions','practice'],
  '{"authority":"academic_command","required":["read","quiz_passed","practice_submitted"]}'::jsonb FROM public.academic_courses;
+--> statement-breakpoint
+
 
 CREATE TABLE learning_private.courses (
  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -41,6 +57,8 @@ CREATE TABLE learning_private.courses (
  UNIQUE(account_id,subject_id,area,course),
  CHECK((area='kids' AND profile_id IS NOT NULL AND profile_id=subject_id) OR (area<>'kids' AND profile_id IS NULL AND subject_id=account_id))
 );
+--> statement-breakpoint
+
 CREATE TABLE learning_private.events (
  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
  record_id uuid NOT NULL REFERENCES learning_private.courses(id) ON DELETE CASCADE,
@@ -53,36 +71,50 @@ CREATE TABLE learning_private.events (
  recorded_at timestamptz NOT NULL DEFAULT now(),
  CHECK(locale IS NULL OR locale IN ('ar-EG','ar-MSA','ar-Gulf','en'))
 );
+--> statement-breakpoint
+
 CREATE INDEX learning_events_record_time ON learning_private.events(record_id,recorded_at DESC,id);
+--> statement-breakpoint
+
 CREATE TABLE learning_private.notes (
  record_id uuid NOT NULL REFERENCES learning_private.courses(id) ON DELETE CASCADE,
  lesson text NOT NULL, content text NOT NULL CHECK(length(content)<=5000),
  revision integer NOT NULL DEFAULT 1, updated_at timestamptz NOT NULL DEFAULT now(),
  PRIMARY KEY(record_id,lesson)
 );
+--> statement-breakpoint
+
 CREATE TABLE learning_private.content_versions (
  area text NOT NULL, course text NOT NULL, lesson text NOT NULL, locale text NOT NULL,
  version text NOT NULL, payload jsonb NOT NULL, recorded_at timestamptz NOT NULL DEFAULT now(),
  PRIMARY KEY(area,course,lesson,locale,version)
 );
+--> statement-breakpoint
+
 CREATE TABLE learning_private.positions (
  record_id uuid NOT NULL REFERENCES learning_private.courses(id) ON DELETE CASCADE,
  lesson text NOT NULL, locale text NOT NULL CHECK(locale IN ('ar-EG','ar-MSA','ar-Gulf','en')),
  ratio numeric NOT NULL CHECK(ratio BETWEEN 0 AND 1), updated_at timestamptz NOT NULL DEFAULT now(),
  PRIMARY KEY(record_id,lesson,locale)
 );
+--> statement-breakpoint
+
 CREATE TABLE learning_private.note_revisions (
  record_id uuid NOT NULL REFERENCES learning_private.courses(id) ON DELETE CASCADE,
  lesson text NOT NULL, revision integer NOT NULL, content text NOT NULL,
  recorded_at timestamptz NOT NULL DEFAULT now(),
  PRIMARY KEY(record_id,lesson,revision)
 );
+--> statement-breakpoint
+
 CREATE TABLE learning_private.enrollments (
  record_id uuid NOT NULL REFERENCES learning_private.courses(id) ON DELETE CASCADE,
  source_key text NOT NULL, starts_at timestamptz NOT NULL, ends_at timestamptz,
  first_observed_at timestamptz NOT NULL DEFAULT now(), last_observed_at timestamptz NOT NULL DEFAULT now(),
  PRIMARY KEY(record_id,source_key,starts_at)
 );
+--> statement-breakpoint
+
 -- Optimistic concurrency + command identity survive a lost HTTP acknowledgement.
 CREATE TABLE learning_private.commands (
  account_id uuid NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
@@ -90,6 +122,8 @@ CREATE TABLE learning_private.commands (
  record_id uuid REFERENCES learning_private.courses(id) ON DELETE CASCADE,
  PRIMARY KEY(account_id,request_id)
 );
+--> statement-breakpoint
+
 CREATE TABLE learning_private.reports (
  id uuid PRIMARY KEY,
  account_id uuid NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
@@ -105,7 +139,11 @@ CREATE TABLE learning_private.reports (
  created_at timestamptz NOT NULL DEFAULT now(), completed_at timestamptz,
  CHECK((profile_id IS NULL AND subject_id=account_id) OR (profile_id IS NOT NULL AND profile_id=subject_id))
 );
+--> statement-breakpoint
+
 CREATE INDEX learning_reports_quota ON learning_private.reports(account_id,source_key,period_start,state);
+--> statement-breakpoint
+
 -- Future teacher/institution joins bind to course-record IDs. No global read
 -- grant is created. Private notes are never included in a report snapshot.
 CREATE TABLE learning_private.sharing (
@@ -116,18 +154,26 @@ CREATE TABLE learning_private.sharing (
  scope text NOT NULL CHECK(scope IN ('progress','assessments')),
  PRIMARY KEY(record_id,viewer_id,scope)
 );
+--> statement-breakpoint
+
 DO $$ DECLARE t text; BEGIN
  FOREACH t IN ARRAY ARRAY['courses','events','notes','commands','reports','sharing','content_versions','positions','note_revisions','enrollments','course_models'] LOOP
   EXECUTE format('ALTER TABLE learning_private.%I ENABLE ROW LEVEL SECURITY',t);
   EXECUTE format('REVOKE ALL ON learning_private.%I FROM PUBLIC,anon,authenticated',t);
  END LOOP;
 END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION learning_private.model_immutable() RETURNS trigger LANGUAGE plpgsql SET search_path='' AS $$
 BEGIN
  IF (to_jsonb(NEW)-'is_current') IS DISTINCT FROM (to_jsonb(OLD)-'is_current') THEN RAISE EXCEPTION 'LEARNING_NEW_MODEL_VERSION_REQUIRED'; END IF;
  RETURN NEW;
 END $$;
+--> statement-breakpoint
+
 CREATE TRIGGER learning_model_immutable BEFORE UPDATE ON learning_private.course_models FOR EACH ROW EXECUTE FUNCTION learning_private.model_immutable();
+--> statement-breakpoint
+
 CREATE FUNCTION learning_private.event_model_version() RETURNS trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 BEGIN
  IF NEW.kind<>'existing_fact' THEN
@@ -136,12 +182,18 @@ BEGIN
  END IF;
  RETURN NEW;
 END $$;
+--> statement-breakpoint
+
 CREATE TRIGGER learning_event_model_version BEFORE INSERT ON learning_private.events FOR EACH ROW EXECUTE FUNCTION learning_private.event_model_version();
+--> statement-breakpoint
+
 CREATE FUNCTION learning_private.capture_note_revision() RETURNS trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 BEGIN
  INSERT INTO learning_private.note_revisions(record_id,lesson,revision,content) VALUES(NEW.record_id,NEW.lesson,NEW.revision,NEW.content) ON CONFLICT DO NOTHING;
  RETURN NEW;
 END $$;
+--> statement-breakpoint
+
 CREATE TRIGGER learning_note_revision AFTER INSERT OR UPDATE ON learning_private.notes FOR EACH ROW EXECUTE FUNCTION learning_private.capture_note_revision();
 --> statement-breakpoint
 
@@ -155,6 +207,8 @@ BEGIN
  IF NOT billing.commercial_account_allowed(u) THEN RAISE EXCEPTION 'LEARNING_ACCOUNT_REQUIRED'; END IF;
  RETURN u;
 END $$;
+--> statement-breakpoint
+
 
 CREATE FUNCTION learning_private.record(p_account uuid,p_area text,p_course text,p_profile uuid DEFAULT NULL)
 RETURNS uuid LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
@@ -170,6 +224,8 @@ BEGIN
  RETURNING id INTO r;
  RETURN r;
 END $$;
+--> statement-breakpoint
+
 
 CREATE FUNCTION learning_private.capture() RETURNS trigger
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
@@ -210,12 +266,18 @@ BEGIN
   evidence-'user_id'-'profile_id'-'source_snapshot');
  RETURN NEW;
 END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION learning_private.keep_mission_completed() RETURNS trigger LANGUAGE plpgsql SET search_path='' AS $$
 BEGIN
  IF OLD.state='completed' AND NEW.state='started' THEN NEW.state:=OLD.state; END IF;
  RETURN NEW;
 END $$;
+--> statement-breakpoint
+
 CREATE TRIGGER learning_mission_monotonic BEFORE UPDATE ON public.user_mission_state FOR EACH ROW EXECUTE FUNCTION learning_private.keep_mission_completed();
+--> statement-breakpoint
+
 CREATE FUNCTION learning_private.capture_content() RETURNS trigger
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE d jsonb; area text:=CASE WHEN TG_TABLE_NAME='academic_lesson_content' THEN 'academic' ELSE 'technical' END;
@@ -228,11 +290,19 @@ BEGIN
  END LOOP;
  RETURN NEW;
 END $$;
+--> statement-breakpoint
+
 CREATE TRIGGER learning_content_versions AFTER INSERT OR UPDATE ON public.academic_lesson_content FOR EACH ROW EXECUTE FUNCTION learning_private.capture_content();
+--> statement-breakpoint
+
 CREATE TRIGGER learning_content_versions AFTER INSERT OR UPDATE ON public.technical_lesson_content FOR EACH ROW EXECUTE FUNCTION learning_private.capture_content();
+--> statement-breakpoint
+
 INSERT INTO learning_private.content_versions(area,course,lesson,locale,version,payload)
  SELECT 'academic',course_id,lesson_id,locale,source_sha256,payload FROM public.academic_lesson_content
  UNION ALL SELECT 'technical','furniture',lesson_id,locale,source_sha256,payload FROM public.technical_lesson_content;
+--> statement-breakpoint
+
 
 DO $$ DECLARE t text; BEGIN
  FOREACH t IN ARRAY ARRAY['lesson_progress','lesson_notes','lesson_quiz_attempts','mission_submissions','academic_progress','technical_progress','kids_lesson_progress','journey_visits'] LOOP
@@ -249,6 +319,8 @@ BEGIN
  END IF;
  RETURN billing.assistant_content_allowed(p_record.account_id,p_record.area,p_record.course,p_lesson,p_locale,NULL);
 END $$;
+--> statement-breakpoint
+
 
 CREATE FUNCTION public.learning_command(p_action text,p_data jsonb DEFAULT '{}') RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
@@ -315,13 +387,19 @@ BEGIN
  END IF;
  RAISE EXCEPTION 'LEARNING_ACTION_INVALID';
 END $$;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION public.learning_command(text,jsonb) FROM PUBLIC,anon;
+--> statement-breakpoint
+
 GRANT EXECUTE ON FUNCTION public.learning_command(text,jsonb) TO authenticated;
 --> statement-breakpoint
 
 -- Capture future canonical command attempts after the original authorization,
 -- grading and transaction succeeded. Preserve original product contracts.
 ALTER FUNCTION public.academic_command(text,text,text,text,jsonb) RENAME TO learning_previous_academic_command;
+--> statement-breakpoint
+
 CREATE FUNCTION public.academic_command(p_action text,p_course text DEFAULT NULL,p_lesson text DEFAULT NULL,p_locale text DEFAULT NULL,p_data jsonb DEFAULT '{}') RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE result jsonb; rid uuid; version text;
@@ -335,11 +413,21 @@ BEGIN
  END IF;
  RETURN result;
 END $$;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION public.learning_previous_academic_command(text,text,text,text,jsonb) FROM PUBLIC,anon,authenticated;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION public.academic_command(text,text,text,text,jsonb) FROM PUBLIC,anon;
+--> statement-breakpoint
+
 GRANT EXECUTE ON FUNCTION public.academic_command(text,text,text,text,jsonb) TO authenticated;
+--> statement-breakpoint
+
 
 ALTER FUNCTION public.technical_command(text,text,text,jsonb) RENAME TO learning_previous_technical_command;
+--> statement-breakpoint
+
 CREATE FUNCTION public.technical_command(p_action text,p_lesson text DEFAULT NULL,p_locale text DEFAULT NULL,p_data jsonb DEFAULT '{}') RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE result jsonb; rid uuid; version text;
@@ -353,8 +441,14 @@ BEGIN
  END IF;
  RETURN result;
 END $$;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION public.learning_previous_technical_command(text,text,text,jsonb) FROM PUBLIC,anon,authenticated;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION public.technical_command(text,text,text,jsonb) FROM PUBLIC,anon;
+--> statement-breakpoint
+
 GRANT EXECUTE ON FUNCTION public.technical_command(text,text,text,jsonb) TO authenticated;
 --> statement-breakpoint
 
@@ -377,6 +471,8 @@ DO $$ DECLARE t text; d jsonb; u uuid; profile uuid; area text; course text; les
   END LOOP;
  END LOOP;
 END $$;
+--> statement-breakpoint
+
 
 -- Private tables have account/child cascading foreign keys. Erasure must remove
 -- them before releasing the owner's lifecycle lock, alongside existing data.
@@ -388,6 +484,8 @@ BEGIN
  DELETE FROM learning_private.courses WHERE account_id=OLD.id;
  RETURN OLD;
 END $$;
+--> statement-breakpoint
+
 CREATE TRIGGER learning_account_erasure BEFORE DELETE ON auth.users FOR EACH ROW EXECUTE FUNCTION learning_private.erase_account();
 --> statement-breakpoint
 
@@ -400,7 +498,11 @@ BEGIN
  INSERT INTO learning_private.content_versions(area,course,lesson,locale,version,payload) VALUES('ai','ai',p_lesson,p_locale,p_version,p_payload) ON CONFLICT DO NOTHING;
  RETURN true;
 END $$;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION public.store_learning_content_version(uuid,text,text,text,jsonb) FROM PUBLIC,anon,authenticated;
+--> statement-breakpoint
+
 GRANT EXECUTE ON FUNCTION public.store_learning_content_version(uuid,text,text,text,jsonb) TO service_role;
 --> statement-breakpoint
 
@@ -437,7 +539,11 @@ BEGIN
  INSERT INTO learning_private.commands VALUES(p_user,p_request,fp,p_result,rid);
  RETURN p_result;
 END $$;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION public.record_learning_assessment(uuid,uuid,uuid,text,text,text,text,text,jsonb,jsonb,jsonb,text) FROM PUBLIC,anon,authenticated;
+--> statement-breakpoint
+
 GRANT EXECUTE ON FUNCTION public.record_learning_assessment(uuid,uuid,uuid,text,text,text,text,text,jsonb,jsonb,jsonb,text) TO service_role;
 --> statement-breakpoint
 
@@ -453,6 +559,8 @@ BEGIN
  PERFORM set_config('request.jwt.claim.sub',coalesce(prior_sub,''),true);
  RETURN coalesce(result,false);
 END $$;
+--> statement-breakpoint
+
 
 CREATE FUNCTION learning_private.report_sources(p_user uuid,p_at timestamptz DEFAULT now())
 RETURNS TABLE(source_key text,anchor timestamptz,valid_until timestamptz,record_id uuid)
@@ -476,6 +584,8 @@ BEGIN
     AND p.child_id IS NOT DISTINCT FROM r.profile_id AND p.paid_at<=p_at;
  END LOOP;
 END $$;
+--> statement-breakpoint
+
 
 CREATE FUNCTION public.learning_reports(p_action text,p_data jsonb DEFAULT '{}') RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
@@ -525,8 +635,14 @@ BEGIN
  END IF;
  RAISE EXCEPTION 'LEARNING_REPORT_ACTION_INVALID';
 END $$;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION public.learning_reports(text,jsonb) FROM PUBLIC,anon;
+--> statement-breakpoint
+
 GRANT EXECUTE ON FUNCTION public.learning_reports(text,jsonb) TO authenticated;
+--> statement-breakpoint
+
 
 CREATE FUNCTION public.finish_learning_report(p_user uuid,p_request uuid,p_token uuid,p_report jsonb) RETURNS boolean
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
@@ -539,8 +655,14 @@ BEGIN
   AND (p_report IS NULL OR profile_id IS NULL OR learning_private.child_consented(p_user,profile_id));
  RETURN FOUND;
 END $$;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION public.finish_learning_report(uuid,uuid,uuid,jsonb) FROM PUBLIC,anon,authenticated;
+--> statement-breakpoint
+
 GRANT EXECUTE ON FUNCTION public.finish_learning_report(uuid,uuid,uuid,jsonb) TO service_role;
+--> statement-breakpoint
+
 DO $$ DECLARE f regprocedure; BEGIN
  FOR f IN SELECT p.oid::regprocedure FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='learning_private'
   AND p.proname IN ('require_owner','record','capture','keep_mission_completed','capture_content','capture_note_revision','model_immutable','event_model_version','can_write','erase_account','child_consented','report_sources') LOOP

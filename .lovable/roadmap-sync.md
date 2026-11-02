@@ -6,7 +6,7 @@ date: 2026-11-02
 scope: other
 source: user
 state: implementation-and-local-verification; production roadmap update deferred to release
-summary: Account/child course records, private notes and reading position, immutable assessment history/content versions, scoped recovery and two monthly AI reports per package. Existing shared-drive accepted fixes reused selectively. Changes remain on codex/student-learning-records-20261102; no production schema application, merge or publication is asserted by this marker.
+summary: Account/child course records, private notes and reading position, immutable assessment history/content versions, scoped recovery and two monthly AI reports per package. PR256 merged at 5d611ef2e8805e7708716e35ac348dda9ca0fa82 with all six workflows passing; the existing Lovable preview is synchronized and ordinary owner login succeeds. Native database application remains pending. Release support normalizes only still-unapplied 0031 statement boundaries and supplies meaningful read-only postconditions for the native tool's required final entry. Installed-runner success/repeat and late-failure rollback pass locally. No database write, provider call or publication is claimed. Actual roadmap update remains part of the native release.
 
 owner-backlog: Stage 3 curriculum intake/assignment must require the curriculum-specific student activity model and its assessment/completion rules before approval. Owner explicitly deferred that intake step on 2026-11-02 and requested continuation of phase 2. No intake UI or mandatory new-course gate is implemented by this phase-2 change.
 
