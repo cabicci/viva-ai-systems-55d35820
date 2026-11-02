@@ -18,6 +18,11 @@ export const getAssistantQuestionBalance = createServerFn({ method: "POST" })
       p_user_id: context.userId, p_area: data.area, p_course: data.course, p_child_id: data.childId,
     } as never);
     const balance = result.error ? null : questionBalance(result.data);
-    if (!balance) throw new Error("ASSISTANT_BALANCE_UNAVAILABLE");
-    return balance;
+    if (!balance || typeof balance.access_allowed !== "boolean") throw new Error("ASSISTANT_BALANCE_UNAVAILABLE");
+    // A verified sign-in identity, not an access token. Stable across token refreshes.
+    const sessionId = context.claims.session_id;
+    const sessionKey = typeof sessionId === "string" && sessionId.length > 0 && sessionId.length <= 128
+      ? Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(`${context.userId}:${sessionId}`))),
+        byte => byte.toString(16).padStart(2, "0")).join("") : null;
+    return { ...balance, session_key: sessionKey };
   });

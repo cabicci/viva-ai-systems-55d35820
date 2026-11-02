@@ -1,6 +1,6 @@
 /** One server-owned question ledger for every assistant. Providers never choose a price. */
 export type QuestionOutcome = "answered" | "insufficient" | "out_of_scope" | "system_failure";
-export type QuestionBalance = { monthly_remaining: number; purchased_remaining: number; access_allowed?: boolean; admin_review?: boolean };
+export type QuestionBalance = { monthly_remaining: number; purchased_remaining: number; access_allowed?: boolean; admin_review?: boolean; unlimited?: boolean };
 export type QuestionRpc = (name: string, args: Record<string, unknown>) => Promise<
   { ok: true; data: Record<string, unknown> } | { ok: false; status: number; error: string }>;
 export type QuestionIdentity = {
@@ -26,7 +26,8 @@ export function questionBalance(value: unknown): QuestionBalance | null {
   if (![row.monthly_remaining, row.purchased_remaining].every(n => typeof n === "number" && Number.isSafeInteger(n) && n >= 0)) return null;
   return { monthly_remaining: row.monthly_remaining as number, purchased_remaining: row.purchased_remaining as number,
     ...(typeof row.access_allowed === "boolean" ? { access_allowed: row.access_allowed } : {}),
-    ...(typeof row.admin_review === "boolean" ? { admin_review: row.admin_review } : {}) };
+    ...(typeof row.admin_review === "boolean" ? { admin_review: row.admin_review } : {}),
+    ...(typeof row.unlimited === "boolean" ? { unlimited: row.unlimited } : {}) };
 }
 export async function questionFingerprint(identity: QuestionIdentity): Promise<string> {
   // Explicit ordered fields: client-supplied account, price, outcome and balances never participate.

@@ -30,7 +30,7 @@ export async function readLessonAssistantAccess(input: { pathId: string; lessonI
     const balance = questionBalance(access.data);
     if (!balance || typeof balance.access_allowed !== "boolean") return { state: "unavailable" };
     if (!balance.access_allowed) return { state: "denied", reason: "access" };
-    return (scope?.admin_review === true && balance.admin_review === true) || balance.monthly_remaining + balance.purchased_remaining > 0
+    return (scope?.admin_review === true && balance.admin_review === true && balance.unlimited === true) || balance.monthly_remaining + balance.purchased_remaining > 0
       ? { state: "allowed" } : { state: "denied", reason: "quota" };
   } catch { return { state: "unavailable" }; }
 }

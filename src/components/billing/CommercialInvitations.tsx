@@ -12,7 +12,7 @@ const copy = {
     title: "دعوات المناهج",
     all: "كل المناهج المنشورة",
     selected: "المناهج المحددة في الدعوة",
-    quota: "٣٠٠ سؤال شهريًا مشتركة بين المناهج المشمولة، بالإضافة إلى حصة اشتراكك.",
+    quota: "{questions} سؤال شهريًا للمناهج المشمولة، بالإضافة إلى حصة اشتراكك إن وجد.",
     forever: "من غير تاريخ انتهاء",
     days: "يوم من وقت قبولك",
     accept: "قبول الدعوة وبدء المدة",
@@ -25,7 +25,7 @@ const copy = {
     title: "دعوات المناهج",
     all: "جميع المناهج المنشورة",
     selected: "المناهج المحددة في الدعوة",
-    quota: "٣٠٠ سؤال شهريًا مشتركة بين المناهج المشمولة، بالإضافة إلى حصة اشتراكك.",
+    quota: "{questions} سؤال شهريًا للمناهج المشمولة، بالإضافة إلى حصة اشتراكك إن وجد.",
     forever: "دون تاريخ انتهاء",
     days: "يومًا من وقت القبول",
     accept: "قبول الدعوة وبدء المدة",
@@ -38,7 +38,7 @@ const copy = {
     title: "دعوات المناهج",
     all: "كل المناهج المنشورة",
     selected: "المناهج المحددة في الدعوة",
-    quota: "٣٠٠ سؤال شهريًا مشتركة بين المناهج المشمولة، بالإضافة إلى حصة اشتراكك.",
+    quota: "{questions} سؤال شهريًا للمناهج المشمولة، بالإضافة إلى حصة اشتراكك إن وجد.",
     forever: "بدون تاريخ انتهاء",
     days: "يوم من وقت قبولك",
     accept: "قبول الدعوة وبدء المدة",
@@ -52,7 +52,7 @@ const copy = {
     all: "All published curricula",
     selected: "The curricula selected in this invitation",
     quota:
-      "300 monthly questions shared across the included curricula, in addition to your subscription allowance.",
+      "{questions} monthly questions for the included curricula, in addition to any subscription allowance.",
     forever: "No expiry date",
     days: "days from acceptance",
     accept: "Accept invitation and start access",
@@ -120,7 +120,14 @@ export function CommercialInvitations({
               ))}
             </ul>
           ) : null}
-          <p className="text-sm text-muted-foreground">{c.quota}</p>
+          <p className="text-sm text-muted-foreground">
+            {c.quota.replace(
+              "{questions}",
+              new Intl.NumberFormat(locale === "en" ? "en" : "ar-EG").format(
+                row.monthly_questions ?? 300,
+              ),
+            )}
+          </p>
           <p className="text-sm">
             {row.duration_days === null ? c.forever : `${row.duration_days} ${c.days}`}
           </p>

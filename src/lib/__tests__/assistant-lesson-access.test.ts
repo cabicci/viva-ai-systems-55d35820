@@ -50,6 +50,6 @@ it.each([null, {}, { allowed: "true" }, { allowed: false, denial_reason_code: "E
 
 it("allows confirmed administrator review without showing a fictitious learner balance", async () => {
   state.rpc.mockResolvedValueOnce({ data: { card_id: "intro", admin_review: true }, error: null })
-    .mockResolvedValueOnce({ data: { access_allowed: true, admin_review: true, monthly_remaining: 0, purchased_remaining: 0 }, error: null });
+    .mockResolvedValueOnce({ data: { access_allowed: true, admin_review: true, unlimited: true, monthly_remaining: 0, purchased_remaining: 0 }, error: null });
   expect(await readLessonAssistantAccess(scope)).toEqual({ state: "allowed" });
 });

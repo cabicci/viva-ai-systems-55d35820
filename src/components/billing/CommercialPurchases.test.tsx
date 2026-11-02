@@ -140,25 +140,29 @@ describe("one-time commercial purchases", () => {
       mock.locale = locale;
       setup();
       expect(
-        screen.getByText(
-          locale === "en"
-            ? /first month only/
-            : locale === "ar-EG"
-              ? /لأول شهر بس/
-              : /للشهر الأول فقط/,
-        ),
-      ).toBeInTheDocument();
+        screen
+          .getByText(
+            locale === "en"
+              ? /first month only/
+              : locale === "ar-EG"
+                ? /لأول شهر بس/
+                : /للشهر الأول فقط/,
+          )
+          .closest("li"),
+      ).not.toBeNull();
       expect(
-        screen.getByText(
-          locale === "en"
-            ? /never expire/
-            : locale === "ar-EG"
-              ? /مش بتنتهي/
-              : locale === "ar-Gulf"
-                ? /وما تنتهي/
-                : /لا تنتهي صلاحيتها/,
-        ),
-      ).toBeInTheDocument();
+        screen
+          .getByText(
+            locale === "en"
+              ? /never expire/
+              : locale === "ar-EG"
+                ? /مش بتنتهي/
+                : locale === "ar-Gulf"
+                  ? /وما تنتهي/
+                  : /لا تنتهي صلاحيتها/,
+          )
+          .closest("li"),
+      ).not.toBeNull();
       expect(mock.options).not.toHaveBeenCalled();
       expect(screen.getByRole("link")).toHaveAttribute("href", `/login?locale=${locale}`);
     },

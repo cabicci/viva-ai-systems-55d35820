@@ -787,30 +787,6 @@ export async function handleAssistantRuntimeRequest(
   // Validated history remains delimited context for generation, never evidence.
   const retrievalQuery = query;
 
-  // Rate limit: hourly + daily + monthly cost caps per user (not entitlement).
-  for (const bucket of [
-    { key: "ai:assistant-runtime", max: 50, window: 3600 },
-    { key: "ai:assistant-runtime:daily", max: 200, window: 86400 },
-    { key: "ai:assistant-runtime:monthly", max: 2000, window: 2592000 },
-  ]) {
-    const rl = await deps.consumeRateLimit(auth.userId, bucket.key, bucket.max, bucket.window);
-    if (!rl.allowed) {
-      const nowFn = deps.now ?? (() => new Date());
-      const minutes = Math.max(
-        1,
-        Math.ceil((new Date(rl.resetAt).getTime() - nowFn().getTime()) / 60000),
-      );
-      return jsonResponse(
-        {
-          ok: false,
-          error: `وصلت للحد الأقصى من أسئلة المساعد. جرّب تاني بعد حوالي ${minutes} دقيقة.`,
-        },
-        429,
-        corsHeaders,
-      );
-    }
-  }
-
   // Server env required before any billing/provider call — fail closed and
   // never leak which specific secret is missing. OPENAI_API_KEY is required
   // for both query embeddings and grounded generation using the existing direct
@@ -880,6 +856,30 @@ export async function handleAssistantRuntimeRequest(
       403,
       corsHeaders,
     );
+  }
+
+  // Learner question-count limits do not apply to protected platform administrators.
+  if (!adminReview) for (const bucket of [
+    { key: "ai:assistant-runtime", max: 50, window: 3600 },
+    { key: "ai:assistant-runtime:daily", max: 200, window: 86400 },
+    { key: "ai:assistant-runtime:monthly", max: 2000, window: 2592000 },
+  ]) {
+    const rl = await deps.consumeRateLimit(auth.userId, bucket.key, bucket.max, bucket.window);
+    if (!rl.allowed) {
+      const nowFn = deps.now ?? (() => new Date());
+      const minutes = Math.max(
+        1,
+        Math.ceil((new Date(rl.resetAt).getTime() - nowFn().getTime()) / 60000),
+      );
+      return jsonResponse(
+        {
+          ok: false,
+          error: `وصلت للحد الأقصى من أسئلة المساعد. جرّب تاني بعد حوالي ${minutes} دقيقة.`,
+        },
+        429,
+        corsHeaders,
+      );
+    }
   }
 
   if (!validQuestionId(body.requestId)) return jsonResponse({ ok: false, error: "ASSISTANT_REQUEST_ID_INVALID" }, 400, corsHeaders);

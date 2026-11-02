@@ -141,6 +141,9 @@ CREATE FUNCTION billing.commercial_account_allowed(p_user uuid) RETURNS boolean 
  SELECT p_user IS NOT NULL AND billing.commerce_account_allowed(p_user)
  AND EXISTS(SELECT 1 FROM auth.users WHERE id=p_user AND email_confirmed_at IS NOT NULL);
 $$;
+CREATE FUNCTION billing.commercial_admin(p_user uuid) RETURNS boolean LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
+ SELECT billing.commercial_account_allowed(p_user) AND coalesce(public.has_role(p_user,'admin'::public.app_role),false);
+$$;
 CREATE FUNCTION billing.commercial_curricula() RETURNS jsonb LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
  SELECT CASE WHEN EXISTS(SELECT 1 FROM billing.commerce_lesson_catalog) THEN
  jsonb_build_array(jsonb_build_object('area','ai','course','ai','title','AI')) ELSE '[]'::jsonb END
@@ -366,7 +369,9 @@ RETURNS boolean LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
 $$;
 CREATE OR REPLACE FUNCTION public.academic_assistant_access(p_course text,p_lesson text,p_locale text)
 RETURNS text LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
- SELECT CASE WHEN NOT coalesce(public.academic_can_access(p_course,p_lesson,p_locale),false)
+ SELECT CASE WHEN billing.commercial_admin(auth.uid()) AND EXISTS(SELECT 1 FROM public.academic_lesson_content
+ WHERE course_id=p_course AND lesson_id=p_lesson AND locale=p_locale AND approved) THEN 'admin'
+ WHEN NOT coalesce(public.academic_can_access(p_course,p_lesson,p_locale),false)
  OR NOT EXISTS(SELECT 1 FROM public.academic_lesson_content WHERE course_id=p_course AND lesson_id=p_lesson AND locale=p_locale AND approved) THEN 'none'
  WHEN EXISTS(SELECT 1 FROM public.academic_courses WHERE id=p_course AND assistant_review_enabled AND public.academic_review_allowed(p_course)) THEN 'admin'
  WHEN EXISTS(SELECT 1 FROM public.academic_courses c JOIN public.academic_assistant_policy p ON p.course_id=c.id
@@ -399,6 +404,9 @@ DECLARE result jsonb; lessons jsonb;
 BEGIN
  PERFORM billing.commercial_require_service();
  result:=billing.commercial_previous_card_content_access(p_user_id,p_card_id);
+ IF billing.commercial_admin(p_user_id) THEN
+  RETURN result||jsonb_build_object('admin_review',true);
+ END IF;
  IF billing.commercial_course_owned(p_user_id,'ai','ai') THEN
   RETURN jsonb_set(result,'{lessons}',jsonb_build_object('entitled_lesson_ids',
     (SELECT coalesce(jsonb_agg(lesson_id ORDER BY lesson_id),'[]'::jsonb) FROM billing.commerce_lesson_catalog)));
@@ -417,9 +425,15 @@ RETURNS boolean LANGUAGE plpgsql STABLE SECURITY DEFINER SET search_path='' AS $
 DECLARE s public.card_assistant_steps%ROWTYPE;
 BEGIN
  IF auth.uid() IS NULL OR p_locale IS NULL OR p_locale NOT IN ('ar-EG','ar-MSA','ar-Gulf','en') THEN RETURN false; END IF;
- IF NOT EXISTS(SELECT 1 FROM public.card_assistant_policy WHERE area=p_area AND card_id=p_card AND runtime_enabled) THEN RETURN false; END IF;
  SELECT * INTO s FROM public.card_assistant_steps WHERE area=p_area AND card_id=p_card AND step_id=p_step;
  IF NOT FOUND THEN RETURN false; END IF;
+ IF billing.commercial_admin(auth.uid()) THEN
+  RETURN (p_area='kids' AND p_profile=auth.uid() AND EXISTS(SELECT 1 FROM public.kids_content_approvals
+   WHERE level_id=s.kids_level AND lesson_number=s.kids_lesson AND locale=p_locale))
+   OR (p_area='technical' AND p_profile IS NULL AND EXISTS(SELECT 1 FROM public.technical_lesson_content
+   WHERE lesson_id=s.technical_lesson AND locale=p_locale));
+ END IF;
+ IF NOT EXISTS(SELECT 1 FROM public.card_assistant_policy WHERE area=p_area AND card_id=p_card AND runtime_enabled) THEN RETURN false; END IF;
  IF p_area='kids' THEN
   RETURN p_profile IS NOT NULL AND public.kids_can_access_lesson(p_profile,s.kids_level,s.kids_lesson,p_locale);
  ELSIF p_area='technical' THEN
@@ -493,12 +507,13 @@ BEGIN
    r.starts_at,r.ends_at,billing.assistant_current_units(key,CASE WHEN r.package='pro' THEN 150 WHEN r.package='kids' THEN 100 ELSE 300 END,p_at),true,
    (SELECT t.per_lesson_units FROM billing.commercial_legacy_terms t WHERE t.source_key=key AND p_at<t.first_new_period_at);
  END LOOP;
- -- One shared 300 pool per invitation, not one pool per granted curriculum.
+ -- Each invitation has one shared pool, including across owned Kids profiles.
  FOR r IN SELECT * FROM billing.email_access_grants g WHERE g.user_id=p_user AND g.activated_at<=p_at
  AND g.revoked_at IS NULL AND (g.ends_at IS NULL OR g.ends_at>p_at)
  AND EXISTS(SELECT 1 FROM auth.users u WHERE u.id=p_user AND lower(btrim(u.email))=g.recipient_email AND u.email_confirmed_at IS NOT NULL)
  AND (g.scope_mode='all_published' OR catalogue=ANY(g.catalogues) OR (p_area='ai' AND 'ai:pro'=ANY(g.catalogues))) LOOP
-  RETURN QUERY SELECT 'invitation:'||r.id,r.activated_at,r.ends_at,300,true,NULL::integer;
+  RETURN QUERY SELECT 'invitation:'||r.id,r.activated_at,r.ends_at,
+   CASE WHEN r.grant_kind='single_curriculum' THEN 100 ELSE 300 END,true,NULL::integer;
  END LOOP;
  FOR r IN SELECT * FROM billing.commercial_purchases WHERE user_id=p_user AND state='fulfilled' AND kind='lifetime_course'
  AND area=p_area AND course=p_course AND child_id IS NOT DISTINCT FROM p_child
@@ -525,6 +540,16 @@ DECLARE old_sub text:=current_setting('request.jwt.claim.sub',true); old_claims 
 BEGIN
  IF NOT billing.commercial_account_allowed(p_user) OR p_locale NOT IN ('ar-EG','ar-MSA','ar-Gulf','en') THEN RETURN false; END IF;
  IF p_area<>'kids' AND p_child IS NOT NULL THEN RETURN false; END IF;
+ IF billing.commercial_admin(p_user) THEN
+  RETURN CASE p_area
+   WHEN 'ai' THEN p_course='ai' AND EXISTS(SELECT 1 FROM billing.commerce_lesson_catalog WHERE p_lesson IS NULL OR p_lesson='__course__' OR lesson_id=p_lesson)
+   WHEN 'academic' THEN EXISTS(SELECT 1 FROM public.academic_lesson_content WHERE course_id=p_course AND lesson_id=p_lesson AND locale=p_locale AND approved)
+   WHEN 'technical' THEN p_course='furniture' AND EXISTS(SELECT 1 FROM public.technical_lesson_content WHERE lesson_id=p_lesson AND locale=p_locale)
+   WHEN 'kids' THEN p_course='kids' AND p_child=p_user AND EXISTS(SELECT 1 FROM public.card_assistant_steps step
+    JOIN public.kids_content_approvals a ON a.level_id=step.kids_level AND a.lesson_number=step.kids_lesson
+    WHERE step.area='kids' AND step.source_key=p_lesson AND a.locale=p_locale)
+   ELSE false END;
+ END IF;
  PERFORM set_config('request.jwt.claim.sub',p_user::text,true);
  PERFORM set_config('request.jwt.claims',(coalesce(nullif(old_claims,''),'{}')::jsonb||jsonb_build_object('sub',p_user))::text,true);
  IF p_area='ai' AND p_course='ai' THEN
@@ -546,8 +571,13 @@ CREATE FUNCTION billing.assistant_scope_allowed(p_user uuid,p_area text,p_course
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE r record;
 BEGIN
- IF p_area='kids' AND p_child=p_user AND public.has_role(p_user,'admin'::public.app_role)
- AND billing.commercial_account_allowed(p_user) THEN RETURN true; END IF;
+ IF billing.commercial_admin(p_user) THEN
+  RETURN CASE p_area WHEN 'ai' THEN p_course='ai' AND p_child IS NULL AND EXISTS(SELECT 1 FROM billing.commerce_lesson_catalog)
+   WHEN 'academic' THEN p_child IS NULL AND EXISTS(SELECT 1 FROM public.academic_lesson_content WHERE course_id=p_course AND approved)
+   WHEN 'technical' THEN p_course='furniture' AND p_child IS NULL AND EXISTS(SELECT 1 FROM public.technical_lesson_content)
+   WHEN 'kids' THEN p_course='kids' AND p_child=p_user AND EXISTS(SELECT 1 FROM public.kids_content_approvals)
+   ELSE false END;
+ END IF;
  IF NOT billing.commercial_selection_valid(p_user,p_area,p_course,p_child) OR NOT billing.commercial_account_allowed(p_user) THEN RETURN false; END IF;
  IF p_area='ai' THEN
   FOR r IN SELECT lesson_id FROM billing.commerce_lesson_catalog ORDER BY lesson_id LOOP
@@ -597,14 +627,17 @@ LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE monthly bigint; purchased integer; scope text:=CASE WHEN p_area='kids' THEN 'family' ELSE 'account' END; access_ok boolean;
 BEGIN
  access_ok:=billing.assistant_scope_allowed(p_user,p_area,p_course,p_child);
- IF NOT access_ok THEN RETURN jsonb_build_object('access_allowed',false,'admin_review',false,'monthly_remaining',0,'purchased_remaining',0); END IF;
+ IF NOT access_ok THEN RETURN jsonb_build_object('access_allowed',false,'admin_review',false,'unlimited',false,'monthly_remaining',0,'purchased_remaining',0); END IF;
+ IF billing.commercial_admin(p_user) THEN
+  RETURN jsonb_build_object('access_allowed',true,'admin_review',true,'unlimited',true,'monthly_remaining',0,'purchased_remaining',0);
+ END IF;
  PERFORM billing.assistant_sync_periods(p_user,p_area,p_course,p_child);
  SELECT coalesce(sum(greatest(0,p.unit_limit-p.used-p.reserved)),0) INTO monthly FROM billing.assistant_allowance_periods p
  JOIN billing.assistant_source_specs(p_user,p_area,p_course,p_child,now()) s USING(source_key)
  WHERE p.user_id=p_user AND p.starts_at=billing.assistant_period_start(s.anchor,s.recurring,now()) AND p.starts_at<=now() AND p.ends_at>now();
  SELECT greatest(0,billing.assistant_wallet_units(p_user,scope)-count(*)) INTO purchased FROM billing.assistant_requests
  WHERE user_id=p_user AND wallet_scope=scope AND funding='purchased' AND state='reserved';
- RETURN jsonb_build_object('access_allowed',true,'admin_review',public.has_role(p_user,'admin'::public.app_role),'monthly_remaining',monthly,'purchased_remaining',purchased);
+ RETURN jsonb_build_object('access_allowed',true,'admin_review',false,'unlimited',false,'monthly_remaining',monthly,'purchased_remaining',purchased);
 END $$;
 CREATE FUNCTION public.assistant_question_balance(p_user_id uuid,p_area text,p_course text,p_child_id uuid DEFAULT NULL)
 RETURNS jsonb LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
@@ -675,6 +708,8 @@ BEGIN
    'status',CASE WHEN r.state='reserved' THEN 'in_progress' WHEN r.response IS NULL THEN 'replay_expired' ELSE 'replay' END,
    'response',r.response,'balance',billing.assistant_balance(p_user_id,p_area,p_course,p_child_id));
  END IF;
+ IF billing.commercial_admin(p_user_id) THEN v_funding:='review';
+ ELSE
  IF p_area='ai' THEN hourly:=50;
  ELSIF p_area IN ('kids','technical') THEN
   SELECT coalesce(max(p.questions_per_hour),20) INTO hourly FROM public.card_assistant_policy p JOIN public.card_assistant_steps s USING(area,card_id)
@@ -683,8 +718,6 @@ BEGIN
  IF (SELECT count(*) FROM billing.assistant_requests WHERE user_id=p_user_id AND area=p_area AND course=p_course AND created_at>now()-interval '1 hour')>=hourly
  THEN RETURN jsonb_build_object('allowed',false,'replay',false,'status','rate_limited'); END IF;
  PERFORM billing.assistant_sync_periods(p_user_id,p_area,p_course,p_child_id);
- IF public.has_role(p_user_id,'admin'::public.app_role) THEN v_funding:='review';
- ELSE
   FOR spec IN SELECT p.*,s.per_lesson FROM billing.assistant_allowance_periods p
    JOIN billing.assistant_source_specs(p_user_id,p_area,p_course,p_child_id,now()) s USING(source_key)
    WHERE p.user_id=p_user_id AND p.starts_at<=now() AND p.ends_at>now() AND p.used+p.reserved<p.unit_limit
@@ -757,7 +790,7 @@ BEGIN
  IF p_outcome IS NULL OR p_outcome NOT IN ('answered','insufficient','out_of_scope','system_failure')
  OR p_response IS NULL OR jsonb_typeof(p_response)<>'object' OR octet_length(p_response::text)>131072 THEN RAISE EXCEPTION 'ASSISTANT_SETTLEMENT_INVALID'; END IF;
  IF r.lease_until<=now() THEN RAISE EXCEPTION 'ASSISTANT_REQUEST_EXPIRED'; END IF;
- IF r.funding='review' AND p_outcome<>'system_failure' AND NOT public.has_role(p_user_id,'admin'::public.app_role)
+ IF r.funding='review' AND p_outcome<>'system_failure' AND NOT billing.commercial_admin(p_user_id)
  THEN RAISE EXCEPTION 'ASSISTANT_REVIEW_ACCESS_CHANGED'; END IF;
  IF p_outcome<>'system_failure' AND NOT billing.assistant_content_allowed(p_user_id,r.area,r.course,r.lesson,r.locale,r.child_id) THEN RAISE EXCEPTION 'ASSISTANT_ACCESS_DENIED'; END IF;
  IF r.area='ai' AND p_outcome='answered' THEN
@@ -795,7 +828,7 @@ BEGIN
    END IF;
   END IF;
  IF p_outcome='answered' THEN charge:=1;
- ELSIF p_outcome='out_of_scope' THEN
+ ELSIF p_outcome='out_of_scope' AND r.funding<>'review' THEN
   INSERT INTO billing.assistant_outside_days(user_id,day,attempts) VALUES(p_user_id,billing.assistant_cairo_day(r.created_at),1)
   ON CONFLICT(user_id,day) DO UPDATE SET attempts=billing.assistant_outside_days.attempts+1 RETURNING attempts INTO outside_count;
   charge:=CASE WHEN outside_count>2 THEN 1 ELSE 0 END;
@@ -821,6 +854,39 @@ END $$;
 -- activated grants and legacy pending behavior are not rewritten.
 ALTER TABLE billing.email_access_grants ADD COLUMN acceptance_required boolean NOT NULL DEFAULT false;
 ALTER TABLE billing.email_access_grants ALTER COLUMN acceptance_required SET DEFAULT true;
+ALTER TABLE billing.email_access_grants ADD COLUMN grant_kind text NOT NULL DEFAULT 'comprehensive'
+ CHECK(grant_kind IN ('comprehensive','single_curriculum'));
+ALTER TABLE billing.email_access_grants ADD CONSTRAINT email_access_single_curriculum_scope
+ CHECK(grant_kind<>'single_curriculum' OR (scope_mode='selected' AND cardinality(catalogues)=1 AND catalogues[1]<>'ai:pro'));
+-- Preserve the existing admin-only command, idempotency, mail opt-in and audit.
+-- Each request remains independent: no uniqueness constraint on recipient email.
+DO $$ DECLARE d text; needle text; BEGIN
+ d:=pg_get_functiondef('public.email_access_command(text,jsonb)'::regprocedure);
+ needle:='v_user uuid; v_invite boolean; v_locale text;';
+ IF position(needle IN d)=0 THEN RAISE EXCEPTION 'COMMERCIAL_INVITATION_COMMAND_BASELINE_CHANGED'; END IF;
+ d:=replace(d,needle,needle||' v_kind text;');
+ d:=replace(d,'listed.id,listed.recipient_email,listed.scope_mode,',
+  'listed.id,listed.recipient_email,listed.grant_kind,CASE WHEN listed.grant_kind=''single_curriculum'' THEN 100 ELSE 300 END AS monthly_questions,listed.scope_mode,');
+ d:=replace(d,'v_email:=lower(btrim(p_data->>''email'')); v_scope:=p_data->>''scope_mode'';',
+  'v_kind:=coalesce(p_data->>''grant_kind'',''comprehensive''); v_email:=lower(btrim(p_data->>''email'')); v_scope:=p_data->>''scope_mode'';');
+ d:=replace(d,'IF v_email IS NULL OR length(v_email)>254',
+  'IF v_kind NOT IN (''comprehensive'',''single_curriculum'') OR v_email IS NULL OR length(v_email)>254');
+ d:=replace(d,'IF (v_scope=''all_published'' AND cardinality(v_catalogues)<>0)',
+  'IF (v_kind=''single_curriculum'' AND (v_scope<>''selected'' OR cardinality(v_catalogues)<>1 OR v_catalogues[1]=''ai:pro'')) OR (v_scope=''all_published'' AND cardinality(v_catalogues)<>0)');
+ d:=replace(d,'v_params:=jsonb_build_object(''email'',v_email,''scope_mode'',v_scope,',
+  'v_params:=jsonb_build_object(''grant_kind'',v_kind,''email'',v_email,''scope_mode'',v_scope,');
+ d:=replace(d,'IF g.parameters<>v_params THEN',
+  'IF (jsonb_build_object(''grant_kind'',''comprehensive'')||g.parameters)<>v_params THEN');
+ d:=replace(d,'email_access_grants(recipient_email,scope_mode,catalogues,duration_days,created_by,request_key,parameters)',
+  'email_access_grants(recipient_email,scope_mode,catalogues,duration_days,created_by,request_key,parameters,grant_kind)');
+ d:=replace(d,'VALUES(v_email,v_scope,v_catalogues,v_duration,actor,v_key,v_params)',
+  'VALUES(v_email,v_scope,v_catalogues,v_duration,actor,v_key,v_params,v_kind)');
+ EXECUTE d;
+ d:=pg_get_functiondef('public.email_access_mail(text,jsonb)'::regprocedure);
+ needle:='''payload'',jsonb_build_object(''locale'',m.locale,''scope_mode'',g.scope_mode,';
+ IF position(needle IN d)=0 THEN RAISE EXCEPTION 'COMMERCIAL_INVITATION_MAIL_BASELINE_CHANGED'; END IF;
+ EXECUTE replace(d,needle,'''payload'',jsonb_build_object(''grant_kind'',g.grant_kind,''locale'',m.locale,''scope_mode'',g.scope_mode,');
+END $$;
 DO $$ DECLARE d text; needle text:='WHERE recipient_email=v_email AND user_id IS NULL AND revoked_at IS NULL ORDER BY id FOR UPDATE'; BEGIN
  d:=pg_get_functiondef('billing.email_access_activate(uuid)'::regprocedure);
  IF position(needle IN d)=0 THEN RAISE EXCEPTION 'COMMERCIAL_INVITATION_BASELINE_CHANGED'; END IF;
@@ -830,7 +896,8 @@ CREATE FUNCTION public.get_my_commercial_invitations() RETURNS jsonb LANGUAGE pl
 DECLARE email text;
 BEGIN
  email:=billing.commerce_assert_identity(auth.uid());
- RETURN coalesce((SELECT jsonb_agg(jsonb_build_object('id',g.id,'scope_mode',g.scope_mode,'catalogues',g.catalogues,
+ RETURN coalesce((SELECT jsonb_agg(jsonb_build_object('id',g.id,'grant_kind',g.grant_kind,
+ 'monthly_questions',CASE WHEN g.grant_kind='single_curriculum' THEN 100 ELSE 300 END,'scope_mode',g.scope_mode,'catalogues',g.catalogues,
  'duration_days',g.duration_days,'accepted_at',g.activated_at,'ends_at',g.ends_at,
  'catalogue_details',(SELECT coalesce(jsonb_agg(c),'[]'::jsonb) FROM jsonb_array_elements(billing.email_access_catalogues()) c
    WHERE g.scope_mode='all_published' OR (c->>'id')=ANY(g.catalogues))) ORDER BY g.created_at)

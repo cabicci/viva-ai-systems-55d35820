@@ -128,7 +128,9 @@ function AcademicPricing() {
         <section className="container mx-auto max-w-3xl px-4 py-12">
           <article className="rounded-3xl border border-primary/30 bg-card p-7">
             <h2 className="text-2xl font-black">{text.title}</h2>
-            <p className="my-5 leading-relaxed text-muted-foreground">{text.details}</p>
+            <ul className="my-5 list-disc ps-5 leading-relaxed text-muted-foreground">
+              <li>{text.details}</li>
+            </ul>
             <PlanPrices plan="pro_plus" />
             <PlanAllowance />
             {!released ? (

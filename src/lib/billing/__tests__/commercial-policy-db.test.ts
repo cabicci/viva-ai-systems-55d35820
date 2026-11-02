@@ -12,6 +12,8 @@ const admin = "99999999-9999-4999-8999-999999999999";
 const fingerprint = "a".repeat(64);
 let sequence = 0;
 const uuid = () => `aaaaaaaa-aaaa-4aaa-8aaa-${String(++sequence).padStart(12, "0")}`;
+const emailAccessSql = readFileSync("scripts/email-access/email-access-candidate.sql", "utf8").replaceAll("\r\n", "\n");
+const installedEmailFunction = (start: string, end: string) => emailAccessSql.slice(emailAccessSql.indexOf(start), emailAccessSql.indexOf(end, emailAccessSql.indexOf(start)));
 
 // Only pre-existing dependencies are fixtures. The complete actual forward
 // migration, its locking/selection/RLS/functions and every new table run in PG.
@@ -68,14 +70,18 @@ const baseline = `
  INSERT INTO public.card_assistant_policy(area,card_id,questions_per_hour) VALUES('kids','level-1',20),('technical','furniture',20);
  CREATE TABLE public.card_assistant_steps(area text,card_id text,step_id text,source_key text,kids_level text,kids_lesson int,technical_lesson text);
  INSERT INTO public.card_assistant_steps VALUES('kids','level-1','3','level-1:3','level-1',3,NULL),('technical','furniture','step','M01-L02',NULL,NULL,'M01-L02');
- CREATE TABLE billing.email_access_grants(id uuid primary key default gen_random_uuid(),recipient_email text,scope_mode text,catalogues text[],duration_days int,user_id uuid,activated_at timestamptz,ends_at timestamptz,revoked_at timestamptz,created_at timestamptz default now());
- CREATE TABLE billing.email_access_audit(grant_id uuid,actor uuid,action text);
- CREATE FUNCTION billing.email_access_catalogues() RETURNS jsonb LANGUAGE sql AS $$SELECT '[{"id":"ai:pro","title":"AI Pro","titles":{"ar-EG":"الذكاء الاصطناعي"}},{"id":"academic:AC-BUS","title":"Business"}]'::jsonb$$;
+ CREATE TABLE billing.email_access_grants(id uuid primary key default gen_random_uuid(),recipient_email text,scope_mode text,catalogues text[],duration_days int,user_id uuid,activated_at timestamptz,ends_at timestamptz,revoked_at timestamptz,created_at timestamptz default now(),created_by uuid,request_key uuid unique default gen_random_uuid(),parameters jsonb default '{}');
+ CREATE TABLE billing.email_access_audit(id uuid primary key default gen_random_uuid(),grant_id uuid,actor uuid,action text,request_key uuid unique,details jsonb default '{}',created_at timestamptz default now());
+ CREATE TABLE billing.email_access_mail(id uuid primary key,locale text,status text default 'pending',claim_token uuid,lease_until timestamptz,first_attempt_at timestamptz,attempts int default 0,provider_id text,created_at timestamptz default now());
+ CREATE FUNCTION billing.email_access_catalogues() RETURNS jsonb LANGUAGE sql AS $$SELECT '[{"id":"ai:pro","title":"AI Pro","titles":{"ar-EG":"الذكاء الاصطناعي"}},{"id":"ai:pro_plus","title":"AI"},{"id":"academic:AC-BUS","title":"Business"},{"id":"academic:AC-OTHER","title":"Other"},{"id":"technical:furniture","title":"Technical"},{"id":"kids","title":"Kids"}]'::jsonb$$;
+ ${installedEmailFunction("CREATE FUNCTION billing.email_access_has(", "CREATE FUNCTION billing.email_access_activate(")}
  CREATE FUNCTION billing.email_access_activate(p_user uuid) RETURNS integer LANGUAGE plpgsql AS $$DECLARE v_email text; g record; BEGIN SELECT email INTO v_email FROM auth.users WHERE id=p_user; FOR g IN SELECT * FROM billing.email_access_grants WHERE recipient_email=v_email AND user_id IS NULL AND revoked_at IS NULL ORDER BY id FOR UPDATE LOOP UPDATE billing.email_access_grants SET user_id=p_user,activated_at=now() WHERE id=g.id; END LOOP; RETURN 0; END$$;
  CREATE FUNCTION billing.evaluate_access(p_user_id uuid,p_resource_type text,p_resource_id text) RETURNS jsonb LANGUAGE sql AS $$SELECT jsonb_build_object('allowed',billing.commerce_account_allowed(p_user_id) AND (p_resource_id='intro-m1-l1-what-is-ai' OR EXISTS(SELECT 1 FROM billing.subscriptions WHERE user_id=p_user_id AND current_period_end>now()) OR EXISTS(SELECT 1 FROM billing.email_access_grants WHERE user_id=p_user_id AND activated_at<=now() AND (ends_at IS NULL OR ends_at>now()) AND revoked_at IS NULL)))$$;
  CREATE FUNCTION public.academic_can_access(p_course text,p_lesson text,p_locale text) RETURNS boolean LANGUAGE sql AS $$SELECT billing.commerce_account_allowed(auth.uid()) AND (EXISTS(SELECT 1 FROM billing.academic_stripe_subscriptions WHERE user_id=auth.uid() AND ends_at>now() AND NOT refunded) OR EXISTS(SELECT 1 FROM billing.email_access_grants WHERE user_id=auth.uid() AND activated_at<=now() AND (ends_at IS NULL OR ends_at>now()) AND revoked_at IS NULL AND (scope_mode='all_published' OR ('academic:'||p_course)=ANY(catalogues))))$$;
- CREATE FUNCTION public.technical_can_access(text) RETURNS boolean LANGUAGE sql AS $$SELECT EXISTS(SELECT 1 FROM billing.technical_stripe_subscriptions WHERE user_id=auth.uid() AND ends_at>now() AND NOT refunded)$$;
- CREATE FUNCTION public.kids_can_access_lesson(uuid,text,int,text) RETURNS boolean LANGUAGE sql AS $$SELECT public.kids_profile_has_consent($1) AND EXISTS(SELECT 1 FROM public.kids_family_entitlements WHERE parent_id=auth.uid() AND active_until>now())$$;
+ CREATE FUNCTION public.technical_can_access(text) RETURNS boolean LANGUAGE sql AS $$SELECT billing.email_access_has(auth.uid(),'technical:furniture') OR EXISTS(SELECT 1 FROM billing.technical_stripe_subscriptions WHERE user_id=auth.uid() AND ends_at>now() AND NOT refunded)$$;
+ CREATE FUNCTION public.kids_can_access_lesson(uuid,text,int,text) RETURNS boolean LANGUAGE sql AS $$SELECT public.kids_profile_has_consent($1) AND (billing.email_access_has(auth.uid(),'kids') OR EXISTS(SELECT 1 FROM public.kids_family_entitlements WHERE parent_id=auth.uid() AND active_until>now()))$$;
+ ${installedEmailFunction("CREATE FUNCTION public.email_access_command(", "-- Compose with each existing access authority;")}
+ ${installedEmailFunction("CREATE FUNCTION public.email_access_mail(", "CREATE OR REPLACE FUNCTION public.lc09_advance_deletion(")}
  CREATE FUNCTION public.lc09_advance_deletion(uuid,uuid,text) RETURNS jsonb LANGUAGE sql AS $$SELECT '{}'::jsonb$$;
  CREATE FUNCTION public.lc09_complete_financial_purge(uuid,uuid,boolean DEFAULT false) RETURNS jsonb LANGUAGE sql AS $$SELECT '{}'::jsonb$$;
  INSERT INTO auth.users(id,email,email_confirmed_at) VALUES('${user}','one@example.invalid',now()-interval '5 days'),('${other}','two@example.invalid',now()),('${admin}','admin@example.invalid',now());
@@ -327,5 +333,90 @@ describe("owner commercial policy, actual SQL in disposable PostgreSQL", () => {
   expect(await value("SELECT response AS v FROM billing.assistant_requests WHERE request_id=$1",[id])).toBeNull();
   expect(await value("SELECT public.settle_assistant_question($1,$2,$3,'system_failure',$4) AS v",[admin,id,fingerprint,JSON.stringify({status:503,body:{error:"Access changed"}})])).toMatchObject({charged_units:0});
  });
+
+ it("gives the verified administrator unlimited nonbillable questions in all four areas without any question counters", async () => {
+  await db.query("SELECT set_config('request.jwt.claim.sub',$1,false)",[admin]);
+  expect(await value("SELECT public.academic_assistant_access('AC-BUS','L1','ar-EG') AS v")).toBe("admin");
+  expect(await value("SELECT public.assistant_card_content_access($1,'business') AS v",[admin])).toMatchObject({admin_review:true});
+  expect(await value("SELECT public.card_assistant_access('kids','level-1','3','ar-EG',$1) AS v",[admin])).toBe(true);
+  expect(await value("SELECT public.card_assistant_access('technical','furniture','step','ar-EG',NULL) AS v")).toBe(true);
+  const scopes: [string,string,string,string|null][]=[['ai','ai','business-m1-l2-paid',null],['academic','AC-BUS','L1',null],['technical','furniture','M01-L02',null],['kids','kids','level-1:3',admin]];
+  const expected={access_allowed:true,admin_review:true,unlimited:true,monthly_remaining:0,purchased_remaining:0};
+  const pending:string[]=[];
+  for (const [area,course,lesson,profile] of scopes) {
+   // Exceed every previous hourly threshold before making the real request.
+   await db.query(`INSERT INTO billing.assistant_requests(user_id,request_id,fingerprint,area,course,lesson,locale,child_id,wallet_scope,funding,state,outcome,charged_units)
+    SELECT $1,gen_random_uuid(),$2,$3,$4,$5,'ar-EG',$6,CASE WHEN $3='kids' THEN 'family' ELSE 'account' END,'review','settled','answered',0 FROM generate_series(1,60)`,[admin,fingerprint,area,course,lesson,profile]);
+   expect(await value("SELECT public.assistant_question_balance($1,$2,$3,$4) AS v",[admin,area,course,profile])).toEqual(expected);
+   for(const outcome of ['answered','out_of_scope']) {
+    const id=uuid();
+    expect(await value("SELECT public.reserve_assistant_question($1,$2,$3,$4,'ar-EG',$5,$6,$7) AS v",[admin,area,course,lesson,profile,id,fingerprint])).toMatchObject({allowed:true,balance:expected});
+    expect(await value("SELECT public.settle_assistant_question($1,$2,$3,$4,$5) AS v",[admin,id,fingerprint,outcome,JSON.stringify({status:200,body:{answer:'Admin answer'},proof:[{lessonId:lesson}]})])).toMatchObject({charged_units:0,balance:expected});
+   }
+   const id=uuid();pending.push(id);
+   await value("SELECT public.reserve_assistant_question($1,$2,$3,$4,'ar-EG',$5,$6,$7) AS v",[admin,area,course,lesson,profile,id,fingerprint]);
+  }
+  for(const table of ['assistant_allowance_periods','assistant_outside_days','ai_credit_ledger'])
+   expect(await value(`SELECT count(*)::int AS v FROM billing.${table} WHERE user_id=$1`,[admin])).toBe(0);
+  await db.exec("CREATE OR REPLACE FUNCTION public.has_role(uuid,public.app_role) RETURNS boolean LANGUAGE sql AS $$SELECT false$$");
+  for(const id of pending) await expect(db.query("SELECT public.settle_assistant_question($1,$2,$3,'answered',$4)",[admin,id,fingerprint,JSON.stringify({status:200,body:{answer:'No longer allowed'}})])).rejects.toThrow("REVIEW_ACCESS_CHANGED");
+  for(const [area,course,,profile] of scopes) expect(await value("SELECT public.assistant_question_balance($1,$2,$3,$4) AS v",[admin,area,course,profile])).toMatchObject({unlimited:false,admin_review:false});
+ },15000);
+
+ it("adds independent 300-question invitations for one email and preserves each acceptance anniversary and revocation", async () => {
+  await db.query("SELECT set_config('request.jwt.claim.sub',$1,false)",[admin]);
+  const ids:string[]=[];
+  for(let i=0;i<2;i++) {
+   const data={key:uuid(),email:'one@example.invalid',grant_kind:'comprehensive',scope_mode:'selected',catalogues:['ai:pro_plus'],duration_days:90};
+   const created=await value("SELECT public.email_access_command('create',$1) AS v",[JSON.stringify(data)]);ids.push(created.id);
+   expect(await value("SELECT public.email_access_command('create',$1) AS v",[JSON.stringify(data)])).toEqual(created);
+  }
+  expect(ids[0]).not.toBe(ids[1]);
+  await db.query("SELECT set_config('request.jwt.claim.sub',$1,false)",[user]);
+  for(const id of ids) await value("SELECT public.accept_commercial_invitation($1) AS v",[id]);
+  await db.query("UPDATE billing.email_access_grants SET activated_at=now()-interval '2 months 3 days',ends_at=now()+interval '20 days' WHERE id=$1",[ids[0]]);
+  expect(await value("SELECT public.assistant_question_balance($1,'ai','ai',NULL) AS v",[user])).toMatchObject({monthly_remaining:600});
+  expect(await value("SELECT count(DISTINCT starts_at)::int AS v FROM billing.assistant_allowance_periods WHERE user_id=$1",[user])).toBe(2);
+  await db.query("INSERT INTO billing.subscriptions VALUES($1,$2,'cccccccc-cccc-4ccc-8ccc-cccccccccccc',NULL,'paid_active',now(),now()+interval '29 days',now())",[uuid(),user]);
+  expect(await value("SELECT public.assistant_question_balance($1,'ai','ai',NULL) AS v",[user])).toMatchObject({monthly_remaining:750});
+  await db.query("UPDATE billing.email_access_grants SET ends_at=now()-interval '1 second' WHERE id=$1",[ids[0]]);
+  expect(await value("SELECT public.assistant_question_balance($1,'ai','ai',NULL) AS v",[user])).toMatchObject({monthly_remaining:450});
+  await db.query("UPDATE billing.email_access_grants SET revoked_at=now() WHERE id=$1",[ids[1]]);
+  expect(await value("SELECT public.assistant_question_balance($1,'ai','ai',NULL) AS v",[user])).toMatchObject({monthly_remaining:150});
+ });
+
+ it("grants single-curriculum invitations 100 monthly without subscriptions and shares the Kids invitation across owned children", async () => {
+  await db.query("SELECT set_config('request.jwt.claim.sub',$1,false)",[admin]);
+  const ids:Record<string,string>={};
+  for(const catalogue of ['academic:AC-BUS','academic:AC-OTHER','ai:pro_plus','technical:furniture','kids']) {
+   const data={key:uuid(),email:'one@example.invalid',grant_kind:'single_curriculum',scope_mode:'selected',catalogues:[catalogue],duration_days:90,invitation:true};
+   ids[catalogue]=(await value("SELECT public.email_access_command('create',$1) AS v",[JSON.stringify(data)])).id;
+  }
+  for(const catalogues of [['ai:pro'],['academic:AC-BUS','academic:AC-OTHER']])
+   await expect(db.query("SELECT public.email_access_command('create',$1)",[JSON.stringify({key:uuid(),email:'one@example.invalid',grant_kind:'single_curriculum',scope_mode:'selected',catalogues})])).rejects.toThrow('INVALID_SCOPE');
+  const mailed=await value("SELECT public.email_access_mail('claim','{}') AS v");
+  expect(mailed).toHaveLength(5);expect(mailed.every((x:any)=>x.payload.grant_kind==='single_curriculum')).toBe(true);
+  const listed=await value("SELECT public.email_access_command('list','{}') AS v");
+  expect(listed.grants.every((x:any)=>x.grant_kind==='single_curriculum'&&x.monthly_questions===100)).toBe(true);
+  await db.query("SELECT set_config('request.jwt.claim.sub',$1,false)",[user]);
+  expect((await value("SELECT public.get_my_commercial_invitations() AS v")).every((x:any)=>x.monthly_questions===100)).toBe(true);
+  await value("SELECT public.accept_commercial_invitation($1) AS v",[ids['academic:AC-BUS']]);
+  expect(await value("SELECT public.assistant_question_balance($1,'academic','AC-BUS',NULL) AS v",[user])).toMatchObject({access_allowed:true,monthly_remaining:100});
+  expect(await value("SELECT public.assistant_question_balance($1,'academic','AC-OTHER',NULL) AS v",[user])).toMatchObject({access_allowed:false,monthly_remaining:0});
+  for(const [catalogue,id] of Object.entries(ids)) if(catalogue!=='academic:AC-BUS') await value("SELECT public.accept_commercial_invitation($1) AS v",[id]);
+  const scopes:[string,string,string,string|null][]=[['ai','ai','business-m1-l2-paid',null],['academic','AC-BUS','L1',null],['academic','AC-OTHER','L1',null],['technical','furniture','M01-L02',null],['kids','kids','level-1:3',child]];
+  for(const [area,course,lesson,profile] of scopes) {
+   expect(await value("SELECT public.assistant_question_balance($1,$2,$3,$4) AS v",[user,area,course,profile])).toMatchObject({access_allowed:true,unlimited:false,monthly_remaining:100});
+   const id=uuid();await reserve(id,area,course,lesson,profile);expect(await settle(id,'answered',lesson)).toMatchObject({charged_units:1,balance:{monthly_remaining:99}});
+  }
+  expect(await value("SELECT public.assistant_question_balance($1,'kids','kids',$2) AS v",[user,child2])).toMatchObject({monthly_remaining:99});
+  expect(await value("SELECT public.assistant_question_balance($1,'kids','kids',$2) AS v",[other,child])).toMatchObject({access_allowed:false});
+  await db.query("UPDATE billing.email_access_grants SET activated_at=now()-interval '2 months 3 days' WHERE id=$1",[ids['academic:AC-BUS']]);
+  expect(await value("SELECT public.assistant_question_balance($1,'academic','AC-BUS',NULL) AS v",[user])).toMatchObject({monthly_remaining:100});
+  await db.query("UPDATE billing.email_access_grants SET revoked_at=now() WHERE id=$1",[ids['academic:AC-BUS']]);
+  expect(await value("SELECT public.assistant_question_balance($1,'academic','AC-BUS',NULL) AS v",[user])).toMatchObject({access_allowed:false});
+  expect(await value("SELECT public.assistant_question_balance($1,'academic','AC-OTHER',NULL) AS v",[user])).toMatchObject({monthly_remaining:99});
+  expect(await value("SELECT count(*)::int AS v FROM billing.subscriptions WHERE user_id=$1",[user])).toBe(0);
+ },15000);
 
 });

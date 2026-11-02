@@ -6,6 +6,8 @@ const owner = z.object({ expectedAccountId: z.string().uuid() }).strict();
 export type CommercialInvitation = {
   id: string;
   scope_mode: string;
+  grant_kind?: "comprehensive" | "single_curriculum";
+  monthly_questions?: 100 | 300;
   catalogues: string[];
   catalogue_details?: { id: string; title: string; titles?: Record<string, string> }[];
   duration_days: number | null;

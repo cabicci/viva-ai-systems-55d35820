@@ -47,6 +47,8 @@ const copy = {
       "Subscription coupons do not apply to question top-ups. Select top-ups explicitly to discount them.",
     invitation:
       "The invitation starts when accepted. Choose a duration or no expiry. It includes one shared allowance of 300 questions per month across its granted curricula, in addition to any paid allowance.",
+    invitationSingle:
+      "One published curriculum includes 100 questions each month while the invitation is valid, renewed on the acceptance anniversary. For Kids, the invitation’s 100 questions are shared across the recipient’s children; they are not multiplied per child.",
   },
   "ar-EG": {
     included: "المساعد داخل الباقة: ٣٠٠ سؤال كل شهر لكل منهج مشترك فيه، من غير حد لكل درس.",
@@ -89,6 +91,8 @@ const copy = {
       "كوبون الاشتراك مش بيسري على الأسئلة الإضافية. اختار رصيد الأسئلة صراحةً عشان الخصم يسري عليه.",
     invitation:
       "الدعوة بتبدأ من قبولها. اختار مدة أو من غير نهاية. معاها حصة واحدة مشتركة من ٣٠٠ سؤال كل شهر للمناهج الممنوحة، زيادة على أي حصة من اشتراك مدفوع.",
+    invitationSingle:
+      "دعوة منهج واحد معاها ١٠٠ سؤال كل شهر طول ما الدعوة سارية، وبتتجدد في نفس يوم قبولها. في كيدز، الـ١٠٠ سؤال بتتشارك بين أطفال صاحب الدعوة، ومش بتتكرر لكل طفل.",
   },
   "ar-MSA": {
     included: "المساعد مشمول: ٣٠٠ سؤال شهريًا لكل منهج مشترك فيه، دون حد لكل درس.",
@@ -130,6 +134,8 @@ const copy = {
       "لا يسري كوبون الاشتراك على الأسئلة الإضافية. يجب تخصيص الكوبون صراحةً لرصيد الأسئلة ليشمله الخصم.",
     invitation:
       "تبدأ الدعوة عند قبولها. اختر مدة محددة أو دون تاريخ انتهاء. تشمل حصة مشتركة واحدة من ٣٠٠ سؤال شهريًا للمناهج الممنوحة، بالإضافة إلى أي حصة من اشتراك مدفوع.",
+    invitationSingle:
+      "تشمل دعوة المنهج الواحد ١٠٠ سؤال شهريًا طوال سريانها، وتتجدد في يوم قبول الدعوة من كل شهر. في محتوى الأطفال، تُشارك الحصة بين أطفال المستفيد ولا تتضاعف بعددهم.",
   },
   "ar-Gulf": {
     included: "المساعد مشمول: ٣٠٠ سؤال كل شهر لكل منهج مشترك فيه، بدون حد لكل درس.",
@@ -172,6 +178,8 @@ const copy = {
       "كوبون الاشتراك ما يشمل الأسئلة الإضافية. اختر رصيد الأسئلة صراحةً عشان يشمله الخصم.",
     invitation:
       "الدعوة تبدأ من قبولها. اختر مدة أو بدون تاريخ انتهاء. تشمل حصة مشتركة واحدة من ٣٠٠ سؤال كل شهر للمناهج الممنوحة، بالإضافة لأي حصة من اشتراك مدفوع.",
+    invitationSingle:
+      "دعوة المنهج الواحد تشمل ١٠٠ سؤال كل شهر طول ما الدعوة سارية، وتتجدد في نفس يوم قبولها. في كيدز، الحصة مشتركة بين أطفال صاحب الدعوة وما تتضاعف بعددهم.",
   },
 } satisfies Record<SupportedLocale, Record<string, string>>;
 

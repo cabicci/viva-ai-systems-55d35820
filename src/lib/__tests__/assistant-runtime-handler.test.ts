@@ -281,7 +281,7 @@ describe("current-card isolation and content entitlement", () => {
     expect(callCounts(deps)).toMatchObject({ embed: 0, retrieve: 0, llm: 0 });
   });
 
-  it("preserves trusted eligible-admin review within the current card and still reserves AI quota", async () => {
+  it("preserves trusted admin source scope while recording a nonbillable request without question limits", async () => {
     const sample = loadRegisteredSample();
     const foreign = loadRegisteredSample(artifacts.find((c) => c.locale === "en" && c.trackId === "builder")!.chunkId);
     const billing = createDefaultBillingRpc();
@@ -298,7 +298,7 @@ describe("current-card isolation and content entitlement", () => {
     expect(billingCallNames(deps)).toContain("reserve_assistant_question");
   });
 
-  it("cannot bypass AI grant/quota denial using server admin review", async () => {
+  it("still fails closed when the canonical ledger rejects an administrator request", async () => {
     const deps = buildDeps({ billingRpc: vi.fn(async (name, body) => name === "assistant_card_content_access"
       ? entitlementSnapshot([], String(body.p_card_id), true)
       : { ok: false as const, status: 403, error: "AI_ACCESS_DENIED" }) });
@@ -811,7 +811,7 @@ describe("handleAssistantRuntimeRequest — rate limiting and provider gating", 
     );
     expect(res.status).toBe(429);
     expect((deps.callLlm as ReturnType<typeof vi.fn>).mock.calls.length).toBe(0);
-    expect(deps.billingRpc as ReturnType<typeof vi.fn>).not.toHaveBeenCalled();
+    expect(billingCallNames(deps)).toEqual(["assistant_card_content_access"]);
   });
 
   it("reuses the one existing OpenAI key for embedding and grounded generation", async () => {
@@ -916,5 +916,30 @@ describe("shared question ledger wiring", () => {
     const response = await handleAssistantRuntimeRequest(request(), deps);
     expect(response.status).toBe(503);
     expect((await response.json()).answer).toBeUndefined();
+  });
+});
+
+describe("protected administrator unlimited assistant", () => {
+  it("skips hourly, daily and monthly question buckets after protected role verification", async () => {
+    const sample = loadRegisteredSample();
+    const base = createDefaultBillingRpc();
+    const deps = buildDeps({
+      consumeRateLimit: vi.fn(async () => ({ allowed: false, resetAt: FIXED_NOW.toISOString() })),
+      billingRpc: vi.fn(async (name, args) => name === "assistant_card_content_access"
+        ? entitlementSnapshot([], String(args.p_card_id), true) : base(name, args)),
+      localeSemanticRetrieve: vi.fn(async () => ({ ok: true as const, chunks: [sample] })),
+    });
+    const result = await handleAssistantRuntimeRequest(buildRequest({ query: "Explain this", learnerContext: { locale: "en", currentPath: "analyst" } }), deps);
+    expect(result.status).toBe(200);
+    expect(deps.consumeRateLimit).not.toHaveBeenCalled();
+    expect(billingCallNames(deps)).toContain("reserve_assistant_question");
+    expect(billingCallNames(deps)).toContain("settle_assistant_question");
+  });
+  it("cannot skip question limits with browser-provided administrator flags", async () => {
+    const deps = buildDeps({ consumeRateLimit: vi.fn(async () => ({ allowed: false, resetAt: FIXED_NOW.toISOString() })) });
+    const result = await handleAssistantRuntimeRequest(buildRequest({ query: "Explain this", isAdmin: true, admin_review: true, unlimited: true,
+      learnerContext: { locale: "en", currentPath: "analyst" } }), deps);
+    expect(result.status).toBe(429);expect(deps.consumeRateLimit).toHaveBeenCalledOnce();
+    expect(deps.callLlm).not.toHaveBeenCalled();
   });
 });

@@ -1,11 +1,14 @@
 import { z } from "zod";
 
 const catalogue = z.string().min(1).max(100);
+export const isWholeCurriculumCatalogue = (id: string) =>
+  /^(ai:pro_plus|kids|technical:[^:]+|academic:[^:]+)$/.test(id);
 const create = z.object({
   action: z.literal("create"),
   data: z
     .object({
       email: z.string().trim().email().max(254),
+      grant_kind: z.enum(["comprehensive", "single_curriculum"]).optional(),
       scope_mode: z.enum(["all_published", "selected"]),
       catalogues: z.array(catalogue).max(100),
       duration_days: z.number().int().min(1).max(36500).nullable(),
@@ -17,6 +20,14 @@ const create = z.object({
     .refine(
       (d) => (d.scope_mode === "selected" ? d.catalogues.length > 0 : d.catalogues.length === 0),
       "Invalid catalogue scope",
+    )
+    .refine(
+      (d) =>
+        d.grant_kind !== "single_curriculum" ||
+        (d.scope_mode === "selected" &&
+          d.catalogues.length === 1 &&
+          isWholeCurriculumCatalogue(d.catalogues[0])),
+      "Select exactly one whole curriculum",
     ),
 });
 export const emailAccessInput = z.discriminatedUnion("action", [
@@ -41,6 +52,8 @@ export type EmailAccessInput = z.infer<typeof emailAccessInput>;
 export type EmailAccessGrant = {
   id: string;
   recipient_email: string;
+  grant_kind?: "comprehensive" | "single_curriculum";
+  monthly_questions?: 100 | 300;
   scope_mode: "all_published" | "selected";
   catalogues: string[];
   duration_days: number | null;
@@ -69,6 +82,12 @@ export function emailAccessCopy(locale: string) {
         title: "Grant access by email",
         email: "Recipient email",
         scope: "Access scope",
+        grantKind: "Invitation type",
+        comprehensive: "Comprehensive invitation · 300 questions monthly",
+        single: "One curriculum · 100 questions monthly",
+        curriculum: "Choose one curriculum",
+        choose: "Select a published curriculum",
+        wholeAi: "Complete artificial intelligence curriculum",
         all: "All published lessons",
         selected: "Selected packages / catalogues",
         permanent: "Permanent",
@@ -78,7 +97,7 @@ export function emailAccessCopy(locale: string) {
         invitationLanguage: "Invitation language",
         create: "Grant access",
         saved: "Grant saved",
-        pending_registration: "Pending registration",
+        pending_registration: "Pending acceptance or registration",
         active: "Active",
         expired: "Expired",
         revoked: "Revoked",
@@ -90,7 +109,7 @@ export function emailAccessCopy(locale: string) {
         any: "All statuses",
         empty: "No grants",
         error: "Could not save or load grants. Refresh before retrying.",
-        note: "Starts after email verification. All published lessons includes future publications. Kids requires guardian consent and a child profile. AI usage limits and separate assistant add-ons still apply.",
+        note: "No paid subscription is required. Access and monthly questions start on acceptance and last only while the invitation is valid. You can send separate curriculum invitations to the same email. Kids consent and child profiles remain required.",
         activation: "Activated",
         expiry: "Expires",
         mail: "Invitation",
@@ -104,6 +123,12 @@ export function emailAccessCopy(locale: string) {
         title: "منح وصول بالبريد الإلكتروني",
         email: "بريد المستفيد",
         scope: "نطاق الوصول",
+        grantKind: "نوع الدعوة",
+        comprehensive: "دعوة شاملة · ٣٠٠ سؤال شهريًا",
+        single: "منهج واحد · ١٠٠ سؤال شهريًا",
+        curriculum: "اختيار منهج واحد",
+        choose: "اختر منهجًا منشورًا",
+        wholeAi: "منهج الذكاء الاصطناعي كاملًا",
         all: "كل الدروس المنشورة",
         selected: "باكدجات / كتالوجات محددة",
         permanent: "دائم",
@@ -113,7 +138,7 @@ export function emailAccessCopy(locale: string) {
         invitationLanguage: "لغة الدعوة",
         create: "منح الوصول",
         saved: "تم حفظ المنحة",
-        pending_registration: "في انتظار التسجيل",
+        pending_registration: "بانتظار القبول أو التسجيل",
         active: "نشط",
         expired: "منتهي",
         revoked: "ملغى",
@@ -125,7 +150,7 @@ export function emailAccessCopy(locale: string) {
         any: "كل الحالات",
         empty: "لا توجد منح",
         error: "تعذر حفظ المنح أو تحميلها. حدّث القائمة قبل إعادة المحاولة.",
-        note: "تبدأ المدة بعد التحقق من البريد. كل الدروس المنشورة تشمل ما يُنشر لاحقًا. Kids يتطلب موافقة ولي الأمر وملف الطفل. تظل حدود الذكاء الاصطناعي وإضافات المساعد المنفصلة كما هي.",
+        note: "لا يلزم اشتراك مدفوع. يبدأ الوصول وحصة الأسئلة الشهرية عند قبول الدعوة، ويستمران فقط طوال سريانها. يمكن إرسال دعوات مناهج منفصلة للبريد نفسه. يظل محتوى الأطفال مرتبطًا بموافقة ولي الأمر وملفات الأطفال.",
         activation: "تاريخ التفعيل",
         expiry: "تاريخ الانتهاء",
         mail: "الدعوة",

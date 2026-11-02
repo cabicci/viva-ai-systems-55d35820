@@ -7,16 +7,25 @@ export function emailAccessInvitationContent(grant: {
   duration_days: number | null;
   recipient_email?: string;
   catalogue_titles?: Record<string, string>;
+  grant_kind?: "comprehensive" | "single_curriculum";
 }) {
   const locale = mailLocale(grant.locale),
     english = locale === "en";
+  const single = grant.grant_kind === "single_curriculum";
+  const questions = single ? (english ? "100" : "١٠٠") : english ? "300" : "٣٠٠";
   const scope =
     grant.scope_mode === "all_published"
       ? english
         ? "all published lessons, including future publications"
         : "كل الدروس المنشورة، بما فيها ما يُنشر لاحقًا"
       : grant.catalogues
-          .map((key) => catalogueLabel(key, locale, grant.catalogue_titles))
+          .map((key) =>
+            single && key === "ai:pro_plus"
+              ? english
+                ? "the complete artificial intelligence curriculum"
+                : "منهج الذكاء الاصطناعي كاملًا"
+              : catalogueLabel(key, locale, grant.catalogue_titles),
+          )
           .join(english ? ", " : "، ");
   const includesKids = grant.scope_mode === "all_published" || grant.catalogues.includes("kids");
   const kidsNote = includesKids
@@ -29,26 +38,26 @@ export function emailAccessInvitationContent(grant: {
       ? english
         ? "permanent"
         : "دائمة"
-      : grant.duration_days + (english ? " days from activation" : " يومًا من التفعيل");
+      : grant.duration_days + (english ? " days from acceptance" : " يومًا من قبول الدعوة");
   const copy = {
     "ar-EG": {
       subject: "دعوتك لدروس مسارات",
-      body: `الإدارة ادّتك وصول إلى ${scope} (${duration}). اعمل حساب بنفس الإيميل اللي وصلته الدعوة وأكّده، ولو عندك حساب بالفعل اختار تسجيل الدخول. الوصول بيتفعّل تلقائيًا من غير دفع أو كوبون. هذه المنحة تخص الدروس المذكورة ولا تشمل الخدمات الإضافية تلقائيًا.${kidsNote}`,
+      body: `الإدارة دعتك إلى ${scope} (${duration})، ومعاها ${questions} سؤال كل شهر طول ما الدعوة سارية. مش محتاج اشتراك مدفوع. اعمل حساب بنفس الإيميل وأكّده، أو سجّل دخولك لو عندك حساب، وبعدها اقبل الدعوة من حسابك. المدة بتبدأ من القبول، والأسئلة بتتجدد في نفس اليوم كل شهر من غير ترحيل. الحصة مشتركة للمناهج الممنوحة، ومش بتتكرر لكل طفل.${kidsNote}`,
       action: "إنشاء حساب",
     },
     "ar-MSA": {
       subject: "دعوتك للوصول إلى دروس مسارات",
-      body: `منحك المسؤول وصولًا إلى ${scope} (${duration}). أنشئ حسابًا بنفس البريد المستلم وتحقق منه، أو اختر تسجيل الدخول إن كان لديك حساب بالفعل. يتفعّل الوصول تلقائيًا دون دفع أو كوبون. هذه المنحة تخص الدروس المذكورة ولا تشمل الخدمات الإضافية تلقائيًا.${kidsNote}`,
+      body: `دعاك المسؤول إلى ${scope} (${duration})، مع ${questions} سؤال شهريًا طوال سريان الدعوة. لا يلزم اشتراك مدفوع. أنشئ حسابًا بالبريد المستلم وتحقق منه، أو سجّل الدخول إن كان لديك حساب، ثم اقبل الدعوة من حسابك. تبدأ المدة عند القبول، وتتجدد الأسئلة في اليوم نفسه من كل شهر دون ترحيل. الحصة مشتركة للمناهج الممنوحة ولا تتضاعف بعدد الأطفال.${kidsNote}`,
       action: "إنشاء حساب",
     },
     "ar-Gulf": {
       subject: "دعوتك لدروس مسارات",
-      body: `الإدارة منحتك وصول إلى ${scope} (${duration}). سوّ حساب بنفس الإيميل اللي وصلته الدعوة وأكّده، وإذا عندك حساب من قبل اختر تسجيل الدخول. الوصول يتفعّل تلقائيًا بدون دفع أو كوبون. هالمنحة تخص الدروس المذكورة وما تشمل الخدمات الإضافية تلقائيًا.${kidsNote}`,
+      body: `الإدارة دعتك إلى ${scope} (${duration})، ومعها ${questions} سؤال كل شهر طول ما الدعوة سارية. ما تحتاج اشتراك مدفوع. سوّ حساب بنفس الإيميل وأكّده، أو سجّل دخولك إذا عندك حساب، وبعدها اقبل الدعوة من حسابك. المدة تبدأ من القبول والأسئلة تتجدد في نفس اليوم كل شهر بدون ترحيل. الحصة مشتركة للمناهج الممنوحة وما تتضاعف بعدد الأطفال.${kidsNote}`,
       action: "إنشاء حساب",
     },
     en: {
       subject: "Your Masaarat lesson access invitation",
-      body: `An administrator granted you access to ${scope} (${duration}). Create an account using this recipient email and verify it, or choose Sign in if you already have an account. Access activates automatically, without payment or a coupon. This grant covers the listed lessons; additional services are not included automatically.${kidsNote}`,
+      body: `You are invited to ${scope} (${duration}), including ${questions} questions each month while this invitation is valid. No paid subscription is required. Create and verify an account using this email, or sign in to your existing account, then accept the invitation from your account. Its duration starts on acceptance; questions renew on that day each month and do not roll over. This is one shared allowance for the granted curricula, not a separate allowance per child.${kidsNote}`,
       action: "Create your account",
     },
   }[locale];

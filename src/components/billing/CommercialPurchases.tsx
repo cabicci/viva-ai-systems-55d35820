@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/lib/auth-context";
 import { useLocale } from "@/lib/locale/locale-context";
 import { commercialCopy } from "@/lib/billing/commercial-copy";
+import { packageBenefits } from "@/lib/billing/package-benefits";
 import { normalizeOfferPhone } from "@/lib/commerce/offer-input";
 import {
   BillingUnavailableError,
@@ -108,8 +109,12 @@ export function CommercialPurchases({ area }: { area: Area }) {
         <article className="space-y-4 rounded-2xl border bg-card p-6">
           <h2 className="text-xl font-bold">{w.lifetime}</h2>
           <p className="text-2xl font-black">{w.lifetimePrice}</p>
-          <p className="text-sm leading-relaxed text-muted-foreground">{w.lifetimeDetail}</p>
-          {selectedArea === "kids" && <p className="text-sm leading-relaxed">{w.childDetail}</p>}
+          <ul className="list-disc space-y-2 ps-5 text-sm leading-relaxed text-muted-foreground">
+            {packageBenefits(locale).lifetime.map((line) => (
+              <li key={line}>{line}</li>
+            ))}
+            {selectedArea === "kids" && <li>{w.childDetail}</li>}
+          </ul>
           {user && (
             <>
               <label className="block">
@@ -183,8 +188,12 @@ export function CommercialPurchases({ area }: { area: Area }) {
         <article className="space-y-4 rounded-2xl border bg-card p-6">
           <h2 className="text-xl font-bold">{w.topup}</h2>
           <p className="text-2xl font-black">{w.topupPrice}</p>
-          <p className="text-sm leading-relaxed text-muted-foreground">{w.topupDetail}</p>
-          {area === "kids" && <p className="text-sm leading-relaxed">{w.familyTopup}</p>}
+          <ul className="list-disc space-y-2 ps-5 text-sm leading-relaxed text-muted-foreground">
+            {packageBenefits(locale).topup.map((line) => (
+              <li key={line}>{line}</li>
+            ))}
+            {area === "kids" && <li>{w.familyTopup}</li>}
+          </ul>
           {user && (
             <label className="block">
               {w.coupon}

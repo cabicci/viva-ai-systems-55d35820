@@ -28,3 +28,5 @@ branch: codex/packages-policy-20261102
 summary: Prepare approved plan quotas, anniversary resets, shared family credit, exact curriculum lifetime access, invitation acceptance, coupon durations, and verified one-time payment fulfillment in the existing repository. Stripe LIVE catalogue only: two authorized missing product prices were created and read back; no customer payment or subscription was changed. Local checks are in progress. No merge, database migration, or site publication has been performed.
 
 This is an offline continuation entry for the existing integration item. It does not claim a production roadmap update or completed deployment. Synchronize the production roadmap during the separately reviewed release.
+
+Owner follow-up: protected administrators have unlimited assistant questions across all curricula. Email grants do not require a paid subscription; multiple simultaneous grants are allowed, each retaining its own term and monthly pool. Comprehensive grants provide 300 questions; a new single-curriculum grant provides 100 questions each month while valid. These follow-ups are part of the same branch and review boundary.

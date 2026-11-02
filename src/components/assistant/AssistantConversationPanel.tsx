@@ -344,7 +344,7 @@ function Conversation({ frame, cardTitle, ask, onCitation, compact }: AssistantC
     try { observeEager(callback({ ...citation })); } catch (error) { observeEager(error);/* A caller cannot revive a retired conversation. */ }
   }
   return <section aria-label={copy.title} dir={scope?.locale === "en" ? "ltr" : "rtl"} className={compact ? "space-y-3" : "space-y-4"}>
-    {ready && scope && account && <AssistantUsage scope={scope} accountId={account} busy={busy} isCurrent={() => current(life)} />}
+    {ready && scope && account && <AssistantUsage scope={scope} accountId={account} cardTitle={cardTitle} busy={busy} isCurrent={() => current(life)} />}
     <header><h2 className="text-lg font-bold">{copy.title}</h2>
       {cardTitle && <p className="mt-1 font-semibold">{cardTitle}</p>}
       <p className="mt-2 text-sm leading-7 text-muted-foreground">{copy.scope}</p></header>
