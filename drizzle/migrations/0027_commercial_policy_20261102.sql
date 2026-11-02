@@ -1,19 +1,27 @@
 -- Custom SQL migration file, put your code below! --
 -- Owner-approved commercial policy. Drizzle is the sole migration runner.
 -- Existing source/access/payment controls remain authoritative. No provider calls.
-BEGIN;
+-- Transaction is owned by the native Drizzle runner across pending migrations.
 SET LOCAL lock_timeout = '5s';
+--> statement-breakpoint
+
 
 CREATE TABLE billing.commercial_policy_release (
  singleton boolean PRIMARY KEY DEFAULT true CHECK(singleton),
  activated_at timestamptz NOT NULL DEFAULT now(), version text NOT NULL DEFAULT '2026-11-02'
 );
+--> statement-breakpoint
+
 INSERT INTO billing.commercial_policy_release(singleton) VALUES(true);
+--> statement-breakpoint
+
 CREATE TABLE billing.commercial_legacy_terms (
  source_key text PRIMARY KEY, user_id uuid NOT NULL,
  first_new_period_at timestamptz NOT NULL, monthly_units integer NOT NULL,
  per_lesson_units integer, price_reference jsonb NOT NULL DEFAULT '{}'
 );
+--> statement-breakpoint
+
 -- Freeze the installed policy before any later catalogue publication. Never
 -- rewrite subscription prices or reset a subscriber's existing allowance.
 INSERT INTO billing.commercial_legacy_terms
@@ -22,6 +30,8 @@ SELECT 'ai:'||s.id,s.user_id,s.current_period_end,coalesce(l.assistant_runtime_g
 FROM billing.subscriptions s JOIN billing.plan_versions v ON v.id=s.plan_version_id JOIN billing.plan_catalog c ON c.id=v.plan_id
 JOIN billing.entitlement_policy_versions l ON l.policy_key=c.plan_key AND l.status='published' AND l.effective_from<=now() AND (l.effective_to IS NULL OR l.effective_to>now())
 WHERE s.access_state IN ('paid_active','canceled_at_period_end') AND s.current_period_end>now();
+--> statement-breakpoint
+
 INSERT INTO billing.commercial_legacy_terms
 SELECT 'academic:'||s.subscription_id,s.user_id,s.ends_at,
  CASE WHEN p.includes_assistant THEN coalesce(q.assistant_runtime_general_monthly_quota,0) ELSE 0 END,
@@ -35,6 +45,8 @@ UNION ALL SELECT 'technical:'||subscription_id,user_id,ends_at,2147483647,NULL,j
 FROM billing.technical_stripe_subscriptions WHERE ends_at>now() AND NOT refunded
 UNION ALL SELECT 'kids:'||parent_id,parent_id,active_until,2147483647,NULL,'{}'::jsonb
 FROM public.kids_family_entitlements WHERE active_until>now();
+--> statement-breakpoint
+
 INSERT INTO billing.commercial_legacy_terms
 SELECT 'commerce:'||e.id,e.user_id,e.ends_at,
  CASE WHEN e.package IN ('kids','technical') THEN 2147483647
@@ -45,6 +57,8 @@ SELECT 'commerce:'||e.id,e.user_id,e.ends_at,
   AND p.status='published' AND p.effective_from<=now() AND (p.effective_to IS NULL OR p.effective_to>now())),
  jsonb_build_object('package',e.package)
 FROM billing.commerce_entitlements e WHERE e.revoked_at IS NULL AND e.starts_at<=now() AND e.ends_at>now();
+--> statement-breakpoint
+
 
 CREATE TABLE billing.commercial_purchases (
  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid NOT NULL,
@@ -63,20 +77,32 @@ CREATE TABLE billing.commercial_purchases (
    AND ((area='kids' AND child_id IS NOT NULL AND wallet_scope='family') OR (area<>'kids' AND child_id IS NULL AND wallet_scope='account')))
  OR (kind='question_topup' AND area IS NULL AND course IS NULL AND child_id IS NULL))
 );
+--> statement-breakpoint
+
 CREATE TABLE billing.commercial_catalogue (
  kind text PRIMARY KEY, amount_minor integer NOT NULL, currency text NOT NULL,
  price_id text NOT NULL UNIQUE, product_id text NOT NULL UNIQUE
 );
+--> statement-breakpoint
+
 INSERT INTO billing.commercial_catalogue VALUES
  ('lifetime_course',7500,'EGP','price_1UXJ6GJUat05km9WKXP9ATsJ','prod_masaarat_lifetime_curriculum_v1'),
  ('question_topup',5000,'EGP','price_1UXJ6JJUat05km9WDjixVjfG','prod_masaarat_question_topup_100_v1');
+--> statement-breakpoint
+
 CREATE INDEX commercial_purchase_owner ON billing.commercial_purchases(user_id,state);
+--> statement-breakpoint
+
 CREATE UNIQUE INDEX commercial_lifetime_once ON billing.commercial_purchases(user_id,area,course,coalesce(child_id,'00000000-0000-0000-0000-000000000000'::uuid))
  WHERE kind='lifetime_course' AND state IN ('pending','fulfilled');
+--> statement-breakpoint
+
 CREATE TABLE billing.commercial_payment_holds (
  event_id text PRIMARY KEY, session_id text, payment_id text, reason text NOT NULL,
  created_at timestamptz NOT NULL DEFAULT now(), CHECK(session_id IS NOT NULL OR payment_id IS NOT NULL)
 );
+--> statement-breakpoint
+
 CREATE TABLE billing.assistant_allowance_periods (
  id uuid PRIMARY KEY DEFAULT gen_random_uuid(), user_id uuid NOT NULL,
  source_key text NOT NULL, starts_at timestamptz NOT NULL, ends_at timestamptz NOT NULL,
@@ -84,6 +110,8 @@ CREATE TABLE billing.assistant_allowance_periods (
  reserved integer NOT NULL DEFAULT 0 CHECK(reserved>=0),
  UNIQUE(user_id,source_key,starts_at), CHECK(ends_at>starts_at)
 );
+--> statement-breakpoint
+
 CREATE TABLE billing.assistant_requests (
  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),user_id uuid NOT NULL,request_id uuid NOT NULL,
  fingerprint text NOT NULL CHECK(fingerprint ~ '^[a-f0-9]{64}$'),
@@ -97,26 +125,44 @@ CREATE TABLE billing.assistant_requests (
  lease_until timestamptz NOT NULL DEFAULT now()+interval '5 minutes',
  UNIQUE(user_id,request_id)
 );
+--> statement-breakpoint
+
 CREATE INDEX assistant_requests_pending ON billing.assistant_requests(user_id,wallet_scope) WHERE state='reserved';
+--> statement-breakpoint
+
 CREATE INDEX assistant_requests_rate ON billing.assistant_requests(user_id,area,course,created_at DESC);
+--> statement-breakpoint
+
 CREATE INDEX assistant_requests_response_expiry ON billing.assistant_requests(settled_at) WHERE response IS NOT NULL;
+--> statement-breakpoint
+
 CREATE TABLE billing.assistant_outside_days (
  user_id uuid NOT NULL,day date NOT NULL,attempts integer NOT NULL DEFAULT 0 CHECK(attempts>=0),PRIMARY KEY(user_id,day)
 );
+--> statement-breakpoint
+
 CREATE TABLE billing.assistant_provider_attempts (
  request_id uuid NOT NULL REFERENCES billing.assistant_requests(id) ON DELETE CASCADE,
  attempt_id uuid NOT NULL,model text NOT NULL,status text NOT NULL CHECK(status IN ('started','succeeded','failed')),
  created_at timestamptz NOT NULL DEFAULT now(),PRIMARY KEY(request_id,attempt_id)
 );
+--> statement-breakpoint
+
 CREATE TABLE billing.assistant_legacy_usage (
  user_id uuid PRIMARY KEY, units integer NOT NULL, source_key text,
  expires_at timestamptz NOT NULL
 );
+--> statement-breakpoint
+
 INSERT INTO billing.assistant_legacy_usage(user_id,units,expires_at)
 SELECT user_id,sum(used_count+reserved_count)::integer,max(period_end)
 FROM billing.entitlement_usage WHERE usage_category='ai_assistant' AND period_start<=now() AND period_end>now()
 GROUP BY user_id;
+--> statement-breakpoint
+
 ALTER TABLE billing.ai_topup_purchases ALTER COLUMN expires_at DROP NOT NULL;
+--> statement-breakpoint
+
 
 DO $$ DECLARE t text; BEGIN
  FOREACH t IN ARRAY ARRAY['commercial_catalogue','commercial_policy_release','commercial_legacy_terms','commercial_purchases','commercial_payment_holds',
@@ -125,9 +171,13 @@ DO $$ DECLARE t text; BEGIN
   EXECUTE format('REVOKE ALL ON billing.%I FROM PUBLIC,anon,authenticated,service_role',t);
  END LOOP;
 END $$;
+--> statement-breakpoint
+
 
 CREATE FUNCTION billing.commercial_require_service() RETURNS void LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 BEGIN IF NOT billing.is_service_role_caller() THEN RAISE EXCEPTION 'COMMERCIAL_SERVICE_ONLY' USING ERRCODE='42501'; END IF; END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION billing.commercial_lock(p_user uuid) RETURNS void LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 BEGIN
  -- Same lifecycle/checkout lock as established Live writers, then one account
@@ -137,13 +187,19 @@ BEGIN
  PERFORM pg_advisory_xact_lock(hashtextextended('live-risk-user:'||p_user::text,0));
  PERFORM pg_advisory_xact_lock(hashtextextended('commercial-account:'||p_user::text,0));
 END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION billing.commercial_account_allowed(p_user uuid) RETURNS boolean LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
  SELECT p_user IS NOT NULL AND billing.commerce_account_allowed(p_user)
  AND EXISTS(SELECT 1 FROM auth.users WHERE id=p_user AND email_confirmed_at IS NOT NULL);
 $$;
+--> statement-breakpoint
+
 CREATE FUNCTION billing.commercial_admin(p_user uuid) RETURNS boolean LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
  SELECT billing.commercial_account_allowed(p_user) AND coalesce(public.has_role(p_user,'admin'::public.app_role),false);
 $$;
+--> statement-breakpoint
+
 CREATE FUNCTION billing.commercial_curricula() RETURNS jsonb LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
  SELECT CASE WHEN EXISTS(SELECT 1 FROM billing.commerce_lesson_catalog) THEN
  jsonb_build_array(jsonb_build_object('area','ai','course','ai','title','AI')) ELSE '[]'::jsonb END
@@ -154,6 +210,8 @@ CREATE FUNCTION billing.commercial_curricula() RETURNS jsonb LANGUAGE sql STABLE
  || coalesce((SELECT jsonb_agg(jsonb_build_object('area','academic','course',id,'title',coalesce(titles->>'ar-EG',titles->>'en',id)) ORDER BY id)
  FROM public.academic_courses c WHERE enabled AND EXISTS(SELECT 1 FROM public.academic_lesson_content l WHERE l.course_id=c.id AND l.approved)),'[]'::jsonb);
 $$;
+--> statement-breakpoint
+
 CREATE FUNCTION public.list_commercial_purchase_options(p_user_id uuid) RETURNS jsonb LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 BEGIN
  PERFORM billing.commercial_require_service();
@@ -161,11 +219,15 @@ BEGIN
  RETURN jsonb_build_object('curricula',billing.commercial_curricula(),'children',coalesce((SELECT jsonb_agg(jsonb_build_object('id',id,'name',coalesce(to_jsonb(p)->>'display_name',to_jsonb(p)->>'nickname',to_jsonb(p)->>'name','Child')) ORDER BY id)
  FROM public.kids_profiles p WHERE parent_id=p_user_id),'[]'::jsonb));
 END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION billing.commercial_selection_valid(p_user uuid,p_area text,p_course text,p_child uuid) RETURNS boolean LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
  SELECT EXISTS(SELECT 1 FROM jsonb_array_elements(billing.commercial_curricula()) c WHERE c->>'area'=p_area AND c->>'course'=p_course)
  AND CASE WHEN p_area='kids' THEN p_child IS NOT NULL AND EXISTS(SELECT 1 FROM public.kids_profiles WHERE id=p_child AND parent_id=p_user)
  ELSE p_child IS NULL END;
 $$;
+--> statement-breakpoint
+
 CREATE FUNCTION billing.commercial_purchase_quote(p_user_id uuid,p_kind text,p_offer jsonb) RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 BEGIN
@@ -173,6 +235,8 @@ BEGIN
  RETURN (SELECT jsonb_build_object('original_minor',amount_minor,'amount_minor',amount_minor,'currency',currency)
  FROM billing.commercial_catalogue WHERE kind=p_kind);
 END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION public.prepare_commercial_purchase(p_user_id uuid,p_kind text,p_area text,p_course text,p_child_id uuid,p_request_id uuid,p_wallet_scope text DEFAULT 'account',p_offer jsonb DEFAULT NULL)
 RETURNS jsonb LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE r billing.commercial_purchases%ROWTYPE; params jsonb; quote jsonb; cat billing.commercial_catalogue%ROWTYPE; customer text;
@@ -209,6 +273,8 @@ BEGIN
  END IF;
  RETURN to_jsonb(r);
 END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION public.bind_commercial_purchase_session(p_purchase_id uuid,p_session_id text,p_customer_id text,p_price_id text,p_product_id text)
 RETURNS jsonb LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE r billing.commercial_purchases%ROWTYPE;
@@ -228,10 +294,16 @@ BEGIN
  UPDATE billing.commercial_purchases SET session_id=p_session_id,customer_id=p_customer_id,price_id=p_price_id,product_id=p_product_id WHERE id=r.id RETURNING * INTO r;
  RETURN to_jsonb(r);
 END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION public.get_commercial_purchase_by_session(p_session_id text) RETURNS jsonb LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 BEGIN PERFORM billing.commercial_require_service(); RETURN (SELECT to_jsonb(r) FROM billing.commercial_purchases r WHERE session_id=p_session_id); END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION public.get_commercial_purchase_by_payment(p_payment_id text) RETURNS jsonb LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 BEGIN PERFORM billing.commercial_require_service(); RETURN (SELECT to_jsonb(r) FROM billing.commercial_purchases r WHERE payment_id=p_payment_id); END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION public.close_commercial_purchase_session(p_purchase_id uuid,p_session_id text,p_customer_id text,p_status text,p_payment_status text,p_payment_id text)
 RETURNS jsonb LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE r billing.commercial_purchases%ROWTYPE;
@@ -245,12 +317,16 @@ BEGIN
  UPDATE billing.commercial_purchases SET state='expired' WHERE id=r.id;
  RETURN jsonb_build_object('closed',true);
 END $$;
+--> statement-breakpoint
+
 
 CREATE FUNCTION billing.assistant_wallet_units(p_user uuid,p_scope text) RETURNS integer LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
  SELECT coalesce(sum(credit_units),0)::integer FROM billing.ai_credit_ledger
  WHERE user_id=p_user AND coalesce(metadata->>'wallet_scope','account')=p_scope
  AND (expires_at IS NULL OR expires_at>now());
 $$;
+--> statement-breakpoint
+
 CREATE FUNCTION public.fulfill_commercial_purchase(p_purchase_id uuid,p_provider_event_id text,p_payment_id text,p_amount_minor integer,p_currency text,p_paid_at timestamptz,
  p_session_id text,p_customer_id text,p_price_id text,p_product_id text) RETURNS jsonb LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE r billing.commercial_purchases%ROWTYPE; balance integer;
@@ -276,6 +352,8 @@ BEGIN
  END IF;
  RETURN jsonb_build_object('id',r.id,'state','fulfilled','replay',false);
 END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION public.apply_commercial_purchase_risk_hold(p_provider_event_id text,p_session_id text,p_payment_id text,p_reason text)
 RETURNS jsonb LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE r billing.commercial_purchases%ROWTYPE; existing billing.commercial_payment_holds%ROWTYPE;
@@ -298,6 +376,8 @@ BEGIN
  END LOOP;
  RETURN jsonb_build_object('held',true);
 END $$;
+--> statement-breakpoint
+
 
 CREATE FUNCTION billing.commercial_course_owned(p_user uuid,p_area text,p_course text,p_child uuid DEFAULT NULL)
 RETURNS boolean LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
@@ -306,6 +386,8 @@ RETURNS boolean LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
  AND area=p_area AND course=p_course AND child_id IS NOT DISTINCT FROM p_child)
  AND (p_child IS NULL OR EXISTS(SELECT 1 FROM public.kids_profiles WHERE id=p_child AND parent_id=p_user));
 $$;
+--> statement-breakpoint
+
 CREATE FUNCTION public.get_my_commercial_access() RETURNS jsonb LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE u uuid:=auth.uid(); ai boolean; rights jsonb;
 BEGIN
@@ -319,6 +401,8 @@ BEGIN
    (SELECT coalesce(jsonb_agg(lesson_id ORDER BY lesson_id),'[]'::jsonb) FROM billing.commerce_lesson_catalog) ELSE '[]'::jsonb END,
    'curricula',rights,'server_time',now(),'check_at',now()+interval '30 seconds');
 END $$;
+--> statement-breakpoint
+
 
 -- Compose lifetime content with current source, locale, guardian and release
 -- checks. Do not alter roles or pretend a curriculum purchase is Pro Plus.
@@ -332,6 +416,8 @@ DO $$ DECLARE d text; BEGIN
  d:=pg_get_functiondef('public.kids_can_access_lesson(uuid,text,integer,text)'::regprocedure);
  EXECUTE replace(d,'FUNCTION public.kids_can_access_lesson(','FUNCTION billing.commercial_previous_kids_access(');
 END $$;
+--> statement-breakpoint
+
 CREATE OR REPLACE FUNCTION billing.evaluate_access(p_user_id uuid,p_resource_type text,p_resource_id text) RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE prior jsonb; BEGIN
@@ -344,6 +430,8 @@ DECLARE prior jsonb; BEGIN
  THEN RETURN jsonb_build_object('allowed',true,'denial_reason_code',NULL,'source','lifetime_curriculum'); END IF;
  RETURN prior;
 END $$;
+--> statement-breakpoint
+
 CREATE OR REPLACE FUNCTION public.academic_can_access(p_course text,p_lesson text,p_locale text) RETURNS boolean
 LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
  SELECT billing.commercial_previous_academic_access(p_course,p_lesson,p_locale)
@@ -351,6 +439,8 @@ LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
  SELECT 1 FROM public.academic_courses c JOIN public.academic_lesson_content l ON l.course_id=c.id
  WHERE c.id=p_course AND c.enabled AND l.lesson_id=p_lesson AND l.locale=p_locale AND l.approved));
 $$;
+--> statement-breakpoint
+
 CREATE OR REPLACE FUNCTION public.technical_can_access(p_lesson text) RETURNS boolean
 LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
  SELECT billing.commercial_previous_technical_access(p_lesson)
@@ -358,6 +448,8 @@ LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
  AND EXISTS(SELECT 1 FROM public.technical_release_control WHERE enabled)
  AND EXISTS(SELECT 1 FROM public.technical_lesson_content WHERE lesson_id=p_lesson));
 $$;
+--> statement-breakpoint
+
 CREATE OR REPLACE FUNCTION public.kids_can_access_lesson(requested_profile uuid,requested_level text,requested_lesson integer,requested_locale text)
 RETURNS boolean LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
  SELECT billing.commercial_previous_kids_access(requested_profile,requested_level,requested_lesson,requested_locale)
@@ -367,6 +459,8 @@ RETURNS boolean LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
  AND EXISTS(SELECT 1 FROM public.kids_release_control WHERE singleton AND accepts_child_data AND lesson_access_enabled)
  AND EXISTS(SELECT 1 FROM public.kids_content_approvals WHERE level_id=requested_level AND lesson_number=requested_lesson AND locale=requested_locale));
 $$;
+--> statement-breakpoint
+
 CREATE OR REPLACE FUNCTION public.academic_assistant_access(p_course text,p_lesson text,p_locale text)
 RETURNS text LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
  SELECT CASE WHEN billing.commercial_admin(auth.uid()) AND EXISTS(SELECT 1 FROM public.academic_lesson_content
@@ -378,26 +472,36 @@ RETURNS text LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
  WHERE c.id=p_course AND c.enabled AND c.assistant_enabled AND p.runtime_enabled) THEN 'learner'
  ELSE 'none' END;
 $$;
+--> statement-breakpoint
+
 CREATE OR REPLACE FUNCTION public.academic_assistant_allowed(p_course text,p_lesson text,p_locale text)
 RETURNS boolean LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
  SELECT public.academic_assistant_access(p_course,p_lesson,p_locale)<>'none';
 $$;
+--> statement-breakpoint
+
 CREATE OR REPLACE FUNCTION billing.academic_checkout_quote(p_package text,p_market text,p_interval text,p_code text,p_email text,p_renewal boolean,p_assistant boolean)
 RETURNS jsonb LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 BEGIN
  RETURN billing.commerce_quote(p_package,p_market,p_interval,p_code,p_email,p_renewal)
   || CASE WHEN p_package='academic' THEN jsonb_build_object('academic_assistant',true,'assistant_surcharge_minor',0) ELSE '{}'::jsonb END;
 END $$;
+--> statement-breakpoint
+
 CREATE OR REPLACE FUNCTION billing.academic_record_addon_purchase() RETURNS trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 BEGIN
  -- Historical add-on receipts stay intact. New Academic purchases include
  -- assistant access in the ordinary course price, including old-client input.
  RETURN NEW;
 END $$;
+--> statement-breakpoint
+
 DO $$ DECLARE d text; BEGIN
  d:=pg_get_functiondef('public.assistant_card_content_access(uuid,text)'::regprocedure);
  EXECUTE replace(d,'FUNCTION public.assistant_card_content_access(','FUNCTION billing.commercial_previous_card_content_access(');
 END $$;
+--> statement-breakpoint
+
 CREATE OR REPLACE FUNCTION public.assistant_card_content_access(p_user_id uuid,p_card_id text) RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE result jsonb; lessons jsonb;
@@ -420,6 +524,8 @@ BEGIN
  END IF;
  RETURN result;
 END $$;
+--> statement-breakpoint
+
 CREATE OR REPLACE FUNCTION public.card_assistant_access(p_area text,p_card text,p_step text,p_locale text,p_profile uuid DEFAULT NULL)
 RETURNS boolean LANGUAGE plpgsql STABLE SECURITY DEFINER SET search_path='' AS $$
 DECLARE s public.card_assistant_steps%ROWTYPE;
@@ -442,6 +548,8 @@ BEGIN
  END IF;
  RETURN false;
 END $$;
+--> statement-breakpoint
+
 
 CREATE FUNCTION billing.assistant_month_window(p_anchor timestamptz,p_at timestamptz)
 RETURNS TABLE(starts_at timestamptz,ends_at timestamptz) LANGUAGE plpgsql IMMUTABLE SET search_path='' AS $$
@@ -453,17 +561,25 @@ BEGIN
  IF (a+make_interval(months=>n)) AT TIME ZONE 'UTC'>p_at THEN n:=n-1; END IF;
  RETURN QUERY SELECT (a+make_interval(months=>n)) AT TIME ZONE 'UTC',(a+make_interval(months=>n+1)) AT TIME ZONE 'UTC';
 END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION billing.assistant_cairo_day(p_at timestamptz) RETURNS date LANGUAGE sql IMMUTABLE SET search_path='' AS $$
  SELECT (p_at AT TIME ZONE 'Africa/Cairo')::date;
 $$;
+--> statement-breakpoint
+
 CREATE FUNCTION billing.assistant_period_start(p_anchor timestamptz,p_recurring boolean,p_at timestamptz)
 RETURNS timestamptz LANGUAGE sql IMMUTABLE SET search_path='' AS $$
  SELECT CASE WHEN p_recurring THEN (SELECT starts_at FROM billing.assistant_month_window(p_anchor,p_at)) ELSE p_anchor END;
 $$;
+--> statement-breakpoint
+
 CREATE FUNCTION billing.assistant_current_units(p_key text,p_new integer,p_at timestamptz)
 RETURNS integer LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
  SELECT coalesce((SELECT monthly_units FROM billing.commercial_legacy_terms WHERE source_key=p_key AND p_at<first_new_period_at),p_new);
 $$;
+--> statement-breakpoint
+
 CREATE FUNCTION billing.assistant_source_specs(p_user uuid,p_area text,p_course text,p_child uuid,p_at timestamptz)
 RETURNS TABLE(source_key text,anchor timestamptz,valid_until timestamptz,units integer,recurring boolean,per_lesson integer)
 LANGUAGE plpgsql STABLE SECURITY DEFINER SET search_path='' AS $$
@@ -530,6 +646,8 @@ BEGIN
   RETURN QUERY SELECT 'free:'||p_user,free_start,NULL::timestamptz,10,true,NULL::integer;
  END IF;
 END $$;
+--> statement-breakpoint
+
 
 -- The service checks an exact published lesson under the actual learner's
 -- identity; temporary subject settings are transaction-local and restored.
@@ -567,6 +685,8 @@ BEGIN
  PERFORM set_config('request.jwt.claims',coalesce(old_claims,''),true);
  RETURN coalesce(result,false);
 END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION billing.assistant_scope_allowed(p_user uuid,p_area text,p_course text,p_child uuid) RETURNS boolean
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE r record;
@@ -598,6 +718,8 @@ BEGIN
  END IF;
  RETURN false;
 END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION billing.assistant_sync_periods(p_user uuid,p_area text,p_course text,p_child uuid) RETURNS void
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE s record; w record; imported integer; inserted uuid;
@@ -622,6 +744,8 @@ BEGIN
   END IF;
  END LOOP;
 END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION billing.assistant_balance(p_user uuid,p_area text,p_course text,p_child uuid) RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE monthly bigint; purchased integer; scope text:=CASE WHEN p_area='kids' THEN 'family' ELSE 'account' END; access_ok boolean;
@@ -639,16 +763,22 @@ BEGIN
  WHERE user_id=p_user AND wallet_scope=scope AND funding='purchased' AND state='reserved';
  RETURN jsonb_build_object('access_allowed',true,'admin_review',false,'unlimited',false,'monthly_remaining',monthly,'purchased_remaining',purchased);
 END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION public.assistant_question_balance(p_user_id uuid,p_area text,p_course text,p_child_id uuid DEFAULT NULL)
 RETURNS jsonb LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 BEGIN PERFORM billing.commercial_require_service(); PERFORM billing.commercial_lock(p_user_id);
  PERFORM billing.assistant_expire_requests(p_user_id);
  RETURN billing.assistant_balance(p_user_id,p_area,p_course,p_child_id); END $$;
+--> statement-breakpoint
+
 
 CREATE FUNCTION billing.assistant_free_lesson(p_lesson text) RETURNS boolean LANGUAGE sql STABLE SET search_path='' AS $$
  SELECT EXISTS(SELECT 1 FROM billing.commerce_lesson_catalog WHERE lesson_id=p_lesson
  AND (path_id='intro' OR lesson_id LIKE path_id||'-m1-l1-%'));
 $$;
+--> statement-breakpoint
+
 CREATE FUNCTION billing.assistant_source_permits(p_key text,p_lesson text) RETURNS boolean LANGUAGE plpgsql STABLE SECURITY DEFINER SET search_path='' AS $$
 DECLARE is_builder boolean; g billing.email_access_grants%ROWTYPE;
 BEGIN
@@ -666,6 +796,8 @@ BEGIN
  END IF;
  RETURN true;
 END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION billing.assistant_expire_requests(p_user uuid) RETURNS void LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE r record; BEGIN
  FOR r IN SELECT * FROM billing.assistant_requests WHERE user_id=p_user AND state='reserved' AND lease_until<=now() FOR UPDATE LOOP
@@ -676,6 +808,8 @@ DECLARE r record; BEGIN
  -- Keep identity/debit receipts, but never retain answer text indefinitely.
  UPDATE billing.assistant_requests SET response=NULL WHERE user_id=p_user AND settled_at<now()-interval '24 hours' AND response IS NOT NULL;
 END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION public.prune_assistant_response_cache(p_limit integer DEFAULT 1000) RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE n integer;
@@ -687,6 +821,8 @@ BEGIN
  GET DIAGNOSTICS n=ROW_COUNT;
  RETURN jsonb_build_object('pruned',n);
 END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION public.reserve_assistant_question(p_user_id uuid,p_area text,p_course text,p_lesson text,p_locale text,p_child_id uuid,p_request_id uuid,p_fingerprint text)
 RETURNS jsonb LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE r billing.assistant_requests%ROWTYPE; period billing.assistant_allowance_periods%ROWTYPE;
@@ -755,6 +891,8 @@ BEGIN
  VALUES(p_user_id,p_request_id,p_fingerprint,p_area,p_course,coalesce(p_lesson,'__course__'),p_locale,p_child_id,scope,period.id,v_funding) RETURNING * INTO r;
  RETURN jsonb_build_object('reservation_id',r.id,'allowed',true,'replay',false,'status','reserved','balance',billing.assistant_balance(p_user_id,p_area,p_course,p_child_id));
 END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION public.assistant_question_provider_attempt(p_user_id uuid,p_request_id uuid,p_fingerprint text,p_model text,p_attempt_id uuid,p_status text DEFAULT 'started')
 RETURNS jsonb LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE r billing.assistant_requests%ROWTYPE; prior billing.assistant_provider_attempts%ROWTYPE;
@@ -775,6 +913,8 @@ BEGIN
  END IF;
  RETURN jsonb_build_object('ok',true);
 END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION public.settle_assistant_question(p_user_id uuid,p_request_id uuid,p_fingerprint text,p_outcome text,p_response jsonb)
 RETURNS jsonb LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE r billing.assistant_requests%ROWTYPE; charge integer:=0; outside_count integer; wallet integer; source text; replacement uuid; proof jsonb;
@@ -849,15 +989,25 @@ BEGIN
  RETURN jsonb_build_object('status','settled','charged_units',charge,'response',p_response,'replay',false,
  'balance',billing.assistant_balance(p_user_id,r.area,r.course,r.child_id));
 END $$;
+--> statement-breakpoint
+
 
 -- New invitations begin only on the recipient's explicit acceptance. Already
 -- activated grants and legacy pending behavior are not rewritten.
 ALTER TABLE billing.email_access_grants ADD COLUMN acceptance_required boolean NOT NULL DEFAULT false;
+--> statement-breakpoint
+
 ALTER TABLE billing.email_access_grants ALTER COLUMN acceptance_required SET DEFAULT true;
+--> statement-breakpoint
+
 ALTER TABLE billing.email_access_grants ADD COLUMN grant_kind text NOT NULL DEFAULT 'comprehensive'
  CHECK(grant_kind IN ('comprehensive','single_curriculum'));
+--> statement-breakpoint
+
 ALTER TABLE billing.email_access_grants ADD CONSTRAINT email_access_single_curriculum_scope
  CHECK(grant_kind<>'single_curriculum' OR (scope_mode='selected' AND cardinality(catalogues)=1 AND catalogues[1]<>'ai:pro'));
+--> statement-breakpoint
+
 -- Preserve the existing admin-only command, idempotency, mail opt-in and audit.
 -- Each request remains independent: no uniqueness constraint on recipient email.
 DO $$ DECLARE d text; needle text; BEGIN
@@ -887,11 +1037,15 @@ DO $$ DECLARE d text; needle text; BEGIN
  IF position(needle IN d)=0 THEN RAISE EXCEPTION 'COMMERCIAL_INVITATION_MAIL_BASELINE_CHANGED'; END IF;
  EXECUTE replace(d,needle,'''payload'',jsonb_build_object(''grant_kind'',g.grant_kind,''locale'',m.locale,''scope_mode'',g.scope_mode,');
 END $$;
+--> statement-breakpoint
+
 DO $$ DECLARE d text; needle text:='WHERE recipient_email=v_email AND user_id IS NULL AND revoked_at IS NULL ORDER BY id FOR UPDATE'; BEGIN
  d:=pg_get_functiondef('billing.email_access_activate(uuid)'::regprocedure);
  IF position(needle IN d)=0 THEN RAISE EXCEPTION 'COMMERCIAL_INVITATION_BASELINE_CHANGED'; END IF;
  EXECUTE replace(d,needle,'WHERE recipient_email=v_email AND user_id IS NULL AND revoked_at IS NULL AND NOT acceptance_required ORDER BY id FOR UPDATE');
 END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION public.get_my_commercial_invitations() RETURNS jsonb LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE email text;
 BEGIN
@@ -904,6 +1058,8 @@ BEGIN
  FROM billing.email_access_grants g WHERE g.recipient_email=lower(btrim(email)) AND g.revoked_at IS NULL
  AND (g.user_id IS NULL OR g.user_id=auth.uid()) AND (g.ends_at IS NULL OR g.ends_at>now())),'[]'::jsonb);
 END $$;
+--> statement-breakpoint
+
 CREATE FUNCTION public.accept_commercial_invitation(p_grant_id uuid) RETURNS jsonb LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE email text; g billing.email_access_grants%ROWTYPE; u uuid:=auth.uid();
 BEGIN
@@ -917,6 +1073,8 @@ BEGIN
  END IF;
  RETURN jsonb_build_object('id',g.id,'accepted_at',g.activated_at,'ends_at',g.ends_at);
 END $$;
+--> statement-breakpoint
+
 
 -- This migration switches all new runtime callers to one settlement mechanism.
 -- Legacy requests may still settle during deployment; no new legacy reservations
@@ -924,9 +1082,13 @@ END $$;
 CREATE OR REPLACE FUNCTION public.card_assistant_take_question(p_area text,p_card text,p_step text,p_locale text,p_profile uuid,p_request uuid)
 RETURNS boolean LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 BEGIN RAISE EXCEPTION 'ASSISTANT_UNIFIED_METER_REQUIRED'; END $$;
+--> statement-breakpoint
+
 CREATE OR REPLACE FUNCTION public.academic_assistant_take_question(p_course text,p_lesson text,p_locale text,p_request uuid)
 RETURNS jsonb LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 BEGIN RAISE EXCEPTION 'ASSISTANT_UNIFIED_METER_REQUIRED'; END $$;
+--> statement-breakpoint
+
 
 -- Explicit deletion inventory: answer caches and usage are learner data; payment
 -- evidence follows the existing financial retention deadline and lock checks.
@@ -942,6 +1104,8 @@ DO $$ DECLARE r record; d text; needle text:='ARRAY[''account_deletion_requests'
  EXECUTE replace(pg_get_functiondef('public.lc09_complete_financial_purge(uuid,uuid,boolean)'::regprocedure),
  'FUNCTION public.lc09_complete_financial_purge(','FUNCTION billing.commercial_previous_financial_purge(');
 END $$;
+--> statement-breakpoint
+
 CREATE OR REPLACE FUNCTION public.lc09_advance_deletion(p_user_id uuid,p_lease_token uuid,p_next_stage text) RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE result jsonb;
@@ -959,6 +1123,8 @@ BEGIN
  END IF;
  RETURN result;
 END $$;
+--> statement-breakpoint
+
 CREATE OR REPLACE FUNCTION public.lc09_complete_financial_purge(p_user_id uuid,p_lease_token uuid,p_release boolean DEFAULT false) RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE result jsonb;
@@ -972,6 +1138,8 @@ BEGIN
  END IF;
  RETURN result;
 END $$;
+--> statement-breakpoint
+
 
 DO $$ DECLARE r record; BEGIN
  FOR r IN SELECT p.oid::regprocedure AS signature FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace
@@ -986,14 +1154,31 @@ DO $$ DECLARE r record; BEGIN
   EXECUTE format('GRANT EXECUTE ON FUNCTION %s TO service_role',r.signature);
  END LOOP;
 END $$;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION public.get_my_commercial_invitations(),public.accept_commercial_invitation(uuid) FROM PUBLIC,anon,service_role;
+--> statement-breakpoint
+
 GRANT EXECUTE ON FUNCTION public.get_my_commercial_invitations(),public.accept_commercial_invitation(uuid) TO authenticated;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION public.get_my_commercial_access() FROM PUBLIC,anon,service_role;
+--> statement-breakpoint
+
 GRANT EXECUTE ON FUNCTION public.get_my_commercial_access() TO authenticated;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION public.academic_assistant_access(text,text,text),public.academic_assistant_allowed(text,text,text),
  public.academic_assistant_take_question(text,text,text,uuid) FROM PUBLIC,anon,service_role;
+--> statement-breakpoint
+
 GRANT EXECUTE ON FUNCTION public.academic_assistant_access(text,text,text),public.academic_assistant_allowed(text,text,text) TO authenticated;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION public.card_assistant_access(text,text,text,text,uuid) FROM PUBLIC,anon,service_role;
+--> statement-breakpoint
+
 GRANT EXECUTE ON FUNCTION public.card_assistant_access(text,text,text,text,uuid) TO authenticated;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION billing.academic_checkout_quote(text,text,text,text,text,boolean,boolean),billing.academic_record_addon_purchase() FROM PUBLIC,anon,authenticated,service_role;
-COMMIT;

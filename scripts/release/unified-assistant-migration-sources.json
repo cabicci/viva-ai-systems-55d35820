@@ -1,7 +1,7 @@
 {
   "migration": "drizzle/migrations/0026_assistant_source_events_and_free_access.sql",
-  "sha256": "a3ca78427e47ed4e6b92d29bc0ae07ee5c9e34bff47cbfd659a032baaedd4acd",
-  "transaction": "one atomic migration; original internal envelopes removed",
+  "sha256": "6f16c13b8a6b3248a32bcc4a721fb81602e2a2051ee0d703db345bcd530fbf5a",
+  "transaction": "native Drizzle transaction; no inner BEGIN/COMMIT in pending 0026..0028",
   "sources": [
     {
       "file": "scripts/card-assistant/assistant-candidate.sql",
@@ -40,5 +40,16 @@
       "sha256": "9a30f203d8e5b9f5fe47954493bb9cc672c415ca2512eab93bbf1e72459e9bc8"
     }
   ],
-  "activation": "separate reviewed source/index/provider/access verification; never enabled by installation"
+  "operational_reconciliation": {
+    "manifest": "scripts/release/assistant-operational-reconciliation-20261102.json",
+    "manifest_sha256": "d431db54106917ef673947e8712d63ec9e4735611d8d75746c6d00ad44343a1f",
+    "schema_version": "masaarat-assistant-operational-schema-v1",
+    "target_project": "658adce0-747d-4c8e-90e3-d22225070b94",
+    "target_database_ref": "abyqqeboyrkkwhjpwmtd",
+    "catalog": "scripts/release/assistant-reconciliation-catalog.sql",
+    "catalog_sha256": "9af7deec1f34cc6b4f8791a45a604152420cd32192c5da1c5dd4ff922217ce4e",
+    "object_count": 66,
+    "pristine_original_sha256": "a3ca78427e47ed4e6b92d29bc0ae07ee5c9e34bff47cbfd659a032baaedd4acd"
+  },
+  "activation": "preserve operational policies/jobs/vectors; fresh install remains disabled; never create or enable a free-access window"
 }
