@@ -64,3 +64,18 @@ jobs:
           ! grep -Eq '[1-9][0-9]* (failed|skipped|todo)' lc09-validation/vitest.plain.log
           grep -Eq 'Tests[[:space:]]+15 passed[[:space:]]+\(15\)' lc09-validation/vitest.plain.log
 
+      - name: Commercial family and lifecycle lock order (same disposable database)
+        env:
+          BILLING_DISPOSABLE_DB: "1"
+          COMMERCIAL_LOCK_NATIVE: "1"
+          PGHOST: 127.0.0.1
+          PGPORT: "54322"
+          PGUSER: postgres
+          PGDATABASE: postgres
+        run: |
+          set -o pipefail
+          bunx vitest run src/lib/billing/__tests__/commercial-lock-order.native.test.ts 2>&1 | tee lc09-validation/commercial-lock.log
+          sed -E 's/\x1B\[[0-9;]*[A-Za-z]//g' lc09-validation/commercial-lock.log > lc09-validation/commercial-lock.plain.log
+          ! grep -Eq '[1-9][0-9]* (failed|skipped|todo)' lc09-validation/commercial-lock.plain.log
+          grep -Eq 'Tests[[:space:]]+4 passed[[:space:]]+\(4\)' lc09-validation/commercial-lock.plain.log
+
