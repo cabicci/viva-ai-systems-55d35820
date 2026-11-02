@@ -23,16 +23,17 @@ export async function currentAutomaticPlans(): Promise<AutomaticPlan[]> {
   const { loadCurrentRelease } = await import("@/lib/rag/current-release/corpus.server");
   const ai = loadCurrentRelease();
   const revisionsBefore = await automationRpc<Record<string, string>>("assistant_auto_source_revisions", { p_registry: CARD_REGISTRY });
-  const [kids, technical, academicCourses, academic] = await Promise.all([
+  const [kids, technical, academicCourses, academic, academicPolicies] = await Promise.all([
     metadata("kids_content_approvals", "level_id,lesson_number,locale,approved_sha256", ["level_id", "lesson_number", "locale"]),
     metadata("technical_lesson_content", "lesson_id,locale,source_sha256", ["lesson_id", "locale"]),
     metadata("academic_courses", "id,enabled,assistant_enabled,assistant_review_enabled", ["id"]),
     metadata("academic_lesson_content", "course_id,lesson_id,locale,approved,source_sha256", ["course_id", "locale", "lesson_id"]),
+    metadata("academic_assistant_policy", "course_id", ["course_id"]),
   ]);
   const revisions = await automationRpc<Record<string, string>>("assistant_auto_source_revisions", { p_registry: CARD_REGISTRY });
   if (JSON.stringify(revisionsBefore) !== JSON.stringify(revisions)) throw new Error("AUTOMATION_SOURCE_CHANGED");
   return automaticPlans(__ASSISTANT_INDEXER_BUILD__, { releaseId: ai.approval.releaseId, chunks: ai.chunks.length }, CARD_REGISTRY,
-    { kids, technical, academicCourses, academic } as SourceMetadata, revisions);
+    { kids, technical, academicCourses, academic, academicPolicies } as SourceMetadata, revisions);
 }
 
 export async function executeAutomaticScope(lease: AutomaticLease): Promise<Record<string, unknown>> {
@@ -57,7 +58,11 @@ export async function executeAutomaticScope(lease: AutomaticLease): Promise<Reco
     const prior = await supabaseAdmin.from("rag_current_batches" as never).select("release_id")
       .neq("release_id", releaseId).neq("state", "done")
       .or("state.eq.inflight,provider_reserved.eq.true").limit(1);
-    if (prior.error || !Array.isArray(prior.data) || prior.data.length !== 0)
+    if (prior.error || !Array.isArray(prior.data))
+      throw new Error("AUTOMATION_AI_REQUEST_NEEDS_REVIEW");
+    // Historical UNKNOWN remains recorded. Only a positively revalidated,
+    // source-complete retirement may stop it blocking a different current release.
+    if (prior.data.length !== 0 && await deps.rpc("rag_current_prior_ai_clear", { p_release_id: releaseId }) !== true)
       throw new Error("AUTOMATION_AI_REQUEST_NEEDS_REVIEW");
     // A legacy/manual uncertain batch is never reissued automatically, even
     // after its lease expires. An operator must reconcile its actual outcome.
@@ -76,7 +81,7 @@ export async function executeAutomaticScope(lease: AutomaticLease): Promise<Reco
   if (lease.offset === manifest.scopeCount - 1) {
     const published = await automationRpc(manifest.area === "academic" ? "assistant_auto_publish_academic" : "assistant_auto_publish_card", args);
     if (published !== true) throw new Error("AUTOMATION_PUBLICATION_UNCONFIRMED");
-    return { activated: true };
+    return manifest.area === "academic" ? { prepared: true, activated: manifest.preparationOnly !== true } : { activated: true };
   }
   const expected = manifest.scopes[lease.offset];
   if (!expected?.sourceSha) throw new Error("AUTOMATION_SOURCE_UNAPPROVED");

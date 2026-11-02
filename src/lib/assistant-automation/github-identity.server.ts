@@ -1,6 +1,7 @@
 /** A closed maintenance identity. No learner/admin JWT is impersonated, and no
  * persistent database/provider credential is sent to the workflow runner. */
-export const INDEXER_AUDIENCE = "https://masaarat.ai/api/internal/assistant-indexing";
+import { INDEXER_PUBLIC_ENDPOINT } from "./public-indexer-target";
+export const INDEXER_AUDIENCE = INDEXER_PUBLIC_ENDPOINT;
 const ISSUER = "https://token.actions.githubusercontent.com";
 const REPOSITORY = "cabicci/viva-ai-systems-55d35820";
 const WORKFLOW = `${REPOSITORY}/.github/workflows/assistant-auto-index.yml@refs/heads/main`;

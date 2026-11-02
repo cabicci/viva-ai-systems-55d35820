@@ -3,8 +3,9 @@
  * Authorization: CR-BILLING-RAG-PR15-BOUNDED-CORRECTION-20260801-04
  *
  * Never writes adapted bytes into the repository supabase/migrations/ tree.
- * Product historical migration bytes remain immutable; only the disposable copy
- * omits the local-owner-incompatible realtime.messages operation.
+ * Product migration bytes remain immutable. Only the disposable copy substitutes
+ * the local-owner-incompatible realtime operation and exact original-only
+ * assistant operational patches, whose catalog/data prerequisites are tested separately.
  */
 import { createHash } from "node:crypto";
 import {
@@ -22,6 +23,27 @@ import { fileURLToPath } from "node:url";
 export const EXPECTED_HIST_BLOB = "d185dd59549f611fcb984bcb3459c9d5d6969ef5";
 export const HIST_MIGRATION_NAME = "20260526105117_25fc4182-0343-4234-a231-0cf38569014a.sql";
 export const REALTIME_OWNER_OP = "ALTER TABLE realtime.messages ENABLE ROW LEVEL SECURITY";
+
+// These five reviewed patches target the existing original assistant catalog/data.
+// Their strict production pins cannot describe a fresh deletion/privacy fixture.
+export const ORIGINAL_ASSISTANT_OPERATIONAL_PATCHES: Readonly<Record<string, string>> = Object.freeze({
+  "20261101213301_original_assistant_source_events.sql": "ba9948ec2efabd3c420d252c8a0f132d00c947f34531891edb4277802d6d9bd2",
+  "20261101214105_original_assistant_publication_epoch_and_preparation.sql": "50250030ede50ad691bcbccc12d95af0f6a08c54d1bfa8edce3a45619bbc6c8b",
+  "20261101234350_original_ai_bounded_validation.sql": "cc70945bbf9dea9783aa073fc3ba99006b4357279af51ae03c1ea175a40572c8",
+  "20261102003309_original_ai_compact_activation.sql": "70fcfb2ba60d7a38199dab3f7113d93ed7442ce3c30e4c284eeab97c1b74dc5a",
+  "20261102003321_original_ai_verified_retirement.sql": "894c091cb0cccd7786f5915d0c99097edf6e3ba4ff3730b330233e3645a276ab",
+});
+
+function disposableOriginalAssistantNotice(name: string, sha256: string): string {
+  return `-- DISPOSABLE DELETION/PRIVACY VALIDATION ONLY; not the original assistant catalog.
+-- Exact reviewed source: ${name}; SHA-256: ${sha256}
+-- This target-bound operational patch is tested separately against its pinned assistant prerequisites.
+-- Production bytes/guards and every deletion/privacy migration/assertion remain unchanged.
+DO $original_assistant_fixture$ BEGIN
+ RAISE NOTICE 'disposable-only: original assistant operational patch requires its independently reviewed target';
+END $original_assistant_fixture$;
+`;
+}
 
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -73,6 +95,7 @@ export function prepareDisposableSupabaseTree(opts: { repoRoot?: string; destRoo
   migrationsCopied: number;
   adaptedHistorical: boolean;
   sourceBlob: string;
+  adaptedOriginalAssistantPatches: { name: string; sha256: string }[];
 } {
   const repoRoot = opts.repoRoot ?? REPO_ROOT;
   const destRoot = path.resolve(opts.destRoot);
@@ -85,6 +108,16 @@ export function prepareDisposableSupabaseTree(opts: { repoRoot?: string; destRoo
   }
   if (!existsSync(srcMig)) {
     throw new Error(`missing supabase/migrations at ${srcMig}`);
+  }
+
+  // Refuse changed original patch bytes before clearing or writing the disposable destination.
+  const adaptedOriginalAssistantPatches: { name: string; sha256: string }[] = [];
+  for (const [name, expected] of Object.entries(ORIGINAL_ASSISTANT_OPERATIONAL_PATCHES)) {
+    const source = path.join(srcMig, name);
+    if (!existsSync(source)) continue;
+    const observed = createHash("sha256").update(readFileSync(source)).digest("hex");
+    if (observed !== expected) throw new Error(`original assistant operational patch changed: ${name}`);
+    adaptedOriginalAssistantPatches.push({ name, sha256: observed });
   }
 
   rmSync(destRoot, { recursive: true, force: true });
@@ -100,6 +133,13 @@ export function prepareDisposableSupabaseTree(opts: { repoRoot?: string; destRoo
     if (!name.endsWith(".sql")) continue;
     const srcPath = path.join(srcMig, name);
     const destPath = path.join(destMig, name);
+
+    const originalPatch = adaptedOriginalAssistantPatches.find(patch => patch.name === name);
+    if (originalPatch) {
+      writeFileSync(destPath, disposableOriginalAssistantNotice(name, originalPatch.sha256), "utf8");
+      migrationsCopied += 1;
+      continue;
+    }
 
     if (name === HIST_MIGRATION_NAME) {
       const bytes = verifyHistoricalRealtimeMigration(srcPath);
@@ -119,7 +159,7 @@ export function prepareDisposableSupabaseTree(opts: { repoRoot?: string; destRoo
     throw new Error(`historical migration ${HIST_MIGRATION_NAME} was not found/adapted`);
   }
 
-  return { destRoot, migrationsCopied, adaptedHistorical, sourceBlob };
+  return { destRoot, migrationsCopied, adaptedHistorical, sourceBlob, adaptedOriginalAssistantPatches };
 }
 
 function parseArgs(argv: string[]): { dest: string } {
@@ -136,7 +176,7 @@ function parseArgs(argv: string[]): { dest: string } {
   return { dest };
 }
 
-if (import.meta.main) {
+if ((import.meta as ImportMeta & { main?: boolean }).main) {
   const { dest } = parseArgs(process.argv.slice(2));
   const result = prepareDisposableSupabaseTree({ destRoot: dest });
   console.log(JSON.stringify(result, null, 2));
