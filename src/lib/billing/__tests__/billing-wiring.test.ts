@@ -280,7 +280,8 @@ describe("site wiring", () => {
       "resolveCheckoutUrl",
       "resolvePortalUrl",
       "academic-stripe-checkout",
-      'product: "academic", academicAssistant: withAssistant',
+      'product: "academic"',
+      "academicAssistant: false",
     ],
     "src/routes/technical.pricing.tsx": [
       "resolveCheckoutUrl",

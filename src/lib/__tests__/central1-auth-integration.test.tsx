@@ -7,6 +7,7 @@ import {
   RouterProvider,
 } from "@tanstack/react-router";
 import { act, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import type { ReactNode } from "react";
 import type { Session } from "@supabase/supabase-js";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
@@ -71,6 +72,11 @@ vi.mock("@/components/billing/StripeCheckoutButtons", () => ({
   StripeCheckoutButtons: () => null,
 }));
 vi.mock("@/components/kids/KidsFamilyPricing", () => ({ KidsFamilyPricing: () => null }));
+vi.mock("@/lib/billing/checkout-client", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@/lib/billing/checkout-client")>()),
+  // These auth cases render the pricing page but never perform a purchase.
+  loadCommercialPurchaseOptions: vi.fn(async () => ({ curricula: [], children: [] })),
+}));
 
 import { AuthProvider } from "@/lib/auth-context";
 import { AuthSessionGate, requireAuthBeforeLoad } from "@/lib/auth-route-guard";
@@ -131,7 +137,18 @@ beforeEach(() => {
   );
   mocks.signOut.mockResolvedValue({ error: null });
   mocks.assertLearnerSession.mockResolvedValue(null);
-  mocks.rpc.mockResolvedValue({ data: null, error: null });
+  mocks.rpc.mockImplementation(async (name: string) => ({
+    data:
+      name === "get_my_commercial_access"
+        ? {
+            ai_lifetime_access: false,
+            ai_lesson_ids: [],
+            server_time: new Date().toISOString(),
+            check_at: new Date(Date.now() + 30_000).toISOString(),
+          }
+        : null,
+    error: null,
+  }));
   mocks.removeChannel.mockResolvedValue({ error: null });
   configureDataClients();
 });
@@ -146,11 +163,16 @@ async function renderAt(
     guardLesson = true,
   }: { guardDashboard?: boolean; guardLesson?: boolean } = {},
 ) {
+  const queryClient = new QueryClient({
+    defaultOptions: { queries: { retry: false, gcTime: 0 } },
+  });
   const rootRoute = createRootRoute({
     component: () => (
-      <AuthProvider>
-        <Outlet />
-      </AuthProvider>
+      <QueryClientProvider client={queryClient}>
+        <AuthProvider>
+          <Outlet />
+        </AuthProvider>
+      </QueryClientProvider>
     ),
   });
 
@@ -178,8 +200,8 @@ async function renderAt(
     path: "/pricing",
     beforeLoad: (context) =>
       PricingFileRoute.options.beforeLoad?.(
-        // The isolated router omits the production root's query client;
-        // this compatibility guard reads only location and search.
+        // The isolated router supplies a query provider for rendered pages;
+        // this compatibility guard only reads location and search from context.
         context as unknown as Parameters<
           NonNullable<typeof PricingFileRoute.options.beforeLoad>
         >[0],
