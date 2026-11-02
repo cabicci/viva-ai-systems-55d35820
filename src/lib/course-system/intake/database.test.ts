@@ -6,7 +6,7 @@ import { mkdirSync, mkdtempSync, readFileSync, realpathSync, rmSync, writeFileSy
 import { resolve, relative, isAbsolute, join } from "node:path";
 import { drizzle } from "drizzle-orm/pglite";
 import { migrate } from "drizzle-orm/pglite/migrator";
-import { withStatementBreakpoints } from "../../../../scripts/release/assemble-unified-assistant-migration.mjs";
+import { createHash } from "node:crypto";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { commercialPolicyBaseline } from "@/lib/billing/__tests__/commercial-policy-fixture";
 import { prepareIntake } from "./prepare.server";
@@ -74,6 +74,12 @@ beforeAll(async () => {
   ).replace("CREATE SCHEMA learning_private;", "");
   await db.exec(learning);
   await db.exec(
+    readFileSync("drizzle/migrations/0033_commercial_family_lock_order.sql", "utf8").replaceAll(
+      "\r\n",
+      "\n",
+    ),
+  );
+  await db.exec(
     `CREATE FUNCTION public.rag_require_service_role() RETURNS void LANGUAGE plpgsql AS $$BEGIN PERFORM billing.commercial_require_service();END$$;`,
   );
   await db.exec(
@@ -87,10 +93,14 @@ beforeAll(async () => {
   mkdirSync(tempRoot, { recursive: true });
   migrationDir = mkdtempSync(join(tempRoot, "curriculum-native-"));
   mkdirSync(join(migrationDir, "meta"));
-  writeFileSync(
-    join(migrationDir, "0034_curriculum_admission.sql"),
-    withStatementBreakpoints(readFileSync("scripts/course-intake/install.sql", "utf8")),
+  const applied = readFileSync("drizzle/migrations/0034_course_intake.sql", "utf8").replaceAll(
+    "\r\n",
+    "\n",
   );
+  expect(createHash("sha256").update(applied).digest("hex")).toBe(
+    "7f236e5d7428a37e608f86eb144e3c0b47ab259c78e1256e6d77f748b060f60d",
+  );
+  writeFileSync(join(migrationDir, "0034_course_intake.sql"), applied);
   writeFileSync(
     join(migrationDir, "meta", "_journal.json"),
     JSON.stringify({
@@ -100,14 +110,16 @@ beforeAll(async () => {
         {
           idx: 0,
           version: "7",
-          when: 1793740000000,
-          tag: "0034_curriculum_admission",
+          when: 1793658835471,
+          tag: "0034_course_intake",
           breakpoints: true,
         },
       ],
     }),
   );
   await migrate(drizzle(db), { migrationsFolder: migrationDir });
+  // The reviewed real correction runs against the exact applied foundation.
+  await db.exec(readFileSync("scripts/course-intake/child-command-erasure.sql", "utf8"));
 }, 60000);
 afterAll(async () => {
   await db?.close();
@@ -631,6 +643,99 @@ describe.sequential(
         ),
       ).toBe(false);
       await db.exec("UPDATE public.technical_release_control SET enabled=true");
+    });
+    it("erases a removed child's command receipts and drafts with its learning record, preserving the parent's records", async () => {
+      await actor(user);
+      const kidScope = {
+        area: "kids",
+        course: "fixture-kids",
+        lesson: "step-kids",
+        profileId: child,
+      };
+      const opened = await command("lesson", kidScope);
+      const start = await command("start", {
+        ...kidScope,
+        version: opened.version,
+        section: "quiz",
+        requestId: crypto.randomUUID(),
+      });
+      await command("save_draft", {
+        ...kidScope,
+        section: "quiz",
+        attemptId: start.attemptId,
+        revision: 0,
+        submission: { "q-one": 1 },
+        requestId: crypto.randomUUID(),
+      });
+      await service();
+      const adult = await value(
+        "SELECT count(*)::int v FROM curriculum_private.commands WHERE parameters->'data'->>'profileId' IS NULL",
+      );
+      expect(
+        await value(
+          "SELECT count(*)::int v FROM curriculum_private.commands WHERE parameters->'data'->>'profileId'=$1",
+          [child],
+        ),
+      ).toBeGreaterThan(0);
+      await db.query("DELETE FROM public.kids_profiles WHERE id=$1", [child]);
+      expect(
+        await value(
+          "SELECT count(*)::int v FROM curriculum_private.commands WHERE parameters->'data'->>'profileId'=$1",
+          [child],
+        ),
+      ).toBe(0);
+      expect(
+        await value("SELECT count(*)::int v FROM curriculum_private.attempts WHERE profile_id=$1", [
+          child,
+        ]),
+      ).toBe(0);
+      expect(
+        await value(
+          "SELECT count(*)::int v FROM curriculum_private.commands WHERE parameters->'data'->>'profileId' IS NULL",
+        ),
+      ).toBe(adult);
+    });
+    it("erases another removed account's receipts without affecting the remaining learner", async () => {
+      await service();
+      await db.query(
+        "INSERT INTO billing.email_access_grants(id,recipient_email,scope_mode,catalogues,user_id,activated_at,grant_kind) VALUES($1,'two@example.invalid','selected',ARRAY['technical:fixture-technical'],$2,now(),'single_curriculum')",
+        [crypto.randomUUID(), other],
+      );
+      await actor(other);
+      const target = { area: "technical", course: "fixture-technical", lesson: "step-technical" };
+      const lesson = await command("lesson", target);
+      await command("complete", {
+        ...target,
+        version: lesson.version,
+        section: "intro",
+        requestId: crypto.randomUUID(),
+      });
+      await service();
+      const ownerCount = await value(
+        "SELECT count(*)::int v FROM curriculum_private.commands WHERE account_id=$1",
+        [user],
+      );
+      expect(
+        await value("SELECT count(*)::int v FROM curriculum_private.commands WHERE account_id=$1", [
+          other,
+        ]),
+      ).toBeGreaterThan(0);
+      await db.query("DELETE FROM auth.users WHERE id=$1", [other]);
+      expect(
+        await value("SELECT count(*)::int v FROM curriculum_private.commands WHERE account_id=$1", [
+          other,
+        ]),
+      ).toBe(0);
+      expect(
+        await value("SELECT count(*)::int v FROM learning_private.courses WHERE account_id=$1", [
+          other,
+        ]),
+      ).toBe(0);
+      expect(
+        await value("SELECT count(*)::int v FROM curriculum_private.commands WHERE account_id=$1", [
+          user,
+        ]),
+      ).toBe(ownerCount);
     });
     it("keeps all new storage private, RLS protected and service-only operations inaccessible to learners", async () => {
       await service();
