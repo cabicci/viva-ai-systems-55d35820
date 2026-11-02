@@ -569,6 +569,47 @@ export type Database = {
         }
         Relationships: []
       }
+      assistant_auto_source_events: {
+        Row: {
+          area: string
+          created_at: string
+          event_id: number
+          job_id: string | null
+          locale: string
+          source_key: string
+          source_sha: string | null
+          withdrawn: boolean
+        }
+        Insert: {
+          area: string
+          created_at?: string
+          event_id?: number
+          job_id?: string | null
+          locale: string
+          source_key: string
+          source_sha?: string | null
+          withdrawn: boolean
+        }
+        Update: {
+          area?: string
+          created_at?: string
+          event_id?: number
+          job_id?: string | null
+          locale?: string
+          source_key?: string
+          source_sha?: string | null
+          withdrawn?: boolean
+        }
+        Relationships: [
+          {
+            foreignKeyName: "assistant_auto_source_events_job_id_fkey"
+            columns: ["job_id"]
+            isOneToOne: false
+            referencedRelation: "assistant_auto_jobs"
+            referencedColumns: ["job_id"]
+          },
+        ]
+      }
       build_logs: {
         Row: {
           created_at: string
@@ -1994,6 +2035,72 @@ export type Database = {
           },
         ]
       }
+      rag_current_retirements: {
+        Row: {
+          batch_ordinal: number
+          chunk_ids: Json
+          coverage_sha256: string
+          execution_id: string
+          legacy_audit_md5: string
+          legacy_audit_sha256: string
+          provider_outcome: string
+          reason: string
+          release_id: string
+          retired_at: string
+          successor_execution_id: string
+          successor_release_id: string
+          successor_version: string
+          unknown_request_id: string
+        }
+        Insert: {
+          batch_ordinal: number
+          chunk_ids: Json
+          coverage_sha256: string
+          execution_id: string
+          legacy_audit_md5: string
+          legacy_audit_sha256: string
+          provider_outcome?: string
+          reason?: string
+          release_id: string
+          retired_at?: string
+          successor_execution_id: string
+          successor_release_id: string
+          successor_version: string
+          unknown_request_id: string
+        }
+        Update: {
+          batch_ordinal?: number
+          chunk_ids?: Json
+          coverage_sha256?: string
+          execution_id?: string
+          legacy_audit_md5?: string
+          legacy_audit_sha256?: string
+          provider_outcome?: string
+          reason?: string
+          release_id?: string
+          retired_at?: string
+          successor_execution_id?: string
+          successor_release_id?: string
+          successor_version?: string
+          unknown_request_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "rag_current_retirements_release_id_fkey"
+            columns: ["release_id"]
+            isOneToOne: true
+            referencedRelation: "rag_current_releases"
+            referencedColumns: ["release_id"]
+          },
+          {
+            foreignKeyName: "rag_current_retirements_successor_release_id_fkey"
+            columns: ["successor_release_id"]
+            isOneToOne: false
+            referencedRelation: "rag_current_releases"
+            referencedColumns: ["release_id"]
+          },
+        ]
+      }
       rag_import_batches: {
         Row: {
           accepted_row_count: number
@@ -2986,7 +3093,31 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      assistant_auto_intake_status: {
+        Row: {
+          area: string | null
+          created_at: string | null
+          error_code: string | null
+          event_id: number | null
+          job_id: string | null
+          locale: string | null
+          next_offset: number | null
+          scope_count: number | null
+          source_key: string | null
+          source_sha: string | null
+          state: string | null
+          withdrawn: boolean | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "assistant_auto_source_events_job_id_fkey"
+            columns: ["job_id"]
+            isOneToOne: false
+            referencedRelation: "assistant_auto_jobs"
+            referencedColumns: ["job_id"]
+          },
+        ]
+      }
     }
     Functions: {
       academic_assistant_access: {
@@ -3240,12 +3371,22 @@ export type Database = {
         }
         Returns: boolean
       }
+      assistant_auto_link_sources: { Args: { p_keys: Json }; Returns: boolean }
       assistant_auto_publish_academic: {
         Args: { p_job: string; p_lease: string; p_request: string }
         Returns: boolean
       }
       assistant_auto_publish_card: {
         Args: { p_job: string; p_lease: string; p_request: string }
+        Returns: boolean
+      }
+      assistant_auto_receipt: {
+        Args: {
+          p_job: string
+          p_offset: number
+          p_receipt: Json
+          p_request: string
+        }
         Returns: boolean
       }
       assistant_auto_register: {
@@ -3255,6 +3396,10 @@ export type Database = {
       assistant_auto_reserve: {
         Args: { p_job: string; p_lease: string; p_request: string }
         Returns: boolean
+      }
+      assistant_auto_source_revisions: {
+        Args: { p_registry: Json }
+        Returns: Json
       }
       assistant_auto_status: { Args: never; Returns: Json }
       assistant_card_content_access: {
@@ -4129,6 +4274,18 @@ export type Database = {
         Args: { p_material: string; p_release_id: string; p_request_id: string }
         Returns: Json
       }
+      rag_current_legacy_audit: {
+        Args: { p_release_id: string }
+        Returns: Json
+      }
+      rag_current_prior_ai_clear: {
+        Args: { p_release_id: string }
+        Returns: boolean
+      }
+      rag_current_require_unretired: {
+        Args: { p_release_id: string }
+        Returns: undefined
+      }
       rag_current_reserve_provider: {
         Args: {
           p_execution_id: string
@@ -4137,6 +4294,29 @@ export type Database = {
           p_request_id: string
         }
         Returns: Json
+      }
+      rag_current_retire_verified: {
+        Args: {
+          p_execution_id: string
+          p_expected_audit_sha256: string
+          p_release_id: string
+          p_successor_execution: string
+          p_unknown_request: string
+        }
+        Returns: Json
+      }
+      rag_current_retirement_coverage: {
+        Args: {
+          p_full: boolean
+          p_release_id: string
+          p_successor: string
+          p_unknown_request: string
+        }
+        Returns: Json
+      }
+      rag_current_retirement_valid: {
+        Args: { p_release_id: string }
+        Returns: boolean
       }
       rag_current_rollback: {
         Args: {
