@@ -265,7 +265,7 @@ describe("public billing RPC bridge — static", () => {
   });
 
   it("handler still reserves before providers and fails closed on reserve failure", () => {
-    const reserveIdx = handler.indexOf('await runMeteredQuestion(');
+    const reserveIdx = handler.indexOf("await runMeteredQuestion(");
     const embedIdx = handler.indexOf("deps.embedQuery(");
     const retrieveIdx = handler.indexOf("deps.localeSemanticRetrieve(");
     const llmIdx = handler.indexOf("deps.callLlm(");
@@ -273,7 +273,9 @@ describe("public billing RPC bridge — static", () => {
     expect(embedIdx).toBeGreaterThan(reserveIdx);
     expect(retrieveIdx).toBeGreaterThan(reserveIdx);
     expect(llmIdx).toBeGreaterThan(reserveIdx);
-    expect(questionMeter.indexOf('rpc("reserve_assistant_question"')).toBeLessThan(questionMeter.indexOf('await execute(fingerprint)'));
+    expect(questionMeter.indexOf('rpc("reserve_assistant_question"')).toBeLessThan(
+      questionMeter.indexOf("await execute(fingerprint)"),
+    );
     expect(questionMeter).toContain('if (row.allowed !== true || row.status !== "reserved")');
     expect(handler).toContain('runtime: "disconnected"');
     expect(handler).toContain(

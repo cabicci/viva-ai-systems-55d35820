@@ -109,7 +109,7 @@ describe("Mapped Live coded offers", () => {
     const f = fixture();
     f.evidence.mapping.duration = "repeating";
     f.evidence.mapping.duration_in_months = 3;
-    const first: any = { ...structuredClone(f.invoice), object: "invoice" };
+    const first = { ...structuredClone(f.invoice), object: "invoice" };
     Object.assign(first.discounts[0], { start: 1000, end: 4000 });
     Object.assign(first.discounts[0].source.coupon, {
       duration: "repeating",

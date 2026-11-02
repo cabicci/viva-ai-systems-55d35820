@@ -73,7 +73,16 @@ export function AssistantUsage({ scope, accountId, cardTitle, busy, isCurrent }:
   const [dialog, setDialog] = useState<{ marker: string; open: boolean } | null>(null);
   const [retry, setRetry] = useState(0);
   const course = scope.area === "ai" ? "ai" : scope.area === "kids" ? "kids" : scope.cardId;
-  const key = JSON.stringify([accountId, scope.area, course, scope.profileId, scope.locale]);
+  let key = "";
+  try {
+    if (isCurrent()) {
+      const serialize = JSON.stringify;
+      if (isCurrent()) {
+        const serialized = serialize([accountId, scope.area, course, scope.profileId, scope.locale]);
+        if (isCurrent()) key = serialized;
+      }
+    }
+  } catch { /* A retired or unavailable scope cannot start a balance request. */ }
   const copy = COPY[scope.locale];
   useEffect(() => {
     let active = true;
