@@ -13,7 +13,7 @@ const sql = readFileSync("drizzle/migrations/0031_student_learning_records.sql",
   "\n",
 );
 const post = readFileSync(
-  "scripts/release/student-learning-native-postcondition.sql",
+  "drizzle/migrations/0032_student_learning_native_postcondition.sql",
   "utf8",
 ).replaceAll("\r\n", "\n");
 const root = path.resolve(".unified-test-cache");
@@ -46,7 +46,7 @@ async function setup(previousHash = oldHash) {
   dirs.push(dir);
   mkdirSync(path.join(dir, "meta"));
   writeFileSync(path.join(dir, "0031_student_learning_records.sql"), sql);
-  writeFileSync(path.join(dir, "0032_student_learning_postcondition.sql"), post);
+  writeFileSync(path.join(dir, "0032_student_learning_native_postcondition.sql"), post);
   writeFileSync(
     path.join(dir, "meta/_journal.json"),
     JSON.stringify({
@@ -63,8 +63,8 @@ async function setup(previousHash = oldHash) {
         {
           idx: 32,
           version: "7",
-          when: 1793650000001,
-          tag: "0032_student_learning_postcondition",
+          when: 1793650009827,
+          tag: "0032_student_learning_native_postcondition",
           breakpoints: true,
         },
       ],
@@ -76,6 +76,9 @@ describe("installed native Drizzle runner and reviewed release assertion", () =>
   it("applies the pending feature and meaningful checks once, preserving existing facts", async () => {
     expect(createHash("sha256").update(sql).digest("hex")).toBe(
       "a29fb5acb60633abdb4ba6b28bf91ea2c0e9f1ed7b0db9e83bb381c33725cc3d",
+    );
+    expect(createHash("sha256").update(post).digest("hex")).toBe(
+      "75e953d59d5111afdd1c382d1e4cb6c3eabaf47c72dfce94aebef6763c6e6c29",
     );
     const { db, run } = await setup();
     await run();

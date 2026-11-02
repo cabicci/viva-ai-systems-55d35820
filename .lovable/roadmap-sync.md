@@ -10,6 +10,8 @@ summary: Account/child course records, private notes and reading position, immut
 
 owner-backlog: Stage 3 curriculum intake/assignment must require the curriculum-specific student activity model and its assessment/completion rules before approval. Owner explicitly deferred that intake step on 2026-11-02 and requested continuation of phase 2. No intake UI or mandatory new-course gate is implemented by this phase-2 change.
 
+Post-application verification: owner-approved native entries42/43 match their canonical hashes and increasing timestamps. Preserve all native migration/snapshot/journal/type commits. Independent learning/commerce/RAG content fingerprints match; only the tested account's ordinary authentication updated_at advanced before application. The same authenticated preview displays prior journeys, child profiles and course activity models. A real report is saved/visible with package counter1/2; no question credit was used. Align the isolated migrator proof to the actual applied0032 and remove its temporary input. Final main integration/checks and owner publication remain pending; this is not restricted-learner cross-device or live acceptance.
+
 [roadmap:2dd3b1b3-9fb2-42c9-b8c5-117554e2600a]
 date: 2026-10-30
 scope: ui
