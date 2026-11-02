@@ -25,9 +25,22 @@ Schema-only preimages and non-learner registry/policy preimages are held private
 
 The project's actual Backups UI showed a restorable daily backup at **2026-11-02 05:15:48 UTC**, followed by prior daily entries. No backup export or new database copy was created. This is an existing daily restore point, not a claim of a fresh point-in-time snapshot; restoring it would lose later writes and is not an automatic rollback instruction. A SQL transaction rollback and captured function text are not full database backups.
 
-## Execution boundary
+## Execution boundary and applied release
 
-The owner approved preparation/application of the reviewed database updates and will publish the website personally. This document records preparation, not an executed migration. Apply only through the supported native Drizzle mechanism after the source correction and tests pass. Verify real journal hashes, installed privacy boundaries and unchanged protected RAG state afterward. Do not publish, invoke a provider, enable a campaign or change automatic-indexing policy as part of migration execution.
+The owner approved preparation/application of the reviewed database updates and personally confirmed Allow for the exact reviewed `commercial_native_postcondition` request. After PR251 merged at `363417ab3f166ae373d1e3e7a5b8d0116ba617e7`, the supported native Drizzle runner applied 0026 through 0029. Independent journal readback verified these hashes:
+
+| Entry | Journal row | SHA-256                                                            |
+| ----- | ----------- | ------------------------------------------------------------------ |
+| 0026  | 37          | `6f16c13b8a6b3248a32bcc4a721fb81602e2a2051ee0d703db345bcd530fbf5a` |
+| 0027  | 38          | `6696f866db37bbb1066ae8cff27390d82db50817cf56b2d32a6dc1d21720a2ae` |
+| 0028  | 39          | `61782d533a90e97d509dc2730c535cfb9c137808d5e4090ac574d7c44fa29c35` |
+| 0029  | 40          | `5d1bd562c79767db1bcd4a47cccc42fb99df7f00061c5565e0c00cebc750f1a3` |
+
+Native 0029 is byte-identical to the reviewed 5,114-byte assertion candidate. Its journal timestamp is `1793628553414`. All 14 protected data tables retained their exact pre-application row counts and full-row multiset hashes, including vectors, index versions, policies, source events and jobs. No reindex or policy change was performed.
+
+The existing `assistant-runtime` and `account-welcome-job` functions were successfully deployed from the approved source. Submission SHA-256 values are respectively `b7125d5850ea5bc598c0352b7e988c025acea0b9efb91f5875fa251b71a518cb` and `10f9c7d3b2f6fdb93384129bc1e950014b1a80469b60c7cc6ce0fe76602eca6b`; deployment responses did not expose deployed version numbers. No provider or mail job was invoked during this step.
+
+Lovable generated commit `a98e99ececd9c185085d12a74436613c92ec8f5c` with only native 0029 metadata and regenerated database types. Its original commit ancestry is preserved for synchronization. The owner subsequently reported website publication; browser verification of the published assistant remains a separate release check. Codex did not press Publish or change secrets, schedules, accounts or subscriptions.
 
 ## Local review evidence
 
