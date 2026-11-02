@@ -2,6 +2,7 @@ import type { SupportedLocale } from "@/lib/locale/types";
 
 export type AssistantArea = "ai" | "kids" | "technical" | "academic";
 export type AssistantScope = {
+  admitted?: true;
   area: AssistantArea;
   cardId: string;
   stepId?: string;
@@ -21,5 +22,5 @@ export type AssistantAdapter = (question: AssistantQuestion) => Promise<Assistan
 
 export function assistantScopeKey(scope: AssistantScope, accountId?: string | null): string {
   return JSON.stringify([accountId ?? null, scope.area, scope.cardId, scope.stepId ?? null,
-    scope.locale, scope.profileId ?? null]);
+    scope.locale, scope.profileId ?? null, ...(scope.admitted ? ["admitted"] : [])]);
 }

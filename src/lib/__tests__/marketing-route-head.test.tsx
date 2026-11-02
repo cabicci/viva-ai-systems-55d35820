@@ -59,40 +59,48 @@ describe("settled localized page-view metadata", () => {
     return (dataLayer ?? []).filter((entry) => entry.event === "masaarat_page_view");
   }
 
-  it("suppresses adult analytics and advertising on Kids pages despite an earlier adult grant", async () => {
-    const root = createRootRoute({
-      component: () => (
-        <>
-          <Outlet />
-          <AnalyticsConsentGate />
-        </>
-      ),
-    });
-    const kids = createRoute({
-      getParentRoute: () => root,
-      path: "/kids",
-      component: () => <main>Kids</main>,
-    });
-    const adult = createRoute({
-      getParentRoute: () => root,
-      path: "/pricing",
-      component: () => <main>Pricing</main>,
-    });
-    const router = createRouter({
-      routeTree: root.addChildren([kids, adult]),
-      history: createMemoryHistory({ initialEntries: ["/kids"] }),
-    });
-    await router.load();
-    render(<RouterProvider router={router} />);
-    await waitFor(() => expect(screen.getByRole("main")).toHaveTextContent("Kids"));
-    expect(pageViews()).toHaveLength(0);
-    expect(document.getElementById("masaarat-meta-pixel-script")).toBeNull();
-    await act(() => router.navigate({ to: "/pricing" }));
-    await waitFor(() => expect(pageViews()).toHaveLength(1));
-    await act(() => router.navigate({ to: "/kids" }));
-    expect(pageViews()).toHaveLength(1);
-    expect(document.getElementById("masaarat-meta-pixel-script")).toBeNull();
-  });
+  it.each([
+    "/kids",
+    "/courses/kids/reviewed-course",
+    "/courses/technical/reviewed-course",
+    "/admin/curricula",
+  ])(
+    "suppresses analytics and advertising on protected curriculum route %s despite an earlier adult grant",
+    async (path) => {
+      const root = createRootRoute({
+        component: () => (
+          <>
+            <Outlet />
+            <AnalyticsConsentGate />
+          </>
+        ),
+      });
+      const kids = createRoute({
+        getParentRoute: () => root,
+        path,
+        component: () => <main>Kids</main>,
+      });
+      const adult = createRoute({
+        getParentRoute: () => root,
+        path: "/pricing",
+        component: () => <main>Pricing</main>,
+      });
+      const router = createRouter({
+        routeTree: root.addChildren([kids, adult]),
+        history: createMemoryHistory({ initialEntries: [path] }),
+      });
+      await router.load();
+      render(<RouterProvider router={router} />);
+      await waitFor(() => expect(screen.getByRole("main")).toHaveTextContent("Kids"));
+      expect(pageViews()).toHaveLength(0);
+      expect(document.getElementById("masaarat-meta-pixel-script")).toBeNull();
+      await act(() => router.navigate({ to: "/pricing" }));
+      await waitFor(() => expect(pageViews()).toHaveLength(1));
+      await act(() => router.navigate({ to: path }));
+      expect(pageViews()).toHaveLength(1);
+      expect(document.getElementById("masaarat-meta-pixel-script")).toBeNull();
+    },
+  );
 
   async function mountRouter() {
     let releaseHead: (() => void) | undefined;

@@ -13,7 +13,7 @@ export async function handlePublicAutomaticIndexing(request: Request) {
         request.headers.get("x-masaarat-indexer-build") !== __ASSISTANT_INDEXER_BUILD__ ||
         request.headers.get("x-masaarat-indexer-deployment") !== __ASSISTANT_INDEXER_DEPLOYMENT__)
         throw new Error("AUTOMATION_PUBLICATION_CHANGED");
-      const {automaticTick}=await import("./worker.server");
+      const {automaticTick}=await import("@/lib/course-system/intake/automatic-worker.server");
       return pruneResponseCache === true ? automaticTick(requestId,undefined,true) : automaticTick(requestId);
     },
     status:async()=>{

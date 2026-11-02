@@ -2,7 +2,8 @@ import type { AssistantCitation, AssistantScope } from "./types";
 export type ConversationTurn = { question: string; answer: string; citations: AssistantCitation[] };
 export function historyKey(scope: AssistantScope, accountId: string): string {
   // Versioned namespace deliberately cannot load old unscoped assistant history.
-  return `masaarat.card-assistant.v1:${JSON.stringify([accountId, scope.area, scope.cardId, scope.profileId ?? null, scope.locale])}`;
+  const namespace = scope.admitted ? "masaarat.curriculum-assistant.v1" : "masaarat.card-assistant.v1";
+  return `${namespace}:${JSON.stringify([accountId, scope.area, scope.cardId, scope.profileId ?? null, scope.locale])}`;
 }
 export function readHistory(key: string | null): ConversationTurn[] {
   if (!key || typeof window === "undefined") return [];

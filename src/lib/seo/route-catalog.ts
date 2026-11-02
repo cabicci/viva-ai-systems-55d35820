@@ -9,6 +9,20 @@ export type RouteCatalogEntry = {
 };
 
 export const ROUTE_CATALOG = [
+  {
+    source: "admin.curricula.tsx",
+    pattern: "/admin/curricula",
+    visibility: "private",
+    sitemap: false,
+    robotsPath: "/admin",
+  },
+  {
+    source: "courses.$area.$courseId.tsx",
+    pattern: "/courses/*/*",
+    visibility: "private",
+    sitemap: false,
+    robotsPath: "/courses/",
+  },
   { source: "ai.index.tsx", pattern: "/ai", visibility: "public", sitemap: true },
   {
     source: "ai.paths.applied.tsx",

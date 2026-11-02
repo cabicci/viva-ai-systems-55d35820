@@ -10,6 +10,11 @@ const acknowledge = async () => { const dialog = await screen.findByRole("dialog
 beforeEach(() => { window.sessionStorage.clear(); state.balance.mockReset().mockResolvedValue(rights); });
 
 describe("assistant rights popup", () => {
+  it.each(["ai", "kids"] as const)("loads the exact admitted %s course balance instead of a legacy course balance", async area => {
+    render(<AssistantUsage scope={{ ...scope, admitted: true, area, cardId: "new-course", ...(area === "ai" ? { profileId: undefined } : {}) }} accountId="owner" busy={false} isCurrent={() => true} />);
+    await screen.findByRole("dialog");
+    expect(state.balance).toHaveBeenCalledWith({ data: { expectedAccountId: "owner", area, course: "new-course", childId: area === "kids" ? scope.profileId : null } });
+  });
   it("opens a real dialog with confirmed rights, current curriculum and family balance", async () => {
     render(view());
     const dialog = await screen.findByRole("dialog");

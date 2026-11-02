@@ -22,7 +22,8 @@ export function AnalyticsConsentGate() {
   const { user, loading: authLoading } = useAuth();
   const pathname = useRouterState({ select: (state) => state.location.pathname });
   const locationHref = useRouterState({ select: (state) => state.location.href });
-  const onKidsPage = pathname === "/kids" || pathname.startsWith("/kids/");
+  const onKidsPage =
+    pathname === "/kids" || pathname.startsWith("/kids/") || pathname.startsWith("/courses/kids/");
   const sensitivePage = isSensitiveAnalyticsUrl(locationHref);
   const copy = ANALYTICS_CONSENT_COPY[locale];
   const pageView = useRouterState({

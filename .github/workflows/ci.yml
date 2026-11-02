@@ -52,6 +52,9 @@ jobs:
           bun run test:assistant
           node --test scripts/assistant/indexer-build.test.mjs
 
+      - name: Curriculum admission, student activities and native migration (isolated; no provider calls)
+        run: bun run test:run -- src/lib/course-system/intake src/components/course-intake
+
       - name: TypeScript check
         run: bunx tsc --noEmit
 

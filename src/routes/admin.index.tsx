@@ -26,6 +26,8 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PhaseRibbon } from "@/components/admin/PhaseRibbon";
+import { useLocale } from "@/lib/locale/locale-context";
+import { intakeCopy } from "@/lib/course-system/intake/copy";
 
 export const Route = createFileRoute("/admin/")({
   head: () => ({ meta: [{ title: "لوحة الإدارة — مسارات" }] }),
@@ -66,6 +68,7 @@ function AdminPage() {
 }
 
 function AdminDashboard() {
+  const { locale } = useLocale();
   const overviewFn = useServerFn(getAdminOverview);
   const activityFn = useServerFn(getAdminActivity);
   const insightsFn = useServerFn(getAdminInsights);
@@ -98,6 +101,7 @@ function AdminDashboard() {
   return (
     <div className="min-h-dvh bg-background">
       <PhaseRibbon />
+      <a href="/admin/curricula" className="inline-flex min-h-11 items-center font-bold text-primary">{intakeCopy(locale).gateway}</a>
       <header className="border-b border-border/60 bg-card/50 backdrop-blur sticky top-0 z-30">
         <div className="container mx-auto px-4 h-14 flex items-center justify-between">
           <div className="flex items-center gap-2 font-bold">

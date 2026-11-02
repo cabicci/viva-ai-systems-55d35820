@@ -1,4 +1,5 @@
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, render as renderRaw, screen } from "@testing-library/react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { PathIntroduction } from "./PathIntroduction";
 import { PathStory } from "./PathStory";
@@ -9,6 +10,11 @@ import { KidsCurriculum, TechnicalCurriculum, TechnicalCatalogue } from "./LineC
 import { getTechnicalCurriculumPreview } from "@/lib/technical-track-preview";
 import { parseKidsCatalogueTitles } from "@/lib/kids/use-curriculum-titles";
 import { SUPPORTED_LOCALES, type SupportedLocale } from "@/lib/locale/types";
+function render(ui: React.ReactElement) {
+  const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+  return renderRaw(ui, { wrapper: ({ children }) => <QueryClientProvider client={client}>{children}</QueryClientProvider> });
+}
+vi.mock("@/lib/course-system/intake/client", () => ({ curriculumCatalogue: async () => [] }));
 
 const state = vi.hoisted(() => ({
   locale: "en" as SupportedLocale,
