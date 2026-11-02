@@ -144,7 +144,9 @@ async function runNativeTransaction(sql26: string, failAfter = false) {
   const folder = mkdtempSync(join(cacheRoot, "native-reconciliation-"));
   const checkedFolder = resolve(folder);
   if (!checkedFolder.startsWith(`${cacheRoot}${sep}`)) throw Error("Unsafe fixture cleanup path");
-  const entries = journal.entries.filter((entry) => entry.idx >= 26);
+  // Rehearse this release's three pending entries plus its final assertion;
+  // later native journal additions must not be replayed as fixture inputs.
+  const entries = journal.entries.filter((entry) => entry.idx >= 26 && entry.idx <= 28);
   const finalEntry = {
     idx: 29,
     version: "7",
