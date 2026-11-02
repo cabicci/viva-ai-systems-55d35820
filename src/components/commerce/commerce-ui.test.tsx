@@ -520,6 +520,13 @@ describe("simple administrator offers", () => {
         original_minor: 249000,
         currency: "EGP",
       },
+      {
+        package: "question_topup",
+        market: "EG",
+        billing_interval: "one_time",
+        original_minor: 5000,
+        currency: "EGP",
+      },
     ]);
     render(
       <QueryClientProvider
@@ -532,6 +539,53 @@ describe("simple administrator offers", () => {
     );
     return { run, s: adminOfferCopy(locale), w: commerceCopy(locale) };
   }
+  it("saves a reviewed repeating coupon with its explicit month count", async () => {
+    const { run, s } = setup("en");
+    await screen.findByRole("option", { name: /Pro.*169/ });
+    fireEvent.change(screen.getByLabelText(s.emails), { target: { value: "member@example.test" } });
+    fireEvent.change(screen.getByLabelText("Discount duration"), {
+      target: { value: "repeating" },
+    });
+    fireEvent.change(screen.getByLabelText("Number of months"), { target: { value: "4" } });
+    fireEvent.click(screen.getByRole("button", { name: s.review }));
+    expect(run).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole("button", { name: s.confirm }));
+    await waitFor(() =>
+      expect(run).toHaveBeenCalledWith(
+        "simple_offer",
+        expect.objectContaining({
+          product_scope: "subscription",
+          discount_duration: "repeating",
+          discount_duration_months: 4,
+        }),
+      ),
+    );
+  });
+  it("requires explicit top-up scope and sends a one-time coupon instead of a subscription", async () => {
+    const { run, s } = setup("en");
+    await screen.findByRole("option", { name: /Pro.*169/ });
+    fireEvent.change(screen.getByLabelText(s.emails), { target: { value: "member@example.test" } });
+    fireEvent.change(screen.getByLabelText("Coupon applies to"), {
+      target: { value: "question_topup" },
+    });
+    expect(screen.queryByLabelText("Discount duration")).toBeNull();
+    expect(screen.getByLabelText(s.percent)).toHaveValue(20);
+    fireEvent.click(screen.getByRole("button", { name: s.review }));
+    fireEvent.click(screen.getByRole("button", { name: s.confirm }));
+    await waitFor(() =>
+      expect(run).toHaveBeenCalledWith(
+        "simple_offer",
+        expect.objectContaining({
+          package: "question_topup",
+          billing_interval: "one_time",
+          product_scope: "question_topup",
+          discount_duration: "once",
+          expected_price_minor: 5000,
+          percent: 20,
+        }),
+      ),
+    );
+  });
   it("adds a registered recipient to a group without replacing manually entered emails", async () => {
     const { s } = setup("en");
     fireEvent.click(screen.getByRole("radio", { name: s.group }));

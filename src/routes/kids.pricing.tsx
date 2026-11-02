@@ -1,3 +1,4 @@
+import { CommercialPurchases } from "@/components/billing/CommercialPurchases";
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
@@ -22,6 +23,7 @@ function KidsPricing() {
         <div className="container mx-auto max-w-5xl space-y-8 px-4 py-12">
           <KidsReleaseNotice className="rounded-2xl border border-accent/30 bg-accent/10 p-4 text-sm" />
           <KidsFamilyPricing />
+          <CommercialPurchases area="kids" />
         </div>
       </main>
       <Footer />

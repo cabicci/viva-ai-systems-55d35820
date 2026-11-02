@@ -11,7 +11,7 @@ vi.mock("@/lib/rag/current-release/dependencies.server", () => ({ currentRelease
 vi.mock("@/lib/rag/current-release/executor.server", () => ({ executeCurrentRelease: mocks.executeAI }));
 vi.mock("@/lib/card-assistant/registry", () => ({ CARD_REGISTRY: [] }));
 vi.mock("@/integrations/supabase/client.server", () => ({ supabaseAdmin: { from: mocks.from } }));
-import { executeAutomaticScope } from "../assistant-automation/worker.server";
+import { automaticTick, executeAutomaticScope, type AutomaticTickDependencies } from "../assistant-automation/worker.server";
 import { loadCurrentRelease } from "../rag/current-release/corpus.server";
 const sha = "a".repeat(64);
 function lease(area: "kids" | "academic" | "ai" = "kids", offset = 0): AutomaticLease {
@@ -132,4 +132,32 @@ describe("automatic worker isolation and guarded publication", () => {
     expect(mocks.executeAI).not.toHaveBeenCalled(); expect(mocks.reserve).not.toHaveBeenCalled();
   });
 
+});
+
+describe("scheduled assistant response cache maintenance", () => {
+  function ports(result: unknown, fails = false) {
+    const rpc = vi.fn(async (name: string) => {
+      if (name === "prune_assistant_response_cache") { if (fails) throw Error("private database diagnostic"); return result; }
+      return name === "assistant_auto_claim" ? { done: true } : true;
+    });
+    const dependencies: AutomaticTickDependencies = { plans: async () => [], rpc: rpc as AutomaticTickDependencies["rpc"],
+      execute: vi.fn(), registry: [] };
+    return { dependencies, rpc };
+  }
+  it("prunes one bounded batch without adding a provider or changing indexing completion", async () => {
+    const { dependencies, rpc } = ports({ pruned: 12 });
+    expect(await automaticTick("request", dependencies, true)).toEqual({ done: true, responseCachePrune: { state: "complete", pruned: 12 } });
+    expect(rpc.mock.calls.filter(([name]) => name === "prune_assistant_response_cache")).toEqual([["prune_assistant_response_cache", { p_limit: 1000 }]]);
+    expect(dependencies.execute).not.toHaveBeenCalled();
+  });
+  it.each([false, true])("records cleanup for the next scheduled retry without losing the indexing result (%s)", async fails => {
+    const { dependencies } = ports({ pruned: "invalid" }, fails);
+    expect(await automaticTick("request", dependencies, true)).toEqual({ done: true,
+      responseCachePrune: { state: "retry", code: "ASSISTANT_CACHE_PRUNE_UNAVAILABLE" } });
+  });
+  it("does not prune on subsequent ticks without the first-tick flag", async () => {
+    const { dependencies, rpc } = ports({ pruned: 12 });
+    expect(await automaticTick("request", dependencies)).toEqual({ done: true });
+    expect(rpc.mock.calls.some(([name]) => name === "prune_assistant_response_cache")).toBe(false);
+  });
 });

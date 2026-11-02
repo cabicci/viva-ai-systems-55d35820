@@ -5,6 +5,7 @@ import { useAuth } from "@/lib/auth-context";
 import { PATHS, getPath, type CurriculumPath } from "@/lib/curriculum-data";
 import { captureWarn } from "@/lib/error-capture";
 import { useFreeAccessSnapshot } from "@/lib/commerce/free-access-client";
+import { useCommercialAccess } from "@/lib/billing/commercial-access-client";
 import { ownsCurrentEffect, type OwnedEffectContext } from "./owned-effect-context";
 import {
   isLessonIncludedInTier,
@@ -66,10 +67,12 @@ export function useEntitlement(): {
   isAdmin: boolean;
   isLoaded: boolean;
   freeLessonIds: readonly string[];
+  entitledLessonIds: readonly string[];
   freeTargets: readonly string[];
 } {
   const { user, loading } = useAuth();
   const freeAccess = useFreeAccessSnapshot();
+  const commercialAccess = useCommercialAccess();
   const userId = user?.id ?? null;
 
   const {
@@ -124,10 +127,11 @@ export function useEntitlement(): {
     isProPlus: tier === "pro_plus",
     isAdmin: admin,
     freeLessonIds: freeAccess.lessonIds,
+    entitledLessonIds: commercialAccess.lessonIds,
     freeTargets: freeAccess.targets,
     // C6 fix: simplified — when there's no user we're loaded; when there is,
     // we need BOTH the subscription query and the admin query to have settled.
-    isLoaded: !loading && (!userId || (isSuccess && adminLoaded)),
+    isLoaded: !loading && commercialAccess.isLoaded && (!userId || (isSuccess && adminLoaded)),
   };
 }
 
@@ -210,8 +214,10 @@ export function decideLessonGate(args: {
   introCompletedCount: number;
   introTotal: number;
   freeLessonIds?: readonly string[];
+  entitledLessonIds?: readonly string[];
 }): LessonGate {
   if (args.isAdmin) return { kind: "open" };
+  if (args.entitledLessonIds?.includes(args.lessonId)) return { kind: "open" };
   if (args.freeLessonIds?.includes(args.lessonId)) return { kind: "open" };
 
   if (args.tier !== "free") {
@@ -249,6 +255,7 @@ export function useLessonGate(lessonId: string, introCompletedCount: number) {
     tier: ent.tier,
     isAdmin: ent.isAdmin,
     freeLessonIds: ent.freeLessonIds,
+    entitledLessonIds: ent.entitledLessonIds,
     introCompletedCount,
     introTotal,
   });

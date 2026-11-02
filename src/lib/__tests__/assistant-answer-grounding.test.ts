@@ -1,3 +1,4 @@
+import { successfulQuestionRpc, QUESTION_ID } from "./helpers/question-ledger";
 // @vitest-environment node
 import { describe, expect, it, vi } from "vitest";
 import { handleAssistantRuntimeRequest, insufficientGroundingMessage, type AssistantRuntimeDeps,
@@ -17,10 +18,7 @@ function fixture(locale: string = "ar-EG") {
       if (name === "assistant_card_content_access") return { ok: true, data: {
         card_id: body.p_card_id, admin_review: false, lessons: { entitled_lesson_ids: allowed ? chunks.map(c => c.lessonId) : [] },
       } };
-      if (name === "reserve_learner_ai_access") return { ok: true, data: { reservation_id: "fixture-reservation" } };
-      if (name === "register_provider_attempt") return { ok: true, data: { attempt_index: ++attempt } };
-      if (["finalize_provider_attempt", "commit_ai_quota", "release_ai_quota"].includes(name)) return { ok: true, data: {} };
-      throw new Error(`Unexpected fixture RPC ${name}`);
+      return successfulQuestionRpc(name, body);
     }),
     embedQuery: vi.fn(async () => [0.1, 0.2, 0.3]),
     localeSemanticRetrieve: vi.fn(async () => ({ ok: true as const, chunks })),
@@ -32,7 +30,7 @@ function fixture(locale: string = "ar-EG") {
   function request(query: string, history: { question: string; answer: string }[] = []) {
     return new Request("https://fixture.invalid/assistant-runtime", { method: "POST",
       headers: { "Content-Type": "application/json", Authorization: "Bearer fixture-only" },
-      body: JSON.stringify({ query, conversationHistory: history,
+      body: JSON.stringify({ requestId: QUESTION_ID, query, conversationHistory: history,
         learnerContext: { locale, currentPath: "intro", currentLesson: chunks[0].lessonId } }),
     });
   }
@@ -110,8 +108,8 @@ describe("answer grounding belongs to the current turn", () => {
     expect(body.ok).toBe(false);
     expect(body.answer).toBeUndefined();
     expect(body.citations).toEqual([]);
-    expect(f.deps.billingRpc).toHaveBeenCalledWith("finalize_provider_attempt", expect.objectContaining({ p_attempt_index: 2, p_attempt_status: "failed" }));
-    expect(vi.mocked(f.deps.billingRpc).mock.calls.filter(([name]) => name === "commit_ai_quota")).toHaveLength(1);
+    expect(f.deps.billingRpc).toHaveBeenCalledWith("assistant_question_provider_attempt", expect.objectContaining({ p_model: "openai_llm", p_status: "failed" }));
+    expect(vi.mocked(f.deps.billingRpc).mock.calls.filter(([name]) => name === "settle_assistant_question")).toHaveLength(1);
     expect(f.deps.callLlm).toHaveBeenCalledTimes(1);
   });
 
@@ -188,7 +186,7 @@ describe("answer grounding belongs to the current turn", () => {
     expect(payload.messages[0].content).toContain('grounding="insufficient"');
     expect(payload.messages[1].content).toContain(f.chunks[0].sourceId);
     expect(payload.response_format.json_schema.schema.properties.sourceIds.items.enum).toEqual(f.chunks.map(c => c.sourceId));
-    expect(vi.mocked(f.deps.billingRpc).mock.calls.filter(([name]) => name === "commit_ai_quota")).toHaveLength(1);
+    expect(vi.mocked(f.deps.billingRpc).mock.calls.filter(([name]) => name === "settle_assistant_question")).toHaveLength(1);
   });
 });
 

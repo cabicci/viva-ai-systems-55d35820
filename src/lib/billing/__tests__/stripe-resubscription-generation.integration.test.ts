@@ -5,7 +5,7 @@ import { PGlite } from "@electric-sql/pglite";
 
 let db: PGlite;
 const sql = async (statement: string): Promise<string> => {
-  const result = await db.exec(statement);
+  const result = await db.exec(statement.replace(/\r\n/g, "\n"));
   const rows = result.at(-1)?.rows ?? [];
   return rows.map((row) => Object.values(row as Record<string, unknown>).join("|")).join("\n");
 };
@@ -65,7 +65,7 @@ describe("Stripe re-subscription generation guard", async () => {
     const machine = readFileSync(
       "supabase/migrations/20260722180000_billing_launch_closure_contracts_v3.sql",
       "utf8",
-    );
+    ).replace(/\r\n/g, "\n");
     const machineSection = machine.slice(
       machine.indexOf(
         "ALTER TABLE billing.subscriptions ADD COLUMN IF NOT EXISTS last_applied_effective_at",

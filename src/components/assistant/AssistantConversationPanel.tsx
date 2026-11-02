@@ -4,6 +4,7 @@ import { type AssistantAdapter, type AssistantCitation, type AssistantScope } fr
 import { getUiString } from "@/lib/locale/ui-strings";
 import { historyKey, type ConversationTurn } from "@/lib/card-assistant/history";
 import { AssistantAnswer } from "./AssistantAnswer";
+import { AssistantUsage } from "./AssistantUsage";
 import { AssistantRequestError } from "@/lib/card-assistant/errors";
 
 export type AssistantConversationPanelProps = {
@@ -242,12 +243,13 @@ function Conversation({ frame, cardTitle, ask, onCitation, compact }: AssistantC
   const [view, setView] = useState<View>({ owner: null, query: "", busy: false, error: "", turns: [] });
   const viewRef = useRef(view);viewRef.current = view;
   const storage = useRef<string | null>(null);
+  const retryRequest = useRef<{ life: Life; question: string; history: readonly { question: string; answer: string }[]; requestId: string } | null>(null);
   function current(captured: Life | null, action?: Action): boolean {
     return !!captured && !captured.retired && lifeRef.current === captured && (!action || actionRef.current === action) &&
       frame.current() && !captured.retired && lifeRef.current === captured && (!action || actionRef.current === action);
   }
   useLayoutEffect(() => {
-    const captured: Life = { retired: false };lifeRef.current = captured;actionRef.current = null;
+    const captured: Life = { retired: false };lifeRef.current = captured;actionRef.current = null;retryRequest.current = null;
     const check = () => current(captured);
     if (check()) {
       setLife(previous => check() ? captured : previous);
@@ -289,15 +291,25 @@ function Conversation({ frame, cardTitle, ask, onCitation, compact }: AssistantC
       if (!check()) return;
       const history = Object.freeze(turns.slice(-3).map(turn => Object.freeze({ question: turn.question.slice(0, 500), answer: turn.answer.slice(0, 1200) })));
       if (!check()) return;
-      const ids = globalThis.crypto;if (!check()) return;
-      const createId = field(ids, "randomUUID", check);if (typeof createId !== "function" || !check()) return;
-      const requestId: unknown = Reflect.apply(createId, ids, []);observeEager(requestId);if (!check()) return;
+      // A lost transport response must retry the same durable request, not debit a second question.
+      const retry = retryRequest.current;
+      let requestId: unknown = retry?.life === life && retry.question === question && retry.history.length === history.length &&
+        retry.history.every((turn, index) => turn.question === history[index].question && turn.answer === history[index].answer)
+        ? retry.requestId : null;
+      if (!check()) return;
+      if (requestId === null) {
+        const ids = globalThis.crypto;if (!check()) return;
+        const createId = field(ids, "randomUUID", check);if (typeof createId !== "function" || !check()) return;
+        requestId = Reflect.apply(createId, ids, []);observeEager(requestId);if (!check()) return;
+      }
       if (typeof requestId !== "string") throw new Error("Invalid assistant request identity");
+      retryRequest.current = { life, question, history, requestId };
       const args = { scope: Object.freeze({ ...scope }), query: question, requestId, history: [...history] };
       const adapter = callbacks.current.ask;if (!check() || typeof adapter !== "function") return;
       const pending = Reflect.apply(adapter, undefined, [args]);
       const result = await adopt(pending, check);if (!result || !check()) return;
       const status = field(result.value, "status", check);
+      if (typeof status === "number" && check()) retryRequest.current = null;
       if (status !== 200) {
         const message = status === 401 ? copy.signIn : status === 403 ? copy.denied : status === 429 ? copy.limited : status === 422 ? copy.grounding : copy.unavailable;
         update(life, action, previous => ({ ...previous, error: message }));return;
@@ -332,6 +344,7 @@ function Conversation({ frame, cardTitle, ask, onCitation, compact }: AssistantC
     try { observeEager(callback({ ...citation })); } catch (error) { observeEager(error);/* A caller cannot revive a retired conversation. */ }
   }
   return <section aria-label={copy.title} dir={scope?.locale === "en" ? "ltr" : "rtl"} className={compact ? "space-y-3" : "space-y-4"}>
+    {ready && scope && account && <AssistantUsage scope={scope} accountId={account} busy={busy} isCurrent={() => current(life)} />}
     <header><h2 className="text-lg font-bold">{copy.title}</h2>
       {cardTitle && <p className="mt-1 font-semibold">{cardTitle}</p>}
       <p className="mt-2 text-sm leading-7 text-muted-foreground">{copy.scope}</p></header>

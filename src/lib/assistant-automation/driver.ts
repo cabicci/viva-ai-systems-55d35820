@@ -24,6 +24,9 @@ export async function runAutomaticDriver(deps: AutomaticDriverDependencies): Pro
   let held = false;
   for (let count = 0; count < 5000 && deps.now() < deadline; count++) {
     const result = await deps.call("tick");
+    const maintenance = result.responseCachePrune;
+    if (maintenance && typeof maintenance === "object" && "state" in maintenance && maintenance.state === "retry")
+      deps.log(JSON.stringify({ state: "response-cache-retry", code: "ASSISTANT_CACHE_PRUNE_UNAVAILABLE" }));
     if (result.disabled === true || result.busy === true) {
       if (held) throw new Error("AUTOMATION_REVIEW_REQUIRED");
       return result.disabled === true ? "disabled" : "busy";

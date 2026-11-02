@@ -9,7 +9,7 @@ beforeEach(() => {
   state.verify.mockReset().mockResolvedValue({ userId: "verified-user" });
   state.rpc.mockReset().mockImplementation(async (name: string) => ({ error: null,
     data: name === "assistant_card_content_access" ? { card_id: "intro", lessons: { entitled_lesson_ids: [scope.lessonId] } }
-      : { allowed: true },
+      : { access_allowed: true, monthly_remaining: 100, purchased_remaining: 0 },
   }));
 });
 it("never performs privileged reads without a verified request user", async () => {
@@ -23,9 +23,9 @@ it("rejects a different course/lesson binding before privileged reads", async ()
 });
 it("uses only the verified account and existing read decisions, never a reservation or provider", async () => {
   expect(await readLessonAssistantAccess({ ...scope, userId: "forged-user" } as typeof scope)).toEqual({ state: "allowed" });
-  expect(state.rpc.mock.calls.map((c) => c[0])).toEqual(["assistant_card_content_access", "evaluate_access"]);
+  expect(state.rpc.mock.calls.map((c) => c[0])).toEqual(["assistant_card_content_access", "assistant_question_balance"]);
   expect(state.rpc.mock.calls[0][1]).toEqual({ p_user_id: "verified-user", p_card_id: "intro" });
-  expect(state.rpc.mock.calls[1][1]).toEqual({ p_user_id: "verified-user", p_resource_type: "assistant_runtime", p_resource_id: scope.lessonId });
+  expect(state.rpc.mock.calls[1][1]).toEqual({ p_user_id: "verified-user", p_area: "ai", p_course: "ai", p_child_id: null });
 });
 it("does not confuse an incorrect content binding with the Free plan's AI denial", async () => {
   state.rpc.mockResolvedValue({ data: { card_id: "other", lessons: { entitled_lesson_ids: [scope.lessonId] } }, error: null });
@@ -37,7 +37,7 @@ it.each([
 ] as const)("preserves the backend %s decision without granting anything", async (code, reason) => {
   state.rpc.mockImplementation(async (name: string) => ({ error: null, data: name === "assistant_card_content_access"
     ? { card_id: "intro", lessons: { entitled_lesson_ids: [scope.lessonId] } }
-    : { allowed: false, denial_reason_code: code } }));
+    : { access_allowed: code !== "AI_ACCESS_DENIED", monthly_remaining: 0, purchased_remaining: 0 } }));
   expect(await readLessonAssistantAccess(scope)).toEqual({ state: "denied", reason });
 });
 it.each([null, {}, { allowed: "true" }, { allowed: false, denial_reason_code: "ENTITLEMENT_UNAVAILABLE" }])(
@@ -47,3 +47,9 @@ it.each([null, {}, { allowed: "true" }, { allowed: false, denial_reason_code: "E
     expect(await readLessonAssistantAccess(scope)).toEqual({ state: "unavailable" });
   },
 );
+
+it("allows confirmed administrator review without showing a fictitious learner balance", async () => {
+  state.rpc.mockResolvedValueOnce({ data: { card_id: "intro", admin_review: true }, error: null })
+    .mockResolvedValueOnce({ data: { access_allowed: true, admin_review: true, monthly_remaining: 0, purchased_remaining: 0 }, error: null });
+  expect(await readLessonAssistantAccess(scope)).toEqual({ state: "allowed" });
+});

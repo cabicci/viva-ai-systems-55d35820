@@ -145,26 +145,26 @@ export const PLAN_ENTITLEMENT_DEFAULTS: Record<
     | "assistantRuntimePeriodDays"
   >
 > = {
-  // V3: no automatic 14-day trial. Free grants a limited public catalogue only
-  // and NO automatic AI quota — period days/quota are null (fail closed).
+  // Current enrolments: monthly allowance, no automatic trial or per-lesson cap.
+  // Existing paid periods retain their persisted policy until renewal.
   free: {
     lessonCountCap: 12,
     assistantRuntimePerLessonQuota: null,
-    assistantRuntimeGeneralMonthlyQuota: null,
+    assistantRuntimeGeneralMonthlyQuota: 10,
     assistantRuntimePeriodQuota: null,
     assistantRuntimePeriodDays: null,
   },
   pro: {
     lessonCountCap: 71,
-    assistantRuntimePerLessonQuota: 3,
-    assistantRuntimeGeneralMonthlyQuota: 50,
+    assistantRuntimePerLessonQuota: null,
+    assistantRuntimeGeneralMonthlyQuota: 150,
     assistantRuntimePeriodQuota: null,
     assistantRuntimePeriodDays: null,
   },
   pro_plus: {
     lessonCountCap: 100,
-    assistantRuntimePerLessonQuota: 6,
-    assistantRuntimeGeneralMonthlyQuota: 150,
+    assistantRuntimePerLessonQuota: null,
+    assistantRuntimeGeneralMonthlyQuota: 300,
     assistantRuntimePeriodQuota: null,
     assistantRuntimePeriodDays: null,
   },

@@ -1,10 +1,11 @@
+import { successfulQuestionRpc, QUESTION_ID } from "../__tests__/helpers/question-ledger";
 // @vitest-environment node
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { handleAcademicAssistant, type AcademicDeps, type Chunk } from "../../../supabase/functions/academic-assistant/handler";
 import { approvedChunks, canonicalJson, sha256, validateAcademicCorpus, planAcademicChunkUpdates,
   ACADEMIC_EMBEDDING_MODEL, type ApprovedLesson, type IndexedAcademicChunk } from "./assistant-corpus";
 
-const input = { courseId: "AC-NEW", lessonId: "AC-NEW-M01-L01", locale: "en", query: "Explain the next station" };
+const input = { requestId: QUESTION_ID, courseId: "AC-NEW", lessonId: "AC-NEW-M01-L01", locale: "en", query: "Explain the next station" };
 const request = (body: unknown = input) => new Request("https://test.invalid/assistant", {
   method: "POST", headers: { Authorization: "Bearer fixture" }, body: JSON.stringify(body),
 });
@@ -12,7 +13,7 @@ let deps: AcademicDeps;
 beforeEach(() => {
   deps = {
     enabled: true, verifyUser: vi.fn().mockResolvedValue("user"),
-    allowed: vi.fn().mockResolvedValue("admin"), consumeLimit: vi.fn().mockResolvedValue(true),
+    allowed: vi.fn().mockResolvedValue("admin"), billingRpc: vi.fn(async (name, body) => successfulQuestionRpc(name, body)),
     embed: vi.fn().mockResolvedValue(Array(1536).fill(0.1)),
     retrieve: vi.fn().mockResolvedValue([{ course_id: "AC-NEW", lesson_id: "AC-NEW-M05-L03",
       locale: "en", section_id: "concept-1", content: "Approved same-card evidence", similarity: 0.9 }]),
@@ -28,7 +29,7 @@ describe("Academic assistant card scope", () => {
     expect(deps.allowed).toHaveBeenCalledWith("fixture", "AC-NEW", "AC-NEW-M01-L01", "en");
     expect(deps.retrieve).toHaveBeenCalledWith("AC-NEW", "en", expect.any(Array));
     expect(await response.json()).toMatchObject({ sources: [{ lessonId: "AC-NEW-M05-L03", sectionId: "concept-1" }] });
-    expect(deps.consumeLimit).toHaveBeenCalledWith("user", "AC-NEW");
+    expect(deps.billingRpc).toHaveBeenCalledWith("reserve_assistant_question", expect.objectContaining({ p_user_id: "user", p_course: "AC-NEW" }));
     expect(vi.mocked(deps.answer).mock.calls[0][0]).toContain("Illustrative example");
     expect(vi.mocked(deps.answer).mock.calls[0][0]).toContain("do not imply that your new example appears in the source");
     expect(vi.mocked(deps.answer).mock.calls[0][0]).toContain("Do not add outside facts");
@@ -97,7 +98,7 @@ describe("Academic assistant card scope", () => {
   ])("rejects malformed history before entitlement, quota or provider work (%j)", async history => {
     expect((await handleAcademicAssistant(request({ ...input, history }), deps)).status).toBe(400);
     expect(deps.allowed).not.toHaveBeenCalled();
-    expect(deps.consumeLimit).not.toHaveBeenCalled();
+    expect(deps.billingRpc).not.toHaveBeenCalled();
     expect(deps.embed).not.toHaveBeenCalled();
     expect(deps.answer).not.toHaveBeenCalled();
   });
@@ -115,7 +116,7 @@ describe("Academic grounded answer contract", () => {
     vi.mocked(deps.answer).mockResolvedValue(answer("supported", ["S3", "S1"]));
     const response = await handleAcademicAssistant(request(), deps);
     expect(response.status).toBe(200);
-    expect(await response.json()).toEqual({ answer: "Fixture explanation", sources: [
+    expect(await response.json()).toMatchObject({ answer: "Fixture explanation", sources: [
       { lessonId: "AC-NEW-M05-L03", sectionId: "concept-3", label: "Fixture heading 3" },
       { lessonId: "AC-NEW-M05-L01", sectionId: "concept-1", label: "Fixture heading 1" },
     ] });
@@ -138,7 +139,7 @@ describe("Academic grounded answer contract", () => {
     vi.mocked(deps.answer).mockResolvedValue(answer("insufficient", [], "DO_NOT_RETURN_PROVIDER_TEXT"));
     const response = await handleAcademicAssistant(request({ ...input, locale }), deps);
     expect(response.status).toBe(200);
-    expect(await response.json()).toEqual({ answer: expected, sources: [] });
+    expect(await response.json()).toMatchObject({ answer: expected, sources: [] });
     expect(deps.allowed).toHaveBeenCalledTimes(2);
     expect(deps.verifySources).toHaveBeenCalledTimes(2);
   });
@@ -157,7 +158,7 @@ describe("Academic grounded answer contract", () => {
     vi.mocked(deps.answer).mockResolvedValue(raw);
     const response = await handleAcademicAssistant(request(), deps);
     expect(response.status).toBe(503);
-    expect(await response.json()).toEqual({ error: "ACADEMIC_ANSWER_UNAVAILABLE" });
+    expect(await response.json()).toMatchObject({ error: "ACADEMIC_ANSWER_UNAVAILABLE" });
   });
 
   it.each(["supported", "insufficient"] as const)("rechecks access before returning a %s decision", async grounding => {
@@ -165,7 +166,7 @@ describe("Academic grounded answer contract", () => {
     vi.mocked(deps.allowed).mockResolvedValueOnce("admin").mockResolvedValueOnce(null);
     const response = await handleAcademicAssistant(request(), deps);
     expect(response.status).toBe(403);
-    expect(await response.json()).toEqual({ error: "ACADEMIC_ASSISTANT_ACCESS_REQUIRED" });
+    expect(await response.json()).toMatchObject({ error: "ACADEMIC_ASSISTANT_ACCESS_REQUIRED" });
   });
 
   it.each(["supported", "insufficient"] as const)("rechecks all supplied sources before returning a %s decision", async grounding => {
@@ -173,7 +174,7 @@ describe("Academic grounded answer contract", () => {
     vi.mocked(deps.verifySources).mockResolvedValueOnce(true).mockResolvedValueOnce(false);
     const response = await handleAcademicAssistant(request(), deps);
     expect(response.status).toBe(422);
-    expect(await response.json()).toEqual({ error: "ACADEMIC_GROUNDING_REQUIRED" });
+    expect(await response.json()).toMatchObject({ error: "ACADEMIC_GROUNDING_REQUIRED" });
     expect(vi.mocked(deps.verifySources).mock.calls[1][0]).toEqual(vi.mocked(deps.verifySources).mock.calls[0][0]);
   });
 
@@ -181,7 +182,7 @@ describe("Academic grounded answer contract", () => {
     const history = [{ question: "Old unrelated topic", answer: "Old unsupported answer with S99" }];
     vi.mocked(deps.answer).mockResolvedValue(answer("insufficient", []));
     const response = await handleAcademicAssistant(request({ ...input, query: "Another unrelated request", history }), deps);
-    expect(await response.json()).toEqual({ answer: "The approved path content does not provide enough information to answer that.", sources: [] });
+    expect(await response.json()).toMatchObject({ answer: "The approved path content does not provide enough information to answer that.", sources: [] });
     expect(JSON.parse(vi.mocked(deps.answer).mock.calls[0][1]).untrustedConversation).toEqual(history);
   });
 });
@@ -190,7 +191,7 @@ describe("Academic retired-handler guard coverage", () => {
   it("does no identity, quota, retrieval or provider work while disabled", async () => {
     deps.enabled = false;
     expect((await handleAcademicAssistant(request(), deps)).status).toBe(503);
-    for (const call of [deps.verifyUser, deps.allowed, deps.consumeLimit, deps.embed, deps.retrieve, deps.answer])
+    for (const call of [deps.verifyUser, deps.allowed, deps.billingRpc, deps.embed, deps.retrieve, deps.answer])
       expect(call).not.toHaveBeenCalled();
   });
 
@@ -199,7 +200,7 @@ describe("Academic retired-handler guard coverage", () => {
     { ...input, courseId: "AC-OTHER" },
   ])("rejects client evidence or mismatched identity before auth or paid work (%j)", async body => {
     expect((await handleAcademicAssistant(request(body), deps)).status).toBe(400);
-    for (const call of [deps.verifyUser, deps.allowed, deps.consumeLimit, deps.embed, deps.retrieve, deps.answer])
+    for (const call of [deps.verifyUser, deps.allowed, deps.billingRpc, deps.embed, deps.retrieve, deps.answer])
       expect(call).not.toHaveBeenCalled();
   });
 
@@ -208,7 +209,7 @@ describe("Academic retired-handler guard coverage", () => {
     expect((await handleAcademicAssistant(request(), deps)).status).toBe(403);
     expect(deps.verifyUser).toHaveBeenCalledOnce();
     expect(deps.allowed).toHaveBeenCalledOnce();
-    for (const call of [deps.consumeLimit, deps.embed, deps.retrieve, deps.answer])
+    for (const call of [deps.billingRpc, deps.embed, deps.retrieve, deps.answer])
       expect(call).not.toHaveBeenCalled();
   });
 
@@ -217,7 +218,7 @@ describe("Academic retired-handler guard coverage", () => {
       locale: "en", section_id: "foreign", content: "FOREIGN_FIXTURE", similarity: 0.9 }]);
     const response = await handleAcademicAssistant(request(), deps);
     expect(response.status).toBe(200);
-    expect(await response.json()).toEqual({
+    expect(await response.json()).toMatchObject({
       answer: "The approved path content does not provide enough information to answer that.", sources: [],
     });
     expect(deps.answer).not.toHaveBeenCalled();
@@ -228,7 +229,7 @@ describe("Academic retired-handler guard coverage", () => {
     vi.mocked(deps.retrieve).mockRejectedValue(new Error("RETRIEVAL_FIXTURE_MUST_NOT_ESCAPE"));
     const response = await handleAcademicAssistant(request(), deps);
     expect(response.status).toBe(503);
-    expect(await response.json()).toEqual({ error: "ACADEMIC_ASSISTANT_UNAVAILABLE" });
+    expect(await response.json()).toMatchObject({ error: "ACADEMIC_ASSISTANT_UNAVAILABLE" });
     expect(deps.answer).not.toHaveBeenCalled();
     expect(deps.verifySources).not.toHaveBeenCalled();
   });

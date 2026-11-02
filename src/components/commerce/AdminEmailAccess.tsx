@@ -1,3 +1,4 @@
+import { commercialCopy } from "@/lib/billing/commercial-copy";
 import { useRef, useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
@@ -75,7 +76,7 @@ export function AdminEmailAccess() {
   return (
     <section aria-label={w.title} className="space-y-5">
       <h2 className="text-lg font-bold">{w.title}</h2>
-      <p className="text-sm text-muted-foreground">{w.note}</p>
+      <p className="text-sm text-muted-foreground">{commercialCopy(locale).invitation}</p>
       <form
         onSubmit={(e) => {
           e.preventDefault();

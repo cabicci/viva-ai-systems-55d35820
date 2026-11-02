@@ -41,9 +41,9 @@ export function verifyAssistantWiring(read: (file: string) => string): Integrati
   // These are the implemented per-area authoritative access contracts. Their
   // authorization semantics are exercised by backend/SQL tests, not inferred here.
   const access = [
-    ["supabase/functions/assistant-runtime/handler.ts", "assistant_card_content_access", "reserve_learner_ai_access"],
-    ["src/lib/card-assistant/assistant.server.ts", "card_assistant_access", "card_assistant_take_question"],
-    ["src/lib/academic-education/assistant.server.ts", "academic_assistant_access", "academic_assistant_take_question"],
+    ["supabase/functions/assistant-runtime/handler.ts", "assistant_card_content_access"],
+    ["src/lib/card-assistant/assistant.server.ts", "card_assistant_access"],
+    ["src/lib/academic-education/assistant.server.ts", "academic_assistant_access"],
   ];
   for (const [file, ...required] of access) {
     try {
@@ -57,6 +57,49 @@ export function verifyAssistantWiring(read: (file: string) => string): Integrati
       for (const name of required) if (!calls.has(name)) issues.push({ code: "ACCESS_ADAPTER", location: file, message: `Restore the authoritative ${name} call and rerun its authorization tests.` });
     } catch { issues.push({ code: "ACCESS_ADAPTER", location: file, message: "Restore the registered area access adapter." }); }
   }
+  const meter = "supabase/functions/assistant-runtime/question-metering";
+  const runtimes = ["supabase/functions/assistant-runtime/handler.ts", "src/lib/card-assistant/runtime.ts",
+    "supabase/functions/academic-assistant/handler.ts"];
+  for (const file of runtimes) {
+    try {
+      const source = ts.createSourceFile(file, read(file), ts.ScriptTarget.Latest, true);
+      const locals = new Set<string>();
+      for (const statement of source.statements) if (ts.isImportDeclaration(statement) && ts.isStringLiteral(statement.moduleSpecifier) &&
+        importedPath(file, statement.moduleSpecifier.text) === meter && statement.importClause?.namedBindings && ts.isNamedImports(statement.importClause.namedBindings)) {
+        for (const specifier of statement.importClause.namedBindings.elements)
+          if ((specifier.propertyName ?? specifier.name).text === "runMeteredQuestion") locals.add(specifier.name.text);
+      }
+      let metered = false;
+      const visit = (node: ts.Node) => {
+        if (ts.isCallExpression(node) && ts.isIdentifier(node.expression) && locals.has(node.expression.text)) metered = true;
+        ts.forEachChild(node, visit);
+      };
+      visit(source);
+      if (!metered) issues.push({ code: "QUESTION_LEDGER", location: file, message: "Restore the actual shared runMeteredQuestion call; every answer must reserve and settle through one ledger." });
+    } catch { issues.push({ code: "QUESTION_LEDGER", location: file, message: "Restore the shared question ledger adapter." }); }
+  }
+  const forbidden = new Set(["reserve_learner_ai_access", "commit_ai_quota", "release_ai_quota",
+    "card_assistant_take_question", "academic_assistant_take_question"]);
+  for (const file of [...new Set([...runtimes, ...access.map(row => row[0])])]) {
+    const source = ts.createSourceFile(file, read(file), ts.ScriptTarget.Latest, true);
+    const visit = (node: ts.Node) => {
+      if (ts.isCallExpression(node) && node.arguments.some(arg => ts.isStringLiteral(arg) && forbidden.has(arg.text)))
+        issues.push({ code: "COMPETING_QUESTION_LEDGER", location: file, message: "Remove the competing legacy debit call from the current assistant runtime." });
+      ts.forEachChild(node, visit);
+    };
+    visit(source);
+  }
+  try {
+    const file = `${meter}.ts`, source = ts.createSourceFile(file, read(file), ts.ScriptTarget.Latest, true);
+    const calls = new Set<string>();
+    const visit = (node: ts.Node) => {
+      if (ts.isCallExpression(node)) for (const arg of node.arguments) if (ts.isStringLiteral(arg)) calls.add(arg.text);
+      ts.forEachChild(node, visit);
+    };
+    visit(source);
+    for (const name of ["reserve_assistant_question", "settle_assistant_question", "assistant_question_provider_attempt"])
+      if (!calls.has(name)) issues.push({ code: "QUESTION_LEDGER", location: file, message: `Restore the authoritative ${name} call.` });
+  } catch { issues.push({ code: "QUESTION_LEDGER", location: meter, message: "Restore the shared question ledger implementation." }); }
   return issues;
 }
 

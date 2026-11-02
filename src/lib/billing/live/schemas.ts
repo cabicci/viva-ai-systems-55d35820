@@ -24,6 +24,32 @@ const offer = z
 export const liveCheckoutSchema = z.discriminatedUnion("product", [
   z
     .object({
+      product: z.literal("curriculum_lifetime"),
+      area: z.enum(["ai", "academic", "technical", "kids"]),
+      course: z.string().trim().min(1).max(120),
+      childId: z.string().uuid().optional(),
+      requestId: z.string().uuid(),
+      marketCode: z.literal("EG"),
+      locale,
+      offer,
+    })
+    .strict()
+    .superRefine((value, ctx) => {
+      if ((value.area === "kids") !== Boolean(value.childId))
+        ctx.addIssue({ code: "custom", message: "CHILD_SELECTION_INVALID", path: ["childId"] });
+    }),
+  z
+    .object({
+      product: z.literal("question_topup"),
+      walletScope: z.enum(["account", "family"]),
+      requestId: z.string().uuid(),
+      marketCode: z.literal("EG"),
+      locale,
+      offer,
+    })
+    .strict(),
+  z
+    .object({
       product: z.literal("core"),
       planKey: z.enum(["pro", "pro_plus"]),
       billingInterval: interval,

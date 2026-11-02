@@ -21,12 +21,12 @@ async function token(): Promise<string> {
   identity = { token: data.value, until: Date.now() + 120000 };
   return data.value;
 }
-async function call(operation: "status" | "tick"): Promise<Record<string, unknown>> {
+async function call(operation: "status" | "tick", pruneResponseCache = false): Promise<Record<string, unknown>> {
   const response = await fetch(endpoint, { method: "POST", redirect: "error", signal: AbortSignal.timeout(operation === "status" ? 20000 : 125000),
     headers: { Authorization: `Bearer ${await token()}`, "Content-Type": "application/json",
       ...(operation === "tick" ? { "x-masaarat-indexer-build": expected.indexerBuild,
         "x-masaarat-indexer-deployment": expected.deploymentFingerprint } : {}) },
-    body: JSON.stringify({ operation, ...(operation === "tick" ? { requestId: crypto.randomUUID() } : {}) }) });
+    body: JSON.stringify({ operation, ...(operation === "tick" ? { requestId: crypto.randomUUID(), ...(pruneResponseCache ? { pruneResponseCache: true } : {}) } : {}) }) });
   if (operation === "status" && [403,404].includes(response.status)) return { awaitingPublication: true };
   if (!response.ok || !response.headers.get("content-type")?.includes("application/json")) throw new Error("AUTOMATION_REQUEST_UNCONFIRMED");
   const text = await response.text();
@@ -46,7 +46,12 @@ export async function runTrustedAutomaticClient() {
     return "awaiting-publication";
   }
   if (initial.schemaVersion !== "assistant-auto-v1") throw new Error("AUTOMATION_RESPONSE_INVALID");
-  const state = await runAutomaticDriver({ call: operation => operation === "status" ? Promise.resolve(initial) : call(operation),
+  let firstTick = true;
+  const state = await runAutomaticDriver({ call: operation => {
+    if (operation === "status") return Promise.resolve(initial);
+    const pruneResponseCache = firstTick; firstTick = false;
+    return call(operation, pruneResponseCache);
+  },
     wait: milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds)),
     now: Date.now, log: message => console.log(message) });
   console.log(`Automatic indexing: ${state}.`);

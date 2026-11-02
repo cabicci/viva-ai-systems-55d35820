@@ -1,3 +1,5 @@
+// @vitest-environment node
+import { successfulQuestionRpc, QUESTION_ID } from "./helpers/question-ledger";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it, vi } from "vitest";
@@ -69,7 +71,7 @@ const REGISTERED_LESSON_IDS = [...new Set((JSON.parse(
 ) as { packages: PackageEntry[] }).packages.map((p) => p.lessonId))];
 
 function entitlementSnapshot(lessonIds = REGISTERED_LESSON_IDS, cardId = "analyst", adminReview = false): BillingRpcResult {
-  return { ok: true, data: { card_id: cardId, admin_review: adminReview, lessons: { entitled_lesson_ids: lessonIds } } };
+  return { ok: true as const, data: { card_id: cardId, admin_review: adminReview, lessons: { entitled_lesson_ids: lessonIds } } };
 }
 
 function withEntitlement(lessonIds: string[]): AssistantRuntimeDeps["billingRpc"] {
@@ -79,48 +81,9 @@ function withEntitlement(lessonIds: string[]): AssistantRuntimeDeps["billingRpc"
     : billing(name, body));
 }
 
-/** Realistic default billing mock: reserve/register/finalize/commit/release all succeed. */
 function createDefaultBillingRpc(): AssistantRuntimeDeps["billingRpc"] {
-  let attemptIndex = 0;
-  return vi.fn(async (fnName: string, body: Record<string, unknown>): Promise<BillingRpcResult> => {
-    switch (fnName) {
-      case "assistant_card_content_access":
-        return entitlementSnapshot(undefined, String(body.p_card_id));
-      case "reserve_learner_ai_access":
-        return {
-          ok: true,
-          data: { reservation_id: RESERVATION_ID, status: "reserved", idempotent_replay: false },
-        };
-      case "register_provider_attempt":
-        attemptIndex += 1;
-        return {
-          ok: true,
-          data: {
-            reservation_id: body.p_reservation_id,
-            attempt_index: attemptIndex,
-            attempt_status: "registered",
-            quota_committed: attemptIndex === 1,
-            idempotent_replay: false,
-          },
-        };
-      case "finalize_provider_attempt":
-        return {
-          ok: true,
-          data: {
-            reservation_id: body.p_reservation_id,
-            attempt_index: body.p_attempt_index,
-            attempt_status: body.p_attempt_status,
-            idempotent_replay: false,
-          },
-        };
-      case "commit_ai_quota":
-        return { ok: true, data: { reservation_id: body.p_reservation_id, action: "committed" } };
-      case "release_ai_quota":
-        return { ok: true, data: { released: true, idempotent_replay: false } };
-      default:
-        return { ok: false, status: 404, error: `unknown billing rpc: ${fnName}` };
-    }
-  });
+  return vi.fn(async (name, body) => name === "assistant_card_content_access"
+    ? entitlementSnapshot(undefined, String(body.p_card_id)) : successfulQuestionRpc(name, body));
 }
 
 function buildDeps(overrides: Partial<AssistantRuntimeDeps> = {}): AssistantRuntimeDeps {
@@ -156,7 +119,7 @@ function buildRequest(
   return new Request("https://masaarat.ai/functions/v1/assistant-runtime", {
     method: options.method ?? "POST",
     headers,
-    body: options.noBody ? undefined : JSON.stringify(body),
+    body: options.noBody ? undefined : JSON.stringify(body && typeof body === "object" ? { requestId: QUESTION_ID, ...body } : body),
   });
 }
 
@@ -208,7 +171,7 @@ describe("current-card isolation and content entitlement", () => {
     expect(json.citations[0].sameLesson).toBe(false);
     expect(json.retrieval).toMatchObject({ cardScoped: true, lessonScoped: false, allowModuleFallback: false, resolvedPathId: current.pathId });
     expect(deps.localeSemanticRetrieve).toHaveBeenCalledWith(expect.any(Array), current.locale, current.pathId, null, null, null, false);
-    expect(deps.billingRpc).toHaveBeenCalledWith("reserve_learner_ai_access", expect.objectContaining({ p_lesson_id: current.lessonId, p_user_id: "user-1" }));
+    expect(deps.billingRpc).toHaveBeenCalledWith("reserve_assistant_question", expect.objectContaining({ p_lesson: current.lessonId, p_user_id: "user-1" }));
   });
 
   it.each([
@@ -332,7 +295,7 @@ describe("current-card isolation and content entitlement", () => {
     const json = await res.json();
     expect(json.citations.map((c: { chunkId: string }) => c.chunkId)).toEqual([sample.sourceId]);
     expect(deps.billingRpc).toHaveBeenCalledWith("assistant_card_content_access", { p_user_id: "user-1", p_card_id: "analyst" });
-    expect(billingCallNames(deps)).toContain("reserve_learner_ai_access");
+    expect(billingCallNames(deps)).toContain("reserve_assistant_question");
   });
 
   it("cannot bypass AI grant/quota denial using server admin review", async () => {
@@ -342,7 +305,7 @@ describe("current-card isolation and content entitlement", () => {
     const res = await handleAssistantRuntimeRequest(buildRequest({ query: "Explain", learnerContext: { locale: "en", currentPath: "analyst" } }), deps);
     expect(res.status).toBe(403);
     expect(callCounts(deps)).toMatchObject({ embed: 0, retrieve: 0, llm: 0 });
-    expect(billingCallNames(deps)).toEqual(["assistant_card_content_access", "reserve_learner_ai_access"]);
+    expect(billingCallNames(deps)).toEqual(["assistant_card_content_access", "reserve_assistant_question"]);
   });
 
   it.each([
@@ -863,7 +826,7 @@ describe("handleAssistantRuntimeRequest — rate limiting and provider gating", 
     expect(deps.callLlm).toHaveBeenCalledWith(expect.any(String), expect.any(String), "openai-key",
       ["en/analyst-m1-l1-from-automation-to-insight/s0/c0"]);
     expect(deps.callLlm).toHaveBeenCalledTimes(1);
-    expect(deps.billingRpc).toHaveBeenCalledWith("register_provider_attempt", expect.objectContaining({ p_provider: "openai_llm" }));
+    expect(deps.billingRpc).toHaveBeenCalledWith("assistant_question_provider_attempt", expect.objectContaining({ p_model: "openai_llm" }));
   });
 
   it("returns 500 when SUPABASE_SERVICE_ROLE_KEY is missing, before any reservation", async () => {
@@ -883,324 +846,75 @@ describe("handleAssistantRuntimeRequest — rate limiting and provider gating", 
   });
 });
 
-describe("Chat 4 Billing bridge documentation", () => {
-  it("documents the implemented billing lifecycle after JWT, before providers", () => {
-    expect(HANDLER_SRC).toContain("CHAT 4 BILLING BRIDGE");
-    expect(HANDLER_SRC).toContain("authentication (above) → rate limit → server env checks");
-    expect(HANDLER_SRC).toContain("reserve_learner_ai_access");
-    expect(HANDLER_SRC).toContain("register_provider_attempt");
-    expect(HANDLER_SRC).toContain("finalize_provider_attempt");
-    expect(HANDLER_SRC).toContain("commit_ai_quota");
-    expect(HANDLER_SRC).toContain("release_ai_quota");
-    // Entitlement evaluation (evaluate_access) is a separate edge
-    // (billing-entitlement) — assistant-runtime never calls it directly.
-    expect(HANDLER_SRC).not.toContain("evaluateAccess");
-  });
-
-  it("wires billingRpc over default public PostgREST without billing schema profiles", () => {
+describe("shared question ledger wiring", () => {
+  const sample = loadRegisteredSample();
+  const request = () => buildRequest({ query: "what is AI?", learnerContext: { locale: "en", currentPath: "analyst" } });
+  it("uses only service RPCs over the existing public PostgREST bridge", () => {
+    expect(HANDLER_SRC).toContain("runMeteredQuestion");
+    expect(HANDLER_SRC).not.toContain('billingRpc("commit_ai_quota"');
+    expect(HANDLER_SRC).not.toContain('billingRpc("release_ai_quota"');
     expect(INDEX_SRC).toContain("/rest/v1/rpc/${fnName}");
     expect(INDEX_SRC).toContain("apikey: SERVICE_ROLE");
     expect(INDEX_SRC).toContain("Authorization: `Bearer ${SERVICE_ROLE}`");
-    expect(INDEX_SRC).not.toContain('"Accept-Profile": "billing"');
-    expect(INDEX_SRC).not.toContain('"Content-Profile": "billing"');
   });
-});
-
-describe("Chat 4 Billing bridge — lifecycle", () => {
-  const sample = loadRegisteredSample();
-
-  function buildBillingSpy(
-    overrides: Record<string, (body: Record<string, unknown>) => BillingRpcResult> = {},
-  ) {
-    let attemptIndex = 0;
-    return vi.fn(
-      async (fnName: string, body: Record<string, unknown>): Promise<BillingRpcResult> => {
-        if (overrides[fnName]) return overrides[fnName](body);
-        switch (fnName) {
-          case "assistant_card_content_access":
-            return entitlementSnapshot(undefined, String(body.p_card_id));
-          case "reserve_learner_ai_access":
-            return { ok: true, data: { reservation_id: RESERVATION_ID } };
-          case "register_provider_attempt":
-            attemptIndex += 1;
-            return {
-              ok: true,
-              data: { reservation_id: body.p_reservation_id, attempt_index: attemptIndex },
-            };
-          case "finalize_provider_attempt":
-            return { ok: true, data: { reservation_id: body.p_reservation_id } };
-          case "commit_ai_quota":
-            return {
-              ok: true,
-              data: { reservation_id: body.p_reservation_id, action: "committed" },
-            };
-          case "release_ai_quota":
-            return { ok: true, data: { released: true } };
-          default:
-            return { ok: false, status: 404, error: `unknown billing rpc: ${fnName}` };
-        }
-      },
-    );
-  }
-
-  it("never calls billingRpc for auth/method/locale/retrievalResults rejections", async () => {
-    const cases: Array<{
-      body: unknown;
-      opts?: Parameters<typeof buildRequest>[1];
-      depsOverrides?: Partial<AssistantRuntimeDeps>;
-    }> = [
-      { body: undefined, opts: { method: "OPTIONS", noBody: true } },
-      { body: undefined, opts: { method: "GET", noBody: true } },
-      {
-        body: { query: "hi", learnerContext: { locale: "en", currentPath: "analyst" } },
-        opts: { skipAuth: true },
-        depsOverrides: { verifyJwt: vi.fn(async () => ({ ok: false as const })) },
-      },
-      {
-        body: {
-          query: "hi",
-          learnerContext: { locale: "en", currentPath: "analyst" },
-          retrievalResults: [{ x: 1 }],
-        },
-      },
-      { body: { query: "hi", learnerContext: { locale: "fr-FR" } } },
-    ];
-    for (const { body, opts, depsOverrides } of cases) {
-      const deps = buildDeps(depsOverrides);
-      await handleAssistantRuntimeRequest(buildRequest(body, opts), deps);
-      expect(deps.billingRpc as ReturnType<typeof vi.fn>).not.toHaveBeenCalled();
-    }
+  it("reserves for the verified subject and exact canonical curriculum, ignoring client billing claims", async () => {
+    const deps = buildDeps();
+    await handleAssistantRuntimeRequest(buildRequest({ requestId: QUESTION_ID, userId: "attacker", units: 0,
+      query: "Explain AI", learnerContext: { locale: "en", currentPath: "analyst" } }), deps);
+    expect(deps.billingRpc).toHaveBeenCalledWith("reserve_assistant_question", expect.objectContaining({
+      p_user_id: "user-1", p_area: "ai", p_course: "ai", p_request_id: QUESTION_ID,
+      p_fingerprint: expect.stringMatching(/^[a-f0-9]{64}$/),
+    }));
   });
-
-  it("fails closed before any provider when service-role/Supabase env is missing", async () => {
-    const deps = buildDeps({
-      env: { OPENAI_API_KEY: "openai-key" },
-    });
-    const res = await handleAssistantRuntimeRequest(
-      buildRequest({ query: "what is AI?", learnerContext: { locale: "en", currentPath: "analyst" } }),
-      deps,
-    );
-    expect(res.status).toBe(500);
-    expect(deps.billingRpc as ReturnType<typeof vi.fn>).not.toHaveBeenCalled();
+  it("stops before providers when reservation is denied", async () => {
+    const ordinary = createDefaultBillingRpc();
+    const deps = buildDeps({ billingRpc: vi.fn(async (name, body) => name === "reserve_assistant_question"
+      ? { ok: true as const, data: { status: "quota_exceeded", allowed: false } } : ordinary(name, body)) });
+    expect((await handleAssistantRuntimeRequest(request(), deps)).status).toBe(429);
     expect(callCounts(deps)).toMatchObject({ embed: 0, retrieve: 0, llm: 0 });
   });
-
-  it("reserve denial yields zero embed/retrieve/llm calls and propagates status", async () => {
-    const billingRpc = buildBillingSpy({
-      reserve_learner_ai_access: () => ({ ok: false, status: 403, error: "AI_ACCESS_DENIED" }),
-    });
-    const deps = buildDeps({ billingRpc });
-    const res = await handleAssistantRuntimeRequest(
-      buildRequest({ query: "what is AI?", learnerContext: { locale: "en", currentPath: "analyst" } }),
-      deps,
-    );
-    expect(res.status).toBe(403);
-    const json = await res.json();
-    expect(json.ok).toBe(false);
-    expect(json.error).toBe("AI_ACCESS_DENIED");
-    expect(callCounts(deps)).toMatchObject({ embed: 0, retrieve: 0, llm: 0 });
-    expect(billingCallNames(deps)).toEqual(["assistant_card_content_access", "reserve_learner_ai_access"]);
+  it.each(["embedding", "retrieval", "generation", "registration"])("settles %s failure at zero", async kind => {
+    const ordinary = createDefaultBillingRpc();
+    const deps = buildDeps({ localeSemanticRetrieve: vi.fn(async () => ({ ok: true as const, chunks: [sample] })) });
+    if (kind === "embedding") deps.embedQuery = vi.fn(async () => null);
+    if (kind === "retrieval") deps.localeSemanticRetrieve = vi.fn(async () => { throw new Error("private detail"); });
+    if (kind === "generation") deps.callLlm = vi.fn(async () => ({ ok: false as const, status: 503, error: "unavailable" }));
+    if (kind === "registration") deps.billingRpc = vi.fn(async (name, body) => name === "assistant_question_provider_attempt"
+      ? { ok: false as const, status: 503, error: "unavailable" } : ordinary(name, body));
+    const response = await handleAssistantRuntimeRequest(request(), deps);
+    expect(response.status).toBeGreaterThanOrEqual(400);
+    const result = await response.json();
+    expect(result.chargedUnits).toBe(0);
+    expect(deps.billingRpc).toHaveBeenCalledWith("settle_assistant_question", expect.objectContaining({ p_outcome: "system_failure" }));
   });
-
-  it("reserves with category assistant_runtime and the JWT-verified user id, ignoring client userId", async () => {
-    const billingRpc = buildBillingSpy();
-    const deps = buildDeps({ billingRpc });
-    await handleAssistantRuntimeRequest(
-      buildRequest({
-        query: "what is AI?",
-        learnerContext: { locale: "en", currentPath: "analyst" },
-        // Not part of the request contract — must never influence billing.
-        userId: "attacker-supplied-id",
-      } as unknown as Record<string, unknown>),
-      deps,
-    );
-    const reserveCall = (billingRpc as ReturnType<typeof vi.fn>).mock.calls.find(
-      (c: unknown[]) => c[0] === "reserve_learner_ai_access",
-    );
-    expect(reserveCall).toBeDefined();
-    const reserveBody = reserveCall![1] as Record<string, unknown>;
-    expect(reserveBody.p_category).toBe("assistant_runtime");
-    expect(reserveBody.p_user_id).toBe("user-1");
-    expect(reserveBody.p_units).toBe(1);
+  it("settles missing course evidence at zero despite an embedding call", async () => {
+    const deps = buildDeps();
+    const response = await handleAssistantRuntimeRequest(request(), deps);
+    expect(response.status).toBe(422);
+    expect((await response.json()).chargedUnits).toBe(0);
+    expect(deps.billingRpc).toHaveBeenCalledWith("settle_assistant_question", expect.objectContaining({ p_outcome: "insufficient" }));
+    expect(deps.callLlm).not.toHaveBeenCalled();
   });
-
-  it("successful order: content entitlement → reserve → embed → retrieve → answer → commit", async () => {
+  it("settles only after generation and final content authority, once for two providers", async () => {
     const order: string[] = [];
-    let embedAttemptIndex = -1;
-    let answerAttemptIndex = -1;
-    let nextIndex = 0;
-    const billingRpc = vi.fn(
-      async (fnName: string, body: Record<string, unknown>): Promise<BillingRpcResult> => {
-        switch (fnName) {
-          case "assistant_card_content_access":
-            order.push(fnName);
-            return entitlementSnapshot(undefined, String(body.p_card_id));
-          case "reserve_learner_ai_access":
-            order.push(fnName);
-            return { ok: true, data: { reservation_id: RESERVATION_ID } };
-          case "register_provider_attempt": {
-            order.push(fnName);
-            nextIndex += 1;
-            if (body.p_provider === "openai_embedding") embedAttemptIndex = nextIndex;
-            if (body.p_provider === "openai_llm") answerAttemptIndex = nextIndex;
-            return {
-              ok: true,
-              data: { reservation_id: body.p_reservation_id, attempt_index: nextIndex },
-            };
-          }
-          case "finalize_provider_attempt":
-            order.push(
-              body.p_attempt_index === embedAttemptIndex ? "finalize:embed" : "finalize:answer",
-            );
-            return { ok: true, data: { reservation_id: body.p_reservation_id } };
-          case "commit_ai_quota":
-            order.push(fnName);
-            return { ok: true, data: { reservation_id: body.p_reservation_id } };
-          case "release_ai_quota":
-            order.push(fnName);
-            return { ok: true, data: { released: true } };
-          default:
-            return { ok: false, status: 404, error: `unknown rpc ${fnName}` };
-        }
-      },
-    );
-    const embedQuery = vi.fn(async () => {
-      order.push("embedQuery");
-      return [0.1, 0.2, 0.3];
-    });
-    const localeSemanticRetrieve = vi.fn(async () => {
-      order.push("localeSemanticRetrieve");
-      return { ok: true as const, chunks: [sample] as SemanticChunk[] };
-    });
-    const callLlm = vi.fn(async (_system: string, user: string) => {
-      order.push("callLlm");
-      return groundedAnswerFixture(user, "ok");
-    });
-    const deps = buildDeps({ billingRpc, embedQuery, localeSemanticRetrieve, callLlm });
-
-    const res = await handleAssistantRuntimeRequest(
-      buildRequest({ query: "what is AI?", learnerContext: { locale: "en", currentPath: "analyst" } }),
-      deps,
-    );
-    expect(res.status).toBe(200);
-    expect(order).toEqual([
-      "assistant_card_content_access",
-      "reserve_learner_ai_access",
-      "register_provider_attempt",
-      "embedQuery",
-      "finalize:embed",
-      "localeSemanticRetrieve",
-      "assistant_card_content_access",
-      "register_provider_attempt",
-      "callLlm",
-      "finalize:answer",
-      "commit_ai_quota",
-      "assistant_card_content_access",
-    ]);
-    expect(embedAttemptIndex).toBe(1);
-    expect(answerAttemptIndex).toBe(2);
+    const ordinary = createDefaultBillingRpc();
+    const deps = buildDeps({ localeSemanticRetrieve: vi.fn(async () => ({ ok: true as const, chunks: [sample] })),
+      billingRpc: vi.fn(async (name, body) => { order.push(name); return ordinary(name, body); }) });
+    const response = await handleAssistantRuntimeRequest(request(), deps);
+    expect(response.status).toBe(200);
+    expect((await response.json()).chargedUnits).toBe(1);
+    expect(order.at(-1)).toBe("settle_assistant_question");
+    expect(order.at(-2)).toBe("assistant_card_content_access");
+    expect(order.filter(name => name === "settle_assistant_question")).toHaveLength(1);
+    expect(deps.billingRpc).toHaveBeenCalledWith("settle_assistant_question", expect.objectContaining({ p_outcome: "answered" }));
   });
-
-  it("requires OPENAI_API_KEY and fails closed without LLM when absent", async () => {
-    const billingRpc = buildBillingSpy();
-    const embedQuery = vi.fn(async () => [0.1, 0.2, 0.3]);
-    const localeSemanticRetrieve = vi.fn(async () => ({
-      ok: true as const,
-      chunks: [] as SemanticChunk[],
-    }));
-    const callLlm = vi.fn(async () => ({ ok: true as const, answer: "should not run" }));
-    const deps = buildDeps({
-      billingRpc,
-      embedQuery,
-      localeSemanticRetrieve,
-      callLlm,
-      env: {
-        SUPABASE_URL: "https://project.supabase.co",
-        SUPABASE_SERVICE_ROLE_KEY: "service-role-key",
-      },
-    });
-    const res = await handleAssistantRuntimeRequest(
-      buildRequest({ query: "what is AI?", learnerContext: { locale: "en", currentPath: "analyst" } }),
-      deps,
-    );
-    expect(res.status).toBe(500);
-    const json = await res.json();
-    expect(json.ok).toBe(false);
-    expect(json.error).toBe("Missing required server configuration");
-    expect(embedQuery).not.toHaveBeenCalled();
-    expect(localeSemanticRetrieve).not.toHaveBeenCalled();
-    expect(callLlm).not.toHaveBeenCalled();
-    expect(deps.billingRpc as ReturnType<typeof vi.fn>).not.toHaveBeenCalled();
-  });
-
-  it("releases exactly once when embed registration fails before any attempt starts", async () => {
-    const billingRpc = buildBillingSpy({
-      register_provider_attempt: () => ({
-        ok: false,
-        status: 500,
-        error: "PROVIDER_ATTEMPT_REGISTRATION_FAILED",
-      }),
-    });
-    const callLlm = vi.fn(async () => ({ ok: true as const, answer: "should not be called" }));
-    const deps = buildDeps({
-      billingRpc,
-      callLlm,
-    });
-    const res = await handleAssistantRuntimeRequest(
-      buildRequest({ query: "what is AI?", learnerContext: { locale: "en", currentPath: "analyst" } }),
-      deps,
-    );
-    expect(res.status).toBeGreaterThanOrEqual(400);
-    expect(callLlm).not.toHaveBeenCalled();
-    const names = billingCallNames(deps);
-    expect(names.filter((n) => n === "release_ai_quota")).toHaveLength(1);
-    expect(names).not.toContain("commit_ai_quota");
-  });
-
-  it("never releases once a provider started, even when grounding fails closed after embed; commits exactly once", async () => {
-    const billingRpc = buildBillingSpy();
-    const callLlm = vi.fn(async () => ({
-      ok: true as const,
-      answer: "should not be called",
-    }));
-    const deps = buildDeps({
-      billingRpc,
-      callLlm,
-      localeSemanticRetrieve: vi.fn(async () => ({
-        ok: true as const,
-        chunks: [] as SemanticChunk[],
-      })),
-    });
-    const res = await handleAssistantRuntimeRequest(
-      buildRequest({ query: "what is AI?", learnerContext: { locale: "en", currentPath: "analyst" } }),
-      deps,
-    );
-    expect(res.status).toBe(422);
-    const json = await res.json();
-    expect(json.reason).toBe("insufficient_grounding");
-    expect(callLlm).not.toHaveBeenCalled();
-    const names = billingCallNames(deps);
-    expect(names.filter((n) => n === "commit_ai_quota")).toHaveLength(1);
-    expect(names).not.toContain("release_ai_quota");
-  });
-
-  it("two provider attempts (embed + answer) result in exactly one commit", async () => {
-    const billingRpc = buildBillingSpy();
-    const deps = buildDeps({
-      billingRpc,
-      localeSemanticRetrieve: vi.fn(async () => ({
-        ok: true as const,
-        chunks: [sample] as SemanticChunk[],
-      })),
-    });
-    const res = await handleAssistantRuntimeRequest(
-      buildRequest({ query: "what is AI?", learnerContext: { locale: "en", currentPath: "analyst" } }),
-      deps,
-    );
-    expect(res.status).toBe(200);
-    const names = billingCallNames(deps);
-    expect(names.filter((n) => n === "register_provider_attempt")).toHaveLength(2);
-    expect(names.filter((n) => n === "commit_ai_quota")).toHaveLength(1);
-    expect(names.filter((n) => n === "release_ai_quota")).toHaveLength(0);
+  it("does not expose an answer when outcome persistence fails", async () => {
+    const ordinary = createDefaultBillingRpc();
+    const deps = buildDeps({ localeSemanticRetrieve: vi.fn(async () => ({ ok: true as const, chunks: [sample] })),
+      billingRpc: vi.fn(async (name, body) => name === "settle_assistant_question"
+        ? { ok: false as const, status: 503, error: "unavailable" } : ordinary(name, body)) });
+    const response = await handleAssistantRuntimeRequest(request(), deps);
+    expect(response.status).toBe(503);
+    expect((await response.json()).answer).toBeUndefined();
   });
 });

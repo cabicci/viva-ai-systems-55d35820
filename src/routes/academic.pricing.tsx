@@ -1,7 +1,9 @@
+import { CommercialPurchases } from "@/components/billing/CommercialPurchases";
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { LineIntroduction } from "@/components/site/LearningLines";
+import { PlanAllowance } from "@/components/billing/PlanAllowance";
 import { PlanPrices } from "@/components/site/PlanPrices";
 import { getLineCopy, lineMeta } from "@/lib/learning-lines";
 import { useLocale } from "@/lib/locale/locale-context";
@@ -11,13 +13,18 @@ import { useState } from "react";
 import { useAuth } from "@/lib/auth-context";
 import { supabase } from "@/integrations/supabase/client";
 import { PaymentMethods } from "@/components/commerce/PaymentMethods";
-import { commerceCopy, formatAmount } from "@/lib/commerce/copy";
+import { commerceCopy } from "@/lib/commerce/copy";
 import { academicCatalogue, academicCommand } from "@/lib/academic-education/client";
 import { useQuery } from "@tanstack/react-query";
 import { adminOfferCopy } from "@/lib/commerce/admin-offer-copy";
 
 import { Button } from "@/components/ui/button";
-import { BillingUnavailableError, billingUnavailableMessage, resolveCheckoutUrl, resolvePortalUrl } from "@/lib/billing/checkout-client";
+import {
+  BillingUnavailableError,
+  billingUnavailableMessage,
+  resolveCheckoutUrl,
+  resolvePortalUrl,
+} from "@/lib/billing/checkout-client";
 import { toast } from "sonner";
 export const Route = createFileRoute("/academic/pricing")({
   validateSearch: parseLocaleSearchParam,
@@ -54,9 +61,6 @@ function AcademicPricing() {
   const hasStripe = !status.isError && status.data?.stripe;
   const [interval, setInterval] = useState<"month" | "year">("month");
   const [market, setMarket] = useState<"EG" | "INTL">("EG");
-  const [withAssistant, setWithAssistant] = useState(false);
-  const addonAmount = market === "EG" ? (interval === "month" ? 5000 : 60000)
-    : (interval === "month" ? 100 : 1200);
   const [busy, setBusy] = useState(false),
     [error, setError] = useState(false);
   async function portal() {
@@ -87,10 +91,21 @@ function AcademicPricing() {
     setError(false);
     try {
       const url = await resolveCheckoutUrl(
-        { product: "academic", academicAssistant: withAssistant, billingInterval: interval, marketCode: market, locale },
+        {
+          product: "academic",
+          academicAssistant: false,
+          billingInterval: interval,
+          marketCode: market,
+          locale,
+        },
         async () => {
           const { data, error } = await supabase.functions.invoke("academic-stripe-checkout", {
-            body: { marketCode: market, billingInterval: interval, locale, academicAssistant: withAssistant },
+            body: {
+              marketCode: market,
+              billingInterval: interval,
+              locale,
+              academicAssistant: false,
+            },
           });
           if (error || typeof data?.url !== "string") throw new Error("Unavailable");
           const testUrl = new URL(data.url);
@@ -115,6 +130,7 @@ function AcademicPricing() {
             <h2 className="text-2xl font-black">{text.title}</h2>
             <p className="my-5 leading-relaxed text-muted-foreground">{text.details}</p>
             <PlanPrices plan="pro_plus" />
+            <PlanAllowance />
             {!released ? (
               <p role="status">{c.unavailable}</p>
             ) : user ? (
@@ -141,20 +157,6 @@ function AcademicPricing() {
                     <option value="INTL">{offers.international} — USD</option>
                   </select>
                 </label>
-                <label className="flex items-start gap-3 rounded-xl border p-4">
-                  <input type="checkbox" checked={withAssistant} disabled={busy}
-                    onChange={(event) => setWithAssistant(event.target.checked)} className="mt-1" />
-                  <span>
-                    {locale === "en" ? "Add the Academic course assistant" : "إضافة مساعد المنهج الأكاديمي"}
-                    {" — +"}{formatAmount(addonAmount, market === "EG" ? "EGP" : "USD", locale)}
-                    {" / "}{interval === "month" ? w.month : w.year}
-                    <span className="mt-1 block text-sm text-muted-foreground">
-                      {locale === "en"
-                        ? "Optional. Ask about the whole course in your selected language. 150 questions per month, up to 6 per lesson each month."
-                        : "اختياري. اسأل عن المنهج كاملًا بلغتك المختارة. ١٥٠ سؤالًا شهريًا، بحد ٦ أسئلة لكل درس خلال الشهر."}
-                    </span>
-                  </span>
-                </label>
                 <PaymentMethods
                   packageKey="academic"
                   interval={interval}
@@ -162,7 +164,6 @@ function AcademicPricing() {
                   stripe={() => void checkout()}
                   disabled={busy}
                   initialMethod="instapay"
-                  academicAssistant={withAssistant}
                 >
                   <Button className="w-full">{w.continue}</Button>
                 </PaymentMethods>
@@ -189,10 +190,12 @@ function AcademicPricing() {
             )}
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{c.separate}</p>
           </article>
+          <div className="mt-8">
+            <CommercialPurchases area="academic" />
+          </div>
         </section>
       </main>
       <Footer />
     </div>
   );
 }
-

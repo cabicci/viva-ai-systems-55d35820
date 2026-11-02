@@ -126,6 +126,7 @@ describe("public billing RPC bridge — static", () => {
   const assistantIndex = readRepoFile("supabase/functions/assistant-runtime/index.ts");
   const entitlementIndex = readRepoFile("supabase/functions/billing-entitlement/index.ts");
   const handler = readRepoFile("supabase/functions/assistant-runtime/handler.ts");
+  const questionMeter = readRepoFile("supabase/functions/assistant-runtime/question-metering.ts");
 
   it("defines exactly seven public wrappers and tracks additive Billing migrations", () => {
     const migrations = readdirSync(path.join(REPO_ROOT, "supabase/migrations"))
@@ -188,6 +189,11 @@ describe("public billing RPC bridge — static", () => {
       "20261006120000_academic_admin_review.sql",
       "20261007072809_unified_learning_journey.sql",
       "20261021120000_assistant_card_content_access.sql",
+      "20261101213301_original_assistant_source_events.sql",
+      "20261101214105_original_assistant_publication_epoch_and_preparation.sql",
+      "20261101234350_original_ai_bounded_validation.sql",
+      "20261102003309_original_ai_compact_activation.sql",
+      "20261102003321_original_ai_verified_retirement.sql",
     ]);
 
     const snapshotValiditySql = readRepoFile(SNAPSHOT_VALIDITY_MIGRATION);
@@ -259,7 +265,7 @@ describe("public billing RPC bridge — static", () => {
   });
 
   it("handler still reserves before providers and fails closed on reserve failure", () => {
-    const reserveIdx = handler.indexOf('billingRpc("reserve_learner_ai_access"');
+    const reserveIdx = handler.indexOf('await runMeteredQuestion(');
     const embedIdx = handler.indexOf("deps.embedQuery(");
     const retrieveIdx = handler.indexOf("deps.localeSemanticRetrieve(");
     const llmIdx = handler.indexOf("deps.callLlm(");
@@ -267,6 +273,8 @@ describe("public billing RPC bridge — static", () => {
     expect(embedIdx).toBeGreaterThan(reserveIdx);
     expect(retrieveIdx).toBeGreaterThan(reserveIdx);
     expect(llmIdx).toBeGreaterThan(reserveIdx);
+    expect(questionMeter.indexOf('rpc("reserve_assistant_question"')).toBeLessThan(questionMeter.indexOf('await execute(fingerprint)'));
+    expect(questionMeter).toContain('if (row.allowed !== true || row.status !== "reserved")');
     expect(handler).toContain('runtime: "disconnected"');
     expect(handler).toContain(
       "providersCalled: { embedding: false, retrievalRpc: false, llm: false }",

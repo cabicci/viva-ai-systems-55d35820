@@ -62,7 +62,7 @@ function ownThen(c: CaseState, promise: Promise<unknown>, label: string, value: 
   } });
 }
 function payload(locale: SupportedLocale = "en"): AssistantRuntimeRequestPayload {
-  return { query: "fixture question", learnerContext: { locale, currentPath: "intro" }, conversationHistory: [{ question: "own earlier question", answer: "own earlier answer" }] };
+  return { requestId: "aaaaaaaa-0000-4000-8000-000000000099", query: "fixture question", learnerContext: { locale, currentPath: "intro" }, conversationHistory: [{ question: "own earlier question", answer: "own earlier answer" }] };
 }
 function reply(): AssistantRuntimeResponsePayload {
   return { ok: true, runtime: "connected", receivedQuery: "fixture question", retrievalCount: 1, contextDetected: true,

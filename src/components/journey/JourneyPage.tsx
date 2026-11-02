@@ -216,6 +216,7 @@ export function JourneyPage() {
                   tier: ent.tier,
                   isAdmin: ent.isAdmin,
                   freeLessonIds: ent.freeLessonIds,
+                  entitledLessonIds: ent.entitledLessonIds,
                   introCompletedCount: introDone,
                   introTotal: intro.length,
                 }).kind === "open",

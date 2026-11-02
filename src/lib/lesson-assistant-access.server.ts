@@ -1,3 +1,4 @@
+import { questionBalance } from "../../supabase/functions/assistant-runtime/question-metering";
 import { resolveVerifiedRequestUser } from "./ssr-request-auth.server";
 import { PATHS } from "./curriculum-data";
 
@@ -23,14 +24,13 @@ export async function readLessonAssistantAccess(input: { pathId: string; lessonI
     if (scope?.card_id !== input.pathId || (scope?.admin_review !== true &&
       (!Array.isArray(ids) || !ids.every((id) => typeof id === "string") || !ids.includes(input.lessonId))))
       return { state: "denied", reason: "lesson" };
-    const access = await supabaseAdmin.rpc("evaluate_access" as never,
-      { p_user_id: user.userId, p_resource_type: "assistant_runtime", p_resource_id: input.lessonId } as never);
+    const access = await supabaseAdmin.rpc("assistant_question_balance" as never,
+      { p_user_id: user.userId, p_area: "ai", p_course: "ai", p_child_id: null } as never);
     if (access.error) return { state: "unavailable" };
-    const decision = access.data as unknown as { allowed?: unknown; denial_reason_code?: unknown } | null;
-    if (decision?.allowed === true) return { state: "allowed" };
-    if (decision?.allowed !== false) return { state: "unavailable" };
-    if (decision.denial_reason_code === "ASSISTANT_QUOTA_EXCEEDED") return { state: "denied", reason: "quota" };
-    return decision.denial_reason_code === "AI_ACCESS_DENIED"
-      ? { state: "denied", reason: "access" } : { state: "unavailable" };
+    const balance = questionBalance(access.data);
+    if (!balance || typeof balance.access_allowed !== "boolean") return { state: "unavailable" };
+    if (!balance.access_allowed) return { state: "denied", reason: "access" };
+    return (scope?.admin_review === true && balance.admin_review === true) || balance.monthly_remaining + balance.purchased_remaining > 0
+      ? { state: "allowed" } : { state: "denied", reason: "quota" };
   } catch { return { state: "unavailable" }; }
 }

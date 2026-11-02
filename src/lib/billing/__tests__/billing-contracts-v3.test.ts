@@ -82,16 +82,16 @@ describe("V3 — no automatic 14-day trial", () => {
   it("free plan defaults grant no automatic AI trial window", () => {
     expect(PLAN_ENTITLEMENT_DEFAULTS.free.assistantRuntimePeriodDays).toBeNull();
     expect(PLAN_ENTITLEMENT_DEFAULTS.free.assistantRuntimePeriodQuota).toBeNull();
-    expect(PLAN_ENTITLEMENT_DEFAULTS.free.assistantRuntimeGeneralMonthlyQuota).toBeNull();
+    expect(PLAN_ENTITLEMENT_DEFAULTS.free.assistantRuntimeGeneralMonthlyQuota).toBe(10);
   });
 
-  it("encodes the approved paid dual quotas without changing lesson caps", () => {
+  it("encodes the approved monthly quotas without changing lesson caps", () => {
     expect(PLAN_ENTITLEMENT_DEFAULTS.pro.lessonCountCap).toBe(71);
-    expect(PLAN_ENTITLEMENT_DEFAULTS.pro.assistantRuntimePerLessonQuota).toBe(3);
-    expect(PLAN_ENTITLEMENT_DEFAULTS.pro.assistantRuntimeGeneralMonthlyQuota).toBe(50);
+    expect(PLAN_ENTITLEMENT_DEFAULTS.pro.assistantRuntimePerLessonQuota).toBeNull();
+    expect(PLAN_ENTITLEMENT_DEFAULTS.pro.assistantRuntimeGeneralMonthlyQuota).toBe(150);
     expect(PLAN_ENTITLEMENT_DEFAULTS.pro_plus.lessonCountCap).toBe(100);
-    expect(PLAN_ENTITLEMENT_DEFAULTS.pro_plus.assistantRuntimePerLessonQuota).toBe(6);
-    expect(PLAN_ENTITLEMENT_DEFAULTS.pro_plus.assistantRuntimeGeneralMonthlyQuota).toBe(150);
+    expect(PLAN_ENTITLEMENT_DEFAULTS.pro_plus.assistantRuntimePerLessonQuota).toBeNull();
+    expect(PLAN_ENTITLEMENT_DEFAULTS.pro_plus.assistantRuntimeGeneralMonthlyQuota).toBe(300);
   });
 
   it("assertNoAutomaticTrialDefaults does not throw", () => {
@@ -200,7 +200,7 @@ describe("V3 — admin grant confers full learner entitlement", () => {
         policy: paidPolicy,
         adminGrantExpiresAt: "2026-02-01T00:00:00.000Z",
       }),
-      { usedGeneral: 0, usedPeriod: 0, aiTopupBalance: 0 },
+      { usedGeneral: 10, usedPeriod: 0, aiTopupBalance: 0 },
     );
     expect(evaluateAccess(noQuota, "assistant_runtime").allowed).toBe(false);
   });

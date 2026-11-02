@@ -368,17 +368,12 @@ describe("RPC privilege contract", () => {
   });
 });
 
-describe("Chat 4 Billing bridge documentation", () => {
-  it("documents the implemented billing lifecycle after JWT, before providers", () => {
-    expect(HANDLER_SRC).toContain("CHAT 4 BILLING BRIDGE");
-    expect(HANDLER_SRC).toContain("authentication (above) → rate limit → server env checks");
-    expect(HANDLER_SRC).toContain("reserve_learner_ai_access");
-    expect(HANDLER_SRC).toContain("register_provider_attempt");
-    expect(HANDLER_SRC).toContain("finalize_provider_attempt");
-    expect(HANDLER_SRC).toContain("commit_ai_quota");
-    expect(HANDLER_SRC).toContain("release_ai_quota");
-    // Entitlement evaluation (evaluate_access) is a separate edge
-    // (billing-entitlement) — assistant-runtime never calls it directly.
-    expect(HANDLER_SRC).not.toContain("evaluateAccess");
+describe("shared question metering boundary", () => {
+  it("keeps source authorization separate from final outcome charging", () => {
+    expect(HANDLER_SRC).toContain("runMeteredQuestion");
+    expect(HANDLER_SRC).toContain("assistant_card_content_access");
+    expect(HANDLER_SRC).toContain("assistant_question_provider_attempt");
+    expect(HANDLER_SRC).not.toContain('billingRpc("commit_ai_quota"');
+    expect(HANDLER_SRC).not.toContain('billingRpc("release_ai_quota"');
   });
 });

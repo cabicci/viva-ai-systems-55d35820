@@ -189,3 +189,19 @@ describe('r32 NEW genuine current, lifetime and unchanged AI connection controls
  });
  it('AI02 unchanged AI adapter preserves genuine current helper failure',async()=>{h.runtime=()=>{throw new AssistantRequestError('current AI connection failure');};const ui=render(<AssistantPanel/>);await act(async()=>{submit(ui,'current AI error');await turn();});expect(ui.getByRole('alert').textContent).toBe('current AI connection failure');expect(ui.getByRole('textbox').hasAttribute('disabled')).toBe(false);expect(entries('setItem-entry')).toHaveLength(0);});
 });
+
+describe('transport retry identity',()=>{
+ it('reuses the same request after an uncertain response, then uses a new identity for the next question',async()=>{
+  let attempts=0;h.ask=()=>{if(attempts++===0)return Promise.reject(Error('connection lost'));return reply();};
+  const ui=mount();submit(ui,'same question');await act(async()=>{await turn();});
+  submit(ui,'same question');await act(async()=>{await turn();});
+  expect(h.calls).toHaveLength(2);expect(h.calls[1].requestId).toBe(h.calls[0].requestId);
+  submit(ui,'next question');await act(async()=>{await turn();});
+  expect(h.calls).toHaveLength(3);expect(h.calls[2].requestId).not.toBe(h.calls[0].requestId);
+ });
+ it('does not reuse an uncertain identity for a changed question',async()=>{
+  h.ask=()=>Promise.reject(Error('connection lost'));const ui=mount();submit(ui,'first question');await act(async()=>{await turn();});
+  submit(ui,'changed question');await act(async()=>{await turn();});
+  expect(h.calls).toHaveLength(2);expect(h.calls[1].requestId).not.toBe(h.calls[0].requestId);
+ });
+});

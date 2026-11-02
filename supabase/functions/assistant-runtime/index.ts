@@ -1,3 +1,4 @@
+import { questionRpcFailure } from "./question-metering.ts";
 import { callDirectAssistantModel } from "./direct-model.ts";
 // Assistant Runtime — secure backend entry point.
 //
@@ -121,7 +122,8 @@ async function billingRpc(
         // Non-JSON error body — keep the generic message above.
       }
       console.error(`[assistant-runtime] billing rpc ${fnName} failed`, res.status, message);
-      return { ok: false, status: res.status, error: message };
+      return ["reserve_assistant_question", "settle_assistant_question", "assistant_question_provider_attempt"].includes(fnName)
+        ? questionRpcFailure(message) : { ok: false, status: res.status, error: message };
     }
 
     const data = (await res.json()) as Record<string, unknown> | null;

@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import path from "node:path";
 // @vitest-environment node
 import { expect, it } from "vitest";
 import { verifyCardIntegration, INTEGRATION_LOCALES, type CoverageRecord } from "../card-assistant/integration-contract";
@@ -79,5 +81,23 @@ it("requires four-locale coverage of dynamically registered academic cards", () 
 it("does not mistake comments or unused shared-template imports for an actual shared mount", () => {
   const issues = verifyAssistantWiring(() => `// <AssistantConversationPanel />\nimport {AssistantConversationPanel} from './AssistantConversationPanel';\nexport const Screen=()=> <form/>; // academic_assistant_access`);
   expect(issues.filter(issue => issue.code === "SHARED_TEMPLATE")).toHaveLength(10);
-  expect(issues.filter(issue => issue.code === "ACCESS_ADAPTER")).toHaveLength(6);
+  expect(issues.filter(issue => issue.code === "ACCESS_ADAPTER")).toHaveLength(3);
+});
+
+
+it("requires the real shared metering call in each runtime and rejects old debit paths", () => {
+  const root = path.resolve(import.meta.dirname, "../../..");
+  const read = (file: string) => fs.readFileSync(path.join(root, file), "utf8");
+  expect(verifyAssistantWiring(read)).toEqual([]);
+  for (const file of ["supabase/functions/assistant-runtime/handler.ts", "src/lib/card-assistant/runtime.ts",
+    "supabase/functions/academic-assistant/handler.ts"]) {
+    const missing = verifyAssistantWiring(name => name === file ? read(name).replace("await runMeteredQuestion(", "await unmeteredQuestion(") : read(name));
+    expect(missing).toContainEqual(expect.objectContaining({ code: "QUESTION_LEDGER", location: file }));
+    const competing = verifyAssistantWiring(name => name === file ? read(name) + '\noldRpc("commit_ai_quota");' : read(name));
+    expect(competing).toContainEqual(expect.objectContaining({ code: "COMPETING_QUESTION_LEDGER", location: file }));
+  }
+  for (const rpc of ["reserve_assistant_question", "settle_assistant_question"]) {
+    const missing = verifyAssistantWiring(name => name.endsWith("question-metering.ts") ? read(name).replace('"' + rpc + '"', '"missing"') : read(name));
+    expect(missing).toContainEqual(expect.objectContaining({ code: "QUESTION_LEDGER" }));
+  }
 });

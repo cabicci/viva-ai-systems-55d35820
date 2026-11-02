@@ -30,6 +30,8 @@ import {
   validateSignedRiskRelationship,
 } from "./payment-risk";
 import { offerSessionParameters, verifyOfferInvoice, type OfferEvidence } from "./offer-discounts";
+import type { CommercialPurchaseSelection } from "../commercial-purchase-contracts";
+import { createCommercialCheckout, handleCommercialPaymentEvent, handleCommercialRiskEvent } from "./commercial-purchases";
 
 const TRUSTED_APP_ORIGINS = new Set<string>(LIVE_SITE_HOSTS.map((h) => `https://${h}`));
 
@@ -152,7 +154,7 @@ export async function verifyLiveCustomer(
 }
 
 // ---------------------------------------------------------------- checkout
-export type LiveCheckoutBody = (
+type SubscriptionCheckoutBody = (
   | {
       product: "core";
       planKey: "pro" | "pro_plus";
@@ -173,17 +175,24 @@ export type LiveCheckoutBody = (
       locale?: string;
     }
 ) & { offer?: { code: string; phone?: string; key: string; renewal?: boolean } };
+export type LiveCheckoutBody = SubscriptionCheckoutBody | (CommercialPurchaseSelection & { offer?: SubscriptionCheckoutBody["offer"] });
 
 async function reserveOffer(
   user: LiveUser,
-  body: LiveCheckoutBody,
+  body: SubscriptionCheckoutBody,
   deps: LiveDeps,
 ): Promise<OfferEvidence | null> {
   if (!body.offer) return null;
   if (deps.getEnv("STRIPE_BILLING_MODE")?.trim().toLowerCase() !== "live")
     throw new Error("LIVE_OFFER_MODE_REQUIRED");
-  if (body.product === "academic" && body.academicAssistant)
-    throw new Error("LIVE_OFFER_ASSISTANT_NOT_MAPPED");
+  if (body.product === "kids") {
+    const selected = await deps.rpc<{use_offer:boolean}>("select_commercial_discount", {
+      p_user_id: user.id, p_package: body.product, p_market: body.marketCode,
+      p_interval: body.billingInterval, p_code: body.offer.code, p_renewal: body.offer.renewal ?? false,
+    });
+    if (selected?.use_offer === false) return null;
+    if (selected?.use_offer !== true) throw new Error("LIVE_DISCOUNT_SELECTION_UNVERIFIED");
+  }
   return deps.rpc<OfferEvidence>("reserve_stripe_live_offer", {
     p_user_id: user.id,
     p_code: body.offer.code,
@@ -250,6 +259,8 @@ export async function createLiveCheckout(
     return { status: 503, body: { error: "STRIPE_LIVE_CHECKOUT_DISABLED" } };
   }
   try {
+    if (body.product === "curriculum_lifetime" || body.product === "question_topup")
+      return await createCommercialCheckout(user, body, appOrigin, deps);
     return body.product === "core"
       ? await coreCheckout(user, body, appOrigin, deps)
       : await scopedCheckout(user, body, appOrigin, deps);
@@ -261,6 +272,7 @@ export async function createLiveCheckout(
         "CHECKOUT_INTENT_SUPERSEDED",
         "CHECKOUT_IN_PROGRESS",
         "SUBSCRIPTION_ALREADY_MANAGED",
+        "COMMERCIAL_REQUEST_EXPIRED",
       ].includes(message)
     )
       return { status: 409, body: { error: message } };
@@ -450,22 +462,19 @@ type ScopedContext = {
 
 async function scopedCheckout(
   user: LiveUser,
-  body: Exclude<LiveCheckoutBody, { product: "core" }>,
+  body: Exclude<SubscriptionCheckoutBody, { product: "core" }>,
   appOrigin: string,
   deps: LiveDeps,
 ): Promise<LiveResult> {
   const stripe = liveStripe(deps);
   const offer = await reserveOffer(user, body, deps);
   const scope = body.product;
-  const assistant = scope === "academic" && body.academicAssistant === true;
   const contextRpc =
     scope === "kids"
       ? "get_kids_stripe_checkout_context"
       : scope === "technical"
         ? "get_technical_stripe_checkout_context"
-        : assistant
-          ? "get_academic_assistant_stripe_checkout_context"
-          : "get_academic_stripe_checkout_context";
+        : "get_academic_stripe_checkout_context";
   const context = await deps.rpc<ScopedContext>(contextRpc, {
     p_user_id: user.id,
     p_market_code: body.marketCode,
@@ -549,7 +558,7 @@ async function scopedCheckout(
     environment: LIVE,
     [APP_MARKER.key]: APP_MARKER.value,
     ...(scope === "academic"
-      ? { academic_assistant: context.includes_assistant ? "true" : "false", course_id: "AC-BUS" }
+      ? { academic_assistant: "true", course_id: "AC-BUS" }
       : {}),
   };
   for (const [key, value] of Object.entries(metadata)) {
@@ -721,6 +730,10 @@ export async function handleLiveWebhookEvent(
     const occurredAt = new Date(event.created * 1000).toISOString();
     if (!event.id || !event.data?.object || !Number.isSafeInteger(event.created))
       throw new Error("STRIPE_EVENT_INVALID");
+    const purchaseResult = await handleCommercialPaymentEvent(event, deps);
+    if (purchaseResult) return purchaseResult;
+    const purchaseRisk = await handleCommercialRiskEvent(event, deps);
+    if (purchaseRisk) return purchaseRisk;
     if (RISK_EVENTS.has(event.type)) {
       const object = event.data.object;
       const chargeId = validateSignedRiskObject(event.type, object);
@@ -1021,6 +1034,9 @@ async function paidEvidence(
   });
   if (!offer?.session_id) throw new Error("LIVE_OFFER_EVIDENCE_MISSING");
   const session = await get(`/checkout/sessions/${encodeURIComponent(offer.session_id)}`);
-  const amountPaid = verifyOfferInvoice(offer, invoice, subscription, session);
+  const firstInvoice = offer.mapping.duration === "repeating" && offer.consumed_invoice_id && offer.consumed_invoice_id !== invoice.id
+    ? await get(`/invoices/${encodeURIComponent(offer.consumed_invoice_id)}?expand[]=discounts.source.coupon`)
+    : undefined;
+  const amountPaid = verifyOfferInvoice(offer, invoice, subscription, session, firstInvoice);
   return { ...decision, offer, amountPaid, currency: invoice.currency };
 }

@@ -10,15 +10,22 @@ export const liveOfferAdminSchema = z.discriminatedUnion("action", [
       key,
       offer_id: key,
       market: z.enum(["EG", "INTL"]),
-      interval: z.enum(["month", "year"]),
+      interval: z.enum(["month", "year", "one_time"]),
       price_id: z.string().regex(/^price_[A-Za-z0-9_]+$/),
       product_id: z.string().regex(/^prod_[A-Za-z0-9_]+$/),
       coupon_id: z.string().trim().min(1).max(255),
       promotion_code_id: z.string().regex(/^promo_[A-Za-z0-9_]+$/),
-      duration: z.enum(["once", "forever"]),
+      duration: z.enum(["once", "repeating", "forever"]),
+      duration_in_months: z.number().int().min(1).max(1200).nullable().optional(),
       ...review,
     })
-    .strict(),
+    .strict()
+    .superRefine((value, ctx) => {
+      if ((value.duration === "repeating") !== (value.duration_in_months != null))
+        ctx.addIssue({ code: "custom", message: "INVALID_DISCOUNT_DURATION" });
+      if (value.interval === "one_time" && value.duration !== "once")
+        ctx.addIssue({ code: "custom", message: "INVALID_ONE_TIME_DURATION" });
+    }),
   z.object({ action: z.literal("enable"), id: key, key, ...review }).strict(),
   z.object({ action: z.literal("disable"), id: key, key }).strict(),
   z.object({ action: z.literal("reconcile"), id: key, key }).strict(),

@@ -1,5 +1,6 @@
 /** Dedicated, course-scoped Academic assistant. No adult/Kids/Technical RAG fallback. */
 import { ASSISTANT_ANSWER_POLICY, parseAssistantAnswer } from "../assistant-runtime/answer-contract.ts";
+import { runMeteredQuestion, recordedQuestionProvider, validQuestionId, type QuestionRpc, type QuestionOutcome } from "../assistant-runtime/question-metering.ts";
 export type Locale = "ar-EG" | "ar-MSA" | "ar-Gulf" | "en";
 export type AcademicHistoryTurn = { question: string; answer: string };
 export type Chunk = {
@@ -13,7 +14,7 @@ export type Chunk = {
 export type AcademicDeps = {
   verifyUser(token: string): Promise<string | null>;
   allowed(token: string, course: string, lesson: string, locale: Locale): Promise<"admin" | "learner" | null>;
-  consumeLimit(user: string, course: string): Promise<boolean>;
+  billingRpc: QuestionRpc;
   embed(query: string): Promise<number[] | null>;
   retrieve(course: string, locale: Locale, embedding: number[]): Promise<Chunk[]>;
   verifySources(chunks: Chunk[]): Promise<boolean>;
@@ -46,11 +47,11 @@ function validHistory(value: unknown): value is AcademicHistoryTurn[] | undefine
     typeof turn.question === "string" && turn.question.trim().length > 0 && turn.question.length <= 500 &&
     typeof turn.answer === "string" && turn.answer.length <= 1200);
 }
-function validBody(v: unknown): v is { query: string; courseId: string; lessonId: string; locale: Locale;history?:AcademicHistoryTurn[] } {
+function validBody(v: unknown): v is { query: string; courseId: string; lessonId: string; locale: Locale; requestId: string; history?:AcademicHistoryTurn[] } {
   if (!v || typeof v !== "object" || Array.isArray(v)) return false;
   const b = v as Record<string, unknown>;
-  if (Object.keys(b).some(k => !["query", "courseId", "lessonId", "locale", "history"].includes(k))) return false;
-  return typeof b.query === "string" && b.query.trim().length >= 2 && b.query.length <= 1500 &&
+  if (Object.keys(b).some(k => !["query", "courseId", "lessonId", "locale", "history", "requestId"].includes(k))) return false;
+  return validQuestionId(b.requestId) && typeof b.query === "string" && b.query.trim().length >= 2 && b.query.length <= 1500 &&
     typeof b.courseId === "string" && /^AC-[A-Z0-9]+$/.test(b.courseId) &&
     typeof b.lessonId === "string" && /^AC-[A-Z0-9]+-M[0-9]{2}-L[0-9]{2}$/.test(b.lessonId) &&
     b.lessonId.startsWith(b.courseId + "-") && locales.has(String(b.locale)) && validHistory(b.history);
@@ -64,7 +65,7 @@ export async function handleAcademicAssistant(req: Request, deps: AcademicDeps):
   let body: unknown;
   try { body = await req.json(); } catch { return json(400, { error: "INVALID_REQUEST" }); }
   if (!validBody(body)) return json(400, { error: "INVALID_REQUEST" });
-  const { query, courseId, lessonId, locale, history = [] } = body;
+  const { query, courseId, lessonId, locale, requestId, history = [] } = body;
   try {
     const user = await deps.verifyUser(auth.slice(7));
     if (!user) return json(401, { error: "SIGN_IN_REQUIRED" });
@@ -72,11 +73,24 @@ export async function handleAcademicAssistant(req: Request, deps: AcademicDeps):
     const access = await deps.allowed(auth.slice(7), courseId, lessonId, locale);
     if (access !== "admin" && access !== "learner")
       return json(403, { error: "ACADEMIC_ASSISTANT_ACCESS_REQUIRED" });
-    if (!await deps.consumeLimit(user, courseId))
-      return json(429, { error: "ACADEMIC_ASSISTANT_LIMIT" });
+    let outcome: QuestionOutcome = "system_failure";
+    let proof: Chunk[] = [];
+    const metered = await runMeteredQuestion({ userId: user, area: "academic", course: courseId,
+      lesson: lessonId, locale, childId: null, requestId, query, history }, deps.billingRpc, async fingerprint => {
+      const result = await execute(user, fingerprint).catch(() => json(503, { error: "ACADEMIC_ASSISTANT_UNAVAILABLE" }));
+      return { status: result.status, body: await result.json(), outcome, proof };
+    }, async saved => {
+      const mode = await deps.allowed(auth.slice(7), courseId, lessonId, locale);
+      return (mode === "admin" || mode === "learner") && Array.isArray(saved.proof) &&
+        (saved.proof.length === 0 || await deps.verifySources(saved.proof as Chunk[]));
+    });
+    return json(metered.status, metered.body);
+    async function execute(userId: string, fingerprint: string): Promise<Response> {
+    const provider = <T>(model: string, run: () => Promise<T>) => recordedQuestionProvider(deps.billingRpc,
+      { userId, requestId, fingerprint }, model, run, value => value !== null);
     const lastQuestion = history.at(-1)?.question;
     const retrievalQuery = lastQuestion && query.trim().length < 100 ? `${lastQuestion}\n${query.trim()}` : query.trim();
-    const embedding = await deps.embed(retrievalQuery);
+    const embedding = await provider("openai_embedding", () => deps.embed(retrievalQuery));
     if (!embedding || embedding.length !== 1536 || embedding.some(x => !Number.isFinite(x)))
       return json(503, { error: "ACADEMIC_RETRIEVAL_UNAVAILABLE" });
     const retrieved = await deps.retrieve(courseId, locale, embedding);
@@ -87,7 +101,7 @@ export async function handleAcademicAssistant(req: Request, deps: AcademicDeps):
       c.lesson_id.startsWith(courseId + "-") && typeof c.section_id === "string" && /^[-\w]+$/.test(c.section_id) &&
       Number.isFinite(c.similarity) && c.similarity >= 0.35 &&
       typeof c.content === "string" && c.content.length <= 12000).slice(0, 6);
-    if (!chunks.length) return json(200, { answer: insufficient[locale], sources: [] });
+    if (!chunks.length) { outcome = "insufficient"; return json(200, { answer: insufficient[locale], sources: [] }); }
     if (!await deps.verifySources(chunks)) return json(422, { error: "ACADEMIC_GROUNDING_REQUIRED" });
     const system = `You are the Masaarat Academic tutor for course ${courseId}, locale ${locale}.
 Answer ONLY from the supplied approved sections. The current lesson is context, but any
@@ -106,9 +120,9 @@ ${answerStyle[locale]}
 ${ASSISTANT_ANSWER_POLICY}`;
     const evidence = chunks.map((c, i) => ({ id: `S${i + 1}`, number: i + 1, lessonId: c.lesson_id,
       sectionId: c.section_id, text: c.content }));
-    const generated = await deps.answer(system, JSON.stringify({ question: query.trim(),
+    const generated = await provider("openai_llm", () => deps.answer(system, JSON.stringify({ question: query.trim(),
       currentLesson: lessonId, untrustedConversation: history, evidence })
-      .replaceAll("<", "\\u003c").replaceAll(">", "\\u003e"), evidence.map(item => item.id));
+      .replaceAll("<", "\\u003c").replaceAll(">", "\\u003e"), evidence.map(item => item.id)));
     const decision = parseAssistantAnswer(generated ?? "");
     if (!decision || decision.sourceIds.some(id => !evidence.some(item => item.id === id)))
       return json(503, { error: "ACADEMIC_ANSWER_UNAVAILABLE" });
@@ -117,14 +131,20 @@ ${ASSISTANT_ANSWER_POLICY}`;
     // Check every source supplied to the model, including changed approval/hash
     // or runtime policy while the provider was generating the response.
     if (!await deps.verifySources(chunks)) return json(422, { error: "ACADEMIC_GROUNDING_REQUIRED" });
-    if (decision.grounding === "insufficient") return json(200, { answer: insufficient[locale], sources: [] });
+    proof = chunks;
+    if (decision.grounding !== "supported") {
+      outcome = decision.grounding;
+      return json(200, { answer: insufficient[locale], sources: [], answerGrounding: decision.grounding });
+    }
     // The model selects only admitted IDs; all citation metadata stays server-owned.
     const sources = decision.sourceIds.map(id => {
       const c = chunks[evidence.findIndex(item => item.id === id)];
       return { lessonId: c.lesson_id, sectionId: c.section_id,
         label: c.content.split(/\r?\n/, 1)[0].trim().slice(0, 200) || c.section_id };
     });
-    return json(200, { answer: decision.answer, sources });
+    outcome = "answered";
+    return json(200, { answer: decision.answer, sources, answerGrounding: "supported" });
+    }
   } catch {
     return json(503, { error: "ACADEMIC_ASSISTANT_UNAVAILABLE" });
   }
