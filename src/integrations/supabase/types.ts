@@ -2035,6 +2035,72 @@ export type Database = {
           },
         ]
       }
+      rag_current_retirements: {
+        Row: {
+          batch_ordinal: number
+          chunk_ids: Json
+          coverage_sha256: string
+          execution_id: string
+          legacy_audit_md5: string
+          legacy_audit_sha256: string
+          provider_outcome: string
+          reason: string
+          release_id: string
+          retired_at: string
+          successor_execution_id: string
+          successor_release_id: string
+          successor_version: string
+          unknown_request_id: string
+        }
+        Insert: {
+          batch_ordinal: number
+          chunk_ids: Json
+          coverage_sha256: string
+          execution_id: string
+          legacy_audit_md5: string
+          legacy_audit_sha256: string
+          provider_outcome?: string
+          reason?: string
+          release_id: string
+          retired_at?: string
+          successor_execution_id: string
+          successor_release_id: string
+          successor_version: string
+          unknown_request_id: string
+        }
+        Update: {
+          batch_ordinal?: number
+          chunk_ids?: Json
+          coverage_sha256?: string
+          execution_id?: string
+          legacy_audit_md5?: string
+          legacy_audit_sha256?: string
+          provider_outcome?: string
+          reason?: string
+          release_id?: string
+          retired_at?: string
+          successor_execution_id?: string
+          successor_release_id?: string
+          successor_version?: string
+          unknown_request_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "rag_current_retirements_release_id_fkey"
+            columns: ["release_id"]
+            isOneToOne: true
+            referencedRelation: "rag_current_releases"
+            referencedColumns: ["release_id"]
+          },
+          {
+            foreignKeyName: "rag_current_retirements_successor_release_id_fkey"
+            columns: ["successor_release_id"]
+            isOneToOne: false
+            referencedRelation: "rag_current_releases"
+            referencedColumns: ["release_id"]
+          },
+        ]
+      }
       rag_import_batches: {
         Row: {
           accepted_row_count: number
@@ -4208,6 +4274,18 @@ export type Database = {
         Args: { p_material: string; p_release_id: string; p_request_id: string }
         Returns: Json
       }
+      rag_current_legacy_audit: {
+        Args: { p_release_id: string }
+        Returns: Json
+      }
+      rag_current_prior_ai_clear: {
+        Args: { p_release_id: string }
+        Returns: boolean
+      }
+      rag_current_require_unretired: {
+        Args: { p_release_id: string }
+        Returns: undefined
+      }
       rag_current_reserve_provider: {
         Args: {
           p_execution_id: string
@@ -4216,6 +4294,29 @@ export type Database = {
           p_request_id: string
         }
         Returns: Json
+      }
+      rag_current_retire_verified: {
+        Args: {
+          p_execution_id: string
+          p_expected_audit_sha256: string
+          p_release_id: string
+          p_successor_execution: string
+          p_unknown_request: string
+        }
+        Returns: Json
+      }
+      rag_current_retirement_coverage: {
+        Args: {
+          p_full: boolean
+          p_release_id: string
+          p_successor: string
+          p_unknown_request: string
+        }
+        Returns: Json
+      }
+      rag_current_retirement_valid: {
+        Args: { p_release_id: string }
+        Returns: boolean
       }
       rag_current_rollback: {
         Args: {
