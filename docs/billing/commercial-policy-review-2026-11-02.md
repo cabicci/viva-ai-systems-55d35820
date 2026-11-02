@@ -31,6 +31,7 @@ Two explicitly authorized Stripe LIVE catalogue prices were created and read bac
 - Combined new policy SQL, coupon SQL and purchase/invitation UI: 33 passing tests. These overlap some focused reports; counts must not be added to claim a unique total.
 - Owner follow-up SQL verification: 19 passing tests, including unlimited administrators in four areas, 100-question invitations without subscriptions, independent invitation pools and role revocation. Follow-up invitation/schema/mail/benefit UI checks: 38 passing tests; combined coupon migration replay: 9 passing tests.
 - Session permissions popup: 20 passing tests, covering all four locales, acknowledgement, reopening, separate accounts, new sign-ins, failed balance loading and administrator display. The server derives a noncredential session key from the verified sign-in; access decisions remain server-side.
+- Final post-popup compatibility run: all 195 existing assistant currentness/ownership tests passed against the acknowledged-session fixtures. No identity, retirement or transport-retry assertions were removed.
 - Independent payment review found and corrected the binding RPC response shape, expired unpaid checkout retry, coupon-only top-up presentation, and shared customer-registration integration.
 - Final post-review TypeScript checking, the standard production build, and whitespace verification passed. The production build includes assistant integration, roadmap and 400 contextual-asset guards.
 
