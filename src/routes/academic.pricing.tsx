@@ -167,7 +167,7 @@ function AcademicPricing() {
                   disabled={busy}
                   initialMethod="instapay"
                 >
-                  <Button className="w-full">{w.continue}</Button>
+                  {w.continue}
                 </PaymentMethods>
                 {hasStripe && (
                   <Button variant="outline" disabled={busy} onClick={() => void portal()}>

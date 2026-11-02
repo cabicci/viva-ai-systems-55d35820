@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { commerceCommand } from "@/lib/commerce/commerce.functions";
 import type { AdminData, Order, Entitlement } from "@/lib/commerce/contracts";
-import { accessState, commerceCopy, formatAmount } from "@/lib/commerce/copy";
+import { accessState, commerceCopy, formatAmount, commerceProductLabel } from "@/lib/commerce/copy";
 import { useLocale } from "@/lib/locale/locale-context";
 import { Button } from "@/components/ui/button";
 import { ReceiptUpload, ReceiptView } from "./ReceiptUpload";
@@ -221,7 +221,7 @@ export function AdminPayments({
             {pending.map((o) => (
               <div key={o.id} className="flex flex-wrap items-center gap-3 border-b py-2">
                 <Check
-                  label={`${o.reference} · ${o.recipient_email} · ${o.package}`}
+                  label={`${o.reference} · ${o.recipient_email} · ${commerceProductLabel(o.package, locale)}`}
                   checked={selected.includes(o.id)}
                   onChange={(yes) =>
                     setSelected((current) =>
@@ -332,8 +332,8 @@ function OrderCard({ order: o, run, busy }: { order: Order; run: RunCommand; bus
         </span>
       </div>
       <p>
-        {o.recipient_email} · {o.package} · {formatAmount(o.final_minor, o.currency, locale)} ·{" "}
-        {o.method}
+        {o.recipient_email} · {commerceProductLabel(o.package, locale)} ·{" "}
+        {formatAmount(o.final_minor, o.currency, locale)} · {o.method}
       </p>
       <p>
         {w.paymentExpiry}: {o.expires_at.slice(0, 16)} · {o.review_reason}

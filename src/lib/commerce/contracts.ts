@@ -3,6 +3,15 @@ import { simpleOfferSchema, offerPhoneSchema } from "./offer-input";
 
 export const packageSchema = z.enum(["pro", "pro_plus", "kids", "technical", "academic"]);
 export type PackageKey = z.infer<typeof packageSchema>;
+export const oneTimeSelectionSchema = z.object({
+  kind: z.enum(["lifetime_course", "question_topup"]),
+  area: z.enum(["ai", "academic", "technical", "kids"]).optional(),
+  course: z.string().min(1).max(200).optional(),
+  child_id: z.string().uuid().optional(),
+  wallet_scope: z.enum(["account", "family"]),
+});
+export type OneTimeSelection = z.infer<typeof oneTimeSelectionSchema>;
+export type OrderPackageKey = PackageKey | OneTimeSelection["kind"];
 export const localeSchema = z.enum(["ar-EG", "ar-MSA", "ar-Gulf", "en"]);
 export const currencySchema = z.enum(["EGP", "USD"]);
 export const methodSchema = z.enum(["instapay", "wallet", "bank"]);
@@ -72,6 +81,15 @@ export const commandSchemas = {
   status: z.object({}),
   methods: z.object({}),
   quote: selection,
+  one_time_quote: oneTimeSelectionSchema.extend({ code: z.string().max(64).optional() }).strict(),
+  create_one_time_order: oneTimeSelectionSchema
+    .extend({
+      method: methodSchema,
+      code: z.string().max(64).optional(),
+      phone: offerPhoneSchema.optional(),
+      key: uuid,
+    })
+    .strict(),
   create_order: selection.extend({
     method: z.enum(["instapay", "wallet", "bank", "admin"]),
     phone: offerPhoneSchema.optional(),
@@ -199,9 +217,12 @@ export function parseCommand(input: unknown) {
     .parse(input);
   if (!(action in commandSchemas)) throw new Error("Invalid commerce action");
   const parsed = commandSchemas[action as CommerceAction].parse(data);
-  if ((action === "quote" || action === "create_order") &&
-    "academicAssistant" in parsed && parsed.academicAssistant === true &&
-    (!("package" in parsed) || parsed.package !== "academic"))
+  if (
+    (action === "quote" || action === "create_order") &&
+    "academicAssistant" in parsed &&
+    parsed.academicAssistant === true &&
+    (!("package" in parsed) || parsed.package !== "academic")
+  )
     throw new Error("Academic assistant requires the Academic package");
   return {
     action: action as CommerceAction,
@@ -232,8 +253,10 @@ export interface Order extends Quote {
   reference: string;
   user_id: string | null;
   recipient_email: string;
-  package: PackageKey;
+  package: OrderPackageKey;
   billing_interval: string;
+  commercial_purchase_id?: string | null;
+  commercial_purchase?: OneTimeSelection & { state: "pending" | "fulfilled" | "expired" | "held" };
   review_status: string;
   review_reason?: string;
   method: string;
@@ -346,4 +369,3 @@ export interface UnifiedPaymentProvider {
     idempotencyKey: string,
   ): Promise<{ reference: string; state: string }>;
 }
-

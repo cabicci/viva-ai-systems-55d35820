@@ -4,7 +4,14 @@ import { useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { commerceCommand } from "@/lib/commerce/commerce.functions";
-import { commerceCopy, formatAmount, accessState, paymentInstructions } from "@/lib/commerce/copy";
+import {
+  commerceCopy,
+  formatAmount,
+  accessState,
+  paymentInstructions,
+  commerceProductLabel,
+} from "@/lib/commerce/copy";
+import { commercialCopy } from "@/lib/billing/commercial-copy";
 import type { Order, Entitlement } from "@/lib/commerce/contracts";
 import { requireAuthBeforeLoad, AuthSessionGate } from "@/lib/auth-route-guard";
 import { useLocale } from "@/lib/locale/locale-context";
@@ -15,15 +22,23 @@ import { RedeemOffer } from "@/components/commerce/RedeemOffer";
 import { ReceiptUpload, ReceiptView } from "@/components/commerce/ReceiptUpload";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 export const Route = createFileRoute("/payments")({
-  head: () => ({ meta: [
-    { title: "Orders and package access | Masaarat" },
-    { name: "description", content: "Your Masaarat transfer orders, payment review and package access." },
-    { property: "og:title", content: "Orders and package access | Masaarat" },
-    { property: "og:description", content: "Your Masaarat transfer orders, payment review and package access." },
-    { property: "og:type", content: "website" },
-    { name: "twitter:card", content: "summary" },
-    { name: "robots", content: "noindex, nofollow" },
-  ] }),
+  head: () => ({
+    meta: [
+      { title: "Orders and package access | Masaarat" },
+      {
+        name: "description",
+        content: "Your Masaarat transfer orders, payment review and package access.",
+      },
+      { property: "og:title", content: "Orders and package access | Masaarat" },
+      {
+        property: "og:description",
+        content: "Your Masaarat transfer orders, payment review and package access.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+      { name: "robots", content: "noindex, nofollow" },
+    ],
+  }),
   validateSearch: parsePaymentSearch,
   beforeLoad: ({ search }) => guardPaymentLink(requireAuthBeforeLoad, search.order, "customer"),
   component: PaymentRoute,
@@ -173,7 +188,7 @@ function Payments() {
           {orders?.map((o) => (
             <article key={o.id} className="rounded-xl border p-4 space-y-3">
               <h2 className="font-bold">
-                <bdi>{o.reference}</bdi> · {o.package}
+                <bdi>{o.reference}</bdi> · {commerceProductLabel(o.package, locale)}
               </h2>
               <p>
                 {formatAmount(o.final_minor, o.currency, locale)} ·{" "}
@@ -182,16 +197,34 @@ function Payments() {
                   : (w[o.review_status as "pending"] ?? o.review_status)}
               </p>
               <p>{o.review_reason}</p>
-              {o.review_status === "confirmed" && !o.entitlement && rows.isSuccess && (
+              {o.commercial_purchase && (
                 <p>
-                  {w.paidWait}
-                  {o.package === "kids" && (
-                    <Link to="/kids/family" search={{ locale }} className="block underline">
-                      {w.kids}
-                    </Link>
-                  )}
+                  {o.commercial_purchase.state === "held"
+                    ? locale === "en"
+                      ? "This purchase is on hold. Contact support."
+                      : "تم تعليق هذا الشراء. تواصل مع الدعم."
+                    : o.commercial_purchase.state === "fulfilled"
+                      ? o.package === "lifetime_course"
+                        ? commercialCopy(locale).lifetimeDetail
+                        : commercialCopy(locale).topupDetail
+                      : o.commercial_purchase.state === "expired"
+                        ? w.expired
+                        : w.pending}
                 </p>
               )}
+              {o.review_status === "confirmed" &&
+                !o.entitlement &&
+                !o.commercial_purchase_id &&
+                rows.isSuccess && (
+                  <p>
+                    {w.paidWait}
+                    {o.package === "kids" && (
+                      <Link to="/kids/family" search={{ locale }} className="block underline">
+                        {w.kids}
+                      </Link>
+                    )}
+                  </p>
+                )}
               {o.review_status === "confirmed" && o.package === "academic" && (
                 <Link to="/academic" search={{ locale }} className="block underline">
                   Masaarat Academic
@@ -228,7 +261,7 @@ function Payments() {
                 </>
               )}
               <OrderReceipts id={o.id} />
-              {o.review_status === "confirmed" && (
+              {o.review_status === "confirmed" && !o.commercial_purchase_id && (
                 <p>
                   {w.noAutopay}{" "}
                   <Link to="/pricing" search={{ locale }} className="underline">

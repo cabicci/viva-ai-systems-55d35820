@@ -180,7 +180,8 @@ it("renders Markdown as safe text and only links internal citation paths", async
   expect(screen.getByText("Grounded concept").tagName).toBe("STRONG");
   expect(view.container.querySelector("img, script")).toBeNull();
   expect(screen.getByText("<img src=x onerror=alert(1)>")).toBeVisible();
-  expect(screen.getAllByRole("link")).toHaveLength(1);
+  // Count citation links inside the answer; the usage panel has its own purchase link.
+  expect(within(screen.getByRole("log")).getAllByRole("link")).toHaveLength(1);
   expect(screen.getByRole("link", { name: "Source 0" })).toHaveAttribute("href", hrefs[0]);
   hrefs.slice(1).forEach((_, i) => expect(screen.getByText(`Source ${i + 1}`).tagName).not.toBe("A"));
 });

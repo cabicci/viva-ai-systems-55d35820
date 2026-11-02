@@ -8,9 +8,19 @@ const mock = vi.hoisted(() => ({
   user: { id: "test-parent" } as { id: string } | null,
   options: vi.fn(),
   checkout: vi.fn(),
+  command: vi.fn(),
 }));
 vi.mock("@/lib/auth-context", () => ({ useAuth: () => ({ user: mock.user, loading: false }) }));
 vi.mock("@/lib/locale/locale-context", () => ({ useLocale: () => ({ locale: mock.locale }) }));
+vi.mock("@tanstack/react-start", () => ({ useServerFn: (fn: unknown) => fn }));
+vi.mock("@/lib/commerce/commerce.functions", () => ({
+  commerceCommand: mock.command,
+  uploadCommerceReceipt: vi.fn(),
+  readCommerceReceipt: vi.fn(),
+}));
+vi.mock("@tanstack/react-router", () => ({
+  Link: ({ children }: { children: React.ReactNode }) => <a>{children}</a>,
+}));
 vi.mock("@/lib/billing/checkout-client", () => ({
   BillingUnavailableError: class extends Error {
     constructor(public code: string) {
@@ -29,6 +39,7 @@ beforeEach(() => {
       { area: "ai", course: "ai-complete", title: "Complete AI curriculum" },
       { area: "academic", course: "AC-BUS", title: "Business curriculum" },
       { area: "kids", course: "KIDS-ONE", title: "Kids curriculum" },
+      { area: "technical", course: "furniture", title: "Technical — furniture" },
     ],
     children: [
       { id: "owned-child-one", name: "First child" },
@@ -36,6 +47,11 @@ beforeEach(() => {
     ],
   });
   mock.checkout.mockReset().mockRejectedValue(new Error("uncertain response"));
+  mock.command
+    .mockReset()
+    .mockImplementation(async ({ data }: { data: { action: string } }) =>
+      data.action === "methods" ? [] : { original_minor: 5000, final_minor: 4000, currency: "EGP" },
+    );
 });
 afterEach(cleanup);
 function setup(area: "ai" | "kids" = "ai") {
@@ -48,6 +64,20 @@ function setup(area: "ai" | "kids" = "ai") {
   );
 }
 describe("one-time commercial purchases", () => {
+  it.each(["en", "ar-EG", "ar-MSA", "ar-Gulf"])(
+    "labels furniture for customers in %s",
+    async (locale) => {
+      mock.locale = locale;
+      setup();
+      fireEvent.change(screen.getByLabelText(locale === "en" ? "Learning path" : "المسار"), {
+        target: { value: "technical" },
+      });
+      await screen.findByRole("option", {
+        name: locale === "en" ? "Carpentry and furniture making" : "النجارة وصناعة الأثاث",
+      });
+      expect(screen.queryByRole("option", { name: "Technical — furniture" })).toBeNull();
+    },
+  );
   it("binds lifetime purchase to the chosen curriculum and preserves the retry identity", async () => {
     setup();
     await screen.findByRole("option", { name: "Complete AI curriculum" });
@@ -110,9 +140,14 @@ describe("one-time commercial purchases", () => {
 
   it("allows account top-up without a current curriculum selection and binds an explicit coupon", async () => {
     setup();
-    fireEvent.change(screen.getByLabelText("Coupon code (optional)"), {
+    fireEvent.change(screen.getByLabelText("Offer code (optional)"), {
       target: { value: " extra100 " },
     });
+    expect(screen.getAllByRole("button", { name: "Continue to payment" })[1]).toBeDisabled();
+    fireEvent.click(screen.getByRole("button", { name: "Review price" }));
+    await waitFor(() =>
+      expect(screen.getAllByRole("button", { name: "Continue to payment" })[1]).toBeEnabled(),
+    );
     fireEvent.click(screen.getAllByRole("button", { name: "Continue to payment" })[1]);
     await screen.findByRole("alert");
     expect(mock.checkout.mock.calls[0][0]).toMatchObject({
@@ -123,9 +158,6 @@ describe("one-time commercial purchases", () => {
     await screen.findByRole("option", { name: "Complete AI curriculum" });
     fireEvent.change(screen.getByLabelText("Choose one curriculum"), {
       target: { value: "ai-complete" },
-    });
-    fireEvent.change(screen.getByLabelText("Phone with country code, if required by your coupon"), {
-      target: { value: "invalid top-up phone" },
     });
     fireEvent.click(screen.getAllByRole("button", { name: "Continue to payment" })[0]);
     await waitFor(() => expect(mock.checkout).toHaveBeenCalledTimes(2));
