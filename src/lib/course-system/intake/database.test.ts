@@ -101,6 +101,14 @@ beforeAll(async () => {
     "7f236e5d7428a37e608f86eb144e3c0b47ab259c78e1256e6d77f748b060f60d",
   );
   writeFileSync(join(migrationDir, "0034_course_intake.sql"), applied);
+  const erasure = readFileSync(
+    "drizzle/migrations/0035_child_command_erasure.sql",
+    "utf8",
+  ).replaceAll("\r\n", "\n");
+  expect(createHash("sha256").update(erasure).digest("hex")).toBe(
+    "be9c66b0006f6c660af10980b9a9907dbeec96a7c3445ea493eaf4b33781beff",
+  );
+  writeFileSync(join(migrationDir, "0035_child_command_erasure.sql"), erasure);
   writeFileSync(
     join(migrationDir, "meta", "_journal.json"),
     JSON.stringify({
@@ -114,12 +122,17 @@ beforeAll(async () => {
           tag: "0034_course_intake",
           breakpoints: true,
         },
+        {
+          idx: 1,
+          version: "7",
+          when: 1793660040815,
+          tag: "0035_child_command_erasure",
+          breakpoints: true,
+        },
       ],
     }),
   );
   await migrate(drizzle(db), { migrationsFolder: migrationDir });
-  // The reviewed real correction runs against the exact applied foundation.
-  await db.exec(readFileSync("scripts/course-intake/child-command-erasure.sql", "utf8"));
 }, 60000);
 afterAll(async () => {
   await db?.close();

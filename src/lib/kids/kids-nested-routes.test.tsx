@@ -1,5 +1,6 @@
 import { assistantAuthFixture } from "@/test/assistant-auth-fixture";
 import { act, cleanup, render, screen, waitFor } from "@testing-library/react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   createMemoryHistory,
   createRootRoute,
@@ -26,6 +27,7 @@ const mock = vi.hoisted(() => ({
 }));
 vi.mock("@/components/site/Navbar", () => ({ Navbar: () => null }));
 vi.mock("@/components/site/Footer", () => ({ Footer: () => null }));
+vi.mock("@/lib/course-system/intake/client", () => ({ curriculumCatalogue: async () => [] }));
 const auth = assistantAuthFixture(() => null);
 vi.mock("@/lib/auth-context", () => ({ useAuth: () => auth }));
 vi.mock("@/lib/entitlements", () => ({ useEntitlement: () => ({ isAdmin: false }) }));
@@ -106,7 +108,15 @@ function mountKids(start = "/kids?locale=en") {
     history: createMemoryHistory({ initialEntries: [start] }),
     defaultNotFoundComponent: () => <p>Kids route not found</p>,
   });
-  return { router, view: render(<RouterProvider router={router} />) };
+  const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+  return {
+    router,
+    view: render(
+      <QueryClientProvider client={client}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>,
+    ),
+  };
 }
 
 afterEach(() => {
