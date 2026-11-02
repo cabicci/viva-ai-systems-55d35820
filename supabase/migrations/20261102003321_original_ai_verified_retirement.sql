@@ -9,9 +9,9 @@ DECLARE observed text; mode text; snapshot jsonb; routine record; before_owner o
 BEGIN
  IF md5(pg_get_functiondef('public.rag_current_row_valid(public.knowledge_chunks,jsonb,text)'::regprocedure)) IS DISTINCT FROM '9f61e033e9f0cfc7f6604075b69d9ec1' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_ROW_VALIDATOR_CHANGED'; END IF;
  SELECT md5(pg_get_functiondef(to_regprocedure('public.rag_current_activate(text,uuid,uuid,text)'))) INTO observed;
- IF observed='e6ed37c096ce632aa769ae3c88f7802c' THEN
+ IF observed='f12eec86886cefd4b9cea5a141def579' THEN
   IF mode='post' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_PARTIAL_INSTALL'; END IF; mode:='pre';
- ELSIF observed='60b81e35d2c54cabfee03f48880d6061' THEN
+ ELSIF observed='4279a0e0466966bde12c16e0b488ab69' THEN
   IF mode='pre' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_PARTIAL_INSTALL'; END IF; mode:='post';
  ELSE RAISE EXCEPTION 'CURRENT_RETIREMENT_MUTATOR_PREIMAGE_CHANGED:rag_current_activate'; END IF;
  IF NOT EXISTS(SELECT 1 FROM pg_proc WHERE oid=to_regprocedure('public.rag_current_activate(text,uuid,uuid,text)') AND pg_get_userbyid(proowner)='postgres'
@@ -297,8 +297,18 @@ BEGIN
   target.chunk_count<>(SELECT count(*) FROM jsonb_object_keys(r.approval->'chunks')) OR
   EXISTS(SELECT 1 FROM public.rag_current_batches WHERE release_id=p_release_id AND state<>'done') OR
   (SELECT count(*) FROM public.knowledge_chunks WHERE index_version=v)<>target.chunk_count OR
-  EXISTS(SELECT 1 FROM public.knowledge_chunks k WHERE k.index_version=v AND
-   (k.source_sha IS DISTINCT FROM p_release_id OR k.index_state IS DISTINCT FROM target.status OR NOT public.rag_current_row_valid(k,r.approval,k.source_id)))
+  EXISTS(WITH descriptors AS MATERIALIZED (
+   SELECT d.key AS id,d.value AS chunk FROM jsonb_each(CASE WHEN jsonb_typeof(r.approval->'chunks')='object' THEN r.approval->'chunks' ELSE '{}'::jsonb END) d
+  ), packages AS MATERIALIZED (
+   SELECT p.key AS id,p.value AS package FROM jsonb_each(CASE WHEN jsonb_typeof(r.approval->'packages')='object' THEN r.approval->'packages' ELSE '{}'::jsonb END) p
+  ) SELECT 1 FROM public.knowledge_chunks k
+  LEFT JOIN descriptors d ON d.id=k.source_id
+  LEFT JOIN packages p ON p.id=d.chunk->>'packageKey'
+  WHERE k.index_version=v AND
+   (k.source_sha IS DISTINCT FROM p_release_id OR k.index_state IS DISTINCT FROM target.status OR NOT
+    CASE WHEN d.id IS NULL OR p.id IS NULL OR d.chunk->>'packageKey' IS NULL THEN false ELSE
+     public.rag_current_row_valid(k,jsonb_build_object('chunks',jsonb_build_object(k.source_id,d.chunk),
+      'packages',jsonb_build_object(d.chunk->>'packageKey',p.package)),k.source_id) END))
   THEN RAISE EXCEPTION 'CURRENT_RELEASE_INCOMPLETE'; END IF;
  UPDATE public.rag_current_releases SET previous_version=active WHERE release_id=p_release_id;
  UPDATE public.rag_index_versions SET status='superseded',superseded_at=now() WHERE version_key=active;
@@ -532,7 +542,7 @@ $fenced_mutator$;
  'triggers',(SELECT jsonb_agg(jsonb_build_object('definition',pg_get_triggerdef(oid),'enabled',tgenabled) ORDER BY tgname) FROM pg_trigger WHERE tgrelid=to_regclass('public.rag_current_retirements') AND NOT tgisinternal),
  'policies',(SELECT jsonb_agg(jsonb_build_object('name',polname,'roles',polroles::text,'command',polcmd,'using',pg_get_expr(polqual,polrelid),'check',pg_get_expr(polwithcheck,polrelid)) ORDER BY polname) FROM pg_policy WHERE polrelid=to_regclass('public.rag_current_retirements')))) INTO snapshot;
  IF md5(snapshot::text) IS DISTINCT FROM '6ba1c22153baebc1d2fb2b627a1a7110' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FRESH_POSTIMAGE_CHANGED'; END IF;
- IF md5(pg_get_functiondef('public.rag_current_activate(text,uuid,uuid,text)'::regprocedure)) IS DISTINCT FROM '60b81e35d2c54cabfee03f48880d6061' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FENCE_POSTIMAGE_CHANGED'; END IF;
+ IF md5(pg_get_functiondef('public.rag_current_activate(text,uuid,uuid,text)'::regprocedure)) IS DISTINCT FROM '4279a0e0466966bde12c16e0b488ab69' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FENCE_POSTIMAGE_CHANGED'; END IF;
  IF md5(pg_get_functiondef('public.rag_current_claim(text,uuid,uuid)'::regprocedure)) IS DISTINCT FROM '1028f8e41ffa8db6c330490b2a7497d5' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FENCE_POSTIMAGE_CHANGED'; END IF;
  IF md5(pg_get_functiondef('public.rag_current_commit(text,uuid,uuid,uuid,jsonb)'::regprocedure)) IS DISTINCT FROM '500beddc2986ceb72c2711e74f202973' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FENCE_POSTIMAGE_CHANGED'; END IF;
  IF md5(pg_get_functiondef('public.rag_current_fail(text,uuid,uuid,uuid)'::regprocedure)) IS DISTINCT FROM 'f5bf5fb681f6bb0fe5dc96701cf2be3e' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FENCE_POSTIMAGE_CHANGED'; END IF;
