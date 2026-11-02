@@ -327,7 +327,6 @@ BEGIN
    OR has_function_privilege('service_role',fn.oid,'EXECUTE') THEN RAISE EXCEPTION 'MANUAL_PRIVATE_ACL_MISMATCH'; END IF;
  END LOOP;
  IF NOT EXISTS(SELECT 1 FROM pg_constraint WHERE conrelid='billing.commerce_orders'::regclass
-  AND confrelid='billing.commercial_purchases'::regclass AND contype='f' AND confdeltype='c')
+   AND confrelid='billing.commercial_purchases'::regclass AND contype='f' AND confdeltype='c')
  THEN RAISE EXCEPTION 'MANUAL_PURCHASE_BINDING_MISSING'; END IF;
 END $manual_purchase_postconditions$;
-
