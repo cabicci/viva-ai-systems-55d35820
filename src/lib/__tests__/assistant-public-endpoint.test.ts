@@ -2,7 +2,7 @@ import {beforeEach,afterEach,expect,it,vi} from 'vitest';
 const mocks=vi.hoisted(()=>({authorize:vi.fn(),rpc:vi.fn(),tick:vi.fn()}));
 vi.mock('../assistant-automation/github-identity.server',()=>({verifyIndexerIdentity:mocks.authorize}));
 vi.mock('../assistant-automation/store.server',()=>({automationRpc:mocks.rpc}));
-vi.mock('../assistant-automation/worker.server',()=>({automaticTick:mocks.tick}));
+vi.mock('../course-system/intake/automatic-worker.server',()=>({automaticTick:mocks.tick}));
 import {handlePublicAutomaticIndexing} from '../assistant-automation/public-endpoint.server';
 const build='a'.repeat(64),deployment='b'.repeat(64),id='10000000-0000-4000-8000-000000000001';
 function request(body:unknown,headers:Record<string,string>={}){return new Request('https://masaarat.ai/api/public/assistant-indexing',{method:'POST',headers:{'content-type':'application/json',...headers},body:JSON.stringify(body)});}
