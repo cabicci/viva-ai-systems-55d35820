@@ -3742,6 +3742,48 @@ export type Database = {
         }
         Returns: boolean
       }
+      curriculum_admin: {
+        Args: { p_action: string; p_data?: Json; p_user: string }
+        Returns: Json
+      }
+      curriculum_asset_source: {
+        Args: {
+          p_area: string
+          p_asset: string
+          p_child: string
+          p_course: string
+          p_lesson: string
+          p_locale: string
+          p_user: string
+          p_version?: string
+        }
+        Returns: Json
+      }
+      curriculum_assistant_source: {
+        Args: {
+          p_area: string
+          p_child: string
+          p_course: string
+          p_embedding?: string
+          p_lesson: string
+          p_locale: string
+          p_user: string
+        }
+        Returns: Json
+      }
+      curriculum_catalogue: {
+        Args: { p_area: string; p_locale: string }
+        Returns: Json
+      }
+      curriculum_command: {
+        Args: { p_action: string; p_data: Json }
+        Returns: Json
+      }
+      curriculum_index_metadata: { Args: never; Returns: Json }
+      curriculum_index_operation: {
+        Args: { p_action: string; p_data: Json }
+        Returns: Json
+      }
       delete_my_account_data: { Args: never; Returns: undefined }
       email_access_command: {
         Args: { p_action: string; p_data?: Json }
