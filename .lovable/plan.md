@@ -28,3 +28,11 @@ Complete GitHub checks for PR251, merge the reviewed source, verify Lovable is s
 Verify journal hashes, catalogue and RPC/table privacy, unchanged protected data and the refreshed preview. No website publication, provider call, reindex, campaign activation or indexing-policy change belongs to this database update.
 
 Full procedure and limits: `docs/launch/20261102-commercial-db-reconciliation.md`.
+
+## Phase 2 learning records — native release continuation
+
+PR256 is merged at `5d611ef2e8805e7708716e35ac348dda9ca0fa82`; the same project's authenticated preview is ready for its pending database update. Existing native journal ends at id 41 / 0030. Do not repeat the historical commercial release above.
+
+Only unapplied 0031 receives canonical statement-boundary comments; business SQL is unchanged. Its LF hash is `a29fb5acb60633abdb4ba6b28bf91ea2c0e9f1ed7b0db9e83bb381c33725cc3d`. The supported native tool requires a final new entry: use the reviewed real assertions in `scripts/release/student-learning-native-postcondition.sql`, applying feature and checks in one native transaction. The migration URL is unavailable to external CLI execution. Never invent a journal stamp or a dummy migration.
+
+The installed Drizzle migrator verifies success, repeat safety and full rollback after a failed final assertion. Review/merge release support, verify exact source/native preconditions, apply natively, preserve and compare existing data, deploy only `kids-lesson-content`, update the existing roadmap, then test the authenticated preview. The owner publishes. No new project/database/backup or provider call is part of this preparation. Full evidence and remaining live acceptance: `docs/delivery/student-learning-records-2026-11-02.md`.
