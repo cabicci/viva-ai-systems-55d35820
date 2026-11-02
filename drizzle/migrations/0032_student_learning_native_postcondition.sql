@@ -7,7 +7,7 @@ DECLARE relation_name text; relation_oid oid; routine_name text; expected_facts 
 BEGIN
  IF NOT EXISTS(SELECT 1 FROM drizzle.__drizzle_migrations WHERE id=41 AND created_at=1793637445947
   AND hash='d314396b20c29c3e356cc0cade7fdf4ed84f59dffb7d2f37a6f9958a3bc97110')
- OR (SELECT count(*) FROM drizzle.__drizzle_migrations WHERE created_at=1793650000000
+  OR (SELECT count(*) FROM drizzle.__drizzle_migrations WHERE created_at=1793650000000
   AND hash='a29fb5acb60633abdb4ba6b28bf91ea2c0e9f1ed7b0db9e83bb381c33725cc3d')<>1 THEN
   RAISE EXCEPTION 'LEARNING_NATIVE_JOURNAL_MISMATCH';
  END IF;
@@ -27,7 +27,7 @@ BEGIN
   'public.store_learning_content_version(uuid,text,text,text,jsonb)',
   'public.record_learning_assessment(uuid,uuid,uuid,text,text,text,text,text,jsonb,jsonb,jsonb,text)'] LOOP
   IF to_regprocedure(routine_name) IS NULL OR NOT has_function_privilege('service_role',routine_name,'EXECUTE')
-   OR has_function_privilege('anon',routine_name,'EXECUTE') OR has_function_privilege('authenticated',routine_name,'EXECUTE') THEN
+    OR has_function_privilege('anon',routine_name,'EXECUTE') OR has_function_privilege('authenticated',routine_name,'EXECUTE') THEN
    RAISE EXCEPTION 'LEARNING_SERVICE_RPC_ACL_MISMATCH: %',routine_name;
   END IF;
  END LOOP;
@@ -37,7 +37,7 @@ BEGIN
  END IF;
  IF EXISTS(SELECT 1 FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='learning_private'
    AND p.proname IN ('require_owner','record','capture','keep_mission_completed','capture_content','capture_note_revision','model_immutable','event_model_version','can_write','erase_account','child_consented','report_sources')
-   AND (has_function_privilege('anon',p.oid,'EXECUTE') OR has_function_privilege('authenticated',p.oid,'EXECUTE'))) THEN
+    AND (has_function_privilege('anon',p.oid,'EXECUTE') OR has_function_privilege('authenticated',p.oid,'EXECUTE'))) THEN
   RAISE EXCEPTION 'LEARNING_PRIVATE_ROUTINE_EXPOSED';
  END IF;
  IF EXISTS(SELECT 1 FROM learning_private.courses c LEFT JOIN auth.users u ON u.id=c.account_id
@@ -47,7 +47,7 @@ BEGIN
  END IF;
  FOREACH relation_name IN ARRAY ARRAY['courses','commands','reports'] LOOP
   IF NOT EXISTS(SELECT 1 FROM pg_constraint x WHERE x.conrelid=to_regclass('learning_private.'||relation_name)
-    AND x.confrelid='auth.users'::regclass AND x.contype='f' AND x.confdeltype='c') THEN
+     AND x.confrelid='auth.users'::regclass AND x.contype='f' AND x.confdeltype='c') THEN
    RAISE EXCEPTION 'LEARNING_ERASURE_CASCADE_MISSING: %',relation_name;
   END IF;
  END LOOP;

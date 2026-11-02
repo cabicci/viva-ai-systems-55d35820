@@ -1813,31 +1813,40 @@ export type Database = {
         Row: {
           attempted_at: string
           bloom_level: string | null
+          content_version: string | null
           id: string
           is_correct: boolean
           lesson_id: string
+          locale: string | null
           question_id: string
           selected_index: number
+          source_snapshot: Json | null
           user_id: string
         }
         Insert: {
           attempted_at?: string
           bloom_level?: string | null
+          content_version?: string | null
           id?: string
           is_correct: boolean
           lesson_id: string
+          locale?: string | null
           question_id: string
           selected_index: number
+          source_snapshot?: Json | null
           user_id: string
         }
         Update: {
           attempted_at?: string
           bloom_level?: string | null
+          content_version?: string | null
           id?: string
           is_correct?: boolean
           lesson_id?: string
+          locale?: string | null
           question_id?: string
           selected_index?: number
+          source_snapshot?: Json | null
           user_id?: string
         }
         Relationships: []
@@ -3762,6 +3771,15 @@ export type Database = {
         }
         Returns: Json
       }
+      finish_learning_report: {
+        Args: {
+          p_report: Json
+          p_request: string
+          p_token: string
+          p_user: string
+        }
+        Returns: boolean
+      }
       free_access_window_command: {
         Args: { p_action: string; p_data?: Json }
         Returns: Json
@@ -4219,6 +4237,33 @@ export type Database = {
         }
         Returns: Json
       }
+      learning_command: {
+        Args: { p_action: string; p_data?: Json }
+        Returns: Json
+      }
+      learning_previous_academic_command: {
+        Args: {
+          p_action: string
+          p_course?: string
+          p_data?: Json
+          p_lesson?: string
+          p_locale?: string
+        }
+        Returns: Json
+      }
+      learning_previous_technical_command: {
+        Args: {
+          p_action: string
+          p_data?: Json
+          p_lesson?: string
+          p_locale?: string
+        }
+        Returns: Json
+      }
+      learning_reports: {
+        Args: { p_action: string; p_data?: Json }
+        Returns: Json
+      }
       list_commercial_purchase_options: {
         Args: { p_user_id: string }
         Returns: Json
@@ -4487,6 +4532,23 @@ export type Database = {
         }
         Returns: string
       }
+      record_learning_assessment: {
+        Args: {
+          p_area: string
+          p_course: string
+          p_kind?: string
+          p_lesson: string
+          p_locale: string
+          p_profile: string
+          p_request: string
+          p_result: Json
+          p_source: Json
+          p_submission: Json
+          p_user: string
+          p_version: string
+        }
+        Returns: Json
+      }
       record_stripe_checkout_session: {
         Args: {
           p_checkout_generation: string
@@ -4661,6 +4723,16 @@ export type Database = {
           isOneToOne: true
           isSetofReturn: false
         }
+      }
+      store_learning_content_version: {
+        Args: {
+          p_lesson: string
+          p_locale: string
+          p_payload: Json
+          p_user: string
+          p_version: string
+        }
+        Returns: boolean
       }
       stripe_live_offer_admin: {
         Args: { p_action: string; p_actor: string; p_data: Json }
