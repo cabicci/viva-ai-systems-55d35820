@@ -1,6 +1,6 @@
 // @vitest-environment node
 import { readFileSync } from "node:fs";
-import { randomUUID } from "node:crypto";
+import { createHash, randomUUID } from "node:crypto";
 import postgres from "postgres";
 import { PGlite } from "@electric-sql/pglite";
 import { describe, expect, it } from "vitest";
@@ -12,7 +12,7 @@ const start = source.indexOf("CREATE FUNCTION billing.commercial_lock(");
 const end = source.indexOf("--> statement-breakpoint", start);
 if (start < 0 || end <= start) throw new Error("Original commercial lock source is missing");
 const original = source.slice(start, end).trim();
-const repair = read("scripts/release/commercial-family-lock-order.sql");
+const repair = read("drizzle/migrations/0033_commercial_family_lock_order.sql");
 const familyCall = "PERFORM pg_advisory_xact_lock(hashtextextended(p_user::text,751603));";
 const legacyPrefixes = [
   "account-lifecycle:",
@@ -48,6 +48,9 @@ async function isolated() {
 
 describe("guarded family-first commercial lock repair, isolated SQL", () => {
   it("preserves all original locks, owner, security settings and ACL", async () => {
+    expect(createHash("sha256").update(repair).digest("hex")).toBe(
+      "a0b070ff1c5a696f70586081a1b5d3ff6deb67d87db06551478c94ddf591a37e",
+    );
     const db = await isolated();
     try {
       const before = (await db.query<Metadata>(metadata)).rows[0];
