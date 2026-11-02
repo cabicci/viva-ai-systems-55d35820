@@ -13,6 +13,11 @@ export const INDEXER_ALGORITHM_INPUTS = Object.freeze([
 // This separate identity proves which compiled content and protected endpoint are published.
 // Never include credentials, environment files, generated route output, timestamps, or machine paths.
 export const ASSISTANT_DEPLOYMENT_INPUTS = Object.freeze([
+  "src/lib/course-system/intake/automatic-worker.server.ts",
+  "src/lib/course-system/intake/index.server.ts",
+  "src/lib/course-system/intake/corpus.ts",
+  "src/lib/course-system/intake/package.ts",
+  "src/lib/course-system/intake/assets.server.ts",
   "scripts/assistant/indexer-build.mjs",
   "vite.config.ts",
   "src/routes/api/public/assistant-indexing.ts",

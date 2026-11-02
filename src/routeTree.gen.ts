@@ -41,6 +41,7 @@ import { Route as AcademicCurriculumRouteImport } from './routes/academic.curric
 import { Route as AcademicPricingRouteImport } from './routes/academic.pricing'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as AdminCommerceRouteImport } from './routes/admin.commerce'
+import { Route as AdminCurriculaRouteImport } from './routes/admin.curricula'
 import { Route as AdminKidsParentsRouteImport } from './routes/admin.kids-parents'
 import { Route as AiIndexRouteImport } from './routes/ai.index'
 import { Route as ImageGalleryIndexRouteImport } from './routes/image-gallery.index'
@@ -64,6 +65,7 @@ import { Route as ApiPublicAssistantIndexingRouteImport } from './routes/api/pub
 import { Route as ApiPublicStripeLiveWebhookRouteImport } from './routes/api/public/stripe-live-webhook'
 import { Route as ApiStripeLiveCheckoutRouteImport } from './routes/api/stripe-live/checkout'
 import { Route as ApiStripeLivePortalRouteImport } from './routes/api/stripe-live/portal'
+import { Route as CoursesAreaCourseIdRouteImport } from './routes/courses.$area.$courseId'
 import { Route as KidsLevelIdIndexRouteImport } from './routes/kids.$levelId.index'
 import { Route as KidsLevelIdLessonNumberRouteImport } from './routes/kids.$levelId.$lessonNumber'
 import { Route as KidsLevelIdContentsRouteImport } from './routes/kids.$levelId.contents'
@@ -236,6 +238,11 @@ const AdminCommerceRoute = AdminCommerceRouteImport.update({
   path: '/admin/commerce',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminCurriculaRoute = AdminCurriculaRouteImport.update({
+  id: '/admin/curricula',
+  path: '/admin/curricula',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminKidsParentsRoute = AdminKidsParentsRouteImport.update({
   id: '/admin/kids-parents',
   path: '/admin/kids-parents',
@@ -353,6 +360,11 @@ const ApiStripeLivePortalRoute = ApiStripeLivePortalRouteImport.update({
   path: '/api/stripe-live/portal',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CoursesAreaCourseIdRoute = CoursesAreaCourseIdRouteImport.update({
+  id: '/courses/$area/$courseId',
+  path: '/courses/$area/$courseId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KidsLevelIdIndexRoute = KidsLevelIdIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -444,6 +456,7 @@ export interface FileRoutesByFullPath {
   '/academic/curriculum': typeof AcademicCurriculumRoute
   '/academic/pricing': typeof AcademicPricingRoute
   '/admin/commerce': typeof AdminCommerceRoute
+  '/admin/curricula': typeof AdminCurriculaRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/invitations/$invitationId': typeof InvitationsInvitationIdRoute
@@ -469,6 +482,7 @@ export interface FileRoutesByFullPath {
   '/api/public/stripe-live-webhook': typeof ApiPublicStripeLiveWebhookRoute
   '/api/stripe-live/checkout': typeof ApiStripeLiveCheckoutRoute
   '/api/stripe-live/portal': typeof ApiStripeLivePortalRoute
+  '/courses/$area/$courseId': typeof CoursesAreaCourseIdRoute
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/kids/$levelId/contents': typeof KidsLevelIdContentsRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
@@ -508,6 +522,7 @@ export interface FileRoutesByTo {
   '/academic/curriculum': typeof AcademicCurriculumRoute
   '/academic/pricing': typeof AcademicPricingRoute
   '/admin/commerce': typeof AdminCommerceRoute
+  '/admin/curricula': typeof AdminCurriculaRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/invitations/$invitationId': typeof InvitationsInvitationIdRoute
@@ -532,6 +547,7 @@ export interface FileRoutesByTo {
   '/api/public/stripe-live-webhook': typeof ApiPublicStripeLiveWebhookRoute
   '/api/stripe-live/checkout': typeof ApiStripeLiveCheckoutRoute
   '/api/stripe-live/portal': typeof ApiStripeLivePortalRoute
+  '/courses/$area/$courseId': typeof CoursesAreaCourseIdRoute
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/kids/$levelId/contents': typeof KidsLevelIdContentsRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
@@ -576,6 +592,7 @@ export interface FileRoutesById {
   '/academic/curriculum': typeof AcademicCurriculumRoute
   '/academic/pricing': typeof AcademicPricingRoute
   '/admin/commerce': typeof AdminCommerceRoute
+  '/admin/curricula': typeof AdminCurriculaRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/invitations/$invitationId': typeof InvitationsInvitationIdRoute
@@ -601,6 +618,7 @@ export interface FileRoutesById {
   '/api/public/stripe-live-webhook': typeof ApiPublicStripeLiveWebhookRoute
   '/api/stripe-live/checkout': typeof ApiStripeLiveCheckoutRoute
   '/api/stripe-live/portal': typeof ApiStripeLivePortalRoute
+  '/courses/$area/$courseId': typeof CoursesAreaCourseIdRoute
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/kids/$levelId/contents': typeof KidsLevelIdContentsRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
@@ -646,6 +664,7 @@ export interface FileRouteTypes {
     | '/academic/curriculum'
     | '/academic/pricing'
     | '/admin/commerce'
+    | '/admin/curricula'
     | '/admin/kids-parents'
     | '/image-gallery/$path'
     | '/invitations/$invitationId'
@@ -671,6 +690,7 @@ export interface FileRouteTypes {
     | '/api/public/stripe-live-webhook'
     | '/api/stripe-live/checkout'
     | '/api/stripe-live/portal'
+    | '/courses/$area/$courseId'
     | '/kids/$levelId/$lessonNumber'
     | '/kids/$levelId/contents'
     | '/learn/$pathId/$lessonId'
@@ -710,6 +730,7 @@ export interface FileRouteTypes {
     | '/academic/curriculum'
     | '/academic/pricing'
     | '/admin/commerce'
+    | '/admin/curricula'
     | '/admin/kids-parents'
     | '/image-gallery/$path'
     | '/invitations/$invitationId'
@@ -734,6 +755,7 @@ export interface FileRouteTypes {
     | '/api/public/stripe-live-webhook'
     | '/api/stripe-live/checkout'
     | '/api/stripe-live/portal'
+    | '/courses/$area/$courseId'
     | '/kids/$levelId/$lessonNumber'
     | '/kids/$levelId/contents'
     | '/learn/$pathId/$lessonId'
@@ -777,6 +799,7 @@ export interface FileRouteTypes {
     | '/academic/curriculum'
     | '/academic/pricing'
     | '/admin/commerce'
+    | '/admin/curricula'
     | '/admin/kids-parents'
     | '/image-gallery/$path'
     | '/invitations/$invitationId'
@@ -802,6 +825,7 @@ export interface FileRouteTypes {
     | '/api/public/stripe-live-webhook'
     | '/api/stripe-live/checkout'
     | '/api/stripe-live/portal'
+    | '/courses/$area/$courseId'
     | '/kids/$levelId/$lessonNumber'
     | '/kids/$levelId/contents'
     | '/learn/$pathId/$lessonId'
@@ -844,6 +868,7 @@ export interface RootRouteChildren {
   TechnicalRoute: typeof TechnicalRouteWithChildren
   TermsRoute: typeof TermsRoute
   AdminCommerceRoute: typeof AdminCommerceRoute
+  AdminCurriculaRoute: typeof AdminCurriculaRoute
   AdminKidsParentsRoute: typeof AdminKidsParentsRoute
   InvitationsInvitationIdRoute: typeof InvitationsInvitationIdRoute
   RoadmapIdRoute: typeof RoadmapIdRoute
@@ -856,6 +881,7 @@ export interface RootRouteChildren {
   ApiPublicStripeLiveWebhookRoute: typeof ApiPublicStripeLiveWebhookRoute
   ApiStripeLiveCheckoutRoute: typeof ApiStripeLiveCheckoutRoute
   ApiStripeLivePortalRoute: typeof ApiStripeLivePortalRoute
+  CoursesAreaCourseIdRoute: typeof CoursesAreaCourseIdRoute
   LearnPathIdLessonIdRoute: typeof LearnPathIdLessonIdRoute
   LovableEmailAuthPreviewRoute: typeof LovableEmailAuthPreviewRoute
   LovableEmailAuthWebhookRoute: typeof LovableEmailAuthWebhookRoute
@@ -1087,6 +1113,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminCommerceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/curricula': {
+      id: '/admin/curricula'
+      path: '/admin/curricula'
+      fullPath: '/admin/curricula'
+      preLoaderRoute: typeof AdminCurriculaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/kids-parents': {
       id: '/admin/kids-parents'
       path: '/admin/kids-parents'
@@ -1246,6 +1279,13 @@ declare module '@tanstack/react-router' {
       path: '/api/stripe-live/portal'
       fullPath: '/api/stripe-live/portal'
       preLoaderRoute: typeof ApiStripeLivePortalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/courses/$area/$courseId': {
+      id: '/courses/$area/$courseId'
+      path: '/courses/$area/$courseId'
+      fullPath: '/courses/$area/$courseId'
+      preLoaderRoute: typeof CoursesAreaCourseIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/kids/$levelId/': {
@@ -1452,6 +1492,7 @@ const rootRouteChildren: RootRouteChildren = {
   TechnicalRoute: TechnicalRouteWithChildren,
   TermsRoute: TermsRoute,
   AdminCommerceRoute: AdminCommerceRoute,
+  AdminCurriculaRoute: AdminCurriculaRoute,
   AdminKidsParentsRoute: AdminKidsParentsRoute,
   InvitationsInvitationIdRoute: InvitationsInvitationIdRoute,
   RoadmapIdRoute: RoadmapIdRoute,
@@ -1464,6 +1505,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiPublicStripeLiveWebhookRoute: ApiPublicStripeLiveWebhookRoute,
   ApiStripeLiveCheckoutRoute: ApiStripeLiveCheckoutRoute,
   ApiStripeLivePortalRoute: ApiStripeLivePortalRoute,
+  CoursesAreaCourseIdRoute: CoursesAreaCourseIdRoute,
   LearnPathIdLessonIdRoute: LearnPathIdLessonIdRoute,
   LovableEmailAuthPreviewRoute: LovableEmailAuthPreviewRoute,
   LovableEmailAuthWebhookRoute: LovableEmailAuthWebhookRoute,

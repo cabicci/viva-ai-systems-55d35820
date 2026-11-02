@@ -72,7 +72,7 @@ export function AssistantUsage({ scope, accountId, cardTitle, busy, isCurrent }:
   const [session, setSession] = useState<{ account: string; id: string | null } | null>(null);
   const [dialog, setDialog] = useState<{ marker: string; open: boolean } | null>(null);
   const [retry, setRetry] = useState(0);
-  const course = scope.area === "ai" ? "ai" : scope.area === "kids" ? "kids" : scope.cardId;
+  const course = scope.admitted ? scope.cardId : scope.area === "ai" ? "ai" : scope.area === "kids" ? "kids" : scope.cardId;
   let key = "";
   try {
     if (isCurrent()) {

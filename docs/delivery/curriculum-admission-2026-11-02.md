@@ -1,0 +1,31 @@
+# Curriculum admission — existing Masaarat project
+
+Status: implementation reviewed and isolated verification completed. Native production installation, main integration and owner publication are pending. No real curriculum has been imported.
+
+Owner scope: build stage 3 first in `cabicci/viva-ai-systems-55d35820`; review and merge to main, owner publishes. Existing AI lessons keep their presentation. New curricula use course → station → step; the step sidebar starts with explanation, worked example, video, then that curriculum's authored activities. Missing sections stay absent. Every admitted curriculum gets personal notes, learner records, package/invitation/coupon selection and its own grounded assistant. Pesticides testing follows system readiness; its real adoption requires a separate concrete owner approval.
+
+## Architecture and release boundaries
+
+- Strict `masaarat-intake-v1` data package, duplicate-key-aware JSON parser and the existing canonicalizer. Stable course/station/step/section/question IDs; supplied locale coverage and grading meaning must match. No author renderer, code, permission, billing, or assistant overrides. Source hierarchy is preserved; no guessed lesson order, invented marking keys, or silent field loss.
+- Protected server admission validates the verified admin again in PostgreSQL. Public instruction is an explicit nested schema, protected answer keys and source evidence are separate. Draft/review/approval/index/active are distinct states. Approval is version-bound and compares the active predecessor.
+- Existing complete courses are not migrated or re-indexed. The original indexer algorithm modules and completed manifest identity remain unchanged (`7b77862c43ee23e6e8d14c05464eda9225063f71c8b448a9fd91907be4008914`). An additive dispatcher feeds admitted courses through the same durable queue, source checks, provider reservations, leases, receipts and uncertainty holds. Deployment identity includes the new dispatcher and index adapter.
+- A new curriculum remains absent from the public catalogue until every supplied lesson/locale has a current-source index receipt. New chunks include approved instruction, examples, FAQ and activity instructions; assessment questions/keys and learner data do not enter retrieval.
+- Existing billing source pools, anniversary clocks, family wallets, verified roles, lifecycle/risk guards, price/payment rails and exact invitation scopes remain authoritative. New catalogue entries extend existing purchase/coupon/invitation choices. No role, account, subscription, payment, or credit is created by admission. A course has no automatic free access.
+- Every new course model enables notes and declares required versus optional activities and completion rules. MCQ grading uses protected keys. Essay/practice submissions can require human review and are not practical competence. Existing student-record storage/report quotas remain authoritative. Attempt source/model versions survive curriculum updates; draft saving uses revisions and immutable retry identities.
+- Videos use reviewed existing hosting and mount only in their selected section. PDFs bind to an existing private downloads bucket under the admitted course's path. The index adapter validates actual file bytes before preparation; access and SHA are rechecked before issuing a short-lived download link. No automatic hosting account/bucket/project creation or media generation is included.
+
+## Operational package contract
+
+Root fields: `schemaVersion`, `area`, `id`, `title`, `locales`, `source {reference,sha256}`, ordered `stations [{id,title,steps:[{id,title,content:{locale:{sections,assets}}}]}]`, `assessmentKeys`, `notesEnabled:true`.
+
+Each section supplies `id`, `kind`, `title`, `required`, `completion` and its applicable paragraphs/questions/fields/assets. Kinds: explanation, example, video, questions, exam, mission, practice, faq, downloads. Completion: read/view, server pass with reviewed threshold, submission, or human review. Keys are supplied separately for each scored lesson/locale. An activity or threshold is never inferred from another course.
+
+`/admin/curricula` accepts a prepared curriculum file, saves a draft and shows the actual structure, localized content, student model and protected marking rules to the administrator. Approval prepares the assistant through the existing worker; it is not site publication. `/courses/:area/:courseId` is the learner route. Existing area catalogues append only ready new courses.
+
+Private downloads use `{id,label,type,sha256,storage:{bucket,path}}` in an existing `academic-downloads` or `technical-downloads` bucket, path prefixed by `area/course/`. Hosted videos use `{id,label,type:"video",sha256,url}` without credentials or expiring query tokens. Missing media or an unrecognized source format blocks admission/preparation rather than silently omitting it. This gateway does not claim an arbitrary PDF/folder is already a reviewed platform package.
+
+## Verification and remaining work
+
+Completed so far: 75 focused tests, including parser/projection, actual PostgreSQL admission/approval/queue/index/activation/billing/learner/notes/assessment for all four areas; old-version attempt/model preservation; draft resume, lost acknowledgment, cross-device conflict and session retirement; UI lazy video/private-link checks; exact new-course question balances and history isolation. The SQL candidate is also executed with the installed Drizzle migrator and real prepared-statement chunks in isolated PostgreSQL. Existing assistant/learning/commerce/catalogue regression: 160 tests passed; build-identity suite: 8 passed. Type checking and new-code lint passed. No paid provider request or real course import was needed.
+
+Pending: final build/CI, native migration through the existing project's runner, main integration and preview review. Owner publication remains separate. No claim of live new-course acceptance or pesticides readiness is made. Assessment duration is taken only from supplied curriculum rules; the platform does not invent a 45-minute exam limit. Untimed draft attempts have a 30-day resumption window.

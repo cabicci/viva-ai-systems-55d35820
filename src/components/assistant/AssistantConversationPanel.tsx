@@ -39,11 +39,11 @@ function select(props: AssistantConversationPanelProps, auth: ReturnType<typeof 
   let loading: unknown = true, malformed = false;
   try {
     const area = own(props.scope, "area"), cardId = own(props.scope, "cardId"), stepId = own(props.scope, "stepId");
-    const locale = own(props.scope, "locale"), profileId = own(props.scope, "profileId");
+    const locale = own(props.scope, "locale"), profileId = own(props.scope, "profileId"), admitted = own(props.scope, "admitted");
     if ((area === "ai" || area === "kids" || area === "technical" || area === "academic") && typeof cardId === "string" && cardId &&
-      (stepId === undefined || typeof stepId === "string") && (profileId === undefined || typeof profileId === "string") &&
+      (stepId === undefined || typeof stepId === "string") && (profileId === undefined || typeof profileId === "string") && (admitted === undefined || admitted === true) &&
       (locale === "en" || locale === "ar-EG" || locale === "ar-MSA" || locale === "ar-Gulf")) {
-      scope = Object.freeze({ area, cardId, ...(stepId === undefined ? {} : { stepId }), locale, ...(profileId === undefined ? {} : { profileId }) });
+      scope = Object.freeze({ area, cardId, ...(stepId === undefined ? {} : { stepId }), locale, ...(profileId === undefined ? {} : { profileId }), ...(admitted === true ? { admitted: true as const } : {}) });
     }
     account = typeof props.accountId === "string" && props.accountId ? props.accountId : null;
     if (props.disabledReason !== undefined && typeof props.disabledReason !== "string") malformed = true;
@@ -63,7 +63,7 @@ function select(props: AssistantConversationPanelProps, auth: ReturnType<typeof 
 }
 function same(a: Selected, b: Selected): boolean {
   return a.account === b.account && a.user === b.user && a.loading === b.loading && a.generation === b.generation &&
-    a.disabled === b.disabled && a.ready === b.ready && a.scope?.area === b.scope?.area && a.scope?.cardId === b.scope?.cardId &&
+    a.disabled === b.disabled && a.ready === b.ready && a.scope?.admitted === b.scope?.admitted && a.scope?.area === b.scope?.area && a.scope?.cardId === b.scope?.cardId &&
     a.scope?.stepId === b.scope?.stepId && a.scope?.profileId === b.scope?.profileId && a.scope?.locale === b.scope?.locale;
 }
 

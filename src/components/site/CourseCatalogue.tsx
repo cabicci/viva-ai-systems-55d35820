@@ -1,6 +1,7 @@
 import { ArrowUpRight, BookOpen } from "lucide-react";
 import { useLocale } from "@/lib/locale/locale-context";
 import { getCourseCatalogueCopy } from "@/lib/course-catalogue-copy";
+import { AddedCurricula } from "@/components/course-intake/AddedCurricula";
 
 /** One full-width linked card per course, shared across learning areas. */
 export function CourseCatalogue({
@@ -55,6 +56,7 @@ export function CourseCatalogue({
           </span>
         </a>
       ))}
+      <AddedCurricula area={line} />
     </div>
   );
 }
