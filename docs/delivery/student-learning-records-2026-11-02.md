@@ -47,3 +47,8 @@ After release-support checks and merge: verify exact Lovable synchronization and
 Before declaring phase 2 accepted on live, verify ordinary learner and parent accounts across two devices, offline/reconnect and two-note-device conflict; exercise all four locales and curriculum areas; verify report generation against the real deployed provider and the two-report cap. Local verification uses isolated PostgreSQL and controlled provider/identity fixtures. The existing external shadow-read harness is not claimed as tested by the standard local config.
 
 Rollback should preserve learner history and the additive tables. Restoring only an earlier frontend after new canonical note edits is unsafe without reviewing its note writer: the compatibility guard deliberately rejects divergent older writes. Never delete notes, grades, payments or learning events to roll back presentation.
+
+
+## Native release result (2026-11-02)
+
+Source main `3b8cd03b40b21629ff02b8fe88fa21c075d32467`. Native runner applied journal id42 `0031_student_learning_records` (hash `a29fb5ac…25cc3d`, created_at 1793650000000) and id43 `drizzle/migrations/0032_student_learning_native_postcondition.sql` (hash `75e953d5…6c29`, created_at 1793650009827) in one transaction; the postcondition passed. The 0032 file differs from `scripts/release/student-learning-native-postcondition.sql` only by leading indentation on four lines (10, 30, 40, 50); statements are identical. 1444 existing facts and 10 notes captured; all source/account/commerce counts unchanged; Kids bridge USAGE/EXECUTE preserved. `kids-lesson-content` deployed (submitted SHA-256 `4236cd34…f2e3`). Roadmap row `f2bf0d08-a380-4384-8a6d-1317b36bdf2d` in_progress. Not published; browser acceptance pending.
