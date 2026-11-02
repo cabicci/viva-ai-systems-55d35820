@@ -3182,6 +3182,10 @@ export type Database = {
         Args: { p_course: string; p_rows: Json; p_scopes: Json }
         Returns: number
       }
+      accept_commercial_invitation: {
+        Args: { p_grant_id: string }
+        Returns: Json
+      }
       account_phone_command: {
         Args: { p_action: string; p_actor: string; p_data?: Json }
         Returns: Json
@@ -3221,6 +3225,15 @@ export type Database = {
           p_subscription_id: string
         }
         Returns: boolean
+      }
+      apply_commercial_purchase_risk_hold: {
+        Args: {
+          p_payment_id: string
+          p_provider_event_id: string
+          p_reason: string
+          p_session_id: string
+        }
+        Returns: Json
       }
       apply_kids_stripe_event: {
         Args: {
@@ -3406,12 +3419,42 @@ export type Database = {
         Args: { p_card_id: string; p_user_id: string }
         Returns: Json
       }
+      assistant_question_balance: {
+        Args: {
+          p_area: string
+          p_child_id?: string
+          p_course: string
+          p_user_id: string
+        }
+        Returns: Json
+      }
+      assistant_question_provider_attempt: {
+        Args: {
+          p_attempt_id: string
+          p_fingerprint: string
+          p_model: string
+          p_request_id: string
+          p_status?: string
+          p_user_id: string
+        }
+        Returns: Json
+      }
       auth_signup_email_profile: {
         Args: { p_email: string }
         Returns: {
           full_name: string
           preferred_locale: string
         }[]
+      }
+      bind_commercial_purchase_session: {
+        Args: {
+          p_customer_id: string
+          p_price_id: string
+          p_product_id: string
+          p_purchase_id: string
+          p_session_id: string
+        }
+        Returns: Json
       }
       bind_stripe_live_offer: {
         Args: {
@@ -3552,6 +3595,17 @@ export type Database = {
           preferred_locale: string
           recipient: string
         }[]
+      }
+      close_commercial_purchase_session: {
+        Args: {
+          p_customer_id: string
+          p_payment_id: string
+          p_payment_status: string
+          p_purchase_id: string
+          p_session_id: string
+          p_status: string
+        }
+        Returns: Json
       }
       close_stripe_checkout_intent: {
         Args: {
@@ -3708,6 +3762,25 @@ export type Database = {
         }
         Returns: Json
       }
+      free_access_window_command: {
+        Args: { p_action: string; p_data?: Json }
+        Returns: Json
+      }
+      fulfill_commercial_purchase: {
+        Args: {
+          p_amount_minor: number
+          p_currency: string
+          p_customer_id: string
+          p_paid_at: string
+          p_payment_id: string
+          p_price_id: string
+          p_product_id: string
+          p_provider_event_id: string
+          p_purchase_id: string
+          p_session_id: string
+        }
+        Returns: Json
+      }
       get_academic_assistant_stripe_checkout_context: {
         Args: {
           p_billing_interval: string
@@ -3730,6 +3803,14 @@ export type Database = {
       }
       get_admin_insights: { Args: never; Returns: Json }
       get_admin_overview: { Args: never; Returns: Json }
+      get_commercial_purchase_by_payment: {
+        Args: { p_payment_id: string }
+        Returns: Json
+      }
+      get_commercial_purchase_by_session: {
+        Args: { p_session_id: string }
+        Returns: Json
+      }
       get_entitlement_snapshot: { Args: { p_user_id: string }; Returns: Json }
       get_kids_stripe_checkout_context: {
         Args: {
@@ -3745,6 +3826,9 @@ export type Database = {
       }
       get_kpi_funnel: { Args: never; Returns: Json }
       get_my_billing_access_tier: { Args: never; Returns: string }
+      get_my_commercial_access: { Args: never; Returns: Json }
+      get_my_commercial_invitations: { Args: never; Returns: Json }
+      get_my_free_access: { Args: never; Returns: Json }
       get_my_kids_access_status: {
         Args: never
         Returns: {
@@ -4135,6 +4219,10 @@ export type Database = {
         }
         Returns: Json
       }
+      list_commercial_purchase_options: {
+        Args: { p_user_id: string }
+        Returns: Json
+      }
       mark_roadmap_done: { Args: { p_item_id: string }; Returns: undefined }
       match_knowledge_chunks: {
         Args: {
@@ -4196,6 +4284,19 @@ export type Database = {
           title: string
         }[]
       }
+      prepare_commercial_purchase: {
+        Args: {
+          p_area: string
+          p_child_id: string
+          p_course: string
+          p_kind: string
+          p_offer?: Json
+          p_request_id: string
+          p_user_id: string
+          p_wallet_scope?: string
+        }
+        Returns: Json
+      }
       prepare_stripe_checkout: {
         Args: {
           p_billing_interval: string
@@ -4207,6 +4308,10 @@ export type Database = {
           p_plan_version_id: string
           p_user_id: string
         }
+        Returns: Json
+      }
+      prune_assistant_response_cache: {
+        Args: { p_limit?: number }
         Returns: Json
       }
       queue_commerce_payment_confirmation: {
@@ -4465,6 +4570,19 @@ export type Database = {
         Returns: Json
       }
       request_account_deletion: { Args: never; Returns: Json }
+      reserve_assistant_question: {
+        Args: {
+          p_area: string
+          p_child_id: string
+          p_course: string
+          p_fingerprint: string
+          p_lesson: string
+          p_locale: string
+          p_request_id: string
+          p_user_id: string
+        }
+        Returns: Json
+      }
       reserve_learner_ai_access: {
         Args: {
           p_category: string
@@ -4495,6 +4613,27 @@ export type Database = {
       }
       rollback_rag_index_version: {
         Args: { p_version_key: string }
+        Returns: Json
+      }
+      select_commercial_discount: {
+        Args: {
+          p_code: string
+          p_interval: string
+          p_market: string
+          p_package: string
+          p_renewal?: boolean
+          p_user_id: string
+        }
+        Returns: Json
+      }
+      settle_assistant_question: {
+        Args: {
+          p_fingerprint: string
+          p_outcome: string
+          p_request_id: string
+          p_response: Json
+          p_user_id: string
+        }
         Returns: Json
       }
       skip_mission_for_user: {
