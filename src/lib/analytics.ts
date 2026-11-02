@@ -266,6 +266,7 @@ export function trackConfirmedRegistration(): boolean {
 export function isSensitiveAnalyticsUrl(href: string): boolean {
   try {
     const url = new URL(href, "https://masaarat.ai");
+    if (url.pathname.startsWith("/courses/") || url.pathname === "/admin/curricula") return true;
     if (["/signup", "/login", "/forgot-password", "/reset-password"].includes(url.pathname)) {
       return true;
     }

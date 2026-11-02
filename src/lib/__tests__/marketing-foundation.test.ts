@@ -267,6 +267,14 @@ describe("route classification and crawler files", () => {
     expect(isDisallowed("/image-gallery/", rules)).toBe(true);
     expect(isDisallowed("/learn/builder/lesson-1", rules)).toBe(true);
     expect(isDisallowed("/technical/learn/M01-L01", rules)).toBe(true);
+    expect(isDisallowed("/courses/technical/reviewed-course", rules)).toBe(true);
+    expect(isDisallowed("/admin/curricula", rules)).toBe(true);
+    expect(
+      ROUTE_CATALOG.find((route) => route.source === "courses.$area.$courseId.tsx")?.visibility,
+    ).toBe("private");
+    expect(ROUTE_CATALOG.find((route) => route.source === "admin.curricula.tsx")?.visibility).toBe(
+      "private",
+    );
     expect(
       ROUTE_CATALOG.find((route) => route.source === "technical.learn.$lessonId.tsx")?.visibility,
     ).toBe("private");

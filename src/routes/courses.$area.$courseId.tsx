@@ -43,7 +43,9 @@ export const Route = createFileRoute("/courses/$area/$courseId")({
     lesson: z.string().max(80).optional(),
     profileId: z.string().uuid().optional(),
   }),
-  head: () => ({ meta: [{ title: "Masaarat — Learning" }] }),
+  head: () => ({
+    meta: [{ title: "Masaarat — Learning" }, { name: "robots", content: "noindex,nofollow" }],
+  }),
   component: NewCurriculumPage,
 });
 type Delivery = {
