@@ -1,7 +1,9 @@
 -- Owner-approved coupon duration and explicit question-credit scope.
 -- No provider objects, customer subscriptions or historical prices are changed.
-BEGIN;
+-- Transaction is owned by the native Drizzle runner across pending migrations.
 SET LOCAL lock_timeout = '5s';
+--> statement-breakpoint
+
 
 ALTER TABLE billing.commerce_offers
  ADD COLUMN product_scope text NOT NULL DEFAULT 'subscription' CHECK(product_scope IN ('subscription','question_topup')),
@@ -10,24 +12,48 @@ ALTER TABLE billing.commerce_offers
  ADD CONSTRAINT commerce_discount_months CHECK(
    (discount_duration='repeating' AND discount_duration_months IS NOT NULL AND discount_duration_months BETWEEN 1 AND 1200)
    OR (discount_duration<>'repeating' AND discount_duration_months IS NULL));
+--> statement-breakpoint
+
 -- Preserve already reviewed recurring offers rather than relabeling them once.
 UPDATE billing.commerce_offers f SET discount_duration=m.duration,discount_duration_months=m.duration_in_months
 FROM (SELECT DISTINCT ON (offer_id) offer_id,duration,duration_in_months FROM public.stripe_live_offer_mappings ORDER BY offer_id,enabled DESC,version DESC,created_at DESC) m
 WHERE f.id=m.offer_id;
+--> statement-breakpoint
+
 ALTER TABLE billing.commerce_offers DROP CONSTRAINT commerce_offers_package_check;
+--> statement-breakpoint
+
 ALTER TABLE billing.commerce_offers ADD CONSTRAINT commerce_offers_package_check CHECK(package IN ('pro','pro_plus','kids','technical','academic','question_topup'));
+--> statement-breakpoint
+
 ALTER TABLE billing.commerce_offers DROP CONSTRAINT commerce_offers_billing_interval_check;
+--> statement-breakpoint
+
 ALTER TABLE billing.commerce_offers ADD CONSTRAINT commerce_offers_billing_interval_check CHECK(billing_interval IN ('month','year','one_time'));
+--> statement-breakpoint
+
 ALTER TABLE billing.commerce_offers ADD CONSTRAINT commerce_offer_scope CHECK(
  (product_scope='question_topup' AND package='question_topup' AND billing_interval='one_time' AND currency='EGP' AND discount_duration='once' AND kind IN ('percent','fixed') AND (kind<>'percent' OR value_minor<100))
  OR (product_scope='subscription' AND package<>'question_topup' AND billing_interval IS DISTINCT FROM 'one_time'));
+--> statement-breakpoint
+
 ALTER TABLE public.stripe_live_offer_mappings DROP CONSTRAINT stripe_live_offer_mappings_package_check;
+--> statement-breakpoint
+
 ALTER TABLE public.stripe_live_offer_mappings ADD CONSTRAINT stripe_live_offer_mappings_package_check CHECK(package IN ('pro','pro_plus','kids','technical','academic','question_topup'));
+--> statement-breakpoint
+
 ALTER TABLE public.stripe_live_offer_mappings DROP CONSTRAINT stripe_live_offer_mappings_billing_interval_check;
+--> statement-breakpoint
+
 ALTER TABLE public.stripe_live_offer_mappings ADD CONSTRAINT stripe_live_offer_mappings_billing_interval_check CHECK(billing_interval IN ('month','year','one_time'));
+--> statement-breakpoint
+
 ALTER TABLE public.stripe_live_offer_mappings ADD CONSTRAINT stripe_live_offer_one_time_scope CHECK(
  (package='question_topup' AND billing_interval='one_time' AND market_code='EG' AND duration='once')
  OR (package<>'question_topup' AND billing_interval<>'one_time'));
+--> statement-breakpoint
+
 
 CREATE TABLE billing.commerce_discount_terms (
  offer_id uuid NOT NULL REFERENCES billing.commerce_offers(id) ON DELETE CASCADE,
@@ -35,14 +61,28 @@ CREATE TABLE billing.commerce_discount_terms (
  starts_at timestamptz NOT NULL, ends_at timestamptz, first_order_id uuid NOT NULL REFERENCES billing.commerce_orders(id) ON DELETE CASCADE,
  PRIMARY KEY(offer_id,user_id), CHECK(ends_at IS NULL OR ends_at>starts_at)
 );
+--> statement-breakpoint
+
 ALTER TABLE billing.commerce_discount_terms ENABLE ROW LEVEL SECURITY;
+--> statement-breakpoint
+
 REVOKE ALL ON billing.commerce_discount_terms FROM PUBLIC,anon,authenticated;
+--> statement-breakpoint
+
 GRANT SELECT,INSERT,UPDATE,DELETE ON billing.commerce_discount_terms TO service_role;
+--> statement-breakpoint
+
 CREATE POLICY commercial_discount_terms_service ON billing.commerce_discount_terms TO service_role USING(true) WITH CHECK(true);
+--> statement-breakpoint
+
 CREATE UNIQUE INDEX commercial_purchase_offer_reservation ON billing.commercial_purchases
  ((parameters->'quote'->'offer'->>'id')) WHERE parameters->'quote'->'offer'->>'id' IS NOT NULL;
+--> statement-breakpoint
+
 
 ALTER FUNCTION billing.commerce_price(text,text,text,uuid) RENAME TO commerce_pre_policy_price;
+--> statement-breakpoint
+
 CREATE FUNCTION billing.commerce_price(p_package text,p_market text,p_interval text,p_user uuid DEFAULT NULL) RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 BEGIN
@@ -53,7 +93,11 @@ BEGIN
  END IF;
  RETURN billing.commerce_pre_policy_price(p_package,p_market,p_interval,p_user);
 END $$;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION billing.commerce_price(text,text,text,uuid),billing.commerce_pre_policy_price(text,text,text,uuid) FROM PUBLIC,anon,authenticated,service_role;
+--> statement-breakpoint
+
 
 -- The paid term belongs to the verified account and its original phone. An
 -- unconfirmed order never starts a term or extends the discount window.
@@ -73,9 +117,15 @@ LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
    AND (e.order_id=o.id OR (g.offer_order_id=o.id AND g.user_id=p_user AND g.revoked_at IS NULL)))
  AND (t.ends_at IS NULL OR billing.commerce_next_start(p_user,f.package,now())<t.ends_at));
 $$;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION billing.commercial_manual_term(uuid,uuid,text) FROM PUBLIC,anon,authenticated,service_role;
+--> statement-breakpoint
+
 
 ALTER FUNCTION billing.commerce_quote(text,text,text,text,text,boolean) RENAME TO commerce_pre_policy_quote;
+--> statement-breakpoint
+
 CREATE FUNCTION billing.commerce_quote(p_package text,p_market text,p_interval text,p_code text,p_email text,p_renewal boolean DEFAULT false) RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE q jsonb; automatic jsonb; f billing.commerce_offers%ROWTYPE; u uuid; price jsonb; final bigint;
@@ -102,7 +152,11 @@ BEGIN
  END IF;
  RETURN q;
 END $$;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION billing.commerce_quote(text,text,text,text,text,boolean),billing.commerce_pre_policy_quote(text,text,text,text,text,boolean) FROM PUBLIC,anon,authenticated,service_role;
+--> statement-breakpoint
+
 
 CREATE FUNCTION public.select_commercial_discount(p_user_id uuid,p_package text,p_market text,p_interval text,p_code text,p_renewal boolean DEFAULT false) RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
@@ -113,13 +167,23 @@ BEGIN
  q:=billing.commerce_quote(p_package,p_market,p_interval,p_code,email,p_renewal);
  RETURN jsonb_build_object('use_offer',q->>'offer_id' IS NOT NULL,'quote',q);
 END $$;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION public.select_commercial_discount(uuid,text,text,text,text,boolean) FROM PUBLIC,anon,authenticated;
+--> statement-breakpoint
+
 GRANT EXECUTE ON FUNCTION public.select_commercial_discount(uuid,text,text,text,text,boolean) TO service_role;
+--> statement-breakpoint
+
 
 -- Preserve every existing identity/guardian/payment wrapper; only the new
 -- administration inputs are handled at this outer boundary.
 ALTER FUNCTION public.commerce_command(text,jsonb) RENAME TO commerce_pre_commercial_policy_command;
+--> statement-breakpoint
+
 ALTER FUNCTION public.commerce_pre_commercial_policy_command(text,jsonb) SET SCHEMA billing;
+--> statement-breakpoint
+
 CREATE FUNCTION public.commerce_command(p_action text,p_data jsonb DEFAULT '{}') RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE u uuid:=auth.uid(); email text; result jsonb; f billing.commerce_offers%ROWTYPE; price jsonb;
@@ -180,11 +244,21 @@ BEGIN
  INSERT INTO billing.commerce_audit(actor,action,target_id,details) VALUES(u,'simple_offer',f.id,jsonb_build_object('audience',audience,'delivery','coupon','percent',pct,'product_scope','question_topup'));
  RETURN to_jsonb(f);
 END $$;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION billing.commerce_pre_commercial_policy_command(text,jsonb) FROM PUBLIC,anon,authenticated,service_role;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION public.commerce_command(text,jsonb) FROM PUBLIC,anon,service_role;
+--> statement-breakpoint
+
 GRANT EXECUTE ON FUNCTION public.commerce_command(text,jsonb) TO authenticated;
+--> statement-breakpoint
+
 
 ALTER TABLE billing.commerce_orders ADD COLUMN discount_term_renewal boolean NOT NULL DEFAULT false;
+--> statement-breakpoint
+
 CREATE FUNCTION billing.commercial_order_term_guard() RETURNS trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 BEGIN
  IF NEW.offer_id IS NOT NULL AND billing.commercial_manual_term(NEW.offer_id,NEW.user_id,NEW.recipient_email) THEN
@@ -193,8 +267,14 @@ BEGIN
  END IF;
  RETURN NEW;
 END $$;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION billing.commercial_order_term_guard() FROM PUBLIC,anon,authenticated,service_role;
+--> statement-breakpoint
+
 CREATE TRIGGER commercial_order_term_guard BEFORE INSERT ON billing.commerce_orders FOR EACH ROW EXECUTE FUNCTION billing.commercial_order_term_guard();
+--> statement-breakpoint
+
 CREATE FUNCTION billing.commercial_discount_phone_binding() RETURNS trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 BEGIN
  IF NEW.redemption_phone IS NOT NULL THEN
@@ -202,8 +282,14 @@ BEGIN
  END IF;
  RETURN NEW;
 END $$;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION billing.commercial_discount_phone_binding() FROM PUBLIC,anon,authenticated,service_role;
+--> statement-breakpoint
+
 CREATE TRIGGER commercial_discount_phone_binding AFTER UPDATE OF redemption_phone ON billing.commerce_orders FOR EACH ROW EXECUTE FUNCTION billing.commercial_discount_phone_binding();
+--> statement-breakpoint
+
 -- Legacy 100% coupons create a grant directly rather than calling activate().
 -- Continue a repeating coupon after the paid/granted period, never overlap it.
 CREATE FUNCTION billing.commercial_coupon_grant_period() RETURNS trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
@@ -218,8 +304,14 @@ BEGIN
  END IF;
  RETURN NEW;
 END $$;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION billing.commercial_coupon_grant_period() FROM PUBLIC,anon,authenticated,service_role;
+--> statement-breakpoint
+
 CREATE TRIGGER commercial_coupon_grant_period BEFORE INSERT ON billing.commerce_entitlements FOR EACH ROW EXECUTE FUNCTION billing.commercial_coupon_grant_period();
+--> statement-breakpoint
+
 
 CREATE OR REPLACE FUNCTION billing.commerce_count_consumption() RETURNS trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE f billing.commerce_offers%ROWTYPE;
@@ -240,6 +332,8 @@ BEGIN
  END IF;
  RETURN NEW;
 END $$;
+--> statement-breakpoint
+
 -- A paid order can activate later than confirmation (for example, an existing
 -- period must finish first). Anchor the discount window to that actual start.
 CREATE FUNCTION billing.commercial_discount_activation() RETURNS trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
@@ -250,8 +344,14 @@ BEGIN
  AND t.first_order_id=coalesce(NEW.order_id,(SELECT offer_order_id FROM billing.commerce_grants WHERE id=NEW.grant_id));
  RETURN NEW;
 END $$;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION billing.commercial_discount_activation() FROM PUBLIC,anon,authenticated,service_role;
+--> statement-breakpoint
+
 CREATE TRIGGER commercial_discount_activation AFTER INSERT ON billing.commerce_entitlements FOR EACH ROW EXECUTE FUNCTION billing.commercial_discount_activation();
+--> statement-breakpoint
+
 -- Each renewal still has its own immutable order, payment, receipt and proof.
 -- It continues the already consumed offer rather than taking a new campaign slot.
 DO $$ DECLARE r record; d text; BEGIN
@@ -262,8 +362,12 @@ DO $$ DECLARE r record; d text; BEGIN
   EXECUTE d;
  END LOOP;
 END $$;
+--> statement-breakpoint
+
 
 ALTER FUNCTION billing.commerce_assert_offer_phone(uuid,text,text,uuid,uuid,uuid) RENAME TO commerce_pre_policy_phone;
+--> statement-breakpoint
+
 CREATE FUNCTION billing.commerce_assert_offer_phone(p_offer uuid,p_phone text,p_email text,p_user uuid,p_order uuid DEFAULT NULL,p_invitation uuid DEFAULT NULL) RETURNS void
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE t billing.commerce_discount_terms%ROWTYPE;
@@ -278,7 +382,11 @@ BEGIN
  END IF;
  PERFORM billing.commerce_pre_policy_phone(p_offer,p_phone,p_email,p_user,p_order,p_invitation);
 END $$;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION billing.commerce_assert_offer_phone(uuid,text,text,uuid,uuid,uuid),billing.commerce_pre_policy_phone(uuid,text,text,uuid,uuid,uuid) FROM PUBLIC,anon,authenticated,service_role;
+--> statement-breakpoint
+
 
 CREATE OR REPLACE FUNCTION billing.commercial_purchase_quote(p_user_id uuid,p_kind text,p_offer jsonb) RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
@@ -291,7 +399,11 @@ BEGIN
  IF reservation->'mapping'->>'price_id' IS DISTINCT FROM cat.price_id OR reservation->'mapping'->>'product_id' IS DISTINCT FROM cat.product_id THEN RAISE EXCEPTION 'COMMERCIAL_OFFER_CATALOGUE_MISMATCH'; END IF;
  RETURN jsonb_build_object('original_minor',cat.amount_minor,'amount_minor',(reservation->>'final_minor')::integer,'currency',cat.currency,'offer',reservation);
 END $$;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION billing.commercial_purchase_quote(uuid,text,jsonb) FROM PUBLIC,anon,authenticated,service_role;
+--> statement-breakpoint
+
 
 -- Bind and consume in the same transaction as the purchase. One-time payments
 -- never masquerade as Stripe subscription/invoice identifiers.
@@ -320,8 +432,14 @@ BEGIN
  END IF;
  RETURN NEW;
 END $$;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION billing.commercial_purchase_offer_guard() FROM PUBLIC,anon,authenticated,service_role;
+--> statement-breakpoint
+
 CREATE TRIGGER commercial_purchase_offer_guard AFTER UPDATE ON billing.commercial_purchases FOR EACH ROW EXECUTE FUNCTION billing.commercial_purchase_offer_guard();
+--> statement-breakpoint
+
 
 CREATE OR REPLACE FUNCTION public.stripe_live_offer_catalogue_guard() RETURNS trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE f billing.commerce_offers%ROWTYPE; q jsonb; ok boolean;
@@ -338,6 +456,8 @@ BEGIN
  IF ok IS DISTINCT FROM true THEN RAISE EXCEPTION 'LIVE_OFFER_CATALOGUE_MISMATCH'; END IF;
  RETURN NEW;
 END $$;
+--> statement-breakpoint
+
 
 CREATE OR REPLACE FUNCTION public.stripe_live_offer_admin(p_actor uuid,p_action text,p_data jsonb) RETURNS jsonb LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE f billing.commerce_offers%ROWTYPE; m public.stripe_live_offer_mappings%ROWTYPE; r public.stripe_live_offer_reservations%ROWTYPE; a public.stripe_live_offer_admin_audit%ROWTYPE; q jsonb; v integer; k uuid;
@@ -382,8 +502,14 @@ BEGIN
  END IF;
  RAISE EXCEPTION 'INVALID_ADMIN_ACTION';
 END $$;
+--> statement-breakpoint
+
 REVOKE ALL ON FUNCTION public.stripe_live_offer_admin(uuid,text,jsonb) FROM PUBLIC,anon,authenticated;
+--> statement-breakpoint
+
 GRANT EXECUTE ON FUNCTION public.stripe_live_offer_admin(uuid,text,jsonb) TO service_role;
+--> statement-breakpoint
+
 
 -- Keep the established service gate, identity/phone checks, row locks,
 -- cross-rail limits and retry fingerprint while permitting verified durations.
@@ -398,11 +524,17 @@ BEGIN
  IF (q->>'final_minor')::bigint<=0$guard$);
  EXECUTE d;
 END $$;
+--> statement-breakpoint
+
 
 -- Retain required financial records, but erase the newly added contact fields
 -- at the same learner-erasure boundary as existing commerce records.
 ALTER FUNCTION public.lc09_advance_deletion(uuid,uuid,text) RENAME TO lc09_pre_commercial_discount_deletion;
+--> statement-breakpoint
+
 ALTER FUNCTION public.lc09_pre_commercial_discount_deletion(uuid,uuid,text) SET SCHEMA billing;
+--> statement-breakpoint
+
 CREATE FUNCTION public.lc09_advance_deletion(p_user_id uuid,p_lease_token uuid,p_next_stage text) RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE result jsonb;
@@ -411,8 +543,12 @@ BEGIN
  IF p_next_stage='learner_erased' THEN UPDATE billing.commerce_discount_terms SET recipient_email='',phone=NULL WHERE user_id=p_user_id; END IF;
  RETURN result;
 END $$;
-REVOKE ALL ON FUNCTION billing.lc09_pre_commercial_discount_deletion(uuid,uuid,text) FROM PUBLIC,anon,authenticated,service_role;
-REVOKE ALL ON FUNCTION public.lc09_advance_deletion(uuid,uuid,text) FROM PUBLIC,anon,authenticated;
-GRANT EXECUTE ON FUNCTION public.lc09_advance_deletion(uuid,uuid,text) TO service_role;
+--> statement-breakpoint
 
-COMMIT;
+REVOKE ALL ON FUNCTION billing.lc09_pre_commercial_discount_deletion(uuid,uuid,text) FROM PUBLIC,anon,authenticated,service_role;
+--> statement-breakpoint
+
+REVOKE ALL ON FUNCTION public.lc09_advance_deletion(uuid,uuid,text) FROM PUBLIC,anon,authenticated;
+--> statement-breakpoint
+
+GRANT EXECUTE ON FUNCTION public.lc09_advance_deletion(uuid,uuid,text) TO service_role;

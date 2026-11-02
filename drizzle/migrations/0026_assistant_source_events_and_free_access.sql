@@ -1,30 +1,101 @@
 -- Assembled by scripts/release/assemble-unified-assistant-migration.mjs.
 -- Requires the reviewed cumulative commerce/email-access and native Academic
 -- baseline. Drizzle journal owns execution; never run both migration systems.
--- Installs disabled preparation, metadata capture and EMPTY free-access tables.
--- Does not approve sources, embed, activate runtime, enable worker or create an offer.
-BEGIN;
+-- The native Drizzle transaction owns COMMIT/ROLLBACK across 0026, 0027 and 0028.
+-- Pristine targets install all original sources. The one reviewed operational
+-- schema is preserved exactly, then only EMPTY free-access tables are added.
+-- Unknown partial states fail closed. No fake journal/adoption or provider calls.
 SET LOCAL lock_timeout='3s';
+--> statement-breakpoint
+
 SET LOCAL statement_timeout='60s';
-DO $unified_preflight$ BEGIN
+--> statement-breakpoint
+
+SET LOCAL search_path=public,extensions;
+--> statement-breakpoint
+
+DO $unified_reconciliation$
+DECLARE operational boolean; actual jsonb; preserved jsonb;
+ expected constant jsonb := $unified_expected${"function:public.academic_sync_chunks(p_course text, p_scopes jsonb, p_rows jsonb)":"aae9db486104e5f161ae2a1ca34606f0a74dc286f5fd6beb8e9cb09b4e5b6682","function:public.assistant_auto_ai_clear(p_release text)":"2c3ce678b7d92e3ecba71e3a91a7b528b44d70963aa3165ca28dd5c8d725b102","function:public.assistant_auto_capture_source()":"f4738ed0d8ce67d0bff5a400aaad16c19b16c4e59eeae34a88007d0e27d16554","function:public.assistant_auto_check(p_job text, p_request uuid, p_lease uuid)":"8672151b2e8426c2368f9afbcd49dae417c0f4703d0a3d022ed706927b7445ea","function:public.assistant_auto_claim(p_keys jsonb, p_request uuid)":"19ce0cb2aa95b4ca9b57cf80b3ee7746e89fdce898d5fedcc301c528e26e08b2","function:public.assistant_auto_finish(p_job text, p_request uuid, p_lease uuid, p_done boolean, p_receipt jsonb)":"41806cc9a3f2b1e47786b55664a842dbe753273b770adf6d0fff6e915ff921df","function:public.assistant_auto_hold(p_job text, p_request uuid, p_lease uuid, p_code text)":"f4720492d20a663d5887865a50392a9fd5764bf69db3a893d895891fec11b3f6","function:public.assistant_auto_link_sources(p_keys jsonb)":"98c4c3092b9f85ee81d7ba9ebecf1d7693850d614ade119f5e462a7e68f428a2","function:public.assistant_auto_publish_academic(p_job text, p_request uuid, p_lease uuid)":"7f1c9287004050cc69c615db7d3c5d7c811d9cd7cc06bc8187ce09b00433eb6c","function:public.assistant_auto_publish_card(p_job text, p_request uuid, p_lease uuid)":"dad644397f729739cab370833b3959cb36c5bd3d27ddaa9b48de422c4b2dad18","function:public.assistant_auto_receipt(p_job text, p_request uuid, p_offset integer, p_receipt jsonb)":"e79a4ce41e4118c571176e9a0b9f69c27ebb99ad7a85d2db69d04dc7e95d7f66","function:public.assistant_auto_register(p_jobs jsonb, p_registry jsonb)":"12d80a672ab102d5fba2eae5f2e735e8f6f8cc13c0acbe36fb5a1b9bdb379642","function:public.assistant_auto_reserve(p_job text, p_request uuid, p_lease uuid)":"f22070d184601131dbf0dc08b1aa78edc86eb1d47369503a0c9bc9d41642778c","function:public.assistant_auto_source_revisions(p_registry jsonb)":"742fa6072e5d96a2006116b7c24542f2ffa9f39db9df48b4798ffb62b64ede25","function:public.assistant_auto_status()":"a4a4c06157bd4cf81d4e110afbf6f68cadd537a15f4bedf035179945c7875a3a","function:public.card_assistant_access(p_area text, p_card text, p_step text, p_locale text, p_profile uuid)":"3eb7247b9683564bd7b079f05940942238146d0fa16a84116fdac3c6ae55edb4","function:public.card_assistant_chunk_json(c card_assistant_chunks)":"38cf5a540703d83e4e832a86420f6cbaa81f30007a0abfe2b5bbe8c9897e4772","function:public.card_assistant_existing(p_area text, p_card text, p_step text, p_locale text)":"f2bbd3fc613dc1c8bb3f9e0b016b7fbf91e9c6d459ef4b1dde129ec1f45ee8cb","function:public.card_assistant_match(p_area text, p_card text, p_locale text, p_embedding vector, p_limit integer)":"fc3713f030d47df027a1fbc021e034a215018490c9eb9c6a1a21ff2269add8b2","function:public.card_assistant_previous_advance(p_user_id uuid, p_lease_token uuid, p_next_stage text)":"e2a8eda15d4482c5b487c4fd1939cbbec3ef7a5b20b7a7161aa076683fe9a812","function:public.card_assistant_review_allowed()":"8364ee929d01933c5b5ecf8e6a4d9175d432583cd35eff01b41a0352bf34702c","function:public.card_assistant_sync_source(p_area text, p_card text, p_step text, p_locale text, p_source_sha text, p_payload_sha text, p_payload jsonb, p_rows jsonb)":"37b1c9aa642374c9024db1db05144deaa9dc3032c11e86dea3e86a922afdde3b","function:public.card_assistant_take_question(p_area text, p_card text, p_step text, p_locale text, p_profile uuid, p_request uuid)":"8d78f190f34a089560a6fd17da41a2e1d8e130ddebb6f8350c964d0c3b5bfb81","function:public.commerce_previous_lc09_advance_deletion(p_user_id uuid, p_lease_token uuid, p_next_stage text)":"66ee5d587365f2cfdf888da058d824bea6973932eed94ee152a87b1f2cdbc1b8","function:public.lc09_advance_deletion(p_user_id uuid, p_lease_token uuid, p_next_stage text)":"b1dd7f1642e890c5b68c8b0292ba692891bc0761d4ff62cda6dc4b2ef31411dc","function:public.rag_current_activate(p_release_id text, p_execution_id uuid, p_request_id uuid, p_expected_active text)":"024ca27c7877a19dbd546e1c9f33a266c6096c12163a7c6b2456d43f2ff7ae22","function:public.rag_current_claim(p_release_id text, p_execution_id uuid, p_request_id uuid)":"9de9d27678720315c9efd5f853779963569876a8d7dfbfa9366b5850ee7d047e","function:public.rag_current_commit(p_release_id text, p_execution_id uuid, p_request_id uuid, p_lease_token uuid, p_rows jsonb)":"7403b87661d1a578090e936a5c88311949d046a4f4563626497e404189f04e93","function:public.rag_current_fail(p_release_id text, p_execution_id uuid, p_request_id uuid, p_lease_token uuid)":"91bdbb896da2c30185ae97e8b4ce74dce481987fa411de2ef3aacad93c2fe792","function:public.rag_current_initialize(p_release_id text, p_material text, p_request_id uuid)":"58a876450c72733653da6b3c693d769602cfc847df38ae24b6eeb33c2caa1034","function:public.rag_current_legacy_audit(p_release_id text)":"291338de25dbb3e65a7bd0002991052e8d222db04644748cf635578fad7b9844","function:public.rag_current_prior_ai_clear(p_release_id text)":"323cec3e98773a1a9584e537b5b454d7a9252a78492236b58a2f815c1f9d4adf","function:public.rag_current_require_unretired(p_release_id text)":"586735c86fbde3d5333ca742c18a2d8b808e4fb82abb5d93b662643f735f8df3","function:public.rag_current_reserve_provider(p_release_id text, p_execution_id uuid, p_request_id uuid, p_lease_token uuid)":"979544640a1eb219d607b9be5e06754aaa90e2024086173473095e20bc392e57","function:public.rag_current_retire_verified(p_release_id text, p_execution_id uuid, p_unknown_request uuid, p_expected_audit_sha256 text, p_successor_execution uuid)":"3a0bcced119a2116933c6f7bc7cb0e6ec1c4833d7e57cdfe4cbc2a9a61c63795","function:public.rag_current_retirement_coverage(p_release_id text, p_successor text, p_unknown_request uuid, p_full boolean)":"aaf25405a562bc0c4245212510e7033cbd0d7ca196067f84c65c811bc2601c07","function:public.rag_current_retirement_immutable()":"fcc10d6d21635ea87eddc083eee09d95a0e61eb5d8a7717b930361fe405073ce","function:public.rag_current_retirement_valid(p_release_id text)":"f3914035862bb33cc3b0158efcb375a4a57fb399227a7dfae1f2d4782a2d51fa","function:public.rag_current_rollback(p_release_id text, p_execution_id uuid, p_request_id uuid, p_expected_active text)":"15187f526f5a3afd2776bc135bf16781f318e4a7b4dce985a960253810969e9c","function:public.rag_current_row_valid(k knowledge_chunks, a jsonb, p_id text)":"3aca7280238efd69f7eecb0ea1f1da91f6c46736128dee9185a9fafb59b2c722","function:public.rag_current_status(p_release_id text)":"6d90df192cc5da1351d4ac8141b9c27803b527b2589125728b182ca4695cf2b1","function:public.rag_reusable_embeddings(p_requests jsonb)":"5e1fc3278b5e4e8dacc13cda572696944612d318ff9fac13850b69dca2434ab6","registry:public.assistant_auto_policy":"310cdc5d312f9a4d14fba37a9f1877033a45cd33877826cfc6373bfb9877b3df","registry:public.card_assistant_policy":"5824539cde2cd9aee9b4f3dd3a0ffbc0f1a3c18b9ca3aeb7e95ab9ae1670379d","registry:public.card_assistant_steps":"9b51f213b64759c5fe2571e776ab4ca0eded55ea66b2cfbc0031fcd9f54e31ff","relation:public.academic_rag_chunks":"228616db0ad24eddc92cc46e74d58325e102fb484cc9dce57c9fa73501d73b18","relation:public.assistant_auto_attempts":"a0d4728f76760468a95cc76cdd2ca349af139d170f361950095f5b5da6b6db78","relation:public.assistant_auto_intake_status":"2db32ca6bb49994acfd001532eedd272cab24a3ea216962298d6ae6408f20e13","relation:public.assistant_auto_jobs":"4e97812f65faf8ea6e46f13c56ae47878437734b22e703c4fd60874b38fb1266","relation:public.assistant_auto_policy":"754fc29b69523c91515b3957f787cd68c5e4cf7a6699f9f1a1f9c11de7654402","relation:public.assistant_auto_source_events":"3479b2aac59d1e9541fb351259cabdb00c92c82180a5574a9d990a7bc32fb214","relation:public.assistant_auto_source_events_event_id_seq":"d53e240649c2b749989f931403dd6b87c4cef0378910c7dec09333f90b030393","relation:public.card_assistant_chunks":"2308e8d45f104f0c348b19ed26ff87f6764c0ed8cf245850c968b6b7dcadd3e7","relation:public.card_assistant_policy":"87064c3a1196c3059b61bf3e39436b1bb88fdb2aaf09835e31b593f7b1df0048","relation:public.card_assistant_question_windows":"e22da6a76b2e0a70d0f47257dbbfd2508c6d4ca327d19ce408ba5a3145fea472","relation:public.card_assistant_steps":"b254d5bb0028caf8d1ae85809a07a8652f8a7ce1a439ee343195c060da763c01","relation:public.rag_current_batches":"b5c928da305df5e92ab31f54dd55b81b0553658e91919198929b4bba0083702e","relation:public.rag_current_releases":"a3c4cf41172b8f33bfedf2312549c412c6f02151fa4ed71eda75864b4450025c","relation:public.rag_current_requests":"cfcd20b35029888531a49bffc06b73981a2c7ab72083b91427e801ea1ebc7a80","relation:public.rag_current_retirements":"8738db4573e5a3ae1e90960b1cafa84a90a0e4b55019ffc9a2354f03dc7b3576","trigger:public.academic_courses.assistant_auto_academic_policy":"46e553a83aa981e56c62caebdcba6c61026c84bd6fa957cd5b55432862eabce4","trigger:public.academic_lesson_content.assistant_auto_academic_source":"234838b57918ae7a3818a7d7cb6cc5e8f507ec00188a3147084c64aaf7091d33","trigger:public.kids_content_approvals.assistant_auto_kids_source":"220f149432d46377011837e3e130b2bef969cd53ff3d5f220af025e249e4b65e","trigger:public.rag_current_retirements.rag_current_retirement_immutable":"47c320205c0c70e31f8d91137b1783559e61313b06e01ca94a92090ae53a6c19","trigger:public.rag_current_retirements.rag_current_retirement_no_truncate":"b2c893fc4fa82be31b394737a902e0d11b5446b1b61fae697f7240d48786513c","trigger:public.technical_lesson_content.assistant_auto_technical_source":"e7e154e00cd6fbde7e5a2265f1f084e40b0e9559d72634de00fb24af8e9978dc"}$unified_expected$::jsonb;
+BEGIN
+ PERFORM pg_advisory_xact_lock(hashtextextended('masaarat:assistant:0026:reconciliation',0));
  IF to_regclass('billing.email_access_grants') IS NULL
    OR to_regclass('public.academic_assistant_policy') IS NULL
    OR to_regclass('public.rag_index_versions') IS NULL
    OR to_regprocedure('public.rag_require_service_role()') IS NULL
    OR to_regprocedure('public.lc09_advance_deletion(uuid,uuid,text)') IS NULL
  THEN RAISE EXCEPTION 'UNIFIED_BASELINE_PREREQUISITES_MISSING'; END IF;
- IF to_regclass('public.card_assistant_policy') IS NOT NULL
-   OR to_regclass('public.rag_current_releases') IS NOT NULL
-   OR to_regclass('public.assistant_auto_jobs') IS NOT NULL
-   OR to_regclass('billing.free_access_windows') IS NOT NULL
-   OR EXISTS(SELECT 1 FROM information_schema.columns WHERE table_schema='public'
-     AND table_name='academic_rag_chunks' AND column_name='embedding_model')
- THEN RAISE EXCEPTION 'UNIFIED_PARTIAL_INSTALL_REQUIRES_REVIEW'; END IF;
-END $unified_preflight$;
+ IF EXISTS(SELECT 1 FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace
+   WHERE n.nspname='billing' AND c.relname LIKE 'free_access_%')
+ OR EXISTS(SELECT 1 FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace
+   WHERE (n.nspname='billing' AND (p.proname LIKE 'free_access_%' OR p.proname LIKE 'free_window_%'))
+      OR (n.nspname='public' AND p.proname IN ('get_my_free_access','free_access_window_command')))
+ THEN RAISE EXCEPTION 'UNIFIED_FREE_ACCESS_ALREADY_PRESENT_REQUIRES_REVIEW'; END IF;
+ operational:=EXISTS(SELECT 1 FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace
+   WHERE n.nspname='public' AND (c.relname LIKE 'card_assistant_%' OR c.relname LIKE 'assistant_auto_%' OR c.relname LIKE 'rag_current_%'))
+ OR EXISTS(SELECT 1 FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace
+   WHERE n.nspname='public' AND (p.proname LIKE 'card_assistant_%' OR p.proname LIKE 'assistant_auto_%'
+    OR p.proname LIKE 'rag_current_%' OR p.proname IN ('rag_reusable_embeddings','academic_sync_chunks')))
+ OR EXISTS(SELECT 1 FROM information_schema.columns WHERE table_schema='public' AND table_name='academic_rag_chunks'
+   AND column_name IN ('embedding_model','embedding_dimensions'));
+ IF operational THEN
+  IF current_setting('server_version_num')::integer/10000<>17 THEN RAISE EXCEPTION 'UNIFIED_OPERATIONAL_SERVER_CHANGED'; END IF;
+  EXECUTE $unified_catalog$SELECT coalesce(jsonb_object_agg(object_key,sha256),'{}'::jsonb) FROM (-- Schema and non-learner registry/policy fingerprints. Run with search_path=public,extensions.
+-- Reads three reviewed registry/policy rowsets; no learner data, job/receipt rows,
+-- vectors, provider requests, migration stamps or secrets are read.
+WITH relations AS (
+ SELECT c.*,n.nspname FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+ WHERE n.nspname='public' AND (c.relname LIKE 'card_assistant_%' OR c.relname LIKE 'assistant_auto_%'
+  OR c.relname LIKE 'rag_current_%' OR c.relname='academic_rag_chunks')
+ AND c.relkind IN ('r','p','v','S')
+), objects AS (
+ SELECT 'function:'||n.nspname||'.'||p.proname||'('||pg_catalog.pg_get_function_identity_arguments(p.oid)||')' AS object_key,
+ jsonb_build_object('definition',pg_catalog.pg_get_functiondef(p.oid),'owner',pg_catalog.pg_get_userbyid(p.proowner),
+  'acl',coalesce(p.proacl,pg_catalog.acldefault('f',p.proowner))::text) AS definition
+ FROM pg_catalog.pg_proc p JOIN pg_catalog.pg_namespace n ON n.oid=p.pronamespace
+ WHERE n.nspname='public' AND (p.proname LIKE 'card_assistant_%' OR p.proname LIKE 'assistant_auto_%'
+  OR p.proname LIKE 'rag_current_%' OR p.proname IN ('rag_reusable_embeddings','academic_sync_chunks','lc09_advance_deletion')
+  OR p.prosrc LIKE '%LC09_UNCLASSIFIED_USER_TABLE%')
+ UNION ALL
+ SELECT 'relation:'||c.nspname||'.'||c.relname,jsonb_build_object(
+  'kind',c.relkind,'owner',pg_catalog.pg_get_userbyid(c.relowner),'acl',coalesce(c.relacl,pg_catalog.acldefault(CASE WHEN c.relkind='S' THEN 'S'::"char" ELSE 'r'::"char" END,c.relowner))::text,
+  'rls',c.relrowsecurity,'force_rls',c.relforcerowsecurity,'options',c.reloptions,'replica_identity',c.relreplident,
+  'columns',(SELECT coalesce(jsonb_agg(jsonb_build_object('name',a.attname,'type',pg_catalog.format_type(a.atttypid,a.atttypmod),
+   'not_null',a.attnotnull,'default',pg_catalog.pg_get_expr(d.adbin,d.adrelid),'identity',a.attidentity,'generated',a.attgenerated,
+   'collation',CASE WHEN a.attcollation=0 THEN NULL ELSE a.attcollation::regcollation::text END) ORDER BY a.attnum),'[]'::jsonb)
+   FROM pg_catalog.pg_attribute a LEFT JOIN pg_catalog.pg_attrdef d ON d.adrelid=a.attrelid AND d.adnum=a.attnum
+   WHERE a.attrelid=c.oid AND a.attnum>0 AND NOT a.attisdropped),
+  'constraints',(SELECT coalesce(jsonb_agg(jsonb_build_object('name',k.conname,'definition',pg_catalog.pg_get_constraintdef(k.oid),
+   'validated',k.convalidated) ORDER BY k.conname),'[]'::jsonb) FROM pg_catalog.pg_constraint k WHERE k.conrelid=c.oid),
+  'indexes',(SELECT coalesce(jsonb_agg(jsonb_build_object('definition',pg_catalog.pg_get_indexdef(i.indexrelid),'valid',i.indisvalid,
+   'ready',i.indisready) ORDER BY i.indexrelid::regclass::text),'[]'::jsonb) FROM pg_catalog.pg_index i WHERE i.indrelid=c.oid),
+  'policies',(SELECT coalesce(jsonb_agg(jsonb_build_object('name',p.polname,'permissive',p.polpermissive,'command',p.polcmd,
+   'roles',(SELECT jsonb_agg(CASE WHEN role_oid=0 THEN 'PUBLIC' ELSE pg_catalog.pg_get_userbyid(role_oid) END ORDER BY role_oid)
+     FROM unnest(p.polroles) role_oid),'using',pg_catalog.pg_get_expr(p.polqual,p.polrelid),'check',pg_catalog.pg_get_expr(p.polwithcheck,p.polrelid)) ORDER BY p.polname),'[]'::jsonb)
+   FROM pg_catalog.pg_policy p WHERE p.polrelid=c.oid),
+  'view',CASE WHEN c.relkind='v' THEN pg_catalog.pg_get_viewdef(c.oid,true) ELSE NULL END,
+  'sequence',(SELECT jsonb_build_object('start',s.seqstart,'increment',s.seqincrement,'max',s.seqmax,'min',s.seqmin,'cache',s.seqcache,'cycle',s.seqcycle)
+   FROM pg_catalog.pg_sequence s WHERE s.seqrelid=c.oid))
+ FROM relations c
+ UNION ALL
+ SELECT 'trigger:'||n.nspname||'.'||c.relname||'.'||t.tgname,jsonb_build_object('definition',pg_catalog.pg_get_triggerdef(t.oid,true),'enabled',t.tgenabled)
+ FROM pg_catalog.pg_trigger t JOIN pg_catalog.pg_class c ON c.oid=t.tgrelid JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+ WHERE NOT t.tgisinternal AND n.nspname='public' AND (t.tgname LIKE 'assistant_auto_%' OR c.oid IN (SELECT oid FROM relations))
+ UNION ALL
+ SELECT 'registry:public.card_assistant_steps',jsonb_build_object('rows',coalesce(jsonb_agg(to_jsonb(s) ORDER BY area,card_id,step_id),'[]'::jsonb)) FROM public.card_assistant_steps s
+ UNION ALL
+ SELECT 'registry:public.card_assistant_policy',jsonb_build_object('rows',coalesce(jsonb_agg(to_jsonb(p) ORDER BY area,card_id),'[]'::jsonb)) FROM public.card_assistant_policy p
+ UNION ALL
+ SELECT 'registry:public.assistant_auto_policy',jsonb_build_object('rows',coalesce(jsonb_agg(to_jsonb(p) ORDER BY singleton),'[]'::jsonb)) FROM public.assistant_auto_policy p
+)
+SELECT object_key,definition,encode(sha256(convert_to(definition::text,'UTF8')),'hex') AS sha256
+FROM objects ORDER BY object_key) reviewed_objects$unified_catalog$ INTO actual;
+  IF actual IS DISTINCT FROM expected THEN RAISE EXCEPTION 'UNIFIED_OPERATIONAL_SCHEMA_OR_REGISTRY_CHANGED'; END IF;
+ ELSE
 
--- Source: scripts/card-assistant/assistant-candidate.sql
--- LF SHA256: 27fb91a1d301c6469c9e0acab8a5c60714020677c01b7713cf0d29e80062eb70
--- REVIEW CANDIDATE ONLY. Not executed. Requires installed Kids/Technical gates
+ -- Source: scripts/card-assistant/assistant-candidate.sql
+ -- LF SHA256: 27fb91a1d301c6469c9e0acab8a5c60714020677c01b7713cf0d29e80062eb70
+ EXECUTE $unified_source_0$-- REVIEW CANDIDATE ONLY. Not executed. Requires installed Kids/Technical gates
 -- and pgvector in extensions. No billing debit, adult AI gate, or native unlock.
 
 CREATE TABLE public.card_assistant_policy (
@@ -217,12 +288,12 @@ REVOKE ALL ON FUNCTION public.lc09_advance_deletion(uuid,uuid,text) FROM PUBLIC,
 GRANT EXECUTE ON FUNCTION public.lc09_advance_deletion(uuid,uuid,text) TO service_role;
 
 -- Add the generated registry seed in assistant-registry-seed.sql in the same
--- reviewed release. All policies remain disabled until corpus verification.
+-- reviewed release. All policies remain disabled until corpus verification.$unified_source_0$;
 
 
--- Source: scripts/card-assistant/assistant-registry-seed.sql
--- LF SHA256: 8077c012a88e7bdb2e44cb85073e67bbd291ff9ad54d60e9dc537651b3088f27
--- REVIEW CANDIDATE ONLY. Generated from Kids catalogue and Technical catalogue. Policies stay disabled.
+ -- Source: scripts/card-assistant/assistant-registry-seed.sql
+ -- LF SHA256: 8077c012a88e7bdb2e44cb85073e67bbd291ff9ad54d60e9dc537651b3088f27
+ EXECUTE $unified_source_1$-- REVIEW CANDIDATE ONLY. Generated from Kids catalogue and Technical catalogue. Policies stay disabled.
 
 INSERT INTO public.card_assistant_policy(area,card_id) VALUES ('kids','level-1'),('kids','level-2'),('kids','level-3'),('technical','furniture');
 INSERT INTO public.card_assistant_steps(area,card_id,step_id,station_id,source_key,preview,kids_level,kids_lesson,technical_lesson) VALUES
@@ -341,12 +412,12 @@ INSERT INTO public.card_assistant_steps(area,card_id,step_id,station_id,source_k
 ('technical','furniture','M20-L04','M20','M20-L04',false,NULL,NULL,'M20-L04'),
 ('technical','furniture','M21-L01','M21','M21-L01',false,NULL,NULL,'M21-L01'),
 ('technical','furniture','M21-L02','M21','M21-L02',false,NULL,NULL,'M21-L02'),
-('technical','furniture','M21-L03','M21','M21-L03',false,NULL,NULL,'M21-L03');
+('technical','furniture','M21-L03','M21','M21-L03',false,NULL,NULL,'M21-L03');$unified_source_1$;
 
 
--- Source: scripts/rag/incremental-embedding-reuse-candidate.sql
--- LF SHA256: 9bd1942885376ab75b56525c602fa60c47550fcc6c27123d89146962534eaa7f
--- REVIEW ONLY. Ship with the native executor change; no provider or activation calls.
+ -- Source: scripts/rag/incremental-embedding-reuse-candidate.sql
+ -- LF SHA256: 9bd1942885376ab75b56525c602fa60c47550fcc6c27123d89146962534eaa7f
+ EXECUTE $unified_source_2$-- REVIEW ONLY. Ship with the native executor change; no provider or activation calls.
 -- Completed historical import sessions and their frozen limits remain untouched.
 
 CREATE FUNCTION public.rag_reusable_embeddings(p_requests jsonb)
@@ -394,12 +465,12 @@ BEGIN
 END;
 $$;
 REVOKE ALL ON FUNCTION public.rag_reusable_embeddings(jsonb) FROM PUBLIC,anon,authenticated;
-GRANT EXECUTE ON FUNCTION public.rag_reusable_embeddings(jsonb) TO service_role;
+GRANT EXECUTE ON FUNCTION public.rag_reusable_embeddings(jsonb) TO service_role;$unified_source_2$;
 
 
--- Source: scripts/rag/current-release-candidate.sql
--- LF SHA256: eab702eebc2dd2d70758bc923fb8300be32f1825972769c3432b1963cf6ca9c4
--- Candidate only: apply with the matching server/runtime release after review.
+ -- Source: scripts/rag/current-release-candidate.sql
+ -- LF SHA256: eab702eebc2dd2d70758bc923fb8300be32f1825972769c3432b1963cf6ca9c4
+ EXECUTE $unified_source_3$-- Candidate only: apply with the matching server/runtime release after review.
 -- Historical import sessions, locked snapshots, and previous vectors are retained.
 
 CREATE TABLE public.rag_current_releases (
@@ -659,12 +730,12 @@ DO $$ DECLARE f record; BEGIN
   EXECUTE format('REVOKE ALL ON FUNCTION %s FROM PUBLIC,anon,authenticated',f.signature);
   EXECUTE format('GRANT EXECUTE ON FUNCTION %s TO service_role',f.signature);
  END LOOP;
-END $$;
+END $$;$unified_source_3$;
 
 
--- Source: scripts/academic-education/assistant-card-index-maintenance-candidate.sql
--- LF SHA256: 64f3f8b533d77b4b8054f68dfae5ee6ec31f6974d4734bed1bea1e84d525bb97
--- REVIEW ONLY. Apply with the matching application-server revision through the
+ -- Source: scripts/academic-education/assistant-card-index-maintenance-candidate.sql
+ -- LF SHA256: 64f3f8b533d77b4b8054f68dfae5ee6ec31f6974d4734bed1bea1e84d525bb97
+ EXECUTE $unified_source_4$-- REVIEW ONLY. Apply with the matching application-server revision through the
 -- existing central integration process. This file has not been executed.
 -- Runtime, review, purchase and per-card entitlement gates are unchanged.
 -- Legacy vectors have no model provenance: refresh them once before enabling
@@ -793,12 +864,12 @@ BEGIN
  RETURN n;
 END $$;
 REVOKE ALL ON FUNCTION public.academic_sync_chunks(text,jsonb,jsonb) FROM PUBLIC,anon,authenticated;
-GRANT EXECUTE ON FUNCTION public.academic_sync_chunks(text,jsonb,jsonb) TO service_role;
+GRANT EXECUTE ON FUNCTION public.academic_sync_chunks(text,jsonb,jsonb) TO service_role;$unified_source_4$;
 
 
--- Source: scripts/assistant/automatic-indexing-candidate.sql
--- LF SHA256: 4860f9473f85c74ef2bcdf01219ee3d3a2f26db82ce2be3974a11d5b6844c09a
--- Reviewed installation candidate. Disabled until explicit owner activation.
+ -- Source: scripts/assistant/automatic-indexing-candidate.sql
+ -- LF SHA256: 4860f9473f85c74ef2bcdf01219ee3d3a2f26db82ce2be3974a11d5b6844c09a
+ EXECUTE $unified_source_5$-- Reviewed installation candidate. Disabled until explicit owner activation.
 -- No provider calls, content imports, subscription grants or learner writes.
 
 CREATE TABLE public.assistant_auto_policy (
@@ -968,12 +1039,12 @@ DO $$ DECLARE f record; BEGIN
   EXECUTE format('REVOKE ALL ON FUNCTION %s FROM PUBLIC,anon,authenticated',f.signature);
   EXECUTE format('GRANT EXECUTE ON FUNCTION %s TO service_role',f.signature);
  END LOOP;
-END $$;
+END $$;$unified_source_5$;
 
 
--- Source: scripts/assistant/automatic-publication-candidate.sql
--- LF SHA256: 4073bb75beaaa55dc2e91ceae5f4cfbda8072ae1916f5aced9d0b581840b0eda
--- Install after automatic-indexing-candidate.sql and the reviewed native /
+ -- Source: scripts/assistant/automatic-publication-candidate.sql
+ -- LF SHA256: 4073bb75beaaa55dc2e91ceae5f4cfbda8072ae1916f5aced9d0b581840b0eda
+ EXECUTE $unified_source_6$-- Install after automatic-indexing-candidate.sql and the reviewed native /
 -- Academic provenance migrations. Does not itself enable any card or worker.
 
 CREATE FUNCTION public.assistant_auto_publish_card(p_job text,p_request uuid,p_lease uuid) RETURNS boolean
@@ -1070,12 +1141,12 @@ BEGIN
  RETURN true;
 END $$;
 REVOKE ALL ON FUNCTION public.assistant_auto_publish_card(text,uuid,uuid),public.assistant_auto_publish_academic(text,uuid,uuid) FROM PUBLIC,anon,authenticated;
-GRANT EXECUTE ON FUNCTION public.assistant_auto_publish_card(text,uuid,uuid),public.assistant_auto_publish_academic(text,uuid,uuid) TO service_role;
+GRANT EXECUTE ON FUNCTION public.assistant_auto_publish_card(text,uuid,uuid),public.assistant_auto_publish_academic(text,uuid,uuid) TO service_role;$unified_source_6$;
 
 
--- Source: scripts/assistant/automatic-source-events-candidate.sql
--- LF SHA256: a7700348715ede28c7b58dc68087701be5b4d326846012455f0c5e33602d7757
--- Additive, nonproduction installation candidate. Install AFTER the existing
+ -- Source: scripts/assistant/automatic-source-events-candidate.sql
+ -- LF SHA256: a7700348715ede28c7b58dc68087701be5b4d326846012455f0c5e33602d7757
+ EXECUTE $unified_source_7$-- Additive, nonproduction installation candidate. Install AFTER the existing
 -- automatic indexing/publication candidates. No worker/policy is enabled here.
 -- This is a metadata outbox into the EXISTING queue, not another index engine.
 
@@ -1229,12 +1300,64 @@ GRANT SELECT ON public.assistant_auto_intake_status TO service_role;
 REVOKE ALL ON FUNCTION public.assistant_auto_source_revisions(jsonb),public.assistant_auto_link_sources(jsonb),
  public.assistant_auto_receipt(text,uuid,integer,jsonb) FROM PUBLIC,anon,authenticated;
 GRANT EXECUTE ON FUNCTION public.assistant_auto_source_revisions(jsonb),public.assistant_auto_link_sources(jsonb),
- public.assistant_auto_receipt(text,uuid,integer,jsonb) TO service_role;
+ public.assistant_auto_receipt(text,uuid,integer,jsonb) TO service_role;$unified_source_7$;
 
+ END IF;
+ EXECUTE $unified_catalog$SELECT coalesce(jsonb_object_agg(object_key,sha256),'{}'::jsonb) FROM (-- Schema and non-learner registry/policy fingerprints. Run with search_path=public,extensions.
+-- Reads three reviewed registry/policy rowsets; no learner data, job/receipt rows,
+-- vectors, provider requests, migration stamps or secrets are read.
+WITH relations AS (
+ SELECT c.*,n.nspname FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+ WHERE n.nspname='public' AND (c.relname LIKE 'card_assistant_%' OR c.relname LIKE 'assistant_auto_%'
+  OR c.relname LIKE 'rag_current_%' OR c.relname='academic_rag_chunks')
+ AND c.relkind IN ('r','p','v','S')
+), objects AS (
+ SELECT 'function:'||n.nspname||'.'||p.proname||'('||pg_catalog.pg_get_function_identity_arguments(p.oid)||')' AS object_key,
+ jsonb_build_object('definition',pg_catalog.pg_get_functiondef(p.oid),'owner',pg_catalog.pg_get_userbyid(p.proowner),
+  'acl',coalesce(p.proacl,pg_catalog.acldefault('f',p.proowner))::text) AS definition
+ FROM pg_catalog.pg_proc p JOIN pg_catalog.pg_namespace n ON n.oid=p.pronamespace
+ WHERE n.nspname='public' AND (p.proname LIKE 'card_assistant_%' OR p.proname LIKE 'assistant_auto_%'
+  OR p.proname LIKE 'rag_current_%' OR p.proname IN ('rag_reusable_embeddings','academic_sync_chunks','lc09_advance_deletion')
+  OR p.prosrc LIKE '%LC09_UNCLASSIFIED_USER_TABLE%')
+ UNION ALL
+ SELECT 'relation:'||c.nspname||'.'||c.relname,jsonb_build_object(
+  'kind',c.relkind,'owner',pg_catalog.pg_get_userbyid(c.relowner),'acl',coalesce(c.relacl,pg_catalog.acldefault(CASE WHEN c.relkind='S' THEN 'S'::"char" ELSE 'r'::"char" END,c.relowner))::text,
+  'rls',c.relrowsecurity,'force_rls',c.relforcerowsecurity,'options',c.reloptions,'replica_identity',c.relreplident,
+  'columns',(SELECT coalesce(jsonb_agg(jsonb_build_object('name',a.attname,'type',pg_catalog.format_type(a.atttypid,a.atttypmod),
+   'not_null',a.attnotnull,'default',pg_catalog.pg_get_expr(d.adbin,d.adrelid),'identity',a.attidentity,'generated',a.attgenerated,
+   'collation',CASE WHEN a.attcollation=0 THEN NULL ELSE a.attcollation::regcollation::text END) ORDER BY a.attnum),'[]'::jsonb)
+   FROM pg_catalog.pg_attribute a LEFT JOIN pg_catalog.pg_attrdef d ON d.adrelid=a.attrelid AND d.adnum=a.attnum
+   WHERE a.attrelid=c.oid AND a.attnum>0 AND NOT a.attisdropped),
+  'constraints',(SELECT coalesce(jsonb_agg(jsonb_build_object('name',k.conname,'definition',pg_catalog.pg_get_constraintdef(k.oid),
+   'validated',k.convalidated) ORDER BY k.conname),'[]'::jsonb) FROM pg_catalog.pg_constraint k WHERE k.conrelid=c.oid),
+  'indexes',(SELECT coalesce(jsonb_agg(jsonb_build_object('definition',pg_catalog.pg_get_indexdef(i.indexrelid),'valid',i.indisvalid,
+   'ready',i.indisready) ORDER BY i.indexrelid::regclass::text),'[]'::jsonb) FROM pg_catalog.pg_index i WHERE i.indrelid=c.oid),
+  'policies',(SELECT coalesce(jsonb_agg(jsonb_build_object('name',p.polname,'permissive',p.polpermissive,'command',p.polcmd,
+   'roles',(SELECT jsonb_agg(CASE WHEN role_oid=0 THEN 'PUBLIC' ELSE pg_catalog.pg_get_userbyid(role_oid) END ORDER BY role_oid)
+     FROM unnest(p.polroles) role_oid),'using',pg_catalog.pg_get_expr(p.polqual,p.polrelid),'check',pg_catalog.pg_get_expr(p.polwithcheck,p.polrelid)) ORDER BY p.polname),'[]'::jsonb)
+   FROM pg_catalog.pg_policy p WHERE p.polrelid=c.oid),
+  'view',CASE WHEN c.relkind='v' THEN pg_catalog.pg_get_viewdef(c.oid,true) ELSE NULL END,
+  'sequence',(SELECT jsonb_build_object('start',s.seqstart,'increment',s.seqincrement,'max',s.seqmax,'min',s.seqmin,'cache',s.seqcache,'cycle',s.seqcycle)
+   FROM pg_catalog.pg_sequence s WHERE s.seqrelid=c.oid))
+ FROM relations c
+ UNION ALL
+ SELECT 'trigger:'||n.nspname||'.'||c.relname||'.'||t.tgname,jsonb_build_object('definition',pg_catalog.pg_get_triggerdef(t.oid,true),'enabled',t.tgenabled)
+ FROM pg_catalog.pg_trigger t JOIN pg_catalog.pg_class c ON c.oid=t.tgrelid JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+ WHERE NOT t.tgisinternal AND n.nspname='public' AND (t.tgname LIKE 'assistant_auto_%' OR c.oid IN (SELECT oid FROM relations))
+ UNION ALL
+ SELECT 'registry:public.card_assistant_steps',jsonb_build_object('rows',coalesce(jsonb_agg(to_jsonb(s) ORDER BY area,card_id,step_id),'[]'::jsonb)) FROM public.card_assistant_steps s
+ UNION ALL
+ SELECT 'registry:public.card_assistant_policy',jsonb_build_object('rows',coalesce(jsonb_agg(to_jsonb(p) ORDER BY area,card_id),'[]'::jsonb)) FROM public.card_assistant_policy p
+ UNION ALL
+ SELECT 'registry:public.assistant_auto_policy',jsonb_build_object('rows',coalesce(jsonb_agg(to_jsonb(p) ORDER BY singleton),'[]'::jsonb)) FROM public.assistant_auto_policy p
+)
+SELECT object_key,definition,encode(sha256(convert_to(definition::text,'UTF8')),'hex') AS sha256
+FROM objects ORDER BY object_key) reviewed_objects$unified_catalog$ INTO actual;
+ preserved:=actual;
 
--- Source: scripts/free-access/free-access-candidate.sql
--- LF SHA256: 9a30f203d8e5b9f5fe47954493bb9cc672c415ca2512eab93bbf1e72459e9bc8
--- Review/rehearsal candidate, applied only to disposable test databases here.
+ -- Source: scripts/free-access/free-access-candidate.sql
+ -- LF SHA256: 9a30f203d8e5b9f5fe47954493bb9cc672c415ca2512eab93bbf1e72459e9bc8
+ EXECUTE $unified_source_8$-- Review/rehearsal candidate, applied only to disposable test databases here.
 -- No automatic trial, per-user grant, plan upgrade, cron or payment mutation.
 
 CREATE TABLE billing.free_access_windows (
@@ -1455,6 +1578,57 @@ REVOKE ALL ON FUNCTION billing.free_access_targets(),billing.free_access_has(uui
  billing.free_window_previous_academic_access(text,text,text),billing.free_window_previous_evaluate_access(uuid,text,text),
  billing.free_window_previous_technical_access(text),
  billing.free_window_previous_academic_command(text,text,text,text,jsonb),billing.free_window_previous_technical_command(text,text,text,jsonb),
- billing.free_window_previous_kids_status(),billing.free_window_tag_delivery(jsonb,text) FROM PUBLIC,anon,authenticated,service_role;
+ billing.free_window_previous_kids_status(),billing.free_window_tag_delivery(jsonb,text) FROM PUBLIC,anon,authenticated,service_role;$unified_source_8$;
 
-COMMIT;
+ EXECUTE $unified_catalog$SELECT coalesce(jsonb_object_agg(object_key,sha256),'{}'::jsonb) FROM (-- Schema and non-learner registry/policy fingerprints. Run with search_path=public,extensions.
+-- Reads three reviewed registry/policy rowsets; no learner data, job/receipt rows,
+-- vectors, provider requests, migration stamps or secrets are read.
+WITH relations AS (
+ SELECT c.*,n.nspname FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+ WHERE n.nspname='public' AND (c.relname LIKE 'card_assistant_%' OR c.relname LIKE 'assistant_auto_%'
+  OR c.relname LIKE 'rag_current_%' OR c.relname='academic_rag_chunks')
+ AND c.relkind IN ('r','p','v','S')
+), objects AS (
+ SELECT 'function:'||n.nspname||'.'||p.proname||'('||pg_catalog.pg_get_function_identity_arguments(p.oid)||')' AS object_key,
+ jsonb_build_object('definition',pg_catalog.pg_get_functiondef(p.oid),'owner',pg_catalog.pg_get_userbyid(p.proowner),
+  'acl',coalesce(p.proacl,pg_catalog.acldefault('f',p.proowner))::text) AS definition
+ FROM pg_catalog.pg_proc p JOIN pg_catalog.pg_namespace n ON n.oid=p.pronamespace
+ WHERE n.nspname='public' AND (p.proname LIKE 'card_assistant_%' OR p.proname LIKE 'assistant_auto_%'
+  OR p.proname LIKE 'rag_current_%' OR p.proname IN ('rag_reusable_embeddings','academic_sync_chunks','lc09_advance_deletion')
+  OR p.prosrc LIKE '%LC09_UNCLASSIFIED_USER_TABLE%')
+ UNION ALL
+ SELECT 'relation:'||c.nspname||'.'||c.relname,jsonb_build_object(
+  'kind',c.relkind,'owner',pg_catalog.pg_get_userbyid(c.relowner),'acl',coalesce(c.relacl,pg_catalog.acldefault(CASE WHEN c.relkind='S' THEN 'S'::"char" ELSE 'r'::"char" END,c.relowner))::text,
+  'rls',c.relrowsecurity,'force_rls',c.relforcerowsecurity,'options',c.reloptions,'replica_identity',c.relreplident,
+  'columns',(SELECT coalesce(jsonb_agg(jsonb_build_object('name',a.attname,'type',pg_catalog.format_type(a.atttypid,a.atttypmod),
+   'not_null',a.attnotnull,'default',pg_catalog.pg_get_expr(d.adbin,d.adrelid),'identity',a.attidentity,'generated',a.attgenerated,
+   'collation',CASE WHEN a.attcollation=0 THEN NULL ELSE a.attcollation::regcollation::text END) ORDER BY a.attnum),'[]'::jsonb)
+   FROM pg_catalog.pg_attribute a LEFT JOIN pg_catalog.pg_attrdef d ON d.adrelid=a.attrelid AND d.adnum=a.attnum
+   WHERE a.attrelid=c.oid AND a.attnum>0 AND NOT a.attisdropped),
+  'constraints',(SELECT coalesce(jsonb_agg(jsonb_build_object('name',k.conname,'definition',pg_catalog.pg_get_constraintdef(k.oid),
+   'validated',k.convalidated) ORDER BY k.conname),'[]'::jsonb) FROM pg_catalog.pg_constraint k WHERE k.conrelid=c.oid),
+  'indexes',(SELECT coalesce(jsonb_agg(jsonb_build_object('definition',pg_catalog.pg_get_indexdef(i.indexrelid),'valid',i.indisvalid,
+   'ready',i.indisready) ORDER BY i.indexrelid::regclass::text),'[]'::jsonb) FROM pg_catalog.pg_index i WHERE i.indrelid=c.oid),
+  'policies',(SELECT coalesce(jsonb_agg(jsonb_build_object('name',p.polname,'permissive',p.polpermissive,'command',p.polcmd,
+   'roles',(SELECT jsonb_agg(CASE WHEN role_oid=0 THEN 'PUBLIC' ELSE pg_catalog.pg_get_userbyid(role_oid) END ORDER BY role_oid)
+     FROM unnest(p.polroles) role_oid),'using',pg_catalog.pg_get_expr(p.polqual,p.polrelid),'check',pg_catalog.pg_get_expr(p.polwithcheck,p.polrelid)) ORDER BY p.polname),'[]'::jsonb)
+   FROM pg_catalog.pg_policy p WHERE p.polrelid=c.oid),
+  'view',CASE WHEN c.relkind='v' THEN pg_catalog.pg_get_viewdef(c.oid,true) ELSE NULL END,
+  'sequence',(SELECT jsonb_build_object('start',s.seqstart,'increment',s.seqincrement,'max',s.seqmax,'min',s.seqmin,'cache',s.seqcache,'cycle',s.seqcycle)
+   FROM pg_catalog.pg_sequence s WHERE s.seqrelid=c.oid))
+ FROM relations c
+ UNION ALL
+ SELECT 'trigger:'||n.nspname||'.'||c.relname||'.'||t.tgname,jsonb_build_object('definition',pg_catalog.pg_get_triggerdef(t.oid,true),'enabled',t.tgenabled)
+ FROM pg_catalog.pg_trigger t JOIN pg_catalog.pg_class c ON c.oid=t.tgrelid JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+ WHERE NOT t.tgisinternal AND n.nspname='public' AND (t.tgname LIKE 'assistant_auto_%' OR c.oid IN (SELECT oid FROM relations))
+ UNION ALL
+ SELECT 'registry:public.card_assistant_steps',jsonb_build_object('rows',coalesce(jsonb_agg(to_jsonb(s) ORDER BY area,card_id,step_id),'[]'::jsonb)) FROM public.card_assistant_steps s
+ UNION ALL
+ SELECT 'registry:public.card_assistant_policy',jsonb_build_object('rows',coalesce(jsonb_agg(to_jsonb(p) ORDER BY area,card_id),'[]'::jsonb)) FROM public.card_assistant_policy p
+ UNION ALL
+ SELECT 'registry:public.assistant_auto_policy',jsonb_build_object('rows',coalesce(jsonb_agg(to_jsonb(p) ORDER BY singleton),'[]'::jsonb)) FROM public.assistant_auto_policy p
+)
+SELECT object_key,definition,encode(sha256(convert_to(definition::text,'UTF8')),'hex') AS sha256
+FROM objects ORDER BY object_key) reviewed_objects$unified_catalog$ INTO actual;
+ IF actual IS DISTINCT FROM preserved THEN RAISE EXCEPTION 'UNIFIED_OPERATIONAL_STATE_CHANGED'; END IF;
+END $unified_reconciliation$;
