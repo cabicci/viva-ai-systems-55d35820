@@ -5,8 +5,11 @@ import { screen, waitFor } from "@testing-library/react";
 import { renderLocalizedLesson } from "@/lib/__tests__/locale-test-utils";
 import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
 
+const authFixture = vi.hoisted(() => ({ generation: { value: 0 }, continuity: {} }));
 vi.mock("@/lib/auth-context", () => ({
-  useAuth: () => ({ user: { id: "user-1" }, loading: false }),
+  useAuth: () => ({ user: { id: "user-1" }, loading: false,
+    authGeneration: authFixture.generation, authContinuity: authFixture.continuity,
+    isAuthGenerationCurrent: (generation: unknown) => generation === authFixture.generation }),
 }));
 
 // This renderer fixture has no backend session. Saved-history behavior is
