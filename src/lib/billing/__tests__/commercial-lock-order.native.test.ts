@@ -1,6 +1,6 @@
 // @vitest-environment node
 import { readFileSync } from "node:fs";
-import { randomUUID } from "node:crypto";
+import { createHash, randomUUID } from "node:crypto";
 import postgres from "postgres";
 import { PGlite } from "@electric-sql/pglite";
 import { describe, expect, it } from "vitest";
@@ -48,6 +48,9 @@ async function isolated() {
 
 describe("guarded family-first commercial lock repair, isolated SQL", () => {
   it("preserves all original locks, owner, security settings and ACL", async () => {
+    expect(createHash("sha256").update(repair).digest("hex")).toBe(
+      "a0b070ff1c5a696f70586081a1b5d3ff6deb67d87db06551478c94ddf591a37e",
+    );
     const db = await isolated();
     try {
       const before = (await db.query<Metadata>(metadata)).rows[0];
