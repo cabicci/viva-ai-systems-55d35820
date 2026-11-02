@@ -150,8 +150,8 @@ BEGIN
  IF jsonb_typeof(p_data) IS DISTINCT FROM 'object' OR
   p_data-ARRAY['kind','area','course','child_id','wallet_scope','code','phone','method','key']<>'{}'::jsonb
  THEN RAISE EXCEPTION 'COMMERCIAL_INVALID_SELECTION'; END IF;
- email:=billing.commerce_assert_identity(u);
  PERFORM billing.commercial_lock(u);
+ email:=billing.commerce_assert_identity(u);
  IF p_action='one_time_quote' THEN RETURN billing.commercial_manual_quote(u,p_data); END IF;
  k:=(p_data->>'key')::uuid;
  IF k IS NULL THEN RAISE EXCEPTION 'COMMERCIAL_REQUEST_ID_INVALID'; END IF;
