@@ -11,7 +11,9 @@ import {
 
 const mocks = vi.hoisted(() => ({
   inserts: [] as Array<Record<string, unknown>>,
-  insertError: null as null | { message: string },
+  insertError: null as null | { message: string; code?: string },
+  priorRows: [] as Array<Record<string, unknown> | null>,
+  rpc: vi.fn(async () => ({ data: true, error: null })),
   from: vi.fn(),
   middleware: [] as unknown[],
   authBoundary: { name: "requireSupabaseAuth" },
@@ -61,6 +63,8 @@ function buildQuery() {
     return query;
   });
   query.select = vi.fn(() => query);
+  query.eq = vi.fn(() => query);
+  query.maybeSingle = vi.fn(async () => ({ data: mocks.priorRows.shift() ?? null, error: null }));
   query.single = vi.fn(async () =>
     mocks.insertError
       ? { data: null, error: mocks.insertError }
@@ -75,6 +79,7 @@ function buildQuery() {
 vi.mock("@/integrations/supabase/client.server", () => ({
   supabaseAdmin: {
     from: mocks.from,
+    rpc: mocks.rpc,
   },
 }));
 
@@ -120,10 +125,31 @@ beforeEach(() => {
   vi.clearAllMocks();
   mocks.inserts.length = 0;
   mocks.insertError = null;
+  mocks.priorRows.length = 0;
   mocks.from.mockImplementation(() => buildQuery());
 });
 
 describe("submitQuizAttempt authority boundary", () => {
+  it("replays a persisted receipt without changing its original grade or creating another attempt", async () => {
+    const question = await loadRealQuestion("ar-EG"); const id = "11111111-1111-4111-8111-111111111111";
+    mocks.priorRows.push({ id, user_id: "user-1", lesson_id: requestLessonId("ar-EG"), question_id: question.id, selected_index: question.correctIndex,
+      locale: "ar-EG", is_correct: false, bloom_level: "apply" });
+    const result = await callSubmit({ context: { userId: "user-1" }, data: { locale: "ar-EG", lessonId: requestLessonId("ar-EG"), questionId: question.id, selectedIndex: question.correctIndex, requestId: id } });
+    expect(result).toEqual({ attemptId: id, isCorrect: false, bloomLevel: "apply" });
+    expect(mocks.inserts).toHaveLength(0); expect(mocks.rpc).not.toHaveBeenCalled();
+  });
+  it("rejects reuse of an attempt identity with a different answer", async () => {
+    const question = await loadRealQuestion("ar-EG"); const id = "11111111-1111-4111-8111-111111111111";
+    mocks.priorRows.push({ id, user_id: "user-1", lesson_id: requestLessonId("ar-EG"), question_id: question.id, selected_index: 99, locale: "ar-EG" });
+    await expect(callSubmit({ context: { userId: "user-1" }, data: { locale: "ar-EG", lessonId: requestLessonId("ar-EG"), questionId: question.id, selectedIndex: question.correctIndex, requestId: id } })).rejects.toThrow("request mismatch");
+    expect(mocks.inserts).toHaveLength(0);
+  });
+  it("archives the canonical content and records its locale/version for new idempotent attempts", async () => {
+    const question = await loadRealQuestion("ar-EG"); const id = "11111111-1111-4111-8111-111111111111";
+    await callSubmit({ context: { userId: "user-1" }, data: { locale: "ar-EG", lessonId: requestLessonId("ar-EG"), questionId: question.id, selectedIndex: question.correctIndex, requestId: id } });
+    expect(mocks.rpc).toHaveBeenCalledWith("store_learning_content_version", expect.objectContaining({ p_user: "user-1", p_locale: "ar-EG", p_version: expect.stringMatching(/^[a-f0-9]{64}$/) }));
+    expect(mocks.inserts[0]).toMatchObject({ id, locale: "ar-EG", content_version: expect.stringMatching(/^[a-f0-9]{64}$/), source_snapshot: expect.objectContaining({ locale: "ar-EG" }) });
+  });
   it.each(["ar-EG", "ar-MSA", "ar-Gulf", "en"] as const)(
     "resolves the real %s question and persists derived truth",
     async (locale) => {

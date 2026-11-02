@@ -2,6 +2,8 @@ import type { LearningLine } from "@/lib/learning-lines";
 import type { SupportedLocale } from "@/lib/locale/types";
 import { useRecordJourneyVisit } from "@/lib/journey/client";
 import { journeyCopy } from "@/lib/journey/copy";
+import { LearningLessonNotes } from "./LearningLessonNotes";
+import { LearningReadingPosition } from "./LearningReadingPosition";
 export function JourneyVisitRecorder({
   line,
   course,
@@ -17,12 +19,12 @@ export function JourneyVisitRecorder({
 }) {
   const { failed, retry } = useRecordJourneyVisit(line, course, lesson, locale, true, profile);
   const c = journeyCopy(locale);
-  return failed ? (
+  return <>{failed ? (
     <p role="status" className="my-3 text-sm text-muted-foreground">
       {c.bookmarkError}{" "}
       <button className="underline" onClick={retry}>
         {c.retry}
       </button>
     </p>
-  ) : null;
+  ) : null}<LearningReadingPosition scope={{ area: line, course, lesson, profileId: profile }} /><LearningLessonNotes scope={{ area: line, course, lesson, profileId: profile }} /></>;
 }

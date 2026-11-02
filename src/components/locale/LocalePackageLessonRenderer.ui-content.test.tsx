@@ -1,10 +1,7 @@
 // NEW focused r61 functional cases; actual renderer is a qualified presentation boundary.
 import type * as ReactTypes from "react";
 import type { SupportedLocale } from "@/lib/locale/types";
-import type {
-  LessonPackageLocale,
-  LocalizedLessonPackage,
-} from "@/lib/locale-lessons/types";
+import type { LessonPackageLocale, LocalizedLessonPackage } from "@/lib/locale-lessons/types";
 import type { IntroLessonContent } from "@/components/intro/intro-lesson-types";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
@@ -23,7 +20,12 @@ const sourceBoundary = vi.hoisted(() => {
     canonicalCalls,
     renders,
     observerEffects: [] as Array<{ phase: string; ui: SupportedLocale }>,
-    samples: [] as Array<{ phase: string; domText: string; rendererCalls: number; canonicalCalls: number }>,
+    samples: [] as Array<{
+      phase: string;
+      domText: string;
+      rendererCalls: number;
+      canonicalCalls: number;
+    }>,
     cookieCalls: 0,
     unexpectedResolverCalls: 0,
   };
@@ -68,8 +70,16 @@ vi.mock("@/components/intro/IntroLessonRenderer", async () => {
       const ui = useLocale();
       sourceBoundary.renders.push({ props, ui: ui.locale });
       React.useEffect(() => {
-        sourceBoundary.observerEffects.push({ phase: "presentation-observer-commit", ui: ui.locale });
-        return () => { sourceBoundary.observerEffects.push({ phase: "presentation-observer-cleanup", ui: ui.locale }); };
+        sourceBoundary.observerEffects.push({
+          phase: "presentation-observer-commit",
+          ui: ui.locale,
+        });
+        return () => {
+          sourceBoundary.observerEffects.push({
+            phase: "presentation-observer-cleanup",
+            ui: ui.locale,
+          });
+        };
       }, [props.content, ui.locale]);
       return (
         <section aria-label="unchanged renderer presentation seam">
@@ -220,8 +230,12 @@ const ownWindowRejection = (event: PromiseRejectionEvent) => {
 };
 let processListenersBefore = 0;
 function sample(phase: string) {
-  sourceBoundary.samples.push({ phase, domText: document.body.textContent ?? "",
-    rendererCalls: sourceBoundary.renders.length, canonicalCalls: sourceBoundary.canonicalCalls.length });
+  sourceBoundary.samples.push({
+    phase,
+    domText: document.body.textContent ?? "",
+    rendererCalls: sourceBoundary.renders.length,
+    canonicalCalls: sourceBoundary.canonicalCalls.length,
+  });
 }
 beforeEach(() => {
   sourceBoundary.available.clear();
@@ -251,18 +265,30 @@ afterEach((context) => {
     process.removeListener("unhandledRejection", ownRejection);
     window.removeEventListener("error", ownWindowError);
     window.removeEventListener("unhandledrejection", ownWindowRejection);
-    console.log("R61_ACTUAL_CASE_OBSERVATIONS " + JSON.stringify({
-      caseName: context.task.name,
-      node: { execPath: process.execPath, version: process.version, versions: process.versions },
-      rendered: sourceBoundary.renders,
-      observerEffects: sourceBoundary.observerEffects,
-      effectScope: "Only real React presentation-observer commits/cleanups; wrapper/provider internal effects are not counted",
-      samples: sourceBoundary.samples, canonicalCalls: sourceBoundary.canonicalCalls,
-      cookieCalls: sourceBoundary.cookieCalls, privateResolverCalls: sourceBoundary.unexpectedResolverCalls,
-      unhandled: ownUnhandled, processListenersBefore,
-      processListenersAfter: process.listenerCount("unhandledRejection"),
-      listenerScope: "Only own listeners added/removed; no suppression, preventDefault, reset or pre-existing listener removal"
-    }));
+    console.log(
+      "R61_ACTUAL_CASE_OBSERVATIONS " +
+        JSON.stringify({
+          caseName: context.task.name,
+          node: {
+            execPath: process.execPath,
+            version: process.version,
+            versions: process.versions,
+          },
+          rendered: sourceBoundary.renders,
+          observerEffects: sourceBoundary.observerEffects,
+          effectScope:
+            "Only real React presentation-observer commits/cleanups; wrapper/provider internal effects are not counted",
+          samples: sourceBoundary.samples,
+          canonicalCalls: sourceBoundary.canonicalCalls,
+          cookieCalls: sourceBoundary.cookieCalls,
+          privateResolverCalls: sourceBoundary.unexpectedResolverCalls,
+          unhandled: ownUnhandled,
+          processListenersBefore,
+          processListenersAfter: process.listenerCount("unhandledRejection"),
+          listenerScope:
+            "Only own listeners added/removed; no suppression, preventDefault, reset or pre-existing listener removal",
+        }),
+    );
   }
 });
 
@@ -277,26 +303,26 @@ const EXPECTED_UI = {
     "learn.loading.access": "جاري تحميل حالة الوصول للخطوة...",
     "mission.copy.cta": "انسخ خطوات المهمة",
     "mission.copy.done": "اتنسخت ✓",
-    "intro.mission.jumpCta": "روح للمهمة ↓"
+    "intro.mission.jumpCta": "روح للمهمة ↓",
   },
   "ar-MSA": {
     "learn.loading.access": "جارٍ تحميل حالة الوصول إلى الخطوة...",
     "mission.copy.cta": "انسخ خطوات المهمة",
     "mission.copy.done": "تم النسخ ✓",
-    "intro.mission.jumpCta": "انتقل إلى المهمة ↓"
+    "intro.mission.jumpCta": "انتقل إلى المهمة ↓",
   },
   "ar-Gulf": {
     "learn.loading.access": "جاري تحميل حالة الوصول للخطوة...",
     "mission.copy.cta": "انسخ خطوات المهمة",
     "mission.copy.done": "اننسخ ✓",
-    "intro.mission.jumpCta": "روح للمهمة ↓"
+    "intro.mission.jumpCta": "روح للمهمة ↓",
   },
-  "en": {
+  en: {
     "learn.loading.access": "Loading step access…",
     "mission.copy.cta": "Copy mission steps",
     "mission.copy.done": "Copied ✓",
-    "intro.mission.jumpCta": "Go to mission ↓"
-  }
+    "intro.mission.jumpCta": "Go to mission ↓",
+  },
 } satisfies Readonly<Record<SupportedLocale, Readonly<Record<UiChromeKey, string>>>>;
 
 const UI_MATERIAL_PAIRS: ReadonlyArray<{
@@ -333,9 +359,13 @@ describe("NEW functional outer UI / package material separation", () => {
       render(page(pkg, ui));
       await screen.findByText(`Observed child UI: ${ui}`);
       expect(screen.getByText(`Observed child direction: ${LOCALE_META[ui].dir}`)).toBeTruthy();
-      expect(screen.getByRole("button", { name: EXPECTED_UI[ui]["mission.copy.cta"] })).toBeTruthy();
+      expect(
+        screen.getByRole("button", { name: EXPECTED_UI[ui]["mission.copy.cta"] }),
+      ).toBeTruthy();
       expect(screen.getByText(EXPECTED_UI[ui]["mission.copy.done"])).toBeTruthy();
-      expect(screen.getByRole("link", { name: EXPECTED_UI[ui]["intro.mission.jumpCta"] })).toBeTruthy();
+      expect(
+        screen.getByRole("link", { name: EXPECTED_UI[ui]["intro.mission.jumpCta"] }),
+      ).toBeTruthy();
       sample("package-only-observed");
       expect(sourceBoundary.canonicalCalls).toHaveLength(0);
       const actual = lastRendered().props.content;
@@ -358,7 +388,9 @@ describe("NEW functional outer UI / package material separation", () => {
     expect(screen.getByText(EXPECTED_UI["ar-MSA"]["learn.loading.access"])).toBeTruthy();
     sample("before-canonical-resolution");
     const canonical = adaptLocalizedPackageToIntroContent(pkg, null);
-    await act(async () => { pending.resolve(canonical); });
+    await act(async () => {
+      pending.resolve(canonical);
+    });
     await screen.findByText("Observed child UI: ar-MSA");
     sample("ar-MSA-rendered");
     expect(sourceBoundary.canonicalCalls).toEqual([pkg.lessonId]);
@@ -368,7 +400,9 @@ describe("NEW functional outer UI / package material separation", () => {
       materialWithoutTwoChromeFields(expectedMaterial),
     );
     expectOriginalMaterial(pkg, actual);
-    expect(screen.getByRole("button", { name: EXPECTED_UI["ar-MSA"]["mission.copy.cta"] })).toBeTruthy();
+    expect(
+      screen.getByRole("button", { name: EXPECTED_UI["ar-MSA"]["mission.copy.cta"] }),
+    ).toBeTruthy();
   });
 
   it("resolved null canonical is package-only, not a new language fallback", async () => {
@@ -377,10 +411,14 @@ describe("NEW functional outer UI / package material separation", () => {
     sourceBoundary.available.add(pkg.lessonId);
     sourceBoundary.pending.set(pkg.lessonId, pending.promise);
     render(page(pkg, "en"));
-    await act(async () => { pending.resolve(null); });
+    await act(async () => {
+      pending.resolve(null);
+    });
     await screen.findByText("Observed child UI: en");
     expectOriginalMaterial(pkg, lastRendered().props.content);
-    expect(screen.getByRole("button", { name: EXPECTED_UI["en"]["mission.copy.cta"] })).toBeTruthy();
+    expect(
+      screen.getByRole("button", { name: EXPECTED_UI["en"]["mission.copy.cta"] }),
+    ).toBeTruthy();
   });
 
   it("same package UI switch updates both mission labels without reloading canonical", async () => {
@@ -391,16 +429,22 @@ describe("NEW functional outer UI / package material separation", () => {
     const view = render(page(pkg, "ar-EG"));
     sample("before-canonical-resolution");
     const canonical = adaptLocalizedPackageToIntroContent(pkg, null);
-    await act(async () => { pending.resolve(canonical); });
+    await act(async () => {
+      pending.resolve(canonical);
+    });
     await screen.findByText("Observed child UI: ar-EG");
     sample("before-same-package-UI-switch");
     const originalMaterial = materialWithoutTwoChromeFields(lastRendered().props.content);
     view.rerender(page(pkg, "en"));
     sample("after-UI-rerender");
     await screen.findByText("Observed child UI: en");
-    expect(screen.getByRole("button", { name: EXPECTED_UI["en"]["mission.copy.cta"] })).toBeTruthy();
+    expect(
+      screen.getByRole("button", { name: EXPECTED_UI["en"]["mission.copy.cta"] }),
+    ).toBeTruthy();
     expect(screen.getByText(EXPECTED_UI["en"]["mission.copy.done"])).toBeTruthy();
-    expect(screen.getByRole("link", { name: EXPECTED_UI["en"]["intro.mission.jumpCta"] })).toBeTruthy();
+    expect(
+      screen.getByRole("link", { name: EXPECTED_UI["en"]["intro.mission.jumpCta"] }),
+    ).toBeTruthy();
     sample("after-same-package-UI-switch");
     expect(materialWithoutTwoChromeFields(lastRendered().props.content)).toEqual(originalMaterial);
     expectOriginalMaterial(pkg, lastRendered().props.content);
@@ -444,7 +488,9 @@ describe("NEW functional outer UI / package material separation", () => {
       </LocaleProvider>,
     );
     await screen.findByText("Observed child UI: ar-Gulf");
-    expect(screen.getByRole("button", { name: EXPECTED_UI["ar-Gulf"]["mission.copy.cta"] })).toBeTruthy();
+    expect(
+      screen.getByRole("button", { name: EXPECTED_UI["ar-Gulf"]["mission.copy.cta"] }),
+    ).toBeTruthy();
     expect(screen.getByText(EXPECTED_UI["ar-Gulf"]["mission.copy.done"])).toBeTruthy();
     expectOriginalMaterial(pkg, lastRendered().props.content);
     // Manual non-null state is NOT seeded; public setter is deliberately uncalled.
@@ -460,9 +506,35 @@ describe("NEW functional outer UI / package material separation", () => {
     sample("before-explicit-unmount");
     view.unmount();
     sample("after-explicit-unmount-before-resolution");
-    await act(async () => { pending.resolve(adaptLocalizedPackageToIntroContent(pkg, null)); });
+    await act(async () => {
+      pending.resolve(adaptLocalizedPackageToIntroContent(pkg, null));
+    });
     sample("after-unmounted-canonical-resolution");
     expect(sourceBoundary.renders).toHaveLength(before);
     expect(sourceBoundary.canonicalCalls).toEqual([pkg.lessonId]);
+  });
+
+  it("does not render a new lesson using the preceding lesson's canonical content", async () => {
+    const first = syntheticPackage("en", "synthetic-a");
+    const second = syntheticPackage("en", "synthetic-b");
+    const firstPending = deferredCanonical();
+    const secondPending = deferredCanonical();
+    sourceBoundary.available.add(first.lessonId);
+    sourceBoundary.available.add(second.lessonId);
+    sourceBoundary.pending.set(first.lessonId, firstPending.promise);
+    sourceBoundary.pending.set(second.lessonId, secondPending.promise);
+    const view = render(page(first, "en"));
+    await act(async () => {
+      firstPending.resolve(adaptLocalizedPackageToIntroContent(first, null));
+    });
+    expect(lastRendered().props.lessonId).toBe(first.lessonId);
+    const priorRenders = sourceBoundary.renders.length;
+    view.rerender(page(second, "en"));
+    expect(screen.getByText(EXPECTED_UI.en["learn.loading.access"])).toBeTruthy();
+    expect(sourceBoundary.renders).toHaveLength(priorRenders);
+    await act(async () => {
+      secondPending.resolve(adaptLocalizedPackageToIntroContent(second, null));
+    });
+    expect(lastRendered().props.lessonId).toBe(second.lessonId);
   });
 });

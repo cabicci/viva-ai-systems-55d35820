@@ -156,6 +156,16 @@ beforeAll(async () => {
   await db.exec(sql("drizzle/migrations/0027_commercial_policy_20261102.sql"));
   await db.exec(sql("drizzle/migrations/0028_commercial_offer_policy.sql"));
   await db.exec(sql("drizzle/migrations/0030_unified_manual_purchase_rails.sql"));
+  // Rehearse the next learning layer on the installed commerce/privacy stack.
+  // The old fixture's minimal progress table omitted these learner columns.
+  await db.exec("ALTER TABLE public.lesson_progress ADD COLUMN status text DEFAULT 'not-started', ADD COLUMN updated_at timestamptz DEFAULT now()");
+  const notes = sql("supabase/migrations/20260509012347_6670908b-5c45-46ea-a953-2bdbb5d91eeb.sql");
+  await db.exec(notes.slice(notes.indexOf("-- Lesson notes per user")));
+  await db.exec(sql("supabase/migrations/20260511203303_c68e200d-6663-4d38-bec1-54fdfa31ab1f.sql"));
+  await db.exec(sql("supabase/migrations/20260512122051_b9cb43de-e8ea-4c33-99db-911192104d86.sql"));
+  await db.exec(sql("supabase/migrations/20260520201444_9de74f71-3ab1-4408-811f-c96177dfdf75.sql"));
+  await db.exec(sql("supabase/migrations/20261007072809_unified_learning_journey.sql"));
+  await db.exec(sql("drizzle/migrations/0031_student_learning_records.sql"));
 }, 60000);
 afterAll(async () => db?.close());
 beforeEach(async () => {

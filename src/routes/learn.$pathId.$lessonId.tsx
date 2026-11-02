@@ -42,7 +42,6 @@ import {
 } from "@/lib/mission-gate";
 import { Lock } from "lucide-react";
 import { logLearnerEvent } from "@/lib/learner-events";
-import { LessonNotes } from "@/components/learn/LessonNotes";
 import { DifficultyPrompt } from "@/components/learn/DifficultyPrompt";
 import { ReadingProgressBar } from "@/components/learn/ReadingProgressBar";
 import { CompletionReward } from "@/components/learn/CompletionReward";
@@ -599,7 +598,6 @@ function UnifiedLessonPage() {
         {isGateReady && gate.kind === "open" && (
           <>
             <JourneyVisitRecorder line="ai" course="ai" lesson={lesson.id} locale={locale} />
-            <LessonNotes lessonId={lesson.id} />
             <DifficultyPrompt
               lessonId={lesson.id}
               pathId={pathId}

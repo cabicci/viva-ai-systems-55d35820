@@ -6,7 +6,7 @@ import { PATHS } from "@/lib/curriculum-data";
 import { useLearnerContext } from "@/lib/learner-context";
 import { addBuildLog } from "@/lib/build-logs";
 import { syncMissionState } from "@/lib/cloud-sync";
-import { supabase } from "@/integrations/supabase/client";
+import { localLearningOwner, missionStorageKey } from "@/lib/local-learning-owner";
 
 /**
  * Mission Runtime — foundation layer.
@@ -63,22 +63,16 @@ const MODULE_INDEX: Record<string, string> = (() => {
 })();
 
 function extractSteps(mission: MissionBlock): string[] {
-  const candidates = [mission.intro, mission.prompt, mission.outro].filter(
-    Boolean,
-  ) as string[];
+  const candidates = [mission.intro, mission.prompt, mission.outro].filter(Boolean) as string[];
 
   for (const text of candidates) {
     const lines = text
       .split(/\r?\n/)
       .map((l) => l.trim())
       .filter(Boolean);
-    const bulletLines = lines.filter((l) =>
-      /^([-*•·▪️◦]|\d+[.)-])\s+/.test(l),
-    );
+    const bulletLines = lines.filter((l) => /^(?:[-*•·◦]|▪\uFE0F?|\d+[.)-])\s+/.test(l));
     if (bulletLines.length >= 2) {
-      return bulletLines.map((l) =>
-        l.replace(/^([-*•·▪️◦]|\d+[.)-])\s+/, "").trim(),
-      );
+      return bulletLines.map((l) => l.replace(/^(?:[-*•·◦]|▪\uFE0F?|\d+[.)-])\s+/, "").trim());
     }
   }
   return [];
@@ -87,10 +81,7 @@ function extractSteps(mission: MissionBlock): string[] {
 function buildMission(l: LessonContent): MissionRecord | null {
   if (!l.mission) return null;
   const m = l.mission;
-  const description = [m.intro, m.prompt, m.outro]
-    .filter(Boolean)
-    .join("\n\n")
-    .trim();
+  const description = [m.intro, m.prompt, m.outro].filter(Boolean).join("\n\n").trim();
   return {
     missionId: `${l.id}::mission`,
     lessonId: l.id,
@@ -103,9 +94,7 @@ function buildMission(l: LessonContent): MissionRecord | null {
   };
 }
 
-export function getMissionsFromLessons(
-  lessons: readonly LessonContent[],
-): MissionRecord[] {
+export function getMissionsFromLessons(lessons: readonly LessonContent[]): MissionRecord[] {
   const out: MissionRecord[] = [];
   for (const l of lessons) {
     const r = buildMission(l);
@@ -129,9 +118,7 @@ export function useMissionRuntime(): MissionRuntime {
   const content = useUnifiedLessonsContent();
 
   return useMemo<MissionRuntime>(() => {
-    const missions = content.lessons
-      ? getMissionsFromLessons(content.lessons)
-      : [];
+    const missions = content.lessons ? getMissionsFromLessons(content.lessons) : [];
     const liveMissions = missions;
     const currentLessonId = ctx.currentLesson?.id ?? null;
     const currentMission = currentLessonId
@@ -170,7 +157,6 @@ export interface MissionPersistedRecord {
   submission?: unknown;
 }
 
-const STORAGE_KEY_BASE = "mission-runtime:v1";
 const EVENT = "mission-runtime:changed";
 
 /**
@@ -179,39 +165,14 @@ const EVENT = "mission-runtime:changed";
  * listener below updates `currentUserId` and broadcasts the EVENT so any
  * live `useMissionState` re-syncs from the right bucket.
  */
-let currentUserId: string | null = null;
-let authListenerInitialized = false;
-
-function ensureAuthListener() {
-  if (authListenerInitialized || typeof window === "undefined") return;
-  authListenerInitialized = true;
-  supabase.auth.getSession().then(({ data }) => {
-    const next = data.session?.user?.id ?? null;
-    if (next !== currentUserId) {
-      currentUserId = next;
-      window.dispatchEvent(new Event(EVENT));
-    }
-  });
-  supabase.auth.onAuthStateChange((_event, session) => {
-    const next = session?.user?.id ?? null;
-    if (next !== currentUserId) {
-      currentUserId = next;
-      window.dispatchEvent(new Event(EVENT));
-    }
-  });
-}
-
 function storageKey(): string {
-  return currentUserId
-    ? `${STORAGE_KEY_BASE}:${currentUserId}`
-    : `${STORAGE_KEY_BASE}:anon`;
+  return missionStorageKey(localLearningOwner().userId);
 }
 
 type Store = Record<string, MissionPersistedRecord>;
 
 function safeRead(): Store {
   if (typeof window === "undefined") return {};
-  ensureAuthListener();
   try {
     const raw = window.localStorage.getItem(storageKey());
     if (!raw) return {};
@@ -224,7 +185,6 @@ function safeRead(): Store {
 
 function safeWrite(store: Store) {
   if (typeof window === "undefined") return;
-  ensureAuthListener();
   try {
     window.localStorage.setItem(storageKey(), JSON.stringify(store));
     window.dispatchEvent(new Event(EVENT));
@@ -240,25 +200,17 @@ export interface MissionContext {
   lessonId?: string | null;
 }
 
-export function getMissionState(
-  missionId: string,
-  ctx: MissionContext = {},
-): MissionState {
+export function getMissionState(missionId: string, ctx: MissionContext = {}): MissionState {
   const record = safeRead()[missionId];
   if (record) return record.state;
   return ctx.unlocked === false ? "locked" : "available";
 }
 
-export function getMissionPersistedRecord(
-  missionId: string,
-): MissionPersistedRecord | null {
+export function getMissionPersistedRecord(missionId: string): MissionPersistedRecord | null {
   return safeRead()[missionId] ?? null;
 }
 
-export function startMission(
-  missionId: string,
-  ctx: MissionContext = {},
-): MissionPersistedRecord {
+export function startMission(missionId: string, ctx: MissionContext = {}): MissionPersistedRecord {
   const store = safeRead();
   const existing = store[missionId];
   if (existing) return existing;
@@ -275,7 +227,7 @@ export function startMission(
     type: "mission_started",
     lessonId: record.lessonId ?? null,
   });
-  void syncMissionState(missionId, "started");
+  void syncMissionState(missionId, "started", localLearningOwner().userId);
   return record;
 }
 
@@ -302,7 +254,7 @@ export function completeMission(
     type: "mission_completed",
     lessonId: record.lessonId ?? null,
   });
-  void syncMissionState(missionId, "completed");
+  void syncMissionState(missionId, "completed", localLearningOwner().userId);
   return record;
 }
 
@@ -313,14 +265,9 @@ export function resetMission(missionId: string) {
   safeWrite(store);
 }
 
-export function useMissionState(
-  missionId: string,
-  ctx: MissionContext = {},
-): MissionState {
+export function useMissionState(missionId: string, ctx: MissionContext = {}): MissionState {
   const ctxKey = `${ctx.unlocked === false ? "L" : "U"}|${ctx.lessonId ?? ""}`;
-  const [state, setState] = React.useState<MissionState>(() =>
-    getMissionState(missionId, ctx),
-  );
+  const [state, setState] = React.useState<MissionState>(() => getMissionState(missionId, ctx));
 
   React.useEffect(() => {
     const sync = () => setState(getMissionState(missionId, ctx));

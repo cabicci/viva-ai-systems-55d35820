@@ -1,6 +1,7 @@
 import * as React from "react";
 import { getLesson } from "@/lib/lesson-catalog";
 import { syncBuildLog } from "@/lib/cloud-sync";
+import { buildLogStorageKey, localLearningOwner } from "@/lib/local-learning-owner";
 
 /**
  * Build Logs Runtime — foundation layer.
@@ -28,7 +29,6 @@ export interface BuildLog {
   shortDescription: string;
 }
 
-const STORAGE_KEY = "build-logs:v1";
 const EVENT = "build-logs:changed";
 
 /* ------------------------------ helpers ------------------------------ */
@@ -36,7 +36,9 @@ const EVENT = "build-logs:changed";
 function safeRead(): BuildLog[] {
   if (typeof window === "undefined") return [];
   try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
+    // Unattributed legacy storage is deliberately retained, never adopted by
+    // whichever account happens to sign in next.
+    const raw = window.localStorage.getItem(buildLogStorageKey(localLearningOwner().userId));
     if (!raw) return [];
     const parsed = JSON.parse(raw);
     return Array.isArray(parsed) ? (parsed as BuildLog[]) : [];
@@ -48,7 +50,10 @@ function safeRead(): BuildLog[] {
 function safeWrite(logs: BuildLog[]) {
   if (typeof window === "undefined") return;
   try {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(logs));
+    window.localStorage.setItem(
+      buildLogStorageKey(localLearningOwner().userId),
+      JSON.stringify(logs),
+    );
     window.dispatchEvent(new Event(EVENT));
   } catch {
     /* ignore */
@@ -92,8 +97,7 @@ export function addBuildLog(input: AddBuildLogInput): BuildLog {
     moduleId,
     type: input.type,
     title: input.title ?? lesson?.title ?? defaultTitle(input.type),
-    shortDescription:
-      input.shortDescription ?? defaultDescription(input.type, lesson?.title),
+    shortDescription: input.shortDescription ?? defaultDescription(input.type, lesson?.title),
   };
 
   const current = safeRead();
@@ -110,7 +114,7 @@ export function addBuildLog(input: AddBuildLogInput): BuildLog {
   const next = [log, ...current].slice(0, 500);
   safeWrite(next);
   // Best-effort cloud mirror; silent no-op when unauthenticated.
-  void syncBuildLog(log);
+  void syncBuildLog(log, undefined, localLearningOwner().userId);
   return log;
 }
 
@@ -161,6 +165,7 @@ export function useBuildLogs(): BuildLog[] {
 
   React.useEffect(() => {
     const sync = () => setLogs(safeRead());
+    sync();
     if (typeof window === "undefined") return;
     window.addEventListener(EVENT, sync);
     window.addEventListener("storage", sync);

@@ -43,6 +43,7 @@ export async function handleKidsLessonContent(
   let action: "lesson" | "quiz-check" = "lesson";
   let questionId = "";
   let selectedIndex = -1;
+  let requestId: string | undefined;
   try {
     if (Number(request.headers.get("Content-Length") ?? "0") > 2048) return error(request, 400);
     const body = await request.text();
@@ -53,6 +54,8 @@ export async function handleKidsLessonContent(
         action = "quiz-check";
         questionId = typeof parsed.questionId === "string" ? parsed.questionId : "";
         selectedIndex = parsed.selectedIndex;
+        requestId = parsed.requestId;
+        if (requestId !== undefined && (typeof requestId !== "string" || !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(requestId))) return error(request, 400);
         if (!/^[a-zA-Z0-9_-]{1,40}$/.test(questionId) || !Number.isInteger(selectedIndex)) {
           return error(request, 400);
         }
@@ -67,7 +70,8 @@ export async function handleKidsLessonContent(
     const user = await fetcher(new URL("/auth/v1/user", base), {
       headers: { Authorization: bearer, apikey: anon },
     });
-    if (!user.ok || !(await user.json())?.id) return error(request, 401);
+    const userId = user.ok ? (await user.json())?.id : null;
+    if (!userId) return error(request, 401);
     const gate = await fetcher(new URL("/rest/v1/rpc/kids_can_access_lesson", base), {
       method: "POST",
       headers: { Authorization: bearer, apikey: anon, "Content-Type": "application/json" },
@@ -122,11 +126,23 @@ export async function handleKidsLessonContent(
       locale: input.locale,
       sourceSha256: actual,
     };
-    const result =
+    let result =
       action === "quiz-check"
         ? checkQuiz(lesson, questionId, selectedIndex)
         : studentLesson(lesson);
     if (!result) return error(request, 503);
+    if (action === "quiz-check" && requestId) {
+      const saved = await fetcher(new URL("/rest/v1/rpc/record_learning_assessment", base), {
+        method: "POST", headers: { Authorization: `Bearer ${service}`, apikey: service, "Content-Type": "application/json" },
+        body: JSON.stringify({ p_user: userId, p_request: requestId, p_profile: input.profileId,
+          p_area: "kids", p_course: input.levelId, p_lesson: String(input.lessonNumber), p_locale: input.locale,
+          p_version: actual, p_source: lesson, p_submission: { questionId, selectedIndex }, p_result: result }),
+      });
+      if (!saved.ok) return error(request, 503);
+      const receipt = await saved.json();
+      if (!receipt || typeof receipt.correct !== "boolean" || typeof receipt.explanation !== "string") return error(request, 503);
+      result = receipt;
+    }
     return new Response(
       JSON.stringify(action === "lesson" ? { lesson: result, citation } : { ...result, citation }),
       {

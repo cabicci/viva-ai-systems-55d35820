@@ -6,6 +6,39 @@ import { useAuth } from "@/lib/auth-context";
 import { logLearnerEvent } from "@/lib/learner-events";
 import { useLocale } from "@/lib/locale/locale-context";
 import { getUiString, type UiStringKey } from "@/lib/locale/ui-strings";
+import type { SupportedLocale } from "@/lib/locale/types";
+import type { AuthGeneration } from "@/lib/auth-context";
+
+const SAVE_COPY: Record<
+  SupportedLocale,
+  { saving: string; saved: string; unconfirmed: string; retry: string }
+> = {
+  "ar-EG": {
+    saving: "بنحفظ إجابتك…",
+    saved: "إجابتك اتحفظت في سجلك.",
+    unconfirmed: "ما قدرناش نأكد حفظ إجابتك. اختيارك موجود؛ حاول الحفظ تاني.",
+    retry: "حاول حفظ الإجابة تاني",
+  },
+  "ar-MSA": {
+    saving: "جارٍ حفظ إجابتك…",
+    saved: "حُفظت إجابتك في سجلك.",
+    unconfirmed: "تعذر تأكيد حفظ إجابتك. اختيارك باقٍ؛ أعد محاولة الحفظ.",
+    retry: "إعادة حفظ الإجابة",
+  },
+  "ar-Gulf": {
+    saving: "نحفظ إجابتك…",
+    saved: "انحفظت إجابتك في سجلك.",
+    unconfirmed: "ما قدرنا نأكد حفظ إجابتك. اختيارك موجود؛ حاول الحفظ مرة ثانية.",
+    retry: "أعد حفظ الإجابة",
+  },
+  en: {
+    saving: "Saving your answer…",
+    saved: "Your answer is saved in your record.",
+    unconfirmed:
+      "We could not confirm your answer was saved. Your selection is retained; retry saving.",
+    retry: "Retry saving answer",
+  },
+};
 
 export type QuizItem = {
   id: string;
@@ -31,7 +64,7 @@ const BLOOM_KEY: Record<QuizItem["bloom"], UiStringKey> = {
 
 export function QuizBlock({ lessonId, items }: { lessonId: string; items: readonly QuizItem[] }) {
   const { locale } = useLocale();
-  const { user } = useAuth();
+  const { user, authGeneration } = useAuth();
   if (!items?.length) return null;
 
   const header =
@@ -50,7 +83,18 @@ export function QuizBlock({ lessonId, items }: { lessonId: string; items: readon
       <div className="space-y-3">
         {items.map((q) => (
           <QuizQuestion
-            key={JSON.stringify([user?.id ?? null, lessonId, q.id, locale])}
+            key={JSON.stringify([
+              user?.id ?? null,
+              authGeneration.value,
+              lessonId,
+              q.id,
+              locale,
+              q.question,
+              q.options,
+              q.correctIndex,
+              q.explanation,
+              q.bloom,
+            ])}
             lessonId={lessonId}
             item={q}
           />
@@ -62,27 +106,74 @@ export function QuizBlock({ lessonId, items }: { lessonId: string; items: readon
 
 function QuizQuestion({ lessonId, item }: { lessonId: string; item: QuizItem }) {
   const { locale } = useLocale();
-  const { user } = useAuth();
+  const auth = useAuth();
+  const { user, authGeneration, loading } = auth;
+  const liveAuth = React.useRef(auth);
+  liveAuth.current = auth;
   const submitAttempt = useServerFn(submitQuizAttempt);
   const [picked, setPicked] = React.useState<number | null>(null);
   const [revealed, setRevealed] = React.useState(false);
+  const [saveState, setSaveState] = React.useState<"idle" | "saving" | "saved" | "unconfirmed">(
+    "idle",
+  );
+  const [confirmedCorrect, setConfirmedCorrect] = React.useState<boolean | null>(null);
+  const ticket = React.useRef<{
+    requestId: string;
+    selected: number;
+    generation: AuthGeneration;
+    userId: string;
+    pending: boolean;
+  } | null>(null);
+  const mounted = React.useRef(false);
+  React.useLayoutEffect(() => {
+    mounted.current = true;
+    return () => {
+      mounted.current = false;
+      ticket.current = null;
+    };
+  }, []);
+  const copy = SAVE_COPY[locale];
   const submitted = picked !== null;
-  const isCorrect = picked === item.correctIndex;
+  const isCorrect = user ? confirmedCorrect : picked === item.correctIndex;
+  const resultVisible = submitted && (!user || saveState === "saved");
 
-  async function choose(i: number) {
-    if (submitted) return;
-    setPicked(i);
-    if (!user) return;
-    const [pathId, moduleId] = lessonId.split("-");
+  function current(expected: NonNullable<typeof ticket.current>) {
+    const live = liveAuth.current;
+    return (
+      mounted.current &&
+      ticket.current === expected &&
+      !live.loading &&
+      live.user?.id === expected.userId &&
+      live.authGeneration === expected.generation &&
+      live.isAuthGenerationCurrent(expected.generation)
+    );
+  }
+
+  async function save(expected: NonNullable<typeof ticket.current>) {
+    if (!current(expected) || expected.pending) return;
+    expected.pending = true;
+    setSaveState("saving");
     try {
       const result = await submitAttempt({
         data: {
           locale,
           lessonId,
           questionId: item.id,
-          selectedIndex: i,
+          selectedIndex: expected.selected,
+          requestId: expected.requestId,
         },
       });
+      if (!current(expected)) return;
+      if (
+        !result ||
+        typeof result.attemptId !== "string" ||
+        !result.attemptId ||
+        typeof result.isCorrect !== "boolean"
+      )
+        throw new Error("Unconfirmed quiz attempt");
+      setConfirmedCorrect(result.isCorrect);
+      setSaveState("saved");
+      const [pathId, moduleId] = lessonId.split("-");
       void logLearnerEvent({
         type: "quiz_attempted",
         pathId: pathId ?? null,
@@ -95,20 +186,32 @@ function QuizQuestion({ lessonId, item }: { lessonId: string; item: QuizItem }) 
         },
       });
     } catch {
-      void logLearnerEvent({
-        type: "quiz_attempted",
-        pathId: pathId ?? null,
-        moduleId: moduleId ?? null,
-        lessonId,
-        metadata: {
-          question_id: item.id,
-          bloom_level: item.bloom,
-        },
-      });
+      if (current(expected)) setSaveState("unconfirmed");
+    } finally {
+      expected.pending = false;
     }
   }
 
+  async function choose(i: number) {
+    if (submitted || ticket.current || loading) return;
+    setPicked(i);
+    if (!user) return;
+    const expected = {
+      requestId: crypto.randomUUID(),
+      selected: i,
+      generation: authGeneration,
+      userId: user.id,
+      pending: false,
+    };
+    ticket.current = expected;
+    await save(expected);
+  }
+
   function reset() {
+    if (saveState === "saving" || saveState === "unconfirmed") return;
+    ticket.current = null;
+    setSaveState("idle");
+    setConfirmedCorrect(null);
     setPicked(null);
     setRevealed(false);
   }
@@ -152,14 +255,15 @@ function QuizQuestion({ lessonId, item }: { lessonId: string; item: QuizItem }) 
         <ul className="space-y-2">
           {item.options.map((opt, i) => {
             const isPicked = picked === i;
-            const isAnswer = i === item.correctIndex;
+            const isAnswer =
+              resultVisible && (user ? isPicked && isCorrect === true : i === item.correctIndex);
             let cls =
               "w-full text-start rounded-lg border px-3 py-2 text-sm transition cursor-pointer";
             if (!submitted) {
               cls += " border-white/10 bg-white/[0.02] hover:border-accent/40";
             } else if (isAnswer) {
               cls += " border-emerald-400/40 bg-emerald-400/[0.08] text-emerald-200";
-            } else if (isPicked) {
+            } else if (isPicked && resultVisible && isCorrect === false) {
               cls += " border-red-400/40 bg-red-400/[0.08] text-red-200";
             } else {
               cls += " border-white/10 bg-white/[0.01] text-muted-foreground";
@@ -169,7 +273,7 @@ function QuizQuestion({ lessonId, item }: { lessonId: string; item: QuizItem }) 
                 <button
                   type="button"
                   onClick={() => choose(i)}
-                  disabled={submitted}
+                  disabled={submitted || loading}
                   className={cls}
                 >
                   <span className="flex items-center justify-between gap-2">
@@ -177,7 +281,7 @@ function QuizQuestion({ lessonId, item }: { lessonId: string; item: QuizItem }) 
                     {submitted && isAnswer && (
                       <CheckCircle2 className="h-4 w-4 text-emerald-300 shrink-0" />
                     )}
-                    {submitted && isPicked && !isAnswer && (
+                    {resultVisible && isPicked && isCorrect === false && (
                       <XCircle className="h-4 w-4 text-red-300 shrink-0" />
                     )}
                   </span>
@@ -188,12 +292,40 @@ function QuizQuestion({ lessonId, item }: { lessonId: string; item: QuizItem }) 
         </ul>
       )}
 
-      {submitted && (
+      {user && submitted && saveState !== "idle" && (
+        <div className="space-y-2 border-t border-accent/15 pt-3">
+          <p
+            role={saveState === "unconfirmed" ? "alert" : "status"}
+            aria-live="polite"
+            className="text-sm"
+          >
+            {saveState === "saving"
+              ? copy.saving
+              : saveState === "saved"
+                ? copy.saved
+                : copy.unconfirmed}
+          </p>
+          {saveState === "unconfirmed" && (
+            <button
+              type="button"
+              className="underline text-sm"
+              onClick={() => {
+                if (ticket.current) void save(ticket.current);
+              }}
+            >
+              {copy.retry}
+            </button>
+          )}
+        </div>
+      )}
+      {resultVisible && (
         <div className="space-y-2 border-t border-accent/15 pt-3">
           <p className={"text-xs font-mono " + (isCorrect ? "text-emerald-300" : "text-red-300")}>
             {getUiString(locale, isCorrect ? "intro.quiz.correct" : "intro.quiz.incorrect")}
           </p>
-          <p className="text-sm leading-relaxed text-muted-foreground">{item.explanation}</p>
+          {!user && (
+            <p className="text-sm leading-relaxed text-muted-foreground">{item.explanation}</p>
+          )}
           <button
             type="button"
             onClick={reset}

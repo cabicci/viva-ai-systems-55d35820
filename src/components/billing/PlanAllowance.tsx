@@ -1,6 +1,7 @@
 import { useLocale } from "@/lib/locale/locale-context";
 import { commercialCopy } from "@/lib/billing/commercial-copy";
 import { packageBenefits } from "@/lib/billing/package-benefits";
+import { learningCopy } from "@/lib/learning/copy";
 
 export function PlanAllowance({ family = false }: { family?: boolean }) {
   const { locale } = useLocale();
@@ -12,6 +13,7 @@ export function PlanAllowance({ family = false }: { family?: boolean }) {
         <li key={line}>{line}</li>
       ))}
       <li className="text-muted-foreground">{copy.renewal}</li>
+      <li>{learningCopy(locale).included}</li>
     </ul>
   );
 }

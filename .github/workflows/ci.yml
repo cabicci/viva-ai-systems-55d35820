@@ -55,6 +55,15 @@ jobs:
       - name: TypeScript check
         run: bunx tsc --noEmit
 
+      - name: Student learning records, report limits and recovery
+        run: >-
+          bunx vitest run
+          src/lib/learning
+          src/components/journey
+          src/lib/__tests__/local-learning-persistence.test.ts
+          src/components/site/CloudHydration.persistence.test.tsx
+          src/lib/kids/content-endpoint.test.ts
+
       - name: Mission answer restoration and quiz ownership (isolated clients)
         run: >-
           bunx vitest run

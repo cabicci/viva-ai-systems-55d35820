@@ -224,15 +224,15 @@ export function validateLocaleLeakScan(): ValidatorResult {
     errors.push(`QuizBlock.tsx contains banned hardcoded Arabic: "${hit}"`);
   }
 
-  const lessonNotesSource = readRepoFile("src/components/learn/LessonNotes.tsx");
-  if (!lessonNotesSource.includes("getUiString")) {
-    errors.push("LessonNotes.tsx must wire chrome through getUiString()");
+  const lessonNotesSource = readRepoFile("src/components/journey/LearningLessonNotes.tsx");
+  if (!lessonNotesSource.includes("learningCopy")) {
+    errors.push("LearningLessonNotes.tsx must wire chrome through learningCopy()");
   }
   if (lessonNotesSource.includes('dir="rtl"')) {
-    errors.push("LessonNotes.tsx must not use fixed dir=\"rtl\"");
+    errors.push("LearningLessonNotes.tsx must not use fixed dir=\"rtl\"");
   }
   for (const hit of containsAny(lessonNotesSource, LESSON_NOTES_BANNED_AR)) {
-    errors.push(`LessonNotes.tsx contains banned hardcoded Arabic: "${hit}"`);
+    errors.push(`LearningLessonNotes.tsx contains banned hardcoded Arabic: "${hit}"`);
   }
 
   const difficultySource = readRepoFile("src/components/learn/DifficultyPrompt.tsx");

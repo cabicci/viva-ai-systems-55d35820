@@ -7,6 +7,7 @@ const mocks = vi.hoisted(() => ({
   locale: "en",
   submit: vi.fn(),
   log: vi.fn(),
+  generation: { value: 0 },
 }));
 vi.mock("@tanstack/react-start", () => ({ useServerFn: (fn: unknown) => fn }));
 vi.mock("lucide-react", () =>
@@ -15,7 +16,14 @@ vi.mock("lucide-react", () =>
   ),
 );
 vi.mock("@/lib/quiz-attempt.functions", () => ({ submitQuizAttempt: mocks.submit }));
-vi.mock("@/lib/auth-context", () => ({ useAuth: () => ({ user: mocks.user }) }));
+vi.mock("@/lib/auth-context", () => ({
+  useAuth: () => ({
+    user: mocks.user,
+    loading: false,
+    authGeneration: mocks.generation,
+    isAuthGenerationCurrent: (generation: object) => generation === mocks.generation,
+  }),
+}));
 vi.mock("@/lib/learner-events", () => ({ logLearnerEvent: mocks.log }));
 vi.mock("@/lib/locale/locale-context", () => ({
   useLocale: () => ({ locale: mocks.locale }),
@@ -46,7 +54,12 @@ beforeEach(() => {
   vi.resetAllMocks();
   mocks.user = { id: "user-a" };
   mocks.locale = "en";
-  mocks.submit.mockResolvedValue({ isCorrect: true, bloomLevel: "apply" });
+  mocks.generation = { value: 0 };
+  mocks.submit.mockResolvedValue({
+    attemptId: "saved-attempt",
+    isCorrect: true,
+    bloomLevel: "apply",
+  });
   mocks.log.mockResolvedValue(undefined);
 });
 afterEach(cleanup);
@@ -56,7 +69,7 @@ describe("quiz owner identity", () => {
     const view = render(quiz());
     reveal();
     fireEvent.click(screen.getByRole("button", { name: "Second" }));
-    expect(screen.getByText(item.explanation)).toBeTruthy();
+    expect(screen.getByText(/Saving your answer/)).toBeTruthy();
     view.rerender(quiz("lesson-b"));
     expect(screen.queryByText(item.explanation)).toBeNull();
     expect(screen.queryByRole("button", { name: "Second" })).toBeNull();
@@ -81,6 +94,15 @@ describe("quiz owner identity", () => {
     mocks.user = { id: "user-b" };
     view.rerender(quiz());
     expect(screen.queryByRole("button", { name: "Second" })).toBeNull();
+  });
+
+  it("does not retain a selection across a new session for the same user", () => {
+    const view = render(quiz());
+    reveal();
+    fireEvent.click(screen.getByRole("button", { name: "First" }));
+    mocks.generation = { value: 1 };
+    view.rerender(quiz());
+    expect(screen.queryByRole("button", { name: "First" })).toBeNull();
   });
 
   it("keeps a pending previous attempt from changing the destination question", async () => {

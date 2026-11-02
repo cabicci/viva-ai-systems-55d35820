@@ -6,14 +6,7 @@ import { renderLocalizedLesson } from "@/lib/__tests__/locale-test-utils";
 import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
 
 vi.mock("@tanstack/react-router", () => ({
-  Link: ({
-    children,
-    to,
-    ...props
-  }: {
-    children: React.ReactNode;
-    to?: string;
-  }) => (
+  Link: ({ children, to, ...props }: { children: React.ReactNode; to?: string }) => (
     <a href={typeof to === "string" ? to : "#"} {...props}>
       {children}
     </a>
@@ -30,7 +23,7 @@ vi.mock("@/integrations/supabase/client", () => ({
 }));
 
 vi.mock("@/lib/auth-context", () => ({
-  useAuth: () => ({ user: null, loading: false }),
+  useAuth: () => ({ user: null, loading: false, authGeneration: { value: 0 } }),
 }));
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
@@ -51,16 +44,15 @@ describe("LocalePackageLessonRenderer live quiz", () => {
   it("renders interactive quiz options instead of read-only preview", async () => {
     const { container } = await renderLocalizedLesson(readPackage("en"));
     await waitFor(() => {
-      expect(
-        screen.getByRole("button", { name: /I've thought — show options/i }),
-      ).toBeTruthy();
+      expect(screen.getByRole("button", { name: /I've thought — show options/i })).toBeTruthy();
     });
     expect(container.querySelector('[data-preview-quiz="read-only"]')).toBeNull();
   });
 
   it("supports selection, scoring, explanation, and retry", async () => {
     const pkg = readPackage("en");
-    const quiz = pkg.sections.find((section) => section.quiz)?.quiz!;
+    const quiz = pkg.sections.find((section) => section.quiz)?.quiz;
+    if (!quiz) throw new Error("Quiz fixture is missing");
     await renderLocalizedLesson(pkg);
 
     const reveal = await screen.findByRole("button", {
@@ -68,9 +60,11 @@ describe("LocalePackageLessonRenderer live quiz", () => {
     });
     fireEvent.click(reveal);
 
-    const options = screen.getAllByRole("button").filter((button) =>
-      quiz.options.some((option) => button.textContent?.includes(option.slice(0, 20))),
-    );
+    const options = screen
+      .getAllByRole("button")
+      .filter((button) =>
+        quiz.options.some((option) => button.textContent?.includes(option.slice(0, 20))),
+      );
     expect(options.length).toBeGreaterThan(0);
 
     const wrongIndex = quiz.correctIndex === 0 ? 1 : 0;
@@ -87,9 +81,11 @@ describe("LocalePackageLessonRenderer live quiz", () => {
       }),
     );
 
-    const retryOptions = screen.getAllByRole("button").filter((button) =>
-      quiz.options.some((option) => button.textContent?.includes(option.slice(0, 20))),
-    );
+    const retryOptions = screen
+      .getAllByRole("button")
+      .filter((button) =>
+        quiz.options.some((option) => button.textContent?.includes(option.slice(0, 20))),
+      );
     fireEvent.click(retryOptions[quiz.correctIndex ?? 0]!);
     expect(screen.getByText(/Correct/i)).toBeTruthy();
   });
@@ -118,9 +114,7 @@ describe("QuizBlock ar-EG regression (unchanged component contract)", () => {
       </LocaleProvider>,
     );
 
-    fireEvent.click(
-      await screen.findByRole("button", { name: /I've thought — show options/i }),
-    );
+    fireEvent.click(await screen.findByRole("button", { name: /I've thought — show options/i }));
 
     const optionButtons = screen
       .getAllByRole("button")

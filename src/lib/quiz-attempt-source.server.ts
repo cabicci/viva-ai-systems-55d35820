@@ -4,10 +4,7 @@ import {
 } from "@/components/intro/lessons/lesson-registry";
 import { adaptPackageQuizzesFromSections } from "@/lib/locale-lessons/adapt-package-to-live-quiz";
 import { loadLocalePackageLesson } from "@/lib/locale-lessons/load-locale-package-lesson";
-import type {
-  LessonPackageLocale,
-  LocalizedLessonPackage,
-} from "@/lib/locale-lessons/types";
+import type { LessonPackageLocale, LocalizedLessonPackage } from "@/lib/locale-lessons/types";
 import type { SupportedLocale } from "@/lib/locale/types";
 
 export const QUIZ_ATTEMPT_LOCALES = [
@@ -43,11 +40,7 @@ function sourceError(reason: string): Error {
   return new Error(`quiz-attempt: canonical source ${reason}`);
 }
 
-function requireBoundedText(
-  value: unknown,
-  field: string,
-  maxLength: number,
-): string {
+function requireBoundedText(value: unknown, field: string, maxLength: number): string {
   if (typeof value !== "string") throw sourceError(`has invalid ${field}`);
   const text = value.trim();
   if (!text || text.length > maxLength) {
@@ -55,19 +48,13 @@ function requireBoundedText(
   }
   return text;
 }
-function normalizeQuestion(
-  lessonId: string,
-  question: QuizCandidate,
-): CanonicalQuizQuestion {
+function normalizeQuestion(lessonId: string, question: QuizCandidate): CanonicalQuizQuestion {
   const questionId = requireBoundedText(question.id, "question id", 300);
   if (
     !Array.isArray(question.options) ||
     question.options.length === 0 ||
     question.options.some(
-      (option) =>
-        typeof option !== "string" ||
-        !option.trim() ||
-        option.length > 4000,
+      (option) => typeof option !== "string" || !option.trim() || option.length > 4000,
     )
   ) {
     throw sourceError("has invalid quiz options");
@@ -116,7 +103,8 @@ async function resolveEgyptianQuestion(
   questionId: string,
 ): Promise<CanonicalQuizQuestion> {
   const explicitOwner = EGYPTIAN_QUIZ_OWNER_BY_BLOCK_ID[lessonId];
-  const registryLessonId = explicitOwner ??
+  const registryLessonId =
+    explicitOwner ??
     (hasIntroLessonContent(lessonId)
       ? lessonId
       : lessonId.endsWith("-apply")
@@ -128,19 +116,12 @@ async function resolveEgyptianQuestion(
   const content = await loadIntroLessonContent(registryLessonId);
   if (!content) throw sourceError("could not load the requested lesson");
   const questions = content.flatMap((section) => {
-    if (
-      section.block.kind !== "quiz" ||
-      section.block.lessonId !== lessonId
-    ) {
+    if (section.block.kind !== "quiz" || section.block.lessonId !== lessonId) {
       return [];
     }
     return section.block.items;
   });
-  return resolveCanonicalQuizQuestionFromCandidates(
-    lessonId,
-    questions,
-    questionId,
-  );
+  return resolveCanonicalQuizQuestionFromCandidates(lessonId, questions, questionId);
 }
 
 async function resolveLocalizedQuestion(
@@ -148,10 +129,7 @@ async function resolveLocalizedQuestion(
   lessonId: string,
   questionId: string,
 ): Promise<CanonicalQuizQuestion> {
-  const pkg: LocalizedLessonPackage | null = await loadLocalePackageLesson(
-    locale,
-    lessonId,
-  );
+  const pkg: LocalizedLessonPackage | null = await loadLocalePackageLesson(locale, lessonId);
   if (!pkg || pkg.lessonId !== lessonId || pkg.locale !== locale) {
     throw sourceError("does not contain the requested localized lesson");
   }
@@ -171,12 +149,30 @@ export async function resolveCanonicalQuizQuestion(input: {
   if (input.locale === "ar-EG") {
     return resolveEgyptianQuestion(lessonId, questionId);
   }
-  if (
-    input.locale === "ar-MSA" ||
-    input.locale === "ar-Gulf" ||
-    input.locale === "en"
-  ) {
+  if (input.locale === "ar-MSA" || input.locale === "ar-Gulf" || input.locale === "en") {
     return resolveLocalizedQuestion(input.locale, lessonId, questionId);
   }
   throw sourceError("uses an unsupported locale");
+}
+
+/** Private immutable evidence for a submitted attempt, never browser delivery. */
+export async function loadQuizSourceSnapshot(input: {
+  locale: QuizAttemptLocale;
+  lessonId: string;
+}) {
+  if (input.locale !== "ar-EG") {
+    const pkg = await loadLocalePackageLesson(input.locale, input.lessonId);
+    if (!pkg) throw sourceError("could not load source snapshot");
+    return { lessonId: input.lessonId, source: pkg };
+  }
+  const lessonId =
+    EGYPTIAN_QUIZ_OWNER_BY_BLOCK_ID[input.lessonId] ??
+    (hasIntroLessonContent(input.lessonId)
+      ? input.lessonId
+      : input.lessonId.endsWith("-apply")
+        ? input.lessonId.slice(0, -6)
+        : input.lessonId);
+  const source = await loadIntroLessonContent(lessonId);
+  if (!source) throw sourceError("could not load source snapshot");
+  return { lessonId, source };
 }

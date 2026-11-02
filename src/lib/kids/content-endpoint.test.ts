@@ -126,4 +126,20 @@ describe("private Kids lesson delivery", () => {
     expect(JSON.stringify(result)).not.toContain('"answer":1');
     expect(fetcher).toHaveBeenCalledTimes(4);
   });
+  it("persists a new assessment receipt against the exact private source before returning its grade", async () => {
+    const fetcher = fetches().mockResolvedValueOnce(json({ correct: true, explanation: "Saved feedback" }));
+    const response = await handleKidsLessonContent(request({ ...input, action: "quiz-check", questionId: "q1", selectedIndex: 1,
+      requestId: "33333333-3333-4333-8333-333333333333" }), env, fetcher);
+    expect(response.status).toBe(200); expect((await response.json()).explanation).toBe("Saved feedback");
+    const [url, options] = fetcher.mock.calls[4];
+    expect(String(url)).toContain("/rpc/record_learning_assessment");
+    expect(JSON.parse(String(options?.body))).toMatchObject({ p_user: parent, p_profile: parent, p_version: sha, p_source: source,
+      p_submission: { questionId: "q1", selectedIndex: 1 }, p_result: { correct: true } });
+  });
+  it("does not present an unsaved assessment as confirmed", async () => {
+    const fetcher = fetches().mockResolvedValueOnce(new Response("unavailable", { status: 503 }));
+    const response = await handleKidsLessonContent(request({ ...input, action: "quiz-check", questionId: "q1", selectedIndex: 1,
+      requestId: "33333333-3333-4333-8333-333333333333" }), env, fetcher);
+    expect(response.status).toBe(503); expect(await response.text()).not.toContain("Answer is B");
+  });
 });
