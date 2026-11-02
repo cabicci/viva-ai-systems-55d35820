@@ -1,4 +1,5 @@
 /** Server-owned account templates; all metadata is constrained before HTML interpolation. */
+import { commerceProductLabel } from "./commerce-product-copy.ts";
 export type MailLocale = "ar-EG" | "ar-MSA" | "ar-Gulf" | "en";
 export function emailAccessInvitationContent(grant: {
   locale: unknown;
@@ -263,16 +264,7 @@ function paymentPath(input: PaymentConfirmation, admin = false) {
 }
 export function paymentConfirmationContent(input: PaymentConfirmation) {
   const locale = mailLocale(input.locale);
-  const plan =
-    input.package === "pro_plus"
-      ? "Pro Plus"
-      : input.package === "kids"
-        ? "Kids"
-        : input.package === "academic"
-          ? "Masaarat Academic"
-          : input.package === "technical"
-            ? "Masaarat TECH"
-            : "Pro";
+  const plan = commerceProductLabel(input.package, locale);
   const amount = new Intl.NumberFormat(locale === "en" ? "en-US" : "ar", {
     style: "currency",
     currency: input.currency,
@@ -299,7 +291,32 @@ export function paymentConfirmationContent(input: PaymentConfirmation) {
       "View my plan",
     ],
   } as const;
-  const [title, body, action] = copy[locale];
+  let [title, body, action]: readonly string[] = copy[locale];
+  if (input.package === "lifetime_course" || input.package === "question_topup") {
+    title = locale === "en" ? "Payment confirmed" : "تم تأكيد الدفع";
+    action = locale === "en" ? "View my purchase" : "عرض الشراء";
+    const lifetime = input.package === "lifetime_course";
+    const detail =
+      locale === "en"
+        ? lifetime
+          ? "Your selected curriculum is available for life, with 100 questions for the first month only."
+          : "100 questions have been added to your selected balance. Purchased questions never expire and are used after your monthly allowance, within content you can access."
+        : locale === "ar-EG"
+          ? lifetime
+            ? "المنهج اللي اخترته متاح لك مدى الحياة، ومعاه ١٠٠ سؤال لأول شهر بس."
+            : "اتضاف ١٠٠ سؤال للرصيد اللي اخترته. الأسئلة المشتراة مش بتنتهي، وبتستخدمها بعد حصتك الشهرية في المحتوى المتاح لحسابك."
+          : locale === "ar-Gulf"
+            ? lifetime
+              ? "المنهج اللي اخترته متاح لك مدى الحياة، ومعه ١٠٠ سؤال للشهر الأول فقط."
+              : "انضاف ١٠٠ سؤال لرصيدك المختار. الأسئلة المشتراة ما تنتهي، وتستخدمها بعد حصتك الشهرية في المحتوى المتاح لحسابك."
+            : lifetime
+              ? "المنهج الذي اخترته متاح لك مدى الحياة، ويشمل ١٠٠ سؤال للشهر الأول فقط."
+              : "أُضيف ١٠٠ سؤال إلى رصيدك المختار. لا تنتهي صلاحيتها، وتُستخدم بعد الحصة الشهرية ضمن المحتوى المتاح لحسابك.";
+    body =
+      locale === "en"
+        ? `Our team verified receipt of ${amount} for order ${input.reference}. ${detail}`
+        : `تم تأكيد استلام ${amount} للطلب ${input.reference}. ${detail}`;
+  }
   return {
     subject: `${title} | Masaarat ${plan}`,
     ...personalized(locale, input.name, title, body, action, paymentPath(input)),
@@ -308,16 +325,7 @@ export function paymentConfirmationContent(input: PaymentConfirmation) {
 
 export function receiptReviewContent(input: PaymentConfirmation) {
   const locale = mailLocale(input.locale);
-  const plan =
-    input.package === "pro_plus"
-      ? "Pro Plus"
-      : input.package === "kids"
-        ? "Kids"
-        : input.package === "academic"
-          ? "Masaarat Academic"
-          : input.package === "technical"
-            ? "Masaarat TECH"
-            : "Pro";
+  const plan = commerceProductLabel(input.package, locale);
   const amount = new Intl.NumberFormat(locale === "en" ? "en-US" : "ar", {
     style: "currency",
     currency: input.currency,

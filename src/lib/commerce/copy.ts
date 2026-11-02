@@ -1,5 +1,6 @@
 import type { SupportedLocale } from "@/lib/locale/types";
 import type { PaymentMethod } from "./contracts";
+export { commerceProductLabel } from "../../../supabase/functions/_shared/commerce-product-copy";
 
 export function paymentInstructions(
   method: Pick<PaymentMethod, "instructions" | "instructions_localized">,

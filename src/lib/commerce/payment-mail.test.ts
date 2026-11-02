@@ -35,6 +35,44 @@ function database() {
 }
 describe("manual payment confirmation mail", () => {
   it.each(["ar-EG", "ar-MSA", "ar-Gulf", "en"])(
+    "distinguishes lifetime content and permanent top-up credit in %s",
+    (locale) => {
+      const lifetime = paymentConfirmationContent({
+        ...row.payload,
+        locale,
+        package: "lifetime_course",
+        amount_minor: 7500,
+      });
+      const topup = paymentConfirmationContent({
+        ...row.payload,
+        locale,
+        package: "question_topup",
+        amount_minor: 5000,
+      });
+      expect(lifetime.text).toContain(
+        locale === "en"
+          ? "first month only"
+          : locale === "ar-EG"
+            ? "لأول شهر بس"
+            : "للشهر الأول فقط",
+      );
+      expect(topup.text).toContain(
+        locale === "en"
+          ? "never expire"
+          : locale === "ar-EG"
+            ? "مش بتنتهي"
+            : locale === "ar-Gulf"
+              ? "ما تنتهي"
+              : "لا تنتهي",
+      );
+      expect(lifetime.subject).not.toContain("Pro");
+      expect(topup.subject).not.toContain("Pro");
+      expect(
+        receiptReviewContent({ ...row.payload, locale, package: "question_topup" }).subject,
+      ).not.toContain("Pro");
+    },
+  );
+  it.each(["ar-EG", "ar-MSA", "ar-Gulf", "en"])(
     "uses contextual branded confirmation in %s",
     (locale) => {
       const mail = paymentConfirmationContent({

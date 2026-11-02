@@ -5,7 +5,8 @@ import { useAuth } from "@/lib/auth-context";
 import { useLocale } from "@/lib/locale/locale-context";
 import { commercialCopy } from "@/lib/billing/commercial-copy";
 import { packageBenefits } from "@/lib/billing/package-benefits";
-import { normalizeOfferPhone } from "@/lib/commerce/offer-input";
+import { PaymentMethods } from "@/components/commerce/PaymentMethods";
+import { getLineCopy } from "@/lib/learning-lines";
 import {
   BillingUnavailableError,
   loadCommercialPurchaseOptions,
@@ -23,9 +24,8 @@ export function CommercialPurchases({ area }: { area: Area }) {
   const [selectedArea, setSelectedArea] = useState<Area>(area);
   const [course, setCourse] = useState("");
   const [childId, setChildId] = useState("");
-  const [coupon, setCoupon] = useState("");
-  const [phone, setPhone] = useState("");
   const [busy, setBusy] = useState(false);
+  const [manualBusy, setManualBusy] = useState(false);
   const [failed, setFailed] = useState(false);
   const pending = useRef<{ signature: string; id: string; offerKey: string } | null>(null);
   const running = useRef(false);
@@ -39,19 +39,18 @@ export function CommercialPurchases({ area }: { area: Area }) {
   const children = options.data?.children ?? [];
   const child = children.find((item) => item.id === childId);
 
-  async function checkout(kind: "curriculum_lifetime" | "question_topup") {
+  async function checkout(
+    kind: "curriculum_lifetime" | "question_topup",
+    offer?: { code: string; phone?: string },
+  ) {
     if (
       running.current ||
       !user ||
       (kind === "curriculum_lifetime" && (!selected || (selectedArea === "kids" && !child)))
     )
       return;
-    const code = kind === "question_topup" ? coupon.trim().toUpperCase() : "";
-    const normalizedPhone = code && phone.trim() ? normalizeOfferPhone(phone) : null;
-    if (code && phone.trim() && !normalizedPhone) {
-      setFailed(true);
-      return;
-    }
+    const code = kind === "question_topup" ? (offer?.code.trim().toUpperCase() ?? "") : "";
+    const normalizedPhone = offer?.phone;
     const selection =
       kind === "curriculum_lifetime"
         ? {
@@ -122,7 +121,7 @@ export function CommercialPurchases({ area }: { area: Area }) {
                 <select
                   className={input}
                   value={selectedArea}
-                  disabled={busy}
+                  disabled={busy || manualBusy}
                   onChange={(e) => {
                     setSelectedArea(e.target.value as Area);
                     setCourse("");
@@ -142,13 +141,15 @@ export function CommercialPurchases({ area }: { area: Area }) {
                 <select
                   className={input}
                   value={course}
-                  disabled={busy || options.isPending || !!options.error}
+                  disabled={busy || manualBusy || options.isPending || !!options.error}
                   onChange={(e) => setCourse(e.target.value)}
                 >
                   <option value="">—</option>
                   {curricula.map((item) => (
                     <option key={item.course} value={item.course}>
-                      {item.title}
+                      {item.area === "technical" && item.course === "furniture"
+                        ? getLineCopy(locale).furniture
+                        : item.title}
                     </option>
                   ))}
                 </select>
@@ -159,7 +160,7 @@ export function CommercialPurchases({ area }: { area: Area }) {
                   <select
                     className={input}
                     value={childId}
-                    disabled={busy || options.isPending || !!options.error}
+                    disabled={busy || manualBusy || options.isPending || !!options.error}
                     onChange={(e) => setChildId(e.target.value)}
                   >
                     <option value="">—</option>
@@ -175,13 +176,21 @@ export function CommercialPurchases({ area }: { area: Area }) {
               {options.isSuccess && selectedArea === "kids" && !children.length && (
                 <p role="status">{w.childEmpty}</p>
               )}
-              <Button
-                className="w-full"
+              <PaymentMethods
+                market="EG"
+                oneTime={{
+                  kind: "lifetime_course",
+                  area: selectedArea,
+                  course,
+                  ...(selectedArea === "kids" && child ? { child_id: child.id } : {}),
+                  wallet_scope: selectedArea === "kids" ? "family" : "account",
+                }}
                 disabled={busy || !selected || (selectedArea === "kids" && !child)}
-                onClick={() => void checkout("curriculum_lifetime")}
+                stripe={() => checkout("curriculum_lifetime")}
+                onBusyChange={setManualBusy}
               >
                 {w.buy}
-              </Button>
+              </PaymentMethods>
             </>
           )}
         </article>
@@ -195,46 +204,20 @@ export function CommercialPurchases({ area }: { area: Area }) {
             {area === "kids" && <li>{w.familyTopup}</li>}
           </ul>
           {user && (
-            <label className="block">
-              {w.coupon}
-              <input
-                className={input}
-                value={coupon}
-                maxLength={64}
-                disabled={busy}
-                onChange={(e) => setCoupon(e.target.value)}
-                autoCapitalize="characters"
-              />
-            </label>
-          )}
-          {user && coupon.trim() && (
-            <label className="block">
-              {locale === "en"
-                ? "Phone with country code, if required by your coupon"
-                : "رقم الهاتف بمفتاح الدولة، إذا كان مطلوبًا للكوبون"}
-              <input
-                type="tel"
-                dir="ltr"
-                className={input}
-                value={phone}
-                maxLength={50}
-                disabled={busy}
-                placeholder="+20…"
-                onChange={(e) => setPhone(e.target.value)}
-              />
-            </label>
-          )}
-          {user && (
-            <Button
-              className="w-full"
+            <PaymentMethods
+              market="EG"
+              oneTime={{
+                kind: "question_topup",
+                wallet_scope: area === "kids" ? "family" : "account",
+              }}
               disabled={
                 busy ||
                 (area === "kids" && (options.isPending || !!options.error || !children.length))
               }
-              onClick={() => void checkout("question_topup")}
+              stripe={(offer) => checkout("question_topup", offer)}
             >
               {w.buy}
-            </Button>
+            </PaymentMethods>
           )}
         </article>
       </div>

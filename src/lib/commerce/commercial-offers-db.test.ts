@@ -3,12 +3,13 @@ import { readFileSync } from "node:fs";
 import { randomUUID } from "node:crypto";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import { accountDeletionTestDb } from "../__tests__/fixtures/account-deletion-db";
+import { manualPurchaseDbCases } from "./manual-purchases-db-cases";
 let db: Awaited<ReturnType<typeof accountDeletionTestDb>>;
 const admin = randomUUID(),
   user = randomUUID(),
   other = randomUUID();
 const sql = (file: string) => readFileSync(file, "utf8");
-const actor = async (id = user, service = false) => {
+const actor = async (id: string = user, service = false) => {
   await db.query(
     "select set_config('request.jwt.claim.sub',$1,false),set_config('request.jwt.claim.role',$2,false),set_config('masaarat.stripe_environment',$3,false)",
     [id, service ? "service_role" : "authenticated", service ? "live" : "test"],
@@ -26,6 +27,7 @@ async function recover<T>(run: () => Promise<T>): Promise<T> {
   }
 }
 const value = async (q: string, args: unknown[] = []) =>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- Legacy fixture queries return heterogeneous PostgreSQL scalar/JSON values.
   recover(async () => (await db.query<{ v: any }>(q, args)).rows[0].v);
 const command = (action: string, data: Record<string, unknown> = {}) =>
   value("select public.commerce_command($1,$2::jsonb) v", [action, JSON.stringify(data)]);
@@ -69,6 +71,15 @@ beforeAll(async () => {
     sql("scripts/academic-education/assistant-native-candidate.sql").split(
       "CREATE FUNCTION public.academic_import_chunks",
     )[0] + "COMMIT;",
+  );
+  // Include the installed privacy classification/erasure chain as well as the
+  // billing segment; importing vector content remains outside this fixture.
+  const academicNative = sql("scripts/academic-education/assistant-native-candidate.sql");
+  await db.exec(
+    academicNative.slice(
+      academicNative.indexOf("-- Classify the new user-owned question ledger"),
+      academicNative.lastIndexOf("COMMIT;"),
+    ),
   );
   for (const name of [
     "0008_stripe_live_environment_separation.sql",
@@ -134,8 +145,17 @@ beforeAll(async () => {
       cards.indexOf("CREATE TABLE public.card_assistant_chunks"),
     ),
   );
+  const windowStart = cards.indexOf("CREATE TABLE public.card_assistant_question_windows");
+  await db.exec(cards.slice(windowStart, cards.indexOf("DO $$", windowStart)));
+  await db.exec(
+    cards.slice(
+      cards.indexOf("-- Classify the operational user-owned window"),
+      cards.lastIndexOf("COMMIT;"),
+    ),
+  );
   await db.exec(sql("drizzle/migrations/0027_commercial_policy_20261102.sql"));
   await db.exec(sql("drizzle/migrations/0028_commercial_offer_policy.sql"));
+  await db.exec(sql("scripts/release/unified-manual-purchase-rails.sql"));
 }, 60000);
 afterAll(async () => db?.close());
 beforeEach(async () => {
@@ -150,6 +170,26 @@ beforeEach(async () => {
   });
 });
 afterEach(async () => db.exec("ROLLBACK"));
+manualPurchaseDbCases({
+  user,
+  other,
+  admin,
+  actor,
+  command,
+  value,
+  retentionEvidence: async () => {
+    const term = await offer({ discount_duration: "forever" });
+    await manualPurchase();
+    const live = await offer({ code: "RETENTIONLIVE" });
+    await mapping(live);
+    await actor(user, true);
+    const reservation = await value(
+      "SELECT public.reserve_stripe_live_offer($1,'RETENTIONLIVE','pro','EG','month','+201012345678',$2,false) v",
+      [user, randomUUID()],
+    );
+    return { termOfferId: term.id as string, reservationId: reservation.id as string };
+  },
+});
 async function offer(extra: Record<string, unknown> = {}) {
   await actor(admin);
   return command("simple_offer", {
@@ -171,7 +211,7 @@ async function offer(extra: Record<string, unknown> = {}) {
     ...extra,
   });
 }
-async function mapping(f: any, duration = "once", months: number | null = null) {
+async function mapping(f: { id: string }, duration = "once", months: number | null = null) {
   await actor(admin, true);
   const p = await value(
     "select m.id v from billing.market_prices m join billing.plan_versions v on v.id=m.plan_version_id join billing.plan_catalog p on p.id=v.plan_id where p.plan_key='pro' and v.billing_interval='month' and m.market_code='EG' and m.status='active' limit 1",
