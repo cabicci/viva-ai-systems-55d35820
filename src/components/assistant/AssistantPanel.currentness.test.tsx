@@ -1,3 +1,12 @@
+// These boundary tests start after the session guidance was acknowledged.
+// First-open, account/session reset and modal behavior are covered in AssistantUsage.test.tsx.
+vi.mock("@/lib/billing/question-balance.functions", () => ({
+  getAssistantQuestionBalance: async ({ data }: { data: { expectedAccountId: string } }) => {
+    const session = "currentness-acknowledged-session";
+    window.sessionStorage.setItem(`masaarat:assistant-rights:v1:${encodeURIComponent(data.expectedAccountId)}:${session}`, "1");
+    return { monthly_remaining: 10, purchased_remaining: 0, access_allowed: true, session_key: session };
+  },
+}));
 import { boxedAssistantFixture } from "@/test/boxed-assistant-runtime-fixture";
 import {afterAll,afterEach,beforeEach,describe,expect,it,vi} from 'vitest';
 import {act,cleanup,fireEvent,render} from '@testing-library/react';
@@ -68,11 +77,11 @@ describe('r30 focused real adapter controls',()=>{
  for(const locale of ['en','ar-EG','ar-MSA','ar-Gulf'] as const)it('C01 exact real builder payload '+locale,async()=>{
   h.locale={locale,dir:locale==='en'?'ltr':'rtl',lang:locale,displayName:locale,setLocale:()=>{}};
   render(<AssistantPanel/>);const result=await saved()(question());expect(result).toEqual({status:200,answer:'**current answer**',citations:[]});
-  expect(h.calls).toHaveLength(1);expect(h.calls[0]).toEqual({query:' question unchanged ',learnerContext:{locale,currentPath:h.ctx?.currentPath?.id,currentModule:null,currentLesson:null,currentPathTitle:h.childProps?.cardTitle, currentModuleTitle:null,currentLessonTitle:null,completedLessonsCount:5,totalLessonsCount:30,nextLessonTitle:null,currentMission:null}});
-  expect(Object.keys(h.calls[0])).toEqual(['query','learnerContext']);
+  expect(h.calls).toHaveLength(1);expect(h.calls[0]).toEqual({requestId:'private-unused',query:' question unchanged ',learnerContext:{locale,currentPath:h.ctx?.currentPath?.id,currentModule:null,currentLesson:null,currentPathTitle:h.childProps?.cardTitle, currentModuleTitle:null,currentLessonTitle:null,completedLessonsCount:5,totalLessonsCount:30,nextLessonTitle:null,currentMission:null}});
+  expect(Object.keys(h.calls[0])).toEqual(['requestId','query','learnerContext']);
  });
  it('C02 real builder copies exact history and ignores unused input',async()=>{
-  render(<AssistantPanel/>);let unused=0;const q=question([{question:'  exact question  ',answer:'exact answer'}]);Object.defineProperties(q,{requestId:{get(){unused++;throw Error('unused requestId');}},scope:{get(){unused++;throw Error('unused scope');}}});
+  render(<AssistantPanel/>);let unused=0;const q=question([{question:'  exact question  ',answer:'exact answer'}]);Object.defineProperties(q,{scope:{get(){unused++;throw Error('unused scope');}}});
   await saved()(q);expect(h.calls[0].conversationHistory).toEqual([{question:'  exact question  ',answer:'exact answer'}]);expect(unused).toBe(0);
  });
  it('C03 real empty history is omitted',async()=>{render(<AssistantPanel/>);await saved()(question([]));expect(h.calls[0]).not.toHaveProperty('conversationHistory');});

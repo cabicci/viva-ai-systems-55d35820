@@ -1,3 +1,4 @@
+import { questionRpcFailure } from "../../../supabase/functions/assistant-runtime/question-metering";
 import { handleAcademicAssistant, type Locale, type Chunk, type AcademicHistoryTurn } from "../../../supabase/functions/academic-assistant/handler";
 import { ACADEMIC_EMBEDDING_DIMENSIONS, ACADEMIC_EMBEDDING_MODEL, approvedChunks,
   planAcademicChunkUpdates, validateAcademicCorpus, type ApprovedLesson, type IndexedAcademicChunk } from "./assistant-corpus";
@@ -60,14 +61,16 @@ export async function runAcademicAssistant(data: {courseId:string; lessonId:stri
   };
   const result = await handleAcademicAssistant(new Request("https://internal.invalid/academic-assistant", {
     method:"POST", headers:{Authorization:"Bearer verified-by-middleware"},
-    body:JSON.stringify({courseId:data.courseId,lessonId:data.lessonId,locale:data.locale,query:data.query,history:data.history}),
+    body:JSON.stringify({courseId:data.courseId,lessonId:data.lessonId,locale:data.locale,query:data.query,history:data.history,requestId:data.requestId}),
   }), {
     enabled,
     verifyUser: async () => context.userId,
     allowed: async () => { const mode = await access(); return mode === "none" ? null : mode; },
-    consumeLimit: async () => (await rpc<{allowed:boolean}>(context.supabase,"academic_assistant_take_question",{
-      p_course:data.courseId,p_lesson:data.lessonId,p_locale:data.locale,p_request:data.requestId,
-    })).allowed === true,
+    billingRpc: async (name, body) => {
+      const result = await supabaseAdmin.rpc(name as never, body as never);
+      if (result.error) return questionRpcFailure(result.error);
+      return { ok: true, data: result.data as Record<string, unknown> };
+    },
     embed: async query => (await embeddings([query]))[0],
     retrieve: async (course,locale,embedding) => rpc<Chunk[]>(supabaseAdmin,"academic_rag_match",{
       p_course:course,p_locale:locale,p_embedding:JSON.stringify(embedding),p_limit:6,

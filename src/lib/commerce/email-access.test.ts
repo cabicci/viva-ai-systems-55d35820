@@ -47,6 +47,74 @@ describe("email access contracts and isolated invitation delivery", () => {
       isImmediateMailTarget({ stream: "email_access", id, email: "attacker@example.test" }),
     ).toBe(false);
   });
+  it("requires exactly one whole curriculum for single invitations and rejects a client quota", () => {
+    const data = {
+      email: "learner@example.test",
+      grant_kind: "single_curriculum",
+      scope_mode: "selected",
+      catalogues: ["ai:pro_plus"],
+      duration_days: 30,
+      invitation: true,
+      locale: "en",
+      key: id,
+    };
+    for (const selected of ["ai:pro_plus", "kids", "technical:furniture", "academic:AC-BUS"]) {
+      expect(
+        emailAccessInput.parse({ action: "create", data: { ...data, catalogues: [selected] } })
+          .data,
+      ).toMatchObject({ grant_kind: "single_curriculum", catalogues: [selected] });
+    }
+    for (const change of [
+      { catalogues: [] },
+      { catalogues: ["ai:pro"] },
+      { catalogues: ["ai:pro_plus", "kids"] },
+      { scope_mode: "all_published", catalogues: [] },
+      { monthly_questions: 999 },
+      { child_id: id },
+      { grant_kind: "unlimited" },
+    ]) {
+      expect(() =>
+        emailAccessInput.parse({ action: "create", data: { ...data, ...change } }),
+      ).toThrow();
+    }
+  });
+  it.each(["ar-EG", "ar-MSA", "ar-Gulf", "en"])(
+    "states monthly invitation access and acceptance accurately in %s",
+    (locale) => {
+      const single = emailAccessInvitationContent({
+        locale,
+        scope_mode: "selected",
+        catalogues: ["ai:pro_plus"],
+        duration_days: 30,
+        grant_kind: "single_curriculum",
+      });
+      const comprehensive = emailAccessInvitationContent({
+        locale,
+        scope_mode: "all_published",
+        catalogues: [],
+        duration_days: null,
+        grant_kind: "comprehensive",
+      });
+      expect(single.text).toContain(locale === "en" ? "100 questions each month" : "١٠٠ سؤال");
+      expect(comprehensive.text).toContain(
+        locale === "en" ? "300 questions each month" : "٣٠٠ سؤال",
+      );
+      expect(single.text).toContain(
+        locale === "en"
+          ? "No paid subscription is required"
+          : locale === "ar-EG"
+            ? "مش محتاج اشتراك مدفوع"
+            : locale === "ar-Gulf"
+              ? "ما تحتاج اشتراك مدفوع"
+              : "لا يلزم اشتراك مدفوع",
+      );
+      expect(single.text).toContain(locale === "en" ? "from acceptance" : "من قبول الدعوة");
+      expect(single.text).not.toContain("Pro Plus");
+      expect(single.text).not.toContain("automatically");
+      expect(single.text).not.toMatch(/Kids|\bchild(?:ren)?\b|الأطفال|طفل|ولي الأمر/i);
+      expect(comprehensive.text).toContain(locale === "en" ? "guardian consent" : "ولي الأمر");
+    },
+  );
   it.each(["ar-EG", "ar-MSA", "ar-Gulf", "en"])(
     "provides invitation and admin copy for %s, with no claim token/payment/coupon",
     (locale) => {

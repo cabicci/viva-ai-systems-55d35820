@@ -1,7 +1,9 @@
+import { CommercialPurchases } from "@/components/billing/CommercialPurchases";
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { LineIntroduction } from "@/components/site/LearningLines";
+import { PlanAllowance } from "@/components/billing/PlanAllowance";
 import { PlanPrices } from "@/components/site/PlanPrices";
 import { getLineCopy, lineMeta } from "@/lib/learning-lines";
 import { useLocale } from "@/lib/locale/locale-context";
@@ -16,7 +18,12 @@ import { useTechnicalProgress } from "@/lib/technical-education/client";
 import { adminOfferCopy } from "@/lib/commerce/admin-offer-copy";
 import { technicalUiCopy } from "@/lib/technical-education/ui-copy";
 import { Button } from "@/components/ui/button";
-import { BillingUnavailableError, billingUnavailableMessage, resolveCheckoutUrl, resolvePortalUrl } from "@/lib/billing/checkout-client";
+import {
+  BillingUnavailableError,
+  billingUnavailableMessage,
+  resolveCheckoutUrl,
+  resolvePortalUrl,
+} from "@/lib/billing/checkout-client";
 import { toast } from "sonner";
 export const Route = createFileRoute("/technical/pricing")({
   validateSearch: parseLocaleSearchParam,
@@ -93,8 +100,11 @@ function TechnicalPricing() {
         <section className="container mx-auto max-w-3xl px-4 py-12">
           <article className="rounded-3xl border border-primary/30 bg-card p-7">
             <h2 className="text-2xl font-black">{text.title}</h2>
-            <p className="my-5 leading-relaxed text-muted-foreground">{text.details}</p>
+            <ul className="my-5 list-disc ps-5 leading-relaxed text-muted-foreground">
+              <li>{text.details}</li>
+            </ul>
             <PlanPrices plan="pro_plus" />
+            <PlanAllowance />
             {user ? (
               <div className="space-y-5">
                 <label className="block">
@@ -152,6 +162,9 @@ function TechnicalPricing() {
             )}
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{c.separate}</p>
           </article>
+          <div className="mt-8">
+            <CommercialPurchases area="technical" />
+          </div>
         </section>
       </main>
       <Footer />

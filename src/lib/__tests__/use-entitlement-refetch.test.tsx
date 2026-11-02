@@ -7,6 +7,7 @@ const mocks = vi.hoisted(() => ({
   rpc: vi.fn(),
   adminRpc: vi.fn(),
   tierRpc: vi.fn(),
+  commercialRpc: vi.fn(),
   useAuth: vi.fn(),
 }));
 
@@ -18,7 +19,7 @@ vi.mock("@/lib/auth-context", () => ({
   useAuth: mocks.useAuth,
 }));
 
-import { useEntitlement } from "@/lib/entitlements";
+import { useEntitlement, decideLessonGate } from "@/lib/entitlements";
 
 const userId = "user-entitlement-refetch";
 
@@ -44,6 +45,7 @@ beforeEach(() => {
   mocks.rpc.mockReset();
   mocks.adminRpc.mockReset();
   mocks.tierRpc.mockReset();
+  mocks.commercialRpc.mockReset().mockResolvedValue({ data: { ai_lifetime_access: false, ai_lesson_ids: [], server_time: "2026-11-02T10:00:00Z", check_at: "2026-11-02T10:00:30Z" }, error: null });
   mocks.useAuth.mockReturnValue({
     user: { id: userId },
     loading: false,
@@ -51,6 +53,7 @@ beforeEach(() => {
   mocks.rpc.mockImplementation((name: string) => {
     if (name === "has_role") return mocks.adminRpc();
     if (name === "get_my_billing_access_tier") return mocks.tierRpc();
+    if (name === "get_my_commercial_access") return mocks.commercialRpc();
     throw new Error(`Unexpected RPC: ${name}`);
   });
 });
@@ -165,5 +168,26 @@ describe("useEntitlement rejected refetch fail-closed behavior", () => {
       isAdmin: false,
       isLoaded: true,
     });
+  });
+});
+
+
+describe("lifetime content is independent from a paid subscription", () => {
+  it("opens exact purchased lessons without granting Pro and revokes them on a failed refresh", async () => {
+    const lessonId = "builder-m1-l2-tokens-training";
+    mocks.adminRpc.mockResolvedValue({ data: false, error: null });
+    mocks.tierRpc.mockResolvedValue({ data: "free", error: null });
+    mocks.commercialRpc.mockResolvedValue({ data: { ai_lifetime_access: true, ai_lesson_ids: [lessonId],
+      server_time: "2026-11-02T10:00:00Z", check_at: "2026-11-02T10:00:30Z" }, error: null });
+    const { client, result } = renderEntitlement();
+    await waitFor(() => expect(result.current.isLoaded).toBe(true));
+    expect(result.current).toMatchObject({ tier: "free", isPro: false, isProPlus: false, entitledLessonIds: [lessonId] });
+    const gate = () => decideLessonGate({ lessonId, tier: result.current.tier, isAdmin: false,
+      entitledLessonIds: result.current.entitledLessonIds, introCompletedCount: 10, introTotal: 10 });
+    expect(gate()).toEqual({ kind: "open" });
+    mocks.commercialRpc.mockRejectedValue(new Error("revoked or unavailable"));
+    await refetch(client, ["commercial-content-access", userId]);
+    expect(result.current.entitledLessonIds).toEqual([]);
+    expect(gate()).toEqual({ kind: "paywall" });
   });
 });

@@ -1,6 +1,6 @@
 /** Provider output is a decision about this question, never a source of citation metadata. */
 export type AssistantAnswerDecision = {
-  grounding: "supported" | "insufficient";
+  grounding: "supported" | "insufficient" | "out_of_scope";
   answer: string;
   sourceIds: string[];
 };
@@ -14,7 +14,7 @@ export const ASSISTANT_ANSWER_FORMAT = {
       type: "object",
       additionalProperties: false,
       properties: {
-        grounding: { type: "string", enum: ["supported", "insufficient"] },
+        grounding: { type: "string", enum: ["supported", "insufficient", "out_of_scope"] },
         answer: { type: "string", minLength: 1, maxLength: 16000 },
         sourceIds: { type: "array", items: { type: "string" }, maxItems: 8 },
       },
@@ -52,7 +52,7 @@ export function parseAssistantAnswer(raw: string): AssistantAnswerDecision | nul
     if (!value || typeof value !== "object" || Array.isArray(value)) return null;
     const obj = value as Record<string, unknown>;
     if (Object.keys(obj).length !== 3 ||
-      (obj.grounding !== "supported" && obj.grounding !== "insufficient") ||
+      (obj.grounding !== "supported" && obj.grounding !== "insufficient" && obj.grounding !== "out_of_scope") ||
       typeof obj.answer !== "string" || !obj.answer.trim() || obj.answer.length > 16000 ||
       !Array.isArray(obj.sourceIds) || obj.sourceIds.length > 8 ||
       obj.sourceIds.some(id => typeof id !== "string" || !id.trim() || id.length > 512) ||
@@ -63,9 +63,10 @@ export function parseAssistantAnswer(raw: string): AssistantAnswerDecision | nul
 }
 
 export const ASSISTANT_ANSWER_POLICY = `ANSWER CONTRACT (mandatory):
-- Return only JSON {"grounding":"supported"|"insufficient","answer":string,"sourceIds":string[]}.
+- Return only JSON {"grounding":"supported"|"insufficient"|"out_of_scope","answer":string,"sourceIds":string[]}.
 - Decide whether the CURRENT QUESTION can be answered from the supplied lesson evidence. Retrieval similarity or the presence of sources alone does not establish answerability.
-- Use grounding="insufficient" when the question is outside these lessons, evidence is insufficient, or your response says the requested content is absent. Give a brief refusal/clarification and sourceIds=[]. Do not cite lessons merely to explain a refusal or to suggest a different topic.
+- Use grounding="out_of_scope" only when the CURRENT QUESTION is clearly unrelated to the selected course's subject. This is distinct from a relevant question whose answer is missing from the supplied sections. Never classify a relevant question as outside-course just because retrieval is weak, no passage covers it, or you are uncertain.
+- Use grounding="insufficient" for a relevant question with missing or insufficient evidence, or whenever scope is uncertain. For both non-supported outcomes, give a brief refusal/clarification and sourceIds=[]. Never cite lessons merely to explain a refusal or suggest a different topic.
 - Use grounding="supported" only for an explanation actually supported by the supplied evidence. sourceIds must contain only the exact id values of the evidence items used to support that explanation, never titles, E# labels, links, or invented IDs. Omit unused retrieved items.
 - Previous exchanges may clarify a follow-up, but cannot supply facts, answerability, or citations. A new unrelated question must not inherit the previous answer's support.
 - Never add an unsupported answer to a refusal. Preserve all scope, locale, untrusted-data and learning-safety rules above.`;

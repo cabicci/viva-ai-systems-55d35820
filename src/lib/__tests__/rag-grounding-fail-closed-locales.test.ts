@@ -1,3 +1,5 @@
+// @vitest-environment node
+import { successfulQuestionRpc, QUESTION_ID } from "./helpers/question-ledger";
 /**
  * Four-locale regression for P0 grounding fail-closed.
  * Authorization: CR-RAG-GROUNDING-P0-CORRECTIVE-PR-20260728-01
@@ -62,28 +64,9 @@ function loadRegisteredSampleForLocale(locale: (typeof LOCALES)[number]): Semant
 }
 
 function createBillingRpc(): AssistantRuntimeDeps["billingRpc"] {
-  let attemptIndex = 0;
-  return vi.fn(async (fnName: string, body: Record<string, unknown>): Promise<BillingRpcResult> => {
-    switch (fnName) {
-      case "assistant_card_content_access":
-        return { ok: true, data: { card_id: body.p_card_id, admin_review: false, lessons: { entitled_lesson_ids: Object.values(cardMembership.records).map((r) => r.lessonId) } } };
-      case "reserve_learner_ai_access":
-        return { ok: true, data: { reservation_id: RESERVATION_ID } };
-      case "register_provider_attempt":
-        attemptIndex += 1;
-        return {
-          ok: true,
-          data: { reservation_id: body.p_reservation_id, attempt_index: attemptIndex },
-        };
-      case "finalize_provider_attempt":
-      case "commit_ai_quota":
-        return { ok: true, data: { reservation_id: body.p_reservation_id } };
-      case "release_ai_quota":
-        return { ok: true, data: { released: true } };
-      default:
-        return { ok: false, status: 404, error: `unknown ${fnName}` };
-    }
-  });
+  return vi.fn(async (name, body) => name === "assistant_card_content_access"
+    ? { ok: true as const, data: { card_id: body.p_card_id, admin_review: false, lessons: { entitled_lesson_ids: Object.values(cardMembership.records).map(r => r.lessonId) } } }
+    : successfulQuestionRpc(name, body));
 }
 
 function buildDeps(overrides: Partial<AssistantRuntimeDeps> = {}): AssistantRuntimeDeps {
@@ -117,7 +100,7 @@ function request(locale: string, query = "what is AI in the curriculum?") {
       "Content-Type": "application/json",
       Authorization: "Bearer test-token",
     },
-    body: JSON.stringify({ query, learnerContext: { locale, currentPath: loadRegisteredSampleForLocale(locale as typeof LOCALES[number]).pathId } }),
+    body: JSON.stringify({ requestId: QUESTION_ID, query, learnerContext: { locale, currentPath: loadRegisteredSampleForLocale(locale as typeof LOCALES[number]).pathId } }),
   });
 }
 

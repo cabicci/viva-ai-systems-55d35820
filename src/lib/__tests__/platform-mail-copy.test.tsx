@@ -60,7 +60,10 @@ describe("localized neutral platform emails", () => {
     expect(technical.text).toContain(
       locale === "en" ? "carpentry and furniture" : "النجارة وصناعة الأثاث",
     );
-    expect(technical.text).not.toMatch(/technical:furniture|Kids|الأطفال|ولي الأمر/);
+    expect(technical.text).not.toMatch(
+      /technical:furniture|Kids|\bchild(?:ren)?\b|الأطفال|طفل|ولي الأمر/i,
+    );
+    expect(technical.text).toContain(locale === "en" ? "shared allowance" : "الحصة مشتركة");
     const academic = emailAccessInvitationContent({
       locale,
       scope_mode: "selected",
@@ -71,6 +74,7 @@ describe("localized neutral platform emails", () => {
     expect(academic.text).toContain("Project Management <Course>");
     expect(academic.html).toContain("Project Management &lt;Course&gt;");
     expect(academic.text).not.toContain("academic:course-1");
+    expect(academic.text).not.toMatch(/Kids|\bchild(?:ren)?\b|الأطفال|طفل|ولي الأمر/i);
     const kids = emailAccessInvitationContent({
       locale,
       scope_mode: "selected",
@@ -78,6 +82,15 @@ describe("localized neutral platform emails", () => {
       duration_days: 14,
     });
     expect(kids.text).toContain(locale === "en" ? "guardian consent" : "ولي الأمر");
+    expect(kids.text).toContain(
+      locale === "en"
+        ? "not multiplied per child"
+        : locale === "ar-EG"
+          ? "مش بتتكرر لكل طفل"
+          : locale === "ar-Gulf"
+            ? "ما تتضاعف بعددهم"
+            : "لا تتضاعف بعددهم",
+    );
   });
   it("resolves academic names once from the server catalogue, after grant authorization", async () => {
     const rows = [1, 2].map((n) => ({

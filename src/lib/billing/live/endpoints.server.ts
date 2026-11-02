@@ -12,6 +12,33 @@ function rejectMethod(request: Request): Response | null {
 }
 
 export async function handleLiveCheckout(request: Request): Promise<Response> {
+  if (request.method === "GET" && new URL(request.url).searchParams.get("options") === "1") {
+    const { authenticateBearer, liveRuntime } = await import("./runtime.server");
+    const user = await authenticateBearer(request);
+    if (!user) return Response.json({ error: "UNAUTHORIZED" }, { status: 401, headers });
+    try {
+      const options = await liveRuntime().rpc<{
+        curricula: { area: string; course: string; title: string | Record<string, string> }[];
+        children: { id: string; name: string }[];
+      }>("list_commercial_purchase_options", { p_user_id: user.id });
+      const locale = new URL(request.url).searchParams.get("locale") ?? "ar-EG";
+      return Response.json(
+        {
+          ...options,
+          curricula: options.curricula.map((item) => ({
+            ...item,
+            title:
+              typeof item.title === "string"
+                ? item.title
+                : (item.title[locale] ?? item.title["ar-EG"] ?? item.title.en ?? item.course),
+          })),
+        },
+        { headers },
+      );
+    } catch {
+      return Response.json({ error: "PURCHASE_OPTIONS_UNAVAILABLE" }, { status: 503, headers });
+    }
+  }
   const rejected = rejectMethod(request);
   if (rejected) return rejected;
   const { liveRuntime, authenticateBearer, trustedLiveOriginFor } =

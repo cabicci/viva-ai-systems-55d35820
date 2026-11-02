@@ -218,6 +218,7 @@ export function AssistantPanel({ compact = false, contextOverride = null }: Prop
       const resolved = snapshot(inputs.current, check).resolved;
       if (!resolved.currentPath) return { status: 403 };
       const query = read(() => input.query, check);
+      const requestId = read(() => input.requestId, check);
       const history = read(() => input.history, check);
       let copied: { question: string; answer: string }[] | undefined;
       if (history !== undefined) {
@@ -230,7 +231,7 @@ export function AssistantPanel({ compact = false, contextOverride = null }: Prop
         }
       }
       const builder = read(() => buildAssistantRuntimePayload, check);
-      const payload = read(() => builder(query, resolved, copied), check);
+      const payload = read(() => builder(query, resolved, copied, requestId), check);
       const helper = read(() => callGuardedAssistantRuntimeBoxed, check);
       if (!check()) throw stale;
       const raw: unknown = helper(payload, check);observe(raw);

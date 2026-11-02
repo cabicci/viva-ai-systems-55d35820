@@ -2,14 +2,14 @@
 import {afterEach,beforeEach,expect,it,vi} from 'vitest';
 const build='a'.repeat(64),deployment='b'.repeat(64);
 vi.mock('../../../scripts/assistant/indexer-build.mjs',()=>({computeAssistantBuildIdentities:()=>({indexerBuild:'a'.repeat(64),deploymentFingerprint:'b'.repeat(64)})}));
-let calls:{operation:string;headers:Headers}[];
-let published:Record<string,unknown>,http:number,tickFails:boolean;
-beforeEach(()=>{vi.resetModules();calls=[];published={schemaVersion:'assistant-auto-v1',enabled:true,indexerBuild:build,deploymentFingerprint:deployment};http=200;tickFails=false;
+let calls:{operation:string;headers:Headers;pruneResponseCache?: boolean}[];
+let published:Record<string,unknown>,http:number,tickFails:boolean,tickResults:Record<string,unknown>[];
+beforeEach(()=>{vi.resetModules();calls=[];published={schemaVersion:'assistant-auto-v1',enabled:true,indexerBuild:build,deploymentFingerprint:deployment};http=200;tickFails=false;tickResults=[];
  vi.stubEnv('ACTIONS_ID_TOKEN_REQUEST_URL','https://fixture.actions.githubusercontent.com/token');vi.stubEnv('ACTIONS_ID_TOKEN_REQUEST_TOKEN','synthetic-identity-request');
  vi.spyOn(console,'log').mockImplementation(()=>{});
  vi.stubGlobal('fetch',vi.fn(async(url:string|URL,init:RequestInit={})=>{if(new URL(url).hostname==='fixture.actions.githubusercontent.com'){expect(new URL(url).searchParams.get('audience')).toBe('https://masaarat.ai/api/public/assistant-indexing');return Response.json({value:'synthetic-signed-identity'});}
- expect(String(url)).toBe('https://masaarat.ai/api/public/assistant-indexing');const body=JSON.parse(String(init.body));calls.push({operation:body.operation,headers:new Headers(init.headers)});expect(Object.keys(body).sort()).toEqual(body.operation==='status'?['operation']:['operation','requestId']);
- if(body.operation==='status')return Response.json(published,{status:http});if(tickFails)throw Error('ACK uncertain');return Response.json({done:true});}));
+ expect(String(url)).toBe('https://masaarat.ai/api/public/assistant-indexing');const body=JSON.parse(String(init.body));calls.push({operation:body.operation,headers:new Headers(init.headers),pruneResponseCache:body.pruneResponseCache});expect(Object.keys(body).sort()).toEqual(body.operation==='status'?['operation']:calls.filter(c=>c.operation==='tick').length===1?['operation','pruneResponseCache','requestId']:['operation','requestId']);
+ if(body.operation==='status')return Response.json(published,{status:http});if(tickFails)throw Error('ACK uncertain');return Response.json(tickResults.shift()??{done:true});}));
 });
 afterEach(()=>{vi.restoreAllMocks();vi.unstubAllGlobals();vi.unstubAllEnvs();});
 const run=async()=> (await import('../../../scripts/assistant/automatic-worker-client')).runTrustedAutomaticClient();
@@ -19,3 +19,9 @@ it.each([401,503])('fails a real authentication/database HTTP %i immediately',as
 it('respects a disabled backend after successful readiness proof',async()=>{published.enabled=false;expect(await run()).toBe('disabled');expect(calls.map(x=>x.operation)).toEqual(['status']);});
 it('sends both exact main identities on the first and only tick',async()=>{expect(await run()).toBe('complete');expect(calls.map(x=>x.operation)).toEqual(['status','tick']);expect(calls[1].headers.get('x-masaarat-indexer-build')).toBe(build);expect(calls[1].headers.get('x-masaarat-indexer-deployment')).toBe(deployment);});
 it('never retries an uncertain state-changing request',async()=>{tickFails=true;await expect(run()).rejects.toThrow('ACK uncertain');expect(calls.map(x=>x.operation)).toEqual(['status','tick']);});
+
+it('requests bounded cache cleanup only on the first tick of a scheduled run',async()=>{
+ tickResults=[{progressed:true,area:'kids',cardId:'level-1',completedScopes:1,totalScopes:2},{done:true}];
+ expect(await run()).toBe('complete');
+ expect(calls.filter(c=>c.operation==='tick').map(c=>c.pruneResponseCache)).toEqual([true,undefined]);
+});

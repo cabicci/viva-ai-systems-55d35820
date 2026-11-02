@@ -30,3 +30,11 @@ describe("scheduled preparation driver", () => {
     expect(call).toHaveBeenCalledExactlyOnceWith("status");
   });
 });
+
+it("reports a sanitized cache cleanup retry while preserving the indexing outcome", async () => {
+  const log = vi.fn();
+  const call = vi.fn().mockResolvedValueOnce(ready).mockResolvedValueOnce({ done: true,
+    responseCachePrune: { state: "retry", code: "secret diagnostic" } });
+  expect(await runAutomaticDriver({ call, log, wait: vi.fn(), now: () => 0 })).toBe("complete");
+  expect(log).toHaveBeenCalledExactlyOnceWith(JSON.stringify({ state: "response-cache-retry", code: "ASSISTANT_CACHE_PRUNE_UNAVAILABLE" }));
+});

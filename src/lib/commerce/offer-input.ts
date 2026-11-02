@@ -32,9 +32,12 @@ export const simpleOfferSchema = z
       )
       .max(1000),
     group_name: z.string().trim().max(120).default(""),
-    package: z.enum(["pro", "pro_plus", "kids", "technical", "academic"]),
+    package: z.enum(["pro", "pro_plus", "kids", "technical", "academic", "question_topup"]),
     market: z.enum(["EG", "INTL"]),
-    billing_interval: z.enum(["month", "year"]),
+    billing_interval: z.enum(["month", "year", "one_time"]),
+    product_scope: z.enum(["subscription", "question_topup"]).default("subscription"),
+    discount_duration: z.enum(["once", "repeating", "forever"]).default("once"),
+    discount_duration_months: z.number().int().min(1).max(1200).nullable().optional(),
     percent: z.number().int().min(1).max(100),
     delivery: z.enum(["coupon", "invitation"]),
     code: z.string().regex(/^[A-Z0-9_-]{3,64}$/),
@@ -45,6 +48,23 @@ export const simpleOfferSchema = z
     expected_price_minor: z.number().int().min(0).max(1_000_000_000),
   })
   .superRefine((v, ctx) => {
+    if (
+      v.discount_duration === "repeating"
+        ? !v.discount_duration_months
+        : v.discount_duration_months != null
+    )
+      ctx.addIssue({ code: "custom", message: "Invalid discount duration" });
+    if (
+      v.product_scope === "question_topup"
+        ? v.package !== "question_topup" ||
+          v.billing_interval !== "one_time" ||
+          v.market !== "EG" ||
+          v.discount_duration !== "once" ||
+          v.delivery !== "coupon" ||
+          v.percent >= 100
+        : v.package === "question_topup" || v.billing_interval === "one_time"
+    )
+      ctx.addIssue({ code: "custom", message: "Invalid discount product scope" });
     if (
       (v.audience === "individual" && v.emails.length !== 1) ||
       (v.audience === "group" && !v.emails.length) ||

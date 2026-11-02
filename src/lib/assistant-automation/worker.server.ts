@@ -102,9 +102,27 @@ export type AutomaticTickDependencies = {
 
 /** Internal server ports permit a disposable DB transport without replacing the
  * queue/receipt algorithm. They are never accepted from an HTTP request. */
-export async function automaticTick(requestId: string, dependencies?: AutomaticTickDependencies): Promise<Record<string, unknown>> {
+export async function automaticTick(requestId: string, dependencies?: AutomaticTickDependencies,
+  pruneResponseCache = false): Promise<Record<string, unknown>> {
   const ports = dependencies ?? { plans: currentAutomaticPlans, rpc: automationRpc,
     execute: executeAutomaticScope, registry: CARD_REGISTRY };
+  let maintenance: { state: "complete"; pruned: number } | { state: "retry"; code: string } | undefined;
+  if (pruneResponseCache) {
+    try {
+      const result = await ports.rpc<{ pruned: number }>("prune_assistant_response_cache", { p_limit: 1000 });
+      if (!Number.isSafeInteger(result.pruned) || result.pruned < 0 || result.pruned > 1000)
+        throw new Error("ASSISTANT_CACHE_PRUNE_UNAVAILABLE");
+      maintenance = { state: "complete", pruned: result.pruned };
+    } catch {
+      // The next scheduled run retries this idempotent cleanup; indexing keeps its own outcome.
+      maintenance = { state: "retry", code: "ASSISTANT_CACHE_PRUNE_UNAVAILABLE" };
+    }
+  }
+  const result = await advanceAutomaticTick(requestId, ports);
+  return maintenance ? { ...result, responseCachePrune: maintenance } : result;
+}
+
+async function advanceAutomaticTick(requestId: string, ports: AutomaticTickDependencies): Promise<Record<string, unknown>> {
   const plans = await ports.plans();
   const keys = plans.map(plan => plan.key);
   await ports.rpc("assistant_auto_register", { p_jobs: plans.map(({ key, material }) => ({ key, material })), p_registry: ports.registry });

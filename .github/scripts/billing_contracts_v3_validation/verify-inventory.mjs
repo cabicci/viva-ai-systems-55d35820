@@ -3,7 +3,7 @@ import { readFileSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-// Reviewed current inventory:27 suites/447 tests, including Live isolation and native schema proofs.
+// Reviewed current inventory:29 suites/489 tests, including Live isolation and native schema proofs.
 export const billingInventory = new Map([
   ["automatic-trial-absence.test.ts", 4],
   ["billing-concurrency.integration.test.ts", 3],
@@ -16,15 +16,17 @@ export const billingInventory = new Map([
   ["billing-public-rpc-bridge.test.ts", 15],
   ["billing-service-role-auth.test.ts", 9],
   ["billing-wiring.test.ts", 72],
+  ["commercial-policy-db.test.ts", 19],
   ["live-endpoint-dispatch.test.ts", 6],
-  ["live-offer-operations.test.ts", 15],
+  ["live-offer-operations.test.ts", 16],
   ["live-price-inventory.integration.test.ts", 1],
   ["native-rehearsal-contract.test.ts", 5],
+  ["stripe-commercial-purchases.test.ts", 21],
   ["stripe-environment.test.ts", 13],
   ["stripe-generation-decisions.test.ts", 13],
   ["stripe-handlers.test.ts", 5],
   ["stripe-live-offers-db.test.ts", 1],
-  ["stripe-live-offers.test.ts", 18],
+  ["stripe-live-offers.test.ts", 19],
   ["stripe-live-risk-schema.integration.test.ts", 2],
   ["stripe-live-risk.test.ts", 33],
   ["stripe-live.test.ts", 65],

@@ -16,7 +16,16 @@ vi.mock("@/lib/admin.functions", () => ({
   }),
 }));
 vi.mock("@/lib/commerce/email-access.functions", () => ({ emailAccessCommand: mock.command }));
-const data = { catalogues: [{ id: "academic:AC-BUS", title: "Academic business" }], grants: [] };
+const data = {
+  catalogues: [
+    { id: "academic:AC-BUS", title: "Academic business" },
+    { id: "ai:pro", title: "AI partial package" },
+    { id: "ai:pro_plus", title: "AI full package" },
+    { id: "kids", title: "Kids curriculum" },
+    { id: "technical:furniture", title: "Furniture curriculum" },
+  ],
+  grants: [],
+};
 beforeEach(() => {
   vi.clearAllMocks();
   mock.command.mockImplementation(async ({ data: input }) =>
@@ -35,6 +44,49 @@ const setup = () =>
     </QueryClientProvider>,
   );
 describe("administrator pre-registration email grants", () => {
+  it("sends separate single-curriculum invitations to the same email with derived allowance", async () => {
+    setup();
+    await waitFor(() => expect(screen.getByRole("button", { name: "Grant access" })).toBeEnabled());
+    fireEvent.change(screen.getByLabelText("Recipient email"), {
+      target: { value: "learner@example.test" },
+    });
+    fireEvent.change(screen.getByLabelText("Invitation type"), {
+      target: { value: "single_curriculum" },
+    });
+    expect(screen.getByRole("button", { name: "Grant access" })).toBeDisabled();
+    expect(screen.queryByRole("option", { name: "AI partial package" })).toBeNull();
+    expect(screen.getByText(/100 questions each month/).closest("li")).not.toBeNull();
+    fireEvent.change(screen.getByLabelText("Choose one curriculum"), {
+      target: { value: "ai:pro_plus" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: "Grant access" }));
+    await screen.findByRole("status");
+    fireEvent.change(screen.getByLabelText("Choose one curriculum"), {
+      target: { value: "academic:AC-BUS" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: "Grant access" }));
+    await waitFor(() =>
+      expect(mock.command.mock.calls.filter((c) => c[0].data.action === "create")).toHaveLength(2),
+    );
+    const calls = mock.command.mock.calls
+      .filter((c) => c[0].data.action === "create")
+      .map((c) => c[0].data.data);
+    expect(calls[0]).toMatchObject({
+      email: "learner@example.test",
+      grant_kind: "single_curriculum",
+      scope_mode: "selected",
+      catalogues: ["ai:pro_plus"],
+      duration_days: 30,
+    });
+    expect(calls[1]).toMatchObject({
+      email: "learner@example.test",
+      grant_kind: "single_curriculum",
+      catalogues: ["academic:AC-BUS"],
+    });
+    expect(calls[0].key).not.toBe(calls[1].key);
+    expect(calls[0]).not.toHaveProperty("monthly_questions");
+    expect(calls[0]).not.toHaveProperty("user_id");
+  });
   it("fills the grant recipient from the registered-user picker", async () => {
     setup();
     fireEvent.click(await screen.findByRole("button", { name: "registered@example.test" }));
@@ -158,7 +210,9 @@ describe("administrator pre-registration email grants", () => {
     setup();
     await screen.findByText("pending@example.test");
     expect(
-      screen.getByRole("heading", { name: /pending@example.test.*Pending registration/ }),
+      screen.getByRole("heading", {
+        name: /pending@example.test.*Pending acceptance or registration/,
+      }),
     ).toBeTruthy();
     expect(screen.getAllByText(/^Created/)).toHaveLength(4);
     fireEvent.click(screen.getAllByRole("button", { name: "Revoke" })[0]);

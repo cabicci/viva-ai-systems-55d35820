@@ -40,7 +40,13 @@ export function offerSessionParameters(params: URLSearchParams, evidence: OfferE
   params.set("expires_at", String(Math.floor(Date.now() / 1000) + 1800));
 }
 
-export function verifyOfferInvoice(e: OfferEvidence, invoice: any, sub: any, session: any): number {
+export function verifyOfferInvoice(
+  e: OfferEvidence,
+  invoice: any,
+  sub: any,
+  session: any,
+  firstInvoice?: any,
+): number {
   const m = e.mapping,
     item = sub.items?.data?.[0],
     price = item?.price;
@@ -102,8 +108,43 @@ export function verifyOfferInvoice(e: OfferEvidence, invoice: any, sub: any, ses
   const initial = invoice.billing_reason === "subscription_create";
   if (initial && e.consumed_invoice_id && e.consumed_invoice_id !== invoice.id) fail();
   if (!initial && !e.consumed_invoice_id) fail();
-  if (m.duration === "repeating") fail(); // Temporal policy not yet independently verified.
-  const applies = initial || m.duration === "forever";
+  let repeatedDiscount: any = null;
+  let applies = initial || m.duration === "forever";
+  if (m.duration === "repeating") {
+    if (!Number.isInteger(m.duration_in_months) || Number(m.duration_in_months) <= 0) fail();
+    // Read the initial paid invoice on renewals. Its exact provider discount
+    // interval is authoritative, including month-end and leap-year clamping.
+    const first = initial ? invoice : firstInvoice;
+    if (
+      !first ||
+      first.id !== (initial ? invoice.id : e.consumed_invoice_id) ||
+      first.object !== "invoice" ||
+      first.livemode !== true ||
+      first.status !== "paid" ||
+      first.billing_reason !== "subscription_create" ||
+      id(first.customer) !== e.customer_id ||
+      (id(first.subscription) ?? id(first.parent?.subscription_details?.subscription)) !== sub.id ||
+      first.discounts?.length !== 1
+    )
+      fail();
+    repeatedDiscount = first.discounts[0];
+    const firstCoupon = repeatedDiscount?.source?.coupon ?? repeatedDiscount?.coupon;
+    if (
+      repeatedDiscount.object !== "discount" ||
+      id(repeatedDiscount.promotion_code) !== m.promotion_code_id ||
+      id(firstCoupon) !== m.coupon_id ||
+      firstCoupon.object !== "coupon" ||
+      firstCoupon.livemode !== true ||
+      firstCoupon.duration !== "repeating" ||
+      firstCoupon.duration_in_months !== m.duration_in_months ||
+      !Number.isSafeInteger(repeatedDiscount.start) ||
+      !Number.isSafeInteger(repeatedDiscount.end) ||
+      repeatedDiscount.end <= repeatedDiscount.start ||
+      line.period.start < repeatedDiscount.start
+    )
+      fail();
+    applies = line.period.start < repeatedDiscount.end;
+  }
   const discounts = invoice.discounts ?? [];
   const amounts = invoice.total_discount_amounts ?? [];
   const deduction =
@@ -123,7 +164,12 @@ export function verifyOfferInvoice(e: OfferEvidence, invoice: any, sub: any, ses
       coupon?.object !== "coupon" ||
       coupon.livemode !== true ||
       coupon.duration !== m.duration ||
-      coupon.duration_in_months != null ||
+      (m.duration === "repeating"
+        ? coupon.duration_in_months !== m.duration_in_months ||
+          d.id !== repeatedDiscount.id ||
+          d.start !== repeatedDiscount.start ||
+          d.end !== repeatedDiscount.end
+        : coupon.duration_in_months != null) ||
       id(amounts[0].discount) !== d.id ||
       amounts[0].amount !== deduction ||
       coupon.applies_to?.products?.length !== 1 ||

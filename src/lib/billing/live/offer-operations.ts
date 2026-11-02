@@ -43,6 +43,7 @@ export function verifyOfferSession(
   e: OfferEvidence,
   session: ProviderObject,
   customer: string,
+  mode: "subscription" | "payment" = "subscription",
 ): void {
   const m = e.mapping,
     discounts = session.discounts;
@@ -55,7 +56,7 @@ export function verifyOfferSession(
   if (
     session.object !== "checkout.session" ||
     session.livemode !== true ||
-    session.mode !== "subscription" ||
+    session.mode !== mode ||
     (e.session_id && session.id !== e.session_id) ||
     id(session.customer) !== customer ||
     session.metadata?.offer_reservation_id !== e.id ||
@@ -77,8 +78,13 @@ export function verifyOfferSession(
     coupon.id !== m.coupon_id ||
     coupon.livemode !== true ||
     coupon.duration !== m.duration ||
-    !["once", "forever"].includes(m.duration) ||
-    coupon.duration_in_months != null ||
+    !["once", "repeating", "forever"].includes(m.duration) ||
+    (mode === "payment" && (m.duration !== "once" || m.package !== "question_topup")) ||
+    (m.duration === "repeating"
+      ? !Number.isInteger(m.duration_in_months) ||
+        Number(m.duration_in_months) <= 0 ||
+        coupon.duration_in_months !== m.duration_in_months
+      : coupon.duration_in_months != null) ||
     coupon.applies_to?.products?.length !== 1 ||
     coupon.applies_to.products[0] !== m.product_id ||
     (m.kind === "percent"
@@ -94,6 +100,7 @@ export function verifyOfferSession(
 /** Only an expired, unpaid Session without a subscription or payment may free
  * capacity. Completed asynchronous Sessions must remain held. */
 export function terminalOfferRelease(e: OfferEvidence, session: ProviderObject) {
+  const topup = e.mapping.package === "question_topup";
   if (
     !e.session_id ||
     !e.customer_id ||
@@ -102,7 +109,8 @@ export function terminalOfferRelease(e: OfferEvidence, session: ProviderObject) 
     session.id !== e.session_id ||
     session.object !== "checkout.session" ||
     session.livemode !== true ||
-    session.mode !== "subscription" ||
+    session.mode !== (topup ? "payment" : "subscription") ||
+    (topup && (e.mapping.billing_interval !== "one_time" || e.mapping.duration !== "once")) ||
     id(session.customer) !== e.customer_id ||
     session.metadata?.offer_reservation_id !== e.id ||
     session.status !== "expired" ||

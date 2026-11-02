@@ -105,6 +105,34 @@ function fixture() {
   return { evidence, sub, session, invoice };
 }
 describe("Mapped Live coded offers", () => {
+  it("verifies repeating discounts against their original paid invoice window", () => {
+    const f = fixture();
+    f.evidence.mapping.duration = "repeating";
+    f.evidence.mapping.duration_in_months = 3;
+    const first = { ...structuredClone(f.invoice), object: "invoice" };
+    Object.assign(first.discounts[0], { start: 1000, end: 4000 });
+    Object.assign(first.discounts[0].source.coupon, {
+      duration: "repeating",
+      duration_in_months: 3,
+    });
+    expect(verifyOfferInvoice(f.evidence, first, f.sub, f.session)).toBe(17910);
+    f.evidence.consumed_invoice_id = first.id;
+    const renewal = structuredClone(first);
+    renewal.id = "in_renewal";
+    renewal.billing_reason = "subscription_cycle";
+    renewal.lines.data[0].period = { start: 2000, end: 3000 };
+    f.sub.items.data[0].current_period_start = 2000;
+    f.sub.items.data[0].current_period_end = 3000;
+    expect(verifyOfferInvoice(f.evidence, renewal, f.sub, f.session, first)).toBe(17910);
+    expect(() => verifyOfferInvoice(f.evidence, renewal, f.sub, f.session)).toThrow();
+    renewal.lines.data[0].period = { start: 4000, end: 5000 };
+    f.sub.items.data[0].current_period_start = 4000;
+    f.sub.items.data[0].current_period_end = 5000;
+    renewal.discounts = [];
+    renewal.total_discount_amounts = [];
+    renewal.total = renewal.amount_due = renewal.amount_paid = 19900;
+    expect(verifyOfferInvoice(f.evidence, renewal, f.sub, f.session, first)).toBe(19900);
+  });
   it("proves 10% from the standard Kids 19900 price without stacking", () => {
     const f = fixture();
     expect(verifyOfferInvoice(f.evidence, f.invoice, f.sub, f.session)).toBe(17910);

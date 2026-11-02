@@ -1,3 +1,4 @@
+import { successfulQuestionRpc, QUESTION_ID } from "./helpers/question-ledger";
 // @vitest-environment node
 import { describe, expect, it, vi } from "vitest";
 import { CARD_REGISTRY, validateCardRegistry } from "../card-assistant/registry";
@@ -6,15 +7,15 @@ import { runCardQuestion, type CardAssistantDependencies, type CardQuestion } fr
 
 const vector = () => Array.from({ length: 1536 }, (_, i) => i ? 0 : 1);
 const input: CardQuestion = { scope: { area: "kids", cardId: "level-1", stepId: "1", locale: "en", profileId: "profile" },
-  query: "Explain the next step", requestId: "request" };
+  query: "Explain the next step", requestId: QUESTION_ID };
 const source = (stepId = "3"): SourceDocument => ({ area: "kids", cardId: "level-1", stepId, locale: "en", kind: "kids",
   sourceSha256: "a".repeat(64), payload: { title: "Safe lesson", locale: "en", reading: [{ title: "Learn", text: "An approved concept." }],
     quiz: [{ question: "Test", correct: 3, explanation: "SECRET_KEY" }], educatorNotes: "PRIVATE_NOTES", production: "PRIVATE_PRODUCTION" } });
 async function fixture() {
   const chunks = await sourceChunks(source());
   const deps: CardAssistantDependencies = { enabled: vi.fn(async () => true), access: vi.fn(async () => true),
-    takeQuestion: vi.fn(async () => true), embed: vi.fn(async () => vector()), retrieve: vi.fn(async () => chunks),
-    source: vi.fn(async () => source()), generate: vi.fn(async () => JSON.stringify({ answer: "An explanation.", sourceIds: ["S1"] })) };
+    userId: "user", billingRpc: vi.fn(async (name, body) => successfulQuestionRpc(name, body)), embed: vi.fn(async () => vector()), retrieve: vi.fn(async () => chunks),
+    source: vi.fn(async () => source()), generate: vi.fn(async () => JSON.stringify({ grounding: "supported", answer: "An explanation.", sourceIds: ["S1"] })) };
   return { deps, chunks };
 }
 describe("shared card registry and safe corpus", () => {
@@ -65,12 +66,12 @@ describe("whole-card grounded runtime", () => {
     const { deps } = await fixture();
     if (mode === "disabled") deps.enabled = vi.fn(async () => false);
     if (mode === "access") deps.access = vi.fn(async () => false);
-    if (mode === "limit") deps.takeQuestion = vi.fn(async () => false);
+    if (mode === "limit") deps.billingRpc = vi.fn(async () => ({ ok: true as const, data: { status: "quota_exceeded", allowed: false } }));
     const reply = await runCardQuestion(input, deps);
     expect(reply.status).toBe(mode === "disabled" ? 503 : mode === "access" ? 403 : 429);
     expect(deps.embed).not.toHaveBeenCalled(); expect(deps.generate).not.toHaveBeenCalled();
   });
-  it.each(["enabled", "access", "takeQuestion"] as const)("fails closed for malformed truthy %s decisions", async gate => {
+  it.each(["enabled", "access"] as const)("fails closed for malformed truthy %s decisions", async gate => {
     const { deps } = await fixture();
     deps[gate] = vi.fn(async () => "false" as unknown as boolean);
     expect((await runCardQuestion(input, deps)).status).not.toBe(200);
@@ -90,12 +91,12 @@ describe("whole-card grounded runtime", () => {
     const { deps } = await fixture();
     let removed = false;
     deps.source = vi.fn(async () => removed ? null : source());
-    deps.generate = vi.fn(async () => { removed = true; return JSON.stringify({ answer: "Old", sourceIds: ["S1"] }); });
-    expect(await runCardQuestion(input, deps)).toEqual({ status: 422, error: "CARD_GROUNDING_REQUIRED" });
+    deps.generate = vi.fn(async () => { removed = true; return JSON.stringify({ grounding: "supported", answer: "Old", sourceIds: ["S1"] }); });
+    expect(await runCardQuestion(input, deps)).toMatchObject({ status: 422, error: "CARD_GROUNDING_REQUIRED" });
   });
   it("rejects invented citations, and sends bounded history as untrusted context", async () => {
     const { deps } = await fixture();
-    deps.generate = vi.fn(async () => JSON.stringify({ answer: "Invented", sourceIds: ["FOREIGN"] }));
+    deps.generate = vi.fn(async () => JSON.stringify({ grounding: "supported", answer: "Invented", sourceIds: ["FOREIGN"] }));
     expect((await runCardQuestion({ ...input, history: [{ question: "q".repeat(900), answer: "a".repeat(2000) }] }, deps)).status).toBe(503);
     const payload = JSON.parse(vi.mocked(deps.generate).mock.calls[0][1]);
     expect(payload.previousExchanges[0].question).toHaveLength(500);

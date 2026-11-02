@@ -1,9 +1,11 @@
+import { packageBenefits } from "@/lib/billing/package-benefits";
 import { useRef, useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { emailAccessCommand } from "@/lib/commerce/email-access.functions";
 import {
   emailAccessCopy,
+  isWholeCurriculumCatalogue,
   type EmailAccessData,
   type EmailAccessInput,
 } from "@/lib/commerce/email-access";
@@ -25,6 +27,9 @@ export function AdminEmailAccess() {
   });
   const [email, setEmail] = useState(""),
     [scope, setScope] = useState<"all_published" | "selected">("all_published");
+  const [grantKind, setGrantKind] = useState<"comprehensive" | "single_curriculum">(
+    "comprehensive",
+  );
   const [catalogues, setCatalogues] = useState<string[]>([]),
     [permanent, setPermanent] = useState(false);
   const [days, setDays] = useState("30"),
@@ -75,12 +80,22 @@ export function AdminEmailAccess() {
   return (
     <section aria-label={w.title} className="space-y-5">
       <h2 className="text-lg font-bold">{w.title}</h2>
-      <p className="text-sm text-muted-foreground">{w.note}</p>
+      <ul className="list-disc space-y-2 ps-5 text-sm text-muted-foreground">
+        {[
+          ...(grantKind === "single_curriculum"
+            ? packageBenefits(locale).invitationSingle
+            : packageBenefits(locale).invitationComprehensive),
+          ...packageBenefits(locale).invitationCommon,
+        ].map((line) => (
+          <li key={line}>{line}</li>
+        ))}
+      </ul>
       <form
         onSubmit={(e) => {
           e.preventDefault();
           const data = {
             email: email.trim(),
+            grant_kind: grantKind,
             scope_mode: scope,
             catalogues: scope === "selected" ? [...catalogues].sort() : [],
             duration_days: permanent ? null : Number(days),
@@ -109,15 +124,49 @@ export function AdminEmailAccess() {
             />
           </label>
           <Select
-            label={w.scope}
-            value={scope}
-            onChange={(v) => setScope(v as typeof scope)}
+            label={w.grantKind}
+            value={grantKind}
+            onChange={(value) => {
+              setGrantKind(value as typeof grantKind);
+              setScope(value === "single_curriculum" ? "selected" : "all_published");
+              setCatalogues([]);
+            }}
             options={[
-              ["all_published", w.all],
-              ["selected", w.selected],
+              ["comprehensive", w.comprehensive],
+              ["single_curriculum", w.single],
             ]}
           />
-          {scope === "selected" && (
+          {grantKind === "comprehensive" && (
+            <Select
+              label={w.scope}
+              value={scope}
+              onChange={(v) => setScope(v as typeof scope)}
+              options={[
+                ["all_published", w.all],
+                ["selected", w.selected],
+              ]}
+            />
+          )}
+          {grantKind === "single_curriculum" && (
+            <Select
+              label={w.curriculum}
+              value={catalogues[0] ?? ""}
+              onChange={(value) => setCatalogues(value ? [value] : [])}
+              options={[
+                ["", w.choose],
+                ...(result.data?.catalogues
+                  .filter((c) => isWholeCurriculumCatalogue(c.id))
+                  .map(
+                    (c) =>
+                      [
+                        c.id,
+                        c.id === "ai:pro_plus" ? w.wholeAi : (c.titles?.[locale] ?? c.title),
+                      ] as const,
+                  ) ?? []),
+              ]}
+            />
+          )}
+          {grantKind === "comprehensive" && scope === "selected" && (
             <fieldset className="space-y-2">
               <legend>{w.selected}</legend>
               {result.data?.catalogues.map((c) => (
@@ -215,12 +264,15 @@ export function AdminEmailAccess() {
           <h3 className="font-bold">
             <bdi>{g.recipient_email}</bdi> · {w[g.status]}
           </h3>
+          <p>{g.grant_kind === "single_curriculum" ? w.single : w.comprehensive}</p>
           <p>
             {g.scope_mode === "all_published"
               ? w.all
               : g.catalogues
                   .map((id) => {
                     const c = result.data?.catalogues.find((x) => x.id === id);
+                    if (g.grant_kind === "single_curriculum" && id === "ai:pro_plus")
+                      return w.wholeAi;
                     return c?.titles?.[locale] ?? c?.title ?? id;
                   })
                   .join("، ")}

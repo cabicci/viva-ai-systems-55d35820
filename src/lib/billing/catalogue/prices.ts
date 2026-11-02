@@ -21,7 +21,8 @@ export const APPROVED_PRICES_MINOR = {
 
 /**
  * Fail-closed guard asserting the abolition of the automatic 14-day trial:
- * the free plan must not seed an automatic AI trial window or quota.
+ * the free plan must not seed a temporary full-access AI trial. Its ongoing
+ * 10-question monthly allowance is independent of the abolished trial.
  */
 export function assertNoAutomaticTrialDefaults(): void {
   const free = PLAN_ENTITLEMENT_DEFAULTS.free;
@@ -31,7 +32,7 @@ export function assertNoAutomaticTrialDefaults(): void {
   if (free.assistantRuntimePeriodQuota) {
     throw new Error("AUTOMATIC_TRIAL_FORBIDDEN:period_quota");
   }
-  if (free.assistantRuntimeGeneralMonthlyQuota) {
+  if (![null, 0, 10].includes(free.assistantRuntimeGeneralMonthlyQuota)) {
     throw new Error("AUTOMATIC_TRIAL_FORBIDDEN:general_quota");
   }
 }

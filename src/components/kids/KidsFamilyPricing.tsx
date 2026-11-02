@@ -1,3 +1,4 @@
+import { PlanAllowance } from "@/components/billing/PlanAllowance";
 import { useLocale } from "@/lib/locale/locale-context";
 import { KIDS_FAMILY_POLICY, quoteKidsFamily } from "@/lib/kids/family-policy";
 import { KidsCheckoutButtons } from "./KidsCheckoutButtons";
@@ -21,15 +22,18 @@ export function KidsFamilyPricing() {
       <h2 className="text-2xl font-black">
         {en ? "Kids family pricing" : eg ? "أسعار اشتراك كيدز للعيلة" : "أسعار اشتراك كيدز العائلي"}
       </h2>
-      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-        {en
-          ? `One independent subscription for up to ${KIDS_FAMILY_POLICY.maxProfiles} children. Pro or Pro Plus is optional.`
-          : eg
-            ? `اشتراك منفصل يشمل حتى ${KIDS_FAMILY_POLICY.maxProfiles} أطفال. مش لازم تشترك في Pro أو Pro Plus.`
-            : gulf
-              ? `اشتراك مستقل يشمل حتى ${KIDS_FAMILY_POLICY.maxProfiles} أطفال. ما تحتاج تشترك في Pro أو Pro Plus.`
-              : `اشتراك مستقل يشمل حتى ${KIDS_FAMILY_POLICY.maxProfiles} أطفال. لا يشترط الاشتراك في Pro أو Pro Plus.`}
-      </p>
+      <ul className="mt-2 list-disc ps-5 text-sm leading-relaxed text-muted-foreground">
+        <li>
+          {en
+            ? `One independent subscription for up to ${KIDS_FAMILY_POLICY.maxProfiles} children. Pro or Pro Plus is optional.`
+            : eg
+              ? `اشتراك منفصل يشمل حتى ${KIDS_FAMILY_POLICY.maxProfiles} أطفال. مش لازم تشترك في Pro أو Pro Plus.`
+              : gulf
+                ? `اشتراك مستقل يشمل حتى ${KIDS_FAMILY_POLICY.maxProfiles} أطفال. ما تحتاج تشترك في Pro أو Pro Plus.`
+                : `اشتراك مستقل يشمل حتى ${KIDS_FAMILY_POLICY.maxProfiles} أطفال. لا يشترط الاشتراك في Pro أو Pro Plus.`}
+        </li>
+      </ul>
+      <PlanAllowance family />
       <div className="mt-6 grid gap-4 md:grid-cols-2">
         {(["EG", "INTL"] as const).map((market) => (
           <div key={market} className="rounded-xl border border-border/50 bg-background/40 p-5">
@@ -64,12 +68,12 @@ export function KidsFamilyPricing() {
       </div>
       <p className="mt-6 border-t border-border/40 pt-5 text-sm leading-relaxed text-muted-foreground">
         {en
-          ? "Review payment details before confirming. Manual transfers require administrator verification. Prices exclude tax. The 10% discount applies to Kids while Pro or Pro Plus is active; an explicit offer code replaces this discount. Adult prices stay the same. Annual billing costs the equivalent of 10 monthly payments. Choose the market matching the parent account's country."
+          ? "Review payment details before confirming. Manual transfers require administrator verification. Prices exclude tax. The 10% discount applies to Kids while Pro or Pro Plus is active; the automatic discount or an eligible coupon is applied, whichever saves you more, never both. Adult prices stay the same. Annual billing costs the equivalent of 10 monthly payments. Choose the market matching the parent account's country."
           : eg
-            ? "راجع تفاصيل الدفع قبل التأكيد. التحويل اليدوي بيحتاج مراجعة الإدارة. الأسعار من غير ضرائب. خصم ١٠٪ على كيدز وقت ما تكون باقة Pro أو Pro Plus فعّالة؛ كود العرض بيحل محل الخصم ده. سعر الكبار ما بيتغيرش. السنة بسعر ١٠ شهور. اختار سوق بلد حساب وليّ الأمر."
+            ? "راجع تفاصيل الدفع قبل التأكيد. التحويل اليدوي بيحتاج مراجعة الإدارة. الأسعار من غير ضرائب. خصم ١٠٪ على كيدز وقت ما تكون باقة Pro أو Pro Plus فعّالة؛ بيتحسب الخصم التلقائي أو الكوبون، أيهما أوفر لك، من غير جمعهم. سعر الكبار ما بيتغيرش. السنة بسعر ١٠ شهور. اختار سوق بلد حساب وليّ الأمر."
             : gulf
-              ? "راجع تفاصيل الدفع قبل التأكيد. التحويل اليدوي يحتاج مراجعة الإدارة. الأسعار ما تشمل الضريبة. خصم ١٠٪ على كيدز إذا باقة Pro أو Pro Plus فعّالة؛ كود العرض يحل محل هالخصم. سعر الكبار ما يتغير. السنة بسعر ١٠ شهور. اختر سوق بلد حساب وليّ الأمر."
-              : "راجع تفاصيل الدفع قبل التأكيد. التحويل اليدوي يحتاج مراجعة الإدارة. الأسعار لا تشمل الضرائب. خصم 10% يطبق على كيدز أثناء سريان Pro أو Pro Plus؛ كود العرض يحل محل هذا الخصم. تبقى أسعار باقات الكبار كما هي. سعر السنة يعادل 10 أشهر. اختر سوق بلد حساب وليّ الأمر."}
+              ? "راجع تفاصيل الدفع قبل التأكيد. التحويل اليدوي يحتاج مراجعة الإدارة. الأسعار ما تشمل الضريبة. خصم ١٠٪ على كيدز إذا باقة Pro أو Pro Plus فعّالة؛ ينحسب الخصم التلقائي أو الكوبون، أيهما أوفر لك، بدون جمعهم. سعر الكبار ما يتغير. السنة بسعر ١٠ شهور. اختر سوق بلد حساب وليّ الأمر."
+              : "راجع تفاصيل الدفع قبل التأكيد. التحويل اليدوي يحتاج مراجعة الإدارة. الأسعار لا تشمل الضرائب. خصم 10% يطبق على كيدز أثناء سريان Pro أو Pro Plus؛ يُطبّق الخصم التلقائي أو الكوبون، أيهما أوفر لك، دون الجمع بينهما. تبقى أسعار باقات الكبار كما هي. سعر السنة يعادل 10 أشهر. اختر سوق بلد حساب وليّ الأمر."}
       </p>
     </section>
   );

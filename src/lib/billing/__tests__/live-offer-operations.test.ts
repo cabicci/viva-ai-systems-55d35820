@@ -105,6 +105,22 @@ describe("Operational Live offer proof", () => {
     s.status = status;
     expect(() => terminalOfferRelease(evidence, s)).toThrow();
   });
+  it("releases an expired unpaid top-up only with the one-time mapping and no payment", () => {
+    const e = {
+      ...evidence,
+      mapping: { ...evidence.mapping, package: "question_topup", billing_interval: "one_time" },
+    };
+    const s = { ...session(), mode: "payment" };
+    expect(terminalOfferRelease(e, s).terminal_verified).toBe(true);
+    expect(() => terminalOfferRelease(evidence, s)).toThrow();
+    expect(() => terminalOfferRelease(e, session())).toThrow();
+    expect(() => terminalOfferRelease(e, { ...s, payment_intent: "pi_pending" })).toThrow();
+    expect(() => terminalOfferRelease(e, { ...s, status: "open" })).toThrow();
+    expect(() => terminalOfferRelease(e, { ...s, payment_status: "paid" })).toThrow();
+    expect(() =>
+      terminalOfferRelease({ ...e, mapping: { ...e.mapping, billing_interval: "month" } }, s),
+    ).toThrow();
+  });
   it("keeps asynchronous paid-capable attempts held", () => {
     expect(() =>
       terminalOfferRelease(evidence, { ...session(), payment_intent: "pi_pending" }),

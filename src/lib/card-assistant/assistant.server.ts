@@ -1,3 +1,4 @@
+import { questionRpcFailure } from "../../../supabase/functions/assistant-runtime/question-metering";
 import { callAI } from "@/lib/ai-providers.server";
 import { CARD_EMBEDDING_MODEL, CARD_EMBEDDING_DIMENSIONS, sha256, sourceChunks, planChunkUpdates, validVector,
   type SourceDocument, type CardChunk, type IndexedChunk } from "./corpus";
@@ -73,7 +74,12 @@ export async function runCardAssistant(data: CardQuestion, context: Context) {
       return !result.error && (result.data as { runtime_enabled?: boolean } | null)?.runtime_enabled === true;
     },
     access: stepId => rpc<boolean>(context.supabase, "card_assistant_access", { ...args, p_step: stepId }),
-    takeQuestion: () => rpc<boolean>(context.supabase, "card_assistant_take_question", { ...args, p_request: data.requestId }),
+    userId: context.userId,
+    billingRpc: async (name, body) => {
+      const result = await admin.rpc(name as never, body as never);
+      if (result.error) return questionRpcFailure(result.error);
+      return { ok: true, data: result.data as Record<string, unknown> };
+    },
     embed: async query => (await embeddings([query]))[0],
     retrieve: vector => rpc<CardChunk[]>(admin, "card_assistant_match", {
       p_area: data.scope.area, p_card: data.scope.cardId, p_locale: data.scope.locale, p_embedding: JSON.stringify(vector), p_limit: 6,

@@ -1,0 +1,48 @@
+{
+  "account": "acct_1QKKc1JUat05km9W",
+  "authorization": "Owner explicitly requested missing packages on Stripe LIVE",
+  "verified_at": "2026-11-02T11:10:12.032Z",
+  "note": "Catalogue only. No customer payment, subscription change, site publication, or database migration.",
+  "prices": [
+    {
+      "id": "price_1UXJ6GJUat05km9WKXP9ATsJ",
+      "product_id": "prod_masaarat_lifetime_curriculum_v1",
+      "name": "Masaarat — One curriculum for life",
+      "currency": "egp",
+      "amount_minor": 7500,
+      "type": "one_time",
+      "livemode": true,
+      "active": true,
+      "lookup_key": "masaarat_lifetime_curriculum_eg_7500_live_v1",
+      "metadata": {
+        "app": "masaarat",
+        "environment": "live",
+        "included_questions": "100",
+        "market_code": "EG",
+        "policy_version": "2026-11-02",
+        "product_scope": "curriculum_lifetime",
+        "question_months": "1"
+      }
+    },
+    {
+      "id": "price_1UXJ6JJUat05km9WDjixVjfG",
+      "product_id": "prod_masaarat_question_topup_100_v1",
+      "name": "Masaarat — 100 assistant questions",
+      "currency": "egp",
+      "amount_minor": 5000,
+      "type": "one_time",
+      "livemode": true,
+      "active": true,
+      "lookup_key": "masaarat_question_topup_100_eg_5000_live_v1",
+      "metadata": {
+        "app": "masaarat",
+        "environment": "live",
+        "expires": "never",
+        "included_questions": "100",
+        "market_code": "EG",
+        "policy_version": "2026-11-02",
+        "product_scope": "question_topup"
+      }
+    }
+  ]
+}

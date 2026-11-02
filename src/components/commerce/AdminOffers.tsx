@@ -1,3 +1,4 @@
+import { commercialCopy } from "@/lib/billing/commercial-copy";
 import { useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
@@ -15,13 +16,14 @@ import { Field, Select, Panel, type RunCommand } from "./AdminShared";
 import { RegisteredEmailPicker } from "./RegisteredEmailPicker";
 
 type Price = {
-  package: PackageKey;
+  package: PackageKey | "question_topup";
   market: "EG" | "INTL";
-  billing_interval: "month" | "year";
+  billing_interval: "month" | "year" | "one_time";
   original_minor: number;
   currency: string;
 };
 const packageName = {
+  question_topup: "100 questions / ١٠٠ سؤال",
   pro: "Pro",
   pro_plus: "Pro Plus",
   kids: "Masaarat Kids",
@@ -41,6 +43,18 @@ export function AdminOffers({
   const { locale } = useLocale(),
     w = commerceCopy(locale),
     s = adminOfferCopy(locale);
+  const policy = commercialCopy(locale);
+  const periodLabel = (period: string) =>
+    period === "one_time"
+      ? locale === "en"
+        ? "One payment"
+        : "دفعة واحدة"
+      : w[period as "month" | "year"];
+  const packageLabel = (key: keyof typeof packageName) =>
+    key === "question_topup" ? policy.topup : packageName[key];
+  const [scope, setScope] = useState<"subscription" | "question_topup">("subscription");
+  const [duration, setDuration] = useState<"once" | "repeating" | "forever">("once");
+  const [months, setMonths] = useState("3");
   const command = useServerFn(commerceCommand),
     dispatch = useServerFn(dispatchCommerceInvitations);
   const [audience, setAudience] = useState<SimpleOfferInput["audience"]>("individual");
@@ -99,10 +113,14 @@ export function AdminOffers({
                 ],
           group_name: groupName,
           package: price.package,
+          product_scope: scope,
+          discount_duration: scope === "question_topup" ? "once" : duration,
+          discount_duration_months:
+            scope === "subscription" && duration === "repeating" ? Number(months) : null,
           market,
           billing_interval: price.billing_interval,
           percent: Number(percent),
-          delivery: audience === "public" ? "coupon" : delivery,
+          delivery: audience === "public" || scope === "question_topup" ? "coupon" : delivery,
           code,
           locale: mailLocale,
           limit_mode: mode,
@@ -166,9 +184,20 @@ export function AdminOffers({
         <div>
           <dt>{s.plan}</dt>
           <dd>
-            {packageName[p.package]} · {w[p.billing_interval]} ·{" "}
+            {packageLabel(p.package)} · {periodLabel(p.billing_interval)} ·{" "}
             {p.market === "EG" ? s.egypt : s.international}
           </dd>
+        </div>
+        <div>
+          <dt>{policy.duration}</dt>
+          <dd>
+            {policy[p.discount_duration]}
+            {p.discount_duration === "repeating" ? ` · ${p.discount_duration_months}` : ""}
+          </dd>
+        </div>
+        <div>
+          <dt>{policy.couponScope}</dt>
+          <dd>{p.product_scope === "question_topup" ? policy.topupScope : policy.subscription}</dd>
         </div>
         <div>
           <dt>{s.percent}</dt>
@@ -337,6 +366,28 @@ export function AdminOffers({
             </fieldset>
             <fieldset className="space-y-3">
               <legend className="font-semibold">{s.packageStep}</legend>
+              <Select
+                label={policy.couponScope}
+                value={scope}
+                onChange={(value) => {
+                  const next = value as typeof scope;
+                  setScope(next);
+                  setPlan(next === "question_topup" ? "question_topup:one_time" : "pro:month");
+                  if (next === "question_topup") {
+                    setMarket("EG");
+                    setDuration("once");
+                    setDelivery("coupon");
+                    if (Number(percent) > 99) setPercent("20");
+                  }
+                }}
+                options={[
+                  ["subscription", policy.subscription],
+                  ["question_topup", policy.topupScope],
+                ]}
+              />
+              <p className="text-sm text-muted-foreground">
+                {policy.couponScopeNote} {policy.discount}
+              </p>
               <div className="grid gap-3 sm:grid-cols-2">
                 <Select
                   label={s.market}
@@ -344,7 +395,7 @@ export function AdminOffers({
                   onChange={(v) => setMarket(v as "EG" | "INTL")}
                   options={[
                     ["EG", s.egypt],
-                    ["INTL", s.international],
+                    ...(scope === "subscription" ? [["INTL", s.international] as const] : []),
                   ]}
                 />
                 <Select
@@ -352,10 +403,16 @@ export function AdminOffers({
                   value={plan}
                   onChange={setPlan}
                   options={(catalogue.data ?? [])
-                    .filter((p) => p.market === market)
+                    .filter(
+                      (p) =>
+                        p.market === market &&
+                        (scope === "question_topup"
+                          ? p.package === "question_topup"
+                          : p.package !== "question_topup"),
+                    )
                     .map((p) => [
                       `${p.package}:${p.billing_interval}`,
-                      `${packageName[p.package]} · ${w[p.billing_interval]} — ${formatAmount(p.original_minor, p.currency, locale)}`,
+                      `${packageLabel(p.package)} · ${periodLabel(p.billing_interval)} — ${formatAmount(p.original_minor, p.currency, locale)}`,
                     ])}
                 />
                 <Field
@@ -366,6 +423,35 @@ export function AdminOffers({
                   required
                 />
               </div>
+              {scope === "subscription" && (
+                <>
+                  <Select
+                    label={policy.duration}
+                    value={duration}
+                    onChange={(value) => setDuration(value as typeof duration)}
+                    options={[
+                      ["once", policy.once],
+                      ["repeating", policy.repeating],
+                      ["forever", policy.forever],
+                    ]}
+                  />
+                  {duration === "repeating" && (
+                    <label className="block">
+                      {policy.months}
+                      <input
+                        className="mt-2 min-h-11 w-full rounded border bg-background px-3"
+                        type="number"
+                        min={1}
+                        max={1200}
+                        step={1}
+                        required
+                        value={months}
+                        onChange={(e) => setMonths(e.target.value)}
+                      />
+                    </label>
+                  )}
+                </>
+              )}
               {catalogue.isPending && <p>{w.pending}</p>}
               {catalogue.error && <p role="alert">{w.error}</p>}
               {price && (
@@ -376,11 +462,18 @@ export function AdminOffers({
                   </strong>
                 </p>
               )}
+              {scope === "question_topup" && (
+                <p className="text-sm text-muted-foreground">
+                  {locale === "en"
+                    ? "Top-up discounts must be between 1% and 99%."
+                    : "خصم رصيد الأسئلة من ١٪ إلى ٩٩٪."}
+                </p>
+              )}
               <p className="text-sm text-muted-foreground">{s.activation}</p>
             </fieldset>
             <fieldset className="space-y-3">
               <legend className="font-semibold">{s.deliveryStep}</legend>
-              {audience !== "public" && (
+              {audience !== "public" && scope === "subscription" && (
                 <Select
                   label={w.kind}
                   value={delivery}
@@ -391,7 +484,7 @@ export function AdminOffers({
                   ]}
                 />
               )}
-              {audience === "public" || delivery === "coupon" ? (
+              {audience === "public" || scope === "question_topup" || delivery === "coupon" ? (
                 <>
                   <Field
                     label={s.code}
@@ -469,8 +562,8 @@ export function AdminOffers({
                   <bdi>{o.code}</bdi>
                 </strong>
                 <p>
-                  {packageName[o.package]}
-                  {o.billing_interval && ` · ${w[o.billing_interval]}`} ·{" "}
+                  {packageLabel(o.package)}
+                  {o.billing_interval && ` · ${periodLabel(o.billing_interval)}`} ·{" "}
                   {o.kind === "percent"
                     ? `${o.value_minor}%`
                     : o.kind === "complimentary"

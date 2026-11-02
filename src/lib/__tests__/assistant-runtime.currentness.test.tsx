@@ -1,3 +1,12 @@
+// These boundary tests start after the session guidance was acknowledged.
+// First-open, account/session reset and modal behavior are covered in AssistantUsage.test.tsx.
+vi.mock("@/lib/billing/question-balance.functions", () => ({
+  getAssistantQuestionBalance: async ({ data }: { data: { expectedAccountId: string } }) => {
+    const session = "currentness-acknowledged-session";
+    window.sessionStorage.setItem(`masaarat:assistant-rights:v1:${encodeURIComponent(data.expectedAccountId)}:${session}`, "1");
+    return { monthly_remaining: 10, purchased_remaining: 0, access_allowed: true, session_key: session };
+  },
+}));
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { Profiler } from "react";
 import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
@@ -62,7 +71,7 @@ function ownThen(c: CaseState, promise: Promise<unknown>, label: string, value: 
   } });
 }
 function payload(locale: SupportedLocale = "en"): AssistantRuntimeRequestPayload {
-  return { query: "fixture question", learnerContext: { locale, currentPath: "intro" }, conversationHistory: [{ question: "own earlier question", answer: "own earlier answer" }] };
+  return { requestId: "aaaaaaaa-0000-4000-8000-000000000099", query: "fixture question", learnerContext: { locale, currentPath: "intro" }, conversationHistory: [{ question: "own earlier question", answer: "own earlier answer" }] };
 }
 function reply(): AssistantRuntimeResponsePayload {
   return { ok: true, runtime: "connected", receivedQuery: "fixture question", retrievalCount: 1, contextDetected: true,

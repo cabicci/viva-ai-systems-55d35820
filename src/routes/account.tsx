@@ -43,6 +43,7 @@ import { useUiString } from "@/lib/locale/use-ui-strings";
 import type { UiStringKey } from "@/lib/locale/ui-strings";
 import type { SupportedLocale } from "@/lib/locale/types";
 import { KidsConsentControl } from "@/components/kids/KidsConsentControl";
+import { CommercialInvitations } from "@/components/billing/CommercialInvitations";
 
 const DATE_LOCALE: Record<SupportedLocale, string> = {
   "ar-EG": "ar-EG",
@@ -369,6 +370,8 @@ function AccountContent() {
         <section className="glass rounded-2xl p-6 border border-border/50 mb-5">
           <KidsConsentControl />
         </section>
+
+        <CommercialInvitations userId={userId} locale={locale} />
 
         <section className="glass rounded-2xl p-6 border border-border/50">
           <p className="text-xs text-muted-foreground mb-4">{t("account.manage.title")}</p>

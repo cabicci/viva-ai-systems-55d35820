@@ -3,8 +3,14 @@
 // Test and a failed Test request is never retried on Live.
 import { supabase } from "@/integrations/supabase/client";
 import type { SupportedLocale as Locale } from "@/lib/locale/types";
+import type {
+  CommercialPurchaseOptions,
+  CommercialPurchaseSelection,
+} from "./commercial-purchase-contracts";
+export type { CommercialPurchaseOptions } from "./commercial-purchase-contracts";
 
 export type LiveCheckoutRequest = (
+  | CommercialPurchaseSelection
   | {
       product: "core";
       planKey: "pro" | "pro_plus";
@@ -112,8 +118,33 @@ export async function resolveCheckoutUrl(
 ): Promise<string> {
   const mode = await serverMode("checkout", deps);
   if (live.offer && mode !== "live") throw new BillingUnavailableError("LIVE_OFFER_NOT_AVAILABLE");
+  if (
+    (live.product === "curriculum_lifetime" || live.product === "question_topup") &&
+    mode !== "live"
+  )
+    throw new BillingUnavailableError("LIVE_PURCHASE_NOT_AVAILABLE");
   if (mode === "test") return test();
   return postLive("/api/stripe-live/checkout", live, "https://checkout.stripe.com", deps);
+}
+
+export async function loadCommercialPurchaseOptions(
+  locale = "ar-EG",
+  deps: BillingClientDeps = defaultDeps,
+): Promise<CommercialPurchaseOptions> {
+  const token = await deps.accessToken();
+  if (!token) throw new BillingUnavailableError("UNAUTHORIZED");
+  const response = await deps.fetch(
+    `/api/stripe-live/checkout?options=1&locale=${encodeURIComponent(locale)}`,
+    {
+      cache: "no-store",
+      headers: { Authorization: `Bearer ${token}` },
+    },
+  );
+  if (!response.ok) throw new BillingUnavailableError("PURCHASE_OPTIONS_UNAVAILABLE");
+  const result = await response.json();
+  if (!Array.isArray(result.curricula) || !Array.isArray(result.children))
+    throw new BillingUnavailableError("PURCHASE_OPTIONS_INVALID");
+  return result;
 }
 
 export async function resolvePortalUrl(

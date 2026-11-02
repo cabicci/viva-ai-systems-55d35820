@@ -14,3 +14,14 @@ const rejectedHeaders:Record<string,string>[]=[{}, {'x-masaarat-indexer-build':b
 it.each(rejectedHeaders)('fences missing or changed deployment identities before any tick (%j)',async headers=>{const r=await handlePublicAutomaticIndexing(request({operation:'tick',requestId:id},headers));expect(r.status).toBe(503);expect(await r.json()).toEqual({code:'AUTOMATION_OPERATION_UNAVAILABLE'});expect(mocks.tick).not.toHaveBeenCalled();expect(mocks.rpc).not.toHaveBeenCalled();});
 it('matching authenticated tick reaches the existing worker once',async()=>{const r=await handlePublicAutomaticIndexing(request({operation:'tick',requestId:id},{'x-masaarat-indexer-build':build,'x-masaarat-indexer-deployment':deployment}));expect(r.status).toBe(200);expect(mocks.tick).toHaveBeenCalledExactlyOnceWith(id);});
 it('keeps body validation and rejects a new maintenance operation',async()=>{const r=await handlePublicAutomaticIndexing(request({operation:'maintenance',requestId:id}));expect(r.status).toBe(400);expect(mocks.tick).not.toHaveBeenCalled();expect(mocks.rpc).not.toHaveBeenCalled();});
+
+it('forwards cache cleanup only inside the authenticated deployment-fenced tick',async()=>{
+ const r=await handlePublicAutomaticIndexing(request({operation:'tick',requestId:id,pruneResponseCache:true},{'x-masaarat-indexer-build':build,'x-masaarat-indexer-deployment':deployment}));
+ expect(r.status).toBe(200);expect(mocks.tick).toHaveBeenCalledExactlyOnceWith(id,undefined,true);
+});
+it.each([{operation:'status',pruneResponseCache:true},{operation:'tick',requestId:id,pruneResponseCache:'true'}])('rejects cache cleanup on read-only or malformed requests (%j)',async body=>{
+ const r=await handlePublicAutomaticIndexing(request(body));expect(r.status).toBe(400);expect(mocks.tick).not.toHaveBeenCalled();expect(mocks.rpc).not.toHaveBeenCalled();
+});
+it('cannot use the cleanup flag to bypass deployed source validation',async()=>{
+ const r=await handlePublicAutomaticIndexing(request({operation:'tick',requestId:id,pruneResponseCache:true}));expect(r.status).toBe(503);expect(mocks.tick).not.toHaveBeenCalled();
+});

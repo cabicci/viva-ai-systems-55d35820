@@ -13,6 +13,7 @@ export type AssistantCitation = { citationId?: string; chunkId?: string; lessonI
  */
 
 export interface AssistantRuntimeRequestPayload {
+  requestId: string;
   query: string;
   conversationHistory?: Array<{ question: string; answer: string }>;
   learnerContext: {

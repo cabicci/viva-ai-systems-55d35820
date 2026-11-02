@@ -287,7 +287,7 @@ export interface Payment {
 export interface Offer {
   id: string;
   code: string;
-  package: PackageKey;
+  package: PackageKey | "question_topup";
   kind: string;
   renewals: boolean;
   valid_until: string | null;
@@ -295,7 +295,10 @@ export interface Offer {
   max_redemptions?: number | null;
   consumed_count?: number;
   value_minor?: number;
-  billing_interval?: "month" | "year";
+  billing_interval?: "month" | "year" | "one_time";
+  product_scope?: "subscription" | "question_topup";
+  discount_duration?: "once" | "repeating" | "forever";
+  discount_duration_months?: number | null;
   currency?: string;
   delivery_mode?: "coupon" | "invitation";
   audience_emails?: string[] | null;

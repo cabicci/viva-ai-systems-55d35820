@@ -1,9 +1,12 @@
+import { CommercialPurchases } from "@/components/billing/CommercialPurchases";
 import { createFileRoute, Link, redirect } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { Button } from "@/components/ui/button";
 import { StripeCheckoutButtons } from "@/components/billing/StripeCheckoutButtons";
+import { RenewalNotice } from "@/components/billing/PlanAllowance";
+import { packageBenefits } from "@/lib/billing/package-benefits";
 import { PlanPrices } from "@/components/site/PlanPrices";
 import { Badge } from "@/components/ui/badge";
 import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
@@ -57,7 +60,7 @@ const COMPARISON_ROWS = [
   },
   {
     labelKey: "pricing.compare.row.rag.label",
-    free: false,
+    free: true,
     pro: true,
     proPlus: true,
   },
@@ -100,7 +103,7 @@ export const Route = createFileRoute("/pricing")({
 
 function PricingPage() {
   const t = useUiString();
-  const { dir } = useLocale();
+  const { dir, locale } = useLocale();
   const { user } = useAuth();
 
   return (
@@ -133,6 +136,10 @@ function PricingPage() {
                     <span>{t(key)}</span>
                   </li>
                 ))}
+                <li className="flex items-start gap-2.5">
+                  <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                  <span>{packageBenefits(locale).freeRenewal}</span>
+                </li>
               </ul>
               <p className="mb-5 text-3xl font-black">{t("pricing.price.free")}</p>
               <Button asChild variant="hero" size="lg" className="w-full">
@@ -162,6 +169,12 @@ function PricingPage() {
                     <span>{t(key)}</span>
                   </li>
                 ))}
+                {packageBenefits(locale).paid.map((line) => (
+                  <li key={line} className="flex items-start gap-2.5">
+                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>{line}</span>
+                  </li>
+                ))}
               </ul>
               <PlanPrices plan="pro" />
               <StripeCheckoutButtons plan="pro" variant="violet" />
@@ -189,11 +202,20 @@ function PricingPage() {
                     <span>{t(key)}</span>
                   </li>
                 ))}
+                {packageBenefits(locale).paid.map((line) => (
+                  <li key={line} className="flex items-start gap-2.5">
+                    <Check className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                    <span>{line}</span>
+                  </li>
+                ))}
               </ul>
               <PlanPrices plan="pro_plus" />
               <StripeCheckoutButtons plan="pro_plus" variant="outline" />
             </article>
           </section>
+
+          <RenewalNotice />
+          <CommercialPurchases area="ai" />
 
           <section className="glass rounded-2xl border border-border/60 p-6 md:p-8">
             <h2 className="text-lg font-bold mb-5">{t("pricing.compare.title")}</h2>

@@ -1,3 +1,5 @@
+import { ASSISTANT_ANSWER_POLICY, parseAssistantAnswer } from "../../../supabase/functions/assistant-runtime/answer-contract";
+import { runMeteredQuestion, recordedQuestionProvider, type QuestionRpc, type QuestionOutcome } from "../../../supabase/functions/assistant-runtime/question-metering";
 import { registeredStep } from "./registry";
 import { sourceChunks, validVector, type CardChunk, type SourceDocument } from "./corpus";
 import type { AssistantQuestion, AssistantReply } from "./types";
@@ -5,7 +7,8 @@ export type CardQuestion = AssistantQuestion & { scope: AssistantQuestion["scope
 export type CardAssistantDependencies = {
   enabled(): Promise<boolean>;
   access(stepId: string): Promise<boolean>;
-  takeQuestion(): Promise<boolean>;
+  userId: string;
+  billingRpc: QuestionRpc;
   embed(query: string): Promise<number[]>;
   retrieve(embedding: number[]): Promise<CardChunk[]>;
   source(stepId: string): Promise<SourceDocument | null>;
@@ -23,9 +26,30 @@ export async function runCardQuestion(input: CardQuestion, deps: CardAssistantDe
     if (scope.area === "kids" && !scope.profileId) return { status: 403, error: "CARD_ACCESS_REQUIRED" };
     if (await deps.enabled() !== true) return { status: 503, error: "CARD_UNAVAILABLE" };
     if (await deps.access(scope.stepId) !== true) return { status: 403, error: "CARD_ACCESS_REQUIRED" };
-    if (await deps.takeQuestion() !== true) return { status: 429, error: "CARD_RATE_LIMIT" };
+    let outcome: QuestionOutcome = "system_failure";
+    let proof: CardChunk[] = [];
+    const metered = await runMeteredQuestion({ userId: deps.userId, area: scope.area,
+      course: scope.area === "kids" ? "kids" : scope.cardId, cardId: scope.cardId,
+      lesson: scope.area === "kids" ? `${scope.cardId}:${scope.stepId}` : scope.stepId, locale: scope.locale, childId: scope.profileId ?? null,
+      requestId: input.requestId, query, history: input.history }, deps.billingRpc, async fingerprint => {
+      const body = await execute(fingerprint).catch(() => ({ status: 503, error: "CARD_UNAVAILABLE" }));
+      const { status, ...payload } = body;
+      return { status, body: payload, outcome, proof };
+    }, async saved => {
+      if (await deps.enabled() !== true || await deps.access(scope.stepId) !== true || !Array.isArray(saved.proof)) return false;
+      for (const chunk of saved.proof as CardChunk[]) {
+        if (chunk.area !== scope.area || chunk.cardId !== scope.cardId || chunk.locale !== scope.locale || await deps.access(chunk.stepId) !== true) return false;
+        const source = await deps.source(chunk.stepId);
+        if (!source || !(await sourceChunks(source)).some(current => sameChunk(current, chunk))) return false;
+      }
+      return true;
+    });
+    return { ...metered.body, status: metered.status } as AssistantReply;
+    async function execute(fingerprint: string): Promise<AssistantReply> {
+    const provider = <T>(model: string, run: () => Promise<T>) => recordedQuestionProvider(deps.billingRpc,
+      { userId: deps.userId, requestId: input.requestId, fingerprint }, model, run);
     const previousQuestion = input.history?.at(-1)?.question.slice(0, 500);
-    const embedding = await deps.embed(previousQuestion ? `${previousQuestion}\n${query}` : query);
+    const embedding = await provider("openai_embedding", () => deps.embed(previousQuestion ? `${previousQuestion}\n${query}` : query));
     if (!validVector(embedding)) throw new Error("CARD_VECTOR_INVALID");
     const matches = await deps.retrieve(embedding);
     if (!Array.isArray(matches) || matches.length > 8) throw new Error("CARD_RETRIEVAL_INVALID");
@@ -48,7 +72,7 @@ export async function runCardQuestion(input: CardQuestion, deps: CardAssistantDe
       return verified;
     };
     const chunks = await verify();
-    if (!chunks.length) return { status: 422, error: "CARD_GROUNDING_REQUIRED" };
+    if (!chunks.length) { outcome = "insufficient"; return { status: 422, error: "CARD_GROUNDING_REQUIRED" }; }
     if (await deps.enabled() !== true || await deps.access(scope.stepId) !== true) return { status: 403, error: "CARD_ACCESS_REQUIRED" };
     const evidence = chunks.map((chunk, i) => ({ id: `S${i + 1}`, step: chunk.stepId, title: chunk.title, text: chunk.content }));
     const system = [
@@ -57,23 +81,30 @@ export async function runCardQuestion(input: CardQuestion, deps: CardAssistantDe
       "Explain clearly and help the learner reason. Label any illustrative example exactly 'Illustrative example' in English or 'مثال للتوضيح' in Arabic, and ground it in these sources.",
       "Do not invent facts, sources, assessment answer keys or access to other paths. Do not request personal or sensitive information.",
       "If the evidence is insufficient, say so briefly; sourceIds must be empty. Otherwise cite only source IDs supplied here.",
-      `Reply in ${scope.locale}. Return only JSON {\"answer\":string,\"sourceIds\":string[]}.`,
+      `Reply in ${scope.locale}.`,
+      ASSISTANT_ANSWER_POLICY,
     ].join("\n");
-    const raw = await deps.generate(system, JSON.stringify({ question: query, currentStep: scope.stepId,
-      previousExchanges: (input.history ?? []).slice(-3).map(turn => ({ question: turn.question.slice(0, 500), answer: turn.answer.slice(0, 1200) })), sources: evidence }));
-    const response = JSON.parse(raw) as { answer?: unknown; sourceIds?: unknown };
-    if (typeof response.answer !== "string" || !response.answer.trim() || response.answer.length > 16000 ||
-      !Array.isArray(response.sourceIds) || response.sourceIds.length > 8 || response.sourceIds.some(id => typeof id !== "string" || !evidence.some(s => s.id === id)))
+    const raw = await provider("openai_llm", () => deps.generate(system, JSON.stringify({ question: query, currentStep: scope.stepId,
+      previousExchanges: (input.history ?? []).slice(-3).map(turn => ({ question: turn.question.slice(0, 500), answer: turn.answer.slice(0, 1200) })), sources: evidence })));
+    const response = parseAssistantAnswer(raw);
+    if (!response || response.sourceIds.some(id => !evidence.some(s => s.id === id)))
       throw new Error("CARD_ANSWER_INVALID");
-    if (!response.sourceIds.length) return { status: 422, error: "CARD_GROUNDING_REQUIRED" };
     // Revoked subscriptions, deleted approvals and replaced sources cannot escape
     // through an in-flight provider answer.
     if (await deps.enabled() !== true || await deps.access(scope.stepId) !== true) return { status: 403, error: "CARD_ACCESS_REQUIRED" };
     const current = await verify();
-    const used = [...new Set(response.sourceIds as string[])].map(id => ({ id, index: evidence.findIndex(s => s.id === id) }));
+    if (current.length !== chunks.length) return { status: 422, error: "CARD_GROUNDING_REQUIRED" };
+    proof = chunks;
+    if (response.grounding !== "supported") {
+      outcome = response.grounding;
+      return { status: 422, error: response.grounding === "out_of_scope" ? "CARD_OUT_OF_SCOPE" : "CARD_GROUNDING_REQUIRED" };
+    }
+    const used = response.sourceIds.map(id => ({ id, index: evidence.findIndex(s => s.id === id) }));
     if (used.some(({ index }) => !current.some(chunk => sameChunk(chunk, chunks[index])))) return { status: 422, error: "CARD_GROUNDING_REQUIRED" };
+    outcome = "answered";
     return { status: 200, answer: response.answer.trim(), citations: used.map(({ id, index }) => ({ id,
       label: `${chunks[index].stepId} — ${chunks[index].title}`, stepId: chunks[index].stepId, sourceId: chunks[index].chunkId })) };
+    }
   } catch {
     return { status: 503, error: "CARD_UNAVAILABLE" };
   }

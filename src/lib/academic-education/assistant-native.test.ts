@@ -12,7 +12,15 @@ vi.mock("@/integrations/supabase/client.server", () => ({ supabaseAdmin: {
       data: table === "academic_assistant_policy" ? { runtime_enabled: state.enabled } : state.source, error: null }) };
     return builder;
   },
-  rpc: async () => ({ data: state.chunks, error: null }),
+  rpc: async (name: string, body: Record<string, unknown>) => {
+    if (name === "reserve_assistant_question") {
+      state.quotaCall(); return { data: { status: state.quota ? "reserved" : "quota_exceeded", allowed: state.quota }, error: null };
+    }
+    if (name === "settle_assistant_question") return { data: { status: "settled", charged_units: body.p_outcome === "answered" ? 1 : 0,
+      response: body.p_response, balance: { monthly_remaining: 99, purchased_remaining: 0 } }, error: null };
+    if (name === "assistant_question_provider_attempt") return { data: { ok: true }, error: null };
+    return { data: state.chunks, error: null };
+  },
 } }));
 vi.mock("../../../supabase/functions/assistant-runtime/direct-model", () => ({ callDirectAssistantModel: state.answer }));
 import { runAcademicAssistant } from "./assistant.server";

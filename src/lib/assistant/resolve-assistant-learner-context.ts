@@ -129,8 +129,10 @@ export function buildAssistantRuntimePayload(
   query: string,
   resolved: ResolvedAssistantLearnerContext,
   conversationHistory: Array<{ question: string; answer: string }> = [],
+  requestId: string = crypto.randomUUID(),
 ): AssistantRuntimeRequestPayload {
   return {
+    requestId,
     query,
     ...(conversationHistory.length > 0 ? { conversationHistory } : {}),
     learnerContext: {
