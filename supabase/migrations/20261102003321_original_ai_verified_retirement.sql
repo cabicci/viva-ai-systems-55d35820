@@ -77,7 +77,7 @@ BEGIN
  'triggers',(SELECT jsonb_agg(jsonb_build_object('definition',pg_get_triggerdef(oid),'enabled',tgenabled) ORDER BY tgname) FROM pg_trigger WHERE tgrelid=to_regclass('public.rag_current_retirements') AND NOT tgisinternal),
  'policies',(SELECT jsonb_agg(jsonb_build_object('name',polname,'roles',polroles::text,'command',polcmd,'using',pg_get_expr(polqual,polrelid),'check',pg_get_expr(polwithcheck,polrelid)) ORDER BY polname) FROM pg_policy WHERE polrelid=to_regclass('public.rag_current_retirements')))) INTO snapshot;
  IF mode='post' THEN
-  IF md5(snapshot::text) IS DISTINCT FROM '6ba1c22153baebc1d2fb2b627a1a7110' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_CATALOG_POSTIMAGE_CHANGED'; END IF;
+  IF md5(snapshot::text) IS DISTINCT FROM '98cace21d7218ecaeb3f9c070f20fb28' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_CATALOG_POSTIMAGE_CHANGED'; END IF;
   RETURN;
  END IF;
  IF snapshot->'routines'<>'null'::jsonb OR snapshot->'relation'<>'null'::jsonb THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_OBJECT_COLLISION'; END IF;
@@ -163,10 +163,21 @@ BEGIN
   WHERE r.approval->'chunks'->id IS NULL OR r.approval->'chunks'->id IS DISTINCT FROM s.approval->'chunks'->id
    OR r.approval->'packages'->(r.approval->'chunks'->id->>'packageKey') IS DISTINCT FROM s.approval->'packages'->(s.approval->'chunks'->id->>'packageKey'))
   OR (SELECT count(*) FROM public.knowledge_chunks WHERE index_version=v.version_key AND source_id IN(SELECT jsonb_array_elements_text(b.chunk_ids)))<>64
-  OR EXISTS(SELECT 1 FROM public.knowledge_chunks k WHERE k.index_version=v.version_key
-   AND (p_full OR k.source_id IN(SELECT jsonb_array_elements_text(b.chunk_ids)))
-   AND (k.source_sha IS DISTINCT FROM p_successor OR k.index_state IS DISTINCT FROM v.status OR
-    k.metadata->>'currentReleaseId' IS DISTINCT FROM p_successor OR NOT public.rag_current_row_valid(k,s.approval,k.source_id))) THEN
+  OR EXISTS(WITH selected_rows AS MATERIALIZED (
+   SELECT k AS row_data FROM public.knowledge_chunks k WHERE k.index_version=v.version_key
+    AND (p_full OR k.source_id IN(SELECT jsonb_array_elements_text(b.chunk_ids)))
+  ), descriptors AS MATERIALIZED (
+   SELECT d.key AS id,d.value AS chunk FROM jsonb_each(CASE WHEN jsonb_typeof(s.approval->'chunks')='object' THEN s.approval->'chunks' ELSE '{}'::jsonb END) d
+  ), packages AS MATERIALIZED (
+   SELECT p.key AS id,p.value AS package FROM jsonb_each(CASE WHEN jsonb_typeof(s.approval->'packages')='object' THEN s.approval->'packages' ELSE '{}'::jsonb END) p
+  ) SELECT 1 FROM selected_rows scoped
+  LEFT JOIN descriptors d ON d.id=(scoped.row_data).source_id
+  LEFT JOIN packages p ON p.id=d.chunk->>'packageKey'
+  WHERE (scoped.row_data).source_sha IS DISTINCT FROM p_successor OR (scoped.row_data).index_state IS DISTINCT FROM v.status
+   OR (scoped.row_data).metadata->>'currentReleaseId' IS DISTINCT FROM p_successor OR NOT
+   CASE WHEN d.id IS NULL OR p.id IS NULL OR d.chunk->>'packageKey' IS NULL THEN false ELSE
+    public.rag_current_row_valid(scoped.row_data,jsonb_build_object('chunks',jsonb_build_object((scoped.row_data).source_id,d.chunk),
+     'packages',jsonb_build_object(d.chunk->>'packageKey',p.package)),(scoped.row_data).source_id) END) THEN
    RAISE EXCEPTION 'CURRENT_RETIREMENT_COVERAGE_INVALID'; END IF;
  SELECT jsonb_agg(jsonb_build_array(k.source_id,k.chunk_checksum,k.content,k.embedding::text) ORDER BY k.source_id COLLATE "C") INTO coverage
   FROM public.knowledge_chunks k WHERE k.index_version=v.version_key AND k.source_id IN(SELECT jsonb_array_elements_text(b.chunk_ids));
@@ -541,7 +552,7 @@ $fenced_mutator$;
  'constraints',(SELECT jsonb_agg(pg_get_constraintdef(oid) ORDER BY conname) FROM pg_constraint WHERE conrelid=to_regclass('public.rag_current_retirements') AND contype<>'n'),
  'triggers',(SELECT jsonb_agg(jsonb_build_object('definition',pg_get_triggerdef(oid),'enabled',tgenabled) ORDER BY tgname) FROM pg_trigger WHERE tgrelid=to_regclass('public.rag_current_retirements') AND NOT tgisinternal),
  'policies',(SELECT jsonb_agg(jsonb_build_object('name',polname,'roles',polroles::text,'command',polcmd,'using',pg_get_expr(polqual,polrelid),'check',pg_get_expr(polwithcheck,polrelid)) ORDER BY polname) FROM pg_policy WHERE polrelid=to_regclass('public.rag_current_retirements')))) INTO snapshot;
- IF md5(snapshot::text) IS DISTINCT FROM '6ba1c22153baebc1d2fb2b627a1a7110' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FRESH_POSTIMAGE_CHANGED'; END IF;
+ IF md5(snapshot::text) IS DISTINCT FROM '98cace21d7218ecaeb3f9c070f20fb28' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FRESH_POSTIMAGE_CHANGED'; END IF;
  IF md5(pg_get_functiondef('public.rag_current_activate(text,uuid,uuid,text)'::regprocedure)) IS DISTINCT FROM '4279a0e0466966bde12c16e0b488ab69' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FENCE_POSTIMAGE_CHANGED'; END IF;
  IF md5(pg_get_functiondef('public.rag_current_claim(text,uuid,uuid)'::regprocedure)) IS DISTINCT FROM '1028f8e41ffa8db6c330490b2a7497d5' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FENCE_POSTIMAGE_CHANGED'; END IF;
  IF md5(pg_get_functiondef('public.rag_current_commit(text,uuid,uuid,uuid,jsonb)'::regprocedure)) IS DISTINCT FROM '500beddc2986ceb72c2711e74f202973' THEN RAISE EXCEPTION 'CURRENT_RETIREMENT_FENCE_POSTIMAGE_CHANGED'; END IF;

@@ -31,7 +31,7 @@ export const ORIGINAL_ASSISTANT_OPERATIONAL_PATCHES: Readonly<Record<string, str
   "20261101214105_original_assistant_publication_epoch_and_preparation.sql": "50250030ede50ad691bcbccc12d95af0f6a08c54d1bfa8edce3a45619bbc6c8b",
   "20261101234350_original_ai_bounded_validation.sql": "cc70945bbf9dea9783aa073fc3ba99006b4357279af51ae03c1ea175a40572c8",
   "20261102003309_original_ai_compact_activation.sql": "70fcfb2ba60d7a38199dab3f7113d93ed7442ce3c30e4c284eeab97c1b74dc5a",
-  "20261102003321_original_ai_verified_retirement.sql": "76255d8555be080cf7e0c1c8bd390fdfc5d1ce8941128d72dc83afd6ab492477",
+  "20261102003321_original_ai_verified_retirement.sql": "894c091cb0cccd7786f5915d0c99097edf6e3ba4ff3730b330233e3645a276ab",
 });
 
 function disposableOriginalAssistantNotice(name: string, sha256: string): string {
