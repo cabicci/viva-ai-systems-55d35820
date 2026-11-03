@@ -73,6 +73,7 @@ function CurriculumAdminSession() {
   const auth = useAuth();
   const { locale, dir } = useLocale();
   const c = intakeCopy(locale);
+  const story = getPathStoryCopy(locale);
   const command = useServerFn(curriculumAdmin);
   const assetLink = useServerFn(curriculumAsset);
   const client = useQueryClient();
@@ -244,129 +245,143 @@ function CurriculumAdminSession() {
             </div>
             <section aria-label={c.learnerPreview} className="rounded-2xl border bg-background p-5">
               <p className="mb-4 text-sm font-bold text-muted-foreground">{c.learnerPreview}</p>
-            {view !== "lesson" && (
-              <header className="mb-6">
-                <h2 className="text-3xl font-black">
-                  {view === "contents" ? story.contents : course.title[lang]}
-                </h2>
-                <p className="mt-2 text-muted-foreground">
-                  {view === "contents" ? course.title[lang] : c.introLead}
-                </p>
-              </header>
-            )}
-            {view === "intro" && (
-              <CourseIntroduction
-                stations={stations}
-                locale={lang}
-                toContents={(_, className, children) => (
-                  <button type="button" className={className} onClick={() => setView("contents")}>
-                    {children}
-                  </button>
-                )}
-              />
-            )}
-            {view === "contents" && (
-              <CourseContents
-                stations={stations}
-                locale={lang}
-                back={backButton(story.backPath, "intro")}
-                openStep={(id, className, children) => (
-                  <button type="button" className={className} onClick={() => openStep(id!)}>
-                    {children}
-                  </button>
-                )}
-              />
-            )}
-            {view === "lesson" && (
-              <>
-            {backButton(c.backToContents, "contents")}
-            <LessonHero eyebrow={course.title[lang]} title={step.title[lang]!} level={2} />
-            <CurriculumContent
-              key={`${review.version}:${step.id}:${lang}`}
-              locale={lang}
-              selected={section}
-              onSelect={selectSection}
-              lesson={{ id: step.id, title: step.title[lang]!, ...step.content[lang]! }}
-              resolveAsset={async (asset) => {
-                if (!auth.user) throw new Error("CURRICULUM_ACCOUNT_REQUIRED");
-                const result = await assetLink({
-                  data: {
-                    expectedAccountId: auth.user.id,
-                    area: course.area,
-                    course: course.id,
-                    lesson: step.id,
-                    locale: lang,
-                    version: review.version,
-                    asset,
-                  },
-                });
-                if (!active.current) throw new Error("CURRICULUM_ACCOUNT_CHANGED");
-                return result.url;
-              }}
-            >
-              {step.content[lang]!.sections.find((s) => s.id === section)?.questions.map((q) => (
-                <fieldset key={q.id} className="space-y-2">
-                  <legend>{q.prompt}</legend>
-                  {q.options.map((o, i) => (
-                    <p key={i}>
-                      {i + 1}. {o}
-                      {review.assessmentKeys
-                        .find((k) => k.lessonId === step.id && k.locale === lang)
-                        ?.keys.some((k) => k.questionId === q.id && k.correctIndex === i)
-                        ? ` · ${c.correctAnswer}`
-                        : ""}
-                    </p>
-                  ))}
-                </fieldset>
-              ))}
-              {(() => {
-                const selected =
-                  step.content[lang]!.sections.find((s) => s.id === section) ??
-                  step.content[lang]!.sections[0];
-                return (
-                  <>
-                    <CurriculumFields
-                      section={selected}
-                      values={{}}
-                      onChange={() => undefined}
-                      disabled
-                      locale={locale}
-                    />
-                    {review.assessmentKeys
-                      .find((k) => k.lessonId === step.id && k.locale === lang)
-                      ?.rubrics?.filter((r) => r.sectionId === selected.id)
-                      .map((r) => (
-                        <p key={r.fieldId} className="whitespace-pre-wrap">
-                          <strong>
-                            {c.rubric} · {selected.fields.find((f) => f.id === r.fieldId)?.label}
-                          </strong>
-                          : {r.criterion}
-                          {r.critical ? ` · ${c.criticalCriterion}` : ""}
-                          {r.answerId
-                            ? ` · ${selected.fields.find((f) => f.id === r.fieldId)?.options?.find((o) => o.id === r.answerId)?.label ?? r.answerId}`
-                            : ""}
-                        </p>
-                      ))}
-                  </>
-                );
-              })()}
-            </CurriculumContent>
-            <nav className="mt-10 flex flex-wrap justify-between gap-4" aria-label={c.stations}>
-              {at > 0 ? (
-                <button type="button" className={PREVIOUS_CLASS} onClick={() => openStep(allSteps[at - 1].id)}>
-                  {c.previousStep}
-                </button>
-              ) : (
-                <span />
+              {view !== "lesson" && (
+                <header className="mb-6">
+                  <h2 className="text-3xl font-black">
+                    {view === "contents" ? story.contents : course.title[lang]}
+                  </h2>
+                  <p className="mt-2 text-muted-foreground">
+                    {view === "contents" ? course.title[lang] : c.introLead}
+                  </p>
+                </header>
               )}
-              {at >= 0 && at < allSteps.length - 1 && (
-                <button type="button" className={NEXT_CLASS} onClick={() => openStep(allSteps[at + 1].id)}>
-                  {c.nextStep}
-                </button>
+              {view === "intro" && (
+                <CourseIntroduction
+                  stations={stations}
+                  locale={lang}
+                  toContents={(_, className, children) => (
+                    <button type="button" className={className} onClick={() => setView("contents")}>
+                      {children}
+                    </button>
+                  )}
+                />
               )}
-            </nav>
-              </>
-            )}
+              {view === "contents" && (
+                <CourseContents
+                  stations={stations}
+                  locale={lang}
+                  back={backButton(story.backPath, "intro")}
+                  openStep={(id, className, children) => (
+                    <button type="button" className={className} onClick={() => openStep(id!)}>
+                      {children}
+                    </button>
+                  )}
+                />
+              )}
+              {view === "lesson" && (
+                <>
+                  {backButton(c.backToContents, "contents")}
+                  <LessonHero eyebrow={course.title[lang]} title={step.title[lang]!} level={2} />
+                  <CurriculumContent
+                    key={`${review.version}:${step.id}:${lang}`}
+                    locale={lang}
+                    selected={section}
+                    onSelect={selectSection}
+                    lesson={{ id: step.id, title: step.title[lang]!, ...step.content[lang]! }}
+                    resolveAsset={async (asset) => {
+                      if (!auth.user) throw new Error("CURRICULUM_ACCOUNT_REQUIRED");
+                      const result = await assetLink({
+                        data: {
+                          expectedAccountId: auth.user.id,
+                          area: course.area,
+                          course: course.id,
+                          lesson: step.id,
+                          locale: lang,
+                          version: review.version,
+                          asset,
+                        },
+                      });
+                      if (!active.current) throw new Error("CURRICULUM_ACCOUNT_CHANGED");
+                      return result.url;
+                    }}
+                  >
+                    {step.content[lang]!.sections.find((s) => s.id === section)?.questions.map(
+                      (q) => (
+                        <fieldset key={q.id} className="space-y-2">
+                          <legend>{q.prompt}</legend>
+                          {q.options.map((o, i) => (
+                            <p key={i}>
+                              {i + 1}. {o}
+                              {review.assessmentKeys
+                                .find((k) => k.lessonId === step.id && k.locale === lang)
+                                ?.keys.some((k) => k.questionId === q.id && k.correctIndex === i)
+                                ? ` · ${c.correctAnswer}`
+                                : ""}
+                            </p>
+                          ))}
+                        </fieldset>
+                      ),
+                    )}
+                    {(() => {
+                      const selected =
+                        step.content[lang]!.sections.find((s) => s.id === section) ??
+                        step.content[lang]!.sections[0];
+                      return (
+                        <>
+                          <CurriculumFields
+                            section={selected}
+                            values={{}}
+                            onChange={() => undefined}
+                            disabled
+                            locale={locale}
+                          />
+                          {review.assessmentKeys
+                            .find((k) => k.lessonId === step.id && k.locale === lang)
+                            ?.rubrics?.filter((r) => r.sectionId === selected.id)
+                            .map((r) => (
+                              <p key={r.fieldId} className="whitespace-pre-wrap">
+                                <strong>
+                                  {c.rubric} ·{" "}
+                                  {selected.fields.find((f) => f.id === r.fieldId)?.label}
+                                </strong>
+                                : {r.criterion}
+                                {r.critical ? ` · ${c.criticalCriterion}` : ""}
+                                {r.answerId
+                                  ? ` · ${selected.fields.find((f) => f.id === r.fieldId)?.options?.find((o) => o.id === r.answerId)?.label ?? r.answerId}`
+                                  : ""}
+                              </p>
+                            ))}
+                        </>
+                      );
+                    })()}
+                  </CurriculumContent>
+                  <nav
+                    className="mt-10 flex flex-wrap justify-between gap-4"
+                    aria-label={c.stations}
+                  >
+                    {at > 0 ? (
+                      <button
+                        type="button"
+                        className={PREVIOUS_CLASS}
+                        onClick={() => openStep(allSteps[at - 1].id)}
+                      >
+                        {c.previousStep}
+                      </button>
+                    ) : (
+                      <span />
+                    )}
+                    {at >= 0 && at < allSteps.length - 1 && (
+                      <button
+                        type="button"
+                        className={NEXT_CLASS}
+                        onClick={() => openStep(allSteps[at + 1].id)}
+                      >
+                        {c.nextStep}
+                      </button>
+                    )}
+                  </nav>
+                </>
+              )}
             </section>
             {review.state === "draft" && (
               <>
