@@ -126,14 +126,16 @@ export const CREATOR_M4_REPURPOSING_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "عندك فيديو ١٠ دقايق عن نصيحة تسويق. أحسن Repurposing؟",
+          question:
+            "عندك فيديو ١٠ دقايق عن نصيحة تسويق. أحسن Repurposing؟",
           options: [
             "تنشر رابط الفيديو نفسه على كل المنصات بنفس الكابشن.",
             "تطلب من الـ AI يعمل ريل قصير + بوست LinkedIn + ٣ أسئلة ستوري — وتعدّل كل واحد.",
             "تنسخ أول ٣ دقايق كنص على إكس من غير تعديل.",
           ],
           correctIndex: 1,
-          explanation: "Repurposing = تكييف لكل منصة. الـ AI يسرّع — الحكم والأصالة عليك.",
+          explanation:
+            "Repurposing = تكييف لكل منصة. الـ AI يسرّع — الحكم والأصالة عليك.",
         },
       ],
     },

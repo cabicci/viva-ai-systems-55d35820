@@ -1,7 +1,8 @@
 import * as React from "react";
 
 function linkify(text: string): React.ReactNode[] {
-  const regex = /(https?:\/\/[^\s)]+|\b(?:[a-z0-9-]+\.)+[a-z]{2,}(?:\/[^\s)]*)?)/gi;
+  const regex =
+    /(https?:\/\/[^\s)]+|\b(?:[a-z0-9-]+\.)+[a-z]{2,}(?:\/[^\s)]*)?)/gi;
   const parts: React.ReactNode[] = [];
   let last = 0;
   let match: RegExpExecArray | null;
@@ -40,7 +41,9 @@ function renderInline(text: string, keyPrefix: string): React.ReactNode[] {
     if (match.index > last) {
       nodes.push(
         ...linkify(text.slice(last, match.index)).map((node, i) => (
-          <React.Fragment key={`${keyPrefix}-t-${index++}-${i}`}>{node}</React.Fragment>
+          <React.Fragment key={`${keyPrefix}-t-${index++}-${i}`}>
+            {node}
+          </React.Fragment>
         )),
       );
     }
@@ -55,7 +58,9 @@ function renderInline(text: string, keyPrefix: string): React.ReactNode[] {
   if (last < text.length) {
     nodes.push(
       ...linkify(text.slice(last)).map((node, i) => (
-        <React.Fragment key={`${keyPrefix}-tail-${index++}-${i}`}>{node}</React.Fragment>
+        <React.Fragment key={`${keyPrefix}-tail-${index++}-${i}`}>
+          {node}
+        </React.Fragment>
       )),
     );
   }
@@ -63,7 +68,11 @@ function renderInline(text: string, keyPrefix: string): React.ReactNode[] {
   return nodes;
 }
 
-export function PackageLearnerMarkdown({ text }: { text: string }) {
+export function PackageLearnerMarkdown({
+  text,
+}: {
+  text: string;
+}) {
   const lines = text.split("\n");
 
   return (
@@ -81,7 +90,9 @@ export function PackageLearnerMarkdown({ text }: { text: string }) {
           );
         }
 
-        return <p key={lineIndex}>{renderInline(trimmed, `line-${lineIndex}`)}</p>;
+        return (
+          <p key={lineIndex}>{renderInline(trimmed, `line-${lineIndex}`)}</p>
+        );
       })}
     </div>
   );

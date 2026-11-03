@@ -13,14 +13,20 @@ export {
   loadAllIntroLessonContent,
 } from "./lesson-registry";
 
-import { INTRO_LESSON_CONTENT_KEYS, hasIntroLessonContent } from "./lesson-registry";
+import {
+  INTRO_LESSON_CONTENT_KEYS,
+  hasIntroLessonContent,
+} from "./lesson-registry";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
 /**
  * Legacy registry handle — supports key enumeration and `in` checks.
  * Synchronous value reads return `undefined`; use loadIntroLessonContent().
  */
-export const INTRO_LESSON_CONTENT: Record<string, IntroLessonContent | undefined> = new Proxy(
+export const INTRO_LESSON_CONTENT: Record<
+  string,
+  IntroLessonContent | undefined
+> = new Proxy(
   {} as Record<string, IntroLessonContent | undefined>,
   {
     get(_target, prop: string | symbol) {

@@ -127,7 +127,8 @@ export const BUSINESS_M2_L1_REACTIVE_VS_PROACTIVE_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "كريم فتح واتساب أول الصبح عشان مشكلة مورد كبيرة وقضى ٣ ساعات. ده إيه؟",
+          question:
+            "كريم فتح واتساب أول الصبح عشان مشكلة مورد كبيرة وقضى ٣ ساعات. ده إيه؟",
           options: [
             "Proactive — لأنه حل مشكلة مهمة.",
             "Reactive — الموقف حدّد يومه قبل ما يختار أولوياته.",

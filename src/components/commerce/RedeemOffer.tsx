@@ -15,11 +15,8 @@ export function RedeemOffer() {
   const [pack, setPack] = useState<PackageKey>("pro"),
     [market, setMarket] = useState<"EG" | "INTL">("EG"),
     [interval, setInterval] = useState<"month" | "year">("month");
-  const [busy, setBusy] = useState(false),
-    [error, setError] = useState("");
-  useEffect(() => {
-    setError("");
-  }, [pack, market, interval]);
+  const [busy, setBusy] = useState(false), [error, setError] = useState("");
+  useEffect(() => { setError(""); }, [pack, market, interval]);
   async function checkout() {
     if (busy) return;
     setBusy(true);
@@ -27,23 +24,15 @@ export function RedeemOffer() {
     try {
       const selected = stripeSelection(pack, market, interval, locale);
       const url = await resolveCheckoutUrl(selected.live, async () => {
-        const { data, error } = await supabase.functions.invoke(selected.functionName, {
-          body: selected.body,
-        });
-        if (
-          error ||
-          typeof data?.url !== "string" ||
-          new URL(data.url).origin !== "https://checkout.stripe.com"
-        )
+        const { data, error } = await supabase.functions.invoke(selected.functionName, { body: selected.body });
+        if (error || typeof data?.url !== "string" || new URL(data.url).origin !== "https://checkout.stripe.com")
           throw new Error("CHECKOUT_UNAVAILABLE");
         return data.url as string;
       });
       window.location.assign(url);
     } catch {
       setError(billingUnavailableMessage(locale));
-    } finally {
-      setBusy(false);
-    }
+    } finally { setBusy(false); }
   }
   return (
     <section className="space-y-4 rounded-xl border p-4">
@@ -89,11 +78,7 @@ export function RedeemOffer() {
       >
         {w.continue}
       </PaymentMethods>
-      {error && (
-        <p role="alert" className="text-destructive">
-          {error}
-        </p>
-      )}
+      {error && <p role="alert" className="text-destructive">{error}</p>}
     </section>
   );
 }

@@ -110,7 +110,8 @@ export const AUTOMATOR_M4_L3_ERROR_HANDLING_BLOCKS: IntroLessonContent = [
     block: {
       kind: "screenshot",
       alt: "مثال على طبقات تشغيل مع معالجة أخطاء",
-      caption: "كل طبقة في الشغل المتكرر محتاجة خطة بديلة: لو فشلت → إيه البديل؟ مش «نوقف وننسى».",
+      caption:
+        "كل طبقة في الشغل المتكرر محتاجة خطة بديلة: لو فشلت → إيه البديل؟ مش «نوقف وننسى».",
       label: "Error handling — مش اختياري",
     },
   },
@@ -126,14 +127,16 @@ export const AUTOMATOR_M4_L3_ERROR_HANDLING_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "API الرسائل بيرجع خطأ ٥٠٠ لثواني — وبعدين بيشتغل. إيه أحسن تعامل؟",
+          question:
+            "API الرسائل بيرجع خطأ ٥٠٠ لثواني — وبعدين بيشتغل. إيه أحسن تعامل؟",
           options: [
             "Retry ٣ مرات — ولو فشل، تنبيه + تسجيل في جدول failed.",
             "نسكت — غالبًا هيرجع لوحده.",
             "نوقف الـ workflow كلياً لحد ما نراجع يدوي.",
           ],
           correctIndex: 0,
-          explanation: "أخطاء مؤقتة = retry. لو فشل بعد المحاولات = تنبيه قبل ما العميل يتأذى.",
+          explanation:
+            "أخطاء مؤقتة = retry. لو فشل بعد المحاولات = تنبيه قبل ما العميل يتأذى.",
         },
       ],
     },
@@ -157,12 +160,18 @@ export const AUTOMATOR_M4_L3_ERROR_HANDLING_BLOCKS: IntroLessonContent = [
         {
           label: "خطوة وسبب",
           weight: 40,
-          criteria: ["خطوة فشل محدّدة — مش «أي حاجة».", "سبب واقعي واحد على الأقل."],
+          criteria: [
+            "خطوة فشل محدّدة — مش «أي حاجة».",
+            "سبب واقعي واحد على الأقل.",
+          ],
         },
         {
           label: "قاعدة تنبيه",
           weight: 60,
-          criteria: ["مين + إزاي + إيه يتسجّل — كله محدّد.", "Retry واضح: كام مرة وبعدين إيه."],
+          criteria: [
+            "مين + إزاي + إيه يتسجّل — كله محدّد.",
+            "Retry واضح: كام مرة وبعدين إيه.",
+          ],
         },
       ],
     },

@@ -82,7 +82,8 @@ export const BUSINESS_M4_L5_BUSINESS_OS_DASHBOARD_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "تصميم لوحة Business OS بسيطة. لو معندكش وقت، كمل قراية.",
+      caption:
+        "تصميم لوحة Business OS بسيطة. لو معندكش وقت، كمل قراية.",
     },
   },
   {
@@ -133,7 +134,8 @@ export const BUSINESS_M4_L5_BUSINESS_OS_DASHBOARD_BLOCKS: IntroLessonContent = [
             "منصة BI معقدة قبل ما تعرف إيه المهم.",
           ],
           correctIndex: 1,
-          explanation: "اللوحة للقرار مش للعرض. ابدأ صغير — زوّد لما المراجعة تبقى عادة.",
+          explanation:
+            "اللوحة للقرار مش للعرض. ابدأ صغير — زوّد لما المراجعة تبقى عادة.",
         },
       ],
     },
@@ -152,7 +154,7 @@ export const BUSINESS_M4_L5_BUSINESS_OS_DASHBOARD_BLOCKS: IntroLessonContent = [
       buttonLabel: "انسخ خطوات المهمة",
       copiedLabel: "اتنسخت ✓",
       template:
-        'أرقام:\n١) [...] — من [شيت/نظام]\n٢) [...] — من [...]\n٣) [...] — من [...]\n٤) [...] — من [...]\n\nإشارات:\n١) [...]  ٢) [...]  ٣) [...]\n\nPrompt أسبوعي:\n"هذه أرقامي: [...]. إشاراتي: [...]. إيه الأهم؟ اقترح قرارًا واحدًا للأسبوع الجاي."',
+        "أرقام:\n١) [...] — من [شيت/نظام]\n٢) [...] — من [...]\n٣) [...] — من [...]\n٤) [...] — من [...]\n\nإشارات:\n١) [...]  ٢) [...]  ٣) [...]\n\nPrompt أسبوعي:\n\"هذه أرقامي: [...]. إشاراتي: [...]. إيه الأهم؟ اقترح قرارًا واحدًا للأسبوع الجاي.\"",
       rubric: [
         {
           label: "لوحة عملية",

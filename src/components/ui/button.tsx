@@ -9,20 +9,16 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          "text-foreground/80 shadow-sm hover:brightness-95 transition-all bg-[var(--pastel-blue)]",
-        destructive:
-          "text-foreground/80 shadow-sm hover:brightness-95 transition-all bg-[var(--pastel-pink)]",
+        default: "text-foreground/80 shadow-sm hover:brightness-95 transition-all bg-[var(--pastel-blue)]",
+        destructive: "text-foreground/80 shadow-sm hover:brightness-95 transition-all bg-[var(--pastel-pink)]",
         outline:
           "border border-foreground/15 text-foreground/80 shadow-sm hover:brightness-95 transition-all bg-[var(--pastel-cream)]",
-        secondary:
-          "text-foreground/80 shadow-sm hover:brightness-95 transition-all bg-[var(--pastel-mint)]",
+        secondary: "text-foreground/80 shadow-sm hover:brightness-95 transition-all bg-[var(--pastel-mint)]",
         ghost: "text-foreground/80 hover:bg-[var(--pastel-cream)] transition-colors",
         link: "text-foreground/80 underline-offset-4 hover:underline",
         hero: "text-foreground/80 font-semibold shadow-sm hover:brightness-95 transition-all bg-[var(--pastel-yellow)]",
         neon: "text-foreground/80 shadow-sm hover:brightness-95 transition-all bg-[var(--pastel-lavender)]",
-        violet:
-          "text-foreground/80 font-semibold shadow-sm hover:brightness-95 transition-all bg-[var(--pastel-peach)]",
+        violet: "text-foreground/80 font-semibold shadow-sm hover:brightness-95 transition-all bg-[var(--pastel-peach)]",
         glass: "glass text-foreground/80 hover:bg-[var(--pastel-cream)] transition-all",
       },
       size: {

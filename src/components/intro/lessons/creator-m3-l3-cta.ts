@@ -101,7 +101,8 @@ export const CREATOR_M2_CTA_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "شرح سريع لاختيار CTA مناسب. لو مستعجل، تقدر تتخطى الفيديو وتكمل على المهمة مباشرة.",
+      caption:
+        "شرح سريع لاختيار CTA مناسب. لو مستعجل، تقدر تتخطى الفيديو وتكمل على المهمة مباشرة.",
     },
   },
   {
@@ -137,7 +138,8 @@ export const CREATOR_M2_CTA_BLOCKS: IntroLessonContent = [
             "ابعتلي DM حالا عشان أحجزلك مكالمة",
           ],
           correctIndex: 1,
-          explanation: "ده CTA مرتبط بهدف المحتوى فعلا: حفظ ومشاركة، من غير ضغط ولا تشتيت.",
+          explanation:
+            "ده CTA مرتبط بهدف المحتوى فعلا: حفظ ومشاركة، من غير ضغط ولا تشتيت.",
         },
       ],
     },

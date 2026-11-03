@@ -135,7 +135,8 @@ export const BUILDER_M5_FRONTEND_BLOCKS: IntroLessonContent = [
             "Database — لأنه بيحفظ الكلام.",
           ],
           correctIndex: 0,
-          explanation: "مربع الكتابة على الشاشة = Frontend. إرسال السؤال للـ AI = Backend.",
+          explanation:
+            "مربع الكتابة على الشاشة = Frontend. إرسال السؤال للـ AI = Backend.",
         },
       ],
     },
@@ -167,7 +168,10 @@ export const BUILDER_M5_FRONTEND_BLOCKS: IntroLessonContent = [
         {
           label: "السبب واضح",
           weight: 40,
-          criteria: ["السبب يفرّق «شايف» عن «بيشتغل ورا».", "مش مجرد تخمين بدون تعليل."],
+          criteria: [
+            "السبب يفرّق «شايف» عن «بيشتغل ورا».",
+            "مش مجرد تخمين بدون تعليل.",
+          ],
         },
       ],
     },

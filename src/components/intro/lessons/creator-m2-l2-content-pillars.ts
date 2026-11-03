@@ -98,7 +98,8 @@ export const CREATOR_M3_CONTENT_PILLARS_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "لو عايز تختصر الوقت، تقدر تتخطى الفيديو وتبدأ فورًا بالمهمة من نفس الصفحة.",
+      caption:
+        "لو عايز تختصر الوقت، تقدر تتخطى الفيديو وتبدأ فورًا بالمهمة من نفس الصفحة.",
     },
   },
   {
@@ -110,7 +111,8 @@ export const CREATOR_M3_CONTENT_PILLARS_BLOCKS: IntroLessonContent = [
       kind: "diagram",
       id: "content-pillars",
       label: "content-pillars",
-      caption: "الرسم بيعرض ٣ بطاقات لتحديد أعمدة المحتوى، وتثبيت ربط كل فكرة بعمود واحد واضح.",
+      caption:
+        "الرسم بيعرض ٣ بطاقات لتحديد أعمدة المحتوى، وتثبيت ربط كل فكرة بعمود واحد واضح.",
     },
   },
   {
@@ -125,14 +127,16 @@ export const CREATOR_M3_CONTENT_PILLARS_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "لو عندك عشر مواضيع متفرقة ومش عارف تثبت حضورك، أفضل خطوة أولى إيه؟",
+          question:
+            "لو عندك عشر مواضيع متفرقة ومش عارف تثبت حضورك، أفضل خطوة أولى إيه؟",
           options: [
             "تنشرهم كلهم بالتساوي.",
             "تختار ٣ أعمدة رئيسية وتوزع الأفكار تحتهم.",
             "توقف نشر شهر كامل.",
           ],
           correctIndex: 1,
-          explanation: "حصر الأفكار داخل ٣ أعمدة بيخلق وضوح واستمرارية بدل التشتيت.",
+          explanation:
+            "حصر الأفكار داخل ٣ أعمدة بيخلق وضوح واستمرارية بدل التشتيت.",
         },
       ],
     },
@@ -144,7 +148,8 @@ export const CREATOR_M3_CONTENT_PILLARS_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "mission",
-      intro: "المهمة تدريب بناء نظام، مش اختبار. حدّد ٣ أعمدة واضحة واكتب ٣ أفكار عملية لكل عمود.",
+      intro:
+        "المهمة تدريب بناء نظام، مش اختبار. حدّد ٣ أعمدة واضحة واكتب ٣ أفكار عملية لكل عمود.",
       prompt:
         "اكتب التسليم بالشكل ده:\n\n١) العمود الأول: [الاسم]\n   - فكرة ١\n   - فكرة ٢\n   - فكرة ٣\n\n٢) العمود الثاني: [الاسم]\n   - فكرة ١\n   - فكرة ٢\n   - فكرة ٣\n\n٣) العمود الثالث: [الاسم]\n   - فكرة ١\n   - فكرة ٢\n   - فكرة ٣",
       buttonLabel: "انسخ المهمة",
@@ -155,7 +160,10 @@ export const CREATOR_M3_CONTENT_PILLARS_BLOCKS: IntroLessonContent = [
         {
           label: "وضوح الأعمدة",
           weight: 50,
-          criteria: ["الأعمدة مختلفة وواضحة.", "كل عمود ينفع يطلع منه محتوى مستمر."],
+          criteria: [
+            "الأعمدة مختلفة وواضحة.",
+            "كل عمود ينفع يطلع منه محتوى مستمر.",
+          ],
         },
         {
           label: "جودة الأفكار",

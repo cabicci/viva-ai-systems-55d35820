@@ -51,7 +51,8 @@ export function DifficultyPrompt({
     }
   }, [storageKey]);
 
-  const shouldShow = isCompleted && completedCount > 0 && completedCount % 3 === 0 && !answered;
+  const shouldShow =
+    isCompleted && completedCount > 0 && completedCount % 3 === 0 && !answered;
 
   if (!shouldShow) return null;
 
@@ -135,7 +136,9 @@ export function DifficultyPrompt({
           <p className="font-semibold text-rose-300 mb-1">
             {getUiString(locale, "learn.difficulty.hardTitle")}
           </p>
-          <p className="text-foreground/80">{getUiString(locale, "learn.difficulty.hardBody")}</p>
+          <p className="text-foreground/80">
+            {getUiString(locale, "learn.difficulty.hardBody")}
+          </p>
         </div>
       )}
       {answered === "easy" && nextLessonHref && (

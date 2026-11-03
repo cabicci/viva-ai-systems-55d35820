@@ -30,7 +30,9 @@ export function Hero() {
       />
 
       <div className="container relative mx-auto px-4 py-24 md:py-32 text-center">
-        <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-border/60 bg-white/70 px-4 py-1.5 text-xs text-muted-foreground shadow-sm backdrop-blur">
+        <div
+          className="mx-auto inline-flex items-center gap-2 rounded-full border border-border/60 bg-white/70 px-4 py-1.5 text-xs text-muted-foreground shadow-sm backdrop-blur"
+        >
           <Compass className="h-3.5 w-3.5" style={{ color: "oklch(0.55 0.10 235)" }} />
           <span>{t("hero.badge")}</span>
         </div>
@@ -52,6 +54,7 @@ export function Hero() {
         <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
           {t("hero.subtitle")}
         </p>
+
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           {loading ? null : user ? (

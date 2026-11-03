@@ -127,7 +127,8 @@ export const ANALYST_M6_L1_QUESTION_MISTAKES_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "صاحب متجر بيسأل: «ليه العملاء بيسيبوا العربة؟» — إيه نوع الخطأ؟",
+          question:
+            "صاحب متجر بيسأل: «ليه العملاء بيسيبوا العربة؟» — إيه نوع الخطأ؟",
           options: [
             "Leading — افترض سبب الترك قبل ما يشوف البيانات.",
             "Vague — السؤال عام بس.",

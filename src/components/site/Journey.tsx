@@ -54,7 +54,8 @@ export function Journey() {
           {t("journey.eyebrow")}
         </p>
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
-          {t("journey.title1")} <span className="text-foreground/70">{t("journey.title2")}</span>{" "}
+          {t("journey.title1")}{" "}
+          <span className="text-foreground/70">{t("journey.title2")}</span>{" "}
           {t("journey.title3")}
           <br />
           <span className="relative inline-block">
@@ -66,7 +67,9 @@ export function Journey() {
             <span className="relative">{t("journey.titleHighlight")}</span>
           </span>
         </h2>
-        <p className="mt-4 text-muted-foreground text-base md:text-lg">{t("journey.subtitle")}</p>
+        <p className="mt-4 text-muted-foreground text-base md:text-lg">
+          {t("journey.subtitle")}
+        </p>
       </div>
 
       <div className="relative max-w-3xl mx-auto">

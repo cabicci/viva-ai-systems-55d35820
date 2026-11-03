@@ -82,7 +82,8 @@ export const BUSINESS_M4_L2_DELEGATE_OR_AUTOMATE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "مصفوفة تفويض وأتمتة مع الـ AI. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
+      caption:
+        "مصفوفة تفويض وأتمتة مع الـ AI. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
     },
   },
   {
@@ -110,7 +111,8 @@ export const BUSINESS_M4_L2_DELEGATE_OR_AUTOMATE_BLOCKS: IntroLessonContent = [
       kind: "diagram",
       id: "delegate-automate-matrix",
       label: "احتفظ / فوّض / أتمت",
-      caption: "المحورين: تكرار المهمة ومستوى الحكم. ابدأ بمهمة واحدة في ربع «أتمت بالـ AI».",
+      caption:
+        "المحورين: تكرار المهمة ومستوى الحكم. ابدأ بمهمة واحدة في ربع «أتمت بالـ AI».",
     },
   },
   {
@@ -125,14 +127,16 @@ export const BUSINESS_M4_L2_DELEGATE_OR_AUTOMATE_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "تلخيص ١٥ رسالة عميل كل صباح — نفس الشكل، مفيش قرار سعر. أنسب تصنيف؟",
+          question:
+            "تلخيص ١٥ رسالة عميل كل صباح — نفس الشكل، مفيش قرار سعر. أنسب تصنيف؟",
           options: [
             "احتفظ — لازم تقرأ كل رسالة بنفسك.",
             "أتمت بالـ AI — تلخيص وترتيب، وإنت تراجع القائمة.",
             "فوّض لعميل جديد من غير قالب.",
           ],
           correctIndex: 1,
-          explanation: "تكرار + مخاطرة منخفضة = مرشّح قوي للـ AI. القرارات الحساسة تفضل مع مراجعة.",
+          explanation:
+            "تكرار + مخاطرة منخفضة = مرشّح قوي للـ AI. القرارات الحساسة تفضل مع مراجعة.",
         },
       ],
     },

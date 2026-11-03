@@ -5,7 +5,13 @@ import { useUiString } from "@/lib/locale/use-ui-strings";
 
 /* Inline paywall used inside the lesson page when a free user
  * tries to open a Pro-only lesson. */
-export function PaywallCard({ pathTitle, pathId }: { pathTitle: string; pathId: string }) {
+export function PaywallCard({
+  pathTitle,
+  pathId,
+}: {
+  pathTitle: string;
+  pathId: string;
+}) {
   const t = useUiString();
 
   return (
@@ -30,7 +36,8 @@ export function PaywallCard({ pathTitle, pathId }: { pathTitle: string; pathId: 
         </Button>
         <Button asChild variant="glass" size="lg">
           <Link to="/dashboard">
-            <ArrowLeft className="h-4 w-4 rotate-180" /> {t("learn.paywall.backToDashboard")}
+            <ArrowLeft className="h-4 w-4 rotate-180" />{" "}
+            {t("learn.paywall.backToDashboard")}
           </Link>
         </Button>
       </div>
@@ -44,7 +51,13 @@ export function PaywallCard({ pathTitle, pathId }: { pathTitle: string; pathId: 
 }
 
 /* Inline "complete intro first" gate */
-export function IntroGateCard({ done, total }: { done: number; total: number }) {
+export function IntroGateCard({
+  done,
+  total,
+}: {
+  done: number;
+  total: number;
+}) {
   const t = useUiString();
   const remaining = Math.max(total - done, 0);
 

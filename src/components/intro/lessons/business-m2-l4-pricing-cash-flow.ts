@@ -70,8 +70,7 @@ export const BUSINESS_M2_L4_PRICING_CASH_FLOW_BLOCKS: IntroLessonContent = [
         {
           term: "Value Pricing (تسعير بالقيمة)",
           meaning: "السعر مبني على النتيجة للعميل — مش تكلفتك وحدها.",
-          example:
-            "خدمة توفّر ٥ ساعات أسبوعيًا — السعر مربوط بالوقت الموفّر مش بالساعة اللي اشتغلتها.",
+          example: "خدمة توفّر ٥ ساعات أسبوعيًا — السعر مربوط بالوقت الموفّر مش بالساعة اللي اشتغلتها.",
         },
       ],
     },
@@ -83,7 +82,8 @@ export const BUSINESS_M2_L4_PRICING_CASH_FLOW_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "مقارنة خيارات تسعير مع الـ AI. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
+      caption:
+        "مقارنة خيارات تسعير مع الـ AI. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
     },
   },
   {
@@ -111,7 +111,8 @@ export const BUSINESS_M2_L4_PRICING_CASH_FLOW_BLOCKS: IntroLessonContent = [
       kind: "diagram",
       id: "decision-loop",
       label: "قرار السعر",
-      caption: "عرض بسيط → خياران → مقارنة بالـ AI → مراجعة الكاش → قرارك. مش حاسبة واحدة.",
+      caption:
+        "عرض بسيط → خياران → مقارنة بالـ AI → مراجعة الكاش → قرارك. مش حاسبة واحدة.",
     },
   },
   {

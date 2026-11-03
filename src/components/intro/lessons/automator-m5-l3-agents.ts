@@ -85,8 +85,7 @@ export const AUTOMATOR_M5_L3_AGENTS_BLOCKS: IntroLessonContent = [
         },
         {
           term: "Boundary (حد)",
-          meaning:
-            "قاعدة توقّف الـ Agent عند حد معيّن — عدد خطوات، أدوات خارج النطاق، موافقة بشرية.",
+          meaning: "قاعدة توقّف الـ Agent عند حد معيّن — عدد خطوات، أدوات خارج النطاق، موافقة بشرية.",
           example: "«مابعتش رسالة للعميل من غير موافقة» أو «أقصى ٥ خطوات وبعدين توقف».",
         },
       ],
@@ -128,7 +127,8 @@ export const AUTOMATOR_M5_L3_AGENTS_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "شكاوى العملاء أنواعها كتير ومش كل شكوى نفس الخطوات. Workflow ثابت ولا Agent؟",
+          question:
+            "شكاوى العملاء أنواعها كتير ومش كل شكوى نفس الخطوات. Workflow ثابت ولا Agent؟",
           options: [
             "Workflow ثابت بشروط كتير لكل احتمال.",
             "Agent بهدف واضح وأدوات محددة وحد يمنع الإرسال بدون موافقة.",

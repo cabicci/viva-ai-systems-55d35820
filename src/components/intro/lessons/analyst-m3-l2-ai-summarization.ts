@@ -100,7 +100,8 @@ export const ANALYST_M3_L2_AI_SUMMARIZATION_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "إزاي تستخدم AI كأداة تحليل بدل قراءة كل حاجة بإيدك.",
+      caption:
+        "إزاي تستخدم AI كأداة تحليل بدل قراءة كل حاجة بإيدك.",
     },
   },
   {
@@ -166,7 +167,10 @@ export const ANALYST_M3_L2_AI_SUMMARIZATION_BLOCKS: IntroLessonContent = [
         {
           label: "ملاحظات وقرار",
           weight: 50,
-          criteria: ["٣ ملاحظات محددة — مش وصف عام.", "في قرار واحد مربوط بملاحظة."],
+          criteria: [
+            "٣ ملاحظات محددة — مش وصف عام.",
+            "في قرار واحد مربوط بملاحظة.",
+          ],
         },
       ],
     },

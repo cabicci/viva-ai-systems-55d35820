@@ -81,7 +81,8 @@ export const BUSINESS_M3_L4_HIRING_ONBOARDING_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "دور واضح وأسبوع أول مع مساعدة الـ AI. لو معندكش وقت، كمل قراية.",
+      caption:
+        "دور واضح وأسبوع أول مع مساعدة الـ AI. لو معندكش وقت، كمل قراية.",
     },
   },
   {
@@ -106,7 +107,11 @@ export const BUSINESS_M3_L4_HIRING_ONBOARDING_BLOCKS: IntroLessonContent = [
     title: "أسبوع أول في ٣ خطوات",
     block: {
       kind: "flow",
-      steps: ["اقرأ SOP + شوف مثال حي", "نفّذ بإشراف + سجّل الأسئلة", "اختبار حالة واحدة + مراجعة"],
+      steps: [
+        "اقرأ SOP + شوف مثال حي",
+        "نفّذ بإشراف + سجّل الأسئلة",
+        "اختبار حالة واحدة + مراجعة",
+      ],
     },
   },
   {
@@ -128,7 +133,8 @@ export const BUSINESS_M3_L4_HIRING_ONBOARDING_BLOCKS: IntroLessonContent = [
             "«يستخدم AI بدالك في كل القرارات».",
           ],
           correctIndex: 1,
-          explanation: "دور مربوط بنظام موجود ونتيجة قابلة للقياس — مش مساعدة عامة.",
+          explanation:
+            "دور مربوط بنظام موجود ونتيجة قابلة للقياس — مش مساعدة عامة.",
         },
       ],
     },

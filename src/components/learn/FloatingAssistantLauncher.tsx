@@ -1,4 +1,11 @@
-import { useCallback, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
 import { createPortal } from "react-dom";
 import { MessageCircle, X } from "lucide-react";
 import { useLocale } from "@/lib/locale/locale-context";
@@ -11,9 +18,11 @@ import {
   type AssistantViewport,
 } from "./assistant-launcher-position";
 
-export const LEARN_ASSISTANT_LAUNCHER_POSITION_KEY = "masaarat:learn-assistant-launcher-position";
+export const LEARN_ASSISTANT_LAUNCHER_POSITION_KEY =
+  "masaarat:learn-assistant-launcher-position";
 
-export const LEARN_ASSISTANT_LAUNCHER_MANUAL_POSITION_KEY = `${LEARN_ASSISTANT_LAUNCHER_POSITION_KEY}:manual-v2`;
+export const LEARN_ASSISTANT_LAUNCHER_MANUAL_POSITION_KEY =
+  `${LEARN_ASSISTANT_LAUNCHER_POSITION_KEY}:manual-v2`;
 
 const DRAG_THRESHOLD_PX = 8;
 const DEFAULT_MARGIN_END_PX = 16;
@@ -43,8 +52,7 @@ function readStoredPosition(): StoredPosition | null {
     if (!raw) return null;
     const parsed = JSON.parse(raw) as StoredPosition & { version?: number; kind?: string };
     if (
-      parsed?.version === 2 &&
-      parsed.kind === "user-drag" &&
+      parsed?.version === 2 && parsed.kind === "user-drag" &&
       typeof parsed.x === "number" &&
       Number.isFinite(parsed.x) &&
       typeof parsed.y === "number" &&
@@ -74,19 +82,23 @@ function defaultLauncherPosition(
   viewport: AssistantViewport,
   direction: "rtl" | "ltr",
 ): StoredPosition {
-  const marginEnd = viewport.width >= 640 ? DEFAULT_MARGIN_END_SM_PX : DEFAULT_MARGIN_END_PX;
+  const marginEnd =
+    viewport.width >= 640 ? DEFAULT_MARGIN_END_SM_PX : DEFAULT_MARGIN_END_PX;
   return {
-    x:
-      direction === "rtl"
-        ? viewport.left + marginEnd
-        : viewport.left + viewport.width - width - marginEnd,
+    x: direction === "rtl" ? viewport.left + marginEnd : viewport.left + viewport.width - width - marginEnd,
     y: viewport.top + (viewport.height - height) / 2,
   };
 }
 
-function samePanelPosition(a: AssistantPanelPosition | null, b: AssistantPanelPosition) {
+function samePanelPosition(
+  a: AssistantPanelPosition | null,
+  b: AssistantPanelPosition,
+) {
   return (
-    a?.left === b.left && a.top === b.top && a.width === b.width && a.maxHeight === b.maxHeight
+    a?.left === b.left &&
+    a.top === b.top &&
+    a.width === b.width &&
+    a.maxHeight === b.maxHeight
   );
 }
 
@@ -143,7 +155,9 @@ export function FloatingAssistantLauncher({
       rect.height,
       viewport,
     );
-    setPosition((current) => (current?.x === next.x && current.y === next.y ? current : next));
+    setPosition((current) =>
+      current?.x === next.x && current.y === next.y ? current : next,
+    );
   }, [dir]);
 
   useLayoutEffect(() => {
@@ -164,7 +178,9 @@ export function FloatingAssistantLauncher({
       contentHeight,
       visibleViewport(),
     );
-    setPanelPosition((current) => (samePanelPosition(current, next) ? current : next));
+    setPanelPosition((current) =>
+      samePanelPosition(current, next) ? current : next,
+    );
   }, []);
 
   useEffect(() => {
@@ -173,8 +189,7 @@ export function FloatingAssistantLauncher({
       syncPanelPosition();
     };
     const viewport = window.visualViewport;
-    const launcherSize =
-      typeof ResizeObserver === "undefined" ? null : new ResizeObserver(onResize);
+    const launcherSize = typeof ResizeObserver === "undefined" ? null : new ResizeObserver(onResize);
     if (launcherRef.current) launcherSize?.observe(launcherRef.current);
     window.addEventListener("resize", onResize);
     window.addEventListener("scroll", onResize, { passive: true });
@@ -350,7 +365,10 @@ export function FloatingAssistantLauncher({
           }
         >
           <div className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-border/60 bg-background/95 px-4 py-3 backdrop-blur-md">
-            <h2 id={`${panelId}-title`} className="text-sm font-semibold text-foreground">
+            <h2
+              id={`${panelId}-title`}
+              className="text-sm font-semibold text-foreground"
+            >
               {panelTitle}
             </h2>
             <button
@@ -362,9 +380,7 @@ export function FloatingAssistantLauncher({
               <X className="h-4 w-4" />
             </button>
           </div>
-          <div ref={panelContentRef} className="p-4">
-            {children}
-          </div>
+          <div ref={panelContentRef} className="p-4">{children}</div>
         </div>
       ) : null}
 

@@ -19,18 +19,12 @@ export function JourneyVisitRecorder({
 }) {
   const { failed, retry } = useRecordJourneyVisit(line, course, lesson, locale, true, profile);
   const c = journeyCopy(locale);
-  return (
-    <>
-      {failed ? (
-        <p role="status" className="my-3 text-sm text-muted-foreground">
-          {c.bookmarkError}{" "}
-          <button className="underline" onClick={retry}>
-            {c.retry}
-          </button>
-        </p>
-      ) : null}
-      <LearningReadingPosition scope={{ area: line, course, lesson, profileId: profile }} />
-      <LearningLessonNotes scope={{ area: line, course, lesson, profileId: profile }} />
-    </>
-  );
+  return <>{failed ? (
+    <p role="status" className="my-3 text-sm text-muted-foreground">
+      {c.bookmarkError}{" "}
+      <button className="underline" onClick={retry}>
+        {c.retry}
+      </button>
+    </p>
+  ) : null}<LearningReadingPosition scope={{ area: line, course, lesson, profileId: profile }} /><LearningLessonNotes scope={{ area: line, course, lesson, profileId: profile }} /></>;
 }

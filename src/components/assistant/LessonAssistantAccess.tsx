@@ -9,41 +9,18 @@ const generationKeys = new WeakMap<object, number>();
 let nextGenerationKey = 0;
 function generationKey(generation: object): number {
   let key = generationKeys.get(generation);
-  if (key === undefined) {
-    key = ++nextGenerationKey;
-    generationKeys.set(generation, key);
-  }
+  if (key === undefined) { key = ++nextGenerationKey; generationKeys.set(generation, key); }
   return key;
 }
 
-export function LessonAssistantAccess({
-  pathId,
-  lessonId,
-  locale,
-  children,
-}: {
-  pathId: string;
-  lessonId: string;
-  locale: SupportedLocale;
-  children: ReactNode;
+export function LessonAssistantAccess({ pathId, lessonId, locale, children }: {
+  pathId: string; lessonId: string; locale: SupportedLocale; children: ReactNode;
 }) {
-  const auth = useAuth(),
-    generation = auth.authGeneration;
+  const auth = useAuth(), generation = auth.authGeneration;
   const live = () => !auth.loading && !!auth.user?.id && auth.isAuthGenerationCurrent(generation);
   const query = useQuery({
-    queryKey: [
-      "lesson-assistant-access",
-      auth.user?.id,
-      pathId,
-      lessonId,
-      locale,
-      generationKey(generation),
-    ],
-    enabled: live(),
-    retry: false,
-    staleTime: 0,
-    gcTime: 0,
-    structuralSharing: false,
+    queryKey: ["lesson-assistant-access", auth.user?.id, pathId, lessonId, locale, generationKey(generation)],
+    enabled: live(), retry: false, staleTime: 0, gcTime: 0, structuralSharing: false,
     queryFn: async () => {
       if (!live()) throw new Error("retired access check");
       const decision = await getLessonAssistantAccess({ data: { pathId, lessonId } });
@@ -56,20 +33,11 @@ export function LessonAssistantAccess({
   if (decision?.state === "allowed") return <>{children}</>;
   if (query.isPending || (!current && !query.isError))
     return <p role="status">{getUiString(locale, "assistant.panel.context.loading")}</p>;
-  const key =
-    decision?.state === "unauthenticated"
-      ? "assistant.panel.error.auth"
-      : decision?.state === "denied"
-        ? decision.reason === "quota"
-          ? "assistant.panel.error.quota"
-          : "assistant.panel.error.access"
-        : "assistant.panel.error.connection";
-  return (
-    <div className="space-y-3">
-      <p role="alert">{getUiString(locale, key)}</p>
-      <button type="button" className="underline" onClick={() => void query.refetch()}>
-        {locale === "en" ? "Check again" : "إعادة التحقق"}
-      </button>
-    </div>
-  );
+  const key = decision?.state === "unauthenticated" ? "assistant.panel.error.auth"
+    : decision?.state === "denied" ? decision.reason === "quota" ? "assistant.panel.error.quota" : "assistant.panel.error.access"
+    : "assistant.panel.error.connection";
+  return <div className="space-y-3"><p role="alert">{getUiString(locale, key)}</p>
+    <button type="button" className="underline" onClick={() => void query.refetch()}>
+      {locale === "en" ? "Check again" : "إعادة التحقق"}
+    </button></div>;
 }

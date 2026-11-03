@@ -86,7 +86,8 @@ export const INTRO_CHOOSE_YOUR_PATH_CONTENT: IntroLessonContent = [
     block: {
       kind: "lessonVideo",
       url: "/lessons/intro/intro-m1-l7-choose-your-path.mp4",
-      caption: "٥ مشاكل شائعة — ٥ مسارات. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
+      caption:
+        "٥ مشاكل شائعة — ٥ مسارات. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
     },
   },
   {
@@ -133,7 +134,8 @@ export const INTRO_CHOOSE_YOUR_PATH_CONTENT: IntroLessonContent = [
           question: "منى وقتها بيضيع في رسائل متابعة متكررة كل يوم. أنسب مسار للبداية؟",
           options: ["Automator", "Builder", "Analyst"],
           correctIndex: 0,
-          explanation: "المهام المتكررة = Automator. Builder للتطبيقات — مش للمتابعة اليومية.",
+          explanation:
+            "المهام المتكررة = Automator. Builder للتطبيقات — مش للمتابعة اليومية.",
         },
       ],
     },

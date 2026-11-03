@@ -76,7 +76,8 @@ export const BUSINESS_M4_L2_REACTIVE_RELAPSE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "محفّزات الـ relapse وقواعد الحماية. لو معندكش وقت، كمل قراية.",
+      caption:
+        "محفّزات الـ relapse وقواعد الحماية. لو معندكش وقت، كمل قراية.",
     },
   },
   {
@@ -104,7 +105,8 @@ export const BUSINESS_M4_L2_REACTIVE_RELAPSE_BLOCKS: IntroLessonContent = [
       kind: "diagram",
       id: "reactive-relapse-cycle",
       label: "Relapse Cycle",
-      caption: "المحفّز → إطفاء → تعب → تأجيل النظام. قاطع الدورة بقاعدة واحدة واضحة.",
+      caption:
+        "المحفّز → إطفاء → تعب → تأجيل النظام. قاطع الدورة بقاعدة واحدة واضحة.",
     },
   },
   {
@@ -119,7 +121,8 @@ export const BUSINESS_M4_L2_REACTIVE_RELAPSE_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "بعد شهر نظام، مبيعات قفزت والواتساب انفجر. أحسن رد أول؟",
+          question:
+            "بعد شهر نظام، مبيعات قفزت والواتساب انفجر. أحسن رد أول؟",
           options: [
             "تسيب النظام خالص — المبيعات أهم.",
             "تعرف المحفّز، تستخدم AI للتلخيص، وتطبّق قاعدة حماية واحدة.",

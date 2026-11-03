@@ -85,7 +85,8 @@ export const AI_CAN_CANNOT_CONTENT: IntroLessonContent = [
     block: {
       kind: "lessonVideo",
       url: "/lessons/intro/intro-m1-l4-ai-can-cannot.mp4",
-      caption: "أمثلة عملية على حدود الثقة. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
+      caption:
+        "أمثلة عملية على حدود الثقة. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
     },
   },
   {

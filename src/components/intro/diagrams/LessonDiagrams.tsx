@@ -34,18 +34,15 @@ type CardProps = {
 
 const Card: FC<CardProps> = ({ x, y, w, h, fill, title, sub, icon, titleSize = 18 }) => (
   <g>
-    <rect
-      x={x}
-      y={y}
-      width={w}
-      height={h}
-      rx={16}
-      fill={fill}
-      stroke={PALETTE.stroke}
-      strokeWidth={1}
-    />
+    <rect x={x} y={y} width={w} height={h} rx={16} fill={fill} stroke={PALETTE.stroke} strokeWidth={1} />
     {icon && (
-      <text x={x + w / 2} y={y + 32} textAnchor="middle" fontSize={22} fill={PALETTE.ink}>
+      <text
+        x={x + w / 2}
+        y={y + 32}
+        textAnchor="middle"
+        fontSize={22}
+        fill={PALETTE.ink}
+      >
         {icon}
       </text>
     )}
@@ -83,60 +80,14 @@ export const AudiencePersonaDiagram: FC = () => (
     <circle cx="400" cy="260" r="78" fill="var(--card)" stroke={PALETTE.lavender} strokeWidth="3" />
     <circle cx="400" cy="232" r="26" fill={PALETTE.lavender} />
     <path d="M348 300 Q400 252 452 300 L452 322 L348 322 Z" fill={PALETTE.lavender} />
-    <text
-      x="400"
-      y="362"
-      textAnchor="middle"
-      fontFamily={FONT}
-      fontSize="14"
-      fontWeight="700"
-      fill={PALETTE.ink}
-    >
-      Persona
-    </text>
-    <text
-      x="400"
-      y="380"
-      textAnchor="middle"
-      fontFamily={FONT}
-      fontSize="12"
-      fill={PALETTE.inkSoft}
-    >
-      شخص واحد بالظبط
-    </text>
+    <text x="400" y="362" textAnchor="middle" fontFamily={FONT} fontSize="14" fontWeight="700" fill={PALETTE.ink}>Persona</text>
+    <text x="400" y="380" textAnchor="middle" fontFamily={FONT} fontSize="12" fill={PALETTE.inkSoft}>شخص واحد بالظبط</text>
 
     {/* 4 cards */}
-    <Card x={40} y={60} w={210} h={120} fill={PALETTE.blue} icon="◷" title="السن" sub="٢٨ سنة" />
-    <Card
-      x={550}
-      y={60}
-      w={210}
-      h={120}
-      fill={PALETTE.mint}
-      icon="✦"
-      title="الاهتمام"
-      sub="Product / AI"
-    />
-    <Card
-      x={40}
-      y={340}
-      w={210}
-      h={120}
-      fill={PALETTE.blush}
-      icon="!"
-      title="المشكلة"
-      sub="خايف من الـ Code"
-    />
-    <Card
-      x={550}
-      y={340}
-      w={210}
-      h={120}
-      fill={PALETTE.peach}
-      icon="★"
-      title="الهدف"
-      sub="يطلق SaaS بنفسه"
-    />
+    <Card x={40}  y={60}  w={210} h={120} fill={PALETTE.blue}   icon="◷" title="السن" sub="٢٨ سنة" />
+    <Card x={550} y={60}  w={210} h={120} fill={PALETTE.mint}   icon="✦" title="الاهتمام" sub="Product / AI" />
+    <Card x={40}  y={340} w={210} h={120} fill={PALETTE.blush}  icon="!"  title="المشكلة" sub="خايف من الـ Code" />
+    <Card x={550} y={340} w={210} h={120} fill={PALETTE.peach}  icon="★" title="الهدف" sub="يطلق SaaS بنفسه" />
 
     {/* connectors */}
     <g stroke={PALETTE.stroke} strokeWidth="1.5" strokeDasharray="4 4" fill="none">
@@ -152,54 +103,12 @@ export const AudiencePersonaDiagram: FC = () => (
 export const ContentPillarsDiagram: FC = () => (
   <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" role="img">
     <rect width="800" height="520" fill={PALETTE.bg} />
-    <text
-      x="400"
-      y="50"
-      textAnchor="middle"
-      fontFamily={FONT}
-      fontSize="18"
-      fontWeight="700"
-      fill={PALETTE.ink}
-    >
-      ٣ Pillars بس
-    </text>
-    <text x="400" y="74" textAnchor="middle" fontFamily={FONT} fontSize="13" fill={PALETTE.inkSoft}>
-      كل فيديو لازم ينتمي لواحد منهم
-    </text>
+    <text x="400" y="50" textAnchor="middle" fontFamily={FONT} fontSize="18" fontWeight="700" fill={PALETTE.ink}>٣ Pillars بس</text>
+    <text x="400" y="74" textAnchor="middle" fontFamily={FONT} fontSize="13" fill={PALETTE.inkSoft}>كل فيديو لازم ينتمي لواحد منهم</text>
 
-    <Card
-      x={60}
-      y={120}
-      w={210}
-      h={340}
-      fill={PALETTE.blue}
-      icon="💡"
-      title="Educate"
-      sub="تعليم"
-      titleSize={22}
-    />
-    <Card
-      x={295}
-      y={120}
-      w={210}
-      h={340}
-      fill={PALETTE.mint}
-      icon="☺"
-      title="Entertain"
-      sub="ترفيه"
-      titleSize={22}
-    />
-    <Card
-      x={530}
-      y={120}
-      w={210}
-      h={340}
-      fill={PALETTE.blush}
-      icon="★"
-      title="Inspire"
-      sub="إلهام"
-      titleSize={22}
-    />
+    <Card x={60}  y={120} w={210} h={340} fill={PALETTE.blue}  icon="💡" title="Educate" sub="تعليم" titleSize={22} />
+    <Card x={295} y={120} w={210} h={340} fill={PALETTE.mint}  icon="☺"  title="Entertain" sub="ترفيه" titleSize={22} />
+    <Card x={530} y={120} w={210} h={340} fill={PALETTE.blush} icon="★"  title="Inspire" sub="إلهام" titleSize={22} />
 
     {/* base line */}
     <rect x="40" y="470" width="720" height="6" rx="3" fill={PALETTE.lavender} />
@@ -210,62 +119,12 @@ export const ContentPillarsDiagram: FC = () => (
 export const PlatformsGridDiagram: FC = () => (
   <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" role="img">
     <rect width="800" height="520" fill={PALETTE.bg} />
-    <text
-      x="400"
-      y="40"
-      textAnchor="middle"
-      fontFamily={FONT}
-      fontSize="18"
-      fontWeight="700"
-      fill={PALETTE.ink}
-    >
-      ٤ فورمات — ٤ منصات
-    </text>
+    <text x="400" y="40" textAnchor="middle" fontFamily={FONT} fontSize="18" fontWeight="700" fill={PALETTE.ink}>٤ فورمات — ٤ منصات</text>
 
-    <Card
-      x={80}
-      y={80}
-      w={300}
-      h={180}
-      fill={PALETTE.blue}
-      icon="▶"
-      title="فيديو قصير"
-      sub="TikTok · Reels"
-      titleSize={20}
-    />
-    <Card
-      x={420}
-      y={80}
-      w={300}
-      h={180}
-      fill={PALETTE.mint}
-      icon="◧"
-      title="صورة"
-      sub="Instagram"
-      titleSize={20}
-    />
-    <Card
-      x={80}
-      y={290}
-      w={300}
-      h={180}
-      fill={PALETTE.blush}
-      icon="♪"
-      title="صوت"
-      sub="Podcasts · Spaces"
-      titleSize={20}
-    />
-    <Card
-      x={420}
-      y={290}
-      w={300}
-      h={180}
-      fill={PALETTE.lavender}
-      icon="¶"
-      title="نص"
-      sub="LinkedIn · X"
-      titleSize={20}
-    />
+    <Card x={80}  y={80}  w={300} h={180} fill={PALETTE.blue}     icon="▶" title="فيديو قصير" sub="TikTok · Reels" titleSize={20} />
+    <Card x={420} y={80}  w={300} h={180} fill={PALETTE.mint}     icon="◧"  title="صورة" sub="Instagram" titleSize={20} />
+    <Card x={80}  y={290} w={300} h={180} fill={PALETTE.blush}    icon="♪"  title="صوت" sub="Podcasts · Spaces" titleSize={20} />
+    <Card x={420} y={290} w={300} h={180} fill={PALETTE.lavender} icon="¶"  title="نص" sub="LinkedIn · X" titleSize={20} />
   </svg>
 );
 
@@ -278,107 +137,24 @@ export const SchedulingCalendarDiagram: FC = () => {
   return (
     <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" role="img">
       <rect width="800" height="520" fill={PALETTE.bg} />
-      <text
-        x="400"
-        y="44"
-        textAnchor="middle"
-        fontFamily={FONT}
-        fontSize="18"
-        fontWeight="700"
-        fill={PALETTE.ink}
-      >
-        أسبوع مستدام
-      </text>
-      <text
-        x="400"
-        y="68"
-        textAnchor="middle"
-        fontFamily={FONT}
-        fontSize="13"
-        fill={PALETTE.inkSoft}
-      >
-        يوم تصوير + ٣ أيام نشر
-      </text>
+      <text x="400" y="44" textAnchor="middle" fontFamily={FONT} fontSize="18" fontWeight="700" fill={PALETTE.ink}>أسبوع مستدام</text>
+      <text x="400" y="68" textAnchor="middle" fontFamily={FONT} fontSize="13" fill={PALETTE.inkSoft}>يوم تصوير + ٣ أيام نشر</text>
 
       {days.map((d, i) => (
         <g key={d}>
-          <rect
-            x={startX + i * colW}
-            y={headerY}
-            width={colW - 8}
-            height={36}
-            rx={8}
-            fill="var(--card)"
-            stroke={PALETTE.stroke}
-          />
-          <text
-            x={startX + i * colW + (colW - 8) / 2}
-            y={headerY + 23}
-            textAnchor="middle"
-            fontFamily={FONT}
-            fontSize="13"
-            fontWeight="700"
-            fill={PALETTE.ink}
-          >
-            {d}
-          </text>
+          <rect x={startX + i * colW} y={headerY} width={colW - 8} height={36} rx={8} fill="var(--card)" stroke={PALETTE.stroke} />
+          <text x={startX + i * colW + (colW - 8) / 2} y={headerY + 23} textAnchor="middle" fontFamily={FONT} fontSize="13" fontWeight="700" fill={PALETTE.ink}>{d}</text>
         </g>
       ))}
 
       {/* Sunday: filming day */}
-      <Card
-        x={startX + 1 * colW}
-        y={170}
-        w={colW - 8}
-        h={170}
-        fill={PALETTE.lavender}
-        icon="📷"
-        title="تصوير"
-        sub="٣ فيديوهات"
-        titleSize={15}
-      />
+      <Card x={startX + 1 * colW} y={170} w={colW - 8} h={170} fill={PALETTE.lavender} icon="📷" title="تصوير" sub="٣ فيديوهات" titleSize={15} />
       {/* Monday/Wednesday/Friday: publish */}
-      <Card
-        x={startX + 2 * colW}
-        y={170}
-        w={colW - 8}
-        h={120}
-        fill={PALETTE.blue}
-        icon="↑"
-        title="نشر ١"
-        titleSize={15}
-      />
-      <Card
-        x={startX + 4 * colW}
-        y={170}
-        w={colW - 8}
-        h={120}
-        fill={PALETTE.mint}
-        icon="↑"
-        title="نشر ٢"
-        titleSize={15}
-      />
-      <Card
-        x={startX + 6 * colW}
-        y={170}
-        w={colW - 8}
-        h={120}
-        fill={PALETTE.blush}
-        icon="↑"
-        title="نشر ٣"
-        titleSize={15}
-      />
+      <Card x={startX + 2 * colW} y={170} w={colW - 8} h={120} fill={PALETTE.blue}  icon="↑" title="نشر ١" titleSize={15} />
+      <Card x={startX + 4 * colW} y={170} w={colW - 8} h={120} fill={PALETTE.mint}  icon="↑" title="نشر ٢" titleSize={15} />
+      <Card x={startX + 6 * colW} y={170} w={colW - 8} h={120} fill={PALETTE.blush} icon="↑" title="نشر ٣" titleSize={15} />
 
-      <text
-        x="400"
-        y="400"
-        textAnchor="middle"
-        fontFamily={FONT}
-        fontSize="13"
-        fill={PALETTE.inkSoft}
-      >
-        قرار واحد في الأسبوع — مفيش ضغط يومي
-      </text>
+      <text x="400" y="400" textAnchor="middle" fontFamily={FONT} fontSize="13" fill={PALETTE.inkSoft}>قرار واحد في الأسبوع — مفيش ضغط يومي</text>
     </svg>
   );
 };
@@ -387,20 +163,8 @@ export const SchedulingCalendarDiagram: FC = () => {
 export const AnalyticsTriangleDiagram: FC = () => (
   <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" role="img">
     <rect width="800" height="520" fill={PALETTE.bg} />
-    <text
-      x="400"
-      y="40"
-      textAnchor="middle"
-      fontFamily={FONT}
-      fontSize="18"
-      fontWeight="700"
-      fill={PALETTE.ink}
-    >
-      مثلث الأرقام
-    </text>
-    <text x="400" y="64" textAnchor="middle" fontFamily={FONT} fontSize="13" fill={PALETTE.inkSoft}>
-      ٣ أرقام بس — والباقي ضوضاء
-    </text>
+    <text x="400" y="40" textAnchor="middle" fontFamily={FONT} fontSize="18" fontWeight="700" fill={PALETTE.ink}>مثلث الأرقام</text>
+    <text x="400" y="64" textAnchor="middle" fontFamily={FONT} fontSize="13" fill={PALETTE.inkSoft}>٣ أرقام بس — والباقي ضوضاء</text>
 
     {/* triangle connectors */}
     <g stroke={PALETTE.lavender} strokeWidth="2" fill="none">
@@ -409,100 +173,33 @@ export const AnalyticsTriangleDiagram: FC = () => (
       <line x1="200" y1="420" x2="600" y2="420" />
     </g>
 
-    <Card
-      x={285}
-      y={100}
-      w={230}
-      h={130}
-      fill={PALETTE.blue}
-      icon="⌛"
-      title="Watch Time"
-      sub="وقت المشاهدة"
-      titleSize={18}
-    />
-    <Card
-      x={50}
-      y={360}
-      w={230}
-      h={130}
-      fill={PALETTE.mint}
-      icon="❤"
-      title="Save Rate"
-      sub="معدّل الحفظ"
-      titleSize={18}
-    />
-    <Card
-      x={520}
-      y={360}
-      w={230}
-      h={130}
-      fill={PALETTE.blush}
-      icon="+"
-      title="Follow Rate"
-      sub="معدّل المتابعة"
-      titleSize={18}
-    />
+    <Card x={285} y={100} w={230} h={130} fill={PALETTE.blue}  icon="⌛" title="Watch Time" sub="وقت المشاهدة" titleSize={18} />
+    <Card x={50}  y={360} w={230} h={130} fill={PALETTE.mint}  icon="❤" title="Save Rate" sub="معدّل الحفظ" titleSize={18} />
+    <Card x={520} y={360} w={230} h={130} fill={PALETTE.blush} icon="+" title="Follow Rate" sub="معدّل المتابعة" titleSize={18} />
   </svg>
 );
 
 /* ---------- 6. Leads Funnel ---------- */
 export const LeadsFunnelDiagram: FC = () => {
   const layers = [
-    { fill: PALETTE.blue, title: "Views", sub: "المشاهدات", w: 720 },
-    { fill: PALETTE.mint, title: "Bio Link Click", sub: "كليك على الرابط", w: 560 },
-    { fill: PALETTE.blush, title: "Lead Magnet", sub: "تحميل الهدية المجانية", w: 400 },
+    { fill: PALETTE.blue,     title: "Views", sub: "المشاهدات", w: 720 },
+    { fill: PALETTE.mint,     title: "Bio Link Click", sub: "كليك على الرابط", w: 560 },
+    { fill: PALETTE.blush,    title: "Lead Magnet", sub: "تحميل الهدية المجانية", w: 400 },
     { fill: PALETTE.lavender, title: "Customer", sub: "عميل دافع", w: 240 },
   ];
   return (
     <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" role="img">
       <rect width="800" height="520" fill={PALETTE.bg} />
-      <text
-        x="400"
-        y="36"
-        textAnchor="middle"
-        fontFamily={FONT}
-        fontSize="18"
-        fontWeight="700"
-        fill={PALETTE.ink}
-      >
-        Funnel — من View لـ Customer
-      </text>
+      <text x="400" y="36" textAnchor="middle" fontFamily={FONT} fontSize="18" fontWeight="700" fill={PALETTE.ink}>Funnel — من View لـ Customer</text>
 
       {layers.map((l, i) => {
         const y = 70 + i * 100;
         const x = (800 - l.w) / 2;
         return (
           <g key={i}>
-            <rect
-              x={x}
-              y={y}
-              width={l.w}
-              height={80}
-              rx={14}
-              fill={l.fill}
-              stroke={PALETTE.stroke}
-            />
-            <text
-              x={400}
-              y={y + 36}
-              textAnchor="middle"
-              fontFamily={FONT}
-              fontSize="18"
-              fontWeight="700"
-              fill={PALETTE.ink}
-            >
-              {l.title}
-            </text>
-            <text
-              x={400}
-              y={y + 58}
-              textAnchor="middle"
-              fontFamily={FONT}
-              fontSize="13"
-              fill={PALETTE.inkSoft}
-            >
-              {l.sub}
-            </text>
+            <rect x={x} y={y} width={l.w} height={80} rx={14} fill={l.fill} stroke={PALETTE.stroke} />
+            <text x={400} y={y + 36} textAnchor="middle" fontFamily={FONT} fontSize="18" fontWeight="700" fill={PALETTE.ink}>{l.title}</text>
+            <text x={400} y={y + 58} textAnchor="middle" fontFamily={FONT} fontSize="13" fill={PALETTE.inkSoft}>{l.sub}</text>
           </g>
         );
       })}
@@ -510,9 +207,7 @@ export const LeadsFunnelDiagram: FC = () => {
       {/* down arrows */}
       <g fill={PALETTE.inkSoft}>
         {[0, 1, 2].map((i) => (
-          <text key={i} x="400" y={166 + i * 100} textAnchor="middle" fontSize="16">
-            ▼
-          </text>
+          <text key={i} x="400" y={166 + i * 100} textAnchor="middle" fontSize="16">▼</text>
         ))}
       </g>
     </svg>
@@ -545,27 +240,8 @@ export const PatternVsOutlierDiagram: FC = () => {
   return (
     <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" role="img">
       <rect width="800" height="520" fill={PALETTE.bg} />
-      <text
-        x="400"
-        y="40"
-        textAnchor="middle"
-        fontFamily={FONT}
-        fontSize="18"
-        fontWeight="700"
-        fill={PALETTE.ink}
-      >
-        Leads أسبوعيًا — ١٢ أسبوع
-      </text>
-      <text
-        x="400"
-        y="64"
-        textAnchor="middle"
-        fontFamily={FONT}
-        fontSize="13"
-        fill={PALETTE.inkSoft}
-      >
-        ١١ نقطة Pattern مستقرّة + نقطة Outlier واحدة
-      </text>
+      <text x="400" y="40" textAnchor="middle" fontFamily={FONT} fontSize="18" fontWeight="700" fill={PALETTE.ink}>Leads أسبوعيًا — ١٢ أسبوع</text>
+      <text x="400" y="64" textAnchor="middle" fontFamily={FONT} fontSize="13" fill={PALETTE.inkSoft}>١١ نقطة Pattern مستقرّة + نقطة Outlier واحدة</text>
 
       {/* Y axis grid */}
       <g stroke={PALETTE.stroke} strokeWidth="1">
@@ -575,9 +251,7 @@ export const PatternVsOutlierDiagram: FC = () => {
       </g>
       <g fontFamily={FONT} fontSize="11" fill={PALETTE.inkSoft}>
         {[30, 50, 70, 90].map((v) => (
-          <text key={v} x={chartX - 8} y={yScale(v) + 4} textAnchor="end">
-            {v}
-          </text>
+          <text key={v} x={chartX - 8} y={yScale(v) + 4} textAnchor="end">{v}</text>
         ))}
       </g>
 
@@ -599,15 +273,7 @@ export const PatternVsOutlierDiagram: FC = () => {
         strokeWidth="1.5"
         strokeDasharray="5 4"
       />
-      <text
-        x={chartX + chartW + 6}
-        y={yScale(baselineMean) + 4}
-        fontFamily={FONT}
-        fontSize="11"
-        fill="var(--accent-success-foreground)"
-      >
-        متوسط 44
-      </text>
+      <text x={chartX + chartW + 6} y={yScale(baselineMean) + 4} fontFamily={FONT} fontSize="11" fill="var(--accent-success-foreground)">متوسط 44</text>
 
       {/* Line */}
       <polyline
@@ -655,85 +321,20 @@ export const PatternVsOutlierDiagram: FC = () => {
           stroke="var(--accent-danger-foreground)"
           strokeWidth="1.5"
         />
-        <rect
-          x={xAt(outlierIdx) + 50}
-          y={yScale(data[outlierIdx]) - 86}
-          width="190"
-          height="42"
-          rx="8"
-          fill={PALETTE.blush}
-          stroke="var(--accent-danger)"
-        />
-        <text
-          x={xAt(outlierIdx) + 145}
-          y={yScale(data[outlierIdx]) - 68}
-          textAnchor="middle"
-          fontFamily={FONT}
-          fontSize="12"
-          fontWeight="700"
-          fill="var(--accent-danger-foreground)"
-        >
-          Outlier — 89 lead
-        </text>
-        <text
-          x={xAt(outlierIdx) + 145}
-          y={yScale(data[outlierIdx]) - 52}
-          textAnchor="middle"
-          fontFamily={FONT}
-          fontSize="11"
-          fill="var(--accent-danger-foreground)"
-        >
-          حملة إعلان مدفوعة مرّة واحدة
-        </text>
+        <rect x={xAt(outlierIdx) + 50} y={yScale(data[outlierIdx]) - 86} width="190" height="42" rx="8" fill={PALETTE.blush} stroke="var(--accent-danger)" />
+        <text x={xAt(outlierIdx) + 145} y={yScale(data[outlierIdx]) - 68} textAnchor="middle" fontFamily={FONT} fontSize="12" fontWeight="700" fill="var(--accent-danger-foreground)">Outlier — 89 lead</text>
+        <text x={xAt(outlierIdx) + 145} y={yScale(data[outlierIdx]) - 52} textAnchor="middle" fontFamily={FONT} fontSize="11" fill="var(--accent-danger-foreground)">حملة إعلان مدفوعة مرّة واحدة</text>
       </g>
 
       {/* Pattern legend */}
       <g>
         <rect x={50} y={440} width="320" height="56" rx="10" fill={PALETTE.mint} opacity="0.55" />
-        <text
-          x={210}
-          y={462}
-          textAnchor="middle"
-          fontFamily={FONT}
-          fontSize="13"
-          fontWeight="700"
-          fill={PALETTE.ink}
-        >
-          Pattern: 44 ± 4 lead/أسبوع
-        </text>
-        <text
-          x={210}
-          y={482}
-          textAnchor="middle"
-          fontFamily={FONT}
-          fontSize="11"
-          fill={PALETTE.inkSoft}
-        >
-          اشتغل على رفع الـ baseline — مش على القفزات
-        </text>
+        <text x={210} y={462} textAnchor="middle" fontFamily={FONT} fontSize="13" fontWeight="700" fill={PALETTE.ink}>Pattern: 44 ± 4 lead/أسبوع</text>
+        <text x={210} y={482} textAnchor="middle" fontFamily={FONT} fontSize="11" fill={PALETTE.inkSoft}>اشتغل على رفع الـ baseline — مش على القفزات</text>
 
         <rect x={430} y={440} width="320" height="56" rx="10" fill={PALETTE.blush} opacity="0.55" />
-        <text
-          x={590}
-          y={462}
-          textAnchor="middle"
-          fontFamily={FONT}
-          fontSize="13"
-          fontWeight="700"
-          fill={PALETTE.ink}
-        >
-          Outlier: 89 lead — مرّة واحدة
-        </text>
-        <text
-          x={590}
-          y={482}
-          textAnchor="middle"
-          fontFamily={FONT}
-          fontSize="11"
-          fill={PALETTE.inkSoft}
-        >
-          افهم سببه قبل ما تبني عليه قرار
-        </text>
+        <text x={590} y={462} textAnchor="middle" fontFamily={FONT} fontSize="13" fontWeight="700" fill={PALETTE.ink}>Outlier: 89 lead — مرّة واحدة</text>
+        <text x={590} y={482} textAnchor="middle" fontFamily={FONT} fontSize="11" fill={PALETTE.inkSoft}>افهم سببه قبل ما تبني عليه قرار</text>
       </g>
     </svg>
   );
@@ -756,27 +357,8 @@ export const CustomerLifecycleFunnelDiagram: FC = () => {
   return (
     <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" role="img">
       <rect width="800" height="520" fill={PALETTE.bg} />
-      <text
-        x="400"
-        y="40"
-        textAnchor="middle"
-        fontFamily={FONT}
-        fontSize="18"
-        fontWeight="700"
-        fill={PALETTE.ink}
-      >
-        دورة حياة العميل — بأرقام واقعية
-      </text>
-      <text
-        x="400"
-        y="62"
-        textAnchor="middle"
-        fontFamily={FONT}
-        fontSize="13"
-        fill={PALETTE.inkSoft}
-      >
-        من ١٠٠٠ شخص شافك — ١٥ بس بيرجعوا
-      </text>
+      <text x="400" y="40" textAnchor="middle" fontFamily={FONT} fontSize="18" fontWeight="700" fill={PALETTE.ink}>دورة حياة العميل — بأرقام واقعية</text>
+      <text x="400" y="62" textAnchor="middle" fontFamily={FONT} fontSize="13" fill={PALETTE.inkSoft}>من ١٠٠٠ شخص شافك — ١٥ بس بيرجعوا</text>
 
       {layers.map((l, i) => {
         const y = startY + i * (rowH + gap);
@@ -784,60 +366,15 @@ export const CustomerLifecycleFunnelDiagram: FC = () => {
         const w = l.w;
         return (
           <g key={i}>
-            <rect
-              x={x}
-              y={y}
-              width={w}
-              height={rowH}
-              rx={12}
-              fill={l.fill}
-              stroke={PALETTE.stroke}
-            />
-            <text
-              x={x + 24}
-              y={y + 32}
-              textAnchor="start"
-              fontFamily={FONT}
-              fontSize="17"
-              fontWeight="700"
-              fill={PALETTE.ink}
-            >
-              {l.title}
-            </text>
-            <text
-              x={x + 24}
-              y={y + 52}
-              textAnchor="start"
-              fontFamily={FONT}
-              fontSize="12"
-              fill={PALETTE.inkSoft}
-            >
-              {l.sub}
-            </text>
-            <text
-              x={x + w - 20}
-              y={y + 44}
-              textAnchor="end"
-              fontFamily={FONT}
-              fontSize="22"
-              fontWeight="700"
-              fill={PALETTE.ink}
-            >
-              {l.value}
-            </text>
+            <rect x={x} y={y} width={w} height={rowH} rx={12} fill={l.fill} stroke={PALETTE.stroke} />
+            <text x={x + 24} y={y + 32} textAnchor="start" fontFamily={FONT} fontSize="17" fontWeight="700" fill={PALETTE.ink}>{l.title}</text>
+            <text x={x + 24} y={y + 52} textAnchor="start" fontFamily={FONT} fontSize="12" fill={PALETTE.inkSoft}>{l.sub}</text>
+            <text x={x + w - 20} y={y + 44} textAnchor="end" fontFamily={FONT} fontSize="22" fontWeight="700" fill={PALETTE.ink}>{l.value}</text>
 
             {/* conversion arrow between layers */}
             {i < layers.length - 1 && (
               <g>
-                <text
-                  x={x + w - 70}
-                  y={y + rowH + gap / 2 + 4}
-                  textAnchor="end"
-                  fontFamily={FONT}
-                  fontSize="12"
-                  fontWeight="700"
-                  fill={PALETTE.inkSoft}
-                >
+                <text x={x + w - 70} y={y + rowH + gap / 2 + 4} textAnchor="end" fontFamily={FONT} fontSize="12" fontWeight="700" fill={PALETTE.inkSoft}>
                   {`↓ ${Math.round((layers[i + 1].value / l.value) * 100)}%`}
                 </text>
               </g>
@@ -848,145 +385,34 @@ export const CustomerLifecycleFunnelDiagram: FC = () => {
 
       {/* Side metrics */}
       <g>
-        <rect
-          x={560}
-          y={90}
-          width={200}
-          height={140}
-          rx={14}
-          fill="var(--card)"
-          stroke={PALETTE.stroke}
-        />
-        <text
-          x={660}
-          y={120}
-          textAnchor="middle"
-          fontFamily={FONT}
-          fontSize="13"
-          fontWeight="700"
-          fill={PALETTE.ink}
-        >
-          اقتصاديات العميل
-        </text>
+        <rect x={560} y={90} width={200} height={140} rx={14} fill="var(--card)" stroke={PALETTE.stroke} />
+        <text x={660} y={120} textAnchor="middle" fontFamily={FONT} fontSize="13" fontWeight="700" fill={PALETTE.ink}>اقتصاديات العميل</text>
 
-        <text x={580} y={150} fontFamily={FONT} fontSize="12" fill={PALETTE.inkSoft}>
-          CAC (تكلفة الجلب)
-        </text>
-        <text
-          x={740}
-          y={150}
-          textAnchor="end"
-          fontFamily={FONT}
-          fontSize="13"
-          fontWeight="700"
-          fill="var(--accent-danger-foreground)"
-        >
-          100ج
-        </text>
+        <text x={580} y={150} fontFamily={FONT} fontSize="12" fill={PALETTE.inkSoft}>CAC (تكلفة الجلب)</text>
+        <text x={740} y={150} textAnchor="end" fontFamily={FONT} fontSize="13" fontWeight="700" fill="var(--accent-danger-foreground)">100ج</text>
 
-        <text x={580} y={175} fontFamily={FONT} fontSize="12" fill={PALETTE.inkSoft}>
-          LTV (مرة واحدة)
-        </text>
-        <text
-          x={740}
-          y={175}
-          textAnchor="end"
-          fontFamily={FONT}
-          fontSize="13"
-          fontWeight="700"
-          fill={PALETTE.ink}
-        >
-          250ج
-        </text>
+        <text x={580} y={175} fontFamily={FONT} fontSize="12" fill={PALETTE.inkSoft}>LTV (مرة واحدة)</text>
+        <text x={740} y={175} textAnchor="end" fontFamily={FONT} fontSize="13" fontWeight="700" fill={PALETTE.ink}>250ج</text>
 
-        <text x={580} y={200} fontFamily={FONT} fontSize="12" fill={PALETTE.inkSoft}>
-          LTV (مع رجوع)
-        </text>
-        <text
-          x={740}
-          y={200}
-          textAnchor="end"
-          fontFamily={FONT}
-          fontSize="13"
-          fontWeight="700"
-          fill="var(--accent-success-foreground)"
-        >
-          800ج
-        </text>
+        <text x={580} y={200} fontFamily={FONT} fontSize="12" fill={PALETTE.inkSoft}>LTV (مع رجوع)</text>
+        <text x={740} y={200} textAnchor="end" fontFamily={FONT} fontSize="13" fontWeight="700" fill="var(--accent-success-foreground)">800ج</text>
 
         <line x1={580} y1={212} x2={740} y2={212} stroke={PALETTE.stroke} />
       </g>
 
       <g>
         <rect x={560} y={250} width={200} height={100} rx={14} fill={PALETTE.mint} opacity="0.5" />
-        <text
-          x={660}
-          y={278}
-          textAnchor="middle"
-          fontFamily={FONT}
-          fontSize="12"
-          fontWeight="700"
-          fill={PALETTE.ink}
-        >
-          قاعدة الـ 5x
-        </text>
-        <text
-          x={660}
-          y={298}
-          textAnchor="middle"
-          fontFamily={FONT}
-          fontSize="11"
-          fill={PALETTE.inkSoft}
-        >
-          عميل راجع = ٣.٢ أضعاف
-        </text>
-        <text
-          x={660}
-          y={314}
-          textAnchor="middle"
-          fontFamily={FONT}
-          fontSize="11"
-          fill={PALETTE.inkSoft}
-        >
-          الربح من عميل جديد
-        </text>
-        <text
-          x={660}
-          y={335}
-          textAnchor="middle"
-          fontFamily={FONT}
-          fontSize="11"
-          fontWeight="700"
-          fill="var(--accent-success-foreground)"
-        >
-          ركّز ٧٠٪ على الاحتفاظ
-        </text>
+        <text x={660} y={278} textAnchor="middle" fontFamily={FONT} fontSize="12" fontWeight="700" fill={PALETTE.ink}>قاعدة الـ 5x</text>
+        <text x={660} y={298} textAnchor="middle" fontFamily={FONT} fontSize="11" fill={PALETTE.inkSoft}>عميل راجع = ٣.٢ أضعاف</text>
+        <text x={660} y={314} textAnchor="middle" fontFamily={FONT} fontSize="11" fill={PALETTE.inkSoft}>الربح من عميل جديد</text>
+        <text x={660} y={335} textAnchor="middle" fontFamily={FONT} fontSize="11" fontWeight="700" fill="var(--accent-success-foreground)">ركّز ٧٠٪ على الاحتفاظ</text>
       </g>
 
       {/* Bottom takeaway */}
       <g>
         <rect x={70} y={440} width={680} height={56} rx={12} fill={PALETTE.blush} opacity="0.5" />
-        <text
-          x={410}
-          y={464}
-          textAnchor="middle"
-          fontFamily={FONT}
-          fontSize="13"
-          fontWeight="700"
-          fill={PALETTE.ink}
-        >
-          كل مرحلة محتاجة نظام مختلف
-        </text>
-        <text
-          x={410}
-          y={484}
-          textAnchor="middle"
-          fontFamily={FONT}
-          fontSize="11"
-          fill={PALETTE.inkSoft}
-        >
-          اكتشف: Creator · تواصل: Automator · اشترى: Sales · رجع: Retention
-        </text>
+        <text x={410} y={464} textAnchor="middle" fontFamily={FONT} fontSize="13" fontWeight="700" fill={PALETTE.ink}>كل مرحلة محتاجة نظام مختلف</text>
+        <text x={410} y={484} textAnchor="middle" fontFamily={FONT} fontSize="11" fill={PALETTE.inkSoft}>اكتشف: Creator · تواصل: Automator · اشترى: Sales · رجع: Retention</text>
       </g>
     </svg>
   );
@@ -1034,43 +460,14 @@ export const FeelingToQuestionTableDiagram: FC = () => {
   return (
     <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" role="img">
       <rect width="800" height="520" fill={PALETTE.bg} />
-      <text
-        x="400"
-        y="36"
-        textAnchor="middle"
-        fontFamily={FONT}
-        fontSize="18"
-        fontWeight="700"
-        fill={PALETTE.ink}
-      >
-        من شعور غامض → قرار قابل للتنفيذ
-      </text>
-      <text
-        x="400"
-        y="58"
-        textAnchor="middle"
-        fontFamily={FONT}
-        fontSize="12"
-        fill={PALETTE.inkSoft}
-      >
-        ٤ أمثلة حقيقية من شغل اليوم
-      </text>
+      <text x="400" y="36" textAnchor="middle" fontFamily={FONT} fontSize="18" fontWeight="700" fill={PALETTE.ink}>من شعور غامض → قرار قابل للتنفيذ</text>
+      <text x="400" y="58" textAnchor="middle" fontFamily={FONT} fontSize="12" fill={PALETTE.inkSoft}>٤ أمثلة حقيقية من شغل اليوم</text>
 
       {/* Header */}
       {cols.map((c) => (
         <g key={c.label}>
           <rect x={c.x} y={headerY} width={c.w} height={36} rx={8} fill={c.fill} />
-          <text
-            x={c.x + c.w / 2}
-            y={headerY + 23}
-            textAnchor="middle"
-            fontFamily={FONT}
-            fontSize="12"
-            fontWeight="700"
-            fill={PALETTE.ink}
-          >
-            {c.label}
-          </text>
+          <text x={c.x + c.w / 2} y={headerY + 23} textAnchor="middle" fontFamily={FONT} fontSize="12" fontWeight="700" fill={PALETTE.ink}>{c.label}</text>
         </g>
       ))}
 
@@ -1083,15 +480,7 @@ export const FeelingToQuestionTableDiagram: FC = () => {
               const text = [r.feel, r.q, r.base, r.act][ci];
               return (
                 <g key={ci}>
-                  <rect
-                    x={c.x}
-                    y={y}
-                    width={c.w}
-                    height={rowH}
-                    rx={10}
-                    fill="var(--card)"
-                    stroke={PALETTE.stroke}
-                  />
+                  <rect x={c.x} y={y} width={c.w} height={rowH} rx={10} fill="var(--card)" stroke={PALETTE.stroke} />
                   <foreignObject x={c.x + 8} y={y + 8} width={c.w - 16} height={rowH - 16}>
                     <div
                       style={{
@@ -1113,14 +502,7 @@ export const FeelingToQuestionTableDiagram: FC = () => {
               );
             })}
             {/* Arrow between feeling and question */}
-            <text
-              x={cols[0].x + cols[0].w + 3}
-              y={y + rowH / 2 + 5}
-              fontSize="14"
-              fill={PALETTE.inkSoft}
-            >
-              ←
-            </text>
+            <text x={cols[0].x + cols[0].w + 3} y={y + rowH / 2 + 5} fontSize="14" fill={PALETTE.inkSoft}>←</text>
           </g>
         );
       })}

@@ -127,14 +127,16 @@ export const ANALYST_M4_AUTOMATED_DASHBOARD_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "عندك ٤ أرقام في الـ Dashboard — أحسن خطوة أولى للأتمتة؟",
+          question:
+            "عندك ٤ أرقام في الـ Dashboard — أحسن خطوة أولى للأتمتة؟",
           options: [
             "تؤتمت الرقم اللي بتقرأه كل أسبوع وتاخد عليه قرار — بعد ما جمعته يدوي أسبوعين.",
             "تؤتمت الـ ٤ أرقام مرة واحدة قبل ما تجرب يدوي.",
             "تبني ١٠ رسوم إضافية في Looker Studio.",
           ],
           correctIndex: 0,
-          explanation: "Manual first — رقم واحد يخدم قرار. الأتمتة بعد ما تتأكد إنه مهم.",
+          explanation:
+            "Manual first — رقم واحد يخدم قرار. الأتمتة بعد ما تتأكد إنه مهم.",
         },
       ],
     },

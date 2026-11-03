@@ -112,7 +112,8 @@ export const ANALYST_M3_L1_THREE_SOURCES_BLOCKS: IntroLessonContent = [
       kind: "diagram",
       id: "three-sources-merge",
       label: "دمج المصادر",
-      caption: "سلوك + نتائج + كلام في مكان واحد — سؤال واحد = إجابة أقوى. استخدمه في المهمة.",
+      caption:
+        "سلوك + نتائج + كلام في مكان واحد — سؤال واحد = إجابة أقوى. استخدمه في المهمة.",
     },
   },
   {

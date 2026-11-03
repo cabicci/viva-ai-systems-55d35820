@@ -77,7 +77,8 @@ export const BUSINESS_M5_L2_SYSTEM_THEN_PEOPLE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "من الشرح الشفهي لـ SOP بالـ AI. لو معندكش وقت، كمل قراية.",
+      caption:
+        "من الشرح الشفهي لـ SOP بالـ AI. لو معندكش وقت، كمل قراية.",
     },
   },
   {
@@ -105,7 +106,8 @@ export const BUSINESS_M5_L2_SYSTEM_THEN_PEOPLE_BLOCKS: IntroLessonContent = [
       kind: "diagram",
       id: "system-then-people",
       label: "System → People",
-      caption: "SOP واحد واضح أقوى من موظفين اتنين بلا دليل. اختبر العملية قبل ما تكبّر الفريق.",
+      caption:
+        "SOP واحد واضح أقوى من موظفين اتنين بلا دليل. اختبر العملية قبل ما تكبّر الفريق.",
     },
   },
   {

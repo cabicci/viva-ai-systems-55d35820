@@ -37,7 +37,9 @@ export function IntroSection({
   children: React.ReactNode;
 }) {
   return (
-    <section className={`glass rounded-2xl p-3.5 sm:p-5 md:p-7 border ${TONE_BORDER[tone]}`}>
+    <section
+      className={`glass rounded-2xl p-3.5 sm:p-5 md:p-7 border ${TONE_BORDER[tone]}`}
+    >
       <header className="flex items-start gap-2.5 sm:gap-3 mb-3 md:mb-5 pb-2.5 md:pb-4 border-b border-white/5">
         <span
           className={`grid h-8 w-8 md:h-9 md:w-9 place-items-center rounded-xl border shrink-0 ${TONE_ICON[tone]}`}

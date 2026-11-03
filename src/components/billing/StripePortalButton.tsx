@@ -5,11 +5,7 @@ import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { useLocale } from "@/lib/locale/locale-context";
 import { useUiString } from "@/lib/locale/use-ui-strings";
-import {
-  BillingUnavailableError,
-  billingUnavailableMessage,
-  resolvePortalUrl,
-} from "@/lib/billing/checkout-client";
+import { BillingUnavailableError, billingUnavailableMessage, resolvePortalUrl } from "@/lib/billing/checkout-client";
 
 const LABELS = {
   "ar-EG": "إدارة الاشتراك والترقية",
@@ -42,11 +38,7 @@ export function StripePortalButton({ scope = "adult" }: { scope?: "adult" | "kid
       });
       window.location.assign(url);
     } catch (e) {
-      toast.error(
-        e instanceof BillingUnavailableError
-          ? billingUnavailableMessage(locale)
-          : t("pricing.checkout.error"),
-      );
+      toast.error(e instanceof BillingUnavailableError ? billingUnavailableMessage(locale) : t("pricing.checkout.error"));
       setLoading(false);
     }
   }

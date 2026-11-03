@@ -86,8 +86,7 @@ export const AUTOMATOR_M3_TESTING_AUTOMATION_BLOCKS: IntroLessonContent = [
         },
         {
           term: "Integration Test (اختبار التدفق)",
-          meaning:
-            "تشغّل الـ Workflow (خطوات ماشية ورا بعض بشكل تلقائي) كامل من أوله لآخره ببيانات وهمية.",
+          meaning: "تشغّل الـ Workflow (خطوات ماشية ورا بعض بشكل تلقائي) كامل من أوله لآخره ببيانات وهمية.",
           example: "lead تجريبي «اختبار» → هل وصل الإيميل + اتسجّل في الجدول؟",
         },
       ],
@@ -113,7 +112,8 @@ export const AUTOMATOR_M3_TESTING_AUTOMATION_BLOCKS: IntroLessonContent = [
       kind: "diagram",
       id: "followup-cadence",
       label: "Testing Checklist",
-      caption: "Unit → Full flow → Edge cases → Manual review → Live. استخدم الرسم في المهمة.",
+      caption:
+        "Unit → Full flow → Edge cases → Manual review → Live. استخدم الرسم في المهمة.",
     },
   },
   {
@@ -128,14 +128,16 @@ export const AUTOMATOR_M3_TESTING_AUTOMATION_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "workflow جديد بيبعت رسالة ترحيب. إيه أحسن خطوة قبل production؟",
+          question:
+            "workflow جديد بيبعت رسالة ترحيب. إيه أحسن خطوة قبل production؟",
           options: [
             "شغّله ببيانات تجريبية + ٣ edge cases + مراجعة يدوية للنتيجة.",
             "شغّله على production — العملاء هيقولولك لو في مشكلة.",
             "اختبر خطوة الإرسال بس — الباقي هيمشي.",
           ],
           correctIndex: 0,
-          explanation: "Full-flow + edge cases + مراجعة يدوية = الخطأ يفضل عندك مش عند العميل.",
+          explanation:
+            "Full-flow + edge cases + مراجعة يدوية = الخطأ يفضل عندك مش عند العميل.",
         },
       ],
     },
@@ -167,7 +169,10 @@ export const AUTOMATOR_M3_TESTING_AUTOMATION_BLOCKS: IntroLessonContent = [
         {
           label: "Edge + Review",
           weight: 50,
-          criteria: ["٣ edge cases: فاضي، غلط، مكرر.", "نقطة مراجعة يدوية فيها مين وإيه بيشوف."],
+          criteria: [
+            "٣ edge cases: فاضي، غلط، مكرر.",
+            "نقطة مراجعة يدوية فيها مين وإيه بيشوف.",
+          ],
         },
       ],
     },

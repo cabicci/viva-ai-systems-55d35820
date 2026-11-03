@@ -98,7 +98,8 @@ export const BUILDER_M6_WIREFRAME_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "إزاي Wireframe بسيط يتحوّل لوصف واضح لأداة البناء. لو معندكش وقت، كمل قراية.",
+      caption:
+        "إزاي Wireframe بسيط يتحوّل لوصف واضح لأداة البناء. لو معندكش وقت، كمل قراية.",
     },
   },
   {
@@ -109,7 +110,8 @@ export const BUILDER_M6_WIREFRAME_BLOCKS: IntroLessonContent = [
     block: {
       kind: "screenshot",
       alt: "Wireframe مرسوم بقلم — هيدر، كارتين، أيقونات.",
-      caption: "مربعات + أسماء. «هيدر»، «مربع نص»، «زرار»، «٣ كروت». ده اللغة اللي AI يفهمها.",
+      caption:
+        "مربعات + أسماء. «هيدر»، «مربع نص»، «زرار»، «٣ كروت». ده اللغة اللي AI يفهمها.",
       label: "Wireframe",
     },
   },
@@ -125,14 +127,16 @@ export const BUILDER_M6_WIREFRAME_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "بتعمل Wireframe ولقيت نفسك بترسم ألوان وصور أطباق. ده صح؟",
+          question:
+            "بتعمل Wireframe ولقيت نفسك بترسم ألوان وصور أطباق. ده صح؟",
           options: [
             "لأ — Wireframe بوكسات وأسامي بس، من غير تصميم.",
             "أيوه — كده AI يفهم أحسن.",
             "لأ — كان المفروض صور حقيقية.",
           ],
           correctIndex: 0,
-          explanation: "Wireframe = هيكل وترتيب. الألوان والصور جاية بعدين.",
+          explanation:
+            "Wireframe = هيكل وترتيب. الألوان والصور جاية بعدين.",
         },
       ],
     },
@@ -144,7 +148,8 @@ export const BUILDER_M6_WIREFRAME_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "mission",
-      intro: "المهمة دي رسم أو وصف — مش كود. استخدم الـ ٣ شاشات من الدرس اللي فات.\n\n١٠–١٥ دقيقة.",
+      intro:
+        "المهمة دي رسم أو وصف — مش كود. استخدم الـ ٣ شاشات من الدرس اللي فات.\n\n١٠–١٥ دقيقة.",
       prompt:
         "في تسليمك، لكل شاشة من الـ ٣، اكتب Wireframe كقايمة:\n\n**شاشة ١:**\n- [قسم]: [إيه جواه]\n- [قسم]: [إيه جواه]\n- CTA: [أهم زرار]\n\n**شاشة ٢:**\n...\n\n**شاشة ٣:**\n...\n\n(ممكن ترسم صورة وترفقها — أو وصف نقطي كفاية)",
       buttonLabel: "انسخ خطوات المهمة",
@@ -155,12 +160,18 @@ export const BUILDER_M6_WIREFRAME_BLOCKS: IntroLessonContent = [
         {
           label: "٣ شاشات موصوفة",
           weight: 60,
-          criteria: ["كل شاشة قائمة نقط — مش فقرة سايحة.", "فيه CTA واضح في كل شاشة."],
+          criteria: [
+            "كل شاشة قائمة نقط — مش فقرة سايحة.",
+            "فيه CTA واضح في كل شاشة.",
+          ],
         },
         {
           label: "بوكسات مش تصميم",
           weight: 40,
-          criteria: ["مفيش ألوان ولا fonts — أسماء أقسام بس.", "الترتيب منطقي — أهم حاجة الأول."],
+          criteria: [
+            "مفيش ألوان ولا fonts — أسماء أقسام بس.",
+            "الترتيب منطقي — أهم حاجة الأول.",
+          ],
         },
       ],
     },

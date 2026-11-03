@@ -126,7 +126,9 @@ export function LocaleMockMissionSubmit({
                   <tr key={row.label} className="border-b border-border/30 align-top">
                     <td className="px-4 py-3 font-medium">{row.label}</td>
                     <td className="px-4 py-3 whitespace-nowrap">{row.weight}%</td>
-                    <td className="px-4 py-3 text-foreground/90">{row.criteria.join(" ")}</td>
+                    <td className="px-4 py-3 text-foreground/90">
+                      {row.criteria.join(" ")}
+                    </td>
                   </tr>
                 ))}
               </tbody>

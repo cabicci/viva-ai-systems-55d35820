@@ -109,7 +109,8 @@ export const CREATOR_M1_WHY_CONTENT_BLOCKS: IntroLessonContent = [
     block: {
       kind: "screenshot",
       alt: "لقطة توضح ترتيب المحتوى كمسار واضح بدل نشر عشوائي.",
-      caption: "الترتيب ده بيوضح إن كل جزء ليه دور، وده بالظبط معنى إن المحتوى يبقى نظام.",
+      caption:
+        "الترتيب ده بيوضح إن كل جزء ليه دور، وده بالظبط معنى إن المحتوى يبقى نظام.",
       label: "creator-m1-l1-why-content",
     },
   },
@@ -133,7 +134,8 @@ export const CREATOR_M1_WHY_CONTENT_BLOCKS: IntroLessonContent = [
             "يغيّر المنصة كل أسبوع.",
           ],
           correctIndex: 1,
-          explanation: "التحسن الحقيقي بيبدأ من وضوح الوعد والنمط المتكرر، مش من زيادة الكمية.",
+          explanation:
+            "التحسن الحقيقي بيبدأ من وضوح الوعد والنمط المتكرر، مش من زيادة الكمية.",
         },
       ],
     },

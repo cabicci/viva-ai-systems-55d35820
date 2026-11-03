@@ -2,7 +2,8 @@ import { Flame } from "lucide-react";
 import { useStreak } from "@/lib/entitlements";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 
-const STAT_CARD_BASE = "group rounded-2xl p-5 card-lift animate-fade-up border border-border/60";
+const STAT_CARD_BASE =
+  "group rounded-2xl p-5 card-lift animate-fade-up border border-border/60";
 const STAT_CARD_STYLE = { background: "var(--gradient-hero)" as const };
 
 export function StreakCard({ delay = 0 }: { delay?: number }) {
@@ -29,10 +30,7 @@ export function StreakCard({ delay = 0 }: { delay?: number }) {
           <span dir="ltr" className="tabular-nums">
             {current}
           </span>
-          <span className="text-sm font-bold text-muted-foreground">
-            {" "}
-            {t("dashboard.streak.days")}
-          </span>
+          <span className="text-sm font-bold text-muted-foreground"> {t("dashboard.streak.days")}</span>
         </p>
         <p className="text-xs text-muted-foreground mt-1">
           {current === 0

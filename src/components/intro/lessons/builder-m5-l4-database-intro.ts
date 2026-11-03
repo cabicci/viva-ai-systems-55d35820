@@ -135,7 +135,8 @@ export const BUILDER_M5_DATABASE_INTRO_BLOCKS: IntroLessonContent = [
             "من المخزن — Database.",
           ],
           correctIndex: 2,
-          explanation: "أي معلومة قديمة محفوظة ومرجّعة = Database. الواجهة تعرض — المخزن يحفظ.",
+          explanation:
+            "أي معلومة قديمة محفوظة ومرجّعة = Database. الواجهة تعرض — المخزن يحفظ.",
         },
       ],
     },
@@ -147,7 +148,8 @@ export const BUILDER_M5_DATABASE_INTRO_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "mission",
-      intro: "المهمة دي تخطيط — مش SQL. فكّر زي Excel sheet.\n\n٥–١٠ دقايق كفاية.",
+      intro:
+        "المهمة دي تخطيط — مش SQL. فكّر زي Excel sheet.\n\n٥–١٠ دقايق كفاية.",
       prompt:
         "في تسليمك اكتب:\n\n١) اسم الجدول (مثلاً: «عملاء» أو «محادثات»):\n\n٢) ٤ أعمدة — لكل عمود:\n   - اسم العمود:\n   - نوع المعلومة (نص / رقم / تاريخ):\n   - مثال قيمة:\n\n٣) لِيه كل عمود مهم؟ (جملة لكل واحد)\n\nمثال:\n| الاسم | نص | «أحمد» | عشان نعرف مين |\n| آخر سؤال | نص | «إزاي أبيع أكتر؟» | عشان AI يكمل من حيث وقف |",
       buttonLabel: "انسخ خطوات المهمة",
@@ -158,12 +160,18 @@ export const BUILDER_M5_DATABASE_INTRO_BLOCKS: IntroLessonContent = [
         {
           label: "٤ أعمدة واضحة",
           weight: 60,
-          criteria: ["كل عمود فيه اسم + نوع + مثال.", "الأعمدة مربوطة بتطبيق AI — مش عشوائية."],
+          criteria: [
+            "كل عمود فيه اسم + نوع + مثال.",
+            "الأعمدة مربوطة بتطبيق AI — مش عشوائية.",
+          ],
         },
         {
           label: "السبب منطقي",
           weight: 40,
-          criteria: ["كل عمود له «لِيه مهم».", "المعلومات تساعد التطبيق «يفتكر» العميل."],
+          criteria: [
+            "كل عمود له «لِيه مهم».",
+            "المعلومات تساعد التطبيق «يفتكر» العميل.",
+          ],
         },
       ],
     },

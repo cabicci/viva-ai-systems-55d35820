@@ -134,7 +134,8 @@ export const BUILDER_M8_RELATIONS_BLOCKS: IntroLessonContent = [
             "السيستم يرفض يمسح العميل طول ما عنده محادثات.",
           ],
           correctIndex: 0,
-          explanation: "Cascade Delete بيحمي خصوصية العميل — مفيش بيانات حساسة تفضل بعد ما يمشي.",
+          explanation:
+            "Cascade Delete بيحمي خصوصية العميل — مفيش بيانات حساسة تفضل بعد ما يمشي.",
         },
       ],
     },

@@ -100,7 +100,8 @@ export const BUILDER_M6_FIRST_PROMPT_TO_LOVABLE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "مثال حي — الفرق في الناتج لما Prompt Spec كامل. لو معندكش وقت، كمل قراية.",
+      caption:
+        "مثال حي — الفرق في الناتج لما Prompt Spec كامل. لو معندكش وقت، كمل قراية.",
     },
   },
   {
@@ -128,14 +129,16 @@ export const BUILDER_M6_FIRST_PROMPT_TO_LOVABLE_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "عايز Lovable يبني Home Page بس — من غير login. إيه أحسن جزء في Prompt Spec؟",
+          question:
+            "عايز Lovable يبني Home Page بس — من غير login. إيه أحسن جزء في Prompt Spec؟",
           options: [
             "Constraints: صفحة واحدة (Home) — من غير login في النسخة الأولى.",
             "«اعملي موقع كامل».",
             "Style: ألوان حلوة.",
           ],
           correctIndex: 0,
-          explanation: "Constraints + Scope بيحدّدوا الحدود — AI مش يخمّن features زيادة.",
+          explanation:
+            "Constraints + Scope بيحدّدوا الحدود — AI مش يخمّن features زيادة.",
         },
       ],
     },
@@ -167,7 +170,10 @@ export const BUILDER_M6_FIRST_PROMPT_TO_LOVABLE_BLOCKS: IntroLessonContent = [
         {
           label: "جاهز للنسخ",
           weight: 40,
-          criteria: ["Style فيه لونين على الأقل.", "Constraints تحدّد إيه «مش دلوقتي»."],
+          criteria: [
+            "Style فيه لونين على الأقل.",
+            "Constraints تحدّد إيه «مش دلوقتي».",
+          ],
         },
       ],
     },

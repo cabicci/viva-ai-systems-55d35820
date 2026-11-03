@@ -81,10 +81,8 @@ export const BUILDER_M3_MEMORY_LIMITS_BLOCKS: IntroLessonContent = [
       items: [
         {
           term: "Context Window (شباك الذاكرة)",
-          meaning:
-            "سعة السياق المتاح للنموذج في الطلب، محسوبة بالرموز (tokens) حسب الموديل والمحتوى المرسل؛ مش أرشيف المحادثة.",
-          example:
-            "محادثة برسائل طويلة تستهلك رموزاً أكتر؛ ما فيش قاعدة إن الرسالة الأولى بتتمسح بعد ٥٠ رسالة.",
+          meaning: "سعة السياق المتاح للنموذج في الطلب، محسوبة بالرموز (tokens) حسب الموديل والمحتوى المرسل؛ مش أرشيف المحادثة.",
+          example: "محادثة برسائل طويلة تستهلك رموزاً أكتر؛ ما فيش قاعدة إن الرسالة الأولى بتتمسح بعد ٥٠ رسالة.",
         },
         {
           term: "State Snapshot (لقطة حالة)",
@@ -101,7 +99,8 @@ export const BUILDER_M3_MEMORY_LIMITS_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "Context Window — إزاي تتعامل معاه في تصميم المنتج. لو معندكش وقت، كمل قراية.",
+      caption:
+        "Context Window — إزاي تتعامل معاه في تصميم المنتج. لو معندكش وقت، كمل قراية.",
     },
   },
   {
@@ -162,12 +161,18 @@ export const BUILDER_M3_MEMORY_LIMITS_BLOCKS: IntroLessonContent = [
         {
           label: "٣ حقائق عملية",
           weight: 60,
-          criteria: ["كل حقيقة ليها سبب «لو نسي».", "طريقة التمرير واقعية."],
+          criteria: [
+            "كل حقيقة ليها سبب «لو نسي».",
+            "طريقة التمرير واقعية.",
+          ],
         },
         {
           label: "Snapshot",
           weight: 40,
-          criteria: ["الملخّص قصير ومركّز.", "يغطي قرارات أو حالة حالية."],
+          criteria: [
+            "الملخّص قصير ومركّز.",
+            "يغطي قرارات أو حالة حالية.",
+          ],
         },
       ],
     },

@@ -129,7 +129,8 @@ export const BUSINESS_M3_L1_CUSTOMER_LIFECYCLE_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "بيزنس بيجيب ١٠٠ عميل جديد شهريًا — ١٥ بس بيرجعوا. أنسب تركيز أول؟",
+          question:
+            "بيزنس بيجيب ١٠٠ عميل جديد شهريًا — ١٥ بس بيرجعوا. أنسب تركيز أول؟",
           options: [
             "زيادة إعلانات عشان توصل ١٥٠ عميل جديد.",
             "تحسين محطة Retention — ليه اللي اشتروا ما بيرجعوش.",

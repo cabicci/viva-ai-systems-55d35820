@@ -82,7 +82,8 @@ export const BUSINESS_M4_L1_STRATEGIC_OPERATIONAL_ADMIN_BLOCKS: IntroLessonConte
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "استراتيجي وتشغيلي وإداري — وفين الـ AI يساعد. لو معندكش وقت، كمل قراية.",
+      caption:
+        "استراتيجي وتشغيلي وإداري — وفين الـ AI يساعد. لو معندكش وقت، كمل قراية.",
     },
   },
   {
@@ -110,7 +111,8 @@ export const BUSINESS_M4_L1_STRATEGIC_OPERATIONAL_ADMIN_BLOCKS: IntroLessonConte
       kind: "diagram",
       id: "soa-bars",
       label: "Strategic · Operational · Admin",
-      caption: "لو العمود الإداري أطول من الباقي — ابدأ بمهمة إدارية واحدة للـ AI الأسبوع ده.",
+      caption:
+        "لو العمود الإداري أطول من الباقي — ابدأ بمهمة إدارية واحدة للـ AI الأسبوع ده.",
     },
   },
   {

@@ -98,7 +98,8 @@ export const BUILDER_M2_STYLE_CONTROL_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "Style و Tone — إزاي تظبطهم في أي Prompt. لو معندكش وقت، كمل قراية.",
+      caption:
+        "Style و Tone — إزاي تظبطهم في أي Prompt. لو معندكش وقت، كمل قراية.",
     },
   },
   {
@@ -126,14 +127,16 @@ export const BUILDER_M2_STYLE_CONTROL_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "بتشرح أداة جديدة لمبتدئين — عايزهم يحسّوا إنك واحد منهم. إيه النبرة الأنسب؟",
+          question:
+            "بتشرح أداة جديدة لمبتدئين — عايزهم يحسّوا إنك واحد منهم. إيه النبرة الأنسب؟",
           options: [
             "تقنية معقدة — مصطلحات كتير",
             "صاحب متحمس — بسيط وودود",
             "تحذيرية — تخوف من الغلط",
           ],
           correctIndex: 1,
-          explanation: "نبرة الصاحب بتريّح المبتدئ — وده اللي تثبّته في Voice Profile المساعد.",
+          explanation:
+            "نبرة الصاحب بتريّح المبتدئ — وده اللي تثبّته في Voice Profile المساعد.",
         },
       ],
     },
@@ -145,7 +148,8 @@ export const BUILDER_M2_STYLE_CONTROL_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "mission",
-      intro: "هتكتب ملف صوت قصير لمساعد أو محتوى منتجك.\n\n١٠–١٥ دقيقة.",
+      intro:
+        "هتكتب ملف صوت قصير لمساعد أو محتوى منتجك.\n\n١٠–١٥ دقيقة.",
       prompt:
         "في تسليمك:\n\n١) النبرة في ٣ كلمات (مثال: ودود، مباشر، بسيط):\n\n٢) كلمة تتجنّبها + البديل (مثال: بدل «حضرتك» → «أنت»):\n\n٣) مثال قبل/بعد:\n   - رد AI عام (سطر)\n   - نفس الرد بصوت برنامجك (سطر)",
       buttonLabel: "انسخ خطوات المهمة",
@@ -156,12 +160,18 @@ export const BUILDER_M2_STYLE_CONTROL_BLOCKS: IntroLessonContent = [
         {
           label: "ملف صوت واضح",
           weight: 60,
-          criteria: ["النبرة محددة — مش «احترافي» بس.", "فيه كلمة + بديل."],
+          criteria: [
+            "النبرة محددة — مش «احترافي» بس.",
+            "فيه كلمة + بديل.",
+          ],
         },
         {
           label: "قبل / بعد",
           weight: 40,
-          criteria: ["المثمان مختلفين فعلًا.", "التاني يطابق الـ Profile."],
+          criteria: [
+            "المثمان مختلفين فعلًا.",
+            "التاني يطابق الـ Profile.",
+          ],
         },
       ],
     },

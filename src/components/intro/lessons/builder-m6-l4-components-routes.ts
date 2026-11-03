@@ -126,7 +126,8 @@ export const BUILDER_M6_COMPONENTS_ROUTES_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "محتاج تعرض كارت لكل محادثة سابقة — عنوان وملخص وتاريخ. إيه أنسب طريقة؟",
+          question:
+            "محتاج تعرض كارت لكل محادثة سابقة — عنوان وملخص وتاريخ. إيه أنسب طريقة؟",
           options: [
             "Component واحد `ConversationCard` — أمرّر له بيانات كل محادثة كـ Props.",
             "Component جديد لكل محادثة: `ConversationCard1`، `ConversationCard2`...",
@@ -158,7 +159,10 @@ export const BUILDER_M6_COMPONENTS_ROUTES_BLOCKS: IntroLessonContent = [
         {
           label: "٣ صفحات واضحة",
           weight: 50,
-          criteria: ["كل Route لها مسار وهدف — مش مجرد اسم.", "الصفحات تغطي رحلة العميل الأساسية."],
+          criteria: [
+            "كل Route لها مسار وهدف — مش مجرد اسم.",
+            "الصفحات تغطي رحلة العميل الأساسية.",
+          ],
         },
         {
           label: "٣ Components بـ Props",

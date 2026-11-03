@@ -11,7 +11,9 @@ export function LocaleVideoPlaceholder({ locale }: { locale: SupportedLocale }) 
       <p className="text-sm font-semibold text-foreground">
         {getUiString(locale, "safety.video.title")}
       </p>
-      <p className="text-xs text-muted-foreground">{getUiString(locale, "safety.video.body")}</p>
+      <p className="text-xs text-muted-foreground">
+        {getUiString(locale, "safety.video.body")}
+      </p>
     </div>
   );
 }

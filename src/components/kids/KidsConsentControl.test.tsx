@@ -40,31 +40,17 @@ beforeEach(() => {
   queries();
 });
 describe("Child consent control", () => {
-  it.each(["en", "ar-EG", "ar-MSA", "ar-Gulf"])(
-    "describes permanent email-granted Kids access accurately in %s",
-    async (locale) => {
-      mock.locale = locale;
-      const original = mock.rpc.getMockImplementation()!;
-      mock.rpc.mockImplementation((name) =>
-        name === "get_my_kids_access_status"
-          ? Promise.resolve({
-              data: [
-                { access_source: "complimentary_email", active_until: "9999-12-31T00:00:00Z" },
-              ],
-              error: null,
-            })
-          : original(name),
-      );
-      render(<KidsConsentControl />);
-      expect(
-        await screen.findByText(
-          locale === "en" ? /Permanent access.*email access grant/ : /وصول دائم.*منحة وصول بالبريد/,
-        ),
-      ).toBeInTheDocument();
-      expect(screen.queryByText(/9999/)).not.toBeInTheDocument();
-      expect(screen.queryByText(/separate test grant/)).not.toBeInTheDocument();
-    },
-  );
+  it.each(["en", "ar-EG", "ar-MSA", "ar-Gulf"])("describes permanent email-granted Kids access accurately in %s", async locale => {
+    mock.locale = locale;
+    const original = mock.rpc.getMockImplementation()!;
+    mock.rpc.mockImplementation(name => name === "get_my_kids_access_status"
+      ? Promise.resolve({ data: [{ access_source: "complimentary_email", active_until: "9999-12-31T00:00:00Z" }], error: null })
+      : original(name));
+    render(<KidsConsentControl />);
+    expect(await screen.findByText(locale === "en" ? /Permanent access.*email access grant/ : /وصول دائم.*منحة وصول بالبريد/)).toBeInTheDocument();
+    expect(screen.queryByText(/9999/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/separate test grant/)).not.toBeInTheDocument();
+  });
   it.each(["en", "ar-EG", "ar-MSA", "ar-Gulf"])(
     "shows the saved consent and policy link in account settings without repeating the notice in %s",
     async (locale) => {
@@ -98,54 +84,44 @@ describe("Child consent control", () => {
     expect(changed).toHaveBeenCalled();
     window.removeEventListener("kids-consent-changed", changed);
   });
-  it.each(["en", "ar-EG", "ar-MSA", "ar-Gulf"])(
-    "distinguishes a refunded Stripe payment from an independent active Kids grant in %s",
-    async (locale) => {
-      mock.locale = locale;
-      mock.rpc.mockImplementation((name) => {
-        if (name === "kids_parent_privacy_record") {
-          return Promise.resolve({
-            data: [
-              { policy_id: "policy-1", policy_version: "v1", attested_at: "2026-09-25T00:00:00Z" },
-            ],
-            error: null,
-          });
-        }
-        if (name === "get_my_kids_subscription") {
-          return Promise.resolve({
-            data: [{ status: "refunded", paid_through: "2026-10-28T00:00:00Z" }],
-            error: null,
-          });
-        }
-        if (name === "get_my_kids_access_status") {
-          return Promise.resolve({
-            data: [{ access_source: "test_grant", active_until: "2027-09-27T00:00:00Z" }],
-            error: null,
-          });
-        }
-        return Promise.resolve({ error: null });
-      });
-      render(<KidsConsentControl />);
-      expect(
-        await screen.findByText(
-          locale === "en" ? /^Stripe subscription:\s*Refunded$/ : /^اشتراك Stripe:\s*مسترد$/,
-        ),
-      ).toBeInTheDocument();
-      expect(
-        screen.getByText(
-          locale === "en"
-            ? /^Paid Kids lesson access: Active until 2027-09-27 \(separate access grant\)$/
-            : /^الوصول لدروس كيدز المدفوعة: نشط حتى 2027-09-27 \(منحة وصول منفصلة\)$/,
-        ),
-      ).toBeInTheDocument();
-      expect(
-        screen.queryByText(/Last paid period through|آخر فترة مدفوعة حتى/),
-      ).not.toBeInTheDocument();
-      // Refunded payment must not become an active Stripe subscription merely
-      // because the independent family grant still grants lesson access.
-      expect(screen.queryByRole("button")).not.toBeInTheDocument();
-      expect(mock.rpc).toHaveBeenCalledWith("get_my_kids_subscription");
-      expect(mock.rpc).toHaveBeenCalledWith("get_my_kids_access_status");
-    },
-  );
+  it.each(["en", "ar-EG", "ar-MSA", "ar-Gulf"])("distinguishes a refunded Stripe payment from an independent active Kids grant in %s", async locale => {
+    mock.locale = locale;
+    mock.rpc.mockImplementation((name) => {
+      if (name === "kids_parent_privacy_record") {
+        return Promise.resolve({
+          data: [
+            { policy_id: "policy-1", policy_version: "v1", attested_at: "2026-09-25T00:00:00Z" },
+          ],
+          error: null,
+        });
+      }
+      if (name === "get_my_kids_subscription") {
+        return Promise.resolve({
+          data: [{ status: "refunded", paid_through: "2026-10-28T00:00:00Z" }],
+          error: null,
+        });
+      }
+      if (name === "get_my_kids_access_status") {
+        return Promise.resolve({
+          data: [{ access_source: "test_grant", active_until: "2027-09-27T00:00:00Z" }],
+          error: null,
+        });
+      }
+      return Promise.resolve({ error: null });
+    });
+    render(<KidsConsentControl />);
+    expect(await screen.findByText(locale === "en"
+      ? /^Stripe subscription:\s*Refunded$/
+      : /^اشتراك Stripe:\s*مسترد$/)).toBeInTheDocument();
+    expect(screen.getByText(locale === "en"
+      ? /^Paid Kids lesson access: Active until 2027-09-27 \(separate access grant\)$/
+      : /^الوصول لدروس كيدز المدفوعة: نشط حتى 2027-09-27 \(منحة وصول منفصلة\)$/)).toBeInTheDocument();
+    expect(screen.queryByText(/Last paid period through|آخر فترة مدفوعة حتى/)).not.toBeInTheDocument();
+    // Refunded payment must not become an active Stripe subscription merely
+    // because the independent family grant still grants lesson access.
+    expect(screen.queryByRole("button")).not.toBeInTheDocument();
+    expect(mock.rpc).toHaveBeenCalledWith("get_my_kids_subscription");
+    expect(mock.rpc).toHaveBeenCalledWith("get_my_kids_access_status");
+  });
 });
+

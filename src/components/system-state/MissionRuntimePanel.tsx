@@ -24,10 +24,7 @@ export function MissionRuntimePanel() {
         </div>
 
         <div className="grid sm:grid-cols-3 gap-3">
-          <Stat
-            label={t("systemState.missionRuntime.total")}
-            value={mr.isReady ? String(mr.total) : "…"}
-          />
+          <Stat label={t("systemState.missionRuntime.total")} value={mr.isReady ? String(mr.total) : "…"} />
           <Stat
             label={t("systemState.missionRuntime.connected")}
             value={mr.isReady ? String(mr.liveMissions.length) : "…"}

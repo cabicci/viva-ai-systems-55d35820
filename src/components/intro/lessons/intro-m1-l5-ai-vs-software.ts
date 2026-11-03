@@ -86,7 +86,8 @@ export const AI_VS_SOFTWARE_CONTENT: IntroLessonContent = [
       kind: "lessonVideo",
       url: "/lessons/intro/intro-m1-l5-ai-vs-software.mp4",
       durationLabel: "0:36",
-      caption: "الفرق اللي يحدد تختار أنهي أداة. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
+      caption:
+        "الفرق اللي يحدد تختار أنهي أداة. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
     },
   },
   {
@@ -131,7 +132,11 @@ export const AI_VS_SOFTWARE_CONTENT: IntroLessonContent = [
           id: "apply1",
           bloom: "apply",
           question: "عندك ٢٠٠ رقم مبيعات وعايز الإجمالي بالظبط. أحسن أداة؟",
-          options: ["Excel أو آلة حاسبة", "AI بس من غير شيت", "مولّد صور"],
+          options: [
+            "Excel أو آلة حاسبة",
+            "AI بس من غير شيت",
+            "مولّد صور",
+          ],
           correctIndex: 0,
           explanation: "الحساب الدقيق محتاج برنامج ثابت. AI ييجي بعدها للملخص لو محتاج.",
         },

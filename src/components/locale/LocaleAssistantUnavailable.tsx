@@ -1,7 +1,11 @@
 import { getUiString } from "@/lib/locale/ui-strings";
 import type { SupportedLocale } from "@/lib/locale/types";
 
-export function LocaleAssistantUnavailable({ locale }: { locale: SupportedLocale }) {
+export function LocaleAssistantUnavailable({
+  locale,
+}: {
+  locale: SupportedLocale;
+}) {
   const title = getUiString(locale, "safety.assistant.title");
   const body = getUiString(locale, "safety.assistant.body");
   if (!title) return null;

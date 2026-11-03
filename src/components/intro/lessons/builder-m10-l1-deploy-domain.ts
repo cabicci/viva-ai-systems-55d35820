@@ -97,7 +97,8 @@ export const BUILDER_M10_DEPLOY_DOMAIN_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "Deploy، دومين، HTTPS، وخزنة الأسرار — خطوة بخطوة. لو معندكش وقت، كمل قراية.",
+      caption:
+        "Deploy، دومين، HTTPS، وخزنة الأسرار — خطوة بخطوة. لو معندكش وقت، كمل قراية.",
     },
   },
   {
@@ -125,7 +126,8 @@ export const BUILDER_M10_DEPLOY_DOMAIN_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "التطبيق شغال على جهازك. إيه أخطر حاجة تنساها قبل الإطلاق؟",
+          question:
+            "التطبيق شغال على جهازك. إيه أخطر حاجة تنساها قبل الإطلاق؟",
           options: [
             "مفاتيح API في خزنة Production — مش في الكود أو GitHub.",
             "لون زرار «Submit» في الواجهة.",
@@ -145,7 +147,8 @@ export const BUILDER_M10_DEPLOY_DOMAIN_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "mission",
-      intro: "قبل Deploy — فرّق إيه اللي الناس تشوفه وإيه اللي لازم يفضل مخفي.\n\n١٠ دقايق.",
+      intro:
+        "قبل Deploy — فرّق إيه اللي الناس تشوفه وإيه اللي لازم يفضل مخفي.\n\n١٠ دقايق.",
       prompt:
         "في تسليمك اكتب:\n\n**عام (OK للناس تشوفه):**\n- [...]\n- [...]\n- [...]\n\n**سري (خارج النطاق للكود العام):**\n- [...]\n- [...]\n- [...]\n\n**سؤال:** أنهي سر لو اتسرّب أخطر — ولِيه؟",
       buttonLabel: "انسخ خطوات المهمة",
@@ -164,7 +167,9 @@ export const BUILDER_M10_DEPLOY_DOMAIN_BLOCKS: IntroLessonContent = [
         {
           label: "أولوية الخطر",
           weight: 40,
-          criteria: ["حدّدت أخطر سر بسبب منطقي (فلوس، بيانات مستخدمين، ...)."],
+          criteria: [
+            "حدّدت أخطر سر بسبب منطقي (فلوس، بيانات مستخدمين، ...).",
+          ],
         },
       ],
     },

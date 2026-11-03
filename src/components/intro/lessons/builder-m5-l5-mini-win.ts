@@ -127,14 +127,16 @@ export const BUILDER_M5_MINI_WIN_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "سارة عندها فكرة AI app فيها ١٥ feature. إيه أحسن خطوة قبل Phase 3؟",
+          question:
+            "سارة عندها فكرة AI app فيها ١٥ feature. إيه أحسن خطوة قبل Phase 3؟",
           options: [
             "تعرّف Mini Win — أصغر نسخة تنشرها وتجربها.",
             "تكمّل تخطيط الـ ١٥ feature كلها.",
             "تتعلم React و SQL الأول.",
           ],
           correctIndex: 0,
-          explanation: "Mini Win الأول — feedback حقيقي أهم من خطة كاملة من غير تجربة.",
+          explanation:
+            "Mini Win الأول — feedback حقيقي أهم من خطة كاملة من غير تجربة.",
         },
       ],
     },
@@ -146,7 +148,8 @@ export const BUILDER_M5_MINI_WIN_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "mission",
-      intro: "المهمة دي تعريف — مش بناء. ٥–١٠ دقايق.\n\nاستخدم Product Request من درس الانتقال.",
+      intro:
+        "المهمة دي تعريف — مش بناء. ٥–١٠ دقايق.\n\nاستخدم Product Request من درس الانتقال.",
       prompt:
         "في تسليمك اكتب:\n\n١) الفكرة (جملة):\n\n٢) Mini Win — أصغر نسخة منشورة:\n   - صفحة واحدة: إيه اللي العميل يشوفه؟\n   - action واحد: إيه اللي يدوس عليه؟\n   - نتيجة واحدة: إيه اللي يحصل؟\n\n٣) إيه اللي مش في Mini Win (عشان بعدين):\n   - [feature 1]\n   - [feature 2]\n\n٤) مين أول ٣ ناس هتجرب معاهم؟",
       buttonLabel: "انسخ خطوات المهمة",
@@ -157,12 +160,18 @@ export const BUILDER_M5_MINI_WIN_BLOCKS: IntroLessonContent = [
         {
           label: "Mini Win محدّد",
           weight: 60,
-          criteria: ["صفحة + action + نتيجة — مش «تطبيق كامل».", "تقدر تتخيّلها منشورة في أسبوع."],
+          criteria: [
+            "صفحة + action + نتيجة — مش «تطبيق كامل».",
+            "تقدر تتخيّلها منشورة في أسبوع.",
+          ],
         },
         {
           label: "حدود واضحة",
           weight: 40,
-          criteria: ["فيه «مش دلوقتي» — إيه اللي مستني.", "فيه ٣ testers محدّدين."],
+          criteria: [
+            "فيه «مش دلوقتي» — إيه اللي مستني.",
+            "فيه ٣ testers محدّدين.",
+          ],
         },
       ],
     },

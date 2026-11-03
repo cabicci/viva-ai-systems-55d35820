@@ -98,7 +98,8 @@ export const ANALYST_M5_L1_FOUR_NUMBERS_DASHBOARD_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "إزاي تختار ٤ أرقام بتلخّص شغلك — وتقرأهم كل أسبوع.",
+      caption:
+        "إزاي تختار ٤ أرقام بتلخّص شغلك — وتقرأهم كل أسبوع.",
     },
   },
   {
@@ -110,7 +111,8 @@ export const ANALYST_M5_L1_FOUR_NUMBERS_DASHBOARD_BLOCKS: IntroLessonContent = [
       kind: "diagram",
       id: "four-kpi-dashboard",
       label: "Four KPI Dashboard",
-      caption: "٤ أرقام — كل واحد: الأسبوع ده، اللي فات، والسهم. لو واحد أحمر، تعرف فين القرار.",
+      caption:
+        "٤ أرقام — كل واحد: الأسبوع ده، اللي فات، والسهم. لو واحد أحمر، تعرف فين القرار.",
     },
   },
   {
@@ -167,7 +169,10 @@ export const ANALYST_M5_L1_FOUR_NUMBERS_DASHBOARD_BLOCKS: IntroLessonContent = [
         {
           label: "مقارنة وThreshold",
           weight: 50,
-          criteria: ["في قيمة الأسبوع ده واللي فات.", "في Threshold أو حد قرار لكل رقم."],
+          criteria: [
+            "في قيمة الأسبوع ده واللي فات.",
+            "في Threshold أو حد قرار لكل رقم.",
+          ],
         },
       ],
     },
