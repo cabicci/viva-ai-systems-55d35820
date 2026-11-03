@@ -21,6 +21,26 @@ async function token(): Promise<string> {
   identity = { token: data.value, until: Date.now() + 120000 };
   return data.value;
 }
+const REASON = /^[A-Z_]{1,32}$/;
+/** Read-only: one signed probe request; reports only bounded codes and build equality. */
+export async function runProbe() {
+  expected = computeAssistantBuildIdentities(process.cwd());
+  const response = await fetch(endpoint, { method: "POST", redirect: "error", signal: AbortSignal.timeout(20000),
+    headers: { Authorization: `Bearer ${await token()}`, "Content-Type": "application/json" }, body: JSON.stringify({ operation: "probe" }) });
+  const text = (await response.text()).slice(0, 4000);
+  let body: Record<string, unknown> = {};
+  try { body = JSON.parse(text) as Record<string, unknown>; } catch { /* non-JSON body is reported only as such */ }
+  const report = { probe: true, status: response.status,
+    code: typeof body.code === "string" && /^AUTOMATION_[A-Z_]{1,64}$/.test(body.code) ? body.code : null,
+    reason: typeof body.reason === "string" && REASON.test(body.reason) ? body.reason : null,
+    identity: body.identity === "verified" ? "verified" : null,
+    buildMatches: body.indexerBuild === expected.indexerBuild, deploymentMatches: body.deploymentFingerprint === expected.deploymentFingerprint };
+  console.log(JSON.stringify(report));
+  // Passing requires a verified signed identity AND exact deployed source; anything else fails.
+  const passed = report.status === 200 && report.identity === "verified" && report.buildMatches && report.deploymentMatches;
+  if (!passed) process.exitCode = 1;
+  return passed;
+}
 async function call(operation: "status" | "tick", pruneResponseCache = false): Promise<Record<string, unknown>> {
   const response = await fetch(endpoint, { method: "POST", redirect: "error", signal: AbortSignal.timeout(operation === "status" ? 20000 : 125000),
     headers: { Authorization: `Bearer ${await token()}`, "Content-Type": "application/json",
@@ -28,6 +48,10 @@ async function call(operation: "status" | "tick", pruneResponseCache = false): P
         "x-masaarat-indexer-deployment": expected.deploymentFingerprint } : {}) },
     body: JSON.stringify({ operation, ...(operation === "tick" ? { requestId: crypto.randomUUID(), ...(pruneResponseCache ? { pruneResponseCache: true } : {}) } : {}) }) });
   if (operation === "status" && [403,404].includes(response.status)) return { awaitingPublication: true };
+  if (response.status === 401) {
+    const reason = await response.json().then((b: { reason?: unknown }) => b.reason, () => null);
+    console.log(JSON.stringify({ state: "identity-rejected", reason: typeof reason === "string" && REASON.test(reason) ? reason : null }));
+  }
   if (!response.ok || !response.headers.get("content-type")?.includes("application/json")) throw new Error("AUTOMATION_REQUEST_UNCONFIRMED");
   const text = await response.text();
   if (text.length > 4000) throw new Error("AUTOMATION_RESPONSE_INVALID");
@@ -57,7 +81,7 @@ export async function runTrustedAutomaticClient() {
   console.log(`Automatic indexing: ${state}.`);
   return state;
 }
-if ((import.meta as ImportMeta & { main?: boolean }).main) await runTrustedAutomaticClient().catch(() => {
+if ((import.meta as ImportMeta & { main?: boolean }).main) await (process.env.MASAARAT_INDEXER_PROBE === "true" ? runProbe() : runTrustedAutomaticClient()).catch(() => {
   console.error("Automatic indexing stopped safely. Inspect sanitized job status before any uncertain request is retried.");
   process.exitCode = 1;
 });

@@ -24,7 +24,7 @@ describe("server-only existing worker dispatch", () => {
       "https://isolated.supabase.co/functions/v1/account-welcome-job",
       expect.objectContaining({
         method: "POST",
-        redirect: "error",
+        redirect: "manual",
         signal: expect.any(AbortSignal),
         headers: { Authorization: `Bearer ${secret}`, "Content-Type": "application/json" },
         body: JSON.stringify({ immediate: target }),
