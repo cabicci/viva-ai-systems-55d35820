@@ -25,3 +25,16 @@ it('requests bounded cache cleanup only on the first tick of a scheduled run',as
  expect(await run()).toBe('complete');
  expect(calls.filter(c=>c.operation==='tick').map(c=>c.pruneResponseCache)).toEqual([true,undefined]);
 });
+
+const probe=async(respond:()=>Response)=>{const ops:string[]=[];
+ vi.stubGlobal('fetch',vi.fn(async(url:string|URL,init:RequestInit={})=>{if(new URL(url).hostname==='fixture.actions.githubusercontent.com')return Response.json({value:'synthetic-signed-identity'});
+  const body=JSON.parse(String(init.body));expect(body).toEqual({operation:'probe'});ops.push(body.operation);return respond();}));
+ const passed=await (await import('../../../scripts/assistant/automatic-worker-client')).runProbe();return {passed,ops};};
+it('probe passes only with verified identity and exact deployed source, sending one probe and no tick',async()=>{
+ const r=await probe(()=>Response.json({probe:true,identity:'verified',indexerBuild:build,deploymentFingerprint:deployment}));
+ expect(r).toEqual({passed:true,ops:['probe']});process.exitCode=0;});
+it.each([
+ ['build mismatch',()=>Response.json({probe:true,identity:'verified',indexerBuild:'c'.repeat(64),deploymentFingerprint:deployment})],
+ ['non-JSON 200',()=>new Response('<html>ok</html>',{status:200,headers:{'content-type':'text/html'}})],
+ ['identity rejection',()=>Response.json({code:'AUTOMATION_FORBIDDEN',reason:'AUDIENCE'},{status:401})],
+])('probe fails on %s',async(_,respond)=>{const r=await probe(respond);expect(r).toEqual({passed:false,ops:['probe']});expect(process.exitCode).toBe(1);process.exitCode=0;});
