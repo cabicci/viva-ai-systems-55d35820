@@ -12,7 +12,8 @@ import { commercialPolicyBaseline } from "@/lib/billing/__tests__/commercial-pol
 import { prepareIntake } from "./prepare.server";
 import { intakeFixture } from "./test-fixture";
 import { curriculumChunks } from "./corpus";
-import { intakeCanonical } from "./package";
+import { intakeCanonical, type IntakePackage } from "./package";
+import { trainingFixture } from "./training-fixture";
 import { sha256 } from "@/lib/card-assistant/corpus";
 
 const user = "11111111-1111-4111-8111-111111111111",
@@ -148,7 +149,7 @@ afterAll(async () => {
 });
 
 async function prepareCourse(
-  pkg: ReturnType<typeof intakeFixture>,
+  pkg: ReturnType<typeof intakeFixture> | IntakePackage,
   expectedActive: string | null = null,
 ) {
   const prepared = await prepareIntake(JSON.stringify(pkg));
@@ -604,6 +605,67 @@ describe.sequential(
         ).toMatchObject({ charged_units: 1 });
       },
     );
+    it("records typed ungraded practice as awaiting human review and keeps criteria private", async () => {
+      const pkg = trainingFixture();
+      pkg.area = "academic";
+      pkg.id = "fixture-human-review";
+      pkg.stations[0].steps[0].id = "step-human-review";
+      pkg.assessmentKeys[0].lessonId = "step-human-review";
+      const version = await prepareCourse(pkg);
+      await finishCourse(pkg.area, pkg.id);
+      await service();
+      await db.query(
+        "INSERT INTO billing.email_access_grants(id,recipient_email,scope_mode,catalogues,user_id,activated_at,grant_kind) VALUES($1,'one@example.invalid','selected',ARRAY[$2],$3,now(),'single_curriculum')",
+        [crypto.randomUUID(), `academic:${pkg.id}`, user],
+      );
+      await actor(user);
+      const params = {
+        area: "academic",
+        course: pkg.id,
+        lesson: "step-human-review",
+        locale: "en",
+      };
+      const opened = await command("lesson", params);
+      expect(JSON.stringify(opened)).not.toContain("SYNTHETIC_PRIVATE_REVIEW_CRITERION");
+      const started = await command("start", {
+        ...params,
+        version,
+        section: "numeric-practice",
+        requestId: crypto.randomUUID(),
+      });
+      const result = await command("submit", {
+        ...params,
+        version,
+        section: "numeric-practice",
+        attemptId: started.attemptId,
+        requestId: crypto.randomUUID(),
+        submission: {
+          concentration: "0.08",
+          mass: "0.25",
+          body: "40",
+          answer: "0.0005",
+          unit: "intake-unit",
+          identity: "verified",
+          reason: "The stated case is limited",
+        },
+      });
+      expect(result).toEqual({ state: "awaiting_review", competenceVerified: false });
+      const refreshed = await command("lesson", params);
+      expect(refreshed.events).toContainEqual(
+        expect.objectContaining({ section: "numeric-practice", completed: false, result }),
+      );
+      const detail = await value("SELECT public.learning_command('detail',$1) v", [
+        JSON.stringify({ recordId: opened.recordId }),
+      ]);
+      expect(JSON.stringify(detail)).not.toContain("SYNTHETIC_PRIVATE_REVIEW_CRITERION");
+      await service();
+      expect(
+        await value(
+          "SELECT private_keys::text v FROM curriculum_private.versions WHERE area='academic' AND course=$1 AND version=$2",
+          [pkg.id, version],
+        ),
+      ).toContain("SYNTHETIC_PRIVATE_REVIEW_CRITERION");
+    });
     it("retains unlimited admin review without inventing a child or a learner result", async () => {
       await actor(admin);
       expect(

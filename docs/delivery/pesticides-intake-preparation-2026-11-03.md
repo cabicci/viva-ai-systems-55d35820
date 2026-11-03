@@ -1,0 +1,17 @@
+# Pesticides pilot preparation — no adoption
+
+The owner reported publishing main `d25a52ef62d6ccf8fa7eb583997f2c6845cbb6c4`. Ordinary owner sign-in and `/admin/curricula` were verified on `https://masaarat.ai`: the new protected console is present, the registry is empty, robots is `noindex,nofollow`, and marketing/TrustedSite scripts are absent. Existing journeys and the saved report remain visible. No report or assistant request was generated.
+
+The existing rebuilt pesticides edition was inspected read-only: five stations, eleven steps, Egyptian Arabic and English, 22 existing full movies, 71 distinct question IDs (five multiple-choice and 66 constructed responses), three teaching illustrations, and 22 printable HTML worksheets. Public package manifest SHA256 remains `89ea9a2189c872eeed0d2837dd87ace8568bfa63f8ee59a21cdd1725d4bb19ac`; the existing allowlisted local server freshly checked every exported file. The previous seven-step edition and all accepted media remain unchanged.
+
+The pilot exposed three previously unsupported delivery details, addressed by this application-only extension:
+
+- Authored number and choice fields use the same versioned, conflict-aware attempt drafts and private learner records. Constructed and diagnostic responses may await human review without inventing a numerical pass threshold. Source criteria/answer IDs remain under private `assessmentKeys`; learner projection, RAG and record exports do not receive them.
+- A bounded data-only arithmetic tree supports authored addition, multiplication and division, field references, answer units and prerequisite conditions. It accepts complete Arabic/Persian/Latin numbers, rejects nonfinite and underflow values, and checks educational arithmetic only. It never saves, grades, completes an activity or proves competence. The existing server submission remains `awaiting_review` even when local arithmetic matches. No imported script/eval or course-specific renderer is admitted.
+- Private raster illustrations require an immutable file hash and disclosure caption. They resolve only within the selected section, through the existing authenticated asset authority. Retired lesson responses cannot mount an image. Existing video and PDF behavior is preserved. Inline units/arithmetic use safe RTL isolation; imported markup stays inert text.
+
+No database migration, user/role change, course import, index job, paid model request or publication is included. Original 0034/0035 remain unchanged. The current download buckets are private/PDF-only; real illustration binding requires a separately reconciled storage configuration before any actual upload or admission. The existing 10MB private-file bound is retained.
+
+The 22 original worksheets were exported locally to 22 PDFs (48 pages), with source hashes, byte hashes and page text checks. First/last-page contact sheets were rendered for visual review. These are derivative learner downloads, not a new course/project or a backup; nothing has been uploaded.
+
+Pending gates: the owner must answer the explicit Bunny-resumption question before any hosted-video upload/retry. Preserve earlier collection/video identities and reconcile their exact state before reuse. The owner must separately approve the concrete curriculum before production adoption. Media processing/playback, final PDF/illustration storage, actual admission/indexing, account-backed end-to-end course acceptance and publication remain unclaimed.

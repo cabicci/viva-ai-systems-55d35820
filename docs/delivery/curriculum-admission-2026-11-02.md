@@ -1,6 +1,6 @@
 # Curriculum admission — existing Masaarat project
 
-Status: implementation reviewed; native foundation 0034 and forward privacy correction 0035 applied without course data. Final CI/main integration, preview review and owner publication are pending. No real curriculum has been imported.
+Status: foundation merged at main `d25a52ef62d6ccf8fa7eb583997f2c6845cbb6c4` after required checks; owner publication and ordinary owner-session live console verification completed on 2026-11-03. Native0034/0035 remain unchanged, and the registry is empty. No real curriculum has been imported. Pesticides preparation is tracked in `pesticides-intake-preparation-2026-11-03.md`; that pilot exposed additional presentation/activity requirements under review.
 
 Owner scope: build stage 3 first in `cabicci/viva-ai-systems-55d35820`; review and merge to main, owner publishes. Existing AI lessons keep their presentation. New curricula use course → station → step; the step sidebar starts with explanation, worked example, video, then that curriculum's authored activities. Missing sections stay absent. Every admitted curriculum gets personal notes, learner records, package/invitation/coupon selection and its own grounded assistant. Pesticides testing follows system readiness; its real adoption requires a separate concrete owner approval.
 

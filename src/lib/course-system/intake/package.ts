@@ -53,11 +53,12 @@ const asset = z
         path: z
           .string()
           .max(500)
-          .regex(/^[A-Za-z0-9][A-Za-z0-9/_-]*\.pdf$/),
+          .regex(/^[A-Za-z0-9][A-Za-z0-9/_-]*\.(?:pdf|png|jpg|jpeg|webp)$/),
       })
       .strict()
       .optional(),
-    type: z.enum(["video", "pdf", "worksheet", "file"]),
+    type: z.enum(["video", "pdf", "worksheet", "file", "image"]),
+    caption: text.optional(),
   })
   .strict()
   .superRefine((a, c) => {
@@ -69,7 +70,94 @@ const asset = z
         code: "custom",
         message: "Videos use reviewed hosting; downloadable files use private storage",
       });
+    if (
+      a.type === "image" &&
+      (!a.caption || !a.storage || !/\.(png|jpg|jpeg|webp)$/.test(a.storage.path))
+    )
+      c.addIssue({
+        code: "custom",
+        message: "Images require a reviewed private file and its disclosure caption",
+      });
+    if (a.type !== "image" && a.storage && !a.storage.path.endsWith(".pdf"))
+      c.addIssue({ code: "custom", message: "Downloads require a reviewed PDF" });
   });
+const field = z
+  .object({
+    id,
+    label: text,
+    input: z.enum(["text", "number", "choice"]).optional(),
+    options: z
+      .array(z.object({ id, label: text }).strict())
+      .min(2)
+      .max(12)
+      .optional(),
+    minimum: z.number().finite().optional(),
+    exclusiveMinimum: z.boolean().optional(),
+  })
+  .strict()
+  .superRefine((f, c) => {
+    if (
+      (f.input === "choice") !== !!f.options ||
+      (f.options && new Set(f.options.map((x) => x.id)).size !== f.options.length)
+    )
+      c.addIssue({ code: "custom", message: "Choice fields require distinct authored options" });
+    if (
+      (f.minimum !== undefined && f.input !== "number") ||
+      (f.exclusiveMinimum !== undefined && f.minimum === undefined)
+    )
+      c.addIssue({
+        code: "custom",
+        message: "Only numeric inputs have authored minimum constraints",
+      });
+  });
+type Arithmetic =
+  | number
+  | { field: string }
+  | { choice: string; factors: { value: string; factor: number }[] }
+  | { op: "add" | "multiply" | "divide"; args: Arithmetic[] };
+const arithmetic: z.ZodType<Arithmetic> = z.lazy(() =>
+  z.union([
+    z.number().finite(),
+    z.object({ field: id }).strict(),
+    z
+      .object({
+        choice: id,
+        factors: z
+          .array(z.object({ value: id, factor: z.number().positive().finite() }).strict())
+          .min(2)
+          .max(12),
+      })
+      .strict(),
+    z
+      .object({
+        op: z.enum(["add", "multiply", "divide"]),
+        args: z.array(arithmetic).min(2).max(8),
+      })
+      .strict(),
+  ]),
+);
+const training = z
+  .object({
+    outputs: z
+      .array(
+        z
+          .object({
+            field: id,
+            expression: arithmetic,
+            unitField: id.optional(),
+            unitValue: id.optional(),
+          })
+          .strict(),
+      )
+      .min(1)
+      .max(10),
+    prerequisites: z
+      .array(z.object({ field: id, value: text }).strict())
+      .max(10)
+      .default([]),
+    support: text,
+  })
+  .strict();
 const question = z.object({ id, prompt: text, options: z.array(text).min(2).max(10) }).strict();
 const section = z
   .object({
@@ -79,14 +167,12 @@ const section = z
     paragraphs: z.array(text).max(100).default([]),
     questions: z.array(question).max(100).default([]),
     assets: z.array(id).max(30).default([]),
-    fields: z
-      .array(z.object({ id, label: text }).strict())
-      .max(30)
-      .default([]),
+    fields: z.array(field).max(30).default([]),
     required: z.boolean(),
     completion: z.enum(["read", "view", "pass", "submit", "review"]),
     passPercent: z.number().int().min(1).max(100).optional(),
     durationMinutes: z.number().int().min(1).max(1440).optional(),
+    training: training.optional(),
   })
   .strict()
   .superRefine((s, c) => {
@@ -95,6 +181,10 @@ const section = z
     };
     const assessment = s.kind === "questions" || s.kind === "exam";
     const quiz = assessment && s.completion === "pass";
+    check(
+      !s.training || (s.kind === "practice" && s.completion === "review"),
+      "Training feedback is ungraded practice requiring separate review",
+    );
     check(
       s.durationMinutes === undefined || assessment,
       "Only an authored assessment may define an examination duration",
@@ -147,6 +237,15 @@ const lesson = z
   .strict();
 const station = z.object({ id, title: localized, steps: z.array(lesson).min(1).max(100) }).strict();
 const key = z.object({ questionId: id, correctIndex: z.number().int().min(0).max(9) }).strict();
+const rubric = z
+  .object({
+    sectionId: id,
+    fieldId: id,
+    criterion: text,
+    critical: z.boolean().optional(),
+    answerId: id.optional(),
+  })
+  .strict();
 
 export const intakePackageSchema = z
   .object({
@@ -159,7 +258,16 @@ export const intakePackageSchema = z
     stations: z.array(station).min(1).max(100),
     // No invented grading rules: protected keys must be supplied by the author.
     assessmentKeys: z
-      .array(z.object({ lessonId: id, locale, keys: z.array(key).max(500) }).strict())
+      .array(
+        z
+          .object({
+            lessonId: id,
+            locale,
+            keys: z.array(key).max(500),
+            rubrics: z.array(rubric).max(500).optional(),
+          })
+          .strict(),
+      )
       .max(4000),
     notesEnabled: z.literal(true).default(true),
   })
@@ -234,9 +342,24 @@ export function validateIntake(input: unknown): IntakePackage {
         questions.map((q) => q.id),
         `${step.id}.questions`,
       );
-      const keys =
-        p.assessmentKeys.find((k) => k.lessonId === step.id && k.locale === lang)?.keys ?? [];
-      if (keys.length) usedKeys.add(`${step.id}:${lang}`);
+      const marking = p.assessmentKeys.find((k) => k.lessonId === step.id && k.locale === lang);
+      const keys = marking?.keys ?? [];
+      const rubrics = marking?.rubrics ?? [];
+      if (keys.length || rubrics.length) usedKeys.add(`${step.id}:${lang}`);
+      unique(
+        rubrics.map((r) => `${r.sectionId}:${r.fieldId}`),
+        `${step.id}.rubrics`,
+      );
+      for (const r of rubrics) {
+        const s = content.sections.find((x) => x.id === r.sectionId);
+        const f = s?.fields.find((x) => x.id === r.fieldId);
+        if (
+          !f ||
+          s?.completion !== "review" ||
+          (r.answerId && !f.options?.some((o) => o.id === r.answerId))
+        )
+          throw new Error("INTAKE_RUBRIC_SCOPE_MISMATCH");
+      }
       unique(
         keys.map((k) => k.questionId),
         `${step.id}.keys`,
@@ -260,6 +383,60 @@ export function validateIntake(input: unknown): IntakePackage {
           s.fields.map((f) => f.id),
           `${step.id}.${s.id}.fields`,
         );
+        if (s.training) {
+          const numeric = new Set(s.fields.filter((f) => f.input === "number").map((f) => f.id));
+          const referenced = new Set<string>();
+          let nodes = 0;
+          const inspect = (e: Arithmetic, depth = 0): void => {
+            if (++nodes > 200 || depth > 8) throw new Error("INTAKE_TRAINING_SCOPE_LIMIT");
+            if (typeof e === "number") return;
+            if ("field" in e) {
+              if (!numeric.has(e.field)) throw new Error("INTAKE_TRAINING_FIELD");
+              referenced.add(e.field);
+              return;
+            }
+            if ("choice" in e) {
+              const options = s.fields.find((f) => f.id === e.choice)?.options;
+              if (
+                !options ||
+                e.factors
+                  .map((f) => f.value)
+                  .sort()
+                  .join() !==
+                  options
+                    .map((o) => o.id)
+                    .sort()
+                    .join()
+              )
+                throw new Error("INTAKE_TRAINING_UNIT_FACTORS");
+              return;
+            }
+            if (e.op === "divide" && e.args.length !== 2)
+              throw new Error("INTAKE_TRAINING_DIVISION");
+            e.args.forEach((a) => inspect(a, depth + 1));
+          };
+          unique(
+            s.training.outputs.map((o) => o.field),
+            `${step.id}.${s.id}.training`,
+          );
+          for (const o of s.training.outputs) {
+            if (
+              !numeric.has(o.field) ||
+              !!o.unitField !== !!o.unitValue ||
+              (o.unitField &&
+                !s.fields
+                  .find((f) => f.id === o.unitField)
+                  ?.options?.some((v) => v.id === o.unitValue))
+            )
+              throw new Error("INTAKE_TRAINING_OUTPUT");
+            inspect(o.expression);
+          }
+          if (s.training.outputs.some((o) => referenced.has(o.field)))
+            throw new Error("INTAKE_TRAINING_ANSWER_REFERENCE");
+          for (const req of s.training.prerequisites)
+            if (!s.fields.find((f) => f.id === req.field)?.options?.some((o) => o.id === req.value))
+              throw new Error("INTAKE_TRAINING_PREREQUISITE");
+        }
       }
       // IDs, activities, completion and grading meaning cannot silently vary by language.
       const current = intakeCanonical(
@@ -270,7 +447,23 @@ export function validateIntake(input: unknown): IntakePackage {
           completion: s.completion,
           passPercent: s.passPercent ?? null,
           durationMinutes: s.durationMinutes ?? null,
-          fields: s.fields.map((f) => f.id),
+          fields: s.fields.map((f) => ({
+            id: f.id,
+            input: f.input ?? "text",
+            options: f.options?.map((o) => o.id) ?? [],
+            minimum: f.minimum ?? null,
+            exclusiveMinimum: f.exclusiveMinimum ?? false,
+          })),
+          training: s.training
+            ? { outputs: s.training.outputs, prerequisites: s.training.prerequisites }
+            : null,
+          rubrics: rubrics
+            .filter((r) => r.sectionId === s.id)
+            .map((r) => ({
+              fieldId: r.fieldId,
+              critical: r.critical ?? null,
+              answerId: r.answerId ?? null,
+            })),
           questions: s.questions.map((q) => [
             q.id,
             q.options.length,
@@ -284,7 +477,10 @@ export function validateIntake(input: unknown): IntakePackage {
     }
   }
   if (
-    p.assessmentKeys.some((k) => k.keys.length === 0 || !usedKeys.has(`${k.lessonId}:${k.locale}`))
+    p.assessmentKeys.some(
+      (k) =>
+        (k.keys.length === 0 && !k.rubrics?.length) || !usedKeys.has(`${k.lessonId}:${k.locale}`),
+    )
   )
     throw new Error("INTAKE_UNUSED_KEYS");
   return p;

@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { CurriculumContent, type LessonContent } from "./CurriculumContent";
 import { validateIntake } from "@/lib/course-system/intake/package";
@@ -63,6 +63,17 @@ describe("new-course lesson delivery", () => {
     );
     expect(resolve).toHaveBeenCalledExactlyOnceWith("pdf");
   });
+  it("isolates scientific units while keeping author markup inert", () => {
+    const lesson = base();
+    lesson.sections[0].paragraphs = [
+      "راجع `mg/kg food` ثم 0.08 × 0.25 = 0.020، <img src=x onerror=alert(1)>.",
+    ];
+    const view = render(
+      <CurriculumContent lesson={lesson} selected="intro" onSelect={vi.fn()} locale="ar-EG" />,
+    );
+    expect(view.container.querySelector('bdi[dir="ltr"] code')).toHaveTextContent("mg/kg food");
+    expect(view.container.querySelector("img")).toBeNull();
+  });
   it("renders imported text as text and never executes author markup", () => {
     const lesson = base();
     lesson.sections[0].paragraphs = ["<script>alert('x')</script>"];
@@ -71,5 +82,66 @@ describe("new-course lesson delivery", () => {
     );
     expect(screen.getByText("<script>alert('x')</script>")).toBeInTheDocument();
     expect(container.querySelector("script")).toBeNull();
+  });
+  it("loads a protected illustration only in its selected section and keeps its disclosure", async () => {
+    const lesson = base();
+    lesson.sections[0].assets = ["image"];
+    lesson.assets = [
+      {
+        id: "image",
+        type: "image",
+        label: "Teaching illustration",
+        caption: "Generated illustration; not experimental evidence.",
+      },
+    ];
+    const resolve = vi.fn(async () => "https://example.invalid/protected-image");
+    const view = render(
+      <CurriculumContent
+        lesson={lesson}
+        selected="task"
+        onSelect={vi.fn()}
+        locale="en"
+        resolveAsset={resolve}
+      />,
+    );
+    expect(resolve).not.toHaveBeenCalled();
+    view.rerender(
+      <CurriculumContent
+        lesson={lesson}
+        selected="intro"
+        onSelect={vi.fn()}
+        locale="en"
+        resolveAsset={resolve}
+      />,
+    );
+    expect(await screen.findByRole("img", { name: "Teaching illustration" })).toHaveAttribute(
+      "src",
+      "https://example.invalid/protected-image",
+    );
+    expect(screen.getByText("Generated illustration; not experimental evidence.")).toBeVisible();
+  });
+  it("ignores an image link that arrives after its owning lesson unmounts", async () => {
+    const lesson = base();
+    lesson.sections[0].assets = ["image"];
+    lesson.assets = [{ id: "image", type: "image", label: "Retired image", caption: "Disclosure" }];
+    let deliver!: (s: string) => void;
+    const resolve = vi.fn(
+      () =>
+        new Promise<string>((r) => {
+          deliver = r;
+        }),
+    );
+    const view = render(
+      <CurriculumContent
+        lesson={lesson}
+        selected="intro"
+        onSelect={vi.fn()}
+        locale="en"
+        resolveAsset={resolve}
+      />,
+    );
+    view.unmount();
+    await act(async () => deliver("https://example.invalid/retired"));
+    expect(screen.queryByRole("img", { name: "Retired image" })).toBeNull();
   });
 });

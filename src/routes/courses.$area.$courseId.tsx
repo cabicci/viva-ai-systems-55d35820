@@ -26,6 +26,7 @@ import { AssistantConversationPanel } from "@/components/assistant/AssistantConv
 import { FloatingAssistantLauncher } from "@/components/learn/FloatingAssistantLauncher";
 import { getUiString } from "@/lib/locale/ui-strings";
 import { Button } from "@/components/ui/button";
+import { CurriculumFields } from "@/components/course-intake/CurriculumFields";
 import type { IntakeSection } from "@/lib/course-system/intake/package";
 
 export const Route = createFileRoute("/courses/$area/$courseId")({
@@ -419,18 +420,13 @@ function Activity({
           ))}
         </fieldset>
       ))}
-      {section.fields.map((f) => (
-        <label key={f.id} className="block">
-          {f.label}
-          <textarea
-            disabled={!attempt || busy}
-            className="mt-2 block min-h-28 w-full rounded-lg border bg-background p-3"
-            value={submission[f.id] ?? ""}
-            maxLength={5000}
-            onChange={(e) => setSubmission((prev) => ({ ...prev, [f.id]: e.target.value }))}
-          />
-        </label>
-      ))}
+      <CurriculumFields
+        section={section}
+        values={submission}
+        disabled={!attempt || busy}
+        locale={locale}
+        onChange={(id, value) => setSubmission((prev) => ({ ...prev, [id]: value }))}
+      />
       {attempt && (
         <div role="status" className="text-sm text-muted-foreground">
           {draft.state === "saved"

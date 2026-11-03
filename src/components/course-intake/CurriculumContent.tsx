@@ -3,11 +3,12 @@ import type { SupportedLocale } from "@/lib/locale/types";
 import { intakeCopy } from "@/lib/course-system/intake/copy";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
+import { CourseInlineText } from "./CourseInlineText";
 export type LessonContent = {
   id: string;
   title: string;
   sections: IntakeSection[];
-  assets: { id: string; url?: string; label: string; type: string }[];
+  assets: { id: string; url?: string; label: string; type: string; caption?: string }[];
 };
 /** Text and reviewed hosted media only. No imported JSX, HTML, scripts or frames
  * from arbitrary origins. Video mounts only in its selected third tab. */
@@ -60,7 +61,7 @@ export function CurriculumContent({
         )}
         {section.paragraphs.map((p, i) => (
           <p key={i} className="whitespace-pre-wrap break-words leading-8">
-            {p}
+            <CourseInlineText text={p} />
           </p>
         ))}
         {section.assets
@@ -88,6 +89,8 @@ export function CurriculumContent({
                   />
                 )}
               </div>
+            ) : asset.type === "image" ? (
+              <PrivateImage key={asset.id} asset={asset} resolve={resolveAsset} locale={locale} />
             ) : (
               <PrivateAsset key={asset.id} asset={asset} resolve={resolveAsset} locale={locale} />
             ),
@@ -95,6 +98,67 @@ export function CurriculumContent({
         {children}
       </section>
     </div>
+  );
+}
+
+function PrivateImage({
+  asset,
+  resolve,
+  locale,
+}: {
+  asset: { id: string; label: string; caption?: string };
+  resolve?: (id: string) => Promise<string>;
+  locale: SupportedLocale;
+}) {
+  const c = intakeCopy(locale),
+    resolver = useRef(resolve);
+  resolver.current = resolve;
+  const [url, setUrl] = useState("");
+  const [error, setError] = useState(false);
+  const [retry, setRetry] = useState(0);
+  useEffect(() => {
+    let current = true;
+    setUrl("");
+    setError(false);
+    const lookup = resolver.current;
+    if (!lookup) {
+      setError(true);
+      return;
+    }
+    void lookup(asset.id).then(
+      (value) => {
+        if (current) setUrl(value);
+      },
+      () => {
+        if (current) setError(true);
+      },
+    );
+    return () => {
+      current = false;
+    };
+  }, [asset.id, retry]);
+  return (
+    <figure className="space-y-2">
+      {url && !error ? (
+        <img
+          src={url}
+          alt={asset.label}
+          loading="lazy"
+          className="max-w-full rounded-xl"
+          onError={() => setError(true)}
+        />
+      ) : error ? (
+        <p role="alert">
+          {c.error}{" "}
+          <Button variant="outline" onClick={() => setRetry((n) => n + 1)}>
+            {c.retry}
+          </Button>
+        </p>
+      ) : (
+        <p role="status">{c.loading}</p>
+      )}
+      <figcaption className="text-sm text-muted-foreground">{asset.caption}</figcaption>
+    </figure>
   );
 }
 
