@@ -85,6 +85,17 @@ const en = {
   practice: "Practical activity",
   faq: "Questions and answers",
   downloads: "Downloads",
+  check: "Check understanding",
+  learnLead: "The approved stations of this course:",
+  audienceBody:
+    "Learners with access to this line who want to study this course step by step. The curriculum does not name a narrower audience.",
+  beforeBody: (stations: string, steps: string) =>
+    `${stations} stations and ${steps} steps, in order. Each step has an explanation and activities saved to your account. The curriculum does not list prior requirements.`,
+  catalogueDesc: (first: string, stations: string) =>
+    `Starts with “${first}” and continues across ${stations} stations.`,
+  answerKey: "Answer key (reviewer only)",
+  previewOnly: "Preview — answers are not saved.",
+  caseData: "The case",
 };
 type Copy = typeof en;
 const msa: Copy = {
@@ -169,6 +180,17 @@ const msa: Copy = {
   practice: "التدريب العملي",
   faq: "أسئلة وإجابات",
   downloads: "الملفات",
+  check: "اختبر فهمك",
+  learnLead: "المحطات المعتمدة في المنهج:",
+  audienceBody:
+    "لكل متعلم عنده صلاحية المسار ده وعايز يدرس المنهج خطوة بخطوة. المنهج ما حددش جمهور أدق من كده.",
+  beforeBody: (stations: string, steps: string) =>
+    `${stations} محطات و${steps} خطوة بالترتيب. كل خطوة فيها شرح وأنشطة بتتحفظ في حسابك. المنهج ما ذكرش متطلبات سابقة.`,
+  catalogueDesc: (first: string, stations: string) =>
+    `يبدأ بـ «${first}» ويكمل على ${stations} محطات.`,
+  answerKey: "مفتاح الإجابة (للمراجع فقط)",
+  previewOnly: "معاينة — الإجابات لا تُحفظ.",
+  caseData: "الحالة",
 };
 export function intakeCopy(locale: SupportedLocale): Copy {
   if (locale === "en") return en;
