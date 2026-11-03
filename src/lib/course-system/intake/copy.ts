@@ -166,4 +166,3 @@ export function intakeCopy(locale: SupportedLocale): Copy {
     };
   return msa;
 }
-

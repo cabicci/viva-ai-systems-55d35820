@@ -188,4 +188,3 @@ export const askCurriculumAssistant = createServerFn({ method: "POST" })
     });
     return { ...result.body, status: result.status } as AssistantReply;
   });
-
