@@ -51,7 +51,10 @@ export function AcademicLessonPage({ courseId, lessonId }: { courseId: string; l
         {loading || (!!user && query.isPending) ? (
           <p role="status">{en ? "Loading lesson…" : "جارٍ تحميل الدرس…"}</p>
         ) : !user ? (
-          <a href={`/login?locale=${encodeURIComponent(locale)}&returnTo=${encodeURIComponent(`/academic/learn/${lessonId}`)}`} className="underline">
+          <a
+            href={`/login?locale=${encodeURIComponent(locale)}&returnTo=${encodeURIComponent(`/academic/learn/${lessonId}`)}`}
+            className="underline"
+          >
             {en ? "Sign in to continue" : "سجّل الدخول للمتابعة"}
           </a>
         ) : query.isError ? (
@@ -140,9 +143,9 @@ function AuthorizedLesson({
     staleTime: 0,
   });
   const labels: Record<string, string> = Object.fromEntries(
-    (
-      ["reading", "example", "video", "quiz", "practice", "faq", "downloads", "assistant"] as const
-    ).filter((key) => key !== "assistant" || !delivery.assistantAllowed).map((key) => [key, c[key]]),
+    (["reading", "example", "video", "quiz", "practice", "faq", "downloads", "assistant"] as const)
+      .filter((key) => key !== "assistant" || !delivery.assistantAllowed)
+      .map((key) => [key, c[key]]),
   );
   const practiceFields =
     normalizeAcademicPracticeValues(lesson.id, locale, lesson.assignment.fields.length, fields) ??
@@ -433,12 +436,12 @@ function AuthorizedLesson({
             </>
           )}
           {tab === "assistant" && !delivery.assistantAllowed && (
-              <p className="leading-8">
-                {en
-                  ? "The assistant for this course requires separate access and activation."
-                  : "مساعد هذا المسار يحتاج صلاحية مستقلة وتفعيل الخدمة."}
-              </p>
-            )}
+            <p className="leading-8">
+              {en
+                ? "The assistant for this course requires separate access and activation."
+                : "مساعد هذا المسار يحتاج صلاحية مستقلة وتفعيل الخدمة."}
+            </p>
+          )}
         </section>
       </div>
       {delivery.assistantAllowed && (

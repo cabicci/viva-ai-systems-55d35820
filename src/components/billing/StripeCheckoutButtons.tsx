@@ -10,7 +10,11 @@ import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { getKidsCheckoutCopy } from "@/lib/kids/checkout-copy";
 import { PaymentMethods } from "@/components/commerce/PaymentMethods";
 import { StripeCheckoutTrust } from "./StripeCheckoutTrust";
-import { BillingUnavailableError, billingUnavailableMessage, resolveCheckoutUrl } from "@/lib/billing/checkout-client";
+import {
+  BillingUnavailableError,
+  billingUnavailableMessage,
+  resolveCheckoutUrl,
+} from "@/lib/billing/checkout-client";
 
 type PaidPlanKey = "pro" | "pro_plus";
 type BillingInterval = "month" | "year";
@@ -52,7 +56,11 @@ export function StripeCheckoutButtons({
       );
       window.location.assign(url);
     } catch (e) {
-      toast.error(e instanceof BillingUnavailableError ? billingUnavailableMessage(locale) : t("pricing.checkout.error"));
+      toast.error(
+        e instanceof BillingUnavailableError
+          ? billingUnavailableMessage(locale)
+          : t("pricing.checkout.error"),
+      );
       setLoading(null);
     }
   }
@@ -65,7 +73,6 @@ export function StripeCheckoutButtons({
         <Link
           to="/kids/pricing"
           search={localeSearch()}
-
           className="mt-2 inline-block font-bold text-primary underline"
         >
           {kidsCopy.prices}
@@ -127,7 +134,6 @@ export function StripeCheckoutButtons({
             <Link
               to="/kids/pricing"
               search={localeSearch()}
-
               className="inline-flex min-h-11 items-center font-bold text-primary underline"
             >
               {kidsCopy.prices}

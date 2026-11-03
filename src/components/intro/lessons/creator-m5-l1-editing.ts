@@ -95,8 +95,7 @@ export const CREATOR_M4_EDITING_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption:
-        "تطبيق عملي لقص وتحسين الإيقاع. لو مستعجل، تقدر تتخطى الفيديو وتنفذ المهمة على طول.",
+      caption: "تطبيق عملي لقص وتحسين الإيقاع. لو مستعجل، تقدر تتخطى الفيديو وتنفذ المهمة على طول.",
     },
   },
   {
@@ -107,8 +106,7 @@ export const CREATOR_M4_EDITING_BLOCKS: IntroLessonContent = [
     block: {
       kind: "screenshot",
       alt: "لقطة توضح تايملاين تحرير فيديو قصير",
-      caption:
-        "النسخة المعدلة بتكون أقصر وأوضح لأن كل جزء فيها له وظيفة، ومفيش حشو يضيع التركيز.",
+      caption: "النسخة المعدلة بتكون أقصر وأوضح لأن كل جزء فيها له وظيفة، ومفيش حشو يضيع التركيز.",
       label: "unique/creator-m5-l1-editing.jpg",
     },
   },
@@ -132,8 +130,7 @@ export const CREATOR_M4_EDITING_BLOCKS: IntroLessonContent = [
             "أكررها في البداية والنهاية",
           ],
           correctIndex: 1,
-          explanation:
-            "التحرير الفعال بيقدم الوضوح على الزينة، فكل جملة لازم تخدم الهدف.",
+          explanation: "التحرير الفعال بيقدم الوضوح على الزينة، فكل جملة لازم تخدم الهدف.",
         },
       ],
     },

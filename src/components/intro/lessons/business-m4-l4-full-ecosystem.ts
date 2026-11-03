@@ -83,8 +83,7 @@ export const BUSINESS_M7_L1_FULL_ECOSYSTEM_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption:
-        "إزاي المسارات الخمسة تتكامل. لو معندكش وقت، كمل قراية.",
+      caption: "إزاي المسارات الخمسة تتكامل. لو معندكش وقت، كمل قراية.",
     },
   },
   {
@@ -128,16 +127,14 @@ export const BUSINESS_M7_L1_FULL_ECOSYSTEM_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question:
-            "هدفك: تقليل وقت المتابعة اليدوية للعملاء. أنسب مسار مساعد ثاني؟",
+          question: "هدفك: تقليل وقت المتابعة اليدوية للعملاء. أنسب مسار مساعد ثاني؟",
           options: [
             "Builder — تبني تطبيق فورًا.",
             "Automator — أتمتة المتابعة المتكررة.",
             "Creator — محتوى بس.",
           ],
           correctIndex: 1,
-          explanation:
-            "مهمة متكررة = Automator. Builder اختياري لاحقًا لو محتاج أداة مخصصة جدًا.",
+          explanation: "مهمة متكررة = Automator. Builder اختياري لاحقًا لو محتاج أداة مخصصة جدًا.",
         },
       ],
     },

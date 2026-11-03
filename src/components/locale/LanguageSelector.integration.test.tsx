@@ -8,10 +8,7 @@ import {
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { LanguageSelector } from "@/components/locale/LanguageSelector";
-import {
-  LOCALE_COOKIE_NAME,
-  readLocaleCookie,
-} from "@/lib/locale/locale-cookie";
+import { LOCALE_COOKIE_NAME, readLocaleCookie } from "@/lib/locale/locale-cookie";
 import { LocaleRouterProvider } from "@/lib/locale/locale-router-provider";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { DEFAULT_LOCALE } from "@/lib/locale/types";

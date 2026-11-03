@@ -14,9 +14,15 @@ vi.mock("@/lib/locale/use-locale-link-search", () => ({
   useLocaleLinkSearch: () => () => ({ locale: "en" }),
 }));
 vi.mock("@tanstack/react-router", () => ({
-  Link: ({ children, to, search }: { children: React.ReactNode; to: string; search?: { locale?: string } }) => (
-    <a href={`${to}${search?.locale ? `?locale=${search.locale}` : ""}`}>{children}</a>
-  ),
+  Link: ({
+    children,
+    to,
+    search,
+  }: {
+    children: React.ReactNode;
+    to: string;
+    search?: { locale?: string };
+  }) => <a href={`${to}${search?.locale ? `?locale=${search.locale}` : ""}`}>{children}</a>,
 }));
 
 beforeEach(() => {

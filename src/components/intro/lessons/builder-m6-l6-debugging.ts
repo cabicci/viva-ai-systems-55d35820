@@ -126,8 +126,7 @@ export const BUILDER_M6_DEBUGGING_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question:
-            "العميل بيدوس Send والشاشة بتلف. إيه أول خطوة قبل ما تطلب من Lovable يصلّح؟",
+          question: "العميل بيدوس Send والشاشة بتلف. إيه أول خطوة قبل ما تطلب من Lovable يصلّح؟",
           options: [
             "أوصف السيناريو بالظبط: «لما يدوس Send في صفحة الشات، الشاشة بتلف ومفيش رد.»",
             "أعمل refresh للصفحة كذا مرة.",
@@ -167,9 +166,7 @@ export const BUILDER_M6_DEBUGGING_BLOCKS: IntroLessonContent = [
         {
           label: "بساطة اللغة",
           weight: 30,
-          criteria: [
-            "كل سطر بكلمات بسيطة — من غير مصطلحات تقنية معقّدة.",
-          ],
+          criteria: ["كل سطر بكلمات بسيطة — من غير مصطلحات تقنية معقّدة."],
         },
       ],
     },

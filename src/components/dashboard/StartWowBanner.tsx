@@ -3,10 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { Compass, X, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/lib/auth-context";
-import {
-  isWowExperienceSeen,
-  markWowExperienceSeen,
-} from "@/lib/learner-events";
+import { isWowExperienceSeen, markWowExperienceSeen } from "@/lib/learner-events";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 
 const FIRST_WEEK_DAYS = 7;
@@ -21,8 +18,7 @@ export function StartWowBanner() {
       setVisible(false);
       return;
     }
-    const ageDays =
-      (Date.now() - new Date(user.created_at).getTime()) / (24 * 60 * 60 * 1000);
+    const ageDays = (Date.now() - new Date(user.created_at).getTime()) / (24 * 60 * 60 * 1000);
     setVisible(ageDays <= FIRST_WEEK_DAYS);
   }, [user?.created_at]);
 
@@ -40,12 +36,8 @@ export function StartWowBanner() {
           <Compass className="h-5 w-5" />
         </span>
         <div>
-          <p className="font-bold text-foreground text-sm mb-1">
-            {t("dashboard.wow.title")}
-          </p>
-          <p className="text-xs text-muted-foreground leading-loose">
-            {t("dashboard.wow.body")}
-          </p>
+          <p className="font-bold text-foreground text-sm mb-1">{t("dashboard.wow.title")}</p>
+          <p className="text-xs text-muted-foreground leading-loose">{t("dashboard.wow.body")}</p>
         </div>
       </div>
       <div className="flex items-center gap-2 shrink-0">

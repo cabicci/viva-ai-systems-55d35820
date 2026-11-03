@@ -112,8 +112,7 @@ export const CREATOR_M4_THUMBNAILS_CAPTIONS_BLOCKS: IntroLessonContent = [
     block: {
       kind: "screenshot",
       alt: "أمثلة لثمبنيل ونصوص كابشن قصيرة",
-      caption:
-        "المهم في المثال إن الرسالة واضحة من أول ثانية: نص قليل، قراءة سهلة، ووعد مفهوم.",
+      caption: "المهم في المثال إن الرسالة واضحة من أول ثانية: نص قليل، قراءة سهلة، ووعد مفهوم.",
       label: "unique/creator-m5-l2-thumbnails-captions.jpg",
     },
   },

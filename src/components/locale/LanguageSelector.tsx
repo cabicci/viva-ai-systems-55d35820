@@ -2,10 +2,7 @@ import { localeUiEnabled } from "@/lib/locale/feature-flags";
 import { useLocale } from "@/lib/locale/locale-context";
 import { useLocaleNavigation } from "@/lib/locale/use-locale-navigation";
 import { useUiString } from "@/lib/locale/use-ui-strings";
-import {
-  SUPPORTED_LOCALES,
-  type SupportedLocale,
-} from "@/lib/locale/types";
+import { SUPPORTED_LOCALES, type SupportedLocale } from "@/lib/locale/types";
 import type { UiStringKey } from "@/lib/locale/ui-strings";
 
 const LOCALE_OPTION_KEYS: Record<SupportedLocale, UiStringKey> = {

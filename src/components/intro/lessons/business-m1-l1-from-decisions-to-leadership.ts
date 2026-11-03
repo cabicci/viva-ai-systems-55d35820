@@ -69,7 +69,8 @@ export const BUSINESS_M1_L1_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS: IntroLessonCont
         },
         {
           term: "Business OS (نظام تشغيل)",
-          meaning: "مجموعة عادات وقرارات ومساعدات AI بتخلي البيزنس يشتغل بإيقاع — مش بمزاجك اليومي.",
+          meaning:
+            "مجموعة عادات وقرارات ومساعدات AI بتخلي البيزنس يشتغل بإيقاع — مش بمزاجك اليومي.",
           example: "قائمة أولويات أسبوعية + قوالب رد + وقت محمي للتفكير — الـ AI يساعد في كل جزء.",
         },
       ],
@@ -127,8 +128,7 @@ export const BUSINESS_M1_L1_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS: IntroLessonCont
         {
           id: "apply1",
           bloom: "apply",
-          question:
-            "سارة بتفتخر إنها آخر حد بيرد على عملاء البيزنس كل يوم. إيه التشخيص الأقرب؟",
+          question: "سارة بتفتخر إنها آخر حد بيرد على عملاء البيزنس كل يوم. إيه التشخيص الأقرب؟",
           options: [
             "ده تفاني — وده اللي لازم تعمله صاحبة بيزنس.",
             "ده Operator mode — حضورها ضروري لأن مفيش نظام رد أو متابعة.",

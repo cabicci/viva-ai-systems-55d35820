@@ -80,8 +80,7 @@ export const LEARN_WITHOUT_FEAR_CONTENT: IntroLessonContent = [
     block: {
       kind: "lessonVideo",
       url: "/lessons/intro/intro-m1-l6-learn-without-fear.mp4",
-      caption:
-        "طريقة بسيطة للتجربة اليومية. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
+      caption: "طريقة بسيطة للتجربة اليومية. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
     },
   },
   {

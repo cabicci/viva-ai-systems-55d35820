@@ -126,17 +126,16 @@ export const CREATOR_M6_GRID_CONSISTENCY_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question:
-            "لو زائر جديد مش فاهم حسابك في أول 3 ثواني، أنسب تحسين أولي إيه؟",
+          question: "لو زائر جديد مش فاهم حسابك في أول 3 ثواني، أنسب تحسين أولي إيه؟",
           options: [
             "تزود عدد البوستات فقط",
             "تثبت نمط بصري واضح وتطبق checklist قبل النشر",
-            "تغير الهوية كل أسبوع عشان تبقى متجدد"
+            "تغير الهوية كل أسبوع عشان تبقى متجدد",
           ],
           correctIndex: 1,
           explanation:
             "الوضوح ييجي من الثبات. checklist بسيطة قبل النشر تمنع التشتت وتوضح الهوية أسرع.",
-        }
+        },
       ],
     },
   },
@@ -147,8 +146,7 @@ export const CREATOR_M6_GRID_CONSISTENCY_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "mission",
-      intro:
-        "المطلوب تبني checklist سريعة تراجع بها البروفايل والجريد قبل أي نشر جديد.",
+      intro: "المطلوب تبني checklist سريعة تراجع بها البروفايل والجريد قبل أي نشر جديد.",
       prompt:
         "اكتب checklist من 6 نقاط تشمل:\n\n1) وضوح النمط البصري العام\n2) ثبات ألوان وفونت\n3) اتساق أغلفة الريلز\n4) وضوح نوع المحتوى من أول نظرة\n5) وجود 3 بوستات تعرّفك بوضوح\n6) خطوة تعديل واحدة هتطبقها هذا الأسبوع",
       buttonLabel: "انسخ المهمة",
@@ -159,16 +157,12 @@ export const CREATOR_M6_GRID_CONSISTENCY_BLOCKS: IntroLessonContent = [
         {
           label: "جودة الـ checklist",
           weight: 50,
-          criteria: [
-            "النقاط الست واضحة وقابلة للمراجعة السريعة فعلا.",
-          ],
+          criteria: ["النقاط الست واضحة وقابلة للمراجعة السريعة فعلا."],
         },
         {
           label: "خطة التحسين",
           weight: 50,
-          criteria: [
-            "في تعديل واحد محدد وقابل للتنفيذ هذا الأسبوع.",
-          ],
+          criteria: ["في تعديل واحد محدد وقابل للتنفيذ هذا الأسبوع."],
         },
       ],
     },
@@ -185,5 +179,5 @@ export const CREATOR_M6_GRID_CONSISTENCY_BLOCKS: IntroLessonContent = [
         "من هنا فصاعدا شغلك مش عشوائي. أنت بتشتغل كصانع محتوى واعي ببناء أصل طويل المدى.",
       ],
     },
-  }
+  },
 ];

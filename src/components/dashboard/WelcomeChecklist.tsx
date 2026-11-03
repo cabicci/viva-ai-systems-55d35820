@@ -39,10 +39,7 @@ export function WelcomeChecklist() {
     enabled: !!userId,
     queryKey: ["welcome-checklist-missions", userId],
     queryFn: async () => {
-      const { data } = await supabase
-        .from("mission_submissions")
-        .select("status")
-        .limit(50);
+      const { data } = await supabase.from("mission_submissions").select("status").limit(50);
       return data ?? [];
     },
     staleTime: 30_000,

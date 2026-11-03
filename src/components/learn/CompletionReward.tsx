@@ -52,10 +52,7 @@ export function CompletionReward({
     milestone: string | null;
   } | null>(null);
 
-  const defaultMessage = useMemo(
-    () => getUiString(locale, "learn.completion.default"),
-    [locale],
-  );
+  const defaultMessage = useMemo(() => getUiString(locale, "learn.completion.default"), [locale]);
   const xpLabel = useMemo(
     () =>
       interpolate(getUiString(locale, "learn.completion.xp"), {
@@ -63,10 +60,7 @@ export function CompletionReward({
       }),
     [locale],
   );
-  const closeLabel = useMemo(
-    () => getUiString(locale, "learn.completion.close"),
-    [locale],
-  );
+  const closeLabel = useMemo(() => getUiString(locale, "learn.completion.close"), [locale]);
 
   useEffect(() => {
     if (!isCompleted) return;

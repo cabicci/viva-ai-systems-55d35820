@@ -462,13 +462,18 @@ export function FurniturePilotLesson({
                       </caption>
                       <thead>
                         <tr>
-                          {[c.part, c.ids, c.quantity, c.length, c.panelWidth, c.panelThickness].map(
-                            (label) => (
-                              <th key={label} className="border-b p-3 text-start">
-                                {label}
-                              </th>
-                            ),
-                          )}
+                          {[
+                            c.part,
+                            c.ids,
+                            c.quantity,
+                            c.length,
+                            c.panelWidth,
+                            c.panelThickness,
+                          ].map((label) => (
+                            <th key={label} className="border-b p-3 text-start">
+                              {label}
+                            </th>
+                          ))}
                         </tr>
                       </thead>
                       <tbody>

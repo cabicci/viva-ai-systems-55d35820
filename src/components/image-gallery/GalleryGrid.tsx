@@ -102,9 +102,7 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
                 {visual.ok ? (
                   <button
                     type="button"
-                    onClick={() =>
-                      setPreview({ image: visual.url, number: displayNumber, title })
-                    }
+                    onClick={() => setPreview({ image: visual.url, number: displayNumber, title })}
                     className="absolute left-2 top-2 z-20 grid h-9 w-9 place-items-center rounded-full border border-border/40 bg-background/80 text-foreground opacity-0 backdrop-blur transition hover:bg-background focus:opacity-100 group-hover:opacity-100"
                     aria-label={copy.enlarge}
                   >

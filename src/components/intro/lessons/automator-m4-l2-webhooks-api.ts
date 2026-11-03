@@ -135,8 +135,7 @@ export const AUTOMATOR_M4_L2_WEBHOOKS_API_BLOCKS: IntroLessonContent = [
             "تدخل يدوي كل ما تشوف إشعار دفع.",
           ],
           correctIndex: 0,
-          explanation:
-            "حدث لحظي محتاج webhook — «هما بيقولولك». Polling بطيء ومكلف.",
+          explanation: "حدث لحظي محتاج webhook — «هما بيقولولك». Polling بطيء ومكلف.",
         },
       ],
     },
@@ -160,18 +159,12 @@ export const AUTOMATOR_M4_L2_WEBHOOKS_API_BLOCKS: IntroLessonContent = [
         {
           label: "حدث واتجاه",
           weight: 50,
-          criteria: [
-            "حدث محدّد — مش كلام عام.",
-            "واضح مين بيبعت ومين بيستقبل.",
-          ],
+          criteria: ["حدث محدّد — مش كلام عام.", "واضح مين بيبعت ومين بيستقبل."],
         },
         {
           label: "Payload",
           weight: 50,
-          criteria: [
-            "٣ حقول على الأقل بأمثلة قيم.",
-            "سبب webhook واضح مقارنة بـ polling.",
-          ],
+          criteria: ["٣ حقول على الأقل بأمثلة قيم.", "سبب webhook واضح مقارنة بـ polling."],
         },
       ],
     },

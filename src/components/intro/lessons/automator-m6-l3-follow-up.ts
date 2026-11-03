@@ -110,8 +110,7 @@ export const AUTOMATOR_M6_L3_FOLLOW_UP_BLOCKS: IntroLessonContent = [
     block: {
       kind: "screenshot",
       alt: "مخطط يوضح تسلسل متابعة على ثلاث خطوات بأوقات مختلفة.",
-      caption:
-        "كل touchpoint هدفه مختلف — مش تكرار نفس الرسالة. الوقت + المحتوى + شرط التوقف.",
+      caption: "كل touchpoint هدفه مختلف — مش تكرار نفس الرسالة. الوقت + المحتوى + شرط التوقف.",
       label: "automator-m6-l3-follow-up",
     },
   },
@@ -127,16 +126,14 @@ export const AUTOMATOR_M6_L3_FOLLOW_UP_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question:
-            "Lead سجّل وماردش على الترحيب بعد يومين. أحسن خطوة تانية في التسلسل؟",
+          question: "Lead سجّل وماردش على الترحيب بعد يومين. أحسن خطوة تانية في التسلسل؟",
           options: [
             "نفس رسالة الترحيب تاني.",
             "تذكير لطيف بقناة مختلفة أو بسؤال واحد — مش ضغط بيع.",
             "مكالمة فورية من غير تذكير.",
           ],
           correctIndex: 1,
-          explanation:
-            "الخطوة التانية هدفها تذكير بقيمة — مش تكرار. قناة أو أسلوب مختلف + لطيف.",
+          explanation: "الخطوة التانية هدفها تذكير بقيمة — مش تكرار. قناة أو أسلوب مختلف + لطيف.",
         },
       ],
     },

@@ -288,7 +288,11 @@ function CurriculumAdminSession() {
               {view === "lesson" && (
                 <>
                   {backButton(c.backToContents, "contents")}
-                  <LessonHero eyebrow={getLineCopy(lang)[course.area]} title={step.title[lang]!} level={2} />
+                  <LessonHero
+                    eyebrow={getLineCopy(lang)[course.area]}
+                    title={step.title[lang]!}
+                    level={2}
+                  />
                   <CurriculumContent
                     key={`${review.version}:${step.id}:${lang}`}
                     locale={lang}

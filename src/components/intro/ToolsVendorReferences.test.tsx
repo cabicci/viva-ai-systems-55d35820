@@ -6,8 +6,7 @@ afterEach(cleanup);
 describe("official tool references", () => {
   for (const locale of ["en", "ar-EG", "ar-MSA", "ar-Gulf"] as const) {
     it(
-      locale +
-        " provides exact official license, plan and unit links with new-tab notices",
+      locale + " provides exact official license, plan and unit links with new-tab notices",
       () => {
         render(
           <LocaleProvider initialLocale={locale}>
@@ -26,9 +25,7 @@ describe("official tool references", () => {
           expect(link.getAttribute("target")).toBe("_blank");
           expect(link.getAttribute("rel")).toContain("noopener");
           expect(link.textContent).toContain(
-            locale === "en"
-              ? "opens in a new tab"
-              : "يفتح في علامة تبويب جديدة",
+            locale === "en" ? "opens in a new tab" : "يفتح في علامة تبويب جديدة",
           );
         }
         expect(screen.getByRole("complementary")).toBeTruthy();

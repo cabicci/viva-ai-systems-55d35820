@@ -80,12 +80,14 @@ export const BUILDER_M7_RLS_BLOCKS: IntroLessonContent = [
       items: [
         {
           term: "RLS (أمان على مستوى السطر)",
-          meaning: "قواعد على المخزن نفسه بتفلتر أي query قبل ما ترجع نتايج — حتى لو الكود نسي يفلتر.",
+          meaning:
+            "قواعد على المخزن نفسه بتفلتر أي query قبل ما ترجع نتايج — حتى لو الكود نسي يفلتر.",
           example: "جدول محادثات: كل مستخدم يشوف محادثاته هو بس — حتى لو الكود نسي يفلتر.",
         },
         {
           term: "Policy (سياسة)",
-          meaning: "الشرط اللي الحارس بيطبّقه على كل سطر — زي «user_id بتاع الصف = user_id اللي عامل login».",
+          meaning:
+            "الشرط اللي الحارس بيطبّقه على كل سطر — زي «user_id بتاع الصف = user_id اللي عامل login».",
           example: "USING (user_id = auth.uid()) — يرجّع بس الصفوف بتاعة اللي فاتح التطبيق.",
         },
       ],
@@ -135,8 +137,7 @@ export const BUILDER_M7_RLS_BLOCKS: IntroLessonContent = [
             "لازم يكون admin عشان يشوف أي مهمة.",
           ],
           correctIndex: 0,
-          explanation:
-            "دي فكرة RLS ببساطة: نربط كل سطر بصاحبه — user_id في الصف = user_id من JWT.",
+          explanation: "دي فكرة RLS ببساطة: نربط كل سطر بصاحبه — user_id في الصف = user_id من JWT.",
         },
       ],
     },
@@ -148,8 +149,7 @@ export const BUILDER_M7_RLS_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "mission",
-      intro:
-        "هتكتب Policy بسيطة لتطبيقك — مش كود SQL كامل، الشرط بس.\n\n١٠ دقايق كفاية.",
+      intro: "هتكتب Policy بسيطة لتطبيقك — مش كود SQL كامل، الشرط بس.\n\n١٠ دقايق كفاية.",
       prompt:
         "في تسليمك اكتب:\n\n١) اسم الجدول اللي فيه بيانات شخصية (مثال: `conversations`، `orders`):\n\n٢) إيه الحقل اللي بيربط كل سطر بمستخدم؟ (مثال: `user_id`)\n\n٣) اكتب الشرط بجملة عادية:\n   «المستخدم يشوف بس الصفوف اللي ___ = ___»\n\n٤) لِيه القاعدة دي مهمة؟ (سطر واحد)",
       buttonLabel: "انسخ خطوات المهمة",
@@ -168,9 +168,7 @@ export const BUILDER_M7_RLS_BLOCKS: IntroLessonContent = [
         {
           label: "السبب",
           weight: 40,
-          criteria: [
-            "شرح في سطر ليه القاعدة بتمنع تسريب بيانات بين مستخدمين.",
-          ],
+          criteria: ["شرح في سطر ليه القاعدة بتمنع تسريب بيانات بين مستخدمين."],
         },
       ],
     },

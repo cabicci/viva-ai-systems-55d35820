@@ -140,7 +140,9 @@ function PathCard({ path }: { path: PathView }) {
       </div>
       {path.line === "ai" && (
         <div className="mt-5 flex flex-wrap gap-5 text-sm font-semibold text-primary">
-          <JourneyLink href={`/analytics?locale=${locale}`}>{getUiString(locale, "sidebar.analytics")}</JourneyLink>
+          <JourneyLink href={`/analytics?locale=${locale}`}>
+            {getUiString(locale, "sidebar.analytics")}
+          </JourneyLink>
         </div>
       )}
     </article>

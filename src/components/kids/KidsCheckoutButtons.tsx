@@ -5,7 +5,11 @@ import { useLocale } from "@/lib/locale/locale-context";
 import { Button } from "@/components/ui/button";
 import { PaymentMethods } from "@/components/commerce/PaymentMethods";
 import { StripeCheckoutTrust } from "@/components/billing/StripeCheckoutTrust";
-import { BillingUnavailableError, billingUnavailableMessage, resolveCheckoutUrl } from "@/lib/billing/checkout-client";
+import {
+  BillingUnavailableError,
+  billingUnavailableMessage,
+  resolveCheckoutUrl,
+} from "@/lib/billing/checkout-client";
 
 const copy = {
   "ar-EG": {
@@ -66,7 +70,9 @@ export function KidsCheckoutButtons({ market }: { market: "EG" | "INTL" }) {
       );
       window.location.assign(url);
     } catch (e) {
-      toast.error(e instanceof BillingUnavailableError ? billingUnavailableMessage(locale) : words.error);
+      toast.error(
+        e instanceof BillingUnavailableError ? billingUnavailableMessage(locale) : words.error,
+      );
       setPending(false);
     }
   }

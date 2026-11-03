@@ -127,8 +127,7 @@ export const ANALYST_M7_L1_FROM_DECISIONS_TO_BUSINESS_BLOCKS: IntroLessonContent
         {
           id: "apply1",
           bloom: "apply",
-          question:
-            "Analyst قرر: «خصم ١٥٪ لأول طلب». إيه أول خطوة Business عشان يحوّله لنظام؟",
+          question: "Analyst قرر: «خصم ١٥٪ لأول طلب». إيه أول خطوة Business عشان يحوّله لنظام؟",
           options: [
             "برمجة الخصم في نظام الطلبات — يتطبق تلقائي من غير تدخل يدوي كل مرة.",
             "اتصال يدوي بكل عميل جديد.",

@@ -127,8 +127,7 @@ export const BUSINESS_M3_L2_RETENTION_FLOW_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question:
-            "عميل اشترى منك مرة وما رجعش. أحسن خطوة أولى مع الـ AI؟",
+          question: "عميل اشترى منك مرة وما رجعش. أحسن خطوة أولى مع الـ AI؟",
           options: [
             "إعلانات أكتر لجلب عملاء جداد فورًا.",
             "تصميم لمسة متابعة بعد الشراء + مسودة رسالة تأكيد.",

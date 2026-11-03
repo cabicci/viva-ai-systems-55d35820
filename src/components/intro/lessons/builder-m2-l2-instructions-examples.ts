@@ -127,8 +127,7 @@ export const BUILDER_M2_INSTRUCTIONS_EXAMPLES_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question:
-            "عايز بوستات بنفس شكل: «فطار متوازن بيخلي يومك أحسن». إيه أحسن طريقة؟",
+          question: "عايز بوستات بنفس شكل: «فطار متوازن بيخلي يومك أحسن». إيه أحسن طريقة؟",
           options: [
             "أديله ٢–٣ أمثلة بنفس الشكل (Few-shot).",
             "أكتبله تعليمات طويلة عن «شكل الجملة».",
@@ -148,8 +147,7 @@ export const BUILDER_M2_INSTRUCTIONS_EXAMPLES_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "mission",
-      intro:
-        "هتاخد طلب ضعيف، وتضيفله مثالين + جملة pattern.\n\n١٠–١٥ دقيقة.",
+      intro: "هتاخد طلب ضعيف، وتضيفله مثالين + جملة pattern.\n\n١٠–١٥ دقيقة.",
       prompt:
         "في تسليمك:\n\n١) الطلب الضعيف:\n«اكتبلي ٣ أفكار لبودكاست عن ريادة الأعمال»\n\n٢) الطلب المحسّن — ضيف:\n   - مثال ١ (فكرة + عنوان)\n   - مثال ٢ (فكرة + عنوان)\n   - سطر pattern: «اكتبلي ٣ أفكار على نفس النمط»\n\n٣) إيه الـ pattern اللي المثالين بيعلّموه؟ (جملة واحدة)",
       buttonLabel: "انسخ خطوات المهمة",
@@ -160,18 +158,12 @@ export const BUILDER_M2_INSTRUCTIONS_EXAMPLES_BLOCKS: IntroLessonContent = [
         {
           label: "مثالين متسقين",
           weight: 60,
-          criteria: [
-            "المثالين بنفس الأسلوب.",
-            "فيه سطر pattern واضح.",
-          ],
+          criteria: ["المثالين بنفس الأسلوب.", "فيه سطر pattern واضح."],
         },
         {
           label: "تحليل النمط",
           weight: 40,
-          criteria: [
-            "وصفت الـ pattern مش بس «بقى أحسن».",
-            "قابل للاستخدام في Prompt منتج.",
-          ],
+          criteria: ["وصفت الـ pattern مش بس «بقى أحسن».", "قابل للاستخدام في Prompt منتج."],
         },
       ],
     },

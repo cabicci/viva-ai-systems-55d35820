@@ -110,8 +110,7 @@ export const AUTOMATOR_M6_L2_WHATSAPP_FLOW_BLOCKS: IntroLessonContent = [
     block: {
       kind: "screenshot",
       alt: "مخطط يوضح flow واتساب من استقبال الرسالة للرد أو التحويل لموظف.",
-      caption:
-        "رسالة واردة → فهم → رد أو تحويل. السياق محفوظ عشان الرد يكون مناسب مش عام.",
+      caption: "رسالة واردة → فهم → رد أو تحويل. السياق محفوظ عشان الرد يكون مناسب مش عام.",
       label: "automator-m6-l2-whatsapp-flow",
     },
   },
@@ -127,16 +126,14 @@ export const AUTOMATOR_M6_L2_WHATSAPP_FLOW_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question:
-            "عميل بعت «عايز أتكلم مع حد» بعد ما البوت رد على سؤال بسيط. أحسن تصرف؟",
+          question: "عميل بعت «عايز أتكلم مع حد» بعد ما البوت رد على سؤال بسيط. أحسن تصرف؟",
           options: [
             "البوت يكمل يحاول يجاوب من FAQ.",
             "تحويل فوري لموظف — ده شرط handoff واضح.",
             "تبعتله رسالة «انتظر ٢٤ ساعة».",
           ],
           correctIndex: 1,
-          explanation:
-            "طلب التحدث مع حد = handoff. الأوتوميشن خدم — والبشري يكمل لما العميل يطلب.",
+          explanation: "طلب التحدث مع حد = handoff. الأوتوميشن خدم — والبشري يكمل لما العميل يطلب.",
         },
       ],
     },

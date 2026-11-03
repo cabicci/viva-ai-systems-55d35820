@@ -27,80 +27,137 @@ export type KidsBodyActionContext = Readonly<{
   isCurrent: () => boolean;
 }>;
 type BodyScope = {
-  incarnation: object | null; kind: KidsBodyActionContext["kind"] | null;
-  lesson: KidsLesson; embedUrl: string; locale: SupportedLocale;
-  levelId: KidsLevelId; lessonNumber: number; profileId: string;
+  incarnation: object | null;
+  kind: KidsBodyActionContext["kind"] | null;
+  lesson: KidsLesson;
+  embedUrl: string;
+  locale: SupportedLocale;
+  levelId: KidsLevelId;
+  lessonNumber: number;
+  profileId: string;
 };
 type ActionTicket = {
-  model: BodyModel; kind: "quiz" | "hint"; key: string; selection: object;
-  active: boolean; pending: boolean;
+  model: BodyModel;
+  kind: "quiz" | "hint";
+  key: string;
+  selection: object;
+  active: boolean;
+  pending: boolean;
 };
 type QuizValue = { correct: boolean; explanation?: string };
 const quizAttemptIds = new WeakMap<object, string>();
 type BodyModel = {
-  scope: BodyScope; life: object; active: boolean;
-  choices: Record<string, number>; choiceVersions: Record<string, object>;
+  scope: BodyScope;
+  life: object;
+  active: boolean;
+  choices: Record<string, number>;
+  choiceVersions: Record<string, object>;
   latestQuiz: Record<string, ActionTicket>;
   checked: Record<string, { selection: object; value: QuizValue }>;
-  quizBusy: ActionTicket | null; quizError: ActionTicket | null;
-  hintVersion: object; hintLatest: ActionTicket | null;
+  quizBusy: ActionTicket | null;
+  quizError: ActionTicket | null;
+  hintVersion: object;
+  hintLatest: ActionTicket | null;
   hint: { ticket: ActionTicket; id: string; answer: string } | null;
-  hintError: ActionTicket | null; hintBusy: ActionTicket | null;
+  hintError: ActionTicket | null;
+  hintBusy: ActionTicket | null;
 };
 type BodyView = BodyModel & { model: BodyModel };
 
 /** Fence lazy adoption itself, not only the continuation after await. */
 function adoptBodyAction<T>(
-  pending: T | PromiseLike<T>, requireCurrent: () => void,
+  pending: T | PromiseLike<T>,
+  requireCurrent: () => void,
 ): Promise<{ value: T }> {
   return new Promise((resolve, reject) => {
     const fail = (error: unknown) => {
-      try { Reflect.apply(Promise.prototype.then, pending, [() => undefined, () => undefined]); }
-      catch { /* Only an already-started native Promise passes the intrinsic brand check. */ }
+      try {
+        Reflect.apply(Promise.prototype.then, pending, [() => undefined, () => undefined]);
+      } catch {
+        /* Only an already-started native Promise passes the intrinsic brand check. */
+      }
       reject(error);
     };
-    try { requireCurrent(); } catch (error) { fail(error); return; }
+    try {
+      requireCurrent();
+    } catch (error) {
+      fail(error);
+      return;
+    }
     queueMicrotask(() => {
       try {
         requireCurrent();
-        const then = pending !== null &&
-          (typeof pending === "object" || typeof pending === "function")
-          ? (pending as PromiseLike<T>).then : undefined;
+        const then =
+          pending !== null && (typeof pending === "object" || typeof pending === "function")
+            ? (pending as PromiseLike<T>).then
+            : undefined;
         requireCurrent();
         if (typeof then === "function") {
           const derived = Reflect.apply(then, pending, [(value: T) => resolve({ value }), reject]);
-          try { Reflect.apply(Promise.prototype.then, derived, [() => undefined, () => undefined]); }
-          catch { /* Never adopt an arbitrary lazy return value just to observe it. */ }
+          try {
+            Reflect.apply(Promise.prototype.then, derived, [() => undefined, () => undefined]);
+          } catch {
+            /* Never adopt an arbitrary lazy return value just to observe it. */
+          }
         } else resolve({ value: pending as T });
-      } catch (error) { fail(error); }
+      } catch (error) {
+        fail(error);
+      }
     });
   });
 }
 
 export function KidsLessonBody({
-  lesson, embedUrl, locale, levelId, lessonNumber, profileId, actionContext,
-  assistantManagedByRoute = false, assistantInitiallyOpen, onAssistantOpenChange,
+  lesson,
+  embedUrl,
+  locale,
+  levelId,
+  lessonNumber,
+  profileId,
+  actionContext,
+  assistantManagedByRoute = false,
+  assistantInitiallyOpen,
+  onAssistantOpenChange,
 }: Props) {
   const copy = getKidsJourneyCopy(locale);
   let incarnation: object | null = null;
   let kind: KidsBodyActionContext["kind"] | null = null;
   try {
-    if (actionContext && typeof actionContext.incarnation === "object" &&
-      actionContext.incarnation !== null) incarnation = actionContext.incarnation;
+    if (
+      actionContext &&
+      typeof actionContext.incarnation === "object" &&
+      actionContext.incarnation !== null
+    )
+      incarnation = actionContext.incarnation;
     if (actionContext?.kind === "administrator_preview" || actionContext?.kind === "kids_profile")
       kind = actionContext.kind;
-  } catch { /* No missing/unreadable context success fallback. */ }
-  const scope = useMemo<BodyScope>(() => ({
-    incarnation, kind, lesson, embedUrl, locale, levelId, lessonNumber, profileId,
-  }), [incarnation, kind, lesson, embedUrl, locale, levelId, lessonNumber, profileId]);
+  } catch {
+    /* No missing/unreadable context success fallback. */
+  }
+  const scope = useMemo<BodyScope>(
+    () => ({
+      incarnation,
+      kind,
+      lesson,
+      embedUrl,
+      locale,
+      levelId,
+      lessonNumber,
+      profileId,
+    }),
+    [incarnation, kind, lesson, embedUrl, locale, levelId, lessonNumber, profileId],
+  );
   const latest = useRef({ scope, context: actionContext });
   latest.current = { scope, context: actionContext };
   const life = useRef<object | null>(null);
   const model = useRef<BodyModel | null>(null);
   const [view, setView] = useState<BodyView | null>(null);
   const modelCurrent = (captured: BodyModel) => {
-    const owned = () => captured.active && model.current === captured &&
-      life.current === captured.life && latest.current.scope === captured.scope;
+    const owned = () =>
+      captured.active &&
+      model.current === captured &&
+      life.current === captured.life &&
+      latest.current.scope === captured.scope;
     if (!owned() || !captured.scope.incarnation || !captured.scope.kind) return false;
     for (let attempt = 0; attempt < 2; attempt += 1) {
       try {
@@ -111,22 +168,31 @@ export function KidsLessonBody({
         const selector = context.kind;
         if (!owned()) return false;
         const predicate = context.isCurrent;
-        if (!owned() || identity !== captured.scope.incarnation ||
-          selector !== captured.scope.kind || typeof predicate !== "function") return false;
+        if (
+          !owned() ||
+          identity !== captured.scope.incarnation ||
+          selector !== captured.scope.kind ||
+          typeof predicate !== "function"
+        )
+          return false;
         const current = Reflect.apply(predicate, context, []) === true;
         if (!owned()) return false;
         // Identity is only a reason to reread the live predicate, never permission.
         if (latest.current.context !== context) continue;
         return current;
-      } catch { return false; }
+      } catch {
+        return false;
+      }
     }
     return false;
   };
   const ticketCurrent = (ticket: ActionTicket) => {
-    const matches = () => ticket.active && (ticket.kind === "quiz"
-      ? ticket.model.latestQuiz[ticket.key] === ticket &&
-        ticket.model.choiceVersions[ticket.key] === ticket.selection
-      : ticket.model.hintLatest === ticket && ticket.model.hintVersion === ticket.selection);
+    const matches = () =>
+      ticket.active &&
+      (ticket.kind === "quiz"
+        ? ticket.model.latestQuiz[ticket.key] === ticket &&
+          ticket.model.choiceVersions[ticket.key] === ticket.selection
+        : ticket.model.hintLatest === ticket && ticket.model.hintVersion === ticket.selection);
     return matches() && modelCurrent(ticket.model) && matches();
   };
   const publish = (captured: BodyModel, ticket?: ActionTicket) => {
@@ -134,9 +200,14 @@ export function KidsLessonBody({
     setView((previous) => {
       // Guard actual updater execution, then copy latest private channel state.
       if (!modelCurrent(captured) || (ticket && !ticketCurrent(ticket))) return previous;
-      return { ...captured, model: captured, choices: { ...captured.choices },
-        choiceVersions: { ...captured.choiceVersions }, latestQuiz: { ...captured.latestQuiz },
-        checked: { ...captured.checked } };
+      return {
+        ...captured,
+        model: captured,
+        choices: { ...captured.choices },
+        choiceVersions: { ...captured.choiceVersions },
+        latestQuiz: { ...captured.latestQuiz },
+        checked: { ...captured.checked },
+      };
     });
   };
   const retire = (captured: BodyModel) => {
@@ -158,9 +229,20 @@ export function KidsLessonBody({
     const mounted = life.current;
     if (!mounted) return;
     const current: BodyModel = {
-      scope, life: mounted, active: true, choices: {}, choiceVersions: {}, latestQuiz: {},
-      checked: {}, quizBusy: null, quizError: null, hintVersion: {}, hintLatest: null,
-      hint: null, hintError: null, hintBusy: null,
+      scope,
+      life: mounted,
+      active: true,
+      choices: {},
+      choiceVersions: {},
+      latestQuiz: {},
+      checked: {},
+      quizBusy: null,
+      quizError: null,
+      hintVersion: {},
+      hintLatest: null,
+      hint: null,
+      hintError: null,
+      hintBusy: null,
     };
     model.current = current;
     publish(current);
@@ -174,13 +256,16 @@ export function KidsLessonBody({
   };
   const field = (value: unknown, key: string | number, current: () => void): unknown => {
     current();
-    const found = value !== null && (typeof value === "object" || typeof value === "function")
-      ? Reflect.get(value, key) : undefined;
+    const found =
+      value !== null && (typeof value === "object" || typeof value === "function")
+        ? Reflect.get(value, key)
+        : undefined;
     current();
     return found;
   };
   const invoke = async (
-    ticket: ActionTicket, name: "kids-lesson-help" | "kids-lesson-content",
+    ticket: ActionTicket,
+    name: "kids-lesson-help" | "kids-lesson-content",
     body: Record<string, unknown>,
   ) => {
     const current = () => requireTicket(ticket);
@@ -195,18 +280,31 @@ export function KidsLessonBody({
     return response;
   };
   const changeChoice = (
-    captured: BodyModel, key: string, selectedIndex: number,
-    expectedChoice: object | undefined, expectedRequest: ActionTicket | undefined,
+    captured: BodyModel,
+    key: string,
+    selectedIndex: number,
+    expectedChoice: object | undefined,
+    expectedRequest: ActionTicket | undefined,
   ) => {
-    const current = () => modelCurrent(captured) &&
-      captured.choiceVersions[key] === expectedChoice && captured.latestQuiz[key] === expectedRequest;
+    const current = () =>
+      modelCurrent(captured) &&
+      captured.choiceVersions[key] === expectedChoice &&
+      captured.latestQuiz[key] === expectedRequest;
     try {
       if (!current()) return;
-      const quiz = field(captured.scope.lesson, "quiz", () => { if (!current()) throw new Error("Retired choice"); });
+      const quiz = field(captured.scope.lesson, "quiz", () => {
+        if (!current()) throw new Error("Retired choice");
+      });
       if (!current() || !Array.isArray(quiz)) return;
       const question = quiz.find((candidate) => candidate?.id === key);
-      if (!current() || !question || !Number.isInteger(selectedIndex) ||
-        selectedIndex < 0 || selectedIndex >= question.options.length) return;
+      if (
+        !current() ||
+        !question ||
+        !Number.isInteger(selectedIndex) ||
+        selectedIndex < 0 ||
+        selectedIndex >= question.options.length
+      )
+        return;
       if (!current()) return;
       const old = captured.latestQuiz[key];
       if (old) old.active = false;
@@ -216,7 +314,9 @@ export function KidsLessonBody({
       delete captured.checked[key];
       captured.quizError = null;
       publish(captured);
-    } catch { /* Retired/unreadable authored selections cannot mutate a newer view. */ }
+    } catch {
+      /* Retired/unreadable authored selections cannot mutate a newer view. */
+    }
   };
   async function showHint(captured: BodyModel, index: number, expectedVersion: object) {
     let ticket: ActionTicket | null = null;
@@ -236,8 +336,14 @@ export function KidsLessonBody({
       if (captured.hintLatest) captured.hintLatest.active = false;
       const selection = {};
       captured.hintVersion = selection;
-      ticket = { model: captured, kind: "hint", key: "hint-" + (index + 1),
-        selection, active: true, pending: true };
+      ticket = {
+        model: captured,
+        kind: "hint",
+        key: "hint-" + (index + 1),
+        selection,
+        active: true,
+        pending: true,
+      };
       captured.hintLatest = ticket;
       captured.hintBusy = ticket;
       captured.hint = null;
@@ -245,8 +351,11 @@ export function KidsLessonBody({
       publish(captured, ticket);
       const owned = () => requireTicket(ticket!);
       const { value: response } = await invoke(ticket, "kids-lesson-help", {
-        profileId: captured.scope.profileId, levelId: captured.scope.levelId,
-        lessonNumber: captured.scope.lessonNumber, locale: captured.scope.locale, hintId: ticket.key,
+        profileId: captured.scope.profileId,
+        levelId: captured.scope.levelId,
+        lessonNumber: captured.scope.lessonNumber,
+        locale: captured.scope.locale,
+        hintId: ticket.key,
       });
       owned();
       const error = field(response, "error", owned);
@@ -260,11 +369,19 @@ export function KidsLessonBody({
       const returnedLocale = field(citation, "locale", owned);
       const returnedSource = field(citation, "sourceId", owned);
       owned();
-      if (error || typeof answer !== "string" || !answer.trim() ||
-        typeof sourceId !== "string" || returnedQuestion !== question ||
-        product !== "kids" || returnedLevel !== captured.scope.levelId ||
-        returnedLesson !== captured.scope.lessonNumber || returnedLocale !== captured.scope.locale ||
-        returnedSource !== sourceId) throw new Error("Invalid protected hint");
+      if (
+        error ||
+        typeof answer !== "string" ||
+        !answer.trim() ||
+        typeof sourceId !== "string" ||
+        returnedQuestion !== question ||
+        product !== "kids" ||
+        returnedLevel !== captured.scope.levelId ||
+        returnedLesson !== captured.scope.lessonNumber ||
+        returnedLocale !== captured.scope.locale ||
+        returnedSource !== sourceId
+      )
+        throw new Error("Invalid protected hint");
       owned();
       captured.hint = { ticket, id: ticket.key, answer };
       publish(captured, ticket);
@@ -282,32 +399,53 @@ export function KidsLessonBody({
     }
   }
   async function checkQuiz(
-    captured: BodyModel, questionId: string, selectedIndex: number,
-    expectedChoice: object | undefined, expectedRequest: ActionTicket | undefined,
+    captured: BodyModel,
+    questionId: string,
+    selectedIndex: number,
+    expectedChoice: object | undefined,
+    expectedRequest: ActionTicket | undefined,
   ) {
     let ticket: ActionTicket | null = null;
     try {
       const current = () => {
         requireModel(captured);
-        if (captured.choiceVersions[questionId] !== expectedChoice ||
+        if (
+          captured.choiceVersions[questionId] !== expectedChoice ||
           captured.latestQuiz[questionId] !== expectedRequest ||
-          captured.choices[questionId] !== selectedIndex) throw new Error("Retired quiz selection");
+          captured.choices[questionId] !== selectedIndex
+        )
+          throw new Error("Retired quiz selection");
       };
       current();
-      if (!expectedChoice || (captured.quizBusy?.pending && ticketCurrent(captured.quizBusy))) return;
+      if (!expectedChoice || (captured.quizBusy?.pending && ticketCurrent(captured.quizBusy)))
+        return;
       const quiz = field(captured.scope.lesson, "quiz", current);
       current();
-      const authored = Array.isArray(quiz) ? quiz.find((candidate) => candidate?.id === questionId) : undefined;
+      const authored = Array.isArray(quiz)
+        ? quiz.find((candidate) => candidate?.id === questionId)
+        : undefined;
       current();
       const authoredId = field(authored, "id", current);
       const options = field(authored, "options", current);
       field(authored, "question", current);
       current();
-      if (authoredId !== questionId || !Array.isArray(options) || !Number.isInteger(selectedIndex) ||
-        selectedIndex < 0 || selectedIndex >= options.length) return;
+      if (
+        authoredId !== questionId ||
+        !Array.isArray(options) ||
+        !Number.isInteger(selectedIndex) ||
+        selectedIndex < 0 ||
+        selectedIndex >= options.length
+      )
+        return;
       if (expectedRequest) expectedRequest.active = false;
-      ticket = { model: captured, kind: "quiz", key: questionId,
-        selection: expectedChoice, active: true, pending: true };
+      ticket = {
+        model: captured,
+        kind: "quiz",
+        key: questionId,
+        selection: expectedChoice,
+        active: true,
+        pending: true,
+      };
       captured.latestQuiz[questionId] = ticket;
       captured.quizBusy = ticket;
       captured.quizError = null;
@@ -315,12 +453,17 @@ export function KidsLessonBody({
       const owned = () => requireTicket(ticket!);
       let requestId = quizAttemptIds.get(expectedChoice);
       if (!requestId && captured.scope.kind === "kids_profile") {
-        requestId = crypto.randomUUID(); quizAttemptIds.set(expectedChoice, requestId);
+        requestId = crypto.randomUUID();
+        quizAttemptIds.set(expectedChoice, requestId);
       }
       const { value: response } = await invoke(ticket, "kids-lesson-content", {
-        profileId: captured.scope.profileId, levelId: captured.scope.levelId,
-        lessonNumber: captured.scope.lessonNumber, locale: captured.scope.locale,
-        action: "quiz-check", questionId: authoredId, selectedIndex,
+        profileId: captured.scope.profileId,
+        levelId: captured.scope.levelId,
+        lessonNumber: captured.scope.lessonNumber,
+        locale: captured.scope.locale,
+        action: "quiz-check",
+        questionId: authoredId,
+        selectedIndex,
         ...(requestId ? { requestId } : {}),
       });
       owned();
@@ -334,13 +477,23 @@ export function KidsLessonBody({
       const returnedLesson = field(citation, "lessonNumber", owned);
       const returnedLocale = field(citation, "locale", owned);
       owned();
-      if (error || typeof correct !== "boolean" || product !== "kids" ||
-        returnedLevel !== captured.scope.levelId || returnedLesson !== captured.scope.lessonNumber ||
-        returnedLocale !== captured.scope.locale) throw new Error("Invalid protected quiz result");
+      if (
+        error ||
+        typeof correct !== "boolean" ||
+        product !== "kids" ||
+        returnedLevel !== captured.scope.levelId ||
+        returnedLesson !== captured.scope.lessonNumber ||
+        returnedLocale !== captured.scope.locale
+      )
+        throw new Error("Invalid protected quiz result");
       owned();
-      captured.checked[questionId] = { selection: expectedChoice, value: {
-        correct, explanation: typeof explanation === "string" ? explanation : undefined,
-      } };
+      captured.checked[questionId] = {
+        selection: expectedChoice,
+        value: {
+          correct,
+          explanation: typeof explanation === "string" ? explanation : undefined,
+        },
+      };
       publish(captured, ticket);
     } catch {
       if (ticket && ticketCurrent(ticket)) {
@@ -358,19 +511,26 @@ export function KidsLessonBody({
   const visible = view && modelCurrent(view.model) && view.scope === scope ? view : null;
   const choices = visible?.choices ?? {};
   const checked: Record<string, QuizValue> = {};
-  if (visible) for (const [key, answer] of Object.entries(visible.checked))
-    if (visible.model.choiceVersions[key] === answer.selection) checked[key] = answer.value;
-  const checkingKey = visible?.quizBusy && ticketCurrent(visible.quizBusy) && visible.quizBusy.pending
-    ? visible.quizBusy.key : null;
-  const quizError = visible?.quizError && ticketCurrent(visible.quizError) ? visible.quizError.key : null;
+  if (visible)
+    for (const [key, answer] of Object.entries(visible.checked))
+      if (visible.model.choiceVersions[key] === answer.selection) checked[key] = answer.value;
+  const checkingKey =
+    visible?.quizBusy && ticketCurrent(visible.quizBusy) && visible.quizBusy.pending
+      ? visible.quizBusy.key
+      : null;
+  const quizError =
+    visible?.quizError && ticketCurrent(visible.quizError) ? visible.quizError.key : null;
   const hint = visible?.hint && ticketCurrent(visible.hint.ticket) ? visible.hint : null;
   const hintError = !!(visible?.hintError && ticketCurrent(visible.hintError));
-  const loadingHint = !!(visible?.hintBusy && ticketCurrent(visible.hintBusy) && visible.hintBusy.pending);
+  const loadingHint = !!(
+    visible?.hintBusy &&
+    ticketCurrent(visible.hintBusy) &&
+    visible.hintBusy.pending
+  );
   if (!visible || !modelCurrent(visible.model)) return null;
   const playerUrl = new URL(embedUrl);
   playerUrl.searchParams.set("autoplay", "false");
   if (!modelCurrent(visible.model)) return null;
-
 
   const content = (
     <div className="space-y-8">
@@ -481,8 +641,15 @@ export function KidsLessonBody({
                           name={`kids-quiz-${key}`}
                           checked={selected === optionIndex}
                           disabled={checkingKey === key}
-                          onChange={() => changeChoice(visible.model, key, optionIndex,
-                            visible.choiceVersions[key], visible.latestQuiz[key])}
+                          onChange={() =>
+                            changeChoice(
+                              visible.model,
+                              key,
+                              optionIndex,
+                              visible.choiceVersions[key],
+                              visible.latestQuiz[key],
+                            )
+                          }
                         />
                         <span>{option}</span>
                       </label>
@@ -492,8 +659,14 @@ export function KidsLessonBody({
                     type="button"
                     disabled={selected === undefined || checkingKey !== null}
                     onClick={() => {
-                      if (selected !== undefined) void checkQuiz(visible.model, key, selected,
-                        visible.choiceVersions[key], visible.latestQuiz[key]);
+                      if (selected !== undefined)
+                        void checkQuiz(
+                          visible.model,
+                          key,
+                          selected,
+                          visible.choiceVersions[key],
+                          visible.latestQuiz[key],
+                        );
                     }}
                     className="mt-4 min-h-11 rounded-full border border-primary px-5 text-sm font-bold text-primary disabled:opacity-50"
                   >
@@ -543,7 +716,9 @@ export function KidsLessonBody({
                 key={index}
                 type="button"
                 disabled={loadingHint}
-                onClick={() => { void showHint(visible.model, index, visible.hintVersion); }}
+                onClick={() => {
+                  void showHint(visible.model, index, visible.hintVersion);
+                }}
                 className="min-h-11 rounded-full border border-primary px-4 text-sm font-semibold text-primary disabled:opacity-50"
               >
                 {item.question ?? `${copy.loadHint} ${index + 1}`}
@@ -568,8 +743,17 @@ export function KidsLessonBody({
         lesson={lessonNumber}
         locale={locale}
       />
-      {!assistantManagedByRoute && <CourseLessonAssistant area="kids" cardId={levelId} stepId={String(lessonNumber)} locale={locale} profileId={profileId}
-        assistantInitiallyOpen={assistantInitiallyOpen} onAssistantOpenChange={onAssistantOpenChange} />}
+      {!assistantManagedByRoute && (
+        <CourseLessonAssistant
+          area="kids"
+          cardId={levelId}
+          stepId={String(lessonNumber)}
+          locale={locale}
+          profileId={profileId}
+          assistantInitiallyOpen={assistantInitiallyOpen}
+          onAssistantOpenChange={onAssistantOpenChange}
+        />
+      )}
     </div>
   );
   return modelCurrent(visible.model) ? content : null;

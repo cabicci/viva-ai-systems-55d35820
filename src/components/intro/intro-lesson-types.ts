@@ -29,8 +29,8 @@ export type IntroBlock =
        *    (mission_submissions + Lovable AI gateway).
        */
       rubric?: readonly {
-        label: string;          // e.g. "وضوح السؤال"
-        weight: number;         // 0-100, totals should be 100
+        label: string; // e.g. "وضوح السؤال"
+        weight: number; // 0-100, totals should be 100
         criteria: readonly string[]; // bullet expectations
       }[];
       /** Stable mission id; defaults to `${lessonId}::mission` in the renderer. */
@@ -61,9 +61,9 @@ export type IntroBlock =
        * screenshot → mission). Always present, even as placeholder.
        */
       kind: "lessonVideo";
-      url?: string;          // staticFile path or external URL; empty = placeholder
-      poster?: string;       // image shown before play
-      caption?: string;      // short description under the video
+      url?: string; // staticFile path or external URL; empty = placeholder
+      poster?: string; // image shown before play
+      caption?: string; // short description under the video
       durationLabel?: string; // e.g. "1:30"
     }
   | {

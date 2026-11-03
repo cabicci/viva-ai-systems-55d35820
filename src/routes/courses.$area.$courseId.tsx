@@ -7,11 +7,10 @@ import {
   SECONDARY_CLASS,
 } from "@/components/course-intake/CoursePresentation";
 import { getPathStoryCopy } from "@/lib/path-story";
-import { getLineCopy } from "@/lib/learning-lines";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { scopedSearch } from "@/lib/course-system/intake/navigation";
-import { LINE_PRICING, LINE_ROUTES } from "@/lib/learning-lines";
+import { getLineCopy, LINE_PRICING, LINE_ROUTES } from "@/lib/learning-lines";
 import { useState, useRef, useEffect } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
@@ -277,7 +276,7 @@ function NewCurriculumPage() {
             sectionId={sectionId}
             selectSection={selectSection}
             progress={current}
-            courseTitle={course?.title}
+            courseTitle={getLineCopy(locale)[area]}
           />
         )}
         {course && step && (

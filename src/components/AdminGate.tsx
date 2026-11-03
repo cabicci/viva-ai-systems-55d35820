@@ -33,9 +33,7 @@ export function AdminGate({ children }: { children: ReactNode }) {
         <div className="rounded-2xl border border-destructive/30 bg-destructive/5 p-8 text-center max-w-md">
           <ShieldAlert className="h-10 w-10 mx-auto text-destructive mb-3" />
           <h1 className="text-xl font-bold mb-2">صفحة محظورة</h1>
-          <p className="text-sm text-muted-foreground mb-4">
-            دي صفحة داخلية للأدمن بس.
-          </p>
+          <p className="text-sm text-muted-foreground mb-4">دي صفحة داخلية للأدمن بس.</p>
           <Button asChild variant="outline">
             <Link to="/dashboard">رجوع للوحة</Link>
           </Button>

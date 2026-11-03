@@ -77,8 +77,7 @@ export const BUSINESS_M6_L2_PREMATURE_SCALING_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption:
-        "محاكاة مخاطر التوسّع مع الـ AI. لو معندكش وقت، كمل قراية.",
+      caption: "محاكاة مخاطر التوسّع مع الـ AI. لو معندكش وقت، كمل قراية.",
     },
   },
   {
@@ -106,8 +105,7 @@ export const BUSINESS_M6_L2_PREMATURE_SCALING_BLOCKS: IntroLessonContent = [
       kind: "diagram",
       id: "premature-scaling-cliff",
       label: "Scaling Cliff",
-      caption:
-        "لو نقطة واحدة من الـ ٤ فحوصات ضعيفة — التوسّع يزود السرعة للمشكلة مش للنمو.",
+      caption: "لو نقطة واحدة من الـ ٤ فحوصات ضعيفة — التوسّع يزود السرعة للمشكلة مش للنمو.",
     },
   },
   {
@@ -122,16 +120,14 @@ export const BUSINESS_M6_L2_PREMATURE_SCALING_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question:
-            "مبيعات قفزت بعد حملة — بس الشكاوى زادت والكاش ضيق. أنسب قرار؟",
+          question: "مبيعات قفزت بعد حملة — بس الشكاوى زادت والكاش ضيق. أنسب قرار؟",
           options: [
             "ضاعف الإعلانات فورًا — الزخم مهم.",
             "وقف التوسّع، اصلّح الجودة والتشغيل، بعدين كبّر تدريجي.",
             "وظّف أكتر من غير SOP.",
           ],
           correctIndex: 1,
-          explanation:
-            "طلب مؤقت بدون نظام = توسّع مبكر. اصلّح الأساس قبل ما تضخّم الحجم.",
+          explanation: "طلب مؤقت بدون نظام = توسّع مبكر. اصلّح الأساس قبل ما تضخّم الحجم.",
         },
       ],
     },

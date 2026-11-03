@@ -98,8 +98,7 @@ export const CREATOR_M1_ATTENTION_ECONOMY_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption:
-        "تقدر تتخطى الفيديو لو حابب وتكمل القراءة، كل الأفكار التطبيقية موجودة في البلوكات.",
+      caption: "تقدر تتخطى الفيديو لو حابب وتكمل القراءة، كل الأفكار التطبيقية موجودة في البلوكات.",
     },
   },
   {
@@ -110,8 +109,7 @@ export const CREATOR_M1_ATTENTION_ECONOMY_BLOCKS: IntroLessonContent = [
     block: {
       kind: "screenshot",
       alt: "لقطة توضح مثال محتوى واضح وسهل الالتقاط بصريًا.",
-      caption:
-        "الوضوح البصري والرسالة المركزة بيساعدوا المتلقي يفهم بسرعة ويقرر يكمل.",
+      caption: "الوضوح البصري والرسالة المركزة بيساعدوا المتلقي يفهم بسرعة ويقرر يكمل.",
       label: "creator-m1-l2-attention-economy",
     },
   },
@@ -127,8 +125,7 @@ export const CREATOR_M1_ATTENTION_ECONOMY_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question:
-            "لو محتوى ممتاز بس الناس بتتخطاه بسرعة، إيه أول تعديل منطقي؟",
+          question: "لو محتوى ممتاز بس الناس بتتخطاه بسرعة، إيه أول تعديل منطقي؟",
           options: [
             "نزود طول الفيديو.",
             "نبدأ بفائدة واضحة تخلي المتلقي يوقف التقليب.",
@@ -160,10 +157,7 @@ export const CREATOR_M1_ATTENTION_ECONOMY_BLOCKS: IntroLessonContent = [
         {
           label: "دقة الملاحظة",
           weight: 60,
-          criteria: [
-            "تم توثيق ٥ أمثلة فعلية.",
-            "كل مثال فيه سبب واضح للوقوف أو التخطي.",
-          ],
+          criteria: ["تم توثيق ٥ أمثلة فعلية.", "كل مثال فيه سبب واضح للوقوف أو التخطي."],
         },
         {
           label: "استخراج النمط",

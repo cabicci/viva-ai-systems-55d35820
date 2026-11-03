@@ -57,10 +57,7 @@ export function ToolsVendorReferences({ lessonId }: { lessonId?: string }) {
     ["Make", t.credits, "https://help.make.com/credits"],
   ] as const;
   return (
-    <aside
-      aria-labelledby={titleId}
-      className="rounded-2xl border border-border/50 p-4 space-y-2"
-    >
+    <aside aria-labelledby={titleId} className="rounded-2xl border border-border/50 p-4 space-y-2">
       <h3 id={titleId} className="text-sm font-semibold">
         {t.title}
       </h3>

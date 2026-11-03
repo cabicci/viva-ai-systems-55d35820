@@ -98,8 +98,7 @@ export const BUILDER_M4_TEMPERATURE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption:
-        "Temperature — ثبات vs إبداع في تصميم المنتج. لو معندكش وقت، كمل قراية.",
+      caption: "Temperature — ثبات vs إبداع في تصميم المنتج. لو معندكش وقت، كمل قراية.",
     },
   },
   {
@@ -134,8 +133,7 @@ export const BUILDER_M4_TEMPERATURE_BLOCKS: IntroLessonContent = [
             "Temperature متوسطة — للدردشة بس.",
           ],
           correctIndex: 0,
-          explanation:
-            "الكود والحقائق = temp واطية. الإبداع للـ brainstorming بس.",
+          explanation: "الكود والحقائق = temp واطية. الإبداع للـ brainstorming بس.",
         },
       ],
     },
@@ -147,8 +145,7 @@ export const BUILDER_M4_TEMPERATURE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "mission",
-      intro:
-        "هتظبط Temperature لثلاث حالات في منتج تتخيله.\n\n١٠–١٥ دقيقة.",
+      intro: "هتظبط Temperature لثلاث حالات في منتج تتخيله.\n\n١٠–١٥ دقيقة.",
       prompt:
         "في تسليمك:\n\n١) ميزة حقائق (استخراج بيانات، أسئلة FAQ، ترجمة حرفية):\n   - Temperature: [واطية / متوسطة / عالية]\n   - لِيه:\n\n٢) ميزة محتوى (بوستات، عناوين، أفكار):\n   - Temperature: [...]\n   - لِيه:\n\n٣) ميزة شات (مساعد يتكلم مع المستخدم):\n   - Temperature: [...]\n   - لِيه:",
       buttonLabel: "انسخ خطوات المهمة",
@@ -159,18 +156,12 @@ export const BUILDER_M4_TEMPERATURE_BLOCKS: IntroLessonContent = [
         {
           label: "٣ اختيارات منطقية",
           weight: 60,
-          criteria: [
-            "حقائق → واطية.",
-            "محتوى → أعلى من الحقائق.",
-          ],
+          criteria: ["حقائق → واطية.", "محتوى → أعلى من الحقائق."],
         },
         {
           label: "سبب لكل واحد",
           weight: 40,
-          criteria: [
-            "كل «لِيه» مربوط بثبات أو تنوّع.",
-            "شات في نطاق معقول (مش extreme غلط).",
-          ],
+          criteria: ["كل «لِيه» مربوط بثبات أو تنوّع.", "شات في نطاق معقول (مش extreme غلط)."],
         },
       ],
     },

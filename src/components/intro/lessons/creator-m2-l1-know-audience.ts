@@ -98,8 +98,7 @@ export const CREATOR_M3_KNOW_AUDIENCE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption:
-        "لو وقتك ضيق، تقدر تتخطى الفيديو وتكمل القراءة، كل الخطوات موجودة هنا.",
+      caption: "لو وقتك ضيق، تقدر تتخطى الفيديو وتكمل القراءة، كل الخطوات موجودة هنا.",
     },
   },
   {
@@ -111,8 +110,7 @@ export const CREATOR_M3_KNOW_AUDIENCE_BLOCKS: IntroLessonContent = [
       kind: "diagram",
       id: "audience-persona",
       label: "audience-persona",
-      caption:
-        "الرسم ده بيساعدك تجمع الصورة كاملة: الشخص، مشاكله، وهدفه اللي بيدور عليه.",
+      caption: "الرسم ده بيساعدك تجمع الصورة كاملة: الشخص، مشاكله، وهدفه اللي بيدور عليه.",
     },
   },
   {
@@ -127,8 +125,7 @@ export const CREATOR_M3_KNOW_AUDIENCE_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question:
-            "حد بيقول جمهوري هو كل المهتمين بالمحتوى. إيه أفضل تعديل عملي؟",
+          question: "حد بيقول جمهوري هو كل المهتمين بالمحتوى. إيه أفضل تعديل عملي؟",
           options: [
             "يسيبها عامة عشان يوصل لعدد أكبر.",
             "يكتب جملة جمهور واحدة واضحة ويحدد ٣ آلام أساسية.",
@@ -148,8 +145,7 @@ export const CREATOR_M3_KNOW_AUDIENCE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "mission",
-      intro:
-        "المهمة تدريب كتابة مش اختبار. المطلوب جملة جمهور واضحة + ٣ آلام حقيقية بلسان الناس.",
+      intro: "المهمة تدريب كتابة مش اختبار. المطلوب جملة جمهور واضحة + ٣ آلام حقيقية بلسان الناس.",
       prompt:
         "اكتب التسليم بالشكل ده:\n\n١) جملة الجمهور: أنا بكلم [مين بالضبط]\n٢) الألم ١: [اكتب الألم]\n٣) الألم ٢: [اكتب الألم]\n٤) الألم ٣: [اكتب الألم]\n٥) جملة ختامية: أكتر ألم هتركز عليه الأول وليه",
       buttonLabel: "انسخ المهمة",
@@ -160,10 +156,7 @@ export const CREATOR_M3_KNOW_AUDIENCE_BLOCKS: IntroLessonContent = [
         {
           label: "وضوح الجمهور",
           weight: 50,
-          criteria: [
-            "الجملة محددة ومش فضفاضة.",
-            "الجمهور قابل للتخيل كشخص واضح.",
-          ],
+          criteria: ["الجملة محددة ومش فضفاضة.", "الجمهور قابل للتخيل كشخص واضح."],
         },
         {
           label: "جودة الآلام",

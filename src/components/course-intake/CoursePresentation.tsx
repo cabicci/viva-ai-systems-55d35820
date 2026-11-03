@@ -78,9 +78,7 @@ export function CourseContents({
       {back}
       {stations.map((station, index) => (
         <section className={CURRICULUM_MODULE_CLASS} key={station.id}>
-          <CurriculumSectionHeader
-            title={`${c.unit} — ${station.title}`}
-          />
+          <CurriculumSectionHeader title={`${c.unit} — ${station.title}`} />
           {station.steps.map((s) => (
             <div key={s.id}>
               {openStep(

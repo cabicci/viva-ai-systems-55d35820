@@ -161,18 +161,12 @@ export const AUTOMATOR_M3_L2_TRIGGERS_ACTIONS_BLOCKS: IntroLessonContent = [
         {
           label: "Trigger + Actions",
           weight: 60,
-          criteria: [
-            "Trigger واضح بنوع و«لما…».",
-            "Action 1 + 2 مربوطين بالبيانات اللي قبلهم.",
-          ],
+          criteria: ["Trigger واضح بنوع و«لما…».", "Action 1 + 2 مربوطين بالبيانات اللي قبلهم."],
         },
         {
           label: "Success",
           weight: 40,
-          criteria: [
-            "معيار نجاح قابل للقياس.",
-            "الهدف مربوط بالـ Success.",
-          ],
+          criteria: ["معيار نجاح قابل للقياس.", "الهدف مربوط بالـ Success."],
         },
       ],
     },

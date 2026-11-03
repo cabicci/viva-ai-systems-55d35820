@@ -77,8 +77,7 @@ export const BUSINESS_M2_L2_WEEKLY_RHYTHM_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption:
-        "طقس ٣٠ دقيقة مع الـ AI. لو معندكش وقت، كمل قراية.",
+      caption: "طقس ٣٠ دقيقة مع الـ AI. لو معندكش وقت، كمل قراية.",
     },
   },
   {
@@ -106,8 +105,7 @@ export const BUSINESS_M2_L2_WEEKLY_RHYTHM_BLOCKS: IntroLessonContent = [
       kind: "diagram",
       id: "weekly-review-timeline",
       label: "Weekly Review",
-      caption:
-        "أرقام → أسئلة AI → قرار. نفس اليوم كل أسبوع — حتى لو نصف ساعة فقط.",
+      caption: "أرقام → أسئلة AI → قرار. نفس اليوم كل أسبوع — حتى لو نصف ساعة فقط.",
     },
   },
   {
@@ -129,8 +127,7 @@ export const BUSINESS_M2_L2_WEEKLY_RHYTHM_BLOCKS: IntroLessonContent = [
             "تقرأ ٥٠ مقال تسويق.",
           ],
           correctIndex: 1,
-          explanation:
-            "المراجعة للاتجاه مش للإطفاء. الـ AI يختصر التجميع — القرار في إيدك.",
+          explanation: "المراجعة للاتجاه مش للإطفاء. الـ AI يختصر التجميع — القرار في إيدك.",
         },
       ],
     },

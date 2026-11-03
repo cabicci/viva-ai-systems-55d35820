@@ -46,9 +46,7 @@ export function ReviewsDueCard() {
   };
 
   const subtitleKey =
-    due.length === 1
-      ? "dashboard.reviews.subtitle.one"
-      : "dashboard.reviews.subtitle.other";
+    due.length === 1 ? "dashboard.reviews.subtitle.one" : "dashboard.reviews.subtitle.other";
   const subtitle = t(subtitleKey).replace("{count}", String(due.length));
 
   // Locate the lesson object (for LessonLink routing).
@@ -97,9 +95,7 @@ export function ReviewsDueCard() {
               className="glass rounded-lg p-3 flex items-center gap-3 hover:border-accent/40 transition group"
             >
               <div className="flex-1 min-w-0">
-                <p className="font-semibold text-sm leading-tight truncate">
-                  {lessonTitle}
-                </p>
+                <p className="font-semibold text-sm leading-tight truncate">{lessonTitle}</p>
                 <p className="text-[10px] text-muted-foreground mt-1">{reviewMeta}</p>
               </div>
               <ArrowLeft className="h-4 w-4 text-accent shrink-0 group-hover:-translate-x-1 transition-transform" />

@@ -98,8 +98,7 @@ export const BUILDER_M2_PROMPT_LAYER_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption:
-        "إزاي الـ Prompt layer بتحدّد سلوك المساعد في أي منتج. لو معندكش وقت، كمل قراية.",
+      caption: "إزاي الـ Prompt layer بتحدّد سلوك المساعد في أي منتج. لو معندكش وقت، كمل قراية.",
     },
   },
   {
@@ -135,8 +134,7 @@ export const BUILDER_M2_PROMPT_LAYER_BLOCKS: IntroLessonContent = [
             "اعمل خطة تسويق لمحل حلويات",
           ],
           correctIndex: 1,
-          explanation:
-            "التفاصيل (الاسم، المنتج، المكان، المدة) = رد قابل للاستخدام في منتج حقيقي.",
+          explanation: "التفاصيل (الاسم، المنتج، المكان، المدة) = رد قابل للاستخدام في منتج حقيقي.",
         },
       ],
     },
@@ -148,8 +146,7 @@ export const BUILDER_M2_PROMPT_LAYER_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "mission",
-      intro:
-        "هتكتب تعليمات نظام لمساعد AI بسيط — مش محادثة، بل «قواعد الشغل».\n\n١٠–١٥ دقيقة.",
+      intro: "هتكتب تعليمات نظام لمساعد AI بسيط — مش محادثة، بل «قواعد الشغل».\n\n١٠–١٥ دقيقة.",
       prompt:
         "في تسليمك اكتب System Instruction لمساعد واحد من دول (اختار واحد):\n\n- مساعد دعم لمتجر أونلاين\n- مساعد يشرح دروس لمبتدئين\n- مساعد يقترح أفكار محتوى\n\nلازم يتضمّن:\n\n١) مين المساعد (دور واحد):\n\n٢) إزاي يتكلم (لغة، طول، نبرة):\n\n٣) إيه اللي يردّ عليه وإيه اللي يرفضه:\n\n٤) مثال سؤال مستخدم + رد متوقّع في سطرين",
       buttonLabel: "انسخ خطوات المهمة",
@@ -160,18 +157,12 @@ export const BUILDER_M2_PROMPT_LAYER_BLOCKS: IntroLessonContent = [
         {
           label: "تعليمات واضحة",
           weight: 60,
-          criteria: [
-            "الدور محدّد — مش «مساعد عام».",
-            "فيه قواعد رد ورفض.",
-          ],
+          criteria: ["الدور محدّد — مش «مساعد عام».", "فيه قواعد رد ورفض."],
         },
         {
           label: "مثال عملي",
           weight: 40,
-          criteria: [
-            "المثال يطابق القواعد.",
-            "الرد قابل للتخيل في منتج.",
-          ],
+          criteria: ["المثال يطابق القواعد.", "الرد قابل للتخيل في منتج."],
         },
       ],
     },

@@ -188,18 +188,25 @@ export function KidsConsentControl() {
               ? "Could not verify"
               : "تعذر التحقق"
             : access
-              ? `${access.access_source === "complimentary_email" && access.active_until.startsWith("9999-")
-                  ? locale === "en" ? "Permanent access" : "وصول دائم"
-                  : `${locale === "en" ? "Active until" : "نشط حتى"} ${access.active_until.slice(0, 10)}`} (${
+              ? `${
+                  access.access_source === "complimentary_email" &&
+                  access.active_until.startsWith("9999-")
+                    ? locale === "en"
+                      ? "Permanent access"
+                      : "وصول دائم"
+                    : `${locale === "en" ? "Active until" : "نشط حتى"} ${access.active_until.slice(0, 10)}`
+                } (${
                   access.access_source === "stripe_test"
                     ? locale === "en"
                       ? "Stripe payment"
                       : "دفع Stripe"
                     : access.access_source === "complimentary_email"
-                      ? locale === "en" ? "email access grant" : "منحة وصول بالبريد"
-                    : locale === "en"
-                      ? "separate access grant"
-                      : "منحة وصول منفصلة"
+                      ? locale === "en"
+                        ? "email access grant"
+                        : "منحة وصول بالبريد"
+                      : locale === "en"
+                        ? "separate access grant"
+                        : "منحة وصول منفصلة"
                 })`
               : locale === "en"
                 ? "No active family grant"
@@ -239,4 +246,3 @@ export function KidsConsentControl() {
     </div>
   );
 }
-

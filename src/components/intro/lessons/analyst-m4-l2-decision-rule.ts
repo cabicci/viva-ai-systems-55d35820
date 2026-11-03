@@ -98,8 +98,7 @@ export const ANALYST_M4_L2_DECISION_RULE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption:
-        "إزاي تحوّل أي رقم لسؤال قرار — مقارنة، رقم مرتبط، وaction.",
+      caption: "إزاي تحوّل أي رقم لسؤال قرار — مقارنة، رقم مرتبط، وaction.",
     },
   },
   {
@@ -111,8 +110,7 @@ export const ANALYST_M4_L2_DECISION_RULE_BLOCKS: IntroLessonContent = [
       kind: "diagram",
       id: "decision-chain",
       label: "Decision Chain",
-      caption:
-        "رقم → مقارنة بإيه → رقم مرتبط → action. من غير السلسلة دي القرار مش هيتنفّذ.",
+      caption: "رقم → مقارنة بإيه → رقم مرتبط → action. من غير السلسلة دي القرار مش هيتنفّذ.",
     },
   },
   {
@@ -127,8 +125,7 @@ export const ANALYST_M4_L2_DECISION_RULE_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question:
-            "الطلبات زادت ٢٠٪ الأسبوع ده — بس التحويل نزل من ١٢٪ لـ ٨٪. أحسن خطوة قرار؟",
+          question: "الطلبات زادت ٢٠٪ الأسبوع ده — بس التحويل نزل من ١٢٪ لـ ٨٪. أحسن خطوة قرار؟",
           options: [
             "نزوّد الإعلانات — الطلبات زادت.",
             "نسأل: التحويل نزل مقارنة بإيه؟ ونراجع خطوة التسعير/العرض — action محدّد.",
@@ -160,18 +157,12 @@ export const ANALYST_M4_L2_DECISION_RULE_BLOCKS: IntroLessonContent = [
         {
           label: "مقارنة وسياق",
           weight: 50,
-          criteria: [
-            "في baseline واضح — مش رقم لوحده.",
-            "في رقم مرتبط يغيّر فهم الصورة.",
-          ],
+          criteria: ["في baseline واضح — مش رقم لوحده.", "في رقم مرتبط يغيّر فهم الصورة."],
         },
         {
           label: "Action وRule",
           weight: 50,
-          criteria: [
-            "Action محدّد فيه مين وإمتى.",
-            "Decision Rule مكتوبة بصيغة لو → action.",
-          ],
+          criteria: ["Action محدّد فيه مين وإمتى.", "Decision Rule مكتوبة بصيغة لو → action."],
         },
       ],
     },

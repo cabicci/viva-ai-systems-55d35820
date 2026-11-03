@@ -1,9 +1,16 @@
 import { render, screen, waitFor, within, cleanup, fireEvent } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { createMemoryHistory, createRootRoute, createRouter, RouterProvider } from "@tanstack/react-router";
+import {
+  createMemoryHistory,
+  createRootRoute,
+  createRouter,
+  RouterProvider,
+} from "@tanstack/react-router";
 import { beforeEach, afterEach, it, expect, vi } from "vitest";
 import { JourneyPage } from "./JourneyPage";
-vi.mock("./LearningRecordPanel", () => ({ LearningRecordPanel: () => <section data-testid="learning-record-panel" /> }));
+vi.mock("./LearningRecordPanel", () => ({
+  LearningRecordPanel: () => <section data-testid="learning-record-panel" />,
+}));
 const state = vi.hoisted(() => ({
   locale: "en",
   tier: "pro_plus",
@@ -82,7 +89,10 @@ vi.mock("@/lib/academic-education/client", () => ({
 function setup() {
   const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
   const root = createRootRoute({ component: JourneyPage });
-  const router = createRouter({ routeTree: root, history: createMemoryHistory({ initialEntries: ["/"] }) });
+  const router = createRouter({
+    routeTree: root,
+    history: createMemoryHistory({ initialEntries: ["/"] }),
+  });
   const view = render(
     <QueryClientProvider client={client}>
       <RouterProvider router={router} />

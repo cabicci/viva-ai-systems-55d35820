@@ -3,10 +3,7 @@ import { CheckCircle2, ChevronDown, ChevronUp, Copy, Flag } from "lucide-react";
 import { toast } from "sonner";
 import { useLocale } from "@/lib/locale/locale-context";
 import { getUiString } from "@/lib/locale/ui-strings";
-import {
-  MissionRubricSection,
-  type MissionRubric,
-} from "./MissionRubricSubmit";
+import { MissionRubricSection, type MissionRubric } from "./MissionRubricSubmit";
 
 /* --------------------------------------------------------------
  *  Mini-mission prompt with copy-to-clipboard fallback.
@@ -38,8 +35,7 @@ export function IntroMissionPrompt({
   const [copied, setCopied] = React.useState(false);
   const copyButtonLabel =
     locale === "ar-EG" ? buttonLabel : getUiString(locale, "mission.copy.cta");
-  const copyDoneLabel =
-    locale === "ar-EG" ? copiedLabel : getUiString(locale, "mission.copy.done");
+  const copyDoneLabel = locale === "ar-EG" ? copiedLabel : getUiString(locale, "mission.copy.done");
   const storageKey = React.useMemo(
     () => `mission-started:${lessonId ?? `prompt:${hashKey(prompt)}`}`,
     [lessonId, prompt],

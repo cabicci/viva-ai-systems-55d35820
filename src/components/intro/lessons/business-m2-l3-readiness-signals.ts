@@ -77,8 +77,7 @@ export const BUSINESS_M5_L1_READINESS_SIGNALS_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption:
-        "فحص بسيط قبل الأتمتة. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
+      caption: "فحص بسيط قبل الأتمتة. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
     },
   },
   {
@@ -106,8 +105,7 @@ export const BUSINESS_M5_L1_READINESS_SIGNALS_BLOCKS: IntroLessonContent = [
       kind: "diagram",
       id: "readiness-signals",
       label: "فحص الجاهزية",
-      caption:
-        "لو نقطة ضعيفة في الـ ٤ أسئلة — اصلّح العملية الأول، بعدين ضيف الـ AI.",
+      caption: "لو نقطة ضعيفة في الـ ٤ أسئلة — اصلّح العملية الأول، بعدين ضيف الـ AI.",
     },
   },
   {

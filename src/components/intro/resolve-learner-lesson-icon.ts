@@ -1,12 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import {
-  BookOpen,
-  CircleCheck,
-  Compass,
-  Rocket,
-  Route,
-  Sparkles,
-} from "lucide-react";
+import { BookOpen, CircleCheck, Compass, Rocket, Route, Sparkles } from "lucide-react";
 import type { IntroBlock } from "./intro-lesson-types";
 
 /** Map legacy generic icons to calm journey/learning glyphs at render time. */

@@ -167,9 +167,7 @@ export const BUILDER_M6_ITERATION_BLOCKS: IntroLessonContent = [
         {
           label: "حماية من Regression",
           weight: 30,
-          criteria: [
-            "فيه صريح «متغيّرش أي حاجة تانية» أو ما يعادلها.",
-          ],
+          criteria: ["فيه صريح «متغيّرش أي حاجة تانية» أو ما يعادلها."],
         },
       ],
     },

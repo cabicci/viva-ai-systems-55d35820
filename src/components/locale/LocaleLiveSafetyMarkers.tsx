@@ -15,9 +15,7 @@ export function LocaleLiveSafetyMarkers({
 }) {
   if (locale === "ar-EG") return null;
 
-  const hasVideo = Boolean(
-    lessonId && getLocalizedBunnyEmbedUrl(lessonId, locale),
-  );
+  const hasVideo = Boolean(lessonId && getLocalizedBunnyEmbedUrl(lessonId, locale));
 
   return (
     <div className="sr-only" aria-hidden>

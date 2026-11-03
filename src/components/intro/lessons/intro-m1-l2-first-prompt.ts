@@ -84,8 +84,7 @@ export const INTRO_FIRST_PROMPT_CONTENT: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption:
-        "مثال حي على الفرق. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
+      caption: "مثال حي على الفرق. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
     },
   },
   {
@@ -136,8 +135,7 @@ export const INTRO_FIRST_PROMPT_CONTENT: IntroLessonContent = [
             "تغيّر الـ AI لأداة تانية.",
           ],
           correctIndex: 0,
-          explanation:
-            "الـ AI مش عارف حياتك. السياق + مهمة واضحة بيحوّلوا الطلب من عام لعملي.",
+          explanation: "الـ AI مش عارف حياتك. السياق + مهمة واضحة بيحوّلوا الطلب من عام لعملي.",
         },
       ],
     },

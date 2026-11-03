@@ -110,8 +110,7 @@ export const AUTOMATOR_M6_L1_LEAD_CAPTURE_BLOCKS: IntroLessonContent = [
     block: {
       kind: "screenshot",
       alt: "مخطط يوضح مسار lead من الفورم للتسجيل والرد والتنبيه.",
-      caption:
-        "التسجيل → الحفظ → الرد الفوري → التنبيه. أربع خطوات تمنع الضياع.",
+      caption: "التسجيل → الحفظ → الرد الفوري → التنبيه. أربع خطوات تمنع الضياع.",
       label: "automator-m6-l1-lead-capture",
     },
   },

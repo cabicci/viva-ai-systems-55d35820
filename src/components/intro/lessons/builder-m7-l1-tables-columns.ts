@@ -126,8 +126,7 @@ export const BUILDER_M8_TABLES_COLUMNS_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question:
-            "بتعمل جدول `services` وفيه عمود `price` (سعر الخدمة). إيه أنسب نوع؟",
+          question: "بتعمل جدول `services` وفيه عمود `price` (سعر الخدمة). إيه أنسب نوع؟",
           options: [
             "`numeric not null` — الفلوس لازم تكون دقيقة ومينفعش خدمة من غير سعر.",
             "`integer nullable` — رقم صحيح وممكن السعر يكون لسه متسعّرش.",

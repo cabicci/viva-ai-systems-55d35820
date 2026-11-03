@@ -98,8 +98,7 @@ export const BUILDER_M3_CONTEXT_LAYER_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption:
-        "إزاي Context Layer بيغيّر جودة أي ميزة AI. لو معندكش وقت، كمل قراية.",
+      caption: "إزاي Context Layer بيغيّر جودة أي ميزة AI. لو معندكش وقت، كمل قراية.",
     },
   },
   {
@@ -127,16 +126,14 @@ export const BUILDER_M3_CONTEXT_LAYER_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question:
-            "عايز AI يساعدك في خطة تسويق. إيه أحسن خطوة الأول؟",
+          question: "عايز AI يساعدك في خطة تسويق. إيه أحسن خطوة الأول؟",
           options: [
             "تديله تفاصيل المشروع والعميل والميزانية قبل الطلب.",
             "تطلب «اكتب خطة تسويق» وخلاص.",
             "تسأله أسئلة عامة عن التسويق.",
           ],
           correctIndex: 0,
-          explanation:
-            "الخلفية قبل الطلب — ده اللي هتصمّمه في أي ميزة AI في منتجك.",
+          explanation: "الخلفية قبل الطلب — ده اللي هتصمّمه في أي ميزة AI في منتجك.",
         },
       ],
     },
@@ -160,18 +157,12 @@ export const BUILDER_M3_CONTEXT_LAYER_BLOCKS: IntroLessonContent = [
         {
           label: "سياق من التطبيق",
           weight: 60,
-          criteria: [
-            "٤ حقول واقعية — مش المستخدم يكتبهم كل مرة.",
-            "الميزة واضحة.",
-          ],
+          criteria: ["٤ حقول واقعية — مش المستخدم يكتبهم كل مرة.", "الميزة واضحة."],
         },
         {
           label: "Prompt كامل",
           weight: 40,
-          criteria: [
-            "السياق قبل السؤال.",
-            "الرد المتوقّع يبان «مخصّص».",
-          ],
+          criteria: ["السياق قبل السؤال.", "الرد المتوقّع يبان «مخصّص»."],
         },
       ],
     },

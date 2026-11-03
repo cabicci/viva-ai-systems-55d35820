@@ -17,8 +17,16 @@ vi.mock("@/components/journey/JourneyVisitRecorder", () => ({
   JourneyVisitRecorder: () => <span data-testid="journey-visit" />,
 }));
 vi.mock("@/components/site/Footer", () => ({ Footer: () => <footer>Masaarat</footer> }));
-vi.mock("@/components/assistant/CourseLessonAssistant", () => ({ CourseLessonAssistant: (props: { cardId: string; stepId: string; locale: string }) =>
-  <aside data-testid="lesson-assistant" data-card={props.cardId} data-step={props.stepId} data-locale={props.locale} /> }));
+vi.mock("@/components/assistant/CourseLessonAssistant", () => ({
+  CourseLessonAssistant: (props: { cardId: string; stepId: string; locale: string }) => (
+    <aside
+      data-testid="lesson-assistant"
+      data-card={props.cardId}
+      data-step={props.stepId}
+      data-locale={props.locale}
+    />
+  ),
+}));
 vi.mock("@/lib/academic-education/client", () => ({
   academicCommand: state.command,
   academicCatalogue: state.catalogue,
@@ -74,8 +82,9 @@ beforeEach(() => {
 });
 afterEach(() => cleanup());
 it("offers the assistant immediately in an authorized lesson without changing its course or locale", async () => {
-  state.command.mockImplementation(async (action: string) => action === "lesson"
-    ? { ...delivery, assistantAllowed: true } : { progress: {} });
+  state.command.mockImplementation(async (action: string) =>
+    action === "lesson" ? { ...delivery, assistantAllowed: true } : { progress: {} },
+  );
   setup();
   const assistant = await screen.findByTestId("lesson-assistant");
   expect(assistant).toHaveAttribute("data-card", "AC-BUS");

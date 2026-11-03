@@ -1,8 +1,5 @@
 import { useMemo } from "react";
-import {
-  Image as ImageIcon,
-  Monitor,
-} from "lucide-react";
+import { Image as ImageIcon, Monitor } from "lucide-react";
 import { IntroSection } from "@/components/intro/IntroSection";
 import { QuizBlock, type QuizItem } from "@/components/intro/QuizBlock";
 import { resolveLearnerLessonIcon } from "@/components/intro/resolve-learner-lesson-icon";
@@ -26,10 +23,7 @@ import { LocaleMockMissionSubmit } from "./LocaleMockMissionSubmit";
 import { LocalePreviewMission } from "./LocalePreviewMission";
 import { PackageLearnerMarkdown } from "./PackageLearnerMarkdown";
 
-type PreviewPackage = Pick<
-  LocalizedLessonPackage,
-  "locale" | "lessonId" | "title" | "sections"
->;
+type PreviewPackage = Pick<LocalizedLessonPackage, "locale" | "lessonId" | "title" | "sections">;
 
 function previewBlockKind(
   block: PreviewLessonBlock,
@@ -102,15 +96,11 @@ function PreviewBlockBody({
       return (
         <div className="grid sm:grid-cols-2 gap-3">
           <div className="rounded-xl border border-border bg-foreground/5 p-3">
-            <p className="text-[11px] font-mono text-muted-foreground mb-1">
-              {block.left.label}
-            </p>
+            <p className="text-[11px] font-mono text-muted-foreground mb-1">{block.left.label}</p>
             <PackageLearnerMarkdown text={block.left.body} />
           </div>
           <div className="rounded-xl border border-accent/20 bg-accent/[0.05] p-3">
-            <p className="text-[11px] font-mono text-accent mb-1">
-              {block.right.label}
-            </p>
+            <p className="text-[11px] font-mono text-accent mb-1">{block.right.label}</p>
             <PackageLearnerMarkdown text={block.right.body} />
           </div>
         </div>
@@ -181,8 +171,7 @@ function PreviewBlockBody({
               <ImageIcon className="h-5 w-5 text-primary" />
             </div>
             <p className="text-sm text-foreground">
-              {block.caption ??
-                getUiString(locale, "safety.screenshot.placeholder")}
+              {block.caption ?? getUiString(locale, "safety.screenshot.placeholder")}
             </p>
           </div>
         </div>
@@ -282,11 +271,7 @@ function buildSectionsWithLiveBlocks(pkg: PreviewPackage) {
  * Localized package lesson renderer.
  * Quizzes use the shared QuizBlock; missions use mock local submission without AI evaluation.
  */
-export function LocalePackagePreviewRenderer({
-  pkg,
-}: {
-  pkg: PreviewPackage;
-}) {
+export function LocalePackagePreviewRenderer({ pkg }: { pkg: PreviewPackage }) {
   const sections = useMemo(() => buildSectionsWithLiveBlocks(pkg), [pkg]);
   const bodyDir = previewBodyDirection(pkg.locale);
   const hasVideoPlaceholder = sections.some(

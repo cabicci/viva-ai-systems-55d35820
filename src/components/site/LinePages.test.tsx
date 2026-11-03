@@ -12,7 +12,11 @@ import { parseKidsCatalogueTitles } from "@/lib/kids/use-curriculum-titles";
 import { SUPPORTED_LOCALES, type SupportedLocale } from "@/lib/locale/types";
 function render(ui: React.ReactElement) {
   const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
-  return renderRaw(ui, { wrapper: ({ children }) => <QueryClientProvider client={client}>{children}</QueryClientProvider> });
+  return renderRaw(ui, {
+    wrapper: ({ children }) => (
+      <QueryClientProvider client={client}>{children}</QueryClientProvider>
+    ),
+  });
 }
 vi.mock("@/lib/course-system/intake/client", () => ({ curriculumCatalogue: async () => [] }));
 

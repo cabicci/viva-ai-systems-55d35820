@@ -106,8 +106,7 @@ export const BUSINESS_M1_L3_AI_THINKING_PARTNER_BLOCKS: IntroLessonContent = [
       kind: "diagram",
       id: "weekly-theme-days",
       label: "إيقاع أسبوعي",
-      caption:
-        "اختار أيام تناسبك — المهم التلاتة يفضلوا موجودين كل أسبوع، حتى لو نصف ساعة.",
+      caption: "اختار أيام تناسبك — المهم التلاتة يفضلوا موجودين كل أسبوع، حتى لو نصف ساعة.",
     },
   },
   {
@@ -122,8 +121,7 @@ export const BUSINESS_M1_L3_AI_THINKING_PARTNER_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question:
-            "نادية عندها أسبوع مليان ردود عملاء ومفيش وقت للتسعير. أحسن خطوة مع الـ AI؟",
+          question: "نادية عندها أسبوع مليان ردود عملاء ومفيش وقت للتسعير. أحسن خطوة مع الـ AI؟",
           options: [
             "تستنى لحد ما الشغل يهدى — وبعدين تفكّر في التسعير.",
             "تحدّد بلوك إداري/AI للردود المتكررة — وبلوك استراتيجية للتسعير.",
