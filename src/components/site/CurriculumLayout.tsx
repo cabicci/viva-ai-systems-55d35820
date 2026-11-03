@@ -33,32 +33,7 @@ export function CurriculumLayout({
         id="main-content"
         className="mx-auto w-full min-w-0 max-w-6xl flex-1 p-4 sm:p-6 md:p-10"
       >
-        <div className="glass relative mb-10 overflow-hidden rounded-3xl p-5 sm:p-8 md:p-10">
-          <div
-            aria-hidden
-            className="absolute -left-20 -top-20 h-60 w-60 rounded-full bg-primary/30 blur-3xl"
-          />
-          <div
-            aria-hidden
-            className="absolute -bottom-20 -right-20 h-60 w-60 rounded-full bg-accent/30 blur-3xl"
-          />
-          <div className="relative grid items-start gap-6 md:grid-cols-[minmax(0,1fr)_240px]">
-            <div>
-              <div className="mb-3 flex items-center gap-3">
-                <span className="glow-primary grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[image:var(--gradient-primary)]">
-                  <MapIcon aria-hidden className="h-6 w-6 text-primary-foreground" />
-                </span>
-                <p className="text-sm font-semibold text-primary">{c[line]}</p>
-              </div>
-              <h1 className="break-words text-3xl font-black leading-tight sm:text-4xl md:text-5xl">
-                {title ?? c.paths} <span className="text-gradient">— {c[line]}</span>
-              </h1>
-              <p className="mt-3 max-w-2xl text-muted-foreground">{subtitle}</p>
-              {summary && <div className="mt-6">{summary}</div>}
-            </div>
-            <LineLogo line={line} className="max-w-[240px] self-center" />
-          </div>
-        </div>
+        <CurriculumHero line={line} title={title} subtitle={subtitle} summary={summary} />
         {children}
       </main>
       <Footer />
@@ -85,6 +60,53 @@ export function CurriculumSectionHeader({
           <span className="text-gradient">{title}</span>
         </h2>
         {subtitle && <p className="mt-1 max-w-2xl text-sm text-muted-foreground">{subtitle}</p>}
+      </div>
+    </div>
+  );
+}
+
+/** The line hero card, shared by CurriculumLayout and the admin learner preview. */
+export function CurriculumHero({
+  line,
+  title,
+  subtitle,
+  summary,
+  level = 1,
+}: {
+  line: LearningLine;
+  title?: string;
+  subtitle: string;
+  summary?: ReactNode;
+  level?: 1 | 2;
+}) {
+  const { locale } = useLocale();
+  const c = getLineCopy(locale);
+  const Heading = level === 1 ? "h1" : "h2";
+  return (
+    <div className="glass relative mb-10 overflow-hidden rounded-3xl p-5 sm:p-8 md:p-10">
+      <div
+        aria-hidden
+        className="absolute -left-20 -top-20 h-60 w-60 rounded-full bg-primary/30 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="absolute -bottom-20 -right-20 h-60 w-60 rounded-full bg-accent/30 blur-3xl"
+      />
+      <div className="relative grid items-start gap-6 md:grid-cols-[minmax(0,1fr)_240px]">
+        <div>
+          <div className="mb-3 flex items-center gap-3">
+            <span className="glow-primary grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[image:var(--gradient-primary)]">
+              <MapIcon aria-hidden className="h-6 w-6 text-primary-foreground" />
+            </span>
+            <p className="text-sm font-semibold text-primary">{c[line]}</p>
+          </div>
+          <Heading className="break-words text-3xl font-black leading-tight sm:text-4xl md:text-5xl">
+            {title ?? c.paths} <span className="text-gradient">— {c[line]}</span>
+          </Heading>
+          <p className="mt-3 max-w-2xl text-muted-foreground">{subtitle}</p>
+          {summary && <div className="mt-6">{summary}</div>}
+        </div>
+        <LineLogo line={line} className="max-w-[240px] self-center" />
       </div>
     </div>
   );

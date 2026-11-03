@@ -251,9 +251,7 @@ function NewCurriculumPage() {
             </select>
           </label>
         )}
-        {step && !visible && (
-          <LessonHero eyebrow={course?.title} title={step.title} />
-        )}
+        {step && !visible && <LessonHero eyebrow={course?.title} title={step.title} />}
         {course && !visible && !delivery.isFetching && (
           <p className="mt-6">
             {c.locked}{" "}

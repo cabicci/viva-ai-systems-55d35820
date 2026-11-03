@@ -260,11 +260,11 @@ function CurriculumAdminSession() {
                   stations={stations}
                   locale={lang}
                   secondary={
-                  <span aria-disabled="true" className={SECONDARY_CLASS}>
-                    {lang === "en" ? "Plans" : "الباقات"}
-                  </span>
-                }
-                toContents={(_, className, children) => (
+                    <span aria-disabled="true" className={SECONDARY_CLASS}>
+                      {lang === "en" ? "Plans" : "الباقات"}
+                    </span>
+                  }
+                  toContents={(_, className, children) => (
                     <button type="button" className={className} onClick={() => setView("contents")}>
                       {children}
                     </button>
