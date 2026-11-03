@@ -138,7 +138,8 @@ it("holds a failed scope instead of retrying it", async () => {
 });
 
 it("refuses to execute any non-curriculum lease on the admission path", async () => {
-  h.admittedPlans.mockResolvedValue([{ ...plan("x", "v1"), manifest: { ...plan("x", "v1").manifest, adapter: undefined } }]);
+  const { adapter: _drop, ...manifest } = plan("x", "v1").manifest;
+  h.admittedPlans.mockResolvedValue([{ key: "x", material: JSON.stringify(manifest), manifest }]);
   expect(await automaticTick("r1")).toMatchObject({ held: true, code: "AUTOMATION_SCOPE_NOT_ADMITTED" });
 });
 
