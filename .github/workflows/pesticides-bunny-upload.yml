@@ -1,4 +1,4 @@
-name: Pesticides accepted masters — one-attempt journaled upload
+name: Pesticides accepted masters â€” one-attempt journaled upload
 on:
   push:
     branches: [codex/pesticides-hosting-20261103]
@@ -33,7 +33,7 @@ jobs:
           python - <<'PY'
           import hashlib,pathlib,os,json
           p=pathlib.Path('scripts/course-delivery')
-          assert hashlib.sha256((p/'pesticides_bunny_upload.py').read_bytes()).hexdigest()=='acaa62b6fe0f11ce482526313f8294762c2d0ae1c6e95ae38b2d7262736b1204'
+          assert hashlib.sha256((p/'pesticides_bunny_upload.py').read_bytes()).hexdigest()=='04685fb54d53b35bb7f0b6065515be96d4cdfbad86135855121e33f647b07ade'
           assert hashlib.sha256((p/'pesticides-hosting-plan.json').read_bytes()).hexdigest()==os.environ['EXPECTED_PLAN_SHA256']
           PY
       - name: Receive accepted source artifact, verify hashes, reconcile exact target
