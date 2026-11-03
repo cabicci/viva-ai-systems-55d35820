@@ -162,11 +162,10 @@ function NewCurriculumPage() {
             <a href={`${LINE_ROUTES[area]}?locale=${locale}`} className="font-bold text-primary">
               {story.back}
             </a>
-            <section className="mt-6 grid gap-5 md:grid-cols-3" aria-label={story.aboutPath}>
+            <section className="mt-6 grid gap-5 sm:grid-cols-2" aria-label={story.aboutPath}>
               {[
                 [c.stationsCount, numbers.format(course.stations.length)],
                 [c.stepsCount, numbers.format(steps.length)],
-                [c.edition, course.version],
               ].map(([heading, body]) => (
                 <article key={heading} className="rounded-3xl border border-border bg-card p-6">
                   <h2 className="text-xl font-bold">{heading}</h2>
