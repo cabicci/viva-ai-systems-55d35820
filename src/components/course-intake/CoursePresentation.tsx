@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { ArrowUpRight, BookOpen } from "lucide-react";
 import {
   CURRICULUM_MODULE_CLASS,
   CURRICULUM_ROW_CLASS,
@@ -22,7 +21,10 @@ export function CourseIntroduction({
   locale,
   back,
   toContents,
+  secondary,
 }: {
+  /** Optional outline action (e.g. plans), placed after the primary like PathIntroduction. */
+  secondary?: ReactNode;
   stations: Station[];
   locale: SupportedLocale;
   back?: ReactNode;
@@ -43,11 +45,14 @@ export function CourseIntroduction({
         ].map(([heading, body]) => (
           <article key={heading} className="rounded-3xl border border-border bg-card p-6">
             <h2 className="text-xl font-bold">{heading}</h2>
-            <p className="mt-4 break-words text-2xl font-black text-primary">{body}</p>
+            <p className="mt-4 leading-8 text-muted-foreground">{body}</p>
           </article>
         ))}
       </section>
-      <div className="mt-8 flex flex-wrap gap-4">{toContents(null, PRIMARY, story.content)}</div>
+      <div className="mt-8 flex flex-wrap gap-4">
+        {toContents(null, PRIMARY, story.content)}
+        {secondary}
+      </div>
     </>
   );
 }
@@ -78,14 +83,10 @@ export function CourseContents({
             <div key={s.id}>
               {openStep(
                 s.id,
-                `${CURRICULUM_ROW_CLASS} w-full text-start hover:border-primary/40`,
+                `${CURRICULUM_ROW_CLASS} w-full text-start`,
                 <>
-                  <BookOpen aria-hidden className="h-4 w-4 shrink-0 text-primary" />
                   <span className="min-w-0 flex-1">{s.title}</span>
-                  <span className="inline-flex items-center gap-1 font-bold text-primary">
-                    {c.openStep}
-                    <ArrowUpRight aria-hidden className="h-4 w-4 rtl:-scale-x-100" />
-                  </span>
+                  <span>{c.openStep}</span>
                 </>,
               )}
             </div>
@@ -109,11 +110,55 @@ export function LessonHero({
   return (
     <header className="my-6 rounded-3xl border bg-accent/20 p-6">
       {eyebrow && <p className="text-sm font-bold text-primary">{eyebrow}</p>}
-      <Heading className="my-3 text-3xl font-black">{title}</Heading>
+      <Heading className="my-4 text-3xl font-black">{title}</Heading>
     </header>
   );
 }
 
-export const PREVIOUS_CLASS =
+export const SECONDARY_CLASS =
   "inline-flex min-h-11 items-center rounded-full border border-primary px-6 py-3 font-bold text-primary";
-export const NEXT_CLASS = PRIMARY;
+
+/** Same card layout as AcademicAdjacentNavigation (direction label + step title). */
+export function AdjacentSteps({
+  previous,
+  next,
+  locale,
+  render,
+}: {
+  previous?: { id: string; title: string };
+  next?: { id: string; title: string };
+  locale: SupportedLocale;
+  render: (id: string, className: string, children: ReactNode) => ReactNode;
+}) {
+  const c = intakeCopy(locale);
+  if (!previous && !next) return null;
+  return (
+    <nav
+      aria-label={c.stations}
+      dir={locale === "en" ? "ltr" : "rtl"}
+      className="mt-8 grid min-w-0 gap-3 sm:grid-cols-2"
+    >
+      {(
+        [
+          [c.previousStep, previous],
+          [c.nextStep, next],
+        ] as const
+      ).map(([label, item]) =>
+        item ? (
+          <div key={label} className="min-w-0">
+            {render(
+              item.id,
+              "block w-full min-w-0 break-words rounded-xl border p-4 text-start hover:bg-muted",
+              <>
+                <span className="block font-bold">{label}</span>
+                <span className="mt-1 block text-sm">{item.title}</span>
+              </>,
+            )}
+          </div>
+        ) : (
+          <span key={label} />
+        ),
+      )}
+    </nav>
+  );
+}

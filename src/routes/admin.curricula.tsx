@@ -15,8 +15,8 @@ import {
   CourseContents,
   CourseIntroduction,
   LessonHero,
-  NEXT_CLASS,
-  PREVIOUS_CLASS,
+  AdjacentSteps,
+  SECONDARY_CLASS,
 } from "@/components/course-intake/CoursePresentation";
 import { getPathStoryCopy } from "@/lib/path-story";
 import { Navbar } from "@/components/site/Navbar";
