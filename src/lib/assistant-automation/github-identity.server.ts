@@ -12,7 +12,7 @@ let cachedKeys: { until: number; keys: SigningKey[] } | undefined;
 
 async function githubKeys(): Promise<SigningKey[]> {
   if (cachedKeys && cachedKeys.until > Date.now()) return cachedKeys.keys;
-  // Cloudflare Workers (workerd) rejects redirect:"error" with a TypeError, which
+  // Cloudflare Workers (workerd) rejects the "error" redirect mode with a TypeError, which
   // previously made every production verification fail before claims were read.
   // "manual" plus an exact 200 check keeps redirects refused.
   const response = await fetch(`${ISSUER}/.well-known/jwks`, { signal: AbortSignal.timeout(8000), redirect: "manual" });
