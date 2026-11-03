@@ -52,7 +52,9 @@ it("does not allow editing or checking before the owned attempt opens", () => {
   const change = vi.fn();
   render(<CurriculumFields section={section} values={{}} onChange={change} disabled locale="en" />);
   expect(screen.getByLabelText("Food mass")).toBeDisabled();
-  for (const radio of within(screen.getByRole("group", { name: "Answer unit" })).getAllByRole("radio"))
+  for (const radio of within(screen.getByRole("group", { name: "Answer unit" })).getAllByRole(
+    "radio",
+  ))
     expect(radio).toBeDisabled();
   expect(screen.getByRole("button", { name: "Check my calculation" })).toBeDisabled();
 });

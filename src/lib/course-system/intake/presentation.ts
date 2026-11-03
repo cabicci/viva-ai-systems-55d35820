@@ -43,9 +43,22 @@ export function resolveGroup(sections: IntakeSection[], selected: string): Secti
 export type ListItem = { marker: string; text: string };
 export type Block =
   | { type: "heading"; source: string; text: string }
-  | { type: "list"; source: string; lead: string | null; items: ListItem[]; tone: "outcome" | "plain" }
+  | {
+      type: "list";
+      source: string;
+      lead: string | null;
+      items: ListItem[];
+      tone: "outcome" | "plain";
+    }
   | { type: "formula"; source: string; text: string }
-  | { type: "callout"; source: string; label: string; sep: string; body: string; tone: "case" | "reflection" }
+  | {
+      type: "callout";
+      source: string;
+      label: string;
+      sep: string;
+      body: string;
+      tone: "case" | "reflection";
+    }
   | { type: "faq"; source: string; question: string; answer: string }
   | { type: "text"; source: string; text: string };
 

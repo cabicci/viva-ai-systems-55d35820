@@ -2,7 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { useAuth } from "@/lib/auth-context";
 import { useLocale } from "@/lib/locale/locale-context";
-import { useActivityDraft, type ActivityValues } from "@/lib/course-system/intake/use-activity-draft";
+import {
+  useActivityDraft,
+  type ActivityValues,
+} from "@/lib/course-system/intake/use-activity-draft";
 import { curriculumCommand } from "@/lib/course-system/intake/client";
 import { intakeCopy } from "@/lib/course-system/intake/copy";
 import { getAcademicCopy } from "@/lib/academic-education/copy";
@@ -119,6 +122,7 @@ export function Activity({
       restore.current = null;
       setSubmission(values);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- setter identity changes each render; only a new attempt matters.
   }, [attempt]);
   type Reply = {
     attemptId?: string;
@@ -239,9 +243,7 @@ export function Activity({
       )}
       <Button
         disabled={busy || draft.state === "conflict"}
-        onClick={() =>
-          perform(!interactive ? "complete" : timed && !attempt ? "start" : "submit")
-        }
+        onClick={() => perform(!interactive ? "complete" : timed && !attempt ? "start" : "submit")}
       >
         {actionLabel}
       </Button>

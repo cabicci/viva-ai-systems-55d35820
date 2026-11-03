@@ -60,7 +60,10 @@ export function CurriculumContent({
   return (
     <div className="grid min-w-0 items-start gap-6 lg:grid-cols-[250px_minmax(0,1fr)]">
       <aside className="min-w-0 rounded-3xl border bg-card p-4 lg:sticky lg:top-24">
-        <nav aria-label={getAcademicCopy(locale).sections} className="grid grid-cols-2 gap-2 lg:grid-cols-1">
+        <nav
+          aria-label={getAcademicCopy(locale).sections}
+          className="grid grid-cols-2 gap-2 lg:grid-cols-1"
+        >
           {groups.map(({ group }) => (
             <button
               type="button"
@@ -96,7 +99,9 @@ export function CurriculumContent({
             {sections.map((section) => {
               const showTitle = sections.length > 1 || section.title !== label(group);
               const paragraphs =
-                lead && section.id === lead.sectionId ? section.paragraphs.slice(1) : section.paragraphs;
+                lead && section.id === lead.sectionId
+                  ? section.paragraphs.slice(1)
+                  : section.paragraphs;
               return (
                 <article
                   key={section.id}
