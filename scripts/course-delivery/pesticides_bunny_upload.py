@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import subprocess
 import time
 import urllib.error
@@ -129,8 +130,14 @@ def main():
         values=storage['data']
         assert values['encoded']=={}
         assert all(values.get(k)==0 for k in ['originals','thumbnails','previews','mp4Fallback','miscellaneous'])
-        calculated=datetime.datetime.fromisoformat(values['calculatedAt'].replace('Z','+00:00'))
-        assert abs((datetime.datetime.now(datetime.timezone.utc)-calculated).total_seconds())<120
+        # Bunny emits .NET seven-digit fractions, including on Python 3.10 runners.
+        timestamp=re.sub(r'(\.\d{6})\d+',r'\1',values['calculatedAt']).replace('Z','+00:00')
+        calculated=datetime.datetime.fromisoformat(timestamp)
+        # This endpoint caches its calculation. CREATED(0), a null source hash,
+        # zero dimensions/progress/size and the recorded zero PUT history also
+        # have to agree; a storage snapshot alone never permits replacement.
+        age=(datetime.datetime.now(datetime.timezone.utc)-calculated).total_seconds()
+        assert -120<age<86400
         receipt['emptyStorageReadback']=storage
         save()
 
@@ -153,8 +160,8 @@ def main():
         assert result['totalItems']<=100 and len(result['items'])==result['totalItems']
         candidates=[v for v in result['items'] if v['title']==entry['title']]
         assert len(candidates)<=1, 'Duplicate title requires owner reconciliation'
+        assert not candidates or entry['existing'] is not None, 'Unjournaled exact title; reconcile before reuse'
         if entry['existing']:
-            assert entry['existing']['putCallsAtPause']==0
             assert len(candidates)==1 and candidates[0]['guid']==entry['existing']['guid']
         if candidates:
             receipt['guid']=candidates[0]['guid']
@@ -163,6 +170,7 @@ def main():
                 assert video['originalHash'].lower()==entry['sha256']
                 receipt['alreadyUploaded']=True
             else:
+                assert entry['existing']['putCallsAtPause']==0, 'Previous PUT must be reconciled, never repeated'
                 empty(video)
                 receipt['alreadyUploaded']=False
         else:
