@@ -27,7 +27,7 @@ export async function dispatchImmediateMail(target: ImmediateMailTarget) {
   try {
     response = await fetch(endpoint.toString(), {
       method: "POST",
-      redirect: "error",
+      redirect: "manual",
       signal: AbortSignal.timeout(20_000),
       headers: { Authorization: `Bearer ${secret}`, "Content-Type": "application/json" },
       body: JSON.stringify({ immediate: target }),

@@ -16,6 +16,7 @@ export async function handlePublicAutomaticIndexing(request: Request) {
       const {automaticTick}=await import("@/lib/course-system/intake/automatic-worker.server");
       return pruneResponseCache === true ? automaticTick(requestId,undefined,true) : automaticTick(requestId);
     },
+    probe:async()=>({indexerBuild:__ASSISTANT_INDEXER_BUILD__,deploymentFingerprint:__ASSISTANT_INDEXER_DEPLOYMENT__}),
     status:async()=>{
       // Existing verifier authorizes before this callback can import the privileged client.
       const {automationRpc}=await import("./store.server");
