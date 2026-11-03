@@ -2,6 +2,7 @@ import type { IntakeSection } from "@/lib/course-system/intake/package";
 import type { SupportedLocale } from "@/lib/locale/types";
 import { intakeCopy } from "@/lib/course-system/intake/copy";
 import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
 import { useEffect, useRef, useState } from "react";
 import { CourseInlineText } from "./CourseInlineText";
 export type LessonContent = {
@@ -20,8 +21,10 @@ export function CurriculumContent({
   children,
   resolveAsset,
   progressLabel,
+  progressValue,
 }: {
   progressLabel?: string;
+  progressValue?: number;
   lesson: LessonContent;
   selected: string;
   onSelect(id: string): void;
@@ -60,14 +63,20 @@ export function CurriculumContent({
           })}
         </nav>
         {progressLabel && (
-          <p className="mt-5 border-t pt-4 text-sm leading-7 text-muted-foreground" role="status">
-            {progressLabel}
-          </p>
+          <section className="mt-6 space-y-3 border-t pt-5">
+            <h2 className="font-bold">{c.learnerProgress}</h2>
+            {progressValue !== undefined && (
+              <Progress value={progressValue} aria-label={c.learnerProgress} />
+            )}
+            <p className="text-sm leading-7 text-muted-foreground" role="status">
+              {progressLabel}
+            </p>
+          </section>
         )}
       </aside>
       <section
         id="curriculum-lesson-section"
-        className="min-w-0 space-y-5 rounded-3xl border bg-card p-5 md:p-8"
+        className="min-w-0 scroll-mt-24 space-y-6 rounded-3xl border bg-card p-5 md:p-8"
         aria-label={section.title}
       >
         <h2 className="text-2xl font-bold">{section.title}</h2>

@@ -360,6 +360,11 @@ function LearnerStep({
         }}
         selected={section.id}
         onSelect={selectSection}
+        progressValue={
+          progress && progress.required > 0
+            ? Math.min(100, Math.max(0, (progress.completed / progress.required) * 100))
+            : undefined
+        }
         progressLabel={
           progress && progress.required > 0
             ? `${c.sectionsDone}: ${progress.completed} / ${progress.required}`

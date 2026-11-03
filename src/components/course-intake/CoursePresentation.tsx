@@ -71,12 +71,10 @@ export function CourseContents({
   openStep: Action;
 }) {
   const c = intakeCopy(locale);
-  const story = getPathStoryCopy(locale);
-  const numbers = new Intl.NumberFormat(locale === "en" ? "en" : "ar-EG");
   return (
     <div className="space-y-6">
       {back}
-      {stations.map((station, index) => (
+      {stations.map((station) => (
         <section className={CURRICULUM_MODULE_CLASS} key={station.id}>
           <CurriculumSectionHeader title={`${c.unit} — ${station.title}`} />
           {station.steps.map((s) => (
@@ -155,9 +153,7 @@ export function AdjacentSteps({
               </>,
             )}
           </div>
-        ) : (
-          <span key={label} />
-        ),
+        ) : null,
       )}
     </nav>
   );
