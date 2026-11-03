@@ -8,6 +8,11 @@ on:
   schedule:
     - cron: "*/15 * * * *"
   workflow_dispatch:
+    inputs:
+      probe:
+        description: "Read-only signed identity/publication probe (never ticks or indexes)"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -43,4 +48,6 @@ jobs:
         with:
           bun-version: "1.4.3"
       - name: Reconcile approved card indexes through the platform
+        env:
+          MASAARAT_INDEXER_PROBE: ${{ github.event_name == 'workflow_dispatch' && inputs.probe == true && 'true' || 'false' }}
         run: bun run scripts/assistant/automatic-worker-client.ts
