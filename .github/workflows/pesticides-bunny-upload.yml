@@ -10,7 +10,7 @@ concurrency:
   group: pesticides-bunny-library670679-collection13b22
   cancel-in-progress: false
 env:
-  EXPECTED_PLAN_SHA256: 0e3ae07d89b5ff18686f8aedf8eedc8103e90f79cb5356af789496a62fd39751
+  EXPECTED_PLAN_SHA256: 712ff7b46f943782ec0add418c29990be982c98da9abe94850c792d0f403a195
 jobs:
   transfer:
     if: github.run_attempt == 1
@@ -33,7 +33,7 @@ jobs:
           python - <<'PY'
           import hashlib,pathlib,os,json
           p=pathlib.Path('scripts/course-delivery')
-          assert hashlib.sha256((p/'pesticides_bunny_upload.py').read_bytes()).hexdigest()=='04685fb54d53b35bb7f0b6065515be96d4cdfbad86135855121e33f647b07ade'
+          assert hashlib.sha256((p/'pesticides_bunny_upload.py').read_bytes()).hexdigest()=='9f0faa1d0e0b79cc9028e9841200b4585fd4617742ca8ea2fa4ecfbc2acc106a'
           assert hashlib.sha256((p/'pesticides-hosting-plan.json').read_bytes()).hexdigest()==os.environ['EXPECTED_PLAN_SHA256']
           PY
       - name: Receive accepted source artifact, verify hashes, reconcile exact target
