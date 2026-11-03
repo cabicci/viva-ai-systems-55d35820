@@ -1,0 +1,74 @@
+name: Pesticides accepted masters — one-attempt journaled upload
+on:
+  push:
+    branches: [codex/pesticides-hosting-20261103]
+    paths: [scripts/course-delivery/pesticides-hosting-plan.json]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: pesticides-bunny-library670679-collection13b22
+  cancel-in-progress: false
+env:
+  EXPECTED_PLAN_SHA256: bccc4b16309faa13ada14ca36d9b51475e0900ed81674630f5b6391b95183dd9
+jobs:
+  transfer:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        key: [FATE2-S01-ar-EG, FATE2-S01-en, FATE2-S02-ar-EG, FATE2-S02-en, FATE2-S03-ar-EG, FATE2-S03-en, FATE2-S04-ar-EG, FATE2-S04-en, FATE2-S05-ar-EG, FATE2-S05-en, FATE2-S06-ar-EG, FATE2-S06-en, FATE2-S07-ar-EG, FATE2-S07-en, FATE2-S08-ar-EG, FATE2-S08-en, FATE2-S09-ar-EG, FATE2-S09-en, FATE2-S10-ar-EG, FATE2-S10-en, FATE2-S11-ar-EG, FATE2-S11-en]
+    env:
+      BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+      BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+      GH_TOKEN: ${{ github.token }}
+      ENTRY_KEY: ${{ matrix.key }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify source worker and immutable plan pins
+        run: |
+          python - <<'PY'
+          import hashlib,pathlib,os,json
+          p=pathlib.Path('scripts/course-delivery')
+          assert hashlib.sha256((p/'pesticides_bunny_upload.py').read_bytes()).hexdigest()=='acaa62b6fe0f11ce482526313f8294762c2d0ae1c6e95ae38b2d7262736b1204'
+          assert hashlib.sha256((p/'pesticides-hosting-plan.json').read_bytes()).hexdigest()==os.environ['EXPECTED_PLAN_SHA256']
+          PY
+      - name: Receive accepted source artifact, verify hashes, reconcile exact target
+        run: python scripts/course-delivery/pesticides_bunny_upload.py prepare --key "$ENTRY_KEY"
+      - name: Save durable create or reuse intent before POST
+        id: intent
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: pesticides-create-intent-${{ matrix.key }}-${{ github.run_id }}
+          path: pesticides-upload-journal/
+          if-no-files-found: error
+          retention-days: 90
+      - name: Reuse historical GUID or create exactly one missing video
+        env:
+          DURABLE_INTENT_ARTIFACT_ID: ${{ steps.intent.outputs.artifact-id }}
+        run: python scripts/course-delivery/pesticides_bunny_upload.py resolve --key "$ENTRY_KEY"
+      - name: Save durable GUID and exact binary PUT intent before transfer
+        id: guid
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: pesticides-guid-put-intent-${{ matrix.key }}-${{ github.run_id }}
+          path: pesticides-upload-journal/
+          if-no-files-found: error
+          retention-days: 90
+      - name: Upload immutable accepted movie once with generation disabled
+        env:
+          DURABLE_GUID_ARTIFACT_ID: ${{ steps.guid.outputs.artifact-id }}
+        run: python scripts/course-delivery/pesticides_bunny_upload.py upload --key "$ENTRY_KEY"
+      - name: Verify original source hash and bounded processed readiness using GET only
+        run: python scripts/course-delivery/pesticides_bunny_upload.py status --key "$ENTRY_KEY"
+      - name: Preserve final or interrupted outcome without replay
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: pesticides-final-${{ matrix.key }}-${{ github.run_id }}
+          path: pesticides-upload-journal/
+          if-no-files-found: warn
+          retention-days: 90
