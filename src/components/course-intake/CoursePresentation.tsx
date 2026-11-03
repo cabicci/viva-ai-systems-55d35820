@@ -4,6 +4,7 @@ import {
   CURRICULUM_ROW_CLASS,
   CurriculumSectionHeader,
 } from "@/components/site/CurriculumLayout";
+import { PathStory } from "@/components/site/PathStory";
 import { getPathStoryCopy } from "@/lib/path-story";
 import { intakeCopy } from "@/lib/course-system/intake/copy";
 import type { SupportedLocale } from "@/lib/locale/types";
@@ -33,7 +34,7 @@ export function CourseIntroduction({
 }) {
   const c = intakeCopy(locale);
   const story = getPathStoryCopy(locale);
-  const numbers = new Intl.NumberFormat(locale === "en" ? "en" : "ar");
+  const numbers = new Intl.NumberFormat(locale === "en" ? "en" : "ar-EG");
   const steps = stations.reduce((n, s) => n + s.steps.length, 0);
   return (
     <>
@@ -53,6 +54,7 @@ export function CourseIntroduction({
         {toContents(null, PRIMARY, story.content)}
         {secondary}
       </div>
+      <PathStory />
     </>
   );
 }
@@ -70,14 +72,14 @@ export function CourseContents({
 }) {
   const c = intakeCopy(locale);
   const story = getPathStoryCopy(locale);
-  const numbers = new Intl.NumberFormat(locale === "en" ? "en" : "ar");
+  const numbers = new Intl.NumberFormat(locale === "en" ? "en" : "ar-EG");
   return (
     <div className="space-y-6">
       {back}
       {stations.map((station, index) => (
         <section className={CURRICULUM_MODULE_CLASS} key={station.id}>
           <CurriculumSectionHeader
-            title={`${story.station} ${numbers.format(index + 1)} — ${station.title}`}
+            title={`${c.unit} — ${station.title}`}
           />
           {station.steps.map((s) => (
             <div key={s.id}>

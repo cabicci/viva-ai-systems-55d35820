@@ -20,6 +20,7 @@ import {
 } from "@/components/course-intake/CoursePresentation";
 import { getPathStoryCopy } from "@/lib/path-story";
 import { CurriculumHero } from "@/components/site/CurriculumLayout";
+import { getLineCopy } from "@/lib/learning-lines";
 import { Navbar } from "@/components/site/Navbar";
 import { Button } from "@/components/ui/button";
 import type { Preparation } from "@/lib/course-system/intake/preparation";
@@ -287,7 +288,7 @@ function CurriculumAdminSession() {
               {view === "lesson" && (
                 <>
                   {backButton(c.backToContents, "contents")}
-                  <LessonHero eyebrow={course.title[lang]} title={step.title[lang]!} level={2} />
+                  <LessonHero eyebrow={getLineCopy(lang)[course.area]} title={step.title[lang]!} level={2} />
                   <CurriculumContent
                     key={`${review.version}:${step.id}:${lang}`}
                     locale={lang}

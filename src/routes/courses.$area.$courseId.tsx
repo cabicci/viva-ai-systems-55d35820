@@ -7,6 +7,7 @@ import {
   SECONDARY_CLASS,
 } from "@/components/course-intake/CoursePresentation";
 import { getPathStoryCopy } from "@/lib/path-story";
+import { getLineCopy } from "@/lib/learning-lines";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { scopedSearch } from "@/lib/course-system/intake/navigation";
@@ -257,7 +258,7 @@ function NewCurriculumPage() {
             </select>
           </label>
         )}
-        {step && !visible && <LessonHero eyebrow={course?.title} title={step.title} />}
+        {step && !visible && <LessonHero eyebrow={getLineCopy(locale)[area]} title={step.title} />}
         {course && !visible && !delivery.isFetching && (
           <p className="mt-6">
             {c.locked}{" "}
