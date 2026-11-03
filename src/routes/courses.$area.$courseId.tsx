@@ -38,7 +38,9 @@ import { AssistantConversationPanel } from "@/components/assistant/AssistantConv
 import { FloatingAssistantLauncher } from "@/components/learn/FloatingAssistantLauncher";
 import { getUiString } from "@/lib/locale/ui-strings";
 import { Button } from "@/components/ui/button";
-import { CurriculumFields } from "@/components/course-intake/CurriculumFields";
+import { ActivityForm } from "@/components/course-intake/CurriculumFields";
+import { lessonLead } from "@/lib/course-system/intake/presentation";
+import { getAcademicCopy } from "@/lib/academic-education/copy";
 import type { IntakeSection } from "@/lib/course-system/intake/package";
 
 export const Route = createFileRoute("/courses/$area/$courseId")({
@@ -230,6 +232,11 @@ function NewCurriculumPage() {
       <main id="main-content" className="mx-auto w-full min-w-0 max-w-7xl flex-1 px-4 py-8">
         {catalogue.isPending && <p>{c.loading}</p>}
         {catalogue.isError && <p role="alert">{c.error}</p>}
+        {visible && !visible.reviewOnly && step && (
+          <div className="mb-4">
+            <LearningReadingPosition scope={scope} />
+          </div>
+        )}
         <Link
           to="/courses/$area/$courseId"
           params={{ area, courseId }}
@@ -326,8 +333,6 @@ function LearnerStep({
   const auth = useAuth();
   const ask = useServerFn(askCurriculumAssistant);
   const assetLink = useServerFn(curriculumAsset);
-  const section =
-    delivery.lesson.sections.find((x) => x.id === sectionId) ?? delivery.lesson.sections[0];
   const assistantScope = {
     admitted: true as const,
     area: scope.area,
@@ -338,10 +343,19 @@ function LearnerStep({
   };
   return (
     <div className="space-y-8">
-      <LessonHero eyebrow={courseTitle} title={delivery.lesson.title} />
-      {!delivery.reviewOnly && <LearningReadingPosition scope={scope} />}
+      <LessonHero
+        eyebrow={courseTitle}
+        title={delivery.lesson.title}
+        intro={lessonLead(delivery.lesson.sections)?.text}
+      />
       <CurriculumContent
         lesson={delivery.lesson}
+        leadInHero
+        activity={(s) =>
+          delivery.reviewOnly ? null : (
+            <Activity key={s.id} section={s} delivery={delivery} scope={scope} />
+          )
+        }
         resolveAsset={async (asset) => {
           if (!auth.user) throw new Error("CURRICULUM_ACCOUNT_REQUIRED");
           const generation = auth.authGeneration;
@@ -358,7 +372,7 @@ function LearnerStep({
             throw new Error("CURRICULUM_ACCOUNT_CHANGED");
           return result.url;
         }}
-        selected={section.id}
+        selected={sectionId}
         onSelect={selectSection}
         progressValue={
           progress && progress.required > 0
@@ -371,11 +385,7 @@ function LearnerStep({
             : undefined
         }
         locale={locale}
-      >
-        {!delivery.reviewOnly && (
-          <Activity key={section.id} section={section} delivery={delivery} scope={scope} />
-        )}
-      </CurriculumContent>
+      />
       {!delivery.reviewOnly && <LearningLessonNotes scope={scope} />}
       <FloatingAssistantLauncher
         fabLabel={getUiString(locale, "learn.assistant.fab")}
@@ -452,7 +462,7 @@ function Activity({
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(false);
   const running = useRef(false);
-  const request = useRef<{ action: string; data: object; requestId: string } | null>(null);
+  const requests = useRef<Partial<Record<string, { data: object; requestId: string }>>>({});
   const owner = useRef(true);
   useEffect(() => {
     owner.current = true;
@@ -485,6 +495,38 @@ function Activity({
   const pending = delivery.events.some(
     (x) => x.section === section.id && x.result?.state === "awaiting_review",
   );
+  // Inputs are editable before an attempt exists. Untimed activities create their
+  // attempt only inside the submit handler (start → submit), never on view.
+  const timed = section.durationMinutes !== undefined;
+  const restore = useRef<ActivityValues | null>(null);
+  useEffect(() => {
+    // Runs after the draft hook re-seeds for a new attempt: keep the learner's input
+    // and mark it dirty so it syncs to the new attempt's cloud draft.
+    if (attempt && restore.current) {
+      const values = restore.current;
+      restore.current = null;
+      setSubmission(values);
+    }
+  }, [attempt]);
+  type Reply = {
+    attemptId?: string;
+    state: string;
+    score?: number;
+    total?: number;
+    draft?: ActivityValues;
+    revision?: number;
+  };
+  async function send(action: "start" | "submit" | "complete", params: object) {
+    const known = requests.current[action];
+    if (!known || JSON.stringify(known.data) !== JSON.stringify(params))
+      requests.current[action] = { data: params, requestId: crypto.randomUUID() };
+    const r = await curriculumCommand<Reply>(action, {
+      ...params,
+      requestId: requests.current[action]!.requestId,
+    });
+    delete requests.current[action];
+    return r;
+  }
   async function perform(action: "start" | "submit" | "complete") {
     if (running.current) return;
     const generation = auth.authGeneration;
@@ -492,37 +534,32 @@ function Activity({
     running.current = true;
     setBusy(true);
     setError(false);
-    const params = {
-      ...scope,
-      locale,
-      version: delivery.version,
-      section: section.id,
-      ...(action === "submit" ? { attemptId: attempt, submission } : {}),
-    };
-    if (
-      !request.current ||
-      request.current.action !== action ||
-      JSON.stringify(request.current.data) !== JSON.stringify(params)
-    )
-      request.current = { action, data: params, requestId: crypto.randomUUID() };
+    const base = { ...scope, locale, version: delivery.version, section: section.id };
+    const values = submission;
     try {
-      const r = await curriculumCommand<{
-        attemptId?: string;
-        state: string;
-        score?: number;
-        total?: number;
-        draft?: ActivityValues;
-        revision?: number;
-      }>(action, { ...params, requestId: request.current.requestId });
+      let id = attempt;
+      if (action === "submit" && !id) {
+        const started = await send("start", base);
+        if (!valid()) return;
+        if (!started.attemptId) throw new Error("CURRICULUM_ATTEMPT_MISSING");
+        id = started.attemptId;
+        restore.current = values;
+        setCreated({ draft: started.draft ?? {}, revision: started.revision ?? 0 });
+        setAttempt(id);
+      }
+      const r = await send(
+        action,
+        action === "submit" ? { ...base, attemptId: id, submission: values } : base,
+      );
       if (!valid()) return;
-      if (r.attemptId) {
+      if (action === "start" && r.attemptId) {
         setCreated({ draft: r.draft ?? {}, revision: r.revision ?? 0 });
         setAttempt(r.attemptId);
       }
       setResult(r);
-      request.current = null;
       if (action !== "start") {
-        if (attempt) closedAttempts.current.add(attempt);
+        restore.current = null;
+        if (id) closedAttempts.current.add(id);
         draft.clear();
         setAttempt(null);
       }
@@ -535,31 +572,33 @@ function Activity({
       if (valid()) setBusy(false);
     }
   }
+  const a = getAcademicCopy(locale);
+  const actionLabel = !interactive
+    ? completed
+      ? `✓ ${c.saved}`
+      : section.kind === "explanation"
+        ? a.markRead
+        : c.complete
+    : timed && !attempt
+      ? c.start
+      : section.kind === "questions" || section.kind === "exam"
+        ? a.submit
+        : a.save;
+  const locked = busy || (timed && !attempt);
+  // Optional reading/media sections carry no completion control (as in AC-BUS);
+  // required ones keep their explicit completion so progress stays reachable.
+  if (!interactive && !section.required) return null;
   return (
     <div className="space-y-4">
-      {section.questions.map((q) => (
-        <fieldset key={q.id} className="space-y-3" disabled={!attempt || busy}>
-          <legend className="font-bold">{q.prompt}</legend>
-          {q.options.map((option, i) => (
-            <label key={i} className="flex min-h-11 gap-3">
-              <input
-                type="radio"
-                name={`${section.id}-${q.id}`}
-                checked={submission[q.id] === i}
-                onChange={() => setSubmission((prev) => ({ ...prev, [q.id]: i }))}
-              />
-              {option}
-            </label>
-          ))}
-        </fieldset>
-      ))}
-      <CurriculumFields
-        section={section}
-        values={submission}
-        disabled={!attempt || busy}
-        locale={locale}
-        onChange={(id, value) => setSubmission((prev) => ({ ...prev, [id]: value }))}
-      />
+      {interactive && (
+        <ActivityForm
+          section={section}
+          values={submission}
+          disabled={locked}
+          locale={locale}
+          onChange={(id, value) => setSubmission((prev) => ({ ...prev, [id]: value }))}
+        />
+      )}
       {attempt && (
         <div role="status" className="text-sm text-muted-foreground">
           {draft.state === "saved"
@@ -588,9 +627,11 @@ function Activity({
       )}
       <Button
         disabled={busy || draft.state === "conflict"}
-        onClick={() => perform(!interactive ? "complete" : attempt ? "submit" : "start")}
+        onClick={() =>
+          perform(!interactive ? "complete" : timed && !attempt ? "start" : "submit")
+        }
       >
-        {!interactive ? (completed ? `✓ ${c.saved}` : c.complete) : attempt ? c.submit : c.start}
+        {actionLabel}
       </Button>
       {(result?.state === "awaiting_review" || pending) && <p role="status">{c.pending}</p>}
       {result?.score !== undefined && (
@@ -598,7 +639,7 @@ function Activity({
           {c.result}: {result.score} / {result.total}
         </p>
       )}
-      {completed && <p role="status">✓ {c.saved}</p>}
+      {completed && interactive && <p role="status">✓ {c.saved}</p>}
       {error && <p role="alert">{c.error}</p>}
     </div>
   );
