@@ -259,7 +259,12 @@ function CurriculumAdminSession() {
                 <CourseIntroduction
                   stations={stations}
                   locale={lang}
-                  toContents={(_, className, children) => (
+                  secondary={
+                  <span aria-disabled="true" className={SECONDARY_CLASS}>
+                    {lang === "en" ? "Plans" : "الباقات"}
+                  </span>
+                }
+                toContents={(_, className, children) => (
                     <button type="button" className={className} onClick={() => setView("contents")}>
                       {children}
                     </button>
@@ -355,31 +360,20 @@ function CurriculumAdminSession() {
                       );
                     })()}
                   </CurriculumContent>
-                  <nav
-                    className="mt-10 flex flex-wrap justify-between gap-4"
-                    aria-label={c.stations}
-                  >
-                    {at > 0 ? (
-                      <button
-                        type="button"
-                        className={PREVIOUS_CLASS}
-                        onClick={() => openStep(allSteps[at - 1].id)}
-                      >
-                        {c.previousStep}
-                      </button>
-                    ) : (
-                      <span />
-                    )}
-                    {at >= 0 && at < allSteps.length - 1 && (
-                      <button
-                        type="button"
-                        className={NEXT_CLASS}
-                        onClick={() => openStep(allSteps[at + 1].id)}
-                      >
-                        {c.nextStep}
+                  <AdjacentSteps
+                    locale={lang}
+                    previous={at > 0 ? stations.flatMap((x) => x.steps)[at - 1] : undefined}
+                    next={
+                      at >= 0 && at < allSteps.length - 1
+                        ? stations.flatMap((x) => x.steps)[at + 1]
+                        : undefined
+                    }
+                    render={(id, className, children) => (
+                      <button type="button" className={className} onClick={() => openStep(id)}>
+                        {children}
                       </button>
                     )}
-                  </nav>
+                  />
                 </>
               )}
             </section>

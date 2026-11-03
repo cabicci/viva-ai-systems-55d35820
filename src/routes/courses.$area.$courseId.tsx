@@ -10,7 +10,7 @@ import { getPathStoryCopy } from "@/lib/path-story";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { scopedSearch } from "@/lib/course-system/intake/navigation";
-import { LINE_ROUTES } from "@/lib/learning-lines";
+import { LINE_PRICING, LINE_ROUTES } from "@/lib/learning-lines";
 import { useState, useRef, useEffect } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
@@ -172,6 +172,11 @@ function NewCurriculumPage() {
                 {story.back}
               </a>
             }
+            secondary={
+              <a href={`${LINE_PRICING[area]}?locale=${locale}`} className={SECONDARY_CLASS}>
+                {locale === "en" ? "Plans" : "الباقات"}
+              </a>
+            }
             toContents={(_, className, children) => (
               <Link
                 to="/courses/$area/$courseId"
@@ -247,10 +252,7 @@ function NewCurriculumPage() {
           </label>
         )}
         {step && !visible && (
-          <header className="my-6 rounded-3xl border bg-accent/20 p-6">
-            <p className="text-sm font-bold text-primary">{course?.title}</p>
-            <h1 className="my-3 text-3xl font-black">{step.title}</h1>
-          </header>
+          <LessonHero eyebrow={course?.title} title={step.title} />
         )}
         {course && !visible && !delivery.isFetching && (
           <p className="mt-6">
@@ -274,30 +276,21 @@ function NewCurriculumPage() {
           />
         )}
         {course && step && (
-          <nav className="mt-10 flex flex-wrap justify-between gap-4" aria-label={c.stations}>
-            {at > 0 ? (
+          <AdjacentSteps
+            locale={locale}
+            previous={at > 0 ? steps[at - 1] : undefined}
+            next={at >= 0 && at < steps.length - 1 ? steps[at + 1] : undefined}
+            render={(id, className, children) => (
               <Link
                 to="/courses/$area/$courseId"
                 params={{ area, courseId }}
-                search={stepLink(steps[at - 1].id)}
-                className={PREVIOUS_CLASS}
+                search={stepLink(id)}
+                className={className}
               >
-                {c.previousStep}
-              </Link>
-            ) : (
-              <span />
-            )}
-            {at >= 0 && at < steps.length - 1 && (
-              <Link
-                to="/courses/$area/$courseId"
-                params={{ area, courseId }}
-                search={stepLink(steps[at + 1].id)}
-                className={NEXT_CLASS}
-              >
-                {c.nextStep}
+                {children}
               </Link>
             )}
-          </nav>
+          />
         )}
       </main>
       <Footer />
