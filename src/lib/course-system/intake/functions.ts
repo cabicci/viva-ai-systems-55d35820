@@ -92,14 +92,29 @@ export const curriculumAdmin = createServerFn({ method: "POST" })
     if (r.error) throw new Error(r.error.message);
     if (data.action !== "list" || !Array.isArray(r.data)) return r.data;
     // Admin verified above: read-only enrichment with sanitized preparation state.
-    const { preparationStatus } = await import("./preparation");
+    const { preparationStatus, aiPreparationStatus, matchCurriculumJob } =
+      await import("./preparation");
     type ListEntry = {
       area: string;
       id: string;
       versions: { version: string; state: "draft" | "approved" | "ready" }[];
     };
     const entries = r.data as ListEntry[];
-    const keys = entries.map((e) => `${e.id}:intake`);
+    const keys = entries.filter((e) => e.area !== "ai").map((e) => `${e.id}:intake`);
+    // AI curricula have no source events (0034 excludes area "ai"); read only their exact curriculum-adapter jobs.
+    const aiIds = entries.filter((e) => e.area === "ai").map((e) => e.id);
+    const aiJobs = aiIds.length
+      ? await supabaseAdmin
+          .from("assistant_auto_jobs" as never)
+          .select(
+            "job_id,area,card_id,state,next_offset,scope_count,error_code,created_at,adapter:manifest->>adapter,curriculum_version:manifest->>curriculumVersion",
+          )
+          .eq("area", "ai")
+          .in("card_id", aiIds)
+          .eq("manifest->>adapter", "curriculum")
+      : { data: [], error: null };
+    if (aiJobs.error) throw new Error("CURRICULUM_PREPARATION_UNAVAILABLE");
+    const aiJobRows = (aiJobs.data ?? []) as unknown as Parameters<typeof matchCurriculumJob>[0];
     const events = keys.length
       ? await supabaseAdmin
           .from("assistant_auto_source_events" as never)
@@ -137,6 +152,15 @@ export const curriculumAdmin = createServerFn({ method: "POST" })
     return entries.map((e) => ({
       ...e,
       versions: e.versions.map((v) => {
+        if (e.area === "ai")
+          return {
+            ...v,
+            preparation: aiPreparationStatus(
+              v.state,
+              v.version,
+              matchCurriculumJob(aiJobRows, e.area, e.id, v.version),
+            ),
+          };
         const event =
           rows.find(
             (x) =>
