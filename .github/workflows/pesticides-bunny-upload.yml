@@ -2,7 +2,7 @@ name: Pesticides accepted masters — one-attempt journaled upload
 on:
   push:
     branches: [codex/pesticides-hosting-20261103]
-    paths: [scripts/course-delivery/pesticides-hosting-plan.json]
+    paths: [scripts/course-delivery/pesticides-hosting-plan.json, .github/workflows/pesticides-bunny-upload.yml]
 permissions:
   contents: read
   actions: read
@@ -10,7 +10,7 @@ concurrency:
   group: pesticides-bunny-library670679-collection13b22
   cancel-in-progress: false
 env:
-  EXPECTED_PLAN_SHA256: bccc4b16309faa13ada14ca36d9b51475e0900ed81674630f5b6391b95183dd9
+  EXPECTED_PLAN_SHA256: 0e3ae07d89b5ff18686f8aedf8eedc8103e90f79cb5356af789496a62fd39751
 jobs:
   transfer:
     if: github.run_attempt == 1
