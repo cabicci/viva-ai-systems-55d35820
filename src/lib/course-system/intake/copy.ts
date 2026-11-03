@@ -42,7 +42,7 @@ const en = {
   prep_preparing: "Assistant preparation in progress",
   prep_failed: "Assistant preparation stopped — needs review",
   prep_ready: "Ready",
-  progress: "Lessons prepared",
+  progress: "Preparation steps completed",
   ready: "Ready",
   source: "Source reference",
   model: "Student activities",
@@ -114,7 +114,7 @@ const msa: Copy = {
   prep_preparing: "جارٍ تجهيز المساعد",
   prep_failed: "توقف تجهيز المساعد — يحتاج مراجعة",
   prep_ready: "جاهز",
-  progress: "الدروس المجهّزة",
+  progress: "خطوات التجهيز المكتملة",
   ready: "جاهز",
   source: "مرجع المحتوى",
   model: "أنشطة الطالب",
@@ -166,3 +166,4 @@ export function intakeCopy(locale: SupportedLocale): Copy {
     };
   return msa;
 }
+
