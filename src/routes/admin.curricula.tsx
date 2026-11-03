@@ -15,10 +15,12 @@ import {
   CourseContents,
   CourseIntroduction,
   LessonHero,
-  NEXT_CLASS,
-  PREVIOUS_CLASS,
+  AdjacentSteps,
+  SECONDARY_CLASS,
 } from "@/components/course-intake/CoursePresentation";
 import { getPathStoryCopy } from "@/lib/path-story";
+import { CurriculumHero } from "@/components/site/CurriculumLayout";
+import { getLineCopy } from "@/lib/learning-lines";
 import { Navbar } from "@/components/site/Navbar";
 import { Button } from "@/components/ui/button";
 import type { Preparation } from "@/lib/course-system/intake/preparation";
@@ -246,19 +248,24 @@ function CurriculumAdminSession() {
             <section aria-label={c.learnerPreview} className="rounded-2xl border bg-background p-5">
               <p className="mb-4 text-sm font-bold text-muted-foreground">{c.learnerPreview}</p>
               {view !== "lesson" && (
-                <header className="mb-6">
-                  <h2 className="text-3xl font-black">
-                    {view === "contents" ? story.contents : course.title[lang]}
-                  </h2>
-                  <p className="mt-2 text-muted-foreground">
-                    {view === "contents" ? course.title[lang] : c.introLead}
-                  </p>
-                </header>
+                <CurriculumHero
+                  level={2}
+                  line={course.area}
+                  title={
+                    view === "contents" ? story.contents : `${story.path} ${course.title[lang]}`
+                  }
+                  subtitle={view === "contents" ? course.title[lang]! : c.introLead}
+                />
               )}
               {view === "intro" && (
                 <CourseIntroduction
                   stations={stations}
                   locale={lang}
+                  secondary={
+                    <span aria-disabled="true" className={SECONDARY_CLASS}>
+                      {lang === "en" ? "Plans" : "الباقات"}
+                    </span>
+                  }
                   toContents={(_, className, children) => (
                     <button type="button" className={className} onClick={() => setView("contents")}>
                       {children}
@@ -281,7 +288,11 @@ function CurriculumAdminSession() {
               {view === "lesson" && (
                 <>
                   {backButton(c.backToContents, "contents")}
-                  <LessonHero eyebrow={course.title[lang]} title={step.title[lang]!} level={2} />
+                  <LessonHero
+                    eyebrow={getLineCopy(lang)[course.area]}
+                    title={step.title[lang]!}
+                    level={2}
+                  />
                   <CurriculumContent
                     key={`${review.version}:${step.id}:${lang}`}
                     locale={lang}
@@ -355,31 +366,20 @@ function CurriculumAdminSession() {
                       );
                     })()}
                   </CurriculumContent>
-                  <nav
-                    className="mt-10 flex flex-wrap justify-between gap-4"
-                    aria-label={c.stations}
-                  >
-                    {at > 0 ? (
-                      <button
-                        type="button"
-                        className={PREVIOUS_CLASS}
-                        onClick={() => openStep(allSteps[at - 1].id)}
-                      >
-                        {c.previousStep}
-                      </button>
-                    ) : (
-                      <span />
-                    )}
-                    {at >= 0 && at < allSteps.length - 1 && (
-                      <button
-                        type="button"
-                        className={NEXT_CLASS}
-                        onClick={() => openStep(allSteps[at + 1].id)}
-                      >
-                        {c.nextStep}
+                  <AdjacentSteps
+                    locale={lang}
+                    previous={at > 0 ? stations.flatMap((x) => x.steps)[at - 1] : undefined}
+                    next={
+                      at >= 0 && at < allSteps.length - 1
+                        ? stations.flatMap((x) => x.steps)[at + 1]
+                        : undefined
+                    }
+                    render={(id, className, children) => (
+                      <button type="button" className={className} onClick={() => openStep(id)}>
+                        {children}
                       </button>
                     )}
-                  </nav>
+                  />
                 </>
               )}
             </section>
