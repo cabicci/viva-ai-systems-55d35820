@@ -19,6 +19,7 @@ import {
   SECONDARY_CLASS,
 } from "@/components/course-intake/CoursePresentation";
 import { getPathStoryCopy } from "@/lib/path-story";
+import { CurriculumHero } from "@/components/site/CurriculumLayout";
 import { Navbar } from "@/components/site/Navbar";
 import { Button } from "@/components/ui/button";
 import type { Preparation } from "@/lib/course-system/intake/preparation";
@@ -246,14 +247,14 @@ function CurriculumAdminSession() {
             <section aria-label={c.learnerPreview} className="rounded-2xl border bg-background p-5">
               <p className="mb-4 text-sm font-bold text-muted-foreground">{c.learnerPreview}</p>
               {view !== "lesson" && (
-                <header className="mb-6">
-                  <h2 className="text-3xl font-black">
-                    {view === "contents" ? story.contents : course.title[lang]}
-                  </h2>
-                  <p className="mt-2 text-muted-foreground">
-                    {view === "contents" ? course.title[lang] : c.introLead}
-                  </p>
-                </header>
+                <CurriculumHero
+                  level={2}
+                  line={course.area}
+                  title={
+                    view === "contents" ? story.contents : `${story.path} ${course.title[lang]}`
+                  }
+                  subtitle={view === "contents" ? course.title[lang]! : c.introLead}
+                />
               )}
               {view === "intro" && (
                 <CourseIntroduction

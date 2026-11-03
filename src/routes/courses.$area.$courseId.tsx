@@ -150,7 +150,13 @@ function NewCurriculumPage() {
     return (
       <CurriculumLayout
         line={area}
-        title={course ? (mode === "contents" ? story.contents : course.title) : undefined}
+        title={
+          course
+            ? mode === "contents"
+              ? story.contents
+              : `${story.path} ${course.title}`
+            : undefined
+        }
         subtitle={course ? (mode === "contents" ? course.title : c.introLead) : c.stations}
       >
         {catalogue.isPending && <p role="status">{c.loading}</p>}
