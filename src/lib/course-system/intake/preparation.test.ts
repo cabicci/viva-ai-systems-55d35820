@@ -45,3 +45,58 @@ describe("honest curriculum preparation state", () => {
     );
   });
 });
+
+import { aiPreparationStatus, matchCurriculumJob } from "./preparation";
+describe("AI curricula (no source events)", () => {
+  const row = (o: Partial<Parameters<typeof matchCurriculumJob>[0][number]> = {}) => ({
+    ...job("running", 5),
+    area: "ai",
+    card_id: "c1",
+    adapter: "curriculum",
+    curriculum_version: v,
+    created_at: "2026-11-01T00:00:00Z",
+    ...o,
+  });
+  it("approved without event or job is queued, not EVENT_MISSING", () =>
+    expect(aiPreparationStatus("approved", v, matchCurriculumJob([], "ai", "c1", v))).toEqual({
+      state: "queued",
+      done: null,
+      total: null,
+      code: null,
+    }));
+  it("running matching job reports progress", () =>
+    expect(aiPreparationStatus("approved", v, matchCurriculumJob([row()], "ai", "c1", v))).toEqual({
+      state: "preparing",
+      done: 5,
+      total: 22,
+      code: null,
+    }));
+  it("held matching job is failed with code", () =>
+    expect(
+      aiPreparationStatus(
+        "approved",
+        v,
+        matchCurriculumJob([row({ state: "held", error_code: "AUTOMATION_X" })], "ai", "c1", v),
+      ),
+    ).toMatchObject({ state: "failed", code: "AUTOMATION_X" }));
+  it("stale-version, other-course and non-curriculum jobs are excluded", () => {
+    const jobs = [
+      row({ curriculum_version: "0".repeat(64) }),
+      row({ card_id: "c2" }),
+      row({ adapter: "card" }),
+    ];
+    expect(matchCurriculumJob(jobs, "ai", "c1", v)).toBeNull();
+    expect(aiPreparationStatus("approved", v, matchCurriculumJob(jobs, "ai", "c1", v))?.state).toBe(
+      "queued",
+    );
+  });
+  it("newest exact job wins", () =>
+    expect(
+      matchCurriculumJob(
+        [row({ state: "held" }), row({ state: "queued", created_at: "2026-11-02T00:00:00Z" })],
+        "ai",
+        "c1",
+        v,
+      )?.state,
+    ).toBe("queued"));
+});

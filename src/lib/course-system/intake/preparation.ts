@@ -44,3 +44,42 @@ export function preparationStatus(
   // A complete job still waits for the edition's activation to report "ready".
   return { state: "preparing", done: job.state === "complete" ? total : done, total, code: null };
 }
+
+/** Curriculum-adapter job row as read for AI curricula (no source events exist for area "ai"). */
+export type CurriculumJobRow = JobRow & {
+  area: string;
+  card_id: string;
+  adapter: string | null;
+  curriculum_version: string | null;
+  created_at: string;
+};
+
+/** Exact match only: adapter, area, course and immutable curriculum version; newest wins. */
+export function matchCurriculumJob(
+  jobs: CurriculumJobRow[],
+  area: string,
+  course: string,
+  version: string,
+): CurriculumJobRow | null {
+  let best: CurriculumJobRow | null = null;
+  for (const j of jobs) {
+    if (j.adapter !== "curriculum" || j.area !== area || j.card_id !== course) continue;
+    if (j.curriculum_version !== version) continue;
+    if (!best || j.created_at > best.created_at) best = j;
+  }
+  return best;
+}
+
+/** AI curricula: derive status from the matching job; an approved edition without one is queued. */
+export function aiPreparationStatus(
+  versionState: "draft" | "approved" | "ready",
+  version: string,
+  job: JobRow | null,
+): Preparation | null {
+  return preparationStatus(
+    versionState,
+    version,
+    { source_sha: version, withdrawn: false, job_id: job ? "job" : null },
+    job,
+  );
+}
