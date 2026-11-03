@@ -10,7 +10,10 @@ import { useLocale } from "@/lib/locale/locale-context";
 import { useAuth } from "@/lib/auth-context";
 import { intakeCopy } from "@/lib/course-system/intake/copy";
 import { CurriculumContent } from "@/components/course-intake/CurriculumContent";
-import { CurriculumFields } from "@/components/course-intake/CurriculumFields";
+import { ActivityForm } from "@/components/course-intake/CurriculumFields";
+import { lessonLead } from "@/lib/course-system/intake/presentation";
+import type { IntakeSection } from "@/lib/course-system/intake/package";
+import type { SupportedLocale } from "@/lib/locale/types";
 import {
   CourseContents,
   CourseIntroduction,
@@ -291,6 +294,7 @@ function CurriculumAdminSession() {
                   <LessonHero
                     eyebrow={getLineCopy(lang)[course.area]}
                     title={step.title[lang]!}
+                    intro={lessonLead(step.content[lang]!.sections)?.text}
                     level={2}
                   />
                   <CurriculumContent
@@ -315,57 +319,18 @@ function CurriculumAdminSession() {
                       if (!active.current) throw new Error("CURRICULUM_ACCOUNT_CHANGED");
                       return result.url;
                     }}
-                  >
-                    {step.content[lang]!.sections.find((s) => s.id === section)?.questions.map(
-                      (q) => (
-                        <fieldset key={q.id} className="space-y-2">
-                          <legend>{q.prompt}</legend>
-                          {q.options.map((o, i) => (
-                            <p key={i}>
-                              {i + 1}. {o}
-                              {review.assessmentKeys
-                                .find((k) => k.lessonId === step.id && k.locale === lang)
-                                ?.keys.some((k) => k.questionId === q.id && k.correctIndex === i)
-                                ? ` · ${c.correctAnswer}`
-                                : ""}
-                            </p>
-                          ))}
-                        </fieldset>
-                      ),
+                    leadInHero
+                    activity={(s) => (
+                      <PreviewActivity
+                        key={s.id}
+                        section={s}
+                        locale={lang}
+                        keys={review.assessmentKeys.find(
+                          (k) => k.lessonId === step.id && k.locale === lang,
+                        )}
+                      />
                     )}
-                    {(() => {
-                      const selected =
-                        step.content[lang]!.sections.find((s) => s.id === section) ??
-                        step.content[lang]!.sections[0];
-                      return (
-                        <>
-                          <CurriculumFields
-                            section={selected}
-                            values={{}}
-                            onChange={() => undefined}
-                            disabled
-                            locale={locale}
-                          />
-                          {review.assessmentKeys
-                            .find((k) => k.lessonId === step.id && k.locale === lang)
-                            ?.rubrics?.filter((r) => r.sectionId === selected.id)
-                            .map((r) => (
-                              <p key={r.fieldId} className="whitespace-pre-wrap">
-                                <strong>
-                                  {c.rubric} ·{" "}
-                                  {selected.fields.find((f) => f.id === r.fieldId)?.label}
-                                </strong>
-                                : {r.criterion}
-                                {r.critical ? ` · ${c.criticalCriterion}` : ""}
-                                {r.answerId
-                                  ? ` · ${selected.fields.find((f) => f.id === r.fieldId)?.options?.find((o) => o.id === r.answerId)?.label ?? r.answerId}`
-                                  : ""}
-                              </p>
-                            ))}
-                        </>
-                      );
-                    })()}
-                  </CurriculumContent>
+                  />
                   <AdjacentSteps
                     locale={lang}
                     previous={at > 0 ? stations.flatMap((x) => x.steps)[at - 1] : undefined}
@@ -419,6 +384,66 @@ function CurriculumAdminSession() {
           </section>
         )}
       </main>
+    </div>
+  );
+}
+
+const ACTIVITY_KINDS = ["questions", "exam", "mission", "practice"];
+/** Same inputs as the learner page with local-only state (no writes); answer keys
+ * and rubrics stay in a separate reviewer box that the learner page never renders. */
+function PreviewActivity({
+  section,
+  locale,
+  keys,
+}: {
+  section: IntakeSection;
+  locale: SupportedLocale;
+  keys?: Review["assessmentKeys"][number];
+}) {
+  const c = intakeCopy(locale);
+  const [values, setValues] = useState<Record<string, string | number>>({});
+  if (!ACTIVITY_KINDS.includes(section.kind)) return null;
+  const answerKeys = section.questions.flatMap((q) =>
+    (keys?.keys ?? [])
+      .filter((k) => k.questionId === q.id)
+      .map((k) => ({ id: q.id, prompt: q.prompt, answer: q.options[k.correctIndex] })),
+  );
+  const rubrics = keys?.rubrics?.filter((r) => r.sectionId === section.id) ?? [];
+  return (
+    <div className="space-y-4">
+      <ActivityForm
+        section={section}
+        values={values}
+        disabled={false}
+        locale={locale}
+        onChange={(id, value) => setValues((prev) => ({ ...prev, [id]: value }))}
+      />
+      <p className="text-sm text-muted-foreground">{c.previewOnly}</p>
+      {(answerKeys.length > 0 || rubrics.length > 0) && (
+        <div
+          className="space-y-2 rounded-xl border border-dashed p-4 text-sm"
+          data-testid="reviewer-evidence"
+        >
+          <p className="font-bold">{c.reviewerDetails}</p>
+          {answerKeys.map((k) => (
+            <p key={k.id}>
+              <strong>{c.answerKey}</strong> · {k.prompt}: {k.answer}
+            </p>
+          ))}
+          {rubrics.map((r) => (
+            <p key={r.fieldId} className="whitespace-pre-wrap">
+              <strong>
+                {c.rubric} · {section.fields.find((f) => f.id === r.fieldId)?.label}
+              </strong>
+              : {r.criterion}
+              {r.critical ? ` · ${c.criticalCriterion}` : ""}
+              {r.answerId
+                ? ` · ${section.fields.find((f) => f.id === r.fieldId)?.options?.find((o) => o.id === r.answerId)?.label ?? r.answerId}`
+                : ""}
+            </p>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

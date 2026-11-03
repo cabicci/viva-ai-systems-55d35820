@@ -38,7 +38,9 @@ import { AssistantConversationPanel } from "@/components/assistant/AssistantConv
 import { FloatingAssistantLauncher } from "@/components/learn/FloatingAssistantLauncher";
 import { getUiString } from "@/lib/locale/ui-strings";
 import { Button } from "@/components/ui/button";
-import { CurriculumFields } from "@/components/course-intake/CurriculumFields";
+import { Activity, type Delivery } from "@/components/course-intake/CurriculumActivity";
+import { lessonLead } from "@/lib/course-system/intake/presentation";
+import { getAcademicCopy } from "@/lib/academic-education/copy";
 import type { IntakeSection } from "@/lib/course-system/intake/package";
 
 export const Route = createFileRoute("/courses/$area/$courseId")({
@@ -62,21 +64,6 @@ export const Route = createFileRoute("/courses/$area/$courseId")({
   }),
   component: NewCurriculumPage,
 });
-type Delivery = {
-  attempts?: {
-    id: string;
-    section: string;
-    version: string;
-    draft: ActivityValues;
-    revision: number;
-  }[];
-  reviewOnly?: boolean;
-  version: string;
-  recordId: string | null;
-  lesson: LessonContent;
-  progress: { lesson: string; required: number; completed: number; done: boolean }[];
-  events: { section: string; completed: boolean; result?: { state: string; passed?: boolean } }[];
-};
 function NewCurriculumPage() {
   const { area, courseId } = Route.useParams();
   const search = Route.useSearch();
@@ -230,6 +217,11 @@ function NewCurriculumPage() {
       <main id="main-content" className="mx-auto w-full min-w-0 max-w-7xl flex-1 px-4 py-8">
         {catalogue.isPending && <p>{c.loading}</p>}
         {catalogue.isError && <p role="alert">{c.error}</p>}
+        {visible && !visible.reviewOnly && step && (
+          <div className="mb-4">
+            <LearningReadingPosition scope={scope} />
+          </div>
+        )}
         <Link
           to="/courses/$area/$courseId"
           params={{ area, courseId }}
@@ -326,8 +318,6 @@ function LearnerStep({
   const auth = useAuth();
   const ask = useServerFn(askCurriculumAssistant);
   const assetLink = useServerFn(curriculumAsset);
-  const section =
-    delivery.lesson.sections.find((x) => x.id === sectionId) ?? delivery.lesson.sections[0];
   const assistantScope = {
     admitted: true as const,
     area: scope.area,
@@ -338,10 +328,19 @@ function LearnerStep({
   };
   return (
     <div className="space-y-8">
-      <LessonHero eyebrow={courseTitle} title={delivery.lesson.title} />
-      {!delivery.reviewOnly && <LearningReadingPosition scope={scope} />}
+      <LessonHero
+        eyebrow={courseTitle}
+        title={delivery.lesson.title}
+        intro={lessonLead(delivery.lesson.sections)?.text}
+      />
       <CurriculumContent
         lesson={delivery.lesson}
+        leadInHero
+        activity={(s) =>
+          delivery.reviewOnly ? null : (
+            <Activity key={s.id} section={s} delivery={delivery} scope={scope} />
+          )
+        }
         resolveAsset={async (asset) => {
           if (!auth.user) throw new Error("CURRICULUM_ACCOUNT_REQUIRED");
           const generation = auth.authGeneration;
@@ -358,7 +357,7 @@ function LearnerStep({
             throw new Error("CURRICULUM_ACCOUNT_CHANGED");
           return result.url;
         }}
-        selected={section.id}
+        selected={sectionId}
         onSelect={selectSection}
         progressValue={
           progress && progress.required > 0
@@ -371,11 +370,7 @@ function LearnerStep({
             : undefined
         }
         locale={locale}
-      >
-        {!delivery.reviewOnly && (
-          <Activity key={section.id} section={section} delivery={delivery} scope={scope} />
-        )}
-      </CurriculumContent>
+      />
       {!delivery.reviewOnly && <LearningLessonNotes scope={scope} />}
       <FloatingAssistantLauncher
         fabLabel={getUiString(locale, "learn.assistant.fab")}
@@ -405,201 +400,6 @@ function LearnerStep({
       <a href={`/my-learning?locale=${locale}`} className="text-primary underline">
         {c.record}
       </a>
-    </div>
-  );
-}
-function Activity({
-  section,
-  delivery,
-  scope,
-}: {
-  section: IntakeSection;
-  delivery: Delivery;
-  scope: {
-    area: (typeof COURSE_AREAS)[number];
-    course: string;
-    lesson: string;
-    profileId?: string;
-  };
-}) {
-  const auth = useAuth();
-  const { locale } = useLocale();
-  const c = intakeCopy(locale);
-  const client = useQueryClient();
-  const resumed = delivery.attempts?.find((x) => x.section === section.id);
-  const [attempt, setAttempt] = useState<string | null>(resumed?.id ?? null);
-  const [created, setCreated] = useState<{ draft: ActivityValues; revision: number } | null>(null);
-  const closedAttempts = useRef(new Set<string>());
-  const delivered = useRef(delivery);
-  useEffect(() => {
-    if (!attempt && resumed?.id && !closedAttempts.current.has(resumed.id)) setAttempt(resumed.id);
-    if (
-      delivered.current !== delivery &&
-      attempt &&
-      !delivery.attempts?.some((x) => x.id === attempt)
-    ) {
-      closedAttempts.current.add(attempt);
-      setAttempt(null);
-    }
-    delivered.current = delivery;
-  }, [delivery, attempt, resumed?.id]);
-  const [result, setResult] = useState<{
-    state: string;
-    passed?: boolean;
-    score?: number;
-    total?: number;
-  } | null>(null);
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState(false);
-  const running = useRef(false);
-  const request = useRef<{ action: string; data: object; requestId: string } | null>(null);
-  const owner = useRef(true);
-  useEffect(() => {
-    owner.current = true;
-    return () => {
-      owner.current = false;
-    };
-  }, []);
-  const generation = auth.authGeneration;
-  const seed = created && (!resumed || created.revision > resumed.revision) ? created : resumed;
-  const draft = useActivityDraft({
-    storageKey: `curriculum-draft:v1:${JSON.stringify([auth.user?.id, scope.profileId ?? null, scope.area, scope.course, scope.lesson, locale, delivery.version, section.id])}`,
-    attemptId: attempt,
-    initial: seed?.draft ?? {},
-    revision: seed?.revision ?? 0,
-    current: () => owner.current && auth.isAuthGenerationCurrent(generation),
-    save: (data) =>
-      curriculumCommand("save_draft", {
-        ...scope,
-        locale,
-        version: delivery.version,
-        section: section.id,
-        attemptId: attempt,
-        ...data,
-      }),
-  });
-  const submission = draft.values;
-  const setSubmission = draft.setValues;
-  const interactive = ["questions", "exam", "mission", "practice"].includes(section.kind);
-  const completed = delivery.events.some((x) => x.section === section.id && x.completed);
-  const pending = delivery.events.some(
-    (x) => x.section === section.id && x.result?.state === "awaiting_review",
-  );
-  async function perform(action: "start" | "submit" | "complete") {
-    if (running.current) return;
-    const generation = auth.authGeneration;
-    const valid = () => owner.current && auth.isAuthGenerationCurrent(generation);
-    running.current = true;
-    setBusy(true);
-    setError(false);
-    const params = {
-      ...scope,
-      locale,
-      version: delivery.version,
-      section: section.id,
-      ...(action === "submit" ? { attemptId: attempt, submission } : {}),
-    };
-    if (
-      !request.current ||
-      request.current.action !== action ||
-      JSON.stringify(request.current.data) !== JSON.stringify(params)
-    )
-      request.current = { action, data: params, requestId: crypto.randomUUID() };
-    try {
-      const r = await curriculumCommand<{
-        attemptId?: string;
-        state: string;
-        score?: number;
-        total?: number;
-        draft?: ActivityValues;
-        revision?: number;
-      }>(action, { ...params, requestId: request.current.requestId });
-      if (!valid()) return;
-      if (r.attemptId) {
-        setCreated({ draft: r.draft ?? {}, revision: r.revision ?? 0 });
-        setAttempt(r.attemptId);
-      }
-      setResult(r);
-      request.current = null;
-      if (action !== "start") {
-        if (attempt) closedAttempts.current.add(attempt);
-        draft.clear();
-        setAttempt(null);
-      }
-      await client.invalidateQueries({ queryKey: ["curriculum-lesson"] });
-      await client.invalidateQueries({ queryKey: ["learning-records"] });
-    } catch {
-      if (valid()) setError(true);
-    } finally {
-      running.current = false;
-      if (valid()) setBusy(false);
-    }
-  }
-  return (
-    <div className="space-y-4">
-      {section.questions.map((q) => (
-        <fieldset key={q.id} className="space-y-3" disabled={!attempt || busy}>
-          <legend className="font-bold">{q.prompt}</legend>
-          {q.options.map((option, i) => (
-            <label key={i} className="flex min-h-11 gap-3">
-              <input
-                type="radio"
-                name={`${section.id}-${q.id}`}
-                checked={submission[q.id] === i}
-                onChange={() => setSubmission((prev) => ({ ...prev, [q.id]: i }))}
-              />
-              {option}
-            </label>
-          ))}
-        </fieldset>
-      ))}
-      <CurriculumFields
-        section={section}
-        values={submission}
-        disabled={!attempt || busy}
-        locale={locale}
-        onChange={(id, value) => setSubmission((prev) => ({ ...prev, [id]: value }))}
-      />
-      {attempt && (
-        <div role="status" className="text-sm text-muted-foreground">
-          {draft.state === "saved"
-            ? c.draftSaved
-            : draft.state === "saving" || draft.state === "dirty"
-              ? c.draftSaving
-              : draft.state === "conflict"
-                ? c.draftConflict
-                : c.draftUnconfirmed}
-          {draft.state === "conflict" && (
-            <div className="flex gap-3">
-              <Button variant="outline" onClick={draft.useCloud}>
-                {c.useCloud}
-              </Button>
-              <Button variant="outline" onClick={draft.saveMine}>
-                {c.saveMine}
-              </Button>
-            </div>
-          )}
-          {draft.state === "unconfirmed" && (
-            <Button variant="outline" onClick={() => void draft.retry()}>
-              {c.retry}
-            </Button>
-          )}
-        </div>
-      )}
-      <Button
-        disabled={busy || draft.state === "conflict"}
-        onClick={() => perform(!interactive ? "complete" : attempt ? "submit" : "start")}
-      >
-        {!interactive ? (completed ? `✓ ${c.saved}` : c.complete) : attempt ? c.submit : c.start}
-      </Button>
-      {(result?.state === "awaiting_review" || pending) && <p role="status">{c.pending}</p>}
-      {result?.score !== undefined && (
-        <p role="status">
-          {c.result}: {result.score} / {result.total}
-        </p>
-      )}
-      {completed && <p role="status">✓ {c.saved}</p>}
-      {error && <p role="alert">{c.error}</p>}
     </div>
   );
 }

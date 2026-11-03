@@ -5,6 +5,7 @@ import type { CourseArea } from "@/lib/course-system/contract";
 import { curriculumCatalogue } from "@/lib/course-system/intake/client";
 import { getCourseCatalogueCopy } from "@/lib/course-catalogue-copy";
 import { intakeCopy } from "@/lib/course-system/intake/copy";
+import { catalogueDescription } from "./CoursePresentation";
 export function AddedCurricula({ area }: { area: CourseArea }) {
   const { locale } = useLocale();
   const c = getCourseCatalogueCopy(locale);
@@ -39,6 +40,11 @@ export function AddedCurricula({ area }: { area: CourseArea }) {
           </span>
           <div className="min-w-0 flex-1">
             <h2 className="break-words text-2xl font-black md:text-3xl">{course.title}</h2>
+            {catalogueDescription(course.stations, locale) && (
+              <p className="mt-3 leading-8 text-muted-foreground">
+                {catalogueDescription(course.stations, locale)}
+              </p>
+            )}
             <p className="mt-4 flex flex-wrap gap-3 text-sm font-semibold text-muted-foreground">
               <span>
                 {numbers.format(course.stations.reduce((n, s) => n + s.steps.length, 0))}{" "}
