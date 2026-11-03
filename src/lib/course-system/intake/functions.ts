@@ -90,7 +90,42 @@ export const curriculumAdmin = createServerFn({ method: "POST" })
       { p_user: context.userId, p_action: data.action, p_data } as never,
     );
     if (r.error) throw new Error(r.error.message);
-    return r.data;
+    if (data.action !== "list" || !Array.isArray(r.data)) return r.data;
+    // Admin verified above: read-only enrichment with sanitized preparation state.
+    const { preparationStatus } = await import("./preparation");
+    type ListEntry = { area: string; id: string; versions: { version: string; state: "draft" | "approved" | "ready" }[] };
+    const entries = r.data as ListEntry[];
+    const keys = entries.filter((e) => e.area !== "ai").map((e) => `${e.id}:intake`);
+    const events = keys.length
+      ? await supabaseAdmin
+          .from("assistant_auto_source_events" as never)
+          .select("area,source_key,source_sha,withdrawn,job_id,event_id")
+          .in("source_key", keys)
+          .order("event_id", { ascending: false })
+      : { data: [], error: null };
+    if (events.error) throw new Error("CURRICULUM_PREPARATION_UNAVAILABLE");
+    const rows = (events.data ?? []) as unknown as {
+      area: string; source_key: string; source_sha: string | null; withdrawn: boolean; job_id: string | null;
+    }[];
+    const jobIds = [...new Set(rows.map((e) => e.job_id).filter((x): x is string => !!x))];
+    const jobs = jobIds.length
+      ? await supabaseAdmin
+          .from("assistant_auto_jobs" as never)
+          .select("job_id,state,next_offset,scope_count,error_code")
+          .in("job_id", jobIds)
+      : { data: [], error: null };
+    if (jobs.error) throw new Error("CURRICULUM_PREPARATION_UNAVAILABLE");
+    const jobMap = new Map(
+      ((jobs.data ?? []) as unknown as { job_id: string; state: "queued" | "running" | "complete" | "held"; next_offset: number; scope_count: number; error_code: string | null }[]).map((j) => [j.job_id, j]),
+    );
+    return entries.map((e) => ({
+      ...e,
+      versions: e.versions.map((v) => {
+        const event = rows.find((x) => x.area === e.area && x.source_key === `${e.id}:intake` && x.source_sha === v.version) ??
+          rows.find((x) => x.area === e.area && x.source_key === `${e.id}:intake`) ?? null;
+        return { ...v, preparation: preparationStatus(v.state, v.version, event, event?.job_id ? jobMap.get(event.job_id) ?? null : null) };
+      }),
+    }));
   });
 
 export const askCurriculumAssistant = createServerFn({ method: "POST" })
