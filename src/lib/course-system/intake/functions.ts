@@ -99,7 +99,7 @@ export const curriculumAdmin = createServerFn({ method: "POST" })
       versions: { version: string; state: "draft" | "approved" | "ready" }[];
     };
     const entries = r.data as ListEntry[];
-    const keys = entries.filter((e) => e.area !== "ai").map((e) => `${e.id}:intake`);
+    const keys = entries.map((e) => `${e.id}:intake`);
     const events = keys.length
       ? await supabaseAdmin
           .from("assistant_auto_source_events" as never)
@@ -188,3 +188,4 @@ export const askCurriculumAssistant = createServerFn({ method: "POST" })
     });
     return { ...result.body, status: result.status } as AssistantReply;
   });
+
