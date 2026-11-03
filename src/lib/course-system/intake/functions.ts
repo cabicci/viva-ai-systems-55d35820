@@ -121,8 +121,7 @@ export const curriculumAdmin = createServerFn({ method: "POST" })
     return entries.map((e) => ({
       ...e,
       versions: e.versions.map((v) => {
-        const event = rows.find((x) => x.area === e.area && x.source_key === `${e.id}:intake` && x.source_sha === v.version) ??
-          rows.find((x) => x.area === e.area && x.source_key === `${e.id}:intake`) ?? null;
+        const event = rows.find((x) => x.area === e.area && x.source_key === `${e.id}:intake` && x.source_sha === v.version) ?? null;
         return { ...v, preparation: preparationStatus(v.state, v.version, event, event?.job_id ? jobMap.get(event.job_id) ?? null : null) };
       }),
     }));
