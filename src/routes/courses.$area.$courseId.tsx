@@ -6,6 +6,9 @@ import {
   CurriculumSectionHeader,
 } from "@/components/site/CurriculumLayout";
 import { getPathStoryCopy } from "@/lib/path-story";
+import { Navbar } from "@/components/site/Navbar";
+import { Footer } from "@/components/site/Footer";
+import { scopedSearch } from "@/lib/course-system/intake/navigation";
 import { LINE_ROUTES } from "@/lib/learning-lines";
 import { useState, useRef, useEffect } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
@@ -78,16 +81,18 @@ function NewCurriculumPage() {
   const search = Route.useSearch();
   const auth = useAuth();
   const entitlement = useEntitlement();
-  const { locale } = useLocale();
+  const { locale, dir } = useLocale();
   const c = intakeCopy(locale);
   const parent = useKidsParentStateSource();
   const chosen = search.lesson ?? "";
   const mode = search.lesson ? "lesson" : search.view === "contents" ? "contents" : "intro";
   const story = getPathStoryCopy(locale);
   const numbers = new Intl.NumberFormat(locale === "en" ? "en" : "ar");
-  const keep = { locale: search.locale, profileId: search.profileId };
   const [sectionId, selectSection] = useState("");
-  const [child, setChild] = useState(search.profileId ?? "");
+  const navigate = Route.useNavigate();
+  const child = search.profileId ?? "";
+  const setChild = (id: string) =>
+    void navigate({ search: (prev) => ({ ...prev, profileId: id || undefined }), replace: true });
   const catalogue = useQuery({
     queryKey: ["added-curricula", area, locale],
     queryFn: () => curriculumCatalogue(area, locale),
@@ -105,6 +110,7 @@ function NewCurriculumPage() {
       : area === "kids"
         ? (parent.profiles.find((p) => p.id === child)?.id ?? parent.profiles[0]?.id)
         : undefined;
+  const keep = scopedSearch(locale, profileId);
   const scope = {
     area,
     course: courseId,
@@ -139,7 +145,7 @@ function NewCurriculumPage() {
   }, [key]);
   const steps = course?.stations.flatMap((s) => s.steps) ?? [];
   const at = steps.findIndex((s) => s.id === step?.id);
-  const stepLink = (id: string) => ({ ...keep, lesson: id });
+  const stepLink = (id: string) => scopedSearch(locale, profileId, { lesson: id });
   if (mode !== "lesson")
     return (
       <CurriculumLayout
@@ -177,7 +183,7 @@ function NewCurriculumPage() {
               <Link
                 to="/courses/$area/$courseId"
                 params={{ area, courseId }}
-                search={{ ...keep, view: "contents" }}
+                search={scopedSearch(locale, profileId, { view: "contents" })}
                 className="inline-flex min-h-11 items-center rounded-full bg-primary px-6 py-3 font-bold text-primary-foreground"
               >
                 {story.content}
@@ -224,83 +230,94 @@ function NewCurriculumPage() {
     );
   const current = visible?.progress.find((p) => p.lesson === step?.id);
   return (
-    <CurriculumLayout line={area} title={course?.title} subtitle={c.stations}>
-      {catalogue.isPending && <p>{c.loading}</p>}
-      {catalogue.isError && <p role="alert">{c.error}</p>}
-      <Link
-        to="/courses/$area/$courseId"
-        params={{ area, courseId }}
-        search={{ ...keep, view: "contents" }}
-        className="font-bold text-primary"
-      >
-        {c.backToContents}
-      </Link>
-      {area === "kids" && (
-        <label className="mt-4 flex flex-wrap items-center gap-3">
-          {c.child}
-          <select
-            className="min-h-11 rounded-xl border bg-card px-3"
-            value={profileId ?? ""}
-            onChange={(e) => setChild(e.target.value)}
-          >
-            {entitlement.isAdmin && auth.user && (
-              <option value={auth.user.id}>{c.adminReview}</option>
+    <div className="flex min-h-dvh flex-col overflow-x-clip" dir={dir}>
+      <Navbar variant="account" />
+      <main id="main-content" className="mx-auto w-full min-w-0 max-w-7xl flex-1 px-4 py-8">
+        {catalogue.isPending && <p>{c.loading}</p>}
+        {catalogue.isError && <p role="alert">{c.error}</p>}
+        <Link
+          to="/courses/$area/$courseId"
+          params={{ area, courseId }}
+          search={scopedSearch(locale, profileId, { view: "contents" })}
+          className="font-bold text-primary"
+        >
+          {c.backToContents}
+        </Link>
+        {area === "kids" && (
+          <label className="mt-4 flex flex-wrap items-center gap-3">
+            {c.child}
+            <select
+              className="min-h-11 rounded-xl border bg-card px-3"
+              value={profileId ?? ""}
+              onChange={(e) => setChild(e.target.value)}
+            >
+              {entitlement.isAdmin && auth.user && (
+                <option value={auth.user.id}>{c.adminReview}</option>
+              )}
+              {parent.profiles.map((p) => (
+                <option key={p.id} value={p.id}>
+                  {p.display_name}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
+        {step && !visible && (
+          <header className="my-6 rounded-3xl border bg-accent/20 p-6">
+            <p className="text-sm font-bold text-primary">{course?.title}</p>
+            <h1 className="my-3 text-3xl font-black">{step.title}</h1>
+          </header>
+        )}
+        {course && !visible && !delivery.isFetching && (
+          <p className="mt-6">
+            {c.locked}{" "}
+            <a className="text-primary underline" href={`/pricing?locale=${locale}`}>
+              {c.packages}
+            </a>
+          </p>
+        )}
+        {!course && catalogue.isSuccess && <p>{c.courseUnavailable}</p>}
+        {delivery.isPending && delivery.isFetching && <p role="status">{c.loading}</p>}
+        {visible && step && (
+          <LearnerStep
+            key={`${key}:${visible.version}`}
+            delivery={visible}
+            scope={scope}
+            sectionId={sectionId}
+            selectSection={selectSection}
+            progress={current}
+            courseTitle={course?.title}
+          />
+        )}
+        {course && step && (
+          <nav className="mt-10 flex flex-wrap justify-between gap-4" aria-label={c.stations}>
+            {at > 0 ? (
+              <Link
+                to="/courses/$area/$courseId"
+                params={{ area, courseId }}
+                search={stepLink(steps[at - 1].id)}
+                className="inline-flex min-h-11 items-center rounded-full border border-primary px-6 py-3 font-bold text-primary"
+              >
+                {c.previousStep}
+              </Link>
+            ) : (
+              <span />
             )}
-            {parent.profiles.map((p) => (
-              <option key={p.id} value={p.id}>
-                {p.display_name}
-              </option>
-            ))}
-          </select>
-        </label>
-      )}
-      {course && !visible && !delivery.isFetching && (
-        <p className="mt-6">
-          {c.locked}{" "}
-          <a className="text-primary underline" href={`/pricing?locale=${locale}`}>
-            {c.packages}
-          </a>
-        </p>
-      )}
-      {!course && catalogue.isSuccess && <p>{c.courseUnavailable}</p>}
-      {delivery.isPending && delivery.isFetching && <p role="status">{c.loading}</p>}
-      {visible && step && (
-        <LearnerStep
-          key={`${key}:${visible.version}`}
-          delivery={visible}
-          scope={scope}
-          sectionId={sectionId}
-          selectSection={selectSection}
-          progress={current}
-        />
-      )}
-      {course && step && (
-        <nav className="mt-10 flex flex-wrap justify-between gap-4" aria-label={c.stations}>
-          {at > 0 ? (
-            <Link
-              to="/courses/$area/$courseId"
-              params={{ area, courseId }}
-              search={stepLink(steps[at - 1].id)}
-              className="inline-flex min-h-11 items-center rounded-full border border-primary px-6 py-3 font-bold text-primary"
-            >
-              {c.previousStep}
-            </Link>
-          ) : (
-            <span />
-          )}
-          {at >= 0 && at < steps.length - 1 && (
-            <Link
-              to="/courses/$area/$courseId"
-              params={{ area, courseId }}
-              search={stepLink(steps[at + 1].id)}
-              className="inline-flex min-h-11 items-center rounded-full bg-primary px-6 py-3 font-bold text-primary-foreground"
-            >
-              {c.nextStep}
-            </Link>
-          )}
-        </nav>
-      )}
-    </CurriculumLayout>
+            {at >= 0 && at < steps.length - 1 && (
+              <Link
+                to="/courses/$area/$courseId"
+                params={{ area, courseId }}
+                search={stepLink(steps[at + 1].id)}
+                className="inline-flex min-h-11 items-center rounded-full bg-primary px-6 py-3 font-bold text-primary-foreground"
+              >
+                {c.nextStep}
+              </Link>
+            )}
+          </nav>
+        )}
+      </main>
+      <Footer />
+    </div>
   );
 }
 function LearnerStep({
@@ -309,7 +326,9 @@ function LearnerStep({
   sectionId,
   selectSection,
   progress,
+  courseTitle,
 }: {
+  courseTitle?: string;
   progress?: { required: number; completed: number };
   delivery: Delivery;
   scope: {
@@ -339,8 +358,8 @@ function LearnerStep({
   return (
     <div className="mt-6 space-y-8">
       <header className="rounded-3xl border bg-accent/20 p-6">
-        <p className="text-sm font-bold text-primary">{c.step}</p>
-        <h2 className="my-3 text-3xl font-black">{delivery.lesson.title}</h2>
+        <p className="text-sm font-bold text-primary">{courseTitle}</p>
+        <h1 className="my-3 text-3xl font-black">{delivery.lesson.title}</h1>
       </header>
       {!delivery.reviewOnly && <LearningReadingPosition scope={scope} />}
       <CurriculumContent
