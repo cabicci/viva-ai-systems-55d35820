@@ -1,4 +1,4 @@
-import { IndexerIdentityError, verifyIndexerIdentity } from "./github-identity.server";
+import { IDENTITY_REASONS, verifyIndexerIdentity } from "./github-identity.server";
 export const AUTOMATIC_INDEXING_PATH = "/api/public/assistant-indexing";
 type EndpointDependencies = {
   authorize?: (request: Request) => Promise<unknown>;
@@ -15,7 +15,8 @@ export async function handleAutomaticIndexing(request: Request, dependencies: En
   try { await (dependencies.authorize ?? verifyIndexerIdentity)(request); }
   catch (error) {
     // Only a bounded enum stage is exposed/logged; never token, claim or key material.
-    const reason = error instanceof IndexerIdentityError ? error.reason : "UNKNOWN";
+    const raw = (error as { reason?: unknown } | null)?.reason;
+    const reason = (IDENTITY_REASONS as readonly unknown[]).includes(raw) ? raw as string : "UNKNOWN";
     console.warn("assistant-indexing:identity_rejected", { reason });
     return json({ code: "AUTOMATION_FORBIDDEN", reason }, 401);
   }

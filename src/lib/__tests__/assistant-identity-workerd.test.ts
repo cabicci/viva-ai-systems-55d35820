@@ -37,7 +37,7 @@ beforeAll(async () => {
       return handleAutomaticIndexing(forwarded, { probe: async () => ({ probed: true }),
         status: async () => { throw new Error("status must not run"); }, tick: async () => { throw new Error("tick must not run"); } });
     } };`, resolveDir: process.cwd(), loader: "ts" }, bundle: true, format: "esm", platform: "neutral", write: false,
-    alias: { "@": join(process.cwd(), "src") } });
+    alias: { "@": join(process.cwd(), "src") }, external: ["./store.server", "./worker.server"] });
   mf = new Miniflare({ modules: true, script: out.outputFiles[0].text, compatibilityDate: "2025-09-24", compatibilityFlags: ["nodejs_compat"],
     outboundService: async (req) => req.url === "https://token.actions.githubusercontent.com/.well-known/jwks"
       ? Response.json({ keys: [jwk] }) : new Response("blocked", { status: 599 }) });
