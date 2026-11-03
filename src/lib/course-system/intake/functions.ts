@@ -93,7 +93,11 @@ export const curriculumAdmin = createServerFn({ method: "POST" })
     if (data.action !== "list" || !Array.isArray(r.data)) return r.data;
     // Admin verified above: read-only enrichment with sanitized preparation state.
     const { preparationStatus } = await import("./preparation");
-    type ListEntry = { area: string; id: string; versions: { version: string; state: "draft" | "approved" | "ready" }[] };
+    type ListEntry = {
+      area: string;
+      id: string;
+      versions: { version: string; state: "draft" | "approved" | "ready" }[];
+    };
     const entries = r.data as ListEntry[];
     const keys = entries.filter((e) => e.area !== "ai").map((e) => `${e.id}:intake`);
     const events = keys.length
@@ -105,7 +109,11 @@ export const curriculumAdmin = createServerFn({ method: "POST" })
       : { data: [], error: null };
     if (events.error) throw new Error("CURRICULUM_PREPARATION_UNAVAILABLE");
     const rows = (events.data ?? []) as unknown as {
-      area: string; source_key: string; source_sha: string | null; withdrawn: boolean; job_id: string | null;
+      area: string;
+      source_key: string;
+      source_sha: string | null;
+      withdrawn: boolean;
+      job_id: string | null;
     }[];
     const jobIds = [...new Set(rows.map((e) => e.job_id).filter((x): x is string => !!x))];
     const jobs = jobIds.length
@@ -116,13 +124,33 @@ export const curriculumAdmin = createServerFn({ method: "POST" })
       : { data: [], error: null };
     if (jobs.error) throw new Error("CURRICULUM_PREPARATION_UNAVAILABLE");
     const jobMap = new Map(
-      ((jobs.data ?? []) as unknown as { job_id: string; state: "queued" | "running" | "complete" | "held"; next_offset: number; scope_count: number; error_code: string | null }[]).map((j) => [j.job_id, j]),
+      (
+        (jobs.data ?? []) as unknown as {
+          job_id: string;
+          state: "queued" | "running" | "complete" | "held";
+          next_offset: number;
+          scope_count: number;
+          error_code: string | null;
+        }[]
+      ).map((j) => [j.job_id, j]),
     );
     return entries.map((e) => ({
       ...e,
       versions: e.versions.map((v) => {
-        const event = rows.find((x) => x.area === e.area && x.source_key === `${e.id}:intake` && x.source_sha === v.version) ?? null;
-        return { ...v, preparation: preparationStatus(v.state, v.version, event, event?.job_id ? jobMap.get(event.job_id) ?? null : null) };
+        const event =
+          rows.find(
+            (x) =>
+              x.area === e.area && x.source_key === `${e.id}:intake` && x.source_sha === v.version,
+          ) ?? null;
+        return {
+          ...v,
+          preparation: preparationStatus(
+            v.state,
+            v.version,
+            event,
+            event?.job_id ? (jobMap.get(event.job_id) ?? null) : null,
+          ),
+        };
       }),
     }));
   });

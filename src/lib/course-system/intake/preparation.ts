@@ -8,7 +8,11 @@ export type Preparation = {
   total: number | null;
   code: string | null;
 };
-export type SourceEventRow = { source_sha: string | null; withdrawn: boolean; job_id: string | null };
+export type SourceEventRow = {
+  source_sha: string | null;
+  withdrawn: boolean;
+  job_id: string | null;
+};
 export type JobRow = {
   state: "queued" | "running" | "complete" | "held";
   next_offset: number;
