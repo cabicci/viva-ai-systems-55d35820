@@ -122,7 +122,12 @@ function NewCurriculumPage() {
   ]);
   const delivery = useQuery({
     queryKey: ["curriculum-lesson", key],
-    enabled: mode === "lesson" && !!auth.user && !auth.loading && !!step && (area !== "kids" || !!profileId),
+    enabled:
+      mode === "lesson" &&
+      !!auth.user &&
+      !auth.loading &&
+      !!step &&
+      (area !== "kids" || !!profileId),
     queryFn: () => curriculumCommand<Delivery>("lesson", { ...scope, locale }),
     retry: false,
     refetchInterval: 30000,

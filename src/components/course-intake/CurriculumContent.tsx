@@ -48,7 +48,9 @@ export function CurriculumContent({
                 className={`min-h-11 min-w-0 break-words rounded-xl p-3 text-start font-bold ${active ? "bg-primary text-primary-foreground" : "hover:bg-muted"}`}
               >
                 {kind && kind !== s.title && (
-                  <span className={`block text-xs font-semibold ${active ? "" : "text-muted-foreground"}`}>
+                  <span
+                    className={`block text-xs font-semibold ${active ? "" : "text-muted-foreground"}`}
+                  >
                     {kind}
                   </span>
                 )}

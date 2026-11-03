@@ -47,7 +47,8 @@ const en = {
   source: "Source reference",
   model: "Student activities",
   stations: "Stations",
-  introLead: "An approved Masaarat curriculum. Review its stations and steps, then open the step you want.",
+  introLead:
+    "An approved Masaarat curriculum. Review its stations and steps, then open the step you want.",
   stationsCount: "Stations",
   stepsCount: "Steps",
   edition: "Edition",
