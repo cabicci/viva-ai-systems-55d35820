@@ -92,9 +92,8 @@ export const curriculumAdmin = createServerFn({ method: "POST" })
     if (r.error) throw new Error(r.error.message);
     if (data.action !== "list" || !Array.isArray(r.data)) return r.data;
     // Admin verified above: read-only enrichment with sanitized preparation state.
-    const { preparationStatus, aiPreparationStatus, matchCurriculumJob } = await import(
-      "./preparation"
-    );
+    const { preparationStatus, aiPreparationStatus, matchCurriculumJob } =
+      await import("./preparation");
     type ListEntry = {
       area: string;
       id: string;
