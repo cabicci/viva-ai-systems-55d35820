@@ -1,10 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, BookOpen } from "lucide-react";
 import {
-  CURRICULUM_MODULE_CLASS,
-  CURRICULUM_ROW_CLASS,
-  CurriculumSectionHeader,
-} from "@/components/site/CurriculumLayout";
+  CourseContents,
+  CourseIntroduction,
+  LessonHero,
+  NEXT_CLASS,
+  PREVIOUS_CLASS,
+} from "@/components/course-intake/CoursePresentation";
 import { getPathStoryCopy } from "@/lib/path-story";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
@@ -87,7 +88,6 @@ function NewCurriculumPage() {
   const chosen = search.lesson ?? "";
   const mode = search.lesson ? "lesson" : search.view === "contents" ? "contents" : "intro";
   const story = getPathStoryCopy(locale);
-  const numbers = new Intl.NumberFormat(locale === "en" ? "en" : "ar");
   const [sectionId, selectSection] = useState("");
   const navigate = Route.useNavigate();
   const child = search.profileId ?? "";
@@ -164,67 +164,51 @@ function NewCurriculumPage() {
         )}
         {!course && catalogue.isSuccess && <p>{c.courseUnavailable}</p>}
         {course && mode === "intro" && (
-          <>
-            <a href={`${LINE_ROUTES[area]}?locale=${locale}`} className="font-bold text-primary">
-              {story.back}
-            </a>
-            <section className="mt-6 grid gap-5 sm:grid-cols-2" aria-label={story.aboutPath}>
-              {[
-                [c.stationsCount, numbers.format(course.stations.length)],
-                [c.stepsCount, numbers.format(steps.length)],
-              ].map(([heading, body]) => (
-                <article key={heading} className="rounded-3xl border border-border bg-card p-6">
-                  <h2 className="text-xl font-bold">{heading}</h2>
-                  <p className="mt-4 break-words text-2xl font-black text-primary">{body}</p>
-                </article>
-              ))}
-            </section>
-            <div className="mt-8 flex flex-wrap gap-4">
+          <CourseIntroduction
+            stations={course.stations}
+            locale={locale}
+            back={
+              <a href={`${LINE_ROUTES[area]}?locale=${locale}`} className="font-bold text-primary">
+                {story.back}
+              </a>
+            }
+            toContents={(_, className, children) => (
               <Link
                 to="/courses/$area/$courseId"
                 params={{ area, courseId }}
                 search={scopedSearch(locale, profileId, { view: "contents" })}
-                className="inline-flex min-h-11 items-center rounded-full bg-primary px-6 py-3 font-bold text-primary-foreground"
+                className={className}
               >
-                {story.content}
+                {children}
               </Link>
-            </div>
-          </>
+            )}
+          />
         )}
         {course && mode === "contents" && (
-          <div className="space-y-6">
-            <Link
-              to="/courses/$area/$courseId"
-              params={{ area, courseId }}
-              search={keep}
-              className="font-bold text-primary"
-            >
-              {story.backPath}
-            </Link>
-            {course.stations.map((station, index) => (
-              <section className={CURRICULUM_MODULE_CLASS} key={station.id}>
-                <CurriculumSectionHeader
-                  title={`${story.station} ${numbers.format(index + 1)} — ${station.title}`}
-                />
-                {station.steps.map((s) => (
-                  <Link
-                    key={s.id}
-                    to="/courses/$area/$courseId"
-                    params={{ area, courseId }}
-                    search={stepLink(s.id)}
-                    className={`${CURRICULUM_ROW_CLASS} hover:border-primary/40`}
-                  >
-                    <BookOpen aria-hidden className="h-4 w-4 shrink-0 text-primary" />
-                    <span className="min-w-0 flex-1">{s.title}</span>
-                    <span className="inline-flex items-center gap-1 font-bold text-primary">
-                      {c.openStep}
-                      <ArrowUpRight aria-hidden className="h-4 w-4 rtl:-scale-x-100" />
-                    </span>
-                  </Link>
-                ))}
-              </section>
-            ))}
-          </div>
+          <CourseContents
+            stations={course.stations}
+            locale={locale}
+            back={
+              <Link
+                to="/courses/$area/$courseId"
+                params={{ area, courseId }}
+                search={keep}
+                className="font-bold text-primary"
+              >
+                {story.backPath}
+              </Link>
+            }
+            openStep={(id, className, children) => (
+              <Link
+                to="/courses/$area/$courseId"
+                params={{ area, courseId }}
+                search={stepLink(id!)}
+                className={className}
+              >
+                {children}
+              </Link>
+            )}
+          />
         )}
       </CurriculumLayout>
     );
@@ -296,7 +280,7 @@ function NewCurriculumPage() {
                 to="/courses/$area/$courseId"
                 params={{ area, courseId }}
                 search={stepLink(steps[at - 1].id)}
-                className="inline-flex min-h-11 items-center rounded-full border border-primary px-6 py-3 font-bold text-primary"
+                className={PREVIOUS_CLASS}
               >
                 {c.previousStep}
               </Link>
@@ -308,7 +292,7 @@ function NewCurriculumPage() {
                 to="/courses/$area/$courseId"
                 params={{ area, courseId }}
                 search={stepLink(steps[at + 1].id)}
-                className="inline-flex min-h-11 items-center rounded-full bg-primary px-6 py-3 font-bold text-primary-foreground"
+                className={NEXT_CLASS}
               >
                 {c.nextStep}
               </Link>
@@ -356,11 +340,8 @@ function LearnerStep({
     ...(scope.profileId ? { profileId: scope.profileId } : {}),
   };
   return (
-    <div className="mt-6 space-y-8">
-      <header className="rounded-3xl border bg-accent/20 p-6">
-        <p className="text-sm font-bold text-primary">{courseTitle}</p>
-        <h1 className="my-3 text-3xl font-black">{delivery.lesson.title}</h1>
-      </header>
+    <div className="space-y-8">
+      <LessonHero eyebrow={courseTitle} title={delivery.lesson.title} />
       {!delivery.reviewOnly && <LearningReadingPosition scope={scope} />}
       <CurriculumContent
         lesson={delivery.lesson}
