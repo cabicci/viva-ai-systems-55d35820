@@ -52,9 +52,20 @@ const lesson: LessonContent = {
   title: "Step",
   assets: [],
   sections: [
-    section({ id: "reading", kind: "explanation", title: "Explanation", paragraphs: ["Lead?", "1. Heading", "Text"] }),
+    section({
+      id: "reading",
+      kind: "explanation",
+      title: "Explanation",
+      paragraphs: ["Lead?", "1. Heading", "Text"],
+    }),
     choice,
-    section({ id: "post", kind: "questions", title: "Post check", completion: "review", fields: choice.fields }),
+    section({
+      id: "post",
+      kind: "questions",
+      title: "Post check",
+      completion: "review",
+      fields: choice.fields,
+    }),
     section({
       id: "faq",
       kind: "faq",
@@ -69,17 +80,23 @@ beforeEach(() => command.mockReset());
 describe("admitted curriculum presentation", () => {
   it("shows concise groups and keeps every section, with subheadings for multiple checks", () => {
     const { container } = render(
-      <CurriculumContent lesson={lesson} locale="en" selected="check" onSelect={vi.fn()} activity={(s) => <i data-activity={s.id} />} />,
+      <CurriculumContent
+        lesson={lesson}
+        locale="en"
+        selected="check"
+        onSelect={vi.fn()}
+        activity={(s) => <i data-activity={s.id} />}
+      />,
     );
     const nav = screen.getByRole("navigation");
-    expect(within(nav).getAllByRole("button").map((b) => b.textContent)).toEqual([
-      "Explanation",
-      "Check understanding",
-      "Questions and answers",
-    ]);
-    expect([...container.querySelectorAll("[data-section]")].map((e) => e.getAttribute("data-section"))).toEqual(
-      ["reading", "diagnostic", "post", "faq"],
-    );
+    expect(
+      within(nav)
+        .getAllByRole("button")
+        .map((b) => b.textContent),
+    ).toEqual(["Explanation", "Check understanding", "Questions and answers"]);
+    expect(
+      [...container.querySelectorAll("[data-section]")].map((e) => e.getAttribute("data-section")),
+    ).toEqual(["reading", "diagnostic", "post", "faq"]);
     // Activities stay mounted for every section so input survives tab changes.
     expect(container.querySelectorAll("[data-activity]")).toHaveLength(4);
     expect(screen.getByRole("heading", { name: "Diagnostic" })).toBeVisible();
@@ -93,21 +110,35 @@ describe("admitted curriculum presentation", () => {
     expect(cards).toHaveLength(2);
     expect(cards[0].querySelector("summary")).toHaveTextContent("Is A B?");
     expect(cards[0]).toHaveTextContent("No, it is C.");
-    expect(container.querySelector('[data-group="faq"]')).not.toHaveTextContent(/Optional|Required/);
+    expect(container.querySelector('[data-group="faq"]')).not.toHaveTextContent(
+      /Optional|Required/,
+    );
   });
   it("moves the first explanation paragraph to the hero only when asked", () => {
     const { container, rerender } = render(
       <CurriculumContent lesson={lesson} locale="en" selected="explanation" onSelect={vi.fn()} />,
     );
     expect(container.querySelector('[data-section="reading"]')).toHaveTextContent("Lead?");
-    rerender(<CurriculumContent lesson={lesson} locale="en" selected="explanation" onSelect={vi.fn()} leadInHero />);
+    rerender(
+      <CurriculumContent
+        lesson={lesson}
+        locale="en"
+        selected="explanation"
+        onSelect={vi.fn()}
+        leadInHero
+      />,
+    );
     expect(container.querySelector('[data-section="reading"]')).not.toHaveTextContent("Lead?");
     expect(screen.getByRole("heading", { name: "1. Heading" })).toBeVisible();
   });
   it("renders choice fields as visible editable radios shared with the admin preview", () => {
     const change = vi.fn();
-    render(<ActivityForm section={choice} values={{}} onChange={change} disabled={false} locale="en" />);
-    const radios = within(screen.getByRole("group", { name: "Which is shown?" })).getAllByRole("radio");
+    render(
+      <ActivityForm section={choice} values={{}} onChange={change} disabled={false} locale="en" />,
+    );
+    const radios = within(screen.getByRole("group", { name: "Which is shown?" })).getAllByRole(
+      "radio",
+    );
     expect(radios).toHaveLength(2);
     expect(radios[1]).toBeEnabled();
     fireEvent.click(radios[1]);
