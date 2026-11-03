@@ -10,6 +10,7 @@ import { useLocale } from "@/lib/locale/locale-context";
 import { useAuth } from "@/lib/auth-context";
 import { intakeCopy } from "@/lib/course-system/intake/copy";
 import { CurriculumContent } from "@/components/course-intake/CurriculumContent";
+import { CurriculumFields } from "@/components/course-intake/CurriculumFields";
 import { Navbar } from "@/components/site/Navbar";
 import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/admin/curricula")({
@@ -40,6 +41,13 @@ type Review = {
     lessonId: string;
     locale: string;
     keys: { questionId: string; correctIndex: number }[];
+    rubrics?: {
+      sectionId: string;
+      fieldId: string;
+      criterion: string;
+      critical?: boolean;
+      answerId?: string;
+    }[];
   }[];
 };
 function CurriculumAdminPage() {
@@ -248,6 +256,37 @@ function CurriculumAdminSession() {
                   ))}
                 </fieldset>
               ))}
+              {(() => {
+                const selected =
+                  step.content[lang]!.sections.find((s) => s.id === section) ??
+                  step.content[lang]!.sections[0];
+                return (
+                  <>
+                    <CurriculumFields
+                      section={selected}
+                      values={{}}
+                      onChange={() => undefined}
+                      disabled
+                      locale={locale}
+                    />
+                    {review.assessmentKeys
+                      .find((k) => k.lessonId === step.id && k.locale === lang)
+                      ?.rubrics?.filter((r) => r.sectionId === selected.id)
+                      .map((r) => (
+                        <p key={r.fieldId} className="whitespace-pre-wrap">
+                          <strong>
+                            {c.rubric} · {selected.fields.find((f) => f.id === r.fieldId)?.label}
+                          </strong>
+                          : {r.criterion}
+                          {r.critical ? ` · ${c.criticalCriterion}` : ""}
+                          {r.answerId
+                            ? ` · ${selected.fields.find((f) => f.id === r.fieldId)?.options?.find((o) => o.id === r.answerId)?.label ?? r.answerId}`
+                            : ""}
+                        </p>
+                      ))}
+                  </>
+                );
+              })()}
             </CurriculumContent>
             {review.state === "draft" && (
               <>

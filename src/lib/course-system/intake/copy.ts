@@ -1,5 +1,18 @@
 import type { SupportedLocale } from "@/lib/locale/types";
 const en = {
+  selectAnswer: "Choose an answer",
+  trainingCheck: "Check my calculation",
+  trainingReview:
+    "This feedback checks training arithmetic and units only. Your explanation still needs separate review; no grade or competence is awarded here.",
+  trainingCorrect:
+    "The arithmetic and units match this training case. Review your reasoning and the stated limits too.",
+  trainingInvalid:
+    "Complete all numeric fields with finite values and the required ranges. Empty fields are not zero.",
+  trainingMismatch:
+    "Review the intermediate calculations and answer units using the worked guidance.",
+  trainingPrerequisite: "Check the stated conditions before combining these values.",
+  rubric: "Human review criteria",
+  criticalCriterion: "Critical criterion",
   duration: "Assessment duration (minutes)",
   courseUnavailable: "This curriculum is not currently available in this language.",
   catalogueUnavailable: "The full course list could not be loaded. Please retry.",
@@ -57,6 +70,17 @@ const en = {
 };
 type Copy = typeof en;
 const msa: Copy = {
+  selectAnswer: "اختر إجابة",
+  trainingCheck: "راجع حسابي",
+  trainingReview:
+    "هذه المراجعة للحسابات والوحدات التدريبية فقط. تفسيرك يحتاج مراجعة منفصلة؛ لا تمنح هذه المراجعة درجة أو إثبات كفاءة.",
+  trainingCorrect:
+    "الحسابات والوحدات متوافقة مع هذه الحالة التدريبية. راجع استدلالك وحدود الحالة أيضًا.",
+  trainingInvalid: "أكمل الحقول بأرقام صالحة ضمن الحدود المطلوبة. الحقل الفارغ ليس صفرًا.",
+  trainingMismatch: "راجع خطوات الحساب الوسيطة ووحدات الإجابة بالاستعانة بالإرشادات.",
+  trainingPrerequisite: "راجع الشروط المذكورة قبل جمع هذه القيم.",
+  rubric: "معايير المراجعة البشرية",
+  criticalCriterion: "معيار جوهري",
   duration: "مدة الاختبار بالدقائق",
   courseUnavailable: "هذا المنهج غير متاح حاليًا بهذه اللغة.",
   catalogueUnavailable: "تعذّر تحميل قائمة المناهج بالكامل. حاول مرة أخرى.",
