@@ -45,14 +45,14 @@ export type Block =
   | { type: "heading"; source: string; text: string }
   | { type: "list"; source: string; lead: string | null; items: ListItem[]; tone: "outcome" | "plain" }
   | { type: "formula"; source: string; text: string }
-  | { type: "callout"; source: string; label: string; body: string; tone: "case" | "reflection" }
+  | { type: "callout"; source: string; label: string; sep: string; body: string; tone: "case" | "reflection" }
   | { type: "faq"; source: string; question: string; answer: string }
   | { type: "text"; source: string; text: string };
 
 const HEADING = /^[0-9٠-٩]{1,2}[.)]\s+\S[^\n]{0,118}$/;
 const FORMULA = /^`[^`\n]+`$/;
 const BULLET = /^(\s*[•\-*]\s+)(.+)$/;
-const CALLOUT = /^([^:،,\n`]{2,40}):\s+([\s\S]+)$/;
+const CALLOUT = /^([^:،,\n`]{2,40})(:\s+)([\s\S]+)$/;
 const OUTCOME = /^(الخلاصة|خلاصة|الخلاصه|Summary|Key takeaways|In summary)\s*:?\s*$/i;
 const CASE = /^(مثال|حالة|Example|Case)/i;
 
@@ -94,7 +94,8 @@ export function parseBlock(source: string, faq = false): Block {
       type: "callout",
       source,
       label: callout[1],
-      body: callout[2],
+      sep: callout[2],
+      body: callout[3],
       tone: CASE.test(callout[1]) ? "case" : "reflection",
     };
   return { type: "text", source, text: source };
@@ -112,7 +113,7 @@ export function blockSource(b: Block): string {
     case "formula":
       return `\`${b.text}\``;
     case "callout":
-      return `${b.label}: ${b.body}`;
+      return b.label + b.sep + b.body;
     case "faq":
       return `${b.question}\n${b.answer}`;
     case "list":
