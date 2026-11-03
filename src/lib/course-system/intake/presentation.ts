@@ -68,6 +68,9 @@ const BULLET = /^(\s*[•\-*]\s+)(.+)$/;
 const CALLOUT = /^([^:،,\n`]{2,40})(:\s+)([\s\S]+)$/;
 const OUTCOME = /^(الخلاصة|خلاصة|الخلاصه|Summary|Key takeaways|In summary)\s*:?\s*$/i;
 const CASE = /^(مثال|حالة|Example|Case)/i;
+// Only authored label prefixes become boxes; ordinary prose with a colon stays text.
+const LABEL =
+  /^(مثال|حالة|الخطوة التالية|ملاحظة|تذكير|فكّر|فكر|تأمل|سؤال للتفكير|قبل الحساب|Example|Case|Next step|Note|Remember|Reflect)/i;
 
 function parseList(source: string): Block | null {
   const lines = source.split("\n");
@@ -102,7 +105,7 @@ export function parseBlock(source: string, faq = false): Block {
   const list = source.includes("\n") ? parseList(source) : null;
   if (list) return list;
   const callout = source.match(CALLOUT);
-  if (callout && callout[1].trim().split(/\s+/).length <= 4)
+  if (callout && LABEL.test(callout[1]) && callout[1].trim().split(/\s+/).length <= 4)
     return {
       type: "callout",
       source,
