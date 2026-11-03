@@ -13,6 +13,7 @@ import { CurriculumContent } from "@/components/course-intake/CurriculumContent"
 import { CurriculumFields } from "@/components/course-intake/CurriculumFields";
 import { Navbar } from "@/components/site/Navbar";
 import { Button } from "@/components/ui/button";
+import type { Preparation } from "@/lib/course-system/intake/preparation";
 export const Route = createFileRoute("/admin/curricula")({
   beforeLoad: requireAdminBeforeLoad,
   head: () => ({
@@ -28,7 +29,11 @@ type Entry = {
   id: string;
   titles: Record<string, string>;
   activeVersion: string | null;
-  versions: { version: string; state: "draft" | "approved" | "ready" }[];
+  versions: {
+    version: string;
+    state: "draft" | "approved" | "ready";
+    preparation?: Preparation | null;
+  }[];
 };
 type Review = {
   version: string;
@@ -151,7 +156,15 @@ function CurriculumAdminSession() {
             </h2>
             {entry.versions.map((v) => (
               <div key={v.version} className="mt-3 flex flex-wrap items-center gap-4">
-                <span>{c[v.state]}</span>
+                <span>{v.preparation ? c[`prep_${v.preparation.state}`] : c[v.state]}</span>
+                {v.preparation?.total ? (
+                  <span className="text-sm text-muted-foreground">
+                    {c.progress}: {v.preparation.done}/{v.preparation.total}
+                  </span>
+                ) : null}
+                {v.preparation?.code ? (
+                  <code className="text-sm text-destructive">{v.preparation.code}</code>
+                ) : null}
                 <Button
                   variant="outline"
                   disabled={busy}
