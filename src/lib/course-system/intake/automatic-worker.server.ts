@@ -1,15 +1,14 @@
-import {
-  automaticTick as runExistingTick,
-  currentAutomaticPlans,
-  executeAutomaticScope,
-} from "@/lib/assistant-automation/worker.server";
+import { automaticTick as runExistingTick } from "@/lib/assistant-automation/worker.server";
 import { automationRpc } from "@/lib/assistant-automation/store.server";
 import { CARD_REGISTRY } from "@/lib/card-assistant/registry";
 import { curriculumAutomaticPlans, indexCurriculumScope } from "./index.server";
 declare const __ASSISTANT_INDEXER_BUILD__: string;
-/** Add admitted curricula to the same queue and lease driver. The existing
- * algorithm modules and manifest identities are untouched, so a feature release
- * does not queue every already completed curriculum for duplicate indexing. */
+/** Admission worker: the only plans offered to the shared queue are approved,
+ * pending curriculum versions admitted through the Add Curriculum workflow.
+ * Legacy catalogue manifests are never enumerated or registered here, so their
+ * stored indexes stay untouched and their old queued jobs are no longer claimable
+ * (claim only selects from the keys passed). The shared single-worker lock,
+ * global busy/uncertain-hold checks and in-flight leases are unchanged. */
 export function automaticTick(
   requestId: string,
   _dependencies?: undefined,
@@ -19,19 +18,17 @@ export function automaticTick(
     requestId,
     {
       plans: async () => {
-        const [existing, added] = await Promise.all([
-          currentAutomaticPlans(),
-          curriculumAutomaticPlans(__ASSISTANT_INDEXER_BUILD__),
-        ]);
-        if (existing.length + added.length > 200) throw new Error("AUTOMATION_SCOPE_LIMIT");
-        return [...existing, ...added];
+        const added = await curriculumAutomaticPlans(__ASSISTANT_INDEXER_BUILD__);
+        if (added.length > 200) throw new Error("AUTOMATION_SCOPE_LIMIT");
+        return added;
       },
       rpc: automationRpc,
       registry: CARD_REGISTRY,
-      execute: (lease) =>
-        "adapter" in lease.manifest && lease.manifest.adapter === "curriculum"
-          ? indexCurriculumScope(lease)
-          : executeAutomaticScope(lease),
+      execute: async (lease) => {
+        if (!("adapter" in lease.manifest) || lease.manifest.adapter !== "curriculum")
+          throw new Error("AUTOMATION_SCOPE_NOT_ADMITTED");
+        return indexCurriculumScope(lease);
+      },
     },
     pruneResponseCache,
   );
