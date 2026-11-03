@@ -1,10 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, BookOpen } from "lucide-react";
-import {
-  CURRICULUM_MODULE_CLASS,
-  CURRICULUM_ROW_CLASS,
-  CurriculumSectionHeader,
-} from "@/components/site/CurriculumLayout";
 import {
   CourseContents,
   CourseIntroduction,
@@ -94,7 +88,6 @@ function NewCurriculumPage() {
   const chosen = search.lesson ?? "";
   const mode = search.lesson ? "lesson" : search.view === "contents" ? "contents" : "intro";
   const story = getPathStoryCopy(locale);
-  const numbers = new Intl.NumberFormat(locale === "en" ? "en" : "ar");
   const [sectionId, selectSection] = useState("");
   const navigate = Route.useNavigate();
   const child = search.profileId ?? "";
