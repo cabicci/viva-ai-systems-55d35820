@@ -76,11 +76,6 @@ function isEmbeddedHttps(): boolean {
  * redirected to /login. Only in that embedded case use SameSite=None; Secure;
  * Partitioned (scoped to the embedding site). Top-level sites keep Lax.
  */
-export function accessTokenCookieWriteSuffix(embeddedHttps: boolean, https: boolean): string {
-  if (embeddedHttps) return "; Secure; Partitioned".replace("; Secure", "; Secure");
-  return https ? "; Secure" : "";
-}
-
 /** Client-only: mirror a verified access token into the document cookie jar. */
 export function writeAccessTokenCookie(token: string): void {
   if (typeof document === "undefined") return;
