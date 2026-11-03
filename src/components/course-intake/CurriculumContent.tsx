@@ -2,6 +2,7 @@ import type { IntakeSection } from "@/lib/course-system/intake/package";
 import type { SupportedLocale } from "@/lib/locale/types";
 import { intakeCopy } from "@/lib/course-system/intake/copy";
 import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
 import { useEffect, useRef, useState } from "react";
 import { CourseInlineText } from "./CourseInlineText";
 export type LessonContent = {
@@ -19,7 +20,11 @@ export function CurriculumContent({
   locale,
   children,
   resolveAsset,
+  progressLabel,
+  progressValue,
 }: {
+  progressLabel?: string;
+  progressValue?: number;
   lesson: LessonContent;
   selected: string;
   onSelect(id: string): void;
@@ -30,21 +35,50 @@ export function CurriculumContent({
   const c = intakeCopy(locale);
   const section = lesson.sections.find((s) => s.id === selected) ?? lesson.sections[0];
   return (
-    <div className="grid min-w-0 gap-6 md:grid-cols-[15rem_minmax(0,1fr)]">
-      <nav aria-label={c.step} className="flex gap-2 overflow-auto md:flex-col">
-        {lesson.sections.map((s) => (
-          <Button
-            key={s.id}
-            variant={section.id === s.id ? "default" : "outline"}
-            onClick={() => onSelect(s.id)}
-            aria-current={section.id === s.id ? "page" : undefined}
-            className="min-h-11 shrink-0 justify-start whitespace-normal text-start"
-          >
-            {c[s.kind]} · {s.title}
-          </Button>
-        ))}
-      </nav>
-      <section className="min-w-0 space-y-5" aria-label={section.title}>
+    <div className="grid min-w-0 items-start gap-6 lg:grid-cols-[250px_minmax(0,1fr)]">
+      <aside className="min-w-0 rounded-3xl border bg-card p-4 lg:sticky lg:top-24">
+        <nav aria-label={c.step} className="grid grid-cols-2 gap-2 lg:grid-cols-1">
+          {lesson.sections.map((s) => {
+            const kind = c[s.kind];
+            const active = section.id === s.id;
+            return (
+              <button
+                type="button"
+                key={s.id}
+                onClick={() => onSelect(s.id)}
+                aria-current={active ? "page" : undefined}
+                aria-controls="curriculum-lesson-section"
+                className={`min-h-11 min-w-0 break-words rounded-xl p-3 text-start font-bold ${active ? "bg-primary text-primary-foreground" : "hover:bg-muted"}`}
+              >
+                {kind && kind !== s.title && (
+                  <span
+                    className={`block text-xs font-semibold ${active ? "" : "text-muted-foreground"}`}
+                  >
+                    {kind}
+                  </span>
+                )}
+                {s.title}
+              </button>
+            );
+          })}
+        </nav>
+        {progressLabel && (
+          <section className="mt-6 space-y-3 border-t pt-5">
+            <h2 className="font-bold">{c.learnerProgress}</h2>
+            {progressValue !== undefined && (
+              <Progress value={progressValue} aria-label={c.learnerProgress} />
+            )}
+            <p className="text-sm leading-7 text-muted-foreground" role="status">
+              {progressLabel}
+            </p>
+          </section>
+        )}
+      </aside>
+      <section
+        id="curriculum-lesson-section"
+        className="min-w-0 scroll-mt-24 space-y-6 rounded-3xl border bg-card p-5 md:p-8"
+        aria-label={section.title}
+      >
         <h2 className="text-2xl font-bold">{section.title}</h2>
         <p className="text-sm text-muted-foreground">
           {section.required ? c.required : c.optional}
