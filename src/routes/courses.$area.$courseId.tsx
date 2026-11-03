@@ -1,4 +1,12 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowUpRight, BookOpen } from "lucide-react";
+import {
+  CURRICULUM_MODULE_CLASS,
+  CURRICULUM_ROW_CLASS,
+  CurriculumSectionHeader,
+} from "@/components/site/CurriculumLayout";
+import { getPathStoryCopy } from "@/lib/path-story";
+import { LINE_ROUTES } from "@/lib/learning-lines";
 import { useState, useRef, useEffect } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
@@ -42,6 +50,7 @@ export const Route = createFileRoute("/courses/$area/$courseId")({
   validateSearch: z.object({
     locale: z.enum(["ar-EG", "ar-MSA", "ar-Gulf", "en"]).optional(),
     lesson: z.string().max(80).optional(),
+    view: z.enum(["contents"]).optional(),
     profileId: z.string().uuid().optional(),
   }),
   head: () => ({
@@ -72,7 +81,11 @@ function NewCurriculumPage() {
   const { locale } = useLocale();
   const c = intakeCopy(locale);
   const parent = useKidsParentStateSource();
-  const [chosen, choose] = useState(search.lesson ?? "");
+  const chosen = search.lesson ?? "";
+  const mode = search.lesson ? "lesson" : search.view === "contents" ? "contents" : "intro";
+  const story = getPathStoryCopy(locale);
+  const numbers = new Intl.NumberFormat(locale === "en" ? "en" : "ar");
+  const keep = { locale: search.locale, profileId: search.profileId };
   const [sectionId, selectSection] = useState("");
   const [child, setChild] = useState(search.profileId ?? "");
   const catalogue = useQuery({
@@ -109,7 +122,7 @@ function NewCurriculumPage() {
   ]);
   const delivery = useQuery({
     queryKey: ["curriculum-lesson", key],
-    enabled: !!auth.user && !auth.loading && !!step && (area !== "kids" || !!profileId),
+    enabled: mode === "lesson" && !!auth.user && !auth.loading && !!step && (area !== "kids" || !!profileId),
     queryFn: () => curriculumCommand<Delivery>("lesson", { ...scope, locale }),
     retry: false,
     refetchInterval: 30000,
@@ -119,14 +132,113 @@ function NewCurriculumPage() {
   useEffect(() => {
     selectSection("");
   }, [key]);
+  const steps = course?.stations.flatMap((s) => s.steps) ?? [];
+  const at = steps.findIndex((s) => s.id === step?.id);
+  const stepLink = (id: string) => ({ ...keep, lesson: id });
+  if (mode !== "lesson")
+    return (
+      <CurriculumLayout
+        line={area}
+        title={course ? (mode === "contents" ? story.contents : course.title) : undefined}
+        subtitle={course ? (mode === "contents" ? course.title : c.introLead) : c.stations}
+      >
+        {catalogue.isPending && <p role="status">{c.loading}</p>}
+        {catalogue.isError && (
+          <div role="alert">
+            <p>{c.error}</p>
+            <button className="mt-3 underline" onClick={() => void catalogue.refetch()}>
+              {story.retry}
+            </button>
+          </div>
+        )}
+        {!course && catalogue.isSuccess && <p>{c.courseUnavailable}</p>}
+        {course && mode === "intro" && (
+          <>
+            <a href={`${LINE_ROUTES[area]}?locale=${locale}`} className="font-bold text-primary">
+              {story.back}
+            </a>
+            <section className="mt-6 grid gap-5 md:grid-cols-3" aria-label={story.aboutPath}>
+              {[
+                [c.stationsCount, numbers.format(course.stations.length)],
+                [c.stepsCount, numbers.format(steps.length)],
+                [c.edition, course.version],
+              ].map(([heading, body]) => (
+                <article key={heading} className="rounded-3xl border border-border bg-card p-6">
+                  <h2 className="text-xl font-bold">{heading}</h2>
+                  <p className="mt-4 break-words text-2xl font-black text-primary">{body}</p>
+                </article>
+              ))}
+            </section>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                to="/courses/$area/$courseId"
+                params={{ area, courseId }}
+                search={{ ...keep, view: "contents" }}
+                className="inline-flex min-h-11 items-center rounded-full bg-primary px-6 py-3 font-bold text-primary-foreground"
+              >
+                {story.content}
+              </Link>
+            </div>
+          </>
+        )}
+        {course && mode === "contents" && (
+          <div className="space-y-6">
+            <Link
+              to="/courses/$area/$courseId"
+              params={{ area, courseId }}
+              search={keep}
+              className="font-bold text-primary"
+            >
+              {story.backPath}
+            </Link>
+            {course.stations.map((station, index) => (
+              <section className={CURRICULUM_MODULE_CLASS} key={station.id}>
+                <CurriculumSectionHeader
+                  title={`${story.station} ${numbers.format(index + 1)} — ${station.title}`}
+                />
+                {station.steps.map((s) => (
+                  <Link
+                    key={s.id}
+                    to="/courses/$area/$courseId"
+                    params={{ area, courseId }}
+                    search={stepLink(s.id)}
+                    className={`${CURRICULUM_ROW_CLASS} hover:border-primary/40`}
+                  >
+                    <BookOpen aria-hidden className="h-4 w-4 shrink-0 text-primary" />
+                    <span className="min-w-0 flex-1">{s.title}</span>
+                    <span className="inline-flex items-center gap-1 font-bold text-primary">
+                      {c.openStep}
+                      <ArrowUpRight aria-hidden className="h-4 w-4 rtl:-scale-x-100" />
+                    </span>
+                  </Link>
+                ))}
+              </section>
+            ))}
+          </div>
+        )}
+      </CurriculumLayout>
+    );
+  const current = visible?.progress.find((p) => p.lesson === step?.id);
   return (
     <CurriculumLayout line={area} title={course?.title} subtitle={c.stations}>
       {catalogue.isPending && <p>{c.loading}</p>}
       {catalogue.isError && <p role="alert">{c.error}</p>}
+      <Link
+        to="/courses/$area/$courseId"
+        params={{ area, courseId }}
+        search={{ ...keep, view: "contents" }}
+        className="font-bold text-primary"
+      >
+        {c.backToContents}
+      </Link>
       {area === "kids" && (
-        <label>
+        <label className="mt-4 flex flex-wrap items-center gap-3">
           {c.child}
-          <select value={profileId ?? ""} onChange={(e) => setChild(e.target.value)}>
+          <select
+            className="min-h-11 rounded-xl border bg-card px-3"
+            value={profileId ?? ""}
+            onChange={(e) => setChild(e.target.value)}
+          >
             {entitlement.isAdmin && auth.user && (
               <option value={auth.user.id}>{c.adminReview}</option>
             )}
@@ -138,30 +250,8 @@ function NewCurriculumPage() {
           </select>
         </label>
       )}
-      <nav aria-label={c.stations} className="mb-8 space-y-4">
-        {course?.stations.map((station) => (
-          <div key={station.id}>
-            <h2 className="mb-2 text-lg font-bold">{station.title}</h2>
-            <div className="flex flex-wrap gap-2">
-              {station.steps.map((s) => (
-                <Button
-                  key={s.id}
-                  variant={step?.id === s.id ? "default" : "outline"}
-                  onClick={() => {
-                    choose(s.id);
-                    selectSection("");
-                  }}
-                >
-                  {visible?.progress.find((p) => p.lesson === s.id)?.done ? "✓ " : ""}
-                  {s.title}
-                </Button>
-              ))}
-            </div>
-          </div>
-        ))}
-      </nav>
       {course && !visible && !delivery.isFetching && (
-        <p>
+        <p className="mt-6">
           {c.locked}{" "}
           <a className="text-primary underline" href={`/pricing?locale=${locale}`}>
             {c.packages}
@@ -177,7 +267,34 @@ function NewCurriculumPage() {
           scope={scope}
           sectionId={sectionId}
           selectSection={selectSection}
+          progress={current}
         />
+      )}
+      {course && step && (
+        <nav className="mt-10 flex flex-wrap justify-between gap-4" aria-label={c.stations}>
+          {at > 0 ? (
+            <Link
+              to="/courses/$area/$courseId"
+              params={{ area, courseId }}
+              search={stepLink(steps[at - 1].id)}
+              className="inline-flex min-h-11 items-center rounded-full border border-primary px-6 py-3 font-bold text-primary"
+            >
+              {c.previousStep}
+            </Link>
+          ) : (
+            <span />
+          )}
+          {at >= 0 && at < steps.length - 1 && (
+            <Link
+              to="/courses/$area/$courseId"
+              params={{ area, courseId }}
+              search={stepLink(steps[at + 1].id)}
+              className="inline-flex min-h-11 items-center rounded-full bg-primary px-6 py-3 font-bold text-primary-foreground"
+            >
+              {c.nextStep}
+            </Link>
+          )}
+        </nav>
       )}
     </CurriculumLayout>
   );
@@ -187,7 +304,9 @@ function LearnerStep({
   scope,
   sectionId,
   selectSection,
+  progress,
 }: {
+  progress?: { required: number; completed: number };
   delivery: Delivery;
   scope: {
     area: (typeof COURSE_AREAS)[number];
@@ -214,8 +333,11 @@ function LearnerStep({
     ...(scope.profileId ? { profileId: scope.profileId } : {}),
   };
   return (
-    <div className="space-y-8">
-      <h1 className="text-3xl font-bold">{delivery.lesson.title}</h1>
+    <div className="mt-6 space-y-8">
+      <header className="rounded-3xl border bg-accent/20 p-6">
+        <p className="text-sm font-bold text-primary">{c.step}</p>
+        <h2 className="my-3 text-3xl font-black">{delivery.lesson.title}</h2>
+      </header>
       {!delivery.reviewOnly && <LearningReadingPosition scope={scope} />}
       <CurriculumContent
         lesson={delivery.lesson}
@@ -237,6 +359,11 @@ function LearnerStep({
         }}
         selected={section.id}
         onSelect={selectSection}
+        progressLabel={
+          progress && progress.required > 0
+            ? `${c.sectionsDone}: ${progress.completed} / ${progress.required}`
+            : undefined
+        }
         locale={locale}
       >
         {!delivery.reviewOnly && (
