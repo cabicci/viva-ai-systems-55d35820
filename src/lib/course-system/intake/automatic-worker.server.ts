@@ -1,6 +1,6 @@
 import { automaticTick as runExistingTick } from "@/lib/assistant-automation/worker.server";
 import { automationRpc } from "@/lib/assistant-automation/store.server";
-import { CARD_REGISTRY } from "@/lib/card-assistant/registry";
+import type { CARD_REGISTRY } from "@/lib/card-assistant/registry";
 import { curriculumAutomaticPlans, indexCurriculumScope } from "./index.server";
 declare const __ASSISTANT_INDEXER_BUILD__: string;
 /** Admission worker: the only plans offered to the shared queue are approved,
@@ -23,7 +23,8 @@ export function automaticTick(
         return added;
       },
       rpc: automationRpc,
-      registry: CARD_REGISTRY,
+      // No legacy card registry is (re)registered on the admission path.
+      registry: [] as unknown as typeof CARD_REGISTRY,
       execute: async (lease) => {
         if (!("adapter" in lease.manifest) || lease.manifest.adapter !== "curriculum")
           throw new Error("AUTOMATION_SCOPE_NOT_ADMITTED");
