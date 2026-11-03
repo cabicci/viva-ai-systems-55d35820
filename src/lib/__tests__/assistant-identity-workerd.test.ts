@@ -43,7 +43,7 @@ beforeAll(async () => {
       b.onLoad({ filter: /.*/, namespace: "stub" }, () => ({ contents: "throw new Error('privileged module loaded');", loader: "js" }));
     } }] });
   mf = new Miniflare({ modules: true, script: out.outputFiles[0].text, compatibilityDate: "2025-09-24", compatibilityFlags: ["nodejs_compat"],
-    outboundService: async (req) => req.url === "https://token.actions.githubusercontent.com/.well-known/jwks"
+    outboundService: async (req: Request) => req.url === "https://token.actions.githubusercontent.com/.well-known/jwks"
       ? Response.json({ keys: [jwk] }) : new Response("blocked", { status: 599 }) });
 }, 60000);
 afterAll(async () => { await mf?.dispose(); });
