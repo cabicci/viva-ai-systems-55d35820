@@ -30,12 +30,16 @@ export async function runProbe() {
   const text = (await response.text()).slice(0, 4000);
   let body: Record<string, unknown> = {};
   try { body = JSON.parse(text) as Record<string, unknown>; } catch { /* non-JSON body is reported only as such */ }
-  console.log(JSON.stringify({ probe: true, status: response.status,
+  const report = { probe: true, status: response.status,
     code: typeof body.code === "string" && /^AUTOMATION_[A-Z_]{1,64}$/.test(body.code) ? body.code : null,
     reason: typeof body.reason === "string" && REASON.test(body.reason) ? body.reason : null,
     identity: body.identity === "verified" ? "verified" : null,
-    buildMatches: body.indexerBuild === expected.indexerBuild, deploymentMatches: body.deploymentFingerprint === expected.deploymentFingerprint }));
-  if (response.status !== 200) process.exitCode = 1;
+    buildMatches: body.indexerBuild === expected.indexerBuild, deploymentMatches: body.deploymentFingerprint === expected.deploymentFingerprint };
+  console.log(JSON.stringify(report));
+  // Passing requires a verified signed identity AND exact deployed source; anything else fails.
+  const passed = report.status === 200 && report.identity === "verified" && report.buildMatches && report.deploymentMatches;
+  if (!passed) process.exitCode = 1;
+  return passed;
 }
 async function call(operation: "status" | "tick", pruneResponseCache = false): Promise<Record<string, unknown>> {
   const response = await fetch(endpoint, { method: "POST", redirect: "error", signal: AbortSignal.timeout(operation === "status" ? 20000 : 125000),
