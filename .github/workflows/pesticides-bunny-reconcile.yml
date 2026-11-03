@@ -1,0 +1,30 @@
+name: Pesticides accepted videos — scoped read-only reconciliation
+on:
+  push:
+    branches: [codex/pesticides-hosting-20261103]
+    paths:
+      - .github/workflows/pesticides-bunny-reconcile.yml
+      - scripts/course-delivery/pesticides_bunny_audit.py
+permissions:
+  contents: read
+concurrency:
+  group: pesticides-bunny-library670679-collection13b22
+  cancel-in-progress: false
+jobs:
+  reconcile:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Inspect existing pesticides collection and two historical GUIDs using GET only
+        env:
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+        run: python scripts/course-delivery/pesticides_bunny_audit.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: pesticides-bunny-reconciliation-${{ github.run_id }}
+          path: pesticides-bunny-audit/
+          retention-days: 90
