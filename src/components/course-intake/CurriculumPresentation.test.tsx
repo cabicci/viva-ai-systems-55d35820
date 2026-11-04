@@ -93,7 +93,7 @@ describe("admitted curriculum presentation", () => {
       within(nav)
         .getAllByRole("button")
         .map((b) => b.textContent),
-    ).toEqual(["Explanation", "Check understanding", "Questions and answers"]);
+    ).toEqual(["Reading", "Check understanding", "FAQ"]);
     expect(
       [...container.querySelectorAll("[data-section]")].map((e) => e.getAttribute("data-section")),
     ).toEqual(["reading", "diagnostic", "post", "faq"]);
