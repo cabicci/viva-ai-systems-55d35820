@@ -9,9 +9,16 @@ import { getPathStoryCopy } from "@/lib/path-story";
 import { intakeCopy } from "@/lib/course-system/intake/copy";
 import type { SupportedLocale } from "@/lib/locale/types";
 import { CourseInlineText } from "./CourseInlineText";
+import { courseOverview } from "@/lib/course-system/intake/course-overviews";
 
 /** One-line catalogue description from reviewed station titles. */
-export function catalogueDescription(stations: Station[], locale: SupportedLocale) {
+export function catalogueDescription(
+  courseId: string,
+  stations: Station[],
+  locale: SupportedLocale,
+) {
+  const overview = courseOverview(courseId, locale);
+  if (overview) return overview.catalogue;
   const first = stations[0]?.title;
   if (!first) return "";
   const numbers = new Intl.NumberFormat(locale === "en" ? "en" : "ar-EG");
@@ -26,7 +33,13 @@ type Action = (id: string | null, className: string, children: ReactNode) => Rea
 const PRIMARY =
   "inline-flex min-h-11 items-center rounded-full bg-primary px-6 py-3 font-bold text-primary-foreground";
 
+/** Hero subtitle: reviewed course summary when available, generic lead otherwise. */
+export function courseSummary(courseId: string, locale: SupportedLocale) {
+  return courseOverview(courseId, locale)?.summary ?? intakeCopy(locale).introLead;
+}
+
 export function CourseIntroduction({
+  courseId,
   stations,
   locale,
   back,
@@ -35,6 +48,7 @@ export function CourseIntroduction({
 }: {
   /** Optional outline action (e.g. plans), placed after the primary like PathIntroduction. */
   secondary?: ReactNode;
+  courseId: string;
   stations: Station[];
   locale: SupportedLocale;
   back?: ReactNode;
@@ -46,7 +60,14 @@ export function CourseIntroduction({
   const numbers = new Intl.NumberFormat(locale === "en" ? "en" : "ar-EG");
   const steps = stations.reduce((n, s) => n + s.steps.length, 0);
   // Truthful cards from reviewed titles/counts only; no invented prerequisites.
-  const cards: [string, ReactNode][] = [
+  const overview = courseOverview(courseId, locale);
+  const cards: [string, ReactNode][] = overview
+    ? [
+        [story.goals, overview.goals],
+        [story.audience, overview.audience],
+        [story.requirements, overview.before],
+      ]
+    : [
     [
       story.goals,
       <>
