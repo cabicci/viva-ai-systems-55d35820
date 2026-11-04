@@ -56,7 +56,9 @@ export function CurriculumContent({
   const groups = groupSections(lesson.sections);
   const current = resolveGroup(lesson.sections, selected);
   const lead = leadInHero ? lessonLead(lesson.sections) : null;
-  const label = (g: SectionGroup) => (g === "check" ? c.check : c[g]);
+  const academic = getAcademicCopy(locale);
+  const label = (g: SectionGroup) =>
+    academic[g === "check" ? "quiz" : g === "explanation" ? "reading" : g];
   return (
     <div className="grid min-w-0 items-start gap-6 lg:grid-cols-[250px_minmax(0,1fr)]">
       <aside className="min-w-0 rounded-3xl border bg-card p-4 lg:sticky lg:top-24">
