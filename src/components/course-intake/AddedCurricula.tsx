@@ -40,9 +40,9 @@ export function AddedCurricula({ area }: { area: CourseArea }) {
           </span>
           <div className="min-w-0 flex-1">
             <h2 className="break-words text-2xl font-black md:text-3xl">{course.title}</h2>
-            {catalogueDescription(course.stations, locale) && (
+            {catalogueDescription(course.id, course.stations, locale) && (
               <p className="mt-3 leading-8 text-muted-foreground">
-                {catalogueDescription(course.stations, locale)}
+                {catalogueDescription(course.id, course.stations, locale)}
               </p>
             )}
             <p className="mt-4 flex flex-wrap gap-3 text-sm font-semibold text-muted-foreground">
