@@ -1,0 +1,29 @@
+name: Egyptian Gemini voice review
+on:
+  push:
+    branches: [review/cabinet-ai-style-20261010]
+    paths:
+      - scripts/production-review/egyptian-voice-sample.py
+      - .github/workflows/egyptian-voice-review.yml
+permissions:
+  contents: read
+jobs:
+  generate-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate one isolated review sample
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+        run: python3 scripts/production-review/egyptian-voice-sample.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: egyptian-gemini-voice-review
+          path: audio-review-output/
+          if-no-files-found: error
+          retention-days: 30
