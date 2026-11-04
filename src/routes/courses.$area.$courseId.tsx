@@ -145,7 +145,13 @@ function NewCurriculumPage() {
               : `${story.path} ${course.title}`
             : undefined
         }
-        subtitle={course ? (mode === "contents" ? course.title : courseSummary(course.id, locale)) : c.stations}
+        subtitle={
+          course
+            ? mode === "contents"
+              ? course.title
+              : courseSummary(course.id, locale)
+            : c.stations
+        }
       >
         {catalogue.isPending && <p role="status">{c.loading}</p>}
         {catalogue.isError && (

@@ -258,7 +258,9 @@ function CurriculumAdminSession() {
                   title={
                     view === "contents" ? story.contents : `${story.path} ${course.title[lang]}`
                   }
-                  subtitle={view === "contents" ? course.title[lang]! : courseSummary(course.id, lang)}
+                  subtitle={
+                    view === "contents" ? course.title[lang]! : courseSummary(course.id, lang)
+                  }
                 />
               )}
               {view === "intro" && (

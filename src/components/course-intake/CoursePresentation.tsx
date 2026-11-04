@@ -68,20 +68,20 @@ export function CourseIntroduction({
         [story.requirements, overview.before],
       ]
     : [
-    [
-      story.goals,
-      <>
-        <span className="block">{c.learnLead}</span>
-        <ul className="mt-2 list-disc space-y-1 ps-6">
-          {stations.map((s) => (
-            <li key={s.id}>{s.title}</li>
-          ))}
-        </ul>
-      </>,
-    ],
-    [story.audience, c.audienceBody],
-    [story.requirements, c.beforeBody(numbers.format(stations.length), numbers.format(steps))],
-  ];
+        [
+          story.goals,
+          <>
+            <span className="block">{c.learnLead}</span>
+            <ul className="mt-2 list-disc space-y-1 ps-6">
+              {stations.map((s) => (
+                <li key={s.id}>{s.title}</li>
+              ))}
+            </ul>
+          </>,
+        ],
+        [story.audience, c.audienceBody],
+        [story.requirements, c.beforeBody(numbers.format(stations.length), numbers.format(steps))],
+      ];
   return (
     <>
       {back}
