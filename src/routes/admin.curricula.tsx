@@ -17,6 +17,7 @@ import type { SupportedLocale } from "@/lib/locale/types";
 import {
   CourseContents,
   CourseIntroduction,
+  courseSummary,
   LessonHero,
   AdjacentSteps,
   SECONDARY_CLASS,
@@ -257,11 +258,14 @@ function CurriculumAdminSession() {
                   title={
                     view === "contents" ? story.contents : `${story.path} ${course.title[lang]}`
                   }
-                  subtitle={view === "contents" ? course.title[lang]! : c.introLead}
+                  subtitle={
+                    view === "contents" ? course.title[lang]! : courseSummary(course.id, lang)
+                  }
                 />
               )}
               {view === "intro" && (
                 <CourseIntroduction
+                  courseId={course.id}
                   stations={stations}
                   locale={lang}
                   secondary={

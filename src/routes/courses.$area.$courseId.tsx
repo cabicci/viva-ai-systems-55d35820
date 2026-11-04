@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   CourseContents,
   CourseIntroduction,
+  courseSummary,
   LessonHero,
   AdjacentSteps,
   SECONDARY_CLASS,
@@ -144,7 +145,13 @@ function NewCurriculumPage() {
               : `${story.path} ${course.title}`
             : undefined
         }
-        subtitle={course ? (mode === "contents" ? course.title : c.introLead) : c.stations}
+        subtitle={
+          course
+            ? mode === "contents"
+              ? course.title
+              : courseSummary(course.id, locale)
+            : c.stations
+        }
       >
         {catalogue.isPending && <p role="status">{c.loading}</p>}
         {catalogue.isError && (
@@ -158,6 +165,7 @@ function NewCurriculumPage() {
         {!course && catalogue.isSuccess && <p>{c.courseUnavailable}</p>}
         {course && mode === "intro" && (
           <CourseIntroduction
+            courseId={course.id}
             stations={course.stations}
             locale={locale}
             back={
