@@ -1,0 +1,81 @@
+{
+  "attempts": [
+    {
+      "attempt": 0,
+      "status": "reviewed",
+      "generation": "generated",
+      "quality": {
+        "transcript": "زميل وقع في حفرة ضحلة مستخبية. كاحله في وضع غريب، والألم شديد ومش قادر يتحرك بأمان. المكان حواليه آمن حاليًا. ابعد باقي الناس عن الحفرة واتأكد إن مفيش خطر تاني. اطلب إسعافًا عاجلًا. اوصف الألم الشديد ووضع الكاحل ومكان الحقل وطريق الدخول الآمن. قول إنها إصابة مشتبه فيها، مش تشخيص مؤكد. خلي المصاب ثابت وطمنه. ما تفردش الكاحل، وما تشدش الجزمة عشان تفحصه، وما تطلبش منه يمشي. اسند أو ثبت الطرف بس في حدود تدريبك وتوجيهات الطوارئ. لو في نزيف، استخدم ضغطًا مباشرًا مناسبًا من غير ما تضغط على عظم بارز. احميه من البرد أو الحر وراقب أي تغير لحد ما المساعدة توصل. التصرف الآمن ما يستناش إنك تثبت هل دي التواء ولا كسر.",
+        "checks": [
+          {
+            "id": "complete",
+            "pass": true,
+            "reason": "All sentences and final words are audible, with no cuts or repetitions."
+          },
+          {
+            "id": "faithful",
+            "pass": true,
+            "reason": "All numbers, units, negations, conditions, technical terms, and emergency actions are preserved without adding advice."
+          },
+          {
+            "id": "locale",
+            "pass": true,
+            "reason": "The speech is in natural Egyptian Arabic, consistent with the requested locale."
+          },
+          {
+            "id": "intelligible",
+            "pass": true,
+            "reason": "The speech is natural and audible, with no clipping, garbling, abrupt endings, or prolonged silences."
+          },
+          {
+            "id": "no-extra",
+            "pass": true,
+            "reason": "The recording contains only the requested speech, with no introduction, music, prompt response, or commentary."
+          }
+        ],
+        "passed": true,
+        "audioSha256": "18742dae2e06fa18ec2f1adae143c84c7153b14ab2df66724164e664e7abc861",
+        "qaKey": "efea7e9f5a5a1647bd65bfe1e0a3a539099f38e5c43315553f50adcbefa4f802",
+        "durationSeconds": 51.21095833333333,
+        "humanListeningReviewed": false,
+        "independentNativeReview": false
+      }
+    }
+  ],
+  "accepted": {
+    "transcript": "زميل وقع في حفرة ضحلة مستخبية. كاحله في وضع غريب، والألم شديد ومش قادر يتحرك بأمان. المكان حواليه آمن حاليًا. ابعد باقي الناس عن الحفرة واتأكد إن مفيش خطر تاني. اطلب إسعافًا عاجلًا. اوصف الألم الشديد ووضع الكاحل ومكان الحقل وطريق الدخول الآمن. قول إنها إصابة مشتبه فيها، مش تشخيص مؤكد. خلي المصاب ثابت وطمنه. ما تفردش الكاحل، وما تشدش الجزمة عشان تفحصه، وما تطلبش منه يمشي. اسند أو ثبت الطرف بس في حدود تدريبك وتوجيهات الطوارئ. لو في نزيف، استخدم ضغطًا مباشرًا مناسبًا من غير ما تضغط على عظم بارز. احميه من البرد أو الحر وراقب أي تغير لحد ما المساعدة توصل. التصرف الآمن ما يستناش إنك تثبت هل دي التواء ولا كسر.",
+    "checks": [
+      {
+        "id": "complete",
+        "pass": true,
+        "reason": "All sentences and final words are audible, with no cuts or repetitions."
+      },
+      {
+        "id": "faithful",
+        "pass": true,
+        "reason": "All numbers, units, negations, conditions, technical terms, and emergency actions are preserved without adding advice."
+      },
+      {
+        "id": "locale",
+        "pass": true,
+        "reason": "The speech is in natural Egyptian Arabic, consistent with the requested locale."
+      },
+      {
+        "id": "intelligible",
+        "pass": true,
+        "reason": "The speech is natural and audible, with no clipping, garbling, abrupt endings, or prolonged silences."
+      },
+      {
+        "id": "no-extra",
+        "pass": true,
+        "reason": "The recording contains only the requested speech, with no introduction, music, prompt response, or commentary."
+      }
+    ],
+    "passed": true,
+    "audioSha256": "18742dae2e06fa18ec2f1adae143c84c7153b14ab2df66724164e664e7abc861",
+    "qaKey": "efea7e9f5a5a1647bd65bfe1e0a3a539099f38e5c43315553f50adcbefa4f802",
+    "durationSeconds": 51.21095833333333,
+    "humanListeningReviewed": false,
+    "independentNativeReview": false
+  }
+}

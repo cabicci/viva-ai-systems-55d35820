@@ -1,0 +1,22 @@
+{
+  "action": "s102-ankle-case-targeted-repair-1",
+  "stepId": "S1-02",
+  "batchId": "s102-ankle-shallow-concealed-hole-repair1-20261016",
+  "targetAssetIds": ["s102-video-ankle-case"],
+  "protectedAcceptedAssetIds": ["s102-video-assess", "s102-video-alert", "s102-video-injury", "s102-video-heat", "s102-video-chemical", "s102-video-kit", "s102-video-road-case"],
+  "priorFinalAcceptedRunId": 38830498735,
+  "priorRunId": 38834215716,
+  "priorAnkleSha256": "7f84f350bbe0ffeda80fec77126dbe1e0e1d9dfca917a957ee3f69389072402e",
+  "repairCallNumber": 1,
+  "protectedInitialAcceptedHashes": {
+    "s102-video-dizzy-case": "6e7a71b39f3550d22ba09161f0d5006e8e94f86f491aaa38d46d3a74e8c15b75",
+    "s102-video-eye-case": "814c313c374135488ff5e34cdd51ee52b26b844b691a5c4129e96eb866273a9d",
+    "s102-video-kit-case": "5df674b6605f025daf9a19cc2ee390c9c396f4b5254cfe230e7bd2154434498f"
+  },
+  "noPublication": true,
+  "noAutomaticRepair": true,
+  "planHash": "ebcaeca3b62d4f0ec5840e0bc885af9e229ece06fa85d9ff16f30573009dad60",
+  "contractHash": "a8ec05356a04682fab00b5b86540f15b85fc488563aab859250bed72009341f9",
+  "scriptHash": "9b37529b0a142720ad71dbce743020bf31d954952af0a09f339ab0c108ad88c2",
+  "styleHash": "351b775af21bd4100101f8a910bbfd266b5cd9f01632f58a63ce7f5a4512c85f"
+}

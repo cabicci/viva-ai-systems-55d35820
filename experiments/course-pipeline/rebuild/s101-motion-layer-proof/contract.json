@@ -1,0 +1,48 @@
+{
+  "reviewModel": "gemini-2.5-flash",
+  "maxRepairsAfterInitial": 3,
+  "automaticRepair": false,
+  "criteria": [
+    {
+      "id": "six",
+      "criterion": "Exactly six complete object groups occupy a 3-column by 2-row layout in the specified order; no other objects."
+    },
+    {
+      "id": "key",
+      "criterion": "The background is uniform saturated magenta, with generous empty margins around each group and no visible grid/floor/platform/cast shadow."
+    },
+    {
+      "id": "complete",
+      "criterion": "Every object and strap/temple/cord/sole/finger is fully visible and lies entirely within its own cell; groups never touch."
+    },
+    {
+      "id": "style",
+      "criterion": "Coherent rounded cartoon-like 3D with credible leather/fabric/rubber/plastic, matching the provided reference rather than photographic product shots."
+    },
+    {
+      "id": "boots",
+      "criterion": "Top-left has a complete pair of sturdy brown ankle work boots with both soles."
+    },
+    {
+      "id": "clothing",
+      "criterion": "Top-centre has folded long-sleeve green shirt and tan trousers together; top-right has a broad-brim beige hat and complete cord."
+    },
+    {
+      "id": "gloves",
+      "criterion": "Bottom-left has two intact beige woven gardening gloves."
+    },
+    {
+      "id": "eyewear",
+      "criterion": "Bottom-centre sealed-rim splash goggles and bottom-right open-sided safety spectacles are visibly different, with neutral lenses and intact straps/temples."
+    },
+    {
+      "id": "no-text",
+      "criterion": "No lettering, number, logo, watermark, arrow or tick mark."
+    },
+    {
+      "id": "no-people",
+      "criterion": "No people, faces, mannequins, hands or body parts."
+    }
+  ],
+  "compositorGate": "Actual pixels and magenta-keyed motion frames/playback must pass; automated sprite QA is not final acceptance."
+}

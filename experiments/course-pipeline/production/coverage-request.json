@@ -1,0 +1,323 @@
+{
+  "action": "audit-source-coverage-only",
+  "auditId": "SOIL-COVERAGE-20261013-01",
+  "sourceSha256": "d3ac9eb19a664c59f113754679fc73d3080148fc363de46651a2df9c9004bd36",
+  "authorRun": 38406267735,
+  "contentHashes": {
+    "SOIL-U1-L01": {
+      "en": "019f67397fda0eb130643da3405d1875e9641391d002c8545e52fbce6a0f9107",
+      "ar-EG": "7cb1b5f77e97f34278b4e5310bf2ea67d86376fcc24c6d38adbaac020e495105",
+      "it": "594bcf5448f0332b21cc5aabda1351eb735b3e3d46edbc0fd453ef429504c154",
+      "de": "6697b9eab82860b52fb11462831d1b664a673b993037d5718a2eed84032f0d4e"
+    },
+    "SOIL-U1-L02": {
+      "en": "2c4b3bd3e90750a38c27a4b9f7b9892d301263464705f3bad89e6d28b5d34cc4",
+      "ar-EG": "4fdf439963e10e4da62f9ac31cc1403ad48829cdb9544e4dc207b39d80898bd1",
+      "it": "f849d83358c5706479bd55ea3e3a076a7d36759ad030d510111bf804e3567350",
+      "de": "55e58e83ce07ae4074bee9a0027e51d9f82ffec8d537160d8e488a40cc5a5fef"
+    },
+    "SOIL-U1-L03": {
+      "en": "89604e1e32787b4172ae6b06eccebb031aa56e4eaca5e1b8c960fb4339341def",
+      "ar-EG": "1212b7f5fb7e71740d239c711bc78c98db72f66ccce2bbc52514c50b903a7b7e",
+      "it": "0e6f620510f93f6c37aee015939eeada16406a30c2f86b144445d5f7983bcb34",
+      "de": "24ed902929b1027a5b187fd52f2926f6cbef9d780eaf632db058375614601462"
+    },
+    "SOIL-U1-L04": {
+      "en": "eedbfcc08180b0a3ddfefa621bcde6c226e63e56de04ac340bbddbfb5df430f3",
+      "ar-EG": "bf8747269476f22b15d209362e858f5f613ba0380e52a3f6e1a1da5e9fc3d894",
+      "it": "910b2b50f5de99d010d453a8a4133f2f541c8fbac39c84e009171f41d5bc8e34",
+      "de": "242fb9baba2e2c4953d5c3b61ee7f0a0508e42a644523d3023b90b0291741525"
+    },
+    "SOIL-U1-L05": {
+      "en": "2a66ebeb5c6c4c41054fbe712784c794b97b9143d853a97db6a3820b71483170",
+      "ar-EG": "f1e9201e559c0ed6323f35bf894fa43eb3581d518e580d63edf98200a5dc529e",
+      "it": "e314562f014874997388aac223751b88658a4aacf56ccd96fce259952371bfdb",
+      "de": "f2e92024784f414395d56b422c7c095cfe6f834e1aa0c879d055e3aba5dfe78c"
+    },
+    "SOIL-U1-L06": {
+      "en": "23cf4ccdf8d455c4a84186fbad1058e1c6666827330a9c610e26c7cbf20efd11",
+      "ar-EG": "991b18d01598cc6b1dfd6fd601538b38b408f216f1fd621910e157e3c1801bd7",
+      "it": "d9857fcdc8c5c592fec1bc23fafb523be45c8f3ea25d65110b24bce50c89dabd",
+      "de": "34437b1f5afcb87a99cb0b5ddc718309d99d167761253735bc9f0a396c23e6df"
+    },
+    "SOIL-U1-L07": {
+      "en": "8e208706a88f252d6a9b3a1174f3d70894d366944a7ef1ef3f4ef01baa99df51",
+      "ar-EG": "07044029dc58f03cc1344831600f911cbecff79005eb7b71fcc0077520af7c7e",
+      "it": "a6f85824e61f47e27ae6e4973f8073a931ac742e37b34c52fb5f1c0f6b8a728c",
+      "de": "d06227fdec48c5de1610d301e08b362649ccf0f256fcb81707555ce58ed81c86"
+    },
+    "SOIL-U2-L01": {
+      "en": "f60c686249fd1b807ae9cadd91b9f818a398fb4ab12379de7db447a1923caea7",
+      "ar-EG": "46d429c17a73a592cb149b3f742aebe992cb1c90a9763263b4d55ba420d29d51",
+      "it": "ea7a34735dfb2a967c4a1cf833e214efc303adfe6523842421a9e11b635ae225",
+      "de": "441f4da894a683b6faae25fe115c44283eeee21107bf9cb9b3a6d74d620d3d4a"
+    },
+    "SOIL-U2-L02": {
+      "en": "b7bebcab379979b6123c2f25c0f52596639b29b99608ff37efd2a271e3f96de7",
+      "ar-EG": "dafd8f51fd311cd46e626f7dd7b821539d5ccc09dbaea68967062329a15a6b35",
+      "it": "bff2f49d10fd61bd03588e83af7c726e2f3dea91e85dd441accc2ee090808f1c",
+      "de": "93f6683c9f1cd4f95da4b4608104008cff61de15175ee901277dd700fb0aefc2"
+    },
+    "SOIL-U2-L03": {
+      "en": "cda528c8b5b59a5684eed5541744c06c8cde49de9e531ce5d26278e13cc12b01",
+      "ar-EG": "c45818cbfb042a866d12f2fa17611b2229bf86363edc82c51e859f83338d9502",
+      "it": "aa0add9162ef6a29e084f79cb62e158eaeb6626f981a12b2098a825a09164cf5",
+      "de": "35aaf00fabf22aa8a3144f990c735ea58ec3e1d37123ec9c4e09eb761e4c06ed"
+    },
+    "SOIL-U2-L04": {
+      "en": "5ecf9de6679af65d69b3fd7ad2aa9df5d95ab21f837aea3d4f75141206632412",
+      "ar-EG": "b2f4e66ec10244260dc7367429189c45935265707def01d1691d748caf52296f",
+      "it": "f750b9a543a3a576199d964deacda1372573ac71fb4b2b92f9ed39cfc833de05",
+      "de": "668fd9543b5e0b970ecd8a90bebd71d26514d7408421f3765f799cb78fbfeb31"
+    },
+    "SOIL-U2-L05": {
+      "en": "f98724b9c0e5cf4ea8c016dd9a29a1c9b11bd5f3a7206cc2dd31d8f1d39490a8",
+      "ar-EG": "2e3ee805c39b5990f3847e3dea83806429a710d1ca03db66110110762adcc193",
+      "it": "52de2a9b23694308f2a9cac5537c24235382f5110c0eee1196c0c12992c204f7",
+      "de": "c5a9e17408eeb5297724ebaa774f5dd258f7ff33f687881baa2552983b703d55"
+    },
+    "SOIL-U2-L06": {
+      "en": "61a477737f260da037ac220a5e476145de7ec20f1feb94165eb8213ba6b7b562",
+      "ar-EG": "e0be8af03b45322fc64e361eb8f2d00f62ca90a9c12741b4b3572d6427745406",
+      "it": "223995bd482d4baee1dd818cc69f04037783f3e0293b755b3fbf9c5752af7c07",
+      "de": "82bdd0b02be14c2df5101867f5f1a7796c309d0c2a651d20791c16bb67dafa53"
+    },
+    "SOIL-U2-L07": {
+      "en": "9f837c51afdf14163d04175b2d25111fd76e306083935f6a6945e86cbced30a4",
+      "ar-EG": "120fc4da5a3bc47c727d6bc4fcbc1944dfe64f22f6bfd1557e3a42423466ab88",
+      "it": "4bde0c1e0001567b2d001b03e078158871b60d983d5f1c8132331530e8eeda93",
+      "de": "d4897c102dee46a16c088422f47ba16d577d3c30e1d236613374861dea11c12e"
+    },
+    "SOIL-U2-L08": {
+      "en": "5ad025018b023d8c3df49a391ec7dca4077bf3bbf56b37b56ae39f5588b0ad12",
+      "ar-EG": "f9e7c30b944b2e02aebe319477dfdb0b484f48fe6c3cf136fc0df5a839b5b00a",
+      "it": "5dca911c1a65b9b18e20ea7ccc302bc2145204a5de9d11e96fd4dc0fa7b1545c",
+      "de": "2317b5d4e9e8d41b313e8b1abc534c76a98149dbd59d31af725b67c54c616c17"
+    },
+    "SOIL-U2-L09": {
+      "en": "d769f9e2b507f73922bea33fbf7462ddc58eec1f3a1e5b6ccab6098aa7a9885e",
+      "ar-EG": "e55827a15360857fdb30e17c201dba35464a0dd022cd7ffe41c4316f0e164de6",
+      "it": "a8ba5bf71dee16ab998ee88a3dcf9c9de4425dbdcf839275d2caeb5e577cebd8",
+      "de": "01ac3dd97641419fb806e40a92475c1ed2da02da8e0448793d177fc47ec95121"
+    },
+    "SOIL-U2-L10": {
+      "en": "7341f991ff71f81942c6ca23ac275d290b0a634e9b8a87c6760c86d46935e2d6",
+      "ar-EG": "a30634751129ecec94b4e2b92de84a6db958d8d848d092d6a53b78f560469ccf",
+      "it": "27beda090d632206e07313b6e14a452023007a7014436e01e340397cbe077164",
+      "de": "ca790e4d2918988fe670bc0ffd742fc2355f4a93c48b8168a118db51539d0571"
+    },
+    "SOIL-U2-L11": {
+      "en": "fb71d042c7e0107b6e6eb7c2f8b67c95747e60232a83fca49a91bbb26366d42a",
+      "ar-EG": "e00a913c6d6d44a5d1b704cdda943c5700ba5463d1c1db1727b001379dff2dc4",
+      "it": "974193f2c4c276930df34d60b640a672d1e4c7fc16e159b619edbed8bbf486dc",
+      "de": "b350c43da395b0270c3df0ff7054a10194e1328f102bd3f905dcabcd44511374"
+    },
+    "SOIL-U2-L12": {
+      "en": "e5269fa951380d83fe3f90f3f4bcc5c29b25a2f12fe590c9e58047be7a7ee011",
+      "ar-EG": "887ddb265ad1c5e69b430ffbf1f9ed48569374126e95c8df8b0c37b39bbeda10",
+      "it": "1a7710e73832a58b6280c93ce42435d434d45543ac0e3e80d76dd061cbae1df5",
+      "de": "c4cc840de9042efdd3743945a1034f5a6cc74219c67e088cb09230bec409169a"
+    },
+    "SOIL-U2-L13": {
+      "en": "0eb54b1e68911db13efcafad9fccbc849607c921e479474980bbf6d51eb27cfb",
+      "ar-EG": "479b9d31258c4ed6e31a6dc58d2c739ae4f1cedd57558b149219e2e7d802fddc",
+      "it": "e5658605f40d312f79b74af135d8a51568611dc00feea9f31118595fc6017ecd",
+      "de": "c1acba75a917422ca3021060d046228b331d3f2d6de8b8cf01d47733e926c4d9"
+    },
+    "SOIL-U3-L01": {
+      "en": "3b74ccb5bb54e4c98d893c0c4855f70ba9ca89c923fcdc5ee141608ecbffce1c",
+      "ar-EG": "6997e72a23b4a3a37d2550c1ddc57eced30a370fd6decf5e185b8f93f1c37b85",
+      "it": "b1cef7a52bec56da589583cef931b229971de75369750ab3f25890ee84a62d04",
+      "de": "c431a3bf80fa86545604b00d3238f375d6273d1c0678dfb43aba2f1ee1d37d84"
+    },
+    "SOIL-U3-L02": {
+      "en": "875a7b4ca29ebd70fe8208a4b02ec291e7cd5a81adcc54de866cabcbec3b239f",
+      "ar-EG": "988be4d16cf8a2534e3abdabc265b5dc9202cd73b2b2c31a0eade2a428919100",
+      "it": "ca17a95cee7e66a661b274dbd909e5e008a0222eaebb8d51e800e3ace88fae3c",
+      "de": "5cfaf55df6fe42f23d05001dcb2bf5b248a508ed678262d95ebaf890fc9d13b4"
+    },
+    "SOIL-U3-L03": {
+      "en": "6eca4e81a9a3996835a5c71207588247832e48f5678ed1b48e22012b172b450c",
+      "ar-EG": "ad6b8b3deea9e29c3371a6e48244185957959b0766215162b8a355c3f16d4ade",
+      "it": "526762d1c09712b2c0d349e94c86e5449abb69afa78072504fcce65b6127f01c",
+      "de": "26404b09d64c1102016b763af67b3ce5a6fc3b2f5863821ac85c7911a481106e"
+    },
+    "SOIL-U3-L04": {
+      "en": "1309febb16092e7167bc0acca883bb609d54acecd174baf6d279865cd7e2caaa",
+      "ar-EG": "deb6a2b669a6401da7df536187e0649169904228de98f21f01cb0b6680f2bdab",
+      "it": "6841d4e7639a50b05bceed3bd8a784c8e101953e2bcec32161fa91ba9817e0ba",
+      "de": "f146b5a78db458f20a1e4a67a8e3c07ade02b5a056e03e5b8ca3180aeee88082"
+    },
+    "SOIL-U3-L05": {
+      "en": "d2f31c2bccdb13277f87ca837604f0ca2454d914e32d86e9990dbdbab5069741",
+      "ar-EG": "654be078b4857ba9f7ea20ed306b9855eeee2c7ea340c0f15333d4155083c4ff",
+      "it": "299c7e4b6a343dba17c5e9077e1cf85f0b5c5aa2eaea752c7f3f4a6153e73c1f",
+      "de": "2d1ebb51d48ad853a20b9825d7bec758c29e942b9b700b1af6ce60248a314525"
+    },
+    "SOIL-U3-L06": {
+      "en": "d8783151892fb24900e1cff66563c57b47e16eeb71d79b06195f1962f35ae79a",
+      "ar-EG": "985fc1879276e6ab4f845836e2ef4dd1022701ab4475a20b051dd226420c9134",
+      "it": "cae401e4f8a9d4c851bb628769b613426bdb992cf59b4ad8dbac42c3070f06ff",
+      "de": "1a284f421692fb57e2aec4273184f46e2a8e4301d7fda273c8f99b92b75d0dc3"
+    },
+    "SOIL-U3-L07": {
+      "en": "cf33b50680518e0c53649ac17c77cd412bac711055fb9041461bbc96d3363249",
+      "ar-EG": "eec3765566a7c396f8dda1ae8cce851ce3e44089ff4926a066c9b02618c7d8c0",
+      "it": "81a8779363bd167a9b0b4cc81f6f3894f5470f717f5af0edf1f82cb88ab85528",
+      "de": "b10ce507829da8e2f791c5d99412ce654717fc6d84d245a07b770cc973635bc0"
+    },
+    "SOIL-U3-L08": {
+      "en": "bdd90c894ef11413b80924acd5da9b4cdc242766a9af5baf4ca0c0f7ae134431",
+      "ar-EG": "4ac8d7061cff5a21e53f174dc4d9aab5af81a985c2b7aa1ffcffe2975ec41814",
+      "it": "9ea018da89fb00990ac61a922a94e45d727d9ec26683b2c0fbd9f3702df7d6da",
+      "de": "128ca30e7e0a53a935cbccbaad0b08c582a3642bdda94c1e1cc0bf2dea8c198e"
+    },
+    "SOIL-U3-L09": {
+      "en": "f4d12c66490675aa50087284af364b637a5ab2011f42614b65a321a80007ca36",
+      "ar-EG": "a14de53e1642aa72aeb4cef49781089849fb272b020cbd45708c53be9ffc077e",
+      "it": "d561989c90b53acd318a8d10430fe9fe56ae18fcf9843b94819292818d8937b6",
+      "de": "a162ad0e4cdcec8dc04a4e6da4547a6a8f19fd81fb94bade995217fc8a1d7cff"
+    },
+    "SOIL-U3-L10": {
+      "en": "87727e4176259675b3402669bf0e902110d88ce7c4adcd4291c821cc4fc379b6",
+      "ar-EG": "eb4eb1d14244d27a4836bc514f075a1b2aa166469d2eee350aceaa221cc6bc96",
+      "it": "411dab7bac0cf6fafa4e5663d2094f1da00c666c82dd38489f2c10aad18a22e4",
+      "de": "189454e42ead0e91b0c54f13ee041efbbd39042e1b28d472d094b712c25ce023"
+    },
+    "SOIL-U3-L11": {
+      "en": "8a678365624a55b0ccb8ef3636da14d8e5e25642c1b2d8868f23b407c996401a",
+      "ar-EG": "699e591d19db77107cdc885019a9a05f67e09b4868f79c9c0223a10b01ddb6ce",
+      "it": "4404cc2ac1910215abe7053634c908d4301d1fb7805a6966817de900384fc29f",
+      "de": "c26765a6f4c6984f9648ec9032152add36514d2025fe0d901aa4bb6280c5f0b0"
+    },
+    "SOIL-U3-L12": {
+      "en": "2de3a5b86a8a3d6ff48eb53f3c90eb3032b247637cdfd99e036d563b5fba57b4",
+      "ar-EG": "1d176db1c7e7545b59551b15793d48a3c069ed51f50bd7b10d2a8c27d98f882b",
+      "it": "e8c4744bca6ddb557fe1b66378b9c43869a3a3b18b910e46d65b34bd7d08b70b",
+      "de": "f2ee635809ab50e6da6538cb048e449abd56ad7f3b736a89942ef6f7be2fc3a4"
+    },
+    "SOIL-U3-L13": {
+      "en": "4b8c79b08f44cba2ac761c9c83b77d56dcf6358de675d6bcd418b8aa29d2244f",
+      "ar-EG": "8738719e048910bea87d60f44a9eba94d02dcd1c76ee6c4ea9f2eb830e0b35e5",
+      "it": "5da201d4ba3b11a75b90af168688321430d7e28ff35ce8a57131b2b12243e9cf",
+      "de": "ef6e27b427ac62894ef7768a5b8999985ac9f3f5c3bd3d0143db7158c7438ad9"
+    },
+    "SOIL-U3-L14": {
+      "en": "d28c24f49b091d2d6564c269712faed85412e22275ef7b35a38594cc494ce51b",
+      "ar-EG": "1fad74bebe7cd4d8e1ae6f29aa99142a9e43858d7d8c6fdc086009e603e157cb",
+      "it": "38bcf44444366b7528764aad87dfca1e9c4e60eedac5a17144d9d52d5705b584",
+      "de": "6f39452f1d019d1a7b48bcd99387734af360f6f1d1b9b8897957c931a8681aa0"
+    }
+  },
+  "locales": [
+    "en",
+    "ar-EG",
+    "it",
+    "de"
+  ],
+  "blocks": [
+    [
+      1,
+      6
+    ],
+    [
+      7,
+      12
+    ],
+    [
+      13,
+      18
+    ],
+    [
+      19,
+      24
+    ],
+    [
+      25,
+      30
+    ],
+    [
+      31,
+      36
+    ],
+    [
+      37,
+      42
+    ],
+    [
+      43,
+      48
+    ],
+    [
+      49,
+      54
+    ],
+    [
+      55,
+      60
+    ],
+    [
+      61,
+      66
+    ],
+    [
+      67,
+      72
+    ],
+    [
+      73,
+      78
+    ],
+    [
+      79,
+      84
+    ],
+    [
+      85,
+      90
+    ],
+    [
+      91,
+      96
+    ],
+    [
+      97,
+      102
+    ],
+    [
+      103,
+      108
+    ],
+    [
+      109,
+      114
+    ],
+    [
+      115,
+      120
+    ],
+    [
+      121,
+      126
+    ],
+    [
+      127,
+      132
+    ],
+    [
+      133,
+      138
+    ],
+    [
+      139,
+      144
+    ],
+    [
+      145,
+      146
+    ]
+  ],
+  "publish": false,
+  "modifyLessons": false,
+  "produceMedia": false
+}

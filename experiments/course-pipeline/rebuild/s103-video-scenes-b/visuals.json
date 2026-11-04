@@ -1,0 +1,24 @@
+{
+  "provider": "gemini",
+  "apiVersion": "v1beta",
+  "model": "gemini-nano-banana-2.1",
+  "imageSize": "2K",
+  "aspectRatio": "16:9",
+  "styleReference": "course/visuals.json",
+  "assets": [
+    {
+      "id": "s103-video-prepare",
+      "role": "video",
+      "scenes": ["s103-reading-prepare"],
+      "sourceRecordIds": ["TE-U1-T3-D003", "TE-U1-T3-D031", "TE-U1-T3-D032"],
+      "subject": "Premium compact sculpted educational 3D CARTOON miniature matching accepted Masaarat S1-01 on warm off-white, realistic but simplified matte glove/plastic, transparent safety-lens and woven apron textures, gentle shadows, blank margins. A CLOSE EQUIPMENT-HEIGHT THREE-QUARTER tabletop training preparation scene, not a split outdoor site map: a BLANK closed product-information/SDS folder in a standing holder, two visibly separate blank scenario cards, an unused pair of chemical-protection gloves, splash-protection goggles, a folded apron and a CLOSED purpose-built simulated spill kit are arranged for inspection BEFORE any action. Keep kit closed, props dry and separated, no bottle contents and no active release. These are candidate practice props; compatibility and authority are NOT established by the picture and will be checked by editable four-language narration/overlays against the actual site/product. No respirator cartridge prescribed, no universal glove claim, no real chemical, no hand/person/presenter/face, no active cleanup, no live emergency, no words, numbers, arrows, pseudo-writing, school, Spark, brand, logo or watermark. Different camera and object layout from the accepted s103-video-decide proof and planned overhead reading still."
+    },
+    {
+      "id": "s103-video-response",
+      "role": "video",
+      "scenes": ["s103-reading-control", "s103-reading-contain", "s103-reading-cleanup"],
+      "sourceRecordIds": ["TE-U1-T3-D031", "TE-U1-T3-D032", "TE-U1-T3-D033"],
+      "subject": "Premium compact sculpted 3D CARTOON training-table miniature on warm off-white matching accepted Masaarat S1-01; plausible clean plastic, absorbent and harmless water textures with soft studio shadows and blank space for editable four-language overlays. LOW THREE-QUARTER CUTAWAY view of ONE sealed training tray only. At the left an upright blank practice bottle sits STABLE on the tray; in the middle a tiny visibly harmless blue-tinted water patch is completely SURROUNDED by a dry compatible absorbent barrier; at the right a separate clean collection implement and a CLOSED blank mock-waste vessel illustrate the later collection stage without any handling happening. A drain-like channel is outside the tray and physically separated by a raised solid edge; no liquid flows toward it. This is a paused schematic of stages for an authorized simulation, not a real spill procedure. All three positions must be legible and the practice water must remain small/contained. No actual corrosive chemical, chemical neutralizer, hose, unapproved absorbent recipe, live spill, person, hand, eye/skin exposure, active cleanup, text, numbers, arrows, fake writing, source school/Spark, brand or logo. This side cutaway must differ from the future overhead instructional still and the accepted decision-route scene."
+    }
+  ]
+}

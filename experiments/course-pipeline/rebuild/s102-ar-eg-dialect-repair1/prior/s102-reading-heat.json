@@ -1,0 +1,81 @@
+{
+  "attempts": [
+    {
+      "attempt": 0,
+      "status": "reviewed",
+      "generation": "generated",
+      "quality": {
+        "transcript": "الوقاية بتبدأ قبل الأعراض جهزوا ميه شرب وراحه وضل وبلغ المدرب لو الجو او صحتك اتغيروا لو انت او زميلك تعبتوا وقفوا الشغل انهاء العينه عمره ما اهم من التعامل مع تعب انسان. الاجهاد الحراري ممكن يسبب عرق غزير وجلد شاحب وبارد او رطب وصداع وغثيان ودوخه وضعف. انقل الشخص بعيد عن الحر لمكان ابرد وفيه ضل لو النقل امن وفك اللبس الزياده وبرده بفوط مبلوله وتهويه ونظم له تقييما طبيا. لو واعي تماما ويقدر يبلع بامان ممكن ياخد رشفات صغيره ومتكرره من ميه بارده. خليك معاه وراقب لو حالته بتسوء. ضربه الشمس طارئ طبي. لو شخص اتعرض للحر وظهر عليه تشوش تصرف غير معتاد كلام متلخبط تشنج او فقدان وعي لازم تتحرك فورا. جسمه ممكن يبقى سخن جدا ونبضه سريع. جلده ممكن يبقى محمر وجاف وممكن كمان يكون لسه بيعرق بغزاره. ما تستناش العرق يوقف او تقيس الحراره عشان تطلب المساعده. لو شاكك في ضربه شمس اتصل بالاسعاف على 123 فورا. ابدا تبريد سريع والمساعده في الطريق. انقله لمكان ابرد لو ده امن شيل اللبس الخارجي الزياده بلل الجلد او استخدم فوط بارده مبلوله وهوي. كمل التبريد والمراقبه واتبع تعليمات موظف الطوارئ والمسعف المدرب. ما تجبرش شخص مشوش او فاقد الوعي يشرب. لو اتحسن شويه ده ما يلغيش ضروره التقييم الطبي العاجل.",
+        "checks": [
+          {
+            "id": "complete",
+            "pass": true,
+            "reason": "All sentences and the final words are audible, with no cuts or repetitions."
+          },
+          {
+            "id": "faithful",
+            "pass": true,
+            "reason": "All numbers, negations, conditions, technical terms, and emergency actions were preserved without adding advice."
+          },
+          {
+            "id": "locale",
+            "pass": true,
+            "reason": "The speech is in natural Egyptian Arabic, consistent with the requested locale."
+          },
+          {
+            "id": "intelligible",
+            "pass": true,
+            "reason": "The speech is natural and audible, with no clipping, garbling, abrupt endings, or prolonged silences."
+          },
+          {
+            "id": "no-extra",
+            "pass": true,
+            "reason": "There is no introduction, music, prompt response, or commentary in the audio."
+          }
+        ],
+        "passed": true,
+        "audioSha256": "f683dc13846a0d4439c7681da4bf13c08912b031957099a7e3bccbc3ebaf4465",
+        "qaKey": "a83f37ee2c5e8f37891c9dae503b8a6c594085973f2389555fab6d319ee5e92f",
+        "durationSeconds": 91.93095833333334,
+        "humanListeningReviewed": false,
+        "independentNativeReview": false
+      }
+    }
+  ],
+  "accepted": {
+    "transcript": "الوقاية بتبدأ قبل الأعراض جهزوا ميه شرب وراحه وضل وبلغ المدرب لو الجو او صحتك اتغيروا لو انت او زميلك تعبتوا وقفوا الشغل انهاء العينه عمره ما اهم من التعامل مع تعب انسان. الاجهاد الحراري ممكن يسبب عرق غزير وجلد شاحب وبارد او رطب وصداع وغثيان ودوخه وضعف. انقل الشخص بعيد عن الحر لمكان ابرد وفيه ضل لو النقل امن وفك اللبس الزياده وبرده بفوط مبلوله وتهويه ونظم له تقييما طبيا. لو واعي تماما ويقدر يبلع بامان ممكن ياخد رشفات صغيره ومتكرره من ميه بارده. خليك معاه وراقب لو حالته بتسوء. ضربه الشمس طارئ طبي. لو شخص اتعرض للحر وظهر عليه تشوش تصرف غير معتاد كلام متلخبط تشنج او فقدان وعي لازم تتحرك فورا. جسمه ممكن يبقى سخن جدا ونبضه سريع. جلده ممكن يبقى محمر وجاف وممكن كمان يكون لسه بيعرق بغزاره. ما تستناش العرق يوقف او تقيس الحراره عشان تطلب المساعده. لو شاكك في ضربه شمس اتصل بالاسعاف على 123 فورا. ابدا تبريد سريع والمساعده في الطريق. انقله لمكان ابرد لو ده امن شيل اللبس الخارجي الزياده بلل الجلد او استخدم فوط بارده مبلوله وهوي. كمل التبريد والمراقبه واتبع تعليمات موظف الطوارئ والمسعف المدرب. ما تجبرش شخص مشوش او فاقد الوعي يشرب. لو اتحسن شويه ده ما يلغيش ضروره التقييم الطبي العاجل.",
+    "checks": [
+      {
+        "id": "complete",
+        "pass": true,
+        "reason": "All sentences and the final words are audible, with no cuts or repetitions."
+      },
+      {
+        "id": "faithful",
+        "pass": true,
+        "reason": "All numbers, negations, conditions, technical terms, and emergency actions were preserved without adding advice."
+      },
+      {
+        "id": "locale",
+        "pass": true,
+        "reason": "The speech is in natural Egyptian Arabic, consistent with the requested locale."
+      },
+      {
+        "id": "intelligible",
+        "pass": true,
+        "reason": "The speech is natural and audible, with no clipping, garbling, abrupt endings, or prolonged silences."
+      },
+      {
+        "id": "no-extra",
+        "pass": true,
+        "reason": "There is no introduction, music, prompt response, or commentary in the audio."
+      }
+    ],
+    "passed": true,
+    "audioSha256": "f683dc13846a0d4439c7681da4bf13c08912b031957099a7e3bccbc3ebaf4465",
+    "qaKey": "a83f37ee2c5e8f37891c9dae503b8a6c594085973f2389555fab6d319ee5e92f",
+    "durationSeconds": 91.93095833333334,
+    "humanListeningReviewed": false,
+    "independentNativeReview": false
+  }
+}

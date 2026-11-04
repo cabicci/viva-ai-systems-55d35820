@@ -1,0 +1,82 @@
+name: Soil owner-worded final B sentence
+on:
+  push:
+    branches: [work/soil-course-pipeline-20261013]
+    paths: [experiments/course-pipeline/rebuild/ar-tail-owner-wording-20261020/request.json]
+permissions:
+  contents: read
+concurrency:
+  group: soil-whole-b-d0bbc053d23e5afba16a848e79bbce959e4c7eb0e272b84b8af539eef073f991
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/ar-tail-owner-wording-20261020
+  REQUEST_SHA: d0bbc053d23e5afba16a848e79bbce959e4c7eb0e272b84b8af539eef073f991
+  SCRIPT_SHA: 6d30db253187f2f31b1658df007a376295f5ef2c2bcad4c666ed19abce020bdb
+  PYTHONUNBUFFERED: '1'
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  OMP_NUM_THREADS: '2'
+jobs:
+  whole-b:
+    if: github.ref == 'refs/heads/work/soil-course-pipeline-20261013' && github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Validate exact source and code bytes
+        run: |
+          python "$PACKAGE/whole.py" validate
+          echo "2135064f25096d4c2b60943a4b2cd7d80fd94ba488ad708a22e29ba78e9858cb  $PACKAGE/diagnostic/audit.py" | sha256sum -c -
+          echo "070b401da45af3ba0676b47bed77f2032fdcc3d04ec0aab262142395487218d6  $PACKAGE/diagnostic/request.json" | sha256sum -c -
+          echo "80ee81bd2ccd2a82954b98feff6bf7dc17d0c796d9b223a22d093e3703ef7c48  $PACKAGE/prepare-diagnostic.py" | sha256sum -c -
+      - name: One whole B TTS attempt only
+        id: voice
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+        run: python "$PACKAGE/whole.py" produce
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: soil-ar-tail-owner-candidate
+          retention-days: 30
+          path: |
+            experiments/course-pipeline/rebuild/ar-tail-owner-wording-20261020/output/
+            experiments/course-pipeline/rebuild/ar-tail-owner-wording-20261020/offline-validation.private.json
+            experiments/course-pipeline/rebuild/ar-tail-owner-wording-20261020/failure.private.json
+      - name: One actual-audio B audit
+        if: steps.voice.outcome == 'success'
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+        run: |
+          python "$PACKAGE/prepare-diagnostic.py"
+          export REQUEST_SHA=$(sha256sum "$PACKAGE/diagnostic/request.json" | cut -d ' ' -f1)
+          export SCRIPT_SHA=2135064f25096d4c2b60943a4b2cd7d80fd94ba488ad708a22e29ba78e9858cb
+          python "$PACKAGE/diagnostic/audit.py" audit
+      - name: Install exact pinned ASR package
+        if: steps.voice.outcome == 'success'
+        run: |
+          python -m pip download --no-deps --dest "$PACKAGE/wheels" faster-whisper==1.2.1
+          python "$PACKAGE/whole.py" verify-wheel
+          python -m pip install --disable-pip-version-check --report "$PACKAGE/asr-output/pip-install-report.private.json" "$PACKAGE"/wheels/faster_whisper-1.2.1-*.whl
+      - name: One B ASR pass, estimated timestamps only
+        if: steps.voice.outcome == 'success'
+        run: python "$PACKAGE/whole.py" asr
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: soil-ar-tail-owner-evidence
+          retention-days: 30
+          path: |
+            experiments/course-pipeline/rebuild/ar-tail-owner-wording-20261020/diagnostic/output/
+            experiments/course-pipeline/rebuild/ar-tail-owner-wording-20261020/diagnostic/request.json
+            experiments/course-pipeline/rebuild/ar-tail-owner-wording-20261020/asr-output/
+            experiments/course-pipeline/rebuild/ar-tail-owner-wording-20261020/failure.private.json

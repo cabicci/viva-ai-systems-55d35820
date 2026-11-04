@@ -1,0 +1,82 @@
+name: Soil targeted S1-01 unit022 speech repair
+on:
+  push:
+    branches: [work/soil-course-pipeline-20261013]
+    paths: [experiments/course-pipeline/rebuild/ar-s101-unit022-repair-20261020/request.json]
+permissions:
+  contents: read
+concurrency:
+  group: soil-s101-unit022-repair-e027bb9c77fecc9ff399c6652272522d361b97cf2398f33d85ce6209b7ac14e0
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/ar-s101-unit022-repair-20261020
+  REQUEST_SHA: e027bb9c77fecc9ff399c6652272522d361b97cf2398f33d85ce6209b7ac14e0
+  SCRIPT_SHA: 41e34620a9eba62fccf3e64a6d71c7c1a234811f78c740a675b6eab9ce7e72cb
+  PYTHONUNBUFFERED: '1'
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  OMP_NUM_THREADS: '2'
+jobs:
+  whole-b:
+    if: github.ref == 'refs/heads/work/soil-course-pipeline-20261013' && github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Validate exact source and code bytes
+        run: |
+          python "$PACKAGE/whole.py" validate
+          echo "21a97c4c0efc39cc05f59ff289dea115de091666f89eb85901018e5d0b542d5e  $PACKAGE/diagnostic/audit.py" | sha256sum -c -
+          echo "2da17a62dc939b8c43f9313663ddd770bb33e9b8fcfee797e29b39a39b8a70c7  $PACKAGE/diagnostic/request.json" | sha256sum -c -
+          echo "518cf98dc00b16b68c71e3f62005daf82a945331c7a3896aa56a21acc5623cca  $PACKAGE/prepare-diagnostic.py" | sha256sum -c -
+      - name: One whole B TTS attempt only
+        id: voice
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+        run: python "$PACKAGE/whole.py" produce
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: soil-ar-s101-unit022-repair-candidate
+          retention-days: 30
+          path: |
+            experiments/course-pipeline/rebuild/ar-s101-unit022-repair-20261020/output/
+            experiments/course-pipeline/rebuild/ar-s101-unit022-repair-20261020/offline-validation.private.json
+            experiments/course-pipeline/rebuild/ar-s101-unit022-repair-20261020/failure.private.json
+      - name: One actual-audio B audit
+        if: steps.voice.outcome == 'success'
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+        run: |
+          python "$PACKAGE/prepare-diagnostic.py"
+          export REQUEST_SHA=$(sha256sum "$PACKAGE/diagnostic/request.json" | cut -d ' ' -f1)
+          export SCRIPT_SHA=21a97c4c0efc39cc05f59ff289dea115de091666f89eb85901018e5d0b542d5e
+          python "$PACKAGE/diagnostic/audit.py" audit
+      - name: Install exact pinned ASR package
+        if: steps.voice.outcome == 'success'
+        run: |
+          python -m pip download --no-deps --dest "$PACKAGE/wheels" faster-whisper==1.2.1
+          python "$PACKAGE/whole.py" verify-wheel
+          python -m pip install --disable-pip-version-check --report "$PACKAGE/asr-output/pip-install-report.private.json" "$PACKAGE"/wheels/faster_whisper-1.2.1-*.whl
+      - name: One B ASR pass, estimated timestamps only
+        if: steps.voice.outcome == 'success'
+        run: python "$PACKAGE/whole.py" asr
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: soil-ar-s101-unit022-repair-evidence
+          retention-days: 30
+          path: |
+            experiments/course-pipeline/rebuild/ar-s101-unit022-repair-20261020/diagnostic/output/
+            experiments/course-pipeline/rebuild/ar-s101-unit022-repair-20261020/diagnostic/request.json
+            experiments/course-pipeline/rebuild/ar-s101-unit022-repair-20261020/asr-output/
+            experiments/course-pipeline/rebuild/ar-s101-unit022-repair-20261020/failure.private.json

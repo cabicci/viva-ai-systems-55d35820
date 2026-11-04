@@ -1,0 +1,81 @@
+{
+  "attempts": [
+    {
+      "attempt": 0,
+      "status": "reviewed",
+      "generation": "generated",
+      "quality": {
+        "transcript": "الإسعاف الأولي مساعدة فورية لحد ما الرعاية الطبية تتنظم. ده ما يخليكش طبيب ولا يديك حق تعمل إجراء ما اتدربتش عليه. استخدم وسيلة الحماية المناسبة عشان تقلل ملامسة الدم أو المواد الكيماوية. لو الشخص فقد الاستجابة أو مش بيتنفس بشكل طبيعي، بلغ الإسعاف فورا واتبع تعليماتهم، وما تعملش إلا المهارات اللي اتدربت عليها. لو في جرح بينزف وتقدر توصل له، اضغط بثبات وبشكل مباشر بشاش نظيف أو قطعة قماش نظيفة. في النزيف الشديد اطلب مساعدة عاجلة وراقب حالة المصاب. لو في جسم مغروس في الجرح أو عظم ظاهر، ما تشيلوش وما تضغطش عليه مباشرة. احمِ المكان واتبع إرشادات الطوارئ اللي اتدربت عليها. الدرس ده مش تدريب على حشو الجروح أو استخدام الرباط الضاغط الخاص بالنزيف الشديد أو إجراءات متقدمة تانية. الكسر معناه شرخ أو قطع في العظمة، والالتواء إصابة في الأنسجة اللي بتسند المفصل. في الحقل مش هتقدر تشخص الفرق بثقة. ألم شديد، أو وضع غير طبيعي للطرف، أو عدم القدرة على الحركة بأمان يستدعي مساعدة طبية. ما تفردش الطرف، وما تشدوش أو تختبره، وما تطلبش من المصاب يمشي عشان تثبت إنه كويس. خليه ثابت ومسنود على وضعه لو المكان آمن. التثبيت أو النقل يكون في حدود تدريبك وتوجيهات الطوارئ. طمن المصاب واحمي من البرد أو الحر الزايد. في حالة إصابة جسدية خطيرة، ما تديلوش أكل أو شرب لحد ما تاخد إرشادا طبيا. ما تخلطش ده مع رشفات ميه صغيرة لشخص عنده إجهاد حراري وهو واعي تماما وقادر يبلع بأمان. ممنوع تدي شرب لحد فاقد الوعي أو مشوش أو مش قادر يبلع كويس.",
+        "checks": [
+          {
+            "id": "complete",
+            "pass": true,
+            "reason": "All sentences and final words are audible, with no cuts or repetitions."
+          },
+          {
+            "id": "faithful",
+            "pass": true,
+            "reason": "All numbers, units, negations, conditions, technical terms, and emergency actions are preserved without adding advice."
+          },
+          {
+            "id": "locale",
+            "pass": true,
+            "reason": "The transcription uses natural Egyptian Arabic, consistent with the expected locale."
+          },
+          {
+            "id": "intelligible",
+            "pass": true,
+            "reason": "The speech is natural and audible, with no clipping, garbling, abrupt endings, or prolonged silences."
+          },
+          {
+            "id": "no-extra",
+            "pass": true,
+            "reason": "The audio contains no introduction, music, prompt responses, or commentary."
+          }
+        ],
+        "passed": true,
+        "audioSha256": "0859bfff591d8352b0556b12c13093dfb017774af50da713d7938ca3109cc785",
+        "qaKey": "9aa6228a55d090ebf038d736bb966c064f4b927b49e4b1d95908a309b4168601",
+        "durationSeconds": 100.77095833333334,
+        "humanListeningReviewed": false,
+        "independentNativeReview": false
+      }
+    }
+  ],
+  "accepted": {
+    "transcript": "الإسعاف الأولي مساعدة فورية لحد ما الرعاية الطبية تتنظم. ده ما يخليكش طبيب ولا يديك حق تعمل إجراء ما اتدربتش عليه. استخدم وسيلة الحماية المناسبة عشان تقلل ملامسة الدم أو المواد الكيماوية. لو الشخص فقد الاستجابة أو مش بيتنفس بشكل طبيعي، بلغ الإسعاف فورا واتبع تعليماتهم، وما تعملش إلا المهارات اللي اتدربت عليها. لو في جرح بينزف وتقدر توصل له، اضغط بثبات وبشكل مباشر بشاش نظيف أو قطعة قماش نظيفة. في النزيف الشديد اطلب مساعدة عاجلة وراقب حالة المصاب. لو في جسم مغروس في الجرح أو عظم ظاهر، ما تشيلوش وما تضغطش عليه مباشرة. احمِ المكان واتبع إرشادات الطوارئ اللي اتدربت عليها. الدرس ده مش تدريب على حشو الجروح أو استخدام الرباط الضاغط الخاص بالنزيف الشديد أو إجراءات متقدمة تانية. الكسر معناه شرخ أو قطع في العظمة، والالتواء إصابة في الأنسجة اللي بتسند المفصل. في الحقل مش هتقدر تشخص الفرق بثقة. ألم شديد، أو وضع غير طبيعي للطرف، أو عدم القدرة على الحركة بأمان يستدعي مساعدة طبية. ما تفردش الطرف، وما تشدوش أو تختبره، وما تطلبش من المصاب يمشي عشان تثبت إنه كويس. خليه ثابت ومسنود على وضعه لو المكان آمن. التثبيت أو النقل يكون في حدود تدريبك وتوجيهات الطوارئ. طمن المصاب واحمي من البرد أو الحر الزايد. في حالة إصابة جسدية خطيرة، ما تديلوش أكل أو شرب لحد ما تاخد إرشادا طبيا. ما تخلطش ده مع رشفات ميه صغيرة لشخص عنده إجهاد حراري وهو واعي تماما وقادر يبلع بأمان. ممنوع تدي شرب لحد فاقد الوعي أو مشوش أو مش قادر يبلع كويس.",
+    "checks": [
+      {
+        "id": "complete",
+        "pass": true,
+        "reason": "All sentences and final words are audible, with no cuts or repetitions."
+      },
+      {
+        "id": "faithful",
+        "pass": true,
+        "reason": "All numbers, units, negations, conditions, technical terms, and emergency actions are preserved without adding advice."
+      },
+      {
+        "id": "locale",
+        "pass": true,
+        "reason": "The transcription uses natural Egyptian Arabic, consistent with the expected locale."
+      },
+      {
+        "id": "intelligible",
+        "pass": true,
+        "reason": "The speech is natural and audible, with no clipping, garbling, abrupt endings, or prolonged silences."
+      },
+      {
+        "id": "no-extra",
+        "pass": true,
+        "reason": "The audio contains no introduction, music, prompt responses, or commentary."
+      }
+    ],
+    "passed": true,
+    "audioSha256": "0859bfff591d8352b0556b12c13093dfb017774af50da713d7938ca3109cc785",
+    "qaKey": "9aa6228a55d090ebf038d736bb966c064f4b927b49e4b1d95908a309b4168601",
+    "durationSeconds": 100.77095833333334,
+    "humanListeningReviewed": false,
+    "independentNativeReview": false
+  }
+}

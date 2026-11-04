@@ -1,0 +1,140 @@
+name: Soil coverage global confirmation and localization only
+on:
+  push:
+    branches: [work/soil-course-pipeline-20261013]
+    paths: [.github/workflows/soil-course-coverage-confirm.yml]
+  workflow_dispatch:
+    inputs:
+      firstRun:
+        description: Completed source coverage run for pages 1-78
+        required: true
+        type: string
+      secondRun:
+        description: Completed source coverage run for pages 79-146
+        required: true
+        type: string
+      resumeRun:
+        description: Previous confirmation run to reuse without repeating paid checks
+        required: false
+        type: string
+      blocks:
+        description: JSON array of unresolved block numbers
+        required: false
+        default: '[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]'
+        type: string
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: soil-coverage-confirm-${{ github.ref }}-${{ inputs.blocks }}
+  cancel-in-progress: false
+jobs:
+  gather:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Retrieve immutable source and actual lesson evidence
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FIRST: ${{ inputs.firstRun }}
+          SECOND: ${{ inputs.secondRun }}
+          RESUME: ${{ inputs.resumeRun }}
+        run: |
+          for RUN in "$FIRST" "$SECOND"; do
+            gh run download "$RUN" -p 'soil-coverage-*' -D "experiments/course-pipeline/production/private/confirmation-input/$RUN"
+          done
+          if [ -n "$RESUME" ]; then
+            gh run download "$RESUME" -p 'soil-coverage-confirmed-*' -D "experiments/course-pipeline/production/private/confirmation-input/$RESUME"
+          fi
+          python3 - <<'PY'
+          import json,shutil,sys
+          from pathlib import Path
+          sys.path.insert(0,'experiments/course-pipeline');import pipeline as p
+          root=Path('experiments/course-pipeline/production/private')
+          dest=root/'coverage-audit';results=dest/'results';results.mkdir(parents=True,exist_ok=True)
+          req=p.read(root.parent/'coverage-request.json');pages={}
+          for file in (root/'confirmation-input').rglob('source-pages.json'):
+            source=p.read(file);assert source['sourceSha256']==req['sourceSha256']
+            for page in source['pages']:
+              if page['page'] in pages:assert pages[page['page']]==page
+              pages[page['page']]=page
+            for lesson in (file.parent/'snapshot').glob('*/*.json'):
+              target=dest/'snapshot'/lesson.parent.name/lesson.name;target.parent.mkdir(parents=True,exist_ok=True)
+              assert p.digest(p.read(lesson))==req['contentHashes'][lesson.parent.name][lesson.stem]
+              if target.exists():assert p.digest(p.read(target))==p.digest(p.read(lesson))
+              else:shutil.copyfile(lesson,target)
+          assert set(pages)==set(range(1,147))
+          p.write(dest/'source-pages.json',{'sourceSha256':req['sourceSha256'],'pages':[pages[n] for n in sorted(pages)]})
+          for file in (root/'confirmation-input').rglob('*.json'):
+            if file.name.startswith(('inventory-','matches-','confirmed-','locales-')) and '.raw.' not in file.name:
+              target=results/file.name
+              if target.exists():assert target.read_bytes()==file.read_bytes()
+              else:shutil.copyfile(file,target)
+          print('Verified all 146 source pages and 136 frozen lessons; reuse valid results and finish unresolved blocks.')
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: soil-coverage-confirmation-input
+          path: experiments/course-pipeline/production/private/coverage-audit
+          retention-days: 14
+  confirm:
+    needs: gather
+    runs-on: ubuntu-22.04
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        block: ${{ fromJSON(inputs.blocks || '[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]') }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: soil-coverage-confirmation-input
+          path: experiments/course-pipeline/production/private/coverage-audit
+      - uses: actions/cache/restore@5a3ec84eff668545956fd18022155c47e93e2684
+        with:
+          path: experiments/course-pipeline/production/private/coverage-audit/cache
+          key: soil-coverage-resume-inventory-${{ matrix.block }}-${{ github.run_id }}
+          restore-keys: soil-coverage-inventory-${{ matrix.block }}-
+      - uses: actions/cache/restore@5a3ec84eff668545956fd18022155c47e93e2684
+        with:
+          path: experiments/course-pipeline/production/private/coverage-audit/cache
+          key: soil-coverage-resume-match-${{ matrix.block }}-${{ github.run_id }}
+          restore-keys: soil-coverage-match-${{ matrix.block }}-
+      - uses: actions/cache/restore@5a3ec84eff668545956fd18022155c47e93e2684
+        with:
+          path: experiments/course-pipeline/production/private/coverage-audit/cache
+          key: soil-coverage-confirm-${{ matrix.block }}-${{ hashFiles('experiments/course-pipeline/production/coverage-request.json') }}
+          restore-keys: soil-coverage-confirm-${{ matrix.block }}-
+      - name: Search the entire course and compare actual translations
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          GEMINI_API_KEY_4: ${{ secrets.GEMINI_API_KEY_4 }}
+          BLOCK: ${{ matrix.block }}
+          PYTHONUNBUFFERED: '1'
+        run: |
+          python3 experiments/course-pipeline/production/coverage_audit/worker.py inventory --block "$BLOCK"
+          python3 experiments/course-pipeline/production/coverage_audit/worker.py match --block "$BLOCK"
+          python3 experiments/course-pipeline/production/coverage_audit/worker.py confirm --block "$BLOCK"
+          python3 experiments/course-pipeline/production/coverage_audit/worker.py localize --block "$BLOCK"
+      - uses: actions/cache/save@5a3ec84eff668545956fd18022155c47e93e2684
+        if: always()
+        with:
+          path: experiments/course-pipeline/production/private/coverage-audit/cache
+          key: soil-coverage-confirm-${{ matrix.block }}-${{ hashFiles('experiments/course-pipeline/production/coverage-request.json') }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: soil-coverage-confirmed-${{ matrix.block }}
+          path: |
+            experiments/course-pipeline/production/private/coverage-audit/results/inventory-*.json
+            experiments/course-pipeline/production/private/coverage-audit/results/matches-*.json
+            experiments/course-pipeline/production/private/coverage-audit/results/confirmed-*.json
+            experiments/course-pipeline/production/private/coverage-audit/results/locales-*.json
+            experiments/course-pipeline/production/private/coverage-audit/results/global-*.json
+          retention-days: 30

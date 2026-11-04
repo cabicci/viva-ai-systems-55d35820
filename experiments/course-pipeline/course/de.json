@@ -1,0 +1,289 @@
+{
+  "name": "Deutsch",
+  "title": "Kleine Probe. Fundierte Entscheidung.",
+  "subtitle": "Eine repräsentative Bodenprobe entnehmen",
+  "eyebrow": "BODEN & PFLANZENBAU · PRAKTISCHE FERTIGKEITEN",
+  "goal": "Eine nachvollziehbare Mischprobe aus einem Bewirtschaftungsbereich planen und entnehmen – nach den Vorgaben des Labors.",
+  "ui": {
+    "learn": "Lernen",
+    "practice": "Feldplan",
+    "check": "Wissen prüfen",
+    "field": "Mit der Lehrkraft",
+    "assistant": "Lernbegleitung",
+    "glossary": "Fachbegriffe",
+    "watch": "Lernvideo ansehen",
+    "listen": "Anhören",
+    "read": "Erklärung lesen",
+    "next": "Weiter",
+    "prev": "Zurück",
+    "step": "Teil",
+    "of": "von",
+    "begin": "Lektion starten",
+    "minutes": "12–18 Min. + betreute Praxis",
+    "review": "Pilotversion zur Prüfung",
+    "protocol": "Übungsauftrag",
+    "protocolText": "Simulierter Laborauftrag: Bereich A, routinemäßige Nährstoffuntersuchung, 15 Teilproben aus 0–20 cm Tiefe, vergleichbare Volumen, gründlich mischen. Menge, Verpackung und Transport richten sich nach dem empfangenden Labor. Diese Zahlen gelten nur für diese Übung.",
+    "mapTitle": "Wo würdest du beginnen?",
+    "mapText": "Wähle vier über Bereich A verteilte Startpunkte. Dies ist eine Planungsübung; der Auftrag verlangt weiterhin 15 Teilproben. Die Nassstelle und der frühere Misthaufen gehören nicht in die reguläre Mischprobe.",
+    "mapLabel": "Vereinfachter Plan von Bereich A mit vier Planungsvierteln",
+    "point": "Punkt",
+    "wet": "Nassstelle",
+    "manure": "Früherer Misthaufen",
+    "selected": "ausgewählt",
+    "reset": "Neu beginnen",
+    "validate": "Plan prüfen",
+    "mapOk": "Gut verteilt. Deine Startpunkte decken alle vier Viertel ab und meiden die auffälligen Stellen. Setze den Weg fort, bis alle 15 Teilproben gesammelt sind.",
+    "mapBad": "Wähle genau vier Punkte, einen je Viertel. Meide die markierten Stellen. Nur am Eingang zu sammeln lässt große Teile des Bereichs unberücksichtigt.",
+    "quizIntro": "Antworte, lies die Erklärung und versuche es bei Bedarf erneut. Diese Prüfung bescheinigt keine praktische Kompetenz.",
+    "correct": "Richtig.",
+    "retry": "Lies die Erklärung und versuche es erneut.",
+    "results": "Antworten geprüft",
+    "practicalIntro": "Arbeite mit der Lehrkraft in einem freigegebenen, sicheren Bereich nach den tatsächlichen Laborvorgaben. Die Lehrkraft beobachtet den Ablauf; ein Häkchen hier ist kein Kompetenznachweis.",
+    "checklist": "Beobachtungsbogen",
+    "notes": "Nachweise und Rückmeldung der Lehrkraft",
+    "notesHint": "Proben-ID, Datum, beobachtete Tiefe, Anzahl der Einstiche, Abweichungen, Rückmeldung … Keine Beobachtungen erfinden.",
+    "download": "Praxisprotokoll herunterladen",
+    "saved": "Nur auf diesem Gerät gespeichert.",
+    "terms": "Gemeinsame Fachsprache",
+    "ask": "Frage zur Lektion stellen",
+    "askHint": "Zum Beispiel: Warum die Nassstelle nicht untermischen?",
+    "askButton": "Erklärung suchen",
+    "guideInfo": "Diese Pilot-Lernbegleitung findet Erklärungen aus der Lektion. Sie ist keine live antwortende KI-Beratung. Bei unbekannten Feldbedingungen helfen Lehrkraft oder Labor.",
+    "noAnswer": "Keine ausreichend sichere Zuordnung gefunden. Wähle unten ein Thema oder frage deine Lehrkraft. Ich werde nicht raten.",
+    "sources": "Lernquellen",
+    "revisit": "Erkläre morgen, warum eine Probe am Eingang nicht genügt. Wiederhole die Erklärung nach einer Woche.",
+    "complete": "Im Feld geht das Lernen weiter",
+    "videoPending": "Das Video wird vorbereitet. Alle bebilderten Erklärungen stehen unten bereit.",
+    "captions": "Untertitel",
+    "record": "Praxisprotokoll",
+    "notObserved": "Noch nicht beobachtet",
+    "observed": "Beobachtet",
+    "needsPractice": "Weiter üben",
+    "label": "Probenidentität",
+    "qLabel": "Frage",
+    "finish": "Antworten überprüfen"
+  },
+  "scenes": [
+    {
+      "id": "purpose",
+      "title": "Warum eine gute Probe zählt",
+      "lead": "Das Labor untersucht nur den eingesandten Boden. Eine Probe am Eingang beschreibt möglicherweise diesen Punkt, nicht den gesamten Bereich.",
+      "example": "Stell dir ein Feld mit gleichmäßiger Mitte und einem abweichenden Streifen am früheren Misthaufen vor. Alles zu vermischen kann Unterschiede verdecken.",
+      "takeaway": "Du sollst einen definierten Bereich abbilden, nicht den schönsten oder am leichtesten erreichbaren Boden auswählen.",
+      "labels": [
+        "Ein Bereich",
+        "Mehrere Stellen",
+        "Nachvollziehbare Probe"
+      ],
+      "narration": "Das Labor untersucht eine kleine Menge Boden. Das Ergebnis hilft nur, wenn die Probe den vorgesehenen Bewirtschaftungsbereich repräsentiert. Ein einzelner bequemer Einstich am Eingang reicht nicht. In dieser Lektion planst du Entnahmestellen, hältst eine festgelegte Tiefe ein und sicherst die Identität der Probe.",
+      "caption": "Das Labor untersucht eine kleine Menge Boden. Das Ergebnis hilft nur, wenn die Probe den vorgesehenen Bewirtschaftungsbereich repräsentiert. Ein einzelner bequemer Einstich am Eingang reicht nicht. In dieser Lektion planst du Entnahmestellen, hältst eine festgelegte Tiefe ein und sicherst die Identität der Probe."
+    },
+    {
+      "id": "zones",
+      "title": "Zuerst den Bereich festlegen",
+      "lead": "Fasse Boden mit ähnlicher Bewirtschaftungsgeschichte und weitgehend ähnlichen Bedingungen zusammen. Markiere wichtige Unterschiede vor der Punktwahl.",
+      "example": "Eine dauerhaft nasse Stelle oder ein früherer Misthaufen kann eine eigene Untersuchung erfordern. Mische solche Stellen nicht unbemerkt unter.",
+      "takeaway": "Markiere die ausgesparte Stelle im Plan und besprich das Vorgehen mit der Lehrkraft.",
+      "labels": [
+        "Grenzen markieren",
+        "Auffälligkeiten erkennen",
+        "Identitäten trennen"
+      ],
+      "narration": "Beginne mit dem Feldplan. Lege fest, welchen Bereich die Probe repräsentieren soll. Unterschiedliche Bewirtschaftung oder deutlich andere Bedingungen können getrennte Proben erfordern. Eine Nassstelle oder einen früheren Misthaufen mischst du nicht unbemerkt mit dem übrigen Boden. Markiere die Stellen und stimme den Plan mit der Lehrkraft ab.",
+      "caption": "Beginne mit dem Feldplan. Lege fest, welchen Bereich die Probe repräsentieren soll. Unterschiedliche Bewirtschaftung oder deutlich andere Bedingungen können getrennte Proben erfordern. Eine Nassstelle oder einen früheren Misthaufen mischst du nicht unbemerkt mit dem übrigen Boden. Markiere die Stellen und stimme den Plan mit der Lehrkraft ab."
+    },
+    {
+      "id": "tools",
+      "title": "Saubere Geräte schützen das Ergebnis",
+      "lead": "Bereite einen geeigneten Bohrstock oder Spaten, einen sauberen Kunststoffeimer, ein vom Labor akzeptiertes Gefäß, einen Stift und ein Protokoll vor.",
+      "example": "Boden- oder Düngerreste am Gerät können die nächste Probe beeinflussen. Reinige die Geräte zwischen Bereichen nach dem Protokoll.",
+      "takeaway": "Trage geeignete Schuhe und die vorgegebene Schutzausrüstung. Stoppe bei unsicherem Zugang oder unsicherer Gerätehandhabung.",
+      "labels": [
+        "Sauberkeit prüfen",
+        "Geräte prüfen",
+        "Sicheren Zugang prüfen"
+      ],
+      "narration": "Bereite die Geräte vor dem Betreten der Fläche vor. Du brauchst einen geeigneten Bohrstock oder Spaten, einen sauberen Kunststoffeimer, ein Probengefäß, einen Stift und ein Protokoll. Prüfe auf Rückstände und reinige zwischen Bereichen. Die Lehrkraft kontrolliert Zugang, Schuhwerk und sichere Handhabung, bevor die Praxis beginnt.",
+      "caption": "Bereite die Geräte vor dem Betreten der Fläche vor. Du brauchst einen geeigneten Bohrstock oder Spaten, einen sauberen Kunststoffeimer, ein Probengefäß, einen Stift und ein Protokoll. Prüfe auf Rückstände und reinige zwischen Bereichen. Die Lehrkraft kontrolliert Zugang, Schuhwerk und sichere Handhabung, bevor die Praxis beginnt."
+    },
+    {
+      "id": "route",
+      "title": "Punkte über den Bereich verteilen",
+      "lead": "Ein Zickzackweg kann Teilproben in einem relativ einheitlichen Bereich verteilen. Er ist eine Planungshilfe, allein aber keine Garantie für Repräsentativität.",
+      "example": "Sammle nicht nur am Eingang. Prüfe die Abdeckung des gesamten vorgesehenen Bereichs und den gesonderten Umgang mit Auffälligkeiten.",
+      "takeaway": "Der simulierte Auftrag verlangt 15 Teilproben. Andere Untersuchungen oder Labore können einen anderen Plan erfordern.",
+      "labels": [
+        "Bereich abdecken",
+        "Bequeme Auswahl vermeiden",
+        "Vorgesehene Anzahl einhalten"
+      ],
+      "narration": "Plane einen Weg durch den gesamten Bereich, statt nur leicht erreichbare Stellen zu beproben. Ein Zickzackweg kann die Punkte verteilen. In unserem Übungsauftrag sammelst du fünfzehn Teilproben. Diese Zahl gehört zur Übung und ist keine allgemeine Regel. Im Feld gelten die Vorgaben des empfangenden Labors.",
+      "caption": "Plane einen Weg durch den gesamten Bereich, statt nur leicht erreichbare Stellen zu beproben. Ein Zickzackweg kann die Punkte verteilen. In unserem Übungsauftrag sammelst du fünfzehn Teilproben. Diese Zahl gehört zur Übung und ist keine allgemeine Regel. Im Feld gelten die Vorgaben des empfangenden Labors."
+    },
+    {
+      "id": "depth",
+      "title": "Die festgelegte Tiefe einhalten",
+      "lead": "Diese Übung umfasst Boden von der Oberfläche bis 20 cm. Entferne lose Pflanzenreste, ohne die zu untersuchende Bodenschicht abzutragen.",
+      "example": "Entnimm mit dem Bohrstock oder als möglichst gleichmäßigen Streifen über die verlangte Tiefe. Sammle an jedem Punkt vergleichbare Volumen.",
+      "takeaway": "Die Tiefe hängt von Untersuchung und Anbausystem ab. Bestätige sie vor Beginn, statt eine Zahl auswendig zu übernehmen.",
+      "labels": [
+        "0–20 cm in diesem Auftrag",
+        "Vergleichbare Volumen",
+        "Jeden Punkt prüfen"
+      ],
+      "narration": "Achte jetzt auf die Tiefe. Unser simulierter Auftrag nennt null bis zwanzig Zentimeter. Entferne lose Oberflächenreste und entnimm Boden über die festgelegte Schicht. Sammle vergleichbare Volumen. Vermische keine große flache Schaufel mit einer kleinen tiefen Probe. Unterschiedliche Untersuchungen können andere Tiefen verlangen; prüfe daher zuerst die Vorgaben.",
+      "caption": "Achte jetzt auf die Tiefe. Unser simulierter Auftrag nennt null bis zwanzig Zentimeter. Entferne lose Oberflächenreste und entnimm Boden über die festgelegte Schicht. Sammle vergleichbare Volumen. Vermische keine große flache Schaufel mit einer kleinen tiefen Probe. Unterschiedliche Untersuchungen können andere Tiefen verlangen; prüfe daher zuerst die Vorgaben."
+    },
+    {
+      "id": "mix",
+      "title": "Eine Mischprobe herstellen",
+      "lead": "Gib die Teilproben desselben Bereichs in den sauberen Eimer und mische gründlich. Entnimm daraus den Anteil für das Labor.",
+      "example": "Sende nicht nur die letzte Teilprobe und greife nicht in eine ungemischte Ecke. Sonst geht die sorgfältige räumliche Verteilung verloren.",
+      "takeaway": "Menge, Trocknung, Gefäß und Transport hängen von Untersuchung und Labor ab.",
+      "labels": [
+        "Nur derselbe Bereich",
+        "Gründlich mischen",
+        "Laborvorgaben beachten"
+      ],
+      "narration": "Mische nach der Entnahme die Teilproben desselben Bereichs gründlich im sauberen Eimer. Entnimm den Laboranteil aus dieser Mischung, nicht aus dem letzten Einstich oder einer ungemischten Ecke. Kläre Menge, Gefäß, Trocknung und Transport mit dem Labor. Nicht jede Bodenuntersuchung erfordert dieselbe Behandlung.",
+      "caption": "Mische nach der Entnahme die Teilproben desselben Bereichs gründlich im sauberen Eimer. Entnimm den Laboranteil aus dieser Mischung, nicht aus dem letzten Einstich oder einer ungemischten Ecke. Kläre Menge, Gefäß, Trocknung und Transport mit dem Labor. Nicht jede Bodenuntersuchung erfordert dieselbe Behandlung."
+    },
+    {
+      "id": "label",
+      "title": "Die Identität erhalten",
+      "lead": "Vergib eine eindeutige Proben-ID. Notiere Feld, Bereich, Entnahmedatum, Tiefe, entnehmende Person und gewünschte Untersuchung. Vergleiche Gefäß und Protokoll.",
+      "example": "Nur ein Beispiel: A-01, Bereich A, 13. Oktober 2026, 0–20 cm, 15 Teilproben, Nährstoffuntersuchung. In der Praxis zählen die tatsächlichen Beobachtungen.",
+      "takeaway": "Auch eine korrekte Analyse ist keine verlässliche Entscheidungsgrundlage, wenn sie dem falschen Feld zugeordnet wird.",
+      "labels": [
+        "Eindeutige Proben-ID",
+        "Gefäß und Protokoll stimmen überein",
+        "Tatsächliche Beobachtungen"
+      ],
+      "narration": "Beschrifte die Probe so, dass keine Verwechslung entsteht. Notiere ID, Feld, Bereich, tatsächliches Datum, Tiefe, entnehmende Person und Untersuchung. Vergleiche Gefäß und Protokoll. Die Beispielwerte sind simuliert. Im Feld dokumentierst du den tatsächlichen Ablauf einschließlich Abweichungen und ersetzt fehlende Beobachtungen nicht durch erfundene Werte.",
+      "caption": "Beschrifte die Probe so, dass keine Verwechslung entsteht. Notiere ID, Feld, Bereich, tatsächliches Datum, Tiefe, entnehmende Person und Untersuchung. Vergleiche Gefäß und Protokoll. Die Beispielwerte sind simuliert. Im Feld dokumentierst du den tatsächlichen Ablauf einschließlich Abweichungen und ersetzt fehlende Beobachtungen nicht durch erfundene Werte."
+    },
+    {
+      "id": "transfer",
+      "title": "Erklären, üben, verbessern",
+      "lead": "Erkläre vor dem Verlassen des Felds, wie Weg, Tiefe und Behandlung den vereinbarten Bereich abbilden. Die Lehrkraft beobachtet den gesamten Ablauf.",
+      "example": "Wenn du den Plan nicht einhalten kannst, stoppe und dokumentiere den Grund. Vereinbart vor dem Versand eine Korrektur.",
+      "takeaway": "Erkläre die Methode morgen ohne Vorlage. Wende sie nach einer Woche auf ein Feld mit anderen Bereichen an.",
+      "labels": [
+        "Entscheidungen begründen",
+        "Beobachtbare Nachweise sammeln",
+        "Später wiederholen"
+      ],
+      "narration": "Jetzt übst du mit der Lehrkraft. Erkläre die räumliche Abdeckung, die Kontrolle der Tiefe und die Sicherung der Probenidentität. Verhindern die Bedingungen den geplanten Ablauf, stoppe und vereinbare eine Korrektur. Eine Onlineantwort allein belegt keine praktische Kompetenz. Wiederhole die Methode morgen und übertrage sie später auf ein anderes Feld.",
+      "caption": "Jetzt übst du mit der Lehrkraft. Erkläre die räumliche Abdeckung, die Kontrolle der Tiefe und die Sicherung der Probenidentität. Verhindern die Bedingungen den geplanten Ablauf, stoppe und vereinbare eine Korrektur. Eine Onlineantwort allein belegt keine praktische Kompetenz. Wiederhole die Methode morgen und übertrage sie später auf ein anderes Feld."
+    }
+  ],
+  "quiz": [
+    {
+      "id": "Q1",
+      "question": "Du findest eine dauerhaft nasse Stelle in Bereich A. Was tust du?",
+      "options": [
+        "Mit allem vermischen, damit nichts fehlt.",
+        "Markieren und getrennte Beprobung abstimmen.",
+        "Alle Teilproben dort entnehmen."
+      ],
+      "answer": 1,
+      "explanation": "Die reguläre Mischprobe braucht einen klaren Bezugsbereich. Eine abweichende Stelle kann eine eigene Untersuchung erfordern. Unbemerkte Vermischung verdeckt Unterschiede."
+    },
+    {
+      "id": "Q2",
+      "question": "Welche Tiefe gilt für jede echte Bodenprobe?",
+      "options": [
+        "Immer 20 cm.",
+        "So tief wie das Gerät reicht.",
+        "Die für Untersuchung und Laborprotokoll festgelegte Tiefe."
+      ],
+      "answer": 2,
+      "explanation": "0–20 cm gehört zum simulierten Auftrag. Tatsächliche Tiefen richten sich nach Zweck und Laborvorgaben."
+    },
+    {
+      "id": "Q3",
+      "question": "Welches Vorgehen bewahrt die Aussage des Plans?",
+      "options": [
+        "Vergleichbare Teilproben aus einem Bereich gründlich mischen.",
+        "Nur die letzte Teilprobe einsenden.",
+        "Verschiedene Bereiche zusammenlegen, um ein Gefäß zu sparen."
+      ],
+      "answer": 0,
+      "explanation": "Vergleichbare Volumen und gründliches Mischen unterstützen die Repräsentativität. Halte die Probenidentitäten getrennt."
+    },
+    {
+      "id": "Q4",
+      "question": "Im Protokoll fehlt die Entnahmetiefe. Was tust du?",
+      "options": [
+        "20 cm aus dem Beispiel eintragen.",
+        "Die Lücke kennzeichnen und mit entnehmender Person oder Lehrkraft klären.",
+        "Das Feld Tiefe entfernen."
+      ],
+      "answer": 1,
+      "explanation": "Das Protokoll muss die tatsächliche Arbeit beschreiben. Ein erfundener Wert erschwert die Auswertung."
+    }
+  ],
+  "glossary": [
+    [
+      "Teilprobe",
+      "Boden von einer einzelnen Entnahmestelle im vereinbarten Bereich."
+    ],
+    [
+      "Mischprobe",
+      "Gründlich vermischte Teilproben aus demselben definierten Bereich."
+    ],
+    [
+      "Bewirtschaftungsbereich",
+      "Für die Beprobung als Einheit behandelter Bereich."
+    ],
+    [
+      "Repräsentativ",
+      "Bildet den definierten Bereich ab, nicht nur bequem erreichbare Stellen."
+    ],
+    [
+      "Entnahmetiefe",
+      "Die vom Protokoll vorgegebene Bodenschicht."
+    ],
+    [
+      "Rückverfolgbarkeit",
+      "Zuordnung der Probe zu tatsächlichem Ort, Zeitpunkt und Vorgehen."
+    ]
+  ],
+  "checklist": [
+    "Legt den Bereich fest und markiert Auffälligkeiten.",
+    "Prüft Sauberkeit und sichere Gerätehandhabung.",
+    "Deckt den Bereich mit vereinbartem Weg und Anzahl ab.",
+    "Entnimmt vergleichbare Volumen in festgelegter Tiefe.",
+    "Mischt einen Bereich korrekt und beachtet Laborvorgaben.",
+    "Ordnet das beschriftete Gefäß einem korrekten Protokoll zu."
+  ],
+  "faq": [
+    [
+      "Warum die Nassstelle nicht untermischen?",
+      "zones"
+    ],
+    [
+      "Gilt immer eine Tiefe von 20 cm?",
+      "depth"
+    ],
+    [
+      "Warum werden Teilproben gemischt?",
+      "mix"
+    ],
+    [
+      "Was gehört auf das Etikett?",
+      "label"
+    ],
+    [
+      "Welche Geräte brauche ich?",
+      "tools"
+    ],
+    [
+      "Wie plane ich den Weg?",
+      "route"
+    ]
+  ],
+  "locale": "de",
+  "dir": "ltr",
+  "lessonId": "SOIL-PILOT-01"
+}

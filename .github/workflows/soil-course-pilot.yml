@@ -1,0 +1,77 @@
+name: Soil course isolated four-language pilot
+on:
+  push:
+    branches: [work/soil-course-pipeline-20261013]
+    paths: [experiments/course-pipeline/pilot-request.json]
+permissions:
+  contents: read
+concurrency:
+  group: soil-pilot-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  media:
+    if: github.ref == 'refs/heads/work/soil-course-pipeline-20261013'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        locale: [ar-EG, en, it, de]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        with:
+          bun-version: '1.4.2'
+      - name: Prepare existing renderer
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          cd remotion
+          bun install --frozen-lockfile
+      - name: Verify content and tests before provider calls
+        run: |
+          python3 experiments/course-pipeline/pipeline.py validate
+          python3 -m unittest discover -s experiments/course-pipeline/tests -p 'test_*.py'
+      - name: Restore reusable narration
+        uses: actions/cache/restore@5a3ec84eff668545956fd18022155c47e93e2684
+        with:
+          path: experiments/course-pipeline/output/${{ matrix.locale }}/audio
+          key: soil-pilot-audio-${{ matrix.locale }}-${{ hashFiles('experiments/course-pipeline/course/*.json','experiments/course-pipeline/pipeline.py') }}
+          restore-keys: soil-pilot-audio-${{ matrix.locale }}-
+      - name: Produce the exact authorized lesson and locale
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          LOCALE: ${{ matrix.locale }}
+          PYTHONUNBUFFERED: '1'
+        run: python3 experiments/course-pipeline/pipeline.py produce --locale "$LOCALE"
+      - name: Preserve partial narration even on failure
+        if: always()
+        uses: actions/cache/save@5a3ec84eff668545956fd18022155c47e93e2684
+        with:
+          path: experiments/course-pipeline/output/${{ matrix.locale }}/audio
+          key: soil-pilot-audio-${{ matrix.locale }}-${{ hashFiles('experiments/course-pipeline/course/*.json','experiments/course-pipeline/pipeline.py') }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Transfer review media and evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: soil-pilot-${{ matrix.locale }}
+          retention-days: 30
+          compression-level: 0
+          path: |
+            experiments/course-pipeline/output/${{ matrix.locale }}/lesson.mp4
+            experiments/course-pipeline/output/${{ matrix.locale }}/master.wav
+            experiments/course-pipeline/output/${{ matrix.locale }}/captions.vtt
+            experiments/course-pipeline/output/${{ matrix.locale }}/transcript.txt
+            experiments/course-pipeline/output/${{ matrix.locale }}/props.json
+            experiments/course-pipeline/output/${{ matrix.locale }}/receipt.json
+            experiments/course-pipeline/output/${{ matrix.locale }}/audio/*.wav

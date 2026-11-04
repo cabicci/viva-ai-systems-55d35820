@@ -1,0 +1,29 @@
+{
+  "action": "s103-still-route-targeted-repair-1",
+  "stepId": "S1-03",
+  "batchId": "s103-route-safe-path-repair1-20261016",
+  "targetAssetIds": [
+    "s103-still-route"
+  ],
+  "sourcePreflight": "authoring/S1-03/reading-stills-preflight.private.json",
+  "protectedVideoHashes": {
+    "s103-video-decide": "e6e8fae62f67c745df872bbc70ad3d347b4f1bfdf32d1de6241d780f71fa340e",
+    "s103-video-prepare": "63740ecd0e89c2408b47f1300bb90feab9ed9413d4cf029f6f7a1890726393fb",
+    "s103-video-response": "d636c827028959213e020743e31dcf565f57e3c3f2abe986a4c02c62ea841ec8",
+    "s103-video-evacuate": "0c9db26dc05442ab5d5c8db6655ba4ad5abf9d3fa8bf6cd7227d5324dec8da89",
+    "s103-video-cases": "55f93b29a6e21c05a3a81829eff537bddd332a8a7f4763ecb68c954aceb208ff"
+  },
+  "priorRunId": 38843130838,
+  "noPublication": true,
+  "noAutomaticRepair": true,
+  "planHash": "9896dd47b1c580215cefb952041683708913b24f2a08a25717964c14d4234641",
+  "contractHash": "e5a186809ec3904341da6a22a57e76242125e833648d0d426ce5bed0abfd2dde",
+  "scriptHash": "f732554dcaea9458e10794648baf7d0aece790b3d2655a23b56f63cd1bbf94ef",
+  "styleHash": "351b775af21bd4100101f8a910bbfd266b5cd9f01632f58a63ce7f5a4512c85f",
+  "priorRouteSha256": "ef7849e2398642b0431b16ad161a33be4ba712d9e2d3338712308dceb3a6c4a5",
+  "repairCallNumber": 1,
+  "protectedStills": {
+    "s103-still-decision": "ccf3634c5235c57ba6ce899c4b3b1532f66df187e1b2260fa99e22c6ec39edf7",
+    "s103-still-absorbent": "1f147de6facb9f242fb7712c95f6499746ca20d55dc8febcb38239eeee3695d6"
+  }
+}

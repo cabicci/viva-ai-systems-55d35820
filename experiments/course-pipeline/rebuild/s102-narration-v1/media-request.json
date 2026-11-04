@@ -1,0 +1,23 @@
+{
+  "action": "S1-02-narration-only",
+  "locales": [
+    "en",
+    "ar-EG",
+    "it",
+    "de"
+  ],
+  "maxRepairsAfterInitial": 3,
+  "fingerprint": {
+    "experiments/course-pipeline/rebuild/s102-narration-v1/audio_stage.py": "2b96d16fa6cc3e9467f5be2fc8b534413a0cc44aadcd0be9610b9fa684ecabe4",
+    "experiments/course-pipeline/rebuild/s102-narration-v1/speech_core.py": "78698b25f1653c6f4fc70d54bb3f88fd3a3d716e846df41bea6548a080c7f595",
+    "experiments/course-pipeline/rebuild/s102-narration-v1/course/manifest.json": "cd5c99a55a8587a195e249418f0a6490873a0f165c0ba4634769b1092e94dfec",
+    "experiments/course-pipeline/rebuild/s102-narration-v1/course/audio-contract.json": "522dc835453a654b1d0f7a7e48d30f5eeef3cfbc4f984ff0a37e978d5a4e192b",
+    "experiments/course-pipeline/rebuild/s102-narration-v1/course/authoring-review.json": "f6d05ed404835b17b837556b949ac735f29b02b1b0ab9ede57a6b827314f8fce",
+    "experiments/course-pipeline/rebuild/s102-narration-v1/course/en.json": "6c9a438ae5e66e2b27e6452bea909e5c04ae8671955e6bf745b846f0abaa753e",
+    "experiments/course-pipeline/rebuild/s102-narration-v1/course/ar-EG.json": "fca5f62213bea672dde066595eb5af961dfd816c5b071c6c177cbfceb0501cf5",
+    "experiments/course-pipeline/rebuild/s102-narration-v1/course/it.json": "0bcb120a87b02799d4ba0290f6f072d4db59546091980bbfce3dc668a81f77dd",
+    "experiments/course-pipeline/rebuild/s102-narration-v1/course/de.json": "061b46d0eb6eee63ef78643b8615c44b4ffb3a930aff945cd50545a3431fcc86",
+    ".github/workflows/soil-s102-narration-v1.yml": "ebe6ccbd4ba7296d36cca3e469efd9e375dd5e2b2c44032323b29350325bec1e"
+  },
+  "ownerAuthorization": "Continue full course after accepted pilot; keep core work active; three targeted repairs maximum."
+}

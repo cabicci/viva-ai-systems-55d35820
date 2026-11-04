@@ -1,0 +1,17 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+const here=path.dirname(fileURLToPath(import.meta.url));
+const root=path.resolve(here,'..'),repo=path.resolve(root,'../..');
+const data=JSON.parse(await readFile(path.join(here,'curriculum-map.json'),'utf8'));
+const files={'@@FONT@@':'src/lib/lesson-visuals/v1/fonts/Tajawal-Regular.ttf','@@BOLD@@':'src/lib/lesson-visuals/v1/fonts/Tajawal-Bold.ttf','@@LOGO@@':'public/brand/masaarat-logo-lockup.png'};
+let html=await readFile(path.join(here,'map-template.html'),'utf8');
+for(const [token,file]of Object.entries(files))html=html.replace(token,(await readFile(path.join(repo,file))).toString('base64'));
+html=html.replace('@@DATA@@',JSON.stringify(data).replaceAll('<','\\u003c'));
+const quote=v=>'"'+String(v).replaceAll('"','""')+'"';
+const range=r=>r[0]===0?'لا يوجد':r[0]+'–'+r[1];
+const headers=['الترتيب','المعرف','الوحدة','الدرس','العنوان الإنجليزي','الهدف','أونلاين بالدقائق','بإشراف بالدقائق','النشاط','دليل التقييم','صفحات PDF','المتطلبات السابقة','المراجعات','الحالة','ملاحظات'];
+const rows=data.lessons.map(l=>[l.order,l.id,l.unit,l.title,l.en,l.goal,range(l.onlineMinutes),range(l.supervisedMinutes),l.activity,l.evidence,l.pageRanges.map(r=>r.join('–')).join('؛ '),l.prerequisites.join('؛ '),l.risks.join('؛ '),l.status,l.notes]);
+await writeFile(path.join(here,'curriculum-map.csv'),'\uFEFF'+[headers,...rows].map(r=>r.map(quote).join(',')).join('\n'));
+await writeFile(path.join(root,'public/curriculum-map.html'),html);
+console.log(JSON.stringify({stations:data.lessons.length,bytes:Buffer.byteLength(html)}));

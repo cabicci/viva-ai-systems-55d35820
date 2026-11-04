@@ -1,0 +1,22 @@
+{
+  "reviewModel":"gemini-2.5-flash","maxRepairsPerAsset":3,
+  "global":[
+    {"id":"pilot-cartoon","criterion":"Premium compact sculpted 3D educational cartoon miniature in S1-01 style on warm off-white, with plausible materials and clean margins; no photographic disaster scene or toy-faced person."},
+    {"id":"no-text-identity","criterion":"No embedded words, numerals, arrows, fake writing, warning text, source school/Spark identity, brand, logo or watermark."},
+    {"id":"empty-safe-props","criterion":"No visible person, hand, injured body, active real chemical, plume, emergency treatment, rescue or universal response instruction."}
+  ],
+  "assets":{
+    "s103-video-evacuate":[
+      {"id":"route-outside-hazard","criterion":"A clear route runs from field-store model to a neutral junction without crossing the fenced hazard zone; there is no return path for a missing person."},
+      {"id":"conditional-destinations","criterion":"Separate open assembly-board and enclosed shelter props are alternatives; no depicted hazard makes outdoor assembly universally correct."},
+      {"id":"account-and-report","criterion":"Blank attendance-token rack has one empty slot and a nearby coordinator call point, without a person hidden in the hazard area."},
+      {"id":"different-from-still","criterion":"Low path-level perspective differs from a future elevated whole-site reading map."}
+    ],
+    "s103-video-cases":[
+      {"id":"four-distinct-cases","criterion":"Four physically spaced prop islands clearly show unused eyewash/blank bottle, shade/cooling gear, TINY grass-partly-hidden shallow ankle-ground irregularity no deeper than one shoe sole and smaller than a cone base (no pit or excavation) with unused kit, and separate screened unknown-air zone."},
+      {"id":"no-case-conflation","criterion":"Eyewash is not placed inside the unknown-air boundary; cooling water does not appear administered to a confused person; no casualty, chemical exposure or hazardous rescue is shown."},
+      {"id":"route-away","criterion":"In fourth pod a broad pale path visibly turns AWAY from the solid screened unknown-air boundary to an outer safe edge; it does not lead into or terminate at the screen."},
+      {"id":"crop-readable","criterion":"Each prop island has enough margin to be cropped alone for narration while retaining its case context; no embedded caption or quadrant label."}
+    ]
+  }
+}

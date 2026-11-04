@@ -1,0 +1,202 @@
+name: Soil source coverage audit only
+on:
+  workflow_dispatch:
+    inputs:
+      sourcePayload:
+        description: Gzip/base64 of the verified full original PDF text; audit input only
+        required: true
+        type: string
+      auditBatch:
+        description: Source page batch identity
+        required: true
+        type: string
+  push:
+    branches: [work/soil-course-pipeline-20261013]
+    paths: [experiments/course-pipeline/production/coverage-request.json]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: soil-coverage-audit-${{ github.ref }}-${{ inputs.auditBatch }}
+  cancel-in-progress: false
+jobs:
+  scope:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    outputs:
+      blocks: ${{ steps.scope.outputs.blocks }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - id: scope
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import base64,gzip,json,os
+          r=json.load(open('experiments/course-pipeline/production/coverage-request.json'))
+          assert r['action']=='audit-source-coverage-only' and r['publish'] is False
+          assert len(r['contentHashes'])==34 and set(r['locales'])=={'en','ar-EG','it','de'}
+          pages={p for a,b in r['blocks'] for p in range(a,b+1)}
+          assert pages==set(range(1,147)) and sum(b-a+1 for a,b in r['blocks'])==146
+          event=json.load(open(os.environ['GITHUB_EVENT_PATH']))
+          source=json.loads(gzip.decompress(base64.b64decode(event['inputs']['sourcePayload'],validate=True)))
+          selected=source['auditBlocks']
+          assert selected and set(selected)<=set(range(1,len(r['blocks'])+1))
+          supplied={x['page'] for x in source['pages']}
+          expected={n for block in selected for n in range(r['blocks'][block-1][0],r['blocks'][block-1][1]+1)}
+          assert supplied==expected and len(supplied)==len(source['pages'])
+          print('blocks='+json.dumps(selected))
+          PY
+      - name: Retrieve the exact source-bound drafts without producing media
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          RUN=$(python3 -c "import json; print(json.load(open('experiments/course-pipeline/production/coverage-request.json'))['authorRun'])")
+          gh run download "$RUN" -p 'soil-author-*' -D experiments/course-pipeline/production/private/coverage-restore
+          python3 - <<'PY'
+          import json,sys
+          from pathlib import Path
+          sys.path.insert(0,'experiments/course-pipeline/production')
+          from restore_author import restore
+          root=Path('experiments/course-pipeline/production')
+          r=json.load(open(root/'coverage-request.json'))
+          for lid in r['contentHashes']:
+            if lid=='SOIL-U1-L03':continue
+            assert restore(root/'private/coverage-restore'/('soil-author-'+lid),lid), 'Invalid source-bound draft: '+lid
+          PY
+          python3 experiments/course-pipeline/production/build_packages.py
+      - name: Freeze and verify the audit input
+        run: |
+          python3 - <<'PY'
+          import base64,gzip,json,os,shutil,sys
+          from pathlib import Path
+          sys.path.insert(0,'experiments/course-pipeline')
+          import pipeline as p
+          root=Path('experiments/course-pipeline/production');dest=root/'private/coverage-audit'
+          dest.mkdir(parents=True,exist_ok=True)
+          event=p.read(os.environ['GITHUB_EVENT_PATH'])
+          encoded=event.get('inputs',{}).get('sourcePayload')
+          assert encoded, 'Dispatch requires the complete PDF-derived audit source; do not use authoring excerpts as the audit baseline'
+          source=json.loads(gzip.decompress(base64.b64decode(encoded,validate=True)))
+          p.write(dest/'source-pages.json',source)
+          r=p.read(root/'coverage-request.json')
+          for lid,locales in r['contentHashes'].items():
+            base=root.parent/'course' if lid=='SOIL-U1-L03' else root/'packages'/lid/'course'
+            for loc,digest in locales.items():
+              assert p.digest(p.read(base/(loc+'.json')))==digest, 'Frozen content mismatch: '+lid+' '+loc
+              target=dest/'snapshot'/lid/(loc+'.json');target.parent.mkdir(parents=True,exist_ok=True)
+              shutil.copyfile(base/(loc+'.json'),target)
+          assert source['sourceSha256']==r['sourceSha256']
+          print('Verified source batch and 136 actual content files. No lesson or media changes.')
+          PY
+      - name: Reuse already validated audit inventories and evidence
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for RUN in 38449914326 38449926951; do
+            gh run download "$RUN" -p 'soil-coverage-inventory-*' -D "experiments/course-pipeline/production/private/audit-resume/$RUN"
+            gh run download "$RUN" -p 'soil-coverage-match-*' -D "experiments/course-pipeline/production/private/audit-resume/$RUN"
+          done
+          python3 - <<'PY'
+          import shutil
+          from pathlib import Path
+          root=Path('experiments/course-pipeline/production/private')
+          dest=root/'coverage-audit/results';dest.mkdir(parents=True,exist_ok=True)
+          for file in (root/'audit-resume').rglob('*.json'):
+            if file.name.startswith(('inventory-','matches-')) and '.raw.' not in file.name:
+              target=dest/file.name
+              if target.exists():assert target.read_bytes()==file.read_bytes()
+              else:shutil.copyfile(file,target)
+          print('Reused completed evidence; failed bindings alone will be repaired.')
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: soil-coverage-private-input
+          path: experiments/course-pipeline/production/private/coverage-audit
+          retention-days: 14
+  inventory:
+    needs: scope
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        block: ${{ fromJSON(needs.scope.outputs.blocks) }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: soil-coverage-private-input
+          path: experiments/course-pipeline/production/private/coverage-audit
+      - uses: actions/cache/restore@5a3ec84eff668545956fd18022155c47e93e2684
+        with:
+          path: experiments/course-pipeline/production/private/coverage-audit/cache
+          key: soil-coverage-inventory-${{ matrix.block }}-${{ hashFiles('experiments/course-pipeline/production/coverage-request.json') }}
+          restore-keys: soil-coverage-inventory-${{ matrix.block }}-
+      - name: Extract every source requirement and check source omissions
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          GEMINI_API_KEY_4: ${{ secrets.GEMINI_API_KEY_4 }}
+          BLOCK: ${{ matrix.block }}
+          PYTHONUNBUFFERED: '1'
+        run: python3 experiments/course-pipeline/production/coverage_audit/worker.py inventory --block "$BLOCK"
+      - uses: actions/cache/save@5a3ec84eff668545956fd18022155c47e93e2684
+        if: always()
+        with:
+          path: experiments/course-pipeline/production/private/coverage-audit/cache
+          key: soil-coverage-inventory-${{ matrix.block }}-${{ hashFiles('experiments/course-pipeline/production/coverage-request.json') }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: soil-coverage-inventory-${{ matrix.block }}
+          path: experiments/course-pipeline/production/private/coverage-audit/results
+          retention-days: 30
+  match:
+    needs: [scope,inventory]
+    if: always() && needs.scope.result == 'success' && needs.inventory.result != 'cancelled'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        block: ${{ fromJSON(needs.scope.outputs.blocks) }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: soil-coverage-private-input
+          path: experiments/course-pipeline/production/private/coverage-audit
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: soil-coverage-inventory-${{ matrix.block }}
+          path: experiments/course-pipeline/production/private/coverage-audit/results
+      - uses: actions/cache/restore@5a3ec84eff668545956fd18022155c47e93e2684
+        with:
+          path: experiments/course-pipeline/production/private/coverage-audit/cache
+          key: soil-coverage-match-${{ matrix.block }}-${{ hashFiles('experiments/course-pipeline/production/coverage-request.json') }}
+          restore-keys: soil-coverage-match-${{ matrix.block }}-
+      - name: Compare actual fields and independently challenge the evidence
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          GEMINI_API_KEY_4: ${{ secrets.GEMINI_API_KEY_4 }}
+          BLOCK: ${{ matrix.block }}
+          PYTHONUNBUFFERED: '1'
+        run: python3 experiments/course-pipeline/production/coverage_audit/worker.py match --block "$BLOCK"
+      - uses: actions/cache/save@5a3ec84eff668545956fd18022155c47e93e2684
+        if: always()
+        with:
+          path: experiments/course-pipeline/production/private/coverage-audit/cache
+          key: soil-coverage-match-${{ matrix.block }}-${{ hashFiles('experiments/course-pipeline/production/coverage-request.json') }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: soil-coverage-match-${{ matrix.block }}
+          path: experiments/course-pipeline/production/private/coverage-audit/results
+          retention-days: 30

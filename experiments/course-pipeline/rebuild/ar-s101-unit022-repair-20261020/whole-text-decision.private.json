@@ -1,0 +1,36 @@
+{
+  "unit": {
+    "id": "S1-01-ar-022",
+    "sequence": 22,
+    "sceneId": "s101-chemical",
+    "sourceSceneIndex": 6,
+    "sourceParagraphIndex": 2,
+    "sourceCanonicalPointer": "/scenes/6/narration#paragraph=2",
+    "sourceCanonicalParagraphSha256": "3f7b0e38e91e86611043b95bd018c0407cf79200107cea34983efbb524a71bd8",
+    "speakerId": "A",
+    "voice": "Charon",
+    "sceneDefaultSpeakerId": "A",
+    "spokenText": "حسب تقييم المخاطر، ممكن تحتاج كمان بدلة أو مريلة مقاومة للمادة. ولو فيه احتمال تستنشق غبار، أو أبخرة، أو رذاذ ضار، جهاز حماية التنفس لازم يتختار حسب الملوّث والمهمة، وبالفلتر أو الخرطوشة المناسبة، ومع التدريب المطلوب. النوع اللي بيقفل بإحكام على الوش محتاج اختبار ملاءمة. صورة ماسك، أو كمامة غبار مستخدمة مع خطر مش مناسبة ليه، مش دليل إنك محمي.",
+    "displayText": "حسب تقييم المخاطر، ممكن تحتاج كمان بدلة أو مريلة مقاومة للمادة. ولو فيه احتمال تستنشق غبار، أو أبخرة، أو رذاذ ضار، جهاز حماية التنفس لازم يتختار حسب الملوّث والمهمة، وبالفلتر أو الخرطوشة المناسبة، ومع التدريب المطلوب. النوع اللي بيقفل بإحكام على الوش محتاج اختبار ملاءمة. صورة ماسك، أو كمامة غبار مستخدمة مع خطر مش مناسبة ليه، مش دليل إنك محمي.",
+    "spokenTextSha256": "2681e2406db3177aeef7d80da379d0efe60da96ca70ac1065a80011f13d826f5",
+    "displayTextSha256": "2681e2406db3177aeef7d80da379d0efe60da96ca70ac1065a80011f13d826f5",
+    "generationDisposition": "generate",
+    "semanticCoverageRole": "Complete-sentence portion of the mapped source paragraph",
+    "noFixedCharacterRole": true,
+    "durationSeconds": null,
+    "newTimingAvailable": false,
+    "timingPolicy": "Use actual final unit audio and reviewed word/phrase anchors; no reuse of rejected proportional timing or invented target duration.",
+    "joinPolicy": "Keep full recording as one contiguous spoken unit. Measure real quiet/word boundaries after new audio; never trim words, stretch, normalize, filter or silently replace accepted clips.",
+    "audioApprovalStatus": "TEXT_READY_NOT_YET_GENERATED_OR_AUDITORILY_ACCEPTED",
+    "pronunciationNotes": [
+      {
+        "instruction": "Keep contaminant/task/filter-or-cartridge/training/tight-fit conditions complete; do not simplify to a generic mask."
+      }
+    ]
+  },
+  "rootReason": "Actual audio diagnostic hears يتخاد instead of يتختار; independent ASR raw يتخاذ at12.02-12.46s. Original candidate held for safety precision; root explicitly authorizes one targeted repair.",
+  "sourceInventorySha256": "4c359ea835a6e91829846261c5ac21e339c9855c1d0064b2e677eb3393732557",
+  "previousWavSha256": "03e2067114768247c21531c6251b40f06bad003d7e003bae9e4ef4b57935cb67",
+  "attempt": 1,
+  "maxAutomaticFurtherAttempts": 0
+}

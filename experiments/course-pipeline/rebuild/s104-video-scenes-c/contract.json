@@ -1,0 +1,23 @@
+{
+  "reviewModel":"gemini-2.5-flash","maxRepairsPerAsset":3,
+  "global":[
+    {"id":"pilot-cartoon","criterion":"Compact sculpted 3D cartoon educational miniature on warm off-white with plausible material textures and clean margins, not photoreal full-field photography or toy-faced characters."},
+    {"id":"no-text-brand","criterion":"No rendered words, numerals, arrows, pseudo-writing, labels, source school/Spark identity, brand-like emblems, logos or watermarks."},
+    {"id":"no-people-or-treatment","criterion":"No people, hands, characters, active sampling, fertilizer, chemical treatment, diagnosis or actual soil transfer."}
+  ],
+  "assets":{
+    "s104-video-example-yellow-patch":[
+      {"id":"embedded-patch","criterion":"Irregular weak yellow patch lies inside a mostly greener larger field model, with a separate healthier comparison area and two blank unused holders; no diagnosis/remedy."},
+      {"id":"different-from-purpose","criterion":"Low oblique outdoor field-case view is not the earlier rectangular tray split into equal crop strips or the accepted overhead reading still."}
+    ],
+    "s104-video-example-bucket-choice":[
+      {"id":"paired-contact-choice","criterion":"Two separate empty buckets show clean smooth plastic versus visibly worn galvanized zinc-coated inner rim; no cross-contamination actually occurs."},
+      {"id":"no-metal-generalization","criterion":"Shows an unsuitable worn bucket for this sampling task without claiming every metal tool is forbidden."},
+      {"id":"different-from-contamination","criterion":"Tight lower paired-bucket close-up, no probe/fertilizer, differs from broad still and previous three-contact-path explanation image."}
+    ],
+    "s104-video-example-between-fields":[
+      {"id":"tiny-residue-stop","criterion":"A real hollow sampling probe's inner groove visibly retains a tiny old-field soil trace while a separate clean next-field station remains untouched across a gap; no transfer or universal cleaning recipe."},
+      {"id":"macro-different-view","criterion":"Extreme close focus on inner groove differs from wide preparation route, accepted contamination still and earlier four-tool scene."}
+    ]
+  }
+}

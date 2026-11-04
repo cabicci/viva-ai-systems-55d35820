@@ -1,0 +1,18 @@
+{
+  "provider": "gemini",
+  "apiVersion": "v1beta",
+  "model": "gemini-nano-banana-2.1",
+  "imageSize": "2K",
+  "aspectRatio": "16:9",
+  "style": "Premium educational 3D cartoon diorama with softly rounded geometry and credible physical materials: grainy soil, brushed metal, woven cloth, translucent glass and matte plastic. Clear natural daylight, soft self-shading with NO cast shadow onto the magenta backdrop, restrained natural greens and warm soil tones, solid pure saturated magenta (#FF00FF) chroma-key backdrop. Match one coherent family of 3D assets across images. Objects must be recognizable, correctly proportioned and spatially separated. Absolutely no people, faces, characters, writing, letters, numbers, logos, watermarks, fake text, tick marks or arrows. No flat vector icons. Leave breathing room. Entire relevant objects visible, wide 16:9 composition, no embedded labels; localized labels are added separately later.",
+  "assets": [
+    {
+      "id": "sample-procedure-motion-sprite",
+      "role": "procedural-video-motion-layers",
+      "scenes": [
+        "sample-transfer-seal-label-proof"
+      ],
+      "subject": "Use the attached illustration ONLY for its rounded educational cartoon 3D material language. Make a SIX-CELL SPRITE SHEET, exactly three columns and two rows, uniform pure saturated magenta #FF00FF background, no grid, cast shadows or floor. Each object is wholly inside its cell with generous empty margins. All three bag states must show EXACTLY THE SAME upright heavy-duty matte frosted pale-ivory resealable soil-sample bag, same front-three-quarter angle, identical body silhouette, size, flat front label area and dark-green closure strip; no transparency through the plastic, no lettering. TOP LEFT: that bag empty, mouth visibly open, standing upright. TOP CENTRE: exactly the same bag with brown granular soil visibly inside the lower half and its mouth still open; no spill outside. TOP RIGHT: exactly the same filled bag with mouth now completely closed along its closure strip. BOTTOM LEFT: a complete stainless steel hand trowel with short green handle, brown loose soil on its blade, matching elevated angle, blade aimed left and handle right. BOTTOM CENTRE: one small loose mound of the same granular brown soil, isolated, no pot, tray or ground. BOTTOM RIGHT: one blank cream waterproof adhesive label, broad rectangle with softly rounded corners, slight paper thickness, flat front view, NO writing or marks. Do not include a marker, cooler, notebook, hands, people, faces, logos, numbers or arrows. Soil is safe training material. The bag is an illustration of a supplied sealed-bag training scenario, not a universal approved container. State differences (empty/open, filled/open, filled/sealed) must be unmistakable while the bag identity and projection stay consistent. Leave the bag bodies blank: exact six-group labels will be added by the video compositor."
+    }
+  ]
+}

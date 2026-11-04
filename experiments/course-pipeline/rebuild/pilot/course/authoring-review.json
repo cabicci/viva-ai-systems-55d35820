@@ -1,0 +1,28 @@
+{
+  "status": "reviewed-for-pilot-production",
+  "reviewerRole": "assistant author review against teacher source and recorded corrections",
+  "independentSpecialistReview": false,
+  "nativeHumanReview": false,
+  "teacherSha256": "0aad4965702d2f1bcd5fd2e2d7cab56c9f2c62fc636b9ff4f72a51ce177dd270",
+  "mappedRequirements": 27,
+  "sharedObjectiveRetainedInLaterSteps": [
+    "S1-02",
+    "S1-03"
+  ],
+  "sourceQuestionRemap": {
+    "QB-FINAL-4-MCQ-02": "S1-06; repeated in S3-17"
+  },
+  "contentHashes": {
+    "ar-EG": "77c62280b983e551f62109244dd683f3f0bb15f1dd3dab2041f31b646522fd10",
+    "en": "c2a2906b1c7393e58a9348574132aeda011dc6e365f7678ee17f76db4bc8ed97",
+    "it": "a510ddebdd99b7fb6f8e8d4125477055301f0b7bf0296e1b5c2bc6e7b17aa3f5",
+    "de": "2267faff19cb629201351dc9bccd455221a659754fb898ec762104902f2994dd"
+  },
+  "authorizedWordingRepair": {
+    "scene": "s101-chemical",
+    "decision": "owner-approved-in-chat-20261014",
+    "meaningChange": false,
+    "scope": "Two equivalent Egyptian phrases only",
+    "grammaticalAgreement": "Dependent pronoun changed to feminine to agree with السترة; no factual change."
+  }
+}

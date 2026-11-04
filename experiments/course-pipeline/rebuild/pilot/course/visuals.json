@@ -1,0 +1,88 @@
+{
+  "provider": "gemini",
+  "apiVersion": "v1beta",
+  "model": "gemini-nano-banana-2.1",
+  "imageSize": "2K",
+  "aspectRatio": "16:9",
+  "style": "Premium educational 3D cartoon diorama with softly rounded geometry and credible physical materials: grainy soil, brushed metal, woven cloth, translucent glass and matte plastic. Clear natural daylight, soft contact shadows, restrained natural greens and warm soil tones, ivory studio backdrop. Match one coherent family of 3D assets across images. Objects must be recognizable, correctly proportioned and spatially separated. Absolutely no people, faces, characters, writing, letters, numbers, logos, watermarks, fake text, tick marks or arrows. No flat vector icons. Leave breathing room. Entire relevant objects visible, wide 16:9 composition, no embedded labels; localized labels are added separately later.",
+  "assets": [
+    {
+      "id": "s101-overview",
+      "scenes": [
+        "s101-purpose"
+      ],
+      "role": "video",
+      "subject": "A raised farm-field diorama seen from a friendly elevated three-quarter angle. Clear walking access between a preparation bench and planted beds; a parked compact tractor stands well separated behind a low barrier; boots and closed toolbox at the preparation bench. A closed clean fertilizer container stands upright on the bench. Calm preparation before work, no spills, casualties or operating action."
+    },
+    {
+      "id": "s101-site",
+      "scenes": [
+        "s101-site",
+        "s101-example-route"
+      ],
+      "role": "video",
+      "subject": "A close raised soil cross-section beside a crop bed, above-ground walking route curving around one obvious small animal burrow and an irrigation sprinkler head. Visible below the cutaway surface are a pipe and a cable conduit, separated from roots. A soil probe rests horizontally on a bench, not inserted. No claim about real utility positions: this is a schematic diorama with plausible pipes and conduit, no dimensions or writing."
+    },
+    {
+      "id": "s101-contact",
+      "scenes": [
+        "s101-communication"
+      ],
+      "role": "video",
+      "subject": "Still-life at a farm preparation bench: two distinct closed tool kits, two pairs of work boots side by side, one charged-looking smartphone with completely blank dark screen, a compact radio, and a small physical model of a farm access gate with a clear open path. No fake battery symbol, no text, no map markings. Two sets of equipment suggest a buddy arrangement without showing people."
+    },
+    {
+      "id": "s101-tools",
+      "scenes": [
+        "s101-limits"
+      ],
+      "role": "video",
+      "subject": "On a clean farm workbench, one sound spade lies lengthwise supported safely, metal blade clearly intact and wooden handle securely fitted. Beside it a separate visibly broken wooden tool handle rests inside a shallow quarantine tray, not connected to the usable spade. Closed soil test reagent bottle and a blank folded information booklet are well separated at the far end. No tools sticking upward or obstructing a walking route."
+    },
+    {
+      "id": "s101-weather",
+      "scenes": [
+        "s101-environment"
+      ],
+      "role": "video",
+      "subject": "A small summer farm diorama: canopy casts a broad visible shadow over a resting bench with two closed drinking water bottles and a wide-brimmed hat. A sunlit crop patch lies separately, with a flowering bush and tiny insects at the far edge well away from the shaded rest area. Realistic shade and soil materials. No cartoon sun face, no snakes attacking, no people."
+    },
+    {
+      "id": "s101-protection",
+      "scenes": [
+        "s101-ppe"
+      ],
+      "role": "video",
+      "subject": "Carefully arranged task-specific protective equipment on a warm ivory platform: sturdy ankle-height work boots, long sleeve work shirt and trousers folded neatly, broad brimmed hat, open-sided safety spectacles and SEPARATE sealed-rim chemical splash goggles, a pair of clean gardening gloves. Objects spaced apart, obvious 3D woven cloth, rubber soles and transparent lenses. No suggesting all items protect against all hazards."
+    },
+    {
+      "id": "s101-compatibility",
+      "scenes": [
+        "s101-chemical",
+        "s101-example-gloves"
+      ],
+      "role": "video",
+      "subject": "Close-up 3D workbench still-life for a chemical compatibility discussion. At left a pair of beige woven fabric gardening gloves; at right a pair of smooth longer-cuff chemical-resistant gloves. Center a capped amber reagent bottle and an open blank information booklet, no writing. In back, protective splash goggles and a folded chemical apron are distinct. Everything clean and unused. No spilled liquid, chemical pouring, tick marks, colour-coded verdict, masks or claims of universal glove compatibility."
+    },
+    {
+      "id": "s101-checks",
+      "scenes": [
+        "s101-checklist"
+      ],
+      "role": "video",
+      "subject": "Five evenly spaced three-dimensional object groups across an ivory farm workbench, forming a coherent final preparation scene: a miniature clear farm gate and path, sound spade laid safely flat, boots and goggles, radio with a pair of closed tool kits, and drinking water under a miniature shade canopy. Clear separation between the five groups, no number symbols, no checkboxes, no lettering. Entire groups visible, no tiny crowded clutter."
+    },
+    {
+      "id": "s101-lesson-route",
+      "scenes": [],
+      "role": "lesson",
+      "subject": "LESSON ILLUSTRATION, a completely different composition from the video site cutaway: low eye-level view along a farm walking path beside planted rows, with an obvious irrigation sprinkler protruding at the path edge and a shallow burrow further ahead. A barrier separates a parked tractor in the distant right background. No underground cutaway, no overhead view, no probe, no labels. Strong readable depth and distinct hazards."
+    },
+    {
+      "id": "s101-lesson-gloves",
+      "scenes": [],
+      "role": "lesson",
+      "subject": "LESSON ILLUSTRATION, a completely different composition from the video glove workbench: two open compartmented storage cases standing upright on a shelf, woven gardening gloves draped over one compartment, smooth long-cuff chemical-resistant gloves in another, separate splash goggles and closed generic reagent bottle in individual compartments, blank information cards tucked at the side. Slight side view, rounded storage cases, realistic cloth and rubber. No horizontal pair-comparison arrangement, no text, no verdict about compatibility."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "reviewModel":"gemini-2.5-flash","maxRepairsPerAsset":3,
+  "global":[
+    {"id":"pilot-style","criterion":"Owner-accepted S1-01 compact sculpted premium educational 3D cartoon miniature with believable textures, warm off-white, clear margin; elevated or overhead camera is deliberate for reading diagrams, not photographic reportage."},
+    {"id":"no-text-identity","criterion":"No rendered words, numbers, arrows, pseudo-text, product/school/Spark identity, logo, brand or watermark."},
+    {"id":"no-live-danger","criterion":"No person, hand, casualty, live chemical, active treatment, unsafe approach/rescue or universal quantity-based permission."}
+  ],
+  "assets":{
+    "s103-still-decision":[
+      {"id":"two-zones-route","criterion":"High map shows harmless practice tray and fully screened unknown container in physically separate bays; a withdrawal path clearly bends away from both without entering the unknown bay."},
+      {"id":"different-from-video","criterion":"Near-orthographic whole-site composition and object arrangement are visibly distinct from accepted low decision-video scene; not a still frame/crop of it."}
+    ],
+    "s103-still-absorbent":[
+      {"id":"three-stage-cutaway","criterion":"Top-down sealed simulation tray has separate stable bottle, tiny harmless-water patch fully enclosed by absorbent ring, and separate unused mock collection tools/closed waste jar; no hands or actual cleaning."},
+      {"id":"drain-no-route","criterion":"Outside drain-like recess remains behind unbroken raised tray wall, with no liquid path to it."},
+      {"id":"different-from-video","criterion":"Overhead instructional cross-section is not the accepted low side-view response video scene."}
+    ],
+    "s103-still-route":[
+      {"id":"conditional-whole-site","criterion":"Almost vertical rectangular whole-site map places a fenced hazard at the top and a safe-path junction below; separate enclosed shelter and open assembly options are shown without claiming either always correct."},
+      {"id":"one-absent-token","criterion":"Large blank attendance board clearly has exactly one empty token slot and a separate coordinator call-point; no hidden or returning person."},
+      {"id":"distinct-map-view","criterion":"Whole-site orthographic plan is visibly different from the earlier three-quarter angled evacuation video island, not a simple crop or recolor."}
+    ]
+  }
+}

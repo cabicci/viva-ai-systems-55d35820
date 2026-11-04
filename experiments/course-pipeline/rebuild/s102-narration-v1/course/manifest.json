@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "SOIL-REBUILD-S1-02",
+  "scope": "S1-02-narration-only",
+  "locales": [
+    "en",
+    "ar-EG",
+    "it",
+    "de"
+  ],
+  "media": {
+    "provider": "gemini",
+    "model": "gemini-2.5-flash-preview-tts",
+    "voices": {
+      "A": "Charon",
+      "B": "Kore"
+    },
+    "fps": 30,
+    "width": 1920,
+    "height": 1080,
+    "maxAttempts": 1,
+    "requestGapSeconds": 5,
+    "transportAttempts": 1
+  },
+  "production": {
+    "uploadToBunny": false,
+    "modifyPlatform": false,
+    "modifyDatabase": false
+  }
+}

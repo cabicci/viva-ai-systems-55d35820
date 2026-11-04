@@ -1,0 +1,18 @@
+{
+  "reviewModel": "gemini-2.5-flash",
+  "maxRepairsPerSegment": 3,
+  "criteria": [
+    "complete",
+    "faithful",
+    "locale",
+    "intelligible",
+    "no-extra"
+  ],
+  "delivery": {
+    "ar-EG": "natural Egyptian Arabic, not formal or Gulf Arabic",
+    "en": "clear natural English",
+    "it": "natural Italian",
+    "de": "natural German"
+  },
+  "humanListeningReviewRequired": true
+}

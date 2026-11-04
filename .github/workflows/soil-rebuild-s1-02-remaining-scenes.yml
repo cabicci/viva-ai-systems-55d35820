@@ -1,0 +1,54 @@
+name: Soil rebuild S1-02 remaining example scenes
+on:
+  push:
+    branches: [work/soil-course-pipeline-20261013]
+    paths: [experiments/course-pipeline/rebuild/s102-remaining-scenes/request.json]
+permissions:
+  actions: read
+  contents: read
+concurrency:
+  group: soil-rebuild-s102-remaining-scenes-${{ github.sha }}
+  cancel-in-progress: false
+jobs:
+  examples:
+    if: github.ref == 'refs/heads/work/soil-course-pipeline-20261013'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 110
+    env:
+      PACKAGE: experiments/course-pipeline/rebuild/s102-remaining-scenes
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - run: python -m pip install Pillow==11.3.0
+      - run: python "$PACKAGE/produce.py" validate
+      - name: Refuse a duplicate push run for the same request commit
+        id: dedupe
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          first_run=$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs?head_sha=${GITHUB_SHA}&per_page=100" \
+            --jq '[.workflow_runs[] | select(.name == "Soil rebuild S1-02 remaining example scenes") | .id] | min')
+          test -n "$first_run" && test "$first_run" != "null"
+          if [ "$GITHUB_RUN_ID" != "$first_run" ]; then
+            echo "Duplicate request run; no provider call. Earliest run: $first_run"
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Generate four bounded draft example scenes and automatically review pixels
+        if: steps.dedupe.outputs.should_run == 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+        run: python "$PACKAGE/produce.py" produce
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: ${{ always() && steps.dedupe.outputs.should_run == 'true' }}
+        with:
+          name: s102-four-example-scenes-draft
+          retention-days: 30
+          path: experiments/course-pipeline/rebuild/s102-remaining-scenes/output/

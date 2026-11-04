@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "scope": "Actual audio understanding diagnostic only; no TTS, ASR, video or content replacement",
+  "model": "gemini-2.5-flash",
+  "maximumDiagnosticCallsPerClip": 1,
+  "maximumTotalDiagnosticCalls": 2,
+  "retries": 0,
+  "fallback": false,
+  "clips": [
+    {
+      "id": "A",
+      "sourceRun": 39339540357,
+      "sourceCommit": "90a196b1ac801469b15dd58fd3b412983f49c96a",
+      "artifact": "soil-egyptian-two-voice-listening-proof",
+      "sha256": "0d8bae78d3cafbe31b5b173eddb8686b87afa7e7f7cc1f32b13705a673ed67e5",
+      "duration": 12.130958333333334,
+      "text": "قبل ما تستخدم الأداة، بص على المقبض واتأكد إنه ثابت، وإن الجزء اللي هتشتغل بيه سليم ونضيف. لو لقيت عيب، بلّغ المدرّب وما تستخدمهاش.",
+      "originalVoice": "Charon"
+    },
+    {
+      "id": "B",
+      "sourceRun": 39383512430,
+      "sourceCommit": "a29ebfec0db27087e72de688526a7f56a0406b00",
+      "artifact": "soil-ar-b-shadda-candidate",
+      "sha256": "cc3a7db7438d83dff38f4de053e83aef73b0eda3b69fe46f519d084425e4110e",
+      "duration": 10.010958333333333,
+      "text": "ولما تشيل أداة حادة، خلّي السن لتحت وبعيد عن الناس، وسيب مسافة حواليك. واتَّبع الطريقة اللي المدرّب ورّاهالك للأداة دي.",
+      "originalVoice": "Kore",
+      "requiredSuccessfulJob": "b-voice"
+    }
+  ],
+  "primaryReferences": [
+    "https://ai.google.dev/gemini-api/docs/audio",
+    "https://ai.google.dev/gemini-api/docs/models/gemini-2.5-flash",
+    "https://ai.google.dev/api/generate-content"
+  ],
+  "limitations": "Audio model estimates, not expert human certification or forced alignment. A/B input waveforms remain unchanged."
+}

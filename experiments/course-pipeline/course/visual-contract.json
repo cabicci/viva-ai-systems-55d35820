@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "reviewModel": "gemini-2.5-flash",
+  "maxRepairsPerAsset": 1,
+  "global": [
+    {
+      "id": "style",
+      "requirement": "A clearly dimensional, stylized 3D/cartoon educational illustration with realistic materials, rather than a flat vector diagram."
+    },
+    {
+      "id": "text",
+      "requirement": "No embedded writing, labels, numerals, logos or visible brand names. Blank label areas are allowed."
+    },
+    {
+      "id": "clarity",
+      "requirement": "The relevant objects are identifiable and not cropped off; geometry and construction are plausible for simplified educational art."
+    }
+  ],
+  "assets": {
+    "soil-core": [
+      {
+        "id": "core",
+        "requirement": "Shows a soil block with crop plants and a functional T-handle sampling probe holding soil; the cutaway makes vertical sampling understandable."
+      }
+    ],
+    "sampling-kit": [
+      {
+        "id": "clean",
+        "requirement": "The steel probe and its open sampling tube are visibly empty and clean; the plastic bucket is empty and clean."
+      },
+      {
+        "id": "kit",
+        "requirement": "Shows a bucket, manual sampling probe, sample pouch, marker and gloves as distinguishable objects."
+      }
+    ],
+    "field-zone": [
+      {
+        "id": "uniform",
+        "requirement": "Normal crop rows show one visually consistent crop type; only the wet patch and old manure patch are anomalous."
+      },
+      {
+        "id": "anomalies",
+        "requirement": "Both a waterlogged area and a separate manure-like patch can be identified."
+      }
+    ],
+    "mixing": [
+      {
+        "id": "mix",
+        "requirement": "Shows soil in a bucket with a scoop, and a sample pouch nearby; no impossible suspended stream or disconnected tool."
+      }
+    ],
+    "sample-record": [
+      {
+        "id": "record",
+        "requirement": "Shows a sample pouch with a usable blank label, a clipboard with blank paper, and a marker."
+      }
+    ]
+  }
+}

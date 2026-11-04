@@ -1,0 +1,449 @@
+{
+  "locale": "de",
+  "name": "Deutsch",
+  "dir": "ltr",
+  "title": "Sicherheit und Vorbereitung am Arbeitsort",
+  "path": "Boden und Nutzpflanzen",
+  "station": "Station 1 · Sichere Probenahme",
+  "step": "Schritt 1 von 44",
+  "intro": "Sorge vor der ersten Probe für einen sicheren Arbeitsort. Erkenne Gefahren, wähle die passende Schutzausrüstung und begründe, wann du die Arbeit unterbrechen musst.",
+  "ui": {
+    "reading": "Erklärung",
+    "video": "Video",
+    "examples": "Gelöste Beispiele",
+    "training": "3D-Übung",
+    "assessment": "Wissensprüfung",
+    "practical": "Praktische Aufgabe",
+    "downloads": "Arbeitsblätter",
+    "assistant": "Assistent",
+    "preview": "Vorschau des Pilotschritts",
+    "goals": "Das sollst du zeigen können",
+    "open": "3D-Arbeitsort erkunden",
+    "drag": "Ziehen zum Drehen · Mausrad oder zwei Finger zum Zoomen · Nummer auswählen",
+    "accessible": "Alle Punkte sind auch über die Schaltflächen unten erreichbar.",
+    "resetView": "Ansicht zurücksetzen",
+    "inspect": "Wähle einen Prüfpunkt",
+    "choose": "Wähle Handlung und Begründung",
+    "check": "Entscheidung prüfen",
+    "retry": "Diesen Punkt erneut versuchen",
+    "right": "Richtige Entscheidung",
+    "wrong": "Überprüfe deine Begründung",
+    "completed": "Entscheidungen nachgewiesen",
+    "trainingNote": "Die Übung erklärt Antworten sofort. Sie bestätigt keine praktische Handlungskompetenz.",
+    "testStart": "Neuen Prüfversuch beginnen",
+    "testSubmit": "Entscheidungen abgeben",
+    "testNote": "Beantworte alle acht Punkte vor der Abgabe. Übungsantworten werden nicht übernommen.",
+    "testMissing": "Beantworte zuerst alle Punkte.",
+    "result": "Entscheidungen am Arbeitsort",
+    "pass": "Alle Entscheidungen am Arbeitsort sind in diesem Versuch richtig.",
+    "notPass": "Einige Entscheidungen brauchen eine Überarbeitung. Lies die verknüpfte Erklärung und beginne einen neuen Versuch.",
+    "unlimited": "Die Zahl der Versuche ist unbegrenzt. Jeder neue Versuch beginnt ohne Antworten.",
+    "readMore": "Erklärung nachlesen",
+    "unobserved": "Praktische Leistung: noch nicht von einer Lehrkraft beobachtet",
+    "seen": "Erklärung als gelesen markieren",
+    "seenDone": "Erklärung gelesen",
+    "videoPending": "Das neue Video mit zwei abwechselnden Stimmen wird vorbereitet. Hier wird kein Video einer früheren Lektion als Ersatz gezeigt.",
+    "assistantPending": "Freie Fragen sind möglich, sobald der Kursassistent auf der Plattform angeschlossen ist. In dieser Vorschau ist er nicht aktiviert.",
+    "list": "Prüfpunkte",
+    "simulation": "Lernsimulation · keine reale Ortsprüfung",
+    "selfCheck": "Sicherheitscheckliste mit fünf Punkten",
+    "write": "Schreibe auf, was das Team prüft und wann es die Arbeit stoppen muss.",
+    "save": "Checkliste auf diesem Gerät speichern",
+    "saved": "Lokal gespeichert. Eine schriftliche Antwort allein führt nicht automatisch zum Bestehen des Kriteriums.",
+    "model": "Mit einer Beispielcheckliste vergleichen",
+    "exampleOnly": "Prüfe damit deine Begründungen. Die Einzelheiten des realen Arbeitsorts gibt die Lehrkraft vor.",
+    "quizTitle": "Sicherheitsgrundlagen überprüfen",
+    "quizSubmit": "Antworten prüfen",
+    "downloadPractice": "Übungsblatt herunterladen",
+    "downloadField": "Praxisanleitung herunterladen",
+    "downloadHint": "Druckbare Dateien in der gewählten Sprache, ohne ursprüngliche Lehrplanunterlagen.",
+    "next": "Nächster Bereich",
+    "back": "Zurück",
+    "progress": "Dein Lernfortschritt",
+    "local": "Nur auf diesem Gerät gespeichert",
+    "allRead": "Gelesene Bereiche",
+    "reviewChecklist": "Checklisten-Kriterium: schriftliche Antwort muss geprüft werden",
+    "fieldLabel": "Praktische Nachweise sind von Online-Ergebnissen getrennt",
+    "unavailable3d": "3D ist auf diesem Gerät nicht verfügbar. Nutze die gleichwertigen Beschreibungen und Entscheidungsschaltflächen unten.",
+    "decisionCount": "Acht Entscheidungen am Arbeitsort",
+    "attempt": "Prüfversuch",
+    "continue": "Weiter erkunden",
+    "simulationTitle": "Darf das Team anfangen?",
+    "practiceTitle": "Prüfe den Arbeitsort vor dem Start",
+    "practicalIntro": "Führe diese Aufgabe an einem von der Lehrkraft ausgewählten und geprüften realen Ort aus. Die Simulation erlaubt weder Graben noch den Umgang mit Chemikalien oder das Bedienen von Maschinen.",
+    "reflection": "Mit eigenen Worten",
+    "reflectionPrompt": "Wie schützt gute Vorbereitung dich und deine Begleitperson? Du darfst einen erfundenen Vorfall statt einer persönlichen Erfahrung verwenden.",
+    "glossary": "Wichtige Begriffe",
+    "stop": "Stoppen und die Lehrkraft fragen"
+  },
+  "goals": [
+    "Gefahren erkennen und Schutzmaßnahmen begründen; bei Chemikalien die zugehörigen Sicherheitsinformationen nutzen.",
+    "Eine Checkliste mit fünf Punkten erstellen: Ort, Werkzeuge, Schutz, Kommunikation und Notfälle.",
+    "Vorbereitung, geeignete Schutzausrüstung und sicheres Tragen der Werkzeuge vor der Lehrkraft zeigen."
+  ],
+  "reading": [
+    {
+      "id": "purpose",
+      "title": "Sicherheit beginnt vor dem Zwischenfall",
+      "paragraphs": [
+        "Eine Probe ist nur dann nützlich, wenn bei der Entnahme niemand verletzt wird. Vorbeugung bedeutet, Gefahren vor Arbeitsbeginn zu erkennen und zu beherrschen. Notfallmaßnahmen sind das geordnete Handeln, wenn trotzdem etwas passiert. Dieser Schritt behandelt Vorbereitung und Vorbeugung. Die nächsten beiden behandeln Verletzungen, Hitzeerkrankungen, verschüttete Stoffe und Evakuierung.",
+        "Stell dir vor, eine Begleitperson wird auf einem abgelegenen Feld schwindelig und verwirrt, oder ein Düngerbehälter kippt um. Wer kennt euren Standort? Wie alarmiert ihr Hilfe? Wohin könnt ihr euch sicher bewegen? Diese Fragen zeigen den Wert der Vorbereitung. Sie fordern nicht dazu auf, über die eigene Ausbildung hinaus zu behandeln oder Stoffe zu beseitigen.",
+        "Erkläre das Arbeitsziel mit eigenen Worten. Du kannst überlegen, was Menschen bei einem bekannten Notfall richtig oder falsch gemacht haben. Ein erfundenes Beispiel ist ebenso möglich; persönliche Erlebnisse zu erzählen ist freiwillig."
+      ]
+    },
+    {
+      "id": "site",
+      "title": "1. Achte auch auf unsichtbare Gefahren",
+      "paragraphs": [
+        "Höre vor dem Aufbruch die kurze Sicherheitsunterweisung der Lehrkraft. Sie wählt einen sicheren, zugänglichen Ort und legt erlaubte Probenahmestellen fest. Prüfe den Weg auf Unebenheiten, Löcher, Tierbaue und Hindernisse. Sprinklerköpfe am Feldrand können Stolperstellen sein; außerdem kann die Bewässerungsanlage beschädigt werden.",
+        "Achte auf Maschinen, Rückfahrwarnsignale und elektrische Freileitungen. Wer neben einem fahrenden Traktor auf das Handy schaut, verliert wichtige Aufmerksamkeit. Bleibe außerhalb des Arbeitsbereichs der Maschine und nutze den vereinbarten sicheren Weg. Verlasse dich nicht darauf, dass die fahrende Person dich gesehen hat.",
+        "Bewässerungsrohre, Gasleitungen und Stromkabel können im Boden liegen. Eine freie Oberfläche beweist keine Grabungssicherheit. Stecke Sonde, Bohrer oder Spaten erst ein, wenn die Lehrkraft diesen Punkt hinsichtlich der Leitungen freigegeben hat. Fehlen Markierungen oder bestehen Zweifel, stoppe und frage nach. Eine Lernzeichnung lokalisiert keine realen Leitungen."
+      ]
+    },
+    {
+      "id": "communication",
+      "title": "2. Sorge dafür, dass Hilfe euch findet",
+      "paragraphs": [
+        "Melde der Aufsicht, wohin das Team geht und wann es zurückkehren soll. Arbeite in abgelegenen Bereichen mit einer Begleitperson und vereinbart die Kommunikation. Nimm ein geladenes Telefon oder das für den Ort vorgesehene Funkgerät mit; die passenden Notfallkontakte müssen verfügbar sein.",
+        "Ein Telefon ersetzt die Begleitperson nicht. Empfang oder Akku können ausfallen, und eine verletzte Person kann möglicherweise nicht anrufen. Vereinbart vorher das Vorgehen bei Kontaktverlust oder ausbleibender Rückkehr. Kenne Zufahrt und Treffpunkt, damit du Hilfe gezielt einweisen kannst."
+      ]
+    },
+    {
+      "id": "limits",
+      "title": "3. Kenne Werkzeuge und eigene Grenzen",
+      "paragraphs": [
+        "Bediene keine Maschine allein deshalb, weil ihre Steuerung einfach aussieht. Ausbildung, Erlaubnis und geeignete Aufsicht kommen zuerst. Prüfe Handwerkzeuge: fester Griff, intakter und sauberer Arbeitsteil. Melde Mängel und benutze beschädigte Werkzeuge nicht.",
+        "Trage scharfe Werkzeuge mit Spitze oder Schneide nach unten und von Menschen weg; halte Abstand. Folge der Vorführung für das jeweilige Werkzeug. Schwinge es nicht, trage es nicht nahe anderen auf der Schulter und lege es nicht in Laufwege. Saubere Werkzeuge und geeignete saubere Handschuhe helfen auch, die Probe nicht zu verunreinigen.",
+        "Lies vor dem Umgang mit Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagenzien Etikett und aktuelles Sicherheitsdatenblatt, SDS. Ältere Unterlagen können MSDS heißen. Suche Gefahren, Handhabung und Lagerung, Schutzmaßnahmen und Notfallinformationen. Behälterfarbe und Farbskala eines Tests sagen nichts Verlässliches über chemische Gefahren aus."
+      ]
+    },
+    {
+      "id": "environment",
+      "title": "4. Berücksichtige Lebewesen und Wetter",
+      "paragraphs": [
+        "Achte auf Schlangen, stechende Insekten und schädliche Pflanzen, ohne sie anzufassen, zu stören oder dich ihnen zu nähern. Melde Gefahren und nutze den vereinbarten Weg. Biologische Gefahren sind aus der Ferne nicht immer erkennbar.",
+        "Berücksichtige Hitze, Sonne und Wetteränderungen. Plane Trinkwasser, geeignete Kleidung, Schatten und Pausen. Melde Veränderungen der Bedingungen oder deines Befindens. Hut und Wasser sind kein Grund, Schwindel oder Verwirrtheit zu ignorieren. Genaue Maßnahmen bei Hitzeerkrankungen folgen im nächsten Schritt; hier zählen Vorbeugung und schnelle Meldung."
+      ]
+    },
+    {
+      "id": "ppe",
+      "title": "Schutz nach Gefährdung wählen, nicht aus Gewohnheit",
+      "paragraphs": [
+        "Persönliche Schutzausrüstung, PSA, verringert die Einwirkung von Gefahren. Sie ergänzt sicheres Arbeiten, macht aber weder einen unsicheren Ort noch eine unerlaubte Tätigkeit akzeptabel. Die Kombination hängt von Arbeit, Stoff und Bedingungen ab.",
+        "Robuste Arbeitsschuhe geben Halt und schützen die Füße. Bei Stoß- oder Quetschgefahr legt die Lehrkraft geeignete Schutzkappen fest, beispielsweise Stahlkappen. Lange Ärmel und Hosen können Kratzer, Sonne und Insektenkontakt vermindern; ein breitkrempiger Hut schützt zusätzlich vor Sonne. Kleidung muss auch zu Hitze und Tätigkeit passen.",
+        "Wähle Augenschutz passend zur Gefahr. Eine Schutzbrille gegen Partikel ersetzt nicht automatisch eine dicht schließende Schutzbrille gegen Chemikalienspritzer. Für Bodenarbeiten geeignete Handschuhe schützen die Hände und können Probenverunreinigung begrenzen; sie sind nicht unbedingt chemikaliengeeignet."
+      ]
+    },
+    {
+      "id": "chemical",
+      "title": "Chemikalienschutz braucht eine Beständigkeitsprüfung",
+      "paragraphs": [
+        "Das Handschuhmaterial muss zum konkreten Stoff und zur erwarteten Einwirkung passen. Nitril und Neopren sind Materialbeispiele, keine universelle Schutzgarantie. Prüfe mit der Lehrkraft SDS und Herstellerangaben. Stoff- oder Lederhandschuhe können Flüssigkeit aufnehmen und an der Haut halten.",
+        "Vergleiche einen sauberen Gartenhandschuh aus Stoff mit einem geeigneten beständigen Handschuh, nur mit sauberen Anschauungsobjekten. Erkläre, warum Aussehen und Dicke allein keine chemische Beständigkeit beweisen. Prüfe Ausrüstung vor dem Anlegen auf Eignung und Schäden.",
+        "Je nach Gefährdungsbeurteilung sind auch ein beständiger Schutzanzug oder eine Schürze erforderlich. Wenn schädliche Stäube, Dämpfe oder Nebel eingeatmet werden können, muss Atemschutz zu Schadstoff und Tätigkeit passen, mit geeignetem Filter oder geeigneter Kartusche und Unterweisung. Dicht anliegender Atemschutz braucht eine geeignete Anpassungsüberprüfung. Ein Maskenbild oder eine Staubmaske für die falsche Gefahr beweist keinen Schutz.",
+        "Warnkleidung hilft anderen, dich nahe Maschinen zu sehen; sie ersetzt keinen Abstand zu bewegten Geräten. Bei lauten Motoren oder Maschinen kann geeigneter Gehörschutz wie Kapselgehörschützer oder Ohrstöpsel notwendig sein. Halte die für den realen Ort festgelegte Ausrüstung und Arbeitsorganisation ein."
+      ]
+    },
+    {
+      "id": "checklist",
+      "title": "Fasse die Prüfungen vor Arbeitsbeginn zusammen",
+      "paragraphs": [
+        "Erstelle fünf Prüfpunkte statt nur einer Ausrüstungsliste: sicherer Ort und Weg mit Erlaubnis und Leitungsfreigabe; intakte, saubere Werkzeuge und sicheres Tragen; zur Tätigkeit und Chemikalieninformation passender Schutz; gemeldeter Standort und Rückkehrzeit mit Begleitung und Kommunikationsplan; Notfallkontakte, Zugang, Treffpunkt, Wasser und Wettervorsorge.",
+        "Nenne für jeden Punkt einen Stoppgrund: unklare Leitungen, lockerer Griff, fehlende Stoffinformationen, unzureichende Kommunikation oder eine Maschine im Weg. Melde das Problem und warte auf eine sichere Lösung. Ein Häkchen beseitigt keine Gefahr.",
+        "Vorbereitung, Aufmerksamkeit und das Einhalten eigener Grenzen verhindern, dass eine Lage schlimmer wird. Dieser Schritt ist keine Erste-Hilfe-Qualifikation und kein Nachweis praktischer Kompetenz. Die Lehrkraft beobachtet die praktische Durchführung getrennt."
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "route",
+      "title": "Abkürzung neben dem Traktor",
+      "situation": "Auf dem kürzesten Weg liegen ein Loch und ein Sprinklerkopf. Ein Traktor fährt rückwärts. Eine Begleitperson meint: „Wir haben feste Schuhe und ein Handy, los geht's.“",
+      "reasoning": [
+        "Schuhe mindern manche Verletzungsrisiken, beseitigen aber weder Loch noch Sprinkler oder fahrende Maschine.",
+        "Das Team bleibt außerhalb des Maschinenbereichs, meldet Hindernisse und wartet auf einen sicheren, mit der Lehrkraft vereinbarten Weg.",
+        "Es bestätigt Probenstelle, Leitungsfreigabe, Rückkehr und Kommunikation, bevor es Werkzeuge mit Spitzen nach unten und von Menschen weg trägt."
+      ],
+      "takeaway": "Zuerst Weg und Arbeit absichern. Ausrüstung allein ist keine Erlaubnis zum Start."
+    },
+    {
+      "id": "gloves",
+      "title": "Zwei Paar Handschuhe auf dem Tisch",
+      "situation": "Für ein flüssiges Reagenz gibt es Stoff- und Nitrilhandschuhe. Ein aktuelles SDS und Beständigkeitsangaben fehlen.",
+      "reasoning": [
+        "Stoff kann verschüttete Flüssigkeit aufsaugen und an der Hand halten.",
+        "Nitril kommt möglicherweise infrage, doch der Materialname beweist keine Eignung für dieses Reagenz.",
+        "Unterbrich den Umgang und verlange SDS, Handschuhdaten und Anweisungen. Prüfe außerdem Augen- und weitere Schutzmaßnahmen."
+      ],
+      "takeaway": "Die richtige Entscheidung kann sein, fehlende Informationen abzuwarten, statt das robusteste Aussehen zu wählen."
+    }
+  ],
+  "points": [
+    {
+      "id": "terrain",
+      "label": "Weg und Boden",
+      "description": "Ein Sprinklerkopf und ein Tierbau unterbrechen den Weg zur Probenfläche.",
+      "question": "Wie erreicht das Team die Fläche?",
+      "options": [
+        "Die Abkürzung nehmen: feste Schuhe verhindern jedes Stolpern.",
+        "Hindernisse melden und den von der Lehrkraft bestätigten Weg nutzen.",
+        "Den Sprinkler ohne Erlaubnis entfernen."
+      ],
+      "answer": 1,
+      "feedback": [
+        "Schuhe beseitigen kein Hindernis. Beachte Tierbau und Sprinkler vor dem Werkzeugtransport.",
+        "Richtig: Hindernisse meiden schützt Menschen und Bewässerungsanlage.",
+        "Verändere die Anlage nicht eigenmächtig. Melde das Problem und nutze den vereinbarten Weg."
+      ],
+      "readingId": "site"
+    },
+    {
+      "id": "utilities",
+      "label": "Probenstelle",
+      "description": "Die Oberfläche ist frei, aber Bewässerungs-, Gas- oder Stromleitungen im Boden wurden nicht geprüft.",
+      "question": "Darfst du die Sonde einstecken?",
+      "options": [
+        "Ja, weil an der Oberfläche nichts sichtbar ist.",
+        "Ja, wenn du langsam drückst.",
+        "Nein. Warte, bis die Lehrkraft genau diesen Punkt freigegeben hat."
+      ],
+      "answer": 2,
+      "feedback": [
+        "Unterirdische Leitungen sind möglicherweise unsichtbar. Eine freie Fläche ist keine Freigabe.",
+        "Langsames Drücken zeigt nicht, wo ein Rohr oder Kabel liegt.",
+        "Richtig: Erlaubnis und ortsbezogene Freigabe kommen vor jedem Einstecken."
+      ],
+      "readingId": "site"
+    },
+    {
+      "id": "tractor",
+      "label": "Maschinen",
+      "description": "Neben dem Weg arbeitet ein Traktor; sein Rückfahrwarnsignal ist zu hören.",
+      "question": "Welche Entscheidung ist sicher?",
+      "options": [
+        "Außerhalb des Arbeitsbereichs bleiben und den vereinbarten Weg nutzen.",
+        "Hinter ihm gehen und auf das Handy schauen.",
+        "Warnweste anziehen und erwarten, dass der Fahrer anhält."
+      ],
+      "answer": 0,
+      "feedback": [
+        "Richtig: Abstand und Aufmerksamkeit sind auch mit Warnkleidung nötig.",
+        "Rückwärtsfahrt und Ablenkung bilden eine gefährliche Kombination.",
+        "Sichtbarkeit garantiert nicht, dass die fahrende Person dich bemerkt hat."
+      ],
+      "readingId": "site"
+    },
+    {
+      "id": "tools",
+      "label": "Handwerkzeuge",
+      "description": "Der Spaten hat einen lockeren Griff. Jemand möchte ihn auf der Schulter tragen.",
+      "question": "Wie gehst du mit dem Werkzeug um?",
+      "options": [
+        "Vorsichtig benutzen; der Griff hält wahrscheinlich.",
+        "Melden, ein intaktes Werkzeug nehmen und die Spitze nach unten von Menschen weg richten.",
+        "Auf Schulterhöhe tragen, damit es sichtbar ist."
+      ],
+      "answer": 1,
+      "feedback": [
+        "Vorsichtige Benutzung repariert keinen lockeren Griff.",
+        "Richtig: zuerst prüfen, dann die gezeigte Trageweise mit dem intakten Werkzeug anwenden.",
+        "Ein scharfes Werkzeug auf Schulterhöhe kann jemanden treffen."
+      ],
+      "readingId": "limits"
+    },
+    {
+      "id": "chemical",
+      "label": "Stoffinformationen",
+      "description": "Ein geschlossener Reagenzbehälter steht auf dem Tisch. Das Etikett ist beschädigt, das SDS fehlt.",
+      "question": "Was muss vor der Verwendung geschehen?",
+      "options": [
+        "Handschuhe nach Farbe wählen und weitermachen.",
+        "Gefahren anhand der Ergebnis-Farbskala bestimmen.",
+        "Stoppen und Stoffidentifikation, Etikett sowie aktuelles SDS von der Lehrkraft verlangen."
+      ],
+      "answer": 2,
+      "feedback": [
+        "Die Handschuhfarbe zeigt keine chemische Beständigkeit.",
+        "Die Ergebnisskala enthält keine ausreichenden Gefahr- oder Erste-Hilfe-Informationen.",
+        "Richtig: Stoffidentität und Sicherheitsinformationen müssen vor dem Umgang geklärt sein."
+      ],
+      "readingId": "chemical"
+    },
+    {
+      "id": "ppe",
+      "label": "Schutzausrüstung",
+      "description": "Die chemische Tätigkeit ist erlaubt, die Beständigkeit der gezeigten Nitril- und Stoffhandschuhe aber noch ungeprüft.",
+      "question": "Was ist die beste Wahl?",
+      "options": [
+        "Mit der Lehrkraft SDS und Herstellerdaten prüfen und den gesamten erforderlichen Schutz auswählen.",
+        "Nitril schützt immer vor allen flüssigen Chemikalien.",
+        "Dicker Stoff reicht, weil er Flüssigkeit aufsaugt."
+      ],
+      "answer": 0,
+      "feedback": [
+        "Richtig: Handschuhe und weiterer Schutz müssen zum Stoff und zur Einwirkung passen.",
+        "Nitril ist nicht universell beständig. Prüfe konkretes Produkt und Einwirkung.",
+        "Aufgesaugte Flüssigkeit kann an der Haut bleiben. Aufsaugen bedeutet nicht schützen."
+      ],
+      "readingId": "chemical"
+    },
+    {
+      "id": "communication",
+      "label": "Begleitung und Kontakt",
+      "description": "Das Team geht in eine abgelegene Ecke. Das Handy ist geladen, aber die Aufsicht kennt Weg und Rückkehrzeit nicht.",
+      "question": "Was fehlt?",
+      "options": [
+        "Nichts: das geladene Handy ersetzt Begleitung und Rückmeldung.",
+        "Standort und Rückkehr melden, Begleitung und Kontakt vereinbaren und Signalverlust einplanen.",
+        "Den Plan geheim halten, um ungestört zu arbeiten."
+      ],
+      "answer": 1,
+      "feedback": [
+        "Empfang kann fehlen und eine verletzte Person möglicherweise nicht anrufen.",
+        "Richtig: Andere müssen wissen, wo sie suchen und was sie bei Kontaktverlust tun sollen.",
+        "Ein unbekannter Standort verzögert Hilfe. Kommunikation gehört zur Arbeit."
+      ],
+      "readingId": "communication"
+    },
+    {
+      "id": "weather",
+      "label": "Wetter und Lebewesen",
+      "description": "Auf dem offenen Feld ist es heiß. Pausen sind nicht geplant, nahe dem Weg sind stechende Insekten aktiv.",
+      "question": "Was plant das Team?",
+      "options": [
+        "Schnell weiterarbeiten, bevor jemand krank wird.",
+        "Einen Hut tragen und alles andere ignorieren.",
+        "Gefahren melden, Wasser, Schatten, Pausen und sicheren Weg vereinbaren und Beschwerden rasch melden."
+      ],
+      "answer": 2,
+      "feedback": [
+        "Eile beherrscht weder Hitze noch biologische Gefahren.",
+        "Ein Hut allein ist kein vollständiger Plan und entfernt keine Insektengefahr.",
+        "Richtig: Bedingungen einplanen und Änderungen melden, statt Schäden abzuwarten."
+      ],
+      "readingId": "environment"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Welche Grundregel gilt vor Feldarbeiten?",
+      "options": [
+        "Möglichst schnell arbeiten.",
+        "Unabhängig von der Tätigkeit das Handy nur in Pausen nutzen.",
+        "Standort und erwartete Rückkehrzeit mitteilen.",
+        "Eine Maschine bedienen, wenn sie einfach aussieht."
+      ],
+      "answer": 2,
+      "feedback": "Standort und Rückkehr machen den Kontaktplan nutzbar. Schnelligkeit und einfache Optik beweisen keine Sicherheit."
+    },
+    {
+      "id": "q2",
+      "question": "Was passt bei Stoßgefahr für die Füße, wenn die Lehrkraft es vorgibt?",
+      "options": [
+        "Laufschuhe.",
+        "Robuste Arbeitsschuhe mit geeigneten Schutzkappen, etwa aus Stahl.",
+        "Offene Sandalen.",
+        "Beliebige Gummistiefel ohne Prüfung der Schutzwirkung."
+      ],
+      "answer": 1,
+      "feedback": "Schuhe müssen zur Gefahr passen. Bezeichnung oder Material allein reichen nicht."
+    },
+    {
+      "id": "q3",
+      "question": "Wie wählst du Handschutz für ein flüssiges Pflanzenschutzmittel?",
+      "options": [
+        "Beliebige Lederhandschuhe.",
+        "Beliebige Baumwollhandschuhe.",
+        "Nachweislich geeignete chemikalienbeständige Handschuhe, etwa passendes Nitril, wenn angegeben.",
+        "Keine Handschuhe, wenn du vorsichtig bist."
+      ],
+      "answer": 2,
+      "feedback": "Prüfe das konkrete Produkt. Nitril ist ein Beispiel, keine universelle Garantie; Stoff oder Leder können Flüssigkeit aufnehmen."
+    },
+    {
+      "id": "q4",
+      "question": "Was schützt bei möglicherweise verunreinigtem Boden oder Reagenzien gezielt die Hände, wenn es nach Gefährdung gewählt wird?",
+      "options": [
+        "Schuhe mit Stahlkappen.",
+        "Geeignete chemikalienbeständige Handschuhe.",
+        "Schutzhelm.",
+        "Warnweste."
+      ],
+      "answer": 1,
+      "feedback": "Geeignete Handschuhe schützen Hände, ersetzen aber keine weiteren nötigen Schutzmaßnahmen."
+    },
+    {
+      "id": "q5",
+      "question": "Wo stehen genaue Gefahren- und Erste-Hilfe-Informationen für die Reagenzien eines Bodentests?",
+      "options": [
+        "Auf dem Lagerregal.",
+        "Im aktuellen SDS, in älteren Unterlagen auch MSDS genannt.",
+        "Nur im allgemeinen Betriebshandbuch.",
+        "Auf der Farbskala der Ergebnisse."
+      ],
+      "answer": 1,
+      "feedback": "Nutze die Sicherheitsinformationen des Reagenzes, nicht die Tabelle zur Ergebnisauswertung."
+    }
+  ],
+  "checklistLabels": [
+    "Ort und Weg",
+    "Werkzeuge und Tragen",
+    "Schutz für die Tätigkeit",
+    "Begleitung und Kommunikation",
+    "Notfälle und Wetter"
+  ],
+  "checklistModel": [
+    "Weg, Erlaubnis und Leitungsfreigabe bestätigen; bei Unklarheit stoppen.",
+    "Saubere, intakte Werkzeuge und Trageweise prüfen; lockere Griffe und Mängel melden.",
+    "PSA mit Tätigkeit, Etikett und SDS abstimmen; bei unbekannter Eignung oder fehlendem Schutz stoppen.",
+    "Standort und Rückkehr melden; Begleitung, Kontakte und Vorgehen bei Kontaktverlust vereinbaren.",
+    "Zugang, Treffpunkt, Kontakte, Wasser, Schatten und Pausen prüfen; Gefahren und Beschwerden rasch melden."
+  ],
+  "practical": [
+    "Lehrkraft: zugänglichen Ort und unterirdische Leitungen prüfen; erlaubte Arbeiten, reale Gefahren, Kommunikation und Notfallplan festlegen.",
+    "Lernende: die fünf Prüfpunkte erklären und reale Weggefahren einschließlich Bewässerungsteilen und Maschinen erkennen.",
+    "Lernende: Werkzeuge prüfen, Mängel melden, vorgegebene PSA auswählen und anlegen sowie sicheres Tragen zeigen.",
+    "Lernende: Kontaktplan zeigen und Bedingungen nennen, bei denen sie stoppen und nachfragen.",
+    "Lehrkraft: jede Person einzeln beobachten, Leistung und nötige Hilfe dokumentieren. Unsichere Handlungen unterbrechen und vor Bestätigung eine neue sichere Durchführung verlangen."
+  ],
+  "glossary": [
+    [
+      "Gefahr",
+      "Etwas mit dem Potenzial, Schaden zu verursachen."
+    ],
+    [
+      "PSA",
+      "Persönliche Schutzausrüstung für die konkrete Tätigkeit und Gefährdung."
+    ],
+    [
+      "SDS",
+      "Sicherheitsdatenblatt zu Gefahren, Umgang, Schutz und Notfällen eines bestimmten Stoffes."
+    ],
+    [
+      "Arbeiten mit Begleitung",
+      "Gemeinsames Arbeiten mit vereinbartem Kontakt und gegenseitiger Unterstützung."
+    ],
+    [
+      "Leitungsfreigabe",
+      "Bestätigung, dass an einem bestimmten Punkt hinsichtlich unterirdischer Leitungen sicher gearbeitet werden kann."
+    ]
+  ],
+  "selfReflection": {
+    "question": "Kann ich Sicherheitsregeln erklären und passende Schutzausrüstung wählen?",
+    "labels": [
+      "Kann ich",
+      "Noch nicht",
+      "Teilweise"
+    ],
+    "note": "Dies ist eine Selbsteinschätzung, kein Kompetenznachweis."
+  },
+  "illustrations": {
+    "s101-lesson-route": {
+      "alt": "Dreidimensionale Darstellung eines Feldwegs mit einem Sprinklerkopf und einem Tierbau; ein Zaun trennt den Traktor vom Weg."
+    },
+    "s101-lesson-gloves": {
+      "alt": "Zwei unterteilte Aufbewahrungskoffer mit Stoffhandschuhen, nicht porösen Handschuhen, einer Schutzbrille gegen Spritzer und einer verschlossenen Flasche. Das Bild allein belegt keine Eignung der Handschuhe für einen bestimmten Stoff."
+    }
+  }
+}
