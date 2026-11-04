@@ -8,6 +8,15 @@ import { PathStory } from "@/components/site/PathStory";
 import { getPathStoryCopy } from "@/lib/path-story";
 import { intakeCopy } from "@/lib/course-system/intake/copy";
 import type { SupportedLocale } from "@/lib/locale/types";
+import { CourseInlineText } from "./CourseInlineText";
+
+/** One-line catalogue description from reviewed station titles. */
+export function catalogueDescription(stations: Station[], locale: SupportedLocale) {
+  const first = stations[0]?.title;
+  if (!first) return "";
+  const numbers = new Intl.NumberFormat(locale === "en" ? "en" : "ar-EG");
+  return intakeCopy(locale).catalogueDesc(first, numbers.format(stations.length));
+}
 
 /** Shared learner presentation for admitted curricula, used by the public course page
  * and the admin review preview so both render the same introduction/contents/hero. */
@@ -36,17 +45,30 @@ export function CourseIntroduction({
   const story = getPathStoryCopy(locale);
   const numbers = new Intl.NumberFormat(locale === "en" ? "en" : "ar-EG");
   const steps = stations.reduce((n, s) => n + s.steps.length, 0);
+  // Truthful cards from reviewed titles/counts only; no invented prerequisites.
+  const cards: [string, ReactNode][] = [
+    [
+      story.goals,
+      <>
+        <span className="block">{c.learnLead}</span>
+        <ul className="mt-2 list-disc space-y-1 ps-6">
+          {stations.map((s) => (
+            <li key={s.id}>{s.title}</li>
+          ))}
+        </ul>
+      </>,
+    ],
+    [story.audience, c.audienceBody],
+    [story.requirements, c.beforeBody(numbers.format(stations.length), numbers.format(steps))],
+  ];
   return (
     <>
       {back}
-      <section className="mt-6 grid gap-5 sm:grid-cols-2" aria-label={story.aboutPath}>
-        {[
-          [c.stationsCount, numbers.format(stations.length)],
-          [c.stepsCount, numbers.format(steps)],
-        ].map(([heading, body]) => (
+      <section className="mt-6 grid gap-5 md:grid-cols-3" aria-label={story.aboutPath}>
+        {cards.map(([heading, body]) => (
           <article key={heading} className="rounded-3xl border border-border bg-card p-6">
             <h2 className="text-xl font-bold">{heading}</h2>
-            <p className="mt-4 leading-8 text-muted-foreground">{body}</p>
+            <div className="mt-4 leading-8 text-muted-foreground">{body}</div>
           </article>
         ))}
       </section>
@@ -98,10 +120,13 @@ export function CourseContents({
 export function LessonHero({
   eyebrow,
   title,
+  intro,
   level = 1,
 }: {
   eyebrow?: string;
   title: string;
+  /** Plain-prose opening taken from the step's own explanation. */
+  intro?: string;
   level?: 1 | 2;
 }) {
   const Heading = level === 1 ? "h1" : "h2";
@@ -109,6 +134,11 @@ export function LessonHero({
     <header className="my-6 rounded-3xl border bg-accent/20 p-6">
       {eyebrow && <p className="text-sm font-bold text-primary">{eyebrow}</p>}
       <Heading className="my-4 text-3xl font-black">{title}</Heading>
+      {intro && (
+        <p className="whitespace-pre-wrap leading-8">
+          <CourseInlineText text={intro} />
+        </p>
+      )}
     </header>
   );
 }

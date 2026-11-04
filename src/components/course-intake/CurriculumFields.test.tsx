@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
 import { CurriculumFields } from "./CurriculumFields";
 import { trainingFixture } from "@/lib/course-system/intake/training-fixture";
@@ -42,7 +42,9 @@ it.each(SUPPORTED_LOCALES)(
       />,
     );
     expect(screen.queryByRole("status")).toBeNull();
-    fireEvent.change(screen.getByLabelText("Answer unit"), { target: { value: "food-unit" } });
+    // Choice fields render as visible radio choices (AC-BUS quiz style).
+    const unit = screen.getByRole("group", { name: "Answer unit" });
+    fireEvent.click(unit.querySelector('input[type="radio"][value="food-unit"]')!);
     expect(change).toHaveBeenCalledWith("unit", "food-unit");
   },
 );
@@ -50,6 +52,9 @@ it("does not allow editing or checking before the owned attempt opens", () => {
   const change = vi.fn();
   render(<CurriculumFields section={section} values={{}} onChange={change} disabled locale="en" />);
   expect(screen.getByLabelText("Food mass")).toBeDisabled();
-  expect(screen.getByLabelText("Answer unit")).toBeDisabled();
+  for (const radio of within(screen.getByRole("group", { name: "Answer unit" })).getAllByRole(
+    "radio",
+  ))
+    expect(radio).toBeDisabled();
   expect(screen.getByRole("button", { name: "Check my calculation" })).toBeDisabled();
 });

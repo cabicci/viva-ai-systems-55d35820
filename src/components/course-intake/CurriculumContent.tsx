@@ -1,9 +1,19 @@
 import type { IntakeSection } from "@/lib/course-system/intake/package";
 import type { SupportedLocale } from "@/lib/locale/types";
 import { intakeCopy } from "@/lib/course-system/intake/copy";
+import { getAcademicCopy } from "@/lib/academic-education/copy";
+import {
+  exampleLayout,
+  groupSections,
+  lessonLead,
+  parseBlocks,
+  resolveGroup,
+  type Block,
+  type SectionGroup,
+} from "@/lib/course-system/intake/presentation";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { CourseInlineText } from "./CourseInlineText";
 export type LessonContent = {
   id: string;
@@ -11,56 +21,63 @@ export type LessonContent = {
   sections: IntakeSection[];
   assets: { id: string; url?: string; label: string; type: string; caption?: string }[];
 };
+const ACTIVITY = new Set(["questions", "exam", "mission", "practice"]);
+
 /** Text and reviewed hosted media only. No imported JSX, HTML, scripts or frames
- * from arbitrary origins. Video mounts only in its selected third tab. */
+ * from arbitrary origins. Sections are shown in seven AC-BUS groups; every
+ * section keeps its own id and activity. Media mounts only in its selected group. */
 export function CurriculumContent({
   lesson,
   selected,
   onSelect,
   locale,
   children,
+  activity,
   resolveAsset,
   progressLabel,
   progressValue,
+  leadInHero = false,
 }: {
   progressLabel?: string;
   progressValue?: number;
   lesson: LessonContent;
+  /** Group key or a section id. */
   selected: string;
-  onSelect(id: string): void;
+  onSelect(id: SectionGroup): void;
   locale: SupportedLocale;
-  children?: React.ReactNode;
+  children?: ReactNode;
+  /** Activity controls for one section; mounted for every section so input survives tab changes. */
+  activity?: (section: IntakeSection) => ReactNode;
   resolveAsset?: (id: string) => Promise<string>;
+  /** The first explanation paragraph is already shown in the lesson hero. */
+  leadInHero?: boolean;
 }) {
   const c = intakeCopy(locale);
-  const section = lesson.sections.find((s) => s.id === selected) ?? lesson.sections[0];
+  const groups = groupSections(lesson.sections);
+  const current = resolveGroup(lesson.sections, selected);
+  const lead = leadInHero ? lessonLead(lesson.sections) : null;
+  const academic = getAcademicCopy(locale);
+  const label = (g: SectionGroup) =>
+    academic[g === "check" ? "quiz" : g === "explanation" ? "reading" : g];
   return (
     <div className="grid min-w-0 items-start gap-6 lg:grid-cols-[250px_minmax(0,1fr)]">
       <aside className="min-w-0 rounded-3xl border bg-card p-4 lg:sticky lg:top-24">
-        <nav aria-label={c.step} className="grid grid-cols-2 gap-2 lg:grid-cols-1">
-          {lesson.sections.map((s) => {
-            const kind = c[s.kind];
-            const active = section.id === s.id;
-            return (
-              <button
-                type="button"
-                key={s.id}
-                onClick={() => onSelect(s.id)}
-                aria-current={active ? "page" : undefined}
-                aria-controls="curriculum-lesson-section"
-                className={`min-h-11 min-w-0 break-words rounded-xl p-3 text-start font-bold ${active ? "bg-primary text-primary-foreground" : "hover:bg-muted"}`}
-              >
-                {kind && kind !== s.title && (
-                  <span
-                    className={`block text-xs font-semibold ${active ? "" : "text-muted-foreground"}`}
-                  >
-                    {kind}
-                  </span>
-                )}
-                {s.title}
-              </button>
-            );
-          })}
+        <nav
+          aria-label={getAcademicCopy(locale).sections}
+          className="grid grid-cols-2 gap-2 lg:grid-cols-1"
+        >
+          {groups.map(({ group }) => (
+            <button
+              type="button"
+              key={group}
+              onClick={() => onSelect(group)}
+              aria-pressed={group === current}
+              aria-controls="curriculum-lesson-section"
+              className={`min-h-11 min-w-0 break-words rounded-xl p-3 text-start font-bold ${group === current ? "bg-primary text-primary-foreground" : "hover:bg-muted"}`}
+            >
+              {label(group)}
+            </button>
+          ))}
         </nav>
         {progressLabel && (
           <section className="mt-6 space-y-3 border-t pt-5">
@@ -77,60 +94,238 @@ export function CurriculumContent({
       <section
         id="curriculum-lesson-section"
         className="min-w-0 scroll-mt-24 space-y-6 rounded-3xl border bg-card p-5 md:p-8"
-        aria-label={section.title}
+        aria-label={label(current)}
       >
-        <h2 className="text-2xl font-bold">{section.title}</h2>
-        <p className="text-sm text-muted-foreground">
-          {section.required ? c.required : c.optional}
-        </p>
-        {section.durationMinutes !== undefined && (
-          <p>
-            {c.duration}: {section.durationMinutes}
-          </p>
-        )}
-        {section.passPercent !== undefined && (
-          <p>
-            {c.passMark}: {section.passPercent}%
-          </p>
-        )}
-        {section.paragraphs.map((p, i) => (
-          <p key={i} className="whitespace-pre-wrap break-words leading-8">
-            <CourseInlineText text={p} />
-          </p>
+        {groups.map(({ group, sections }) => (
+          <div key={group} hidden={group !== current} className="space-y-6" data-group={group}>
+            {sections.map((section) => {
+              const showTitle = sections.length > 1 || section.title !== label(group);
+              const paragraphs =
+                lead && section.id === lead.sectionId
+                  ? section.paragraphs.slice(1)
+                  : section.paragraphs;
+              return (
+                <article
+                  key={section.id}
+                  id={`section-${section.id}`}
+                  data-section={section.id}
+                  className={`space-y-5 ${sections.length > 1 ? "border-t pt-5 first:border-t-0 first:pt-0" : ""}`}
+                >
+                  {showTitle && <h2 className="text-xl font-bold">{section.title}</h2>}
+                  {ACTIVITY.has(section.kind) &&
+                    (section.required ||
+                      section.passPercent !== undefined ||
+                      section.durationMinutes !== undefined) && (
+                      <p className="flex flex-wrap gap-3 text-sm text-muted-foreground">
+                        {section.required && <span>{c.required}</span>}
+                        {section.durationMinutes !== undefined && (
+                          <span>
+                            {c.duration}: {section.durationMinutes}
+                          </span>
+                        )}
+                        {section.passPercent !== undefined && (
+                          <span>
+                            {c.passMark}: {section.passPercent}%
+                          </span>
+                        )}
+                      </p>
+                    )}
+                  <SectionBody section={section} paragraphs={paragraphs} locale={locale} />
+                  {group === current && (
+                    <SectionAssets
+                      section={section}
+                      lesson={lesson}
+                      locale={locale}
+                      resolveAsset={resolveAsset}
+                    />
+                  )}
+                  {activity?.(section)}
+                </article>
+              );
+            })}
+          </div>
         ))}
-        {section.assets
-          .map((id) => lesson.assets.find((a) => a.id === id))
-          .filter((a) => !!a)
-          .map((asset) =>
-            section.kind === "video" && asset.type === "video" && asset.url ? (
-              <div key={asset.id}>
-                {new URL(asset.url).hostname === "iframe.mediadelivery.net" ? (
-                  <iframe
-                    title={asset.label}
-                    src={asset.url}
-                    className="aspect-video w-full rounded-xl"
-                    allow="fullscreen; picture-in-picture"
-                    allowFullScreen
-                    referrerPolicy="no-referrer"
-                  />
-                ) : (
-                  <video
-                    aria-label={asset.label}
-                    src={asset.url}
-                    className="aspect-video w-full rounded-xl"
-                    controls
-                    preload="none"
-                  />
-                )}
-              </div>
-            ) : asset.type === "image" ? (
-              <PrivateImage key={asset.id} asset={asset} resolve={resolveAsset} locale={locale} />
-            ) : (
-              <PrivateAsset key={asset.id} asset={asset} resolve={resolveAsset} locale={locale} />
-            ),
-          )}
         {children}
       </section>
+    </div>
+  );
+}
+
+function SectionBody({
+  section,
+  paragraphs,
+  locale,
+}: {
+  section: IntakeSection;
+  paragraphs: string[];
+  locale: SupportedLocale;
+}) {
+  const blocks = parseBlocks(paragraphs, section.kind === "faq");
+  if (section.kind === "example") {
+    const layout = exampleLayout(blocks);
+    if (layout)
+      return (
+        <div className="space-y-5">
+          {layout.opening && (
+            <div className="rounded-xl border bg-muted/30 p-4 leading-8">
+              <p className="mb-2 text-sm font-bold text-primary">{intakeCopy(locale).caseData}</p>
+              <BlockView block={layout.opening} plain />
+            </div>
+          )}
+          <ol className="list-none space-y-4 leading-8" role="list">
+            {layout.steps.map((s, i) => (
+              <li key={i} className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-3">
+                <span
+                  aria-hidden="true"
+                  className="grid h-8 w-8 place-items-center rounded-full bg-primary/10 font-bold"
+                >
+                  {i + 1}
+                </span>
+                <div className="min-w-0 space-y-2">
+                  {s.lead && <BlockView block={s.lead} plain />}
+                  {s.formulas.map((f, j) => (
+                    <BlockView key={j} block={f} />
+                  ))}
+                </div>
+              </li>
+            ))}
+          </ol>
+          {layout.closing.map((b, i) => (
+            <div key={i} className="rounded-xl bg-accent/20 p-4 leading-8">
+              <BlockView block={b} plain />
+            </div>
+          ))}
+        </div>
+      );
+  }
+  return (
+    <div className="space-y-4 leading-8">
+      {blocks.map((b, i) => (
+        <BlockView key={i} block={b} />
+      ))}
+    </div>
+  );
+}
+
+/** Renders a parsed block as inert text. `plain` drops box styling inside cards. */
+export function BlockView({ block, plain = false }: { block: Block; plain?: boolean }) {
+  switch (block.type) {
+    case "heading":
+      return (
+        <h3 className="pt-2 text-lg font-bold">
+          <CourseInlineText text={block.text} />
+        </h3>
+      );
+    case "formula":
+      return (
+        <p className="overflow-x-auto rounded-lg bg-muted/40 p-3 text-start" dir="ltr">
+          <code className="whitespace-pre-wrap break-words">{block.text}</code>
+        </p>
+      );
+    case "list": {
+      const list = (
+        <>
+          {block.lead !== null && (
+            <p className="font-bold">
+              <CourseInlineText text={block.lead} />
+            </p>
+          )}
+          <ul className="list-disc space-y-2 ps-6">
+            {block.items.map((item, i) => (
+              <li key={i}>
+                <CourseInlineText text={item.text} />
+              </li>
+            ))}
+          </ul>
+        </>
+      );
+      return block.tone === "outcome" && !plain ? (
+        <div className="space-y-3 rounded-xl bg-accent/20 p-4">{list}</div>
+      ) : (
+        <div className="space-y-3">{list}</div>
+      );
+    }
+    case "callout":
+      return plain ? (
+        <p className="whitespace-pre-wrap break-words">
+          <strong>{block.label}:</strong> <CourseInlineText text={block.body} />
+        </p>
+      ) : (
+        <div
+          className={`rounded-xl p-4 ${block.tone === "case" ? "border bg-muted/30" : "bg-accent/20"}`}
+        >
+          <p className="mb-1 font-bold">{block.label}</p>
+          <p className="whitespace-pre-wrap break-words">
+            <CourseInlineText text={block.body} />
+          </p>
+        </div>
+      );
+    case "faq":
+      return (
+        <details className="rounded-xl border p-4">
+          <summary className="cursor-pointer font-bold">
+            <CourseInlineText text={block.question} />
+          </summary>
+          <p className="mt-4 whitespace-pre-wrap break-words leading-8">
+            <CourseInlineText text={block.answer} />
+          </p>
+        </details>
+      );
+    case "text":
+      return (
+        <p className="whitespace-pre-wrap break-words">
+          <CourseInlineText text={block.text} />
+        </p>
+      );
+  }
+}
+
+function SectionAssets({
+  section,
+  lesson,
+  locale,
+  resolveAsset,
+}: {
+  section: IntakeSection;
+  lesson: LessonContent;
+  locale: SupportedLocale;
+  resolveAsset?: (id: string) => Promise<string>;
+}) {
+  const assets = section.assets
+    .map((id) => lesson.assets.find((a) => a.id === id))
+    .filter((a) => !!a);
+  if (!assets.length) return null;
+  return (
+    <div className={section.kind === "downloads" ? "flex flex-wrap gap-3" : "space-y-4"}>
+      {assets.map((asset) =>
+        section.kind === "video" && asset.type === "video" && asset.url ? (
+          <div key={asset.id}>
+            {new URL(asset.url).hostname === "iframe.mediadelivery.net" ? (
+              <iframe
+                title={asset.label}
+                src={asset.url}
+                className="aspect-video w-full rounded-xl border-0"
+                allow="fullscreen; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer"
+              />
+            ) : (
+              <video
+                aria-label={asset.label}
+                src={asset.url}
+                className="aspect-video w-full rounded-xl"
+                controls
+                preload="none"
+              />
+            )}
+          </div>
+        ) : asset.type === "image" ? (
+          <PrivateImage key={asset.id} asset={asset} resolve={resolveAsset} locale={locale} />
+        ) : (
+          <PrivateAsset key={asset.id} asset={asset} resolve={resolveAsset} locale={locale} />
+        ),
+      )}
     </div>
   );
 }
@@ -225,13 +420,12 @@ function PrivateAsset({
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="block min-h-11 font-semibold text-primary underline"
+          className="inline-flex min-h-11 items-center rounded-md px-4 font-semibold text-primary underline"
         >
           {asset.label}
         </a>
       ) : (
         <Button
-          variant="outline"
           disabled={!resolve || busy}
           onClick={async () => {
             if (!resolve || busy) return;
