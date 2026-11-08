@@ -42,6 +42,7 @@ import { Button } from "@/components/ui/button";
 import { Activity, type Delivery } from "@/components/course-intake/CurriculumActivity";
 import { lessonLead } from "@/lib/course-system/intake/presentation";
 import { getAcademicCopy } from "@/lib/academic-education/copy";
+import { CoursePasswordGate } from "@/components/course-intake/CoursePasswordGate";
 import type { IntakeSection } from "@/lib/course-system/intake/package";
 
 export const Route = createFileRoute("/courses/$area/$courseId")({
@@ -163,58 +164,65 @@ function NewCurriculumPage() {
           </div>
         )}
         {!course && catalogue.isSuccess && <p>{c.courseUnavailable}</p>}
-        {course && mode === "intro" && (
-          <CourseIntroduction
-            courseId={course.id}
-            stations={course.stations}
-            locale={locale}
-            back={
-              <a href={`${LINE_ROUTES[area]}?locale=${locale}`} className="font-bold text-primary">
-                {story.back}
-              </a>
-            }
-            secondary={
-              <a href={`${LINE_PRICING[area]}?locale=${locale}`} className={SECONDARY_CLASS}>
-                {locale === "en" ? "Plans" : "الباقات"}
-              </a>
-            }
-            toContents={(_, className, children) => (
-              <Link
-                to="/courses/$area/$courseId"
-                params={{ area, courseId }}
-                search={scopedSearch(locale, profileId, { view: "contents" })}
-                className={className}
-              >
-                {children}
-              </Link>
+        {course && (
+          <CoursePasswordGate area={area} courseId={courseId} locale={locale}>
+            {mode === "intro" && (
+              <CourseIntroduction
+                courseId={course.id}
+                stations={course.stations}
+                locale={locale}
+                back={
+                  <a
+                    href={`${LINE_ROUTES[area]}?locale=${locale}`}
+                    className="font-bold text-primary"
+                  >
+                    {story.back}
+                  </a>
+                }
+                secondary={
+                  <a href={`${LINE_PRICING[area]}?locale=${locale}`} className={SECONDARY_CLASS}>
+                    {locale === "en" ? "Plans" : "الباقات"}
+                  </a>
+                }
+                toContents={(_, className, children) => (
+                  <Link
+                    to="/courses/$area/$courseId"
+                    params={{ area, courseId }}
+                    search={scopedSearch(locale, profileId, { view: "contents" })}
+                    className={className}
+                  >
+                    {children}
+                  </Link>
+                )}
+              />
             )}
-          />
-        )}
-        {course && mode === "contents" && (
-          <CourseContents
-            stations={course.stations}
-            locale={locale}
-            back={
-              <Link
-                to="/courses/$area/$courseId"
-                params={{ area, courseId }}
-                search={keep}
-                className="font-bold text-primary"
-              >
-                {story.backPath}
-              </Link>
-            }
-            openStep={(id, className, children) => (
-              <Link
-                to="/courses/$area/$courseId"
-                params={{ area, courseId }}
-                search={stepLink(id!)}
-                className={className}
-              >
-                {children}
-              </Link>
+            {mode === "contents" && (
+              <CourseContents
+                stations={course.stations}
+                locale={locale}
+                back={
+                  <Link
+                    to="/courses/$area/$courseId"
+                    params={{ area, courseId }}
+                    search={keep}
+                    className="font-bold text-primary"
+                  >
+                    {story.backPath}
+                  </Link>
+                }
+                openStep={(id, className, children) => (
+                  <Link
+                    to="/courses/$area/$courseId"
+                    params={{ area, courseId }}
+                    search={stepLink(id!)}
+                    className={className}
+                  >
+                    {children}
+                  </Link>
+                )}
+              />
             )}
-          />
+          </CoursePasswordGate>
         )}
       </CurriculumLayout>
     );
@@ -238,64 +246,68 @@ function NewCurriculumPage() {
         >
           {c.backToContents}
         </Link>
-        {area === "kids" && (
-          <label className="mt-4 flex flex-wrap items-center gap-3">
-            {c.child}
-            <select
-              className="min-h-11 rounded-xl border bg-card px-3"
-              value={profileId ?? ""}
-              onChange={(e) => setChild(e.target.value)}
-            >
-              {entitlement.isAdmin && auth.user && (
-                <option value={auth.user.id}>{c.adminReview}</option>
-              )}
-              {parent.profiles.map((p) => (
-                <option key={p.id} value={p.id}>
-                  {p.display_name}
-                </option>
-              ))}
-            </select>
-          </label>
-        )}
-        {step && !visible && <LessonHero eyebrow={getLineCopy(locale)[area]} title={step.title} />}
-        {course && !visible && !delivery.isFetching && (
-          <p className="mt-6">
-            {c.locked}{" "}
-            <a className="text-primary underline" href={`/pricing?locale=${locale}`}>
-              {c.packages}
-            </a>
-          </p>
-        )}
-        {!course && catalogue.isSuccess && <p>{c.courseUnavailable}</p>}
-        {delivery.isPending && delivery.isFetching && <p role="status">{c.loading}</p>}
-        {visible && step && (
-          <LearnerStep
-            key={`${key}:${visible.version}`}
-            delivery={visible}
-            scope={scope}
-            sectionId={sectionId}
-            selectSection={selectSection}
-            progress={current}
-            courseTitle={getLineCopy(locale)[area]}
-          />
-        )}
-        {course && step && (
-          <AdjacentSteps
-            locale={locale}
-            previous={at > 0 ? steps[at - 1] : undefined}
-            next={at >= 0 && at < steps.length - 1 ? steps[at + 1] : undefined}
-            render={(id, className, children) => (
-              <Link
-                to="/courses/$area/$courseId"
-                params={{ area, courseId }}
-                search={stepLink(id)}
-                className={className}
+        <CoursePasswordGate area={area} courseId={courseId} locale={locale}>
+          {area === "kids" && (
+            <label className="mt-4 flex flex-wrap items-center gap-3">
+              {c.child}
+              <select
+                className="min-h-11 rounded-xl border bg-card px-3"
+                value={profileId ?? ""}
+                onChange={(e) => setChild(e.target.value)}
               >
-                {children}
-              </Link>
-            )}
-          />
-        )}
+                {entitlement.isAdmin && auth.user && (
+                  <option value={auth.user.id}>{c.adminReview}</option>
+                )}
+                {parent.profiles.map((p) => (
+                  <option key={p.id} value={p.id}>
+                    {p.display_name}
+                  </option>
+                ))}
+              </select>
+            </label>
+          )}
+          {step && !visible && (
+            <LessonHero eyebrow={getLineCopy(locale)[area]} title={step.title} />
+          )}
+          {course && !visible && !delivery.isFetching && (
+            <p className="mt-6">
+              {c.locked}{" "}
+              <a className="text-primary underline" href={`/pricing?locale=${locale}`}>
+                {c.packages}
+              </a>
+            </p>
+          )}
+          {!course && catalogue.isSuccess && <p>{c.courseUnavailable}</p>}
+          {delivery.isPending && delivery.isFetching && <p role="status">{c.loading}</p>}
+          {visible && step && (
+            <LearnerStep
+              key={`${key}:${visible.version}`}
+              delivery={visible}
+              scope={scope}
+              sectionId={sectionId}
+              selectSection={selectSection}
+              progress={current}
+              courseTitle={getLineCopy(locale)[area]}
+            />
+          )}
+          {course && step && (
+            <AdjacentSteps
+              locale={locale}
+              previous={at > 0 ? steps[at - 1] : undefined}
+              next={at >= 0 && at < steps.length - 1 ? steps[at + 1] : undefined}
+              render={(id, className, children) => (
+                <Link
+                  to="/courses/$area/$courseId"
+                  params={{ area, courseId }}
+                  search={stepLink(id)}
+                  className={className}
+                >
+                  {children}
+                </Link>
+              )}
+            />
+          )}
+        </CoursePasswordGate>
       </main>
       <Footer />
     </div>

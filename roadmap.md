@@ -31,3 +31,4 @@
 - [x] Live checkout/portal/refund source paths per product with gated hosted dispatch; latest changes remain unpublished.
 - [x] Register 28 Live price mappings including Kids family and Academic assistant variants; actual catalogue activation is separate.
 - [ ] Register Live webhook URL in Stripe + publish (blocked: owner approval)
+- [x] Lock the pesticides academic curriculum behind a per-account password (secret PESTICIDES_COURSE_PASSWORD).

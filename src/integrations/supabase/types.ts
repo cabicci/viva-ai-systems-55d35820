@@ -3784,6 +3784,19 @@ export type Database = {
         Args: { p_action: string; p_data: Json }
         Returns: Json
       }
+      curriculum_password_attempt: {
+        Args: {
+          p_area: string
+          p_course: string
+          p_ok: boolean
+          p_user: string
+        }
+        Returns: string
+      }
+      curriculum_password_state: {
+        Args: { p_area: string; p_course: string }
+        Returns: Json
+      }
       delete_my_account_data: { Args: never; Returns: undefined }
       email_access_command: {
         Args: { p_action: string; p_data?: Json }
