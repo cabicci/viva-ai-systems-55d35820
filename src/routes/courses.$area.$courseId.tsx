@@ -42,6 +42,7 @@ import { Button } from "@/components/ui/button";
 import { Activity, type Delivery } from "@/components/course-intake/CurriculumActivity";
 import { lessonLead } from "@/lib/course-system/intake/presentation";
 import { getAcademicCopy } from "@/lib/academic-education/copy";
+import { CoursePasswordGate } from "@/components/course-intake/CoursePasswordGate";
 import type { IntakeSection } from "@/lib/course-system/intake/package";
 
 export const Route = createFileRoute("/courses/$area/$courseId")({
@@ -163,7 +164,9 @@ function NewCurriculumPage() {
           </div>
         )}
         {!course && catalogue.isSuccess && <p>{c.courseUnavailable}</p>}
-        {course && mode === "intro" && (
+        {course && (
+          <CoursePasswordGate area={area} courseId={courseId} locale={locale}>
+        {mode === "intro" && (
           <CourseIntroduction
             courseId={course.id}
             stations={course.stations}
@@ -190,7 +193,7 @@ function NewCurriculumPage() {
             )}
           />
         )}
-        {course && mode === "contents" && (
+        {mode === "contents" && (
           <CourseContents
             stations={course.stations}
             locale={locale}
@@ -215,6 +218,8 @@ function NewCurriculumPage() {
               </Link>
             )}
           />
+        )}
+          </CoursePasswordGate>
         )}
       </CurriculumLayout>
     );
