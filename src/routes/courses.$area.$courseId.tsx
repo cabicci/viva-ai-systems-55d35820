@@ -243,6 +243,7 @@ function NewCurriculumPage() {
         >
           {c.backToContents}
         </Link>
+        <CoursePasswordGate area={area} courseId={courseId} locale={locale}>
         {area === "kids" && (
           <label className="mt-4 flex flex-wrap items-center gap-3">
             {c.child}
@@ -301,6 +302,7 @@ function NewCurriculumPage() {
             )}
           />
         )}
+        </CoursePasswordGate>
       </main>
       <Footer />
     </div>
