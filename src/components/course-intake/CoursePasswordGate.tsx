@@ -122,7 +122,9 @@ export function CoursePasswordGate({
         await queryClient.invalidateQueries({ queryKey: ["course-password-state"] });
         await queryClient.invalidateQueries({ queryKey: ["curriculum-lesson"] });
       } else {
-        setMessage(t[status === "limited" ? "limited" : status === "wrong" ? "wrong" : "unavailable"]);
+        setMessage(
+          t[status === "limited" ? "limited" : status === "wrong" ? "wrong" : "unavailable"],
+        );
       }
     } catch {
       setMessage(t.error);

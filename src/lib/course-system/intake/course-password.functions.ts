@@ -18,9 +18,8 @@ export const unlockCoursePassword = createServerFn({ method: "POST" })
       .parse(input),
   )
   .handler(async ({ data, context }): Promise<{ status: CoursePasswordResult }> => {
-    const { coursePasswordSecret, coursePasswordMatches } = await import(
-      "./course-password.server"
-    );
+    const { coursePasswordSecret, coursePasswordMatches } =
+      await import("./course-password.server");
     const secretName = coursePasswordSecret(data.area, data.course);
     if (!secretName) return { status: "not_locked" };
     const expected = process.env[secretName];
