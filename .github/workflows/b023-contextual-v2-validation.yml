@@ -112,6 +112,8 @@ jobs:
         run: node .github/scripts/b023_contextual_v2_validation/ci-local-environment.mjs local-status
 
       - name: Build the product and capture the active client module graph
+        env:
+          NODE_OPTIONS: --max-old-space-size=6144
         run: node .github/scripts/b023_contextual_v2_validation/build-with-module-graph.mjs
 
       - name: Start localhost preview and wait for the real login route

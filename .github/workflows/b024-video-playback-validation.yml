@@ -105,6 +105,11 @@ jobs:
           supabase start > "$B023_PRIVATE_ROOT/supabase-start.log" 2>&1
           supabase status --output json > "$B023_PRIVATE_ROOT/supabase-status.json" 2> "$B023_PRIVATE_ROOT/supabase-status.stderr.log"
 
+      - name: Install native learning and curriculum prerequisites
+        env:
+          BILLING_DISPOSABLE_DB: "1"
+        run: bun .github/scripts/b023_contextual_v2_validation/prepare-journey-schema.ts
+
       - name: Export masked local credentials and Chromium path
         run: node .github/scripts/b023_contextual_v2_validation/ci-local-environment.mjs local-status
 

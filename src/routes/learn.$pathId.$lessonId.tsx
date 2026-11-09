@@ -44,7 +44,6 @@ import { Lock } from "lucide-react";
 import { logLearnerEvent } from "@/lib/learner-events";
 import { DifficultyPrompt } from "@/components/learn/DifficultyPrompt";
 import { ReadingProgressBar } from "@/components/learn/ReadingProgressBar";
-import { CompletionReward } from "@/components/learn/CompletionReward";
 import { CourseLessonAssistant } from "@/components/assistant/CourseLessonAssistant";
 import { buildLocalizedAssistantContextOverride } from "@/lib/assistant/resolve-assistant-learner-context";
 import { LocalePackageLessonRenderer } from "@/components/locale/LocalePackageLessonRenderer";
@@ -351,7 +350,6 @@ function UnifiedLessonPage() {
   const ordinaryCompleted = isCompleted &&
     !completionMode.current.explicitIntent && !ownWritePending;
   const [completionReceipt, setCompletionReceipt] = useState<AiCompletionContext | null>(null);
-  const confirmedCompletion = completionReceipt !== null && isCompletionCurrent(completionReceipt);
   const completionControlsRef = useRef<HTMLDivElement>(null);
   const pendingCompletionFocus = useRef<{
     actionContextKey: string;
@@ -488,14 +486,6 @@ function UnifiedLessonPage() {
     <div className="min-h-dvh flex flex-col overflow-x-clip" dir={dir}>
       <Sidebar />
       <ReadingProgressBar />
-      {(ordinaryCompleted || confirmedCompletion) && (
-        <CompletionReward
-          key={actionContextKey}
-          lessonId={lesson.id}
-          isCompleted={true}
-          completedCount={completedCount}
-        />
-      )}
       <main className="flex-1 min-w-0 max-w-[48rem] mx-auto w-full px-4 sm:px-6 pt-8 pb-28 md:pt-12 xl:pb-12">
         <Link
           to="/curriculum"
