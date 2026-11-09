@@ -11,12 +11,8 @@ export type LocaleRuntimeInputs = {
 /** Read URL `locale` query + cookie + geo country consistently on SSR and client. */
 export const readLocaleRuntimeInputs = createIsomorphicFn()
   .server(async (): Promise<LocaleRuntimeInputs> => {
-    try {
-      const { readSsrLocaleRuntimeInputs } = await import("./locale-ssr-request.server");
-      return readSsrLocaleRuntimeInputs();
-    } catch {
-      return {};
-    }
+    const { readSsrLocaleRuntimeInputs } = await import("./locale-ssr-request.server");
+    return readSsrLocaleRuntimeInputs();
   })
   .client(async (): Promise<LocaleRuntimeInputs> => {
     if (typeof window === "undefined") return {};

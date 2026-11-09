@@ -45,7 +45,10 @@ vi.mock("@tanstack/react-router", () => ({
 vi.mock("@tanstack/react-query", () => ({
   useQuery: () => ({ data: state.analytics, isLoading: false }),
 }));
-vi.mock("@tanstack/react-start", () => ({ useServerFn: (fn: unknown) => fn }));
+vi.mock("@tanstack/react-start", async (importOriginal) => ({
+  ...await importOriginal<typeof import("@tanstack/react-start")>(),
+  useServerFn: (fn: unknown) => fn,
+}));
 vi.mock("@/lib/wow-experience.functions", () => ({ runWowPath: state.run }));
 vi.mock("@/lib/learner-events", () => ({
   logLearnerEvent: state.log,
