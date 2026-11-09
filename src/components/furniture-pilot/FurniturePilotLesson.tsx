@@ -1,7 +1,8 @@
 import { TechnicalDiagram } from "../technical-education/TechnicalDiagram";
 import type { TechnicalDiagramKind } from "@/lib/technical-education/types";
 
-import { useEffect, useMemo, useState } from "react";
+import { useAuth } from "@/lib/auth-context";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Download, FileCheck2, Ruler, BookOpen, PlayCircle, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -9,6 +10,9 @@ import type { SupportedLocale } from "@/lib/locale/types";
 import type { PilotCopy } from "../../../scripts/technical-education/source/furniture-pilot/content";
 import {
   technicalCommand,
+  technicalQuizCommand,
+  reconcileTechnicalQuiz,
+  displayedQuizRevision,
   technicalDownload,
   useTechnicalProgress,
   type QuizResult,
@@ -55,25 +59,32 @@ const sections: SectionId[] = [
   "assistant",
 ];
 
-export function FurniturePilotLesson({
-  locale,
-  copy,
-  video,
-  files,
-}: {
-  locale: SupportedLocale;
-  copy: PilotCopy;
-  video: string;
-  files: { kind: string; path: string }[];
-}) {
+type FurnitureProps = { locale: SupportedLocale; copy: PilotCopy; video: string; files: { kind: string; path: string }[] };
+const furnitureLanes = new Map<string, Promise<void>>();
+function orderedFurnitureWrite(key:string,work:()=>Promise<void>) {
+  const result=(furnitureLanes.get(key)??Promise.resolve()).then(work);
+  const tail=result.then(()=>{},()=>{});furnitureLanes.set(key,tail);
+  void tail.then(()=>{if(furnitureLanes.get(key)===tail) furnitureLanes.delete(key);});return result;
+}
+export function FurniturePilotLesson(props:FurnitureProps) {
+  const auth=useAuth();
+  return <ScopedFurniturePilotLesson key={JSON.stringify([auth.user?.id,auth.authGeneration.value,props.locale,props.copy])} {...props}
+    actor={auth.user?.id??""} actorCurrent={()=>!!auth.user&&auth.isAuthGenerationCurrent(auth.authGeneration)}/>;
+}
+function ScopedFurniturePilotLesson({locale,copy,video,files,actor,actorCurrent}:FurnitureProps&{actor:string;actorCurrent:()=>boolean}) {
+  const mounted=useRef(false);useEffect(()=>{mounted.current=true;return()=>{mounted.current=false;};},[]);
+  const current=()=>mounted.current&&actorCurrent();
+  const lane=JSON.stringify([actor,"M04-L02"]);
+  const operation=useRef(false),quizRevision=useRef(0),taskRevision=useRef(0),resetNeeded=useRef(false);
   const bunnyEmbed = video;
   const journeyCopy = getTechnicalCopy(locale);
-  const { progress, update: save } = useTechnicalProgress();
+  const { progress, confirmed, update: save } = useTechnicalProgress();
   const [error, setError] = useState(false);
   const [busy, setBusy] = useState(false);
   const [quizResult, setQuizResult] = useState<QuizResult | null>(null);
   const [practicePassed, setPracticePassed] = useState(false);
   const stored = progress["M04-L02"];
+  const serverRevision=displayedQuizRevision(stored,confirmed);
   const c = copy.labels;
   const [tab, setTab] = useState<SectionId>("reading");
   const [dimensions, setDimensions] = useState<Record<keyof CabinetInput, string>>({
@@ -107,64 +118,65 @@ export function FurniturePilotLesson({
   const taskResults = checkAssignment(task);
   const taskPassed = taskSubmitted && practicePassed;
   const quizPassed = quizSubmitted && quiz.passed;
-  const effectiveQuizPassed = quizPassed || stored?.quizPassed === true;
-  const effectivePracticePassed = taskPassed || stored?.practiceReviewed === true;
+  const effectiveQuizPassed = quizPassed || (quizRevision.current === 0 && stored?.quizPassed === true);
+  const effectivePracticePassed = taskPassed || (taskRevision.current === 0 && stored?.practiceReviewed === true);
   const allQuizAnswered = copy.quiz.every((question) => {
     const answer = answers[question.id];
     return Number.isInteger(answer) && answer >= 0 && answer < question.options.length;
   });
   const completed =
     Number(stored?.read === true) + Number(effectiveQuizPassed) + Number(effectivePracticePassed);
-  const update = (
-    _id: string,
-    patch: { read?: boolean; quizPassed?: boolean; practiceReviewed?: boolean },
-  ) => {
-    const action = patch.read
-      ? "read"
-      : patch.practiceReviewed === false
-        ? "reset_practice"
-        : "reset_quiz";
-    void save({ id: "M04-L02", locale, action }).catch(() => setError(true));
+  const refresh = async () => { if(current()) await save({id:"M04-L02",locale,action:"refresh"}); };
+  const resetQuiz = async (revision:number,observed:number|null) => {
+    await technicalQuizCommand(actor,"M04-L02",locale,"reset_quiz",{},observed,current);
+    if(current()&&quizRevision.current===revision) resetNeeded.current=false;
+  };
+  const update = (_id:string,patch:{read?:boolean;quizPassed?:boolean;practiceReviewed?:boolean}) => {
+    if(!current()) return;
+    const action=patch.read?"read":patch.practiceReviewed===false?"reset_practice":"reset_quiz";
+    const revision=quizRevision.current,observed=serverRevision;
+    void orderedFurnitureWrite(lane,async()=>{
+      if(!current())return;
+      if(action==="reset_quiz") await resetQuiz(revision,observed);
+      else { const result=await technicalCommand<{allowed:boolean}>(action,"M04-L02",locale);if(!result.allowed)throw Error("Access required"); }
+      await refresh();
+    }).catch(()=>{if(current())setError(true);});
   };
   const submitQuiz = async () => {
-    if (busy) return;
-    setError(false);
-    if (!allQuizAnswered) return;
-    setBusy(true);
+    if(!current()||operation.current||!allQuizAnswered)return;
+    operation.current=true;setBusy(true);setError(false);
+    const observed=serverRevision;
+    const revision=quizRevision.current,snapshot={...answers};
     try {
-      const result = await technicalCommand<QuizResult>("quiz", "M04-L02", locale, { answers });
-      if (!result.allowed) throw new Error("Access");
-      setQuizResult(result);
-      setQuizSubmitted(true);
-      await save({ id: "M04-L02", locale, action: "refresh" });
-      setError(false);
-    } catch {
-      setError(true);
-    } finally {
-      setBusy(false);
-    }
+      await orderedFurnitureWrite(lane,async()=>{
+        if(!current()||revision!==quizRevision.current)return;
+        if(resetNeeded.current)await resetQuiz(revision,observed);
+        if(!current()||revision!==quizRevision.current)return;
+        const result=await technicalQuizCommand<QuizResult>(actor,"M04-L02",locale,"quiz",{answers:snapshot},observed,()=>current()&&revision===quizRevision.current);
+        if(!current()||revision!==quizRevision.current)return;
+        setQuizResult(result);setQuizSubmitted(true);await refresh();
+      });
+    }catch{if(current()&&revision===quizRevision.current)setError(true);}
+    finally{operation.current=false;if(current())setBusy(false);}
+  };
+  const recoverQuiz = async () => {
+    if(!current()||operation.current)return;
+    operation.current=true;setBusy(true);
+    try{await orderedFurnitureWrite(lane,async()=>{if(!current())return;await reconcileTechnicalQuiz(actor,"M04-L02",current);await refresh();if(current())setError(false);});}
+    catch{if(current())setError(true);}finally{operation.current=false;if(current())setBusy(false);}
   };
   const submitPractice = async () => {
-    if (busy) return;
-    setBusy(true);
-    setError(false);
-    try {
-      const result = await technicalCommand<{ allowed: boolean; passed: boolean }>(
-        "practice",
-        "M04-L02",
-        locale,
-        { values: task },
-      );
-      if (!result.allowed) throw new Error("Access");
-      setPracticePassed(result.passed);
-      setTaskSubmitted(true);
-      await save({ id: "M04-L02", locale, action: "refresh" });
-      setError(false);
-    } catch {
-      setError(true);
-    } finally {
-      setBusy(false);
-    }
+    if(!current()||operation.current)return;
+    operation.current=true;setBusy(true);setError(false);
+    const revision=taskRevision.current,values={...task};
+    try{await orderedFurnitureWrite(lane,async()=>{
+      if(!current()||revision!==taskRevision.current)return;
+      const result=await technicalCommand<{allowed:boolean;passed:boolean}>("practice","M04-L02",locale,{values});
+      if(!result.allowed)throw Error("Access required");
+      if(!current())return;
+      if(revision===taskRevision.current){setPracticePassed(result.passed);setTaskSubmitted(true);}
+      await refresh();
+    });}catch{if(current())setError(true);}finally{operation.current=false;if(current())setBusy(false);}
   };
   const [taskEdited, setTaskEdited] = useState(false);
   useEffect(() => {
@@ -178,7 +190,7 @@ export function FurniturePilotLesson({
   }, [stored, locale, taskEdited]);
   const download = (kind: string, name: string) => {
     const file = files.find((f) => f.kind === kind);
-    if (file) void technicalDownload(file.path, name).catch(() => setError(true));
+    if (file) void technicalDownload(file.path, name).catch(() => { if(current()) setError(true); });
   };
   const panelClass = "rounded-3xl border border-border bg-card p-5 md:p-8";
   const inputClass =
@@ -193,6 +205,7 @@ export function FurniturePilotLesson({
       {error && (
         <p role="alert">
           {locale === "en" ? "Could not save. Try again." : "تعذر الحفظ. حاول مجددًا."}
+          <button type="button" disabled={busy} onClick={() => void recoverQuiz()}>{journeyCopy.retry}</button>
         </p>
       )}
       <a
@@ -522,6 +535,8 @@ export function FurniturePilotLesson({
                           value={optionIndex}
                           checked={answers[question.id] === optionIndex}
                           onChange={() => {
+                            if(!current())return;
+                            quizRevision.current++;resetNeeded.current=true;
                             setError(false);
                             setAnswers((previous) => ({ ...previous, [question.id]: optionIndex }));
                             setQuizSubmitted(false);
@@ -582,6 +597,8 @@ export function FurniturePilotLesson({
                       value={task[key]}
                       disabled={busy}
                       onChange={(event) => {
+                        if(!current())return;
+                        taskRevision.current++;
                         setError(false);
                         setTask((previous) => ({ ...previous, [key]: event.target.value }));
                         setTaskSubmitted(false);

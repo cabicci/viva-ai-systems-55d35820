@@ -34,7 +34,6 @@ type InvitationSummary = {
 // Only pre-existing dependencies are fixtures. The complete actual forward
 // migration, its locking/selection/RLS/functions and every new table run in PG.
 
-
 describe("owner commercial policy, actual SQL in disposable PostgreSQL", () => {
   let db: PGlite;
   const value = async <T = unknown>(sql: string, params: unknown[] = []) =>

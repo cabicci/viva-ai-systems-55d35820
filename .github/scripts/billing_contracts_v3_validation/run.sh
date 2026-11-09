@@ -97,7 +97,7 @@ else
   if ! reset_disposable_db; then
     overall_status=1
     echo "- Result: FAIL (database reset before Phase A)" >> "$REPORT"
-  elif MIGRATIONS_PREAPPLIED=1 bunx vitest run --no-file-parallelism src/lib/billing/__tests__/ > "${REPORT_DIR}/unit.log" 2>&1; then
+  elif MIGRATIONS_PREAPPLIED=1 COMMERCIAL_LOCK_NATIVE=1 bunx vitest run --no-file-parallelism src/lib/billing/__tests__/ > "${REPORT_DIR}/unit.log" 2>&1; then
     # Strip ANSI so count matching is stable under CI color output.
     sed -E 's/\x1B\[[0-9;]*[A-Za-z]//g' "${REPORT_DIR}/unit.log" > "${REPORT_DIR}/unit.plain.log"
     # Verify the reviewed suite paths and per-file counts as well as the exact

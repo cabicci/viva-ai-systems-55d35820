@@ -11,10 +11,18 @@ const { rpc, download, update } = vi.hoisted(() => ({
   download: vi.fn(),
   update: vi.fn(),
 }));
-vi.mock("@/lib/technical-education/client", () => ({
-  useTechnicalProgress: () => ({ progress: {}, update }),
-  technicalCompleted: () => 0,
-  technicalCommand: rpc,
+vi.mock("@/lib/auth-context", () => ({
+  useAuth: () => ({
+    user: { id: "11111111-1111-4111-8111-111111111111" },
+    authGeneration: { value: 1 },
+    isAuthGenerationCurrent: () => true,
+  }),
+}));
+vi.mock("@/lib/technical-education/client", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@/lib/technical-education/client")>()),
+  useTechnicalProgress: () => ({ progress: {}, confirmed: true, update }),
+  technicalQuizCommand: (actor: string, lesson: string, locale: string, action: string, data: unknown, revision: number) =>
+    action === "quiz" ? rpc(actor, lesson, locale, action, data, revision) : Promise.resolve({ allowed: true }),
   technicalDownload: download,
 }));
 afterEach(() => {
@@ -64,7 +72,14 @@ it.each(SUPPORTED_LOCALES)(
     expect(await screen.findByText("Server feedback", { exact: false })).toHaveTextContent(
       c.correct,
     );
-    expect(rpc).toHaveBeenCalledWith("quiz", "M01-L01", locale, { answers: { q1: 0 } });
+    expect(rpc).toHaveBeenCalledWith(
+      "11111111-1111-4111-8111-111111111111",
+      "M01-L01",
+      locale,
+      "quiz",
+      { answers: { q1: 0 } },
+      0,
+    );
     fireEvent.click(screen.getByRole("button", { name: c.downloads }));
     fireEvent.click(screen.getByRole("button", { name: new RegExp(c.workbook) }));
     expect(download).toHaveBeenCalledWith(
