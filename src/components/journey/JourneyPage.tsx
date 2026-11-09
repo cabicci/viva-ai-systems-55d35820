@@ -1,8 +1,9 @@
+import { selectIntroPrerequisiteLessons } from "@/lib/intro-prerequisite";
 import { getUiString } from "@/lib/locale/ui-strings";
 import { LearningRecordPanel } from "./LearningRecordPanel";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "@tanstack/react-router";
-import type { ComponentProps } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ComponentProps } from "react";
 import { ArrowUpRight, BookOpen } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
@@ -43,6 +44,9 @@ import {
   type JourneyVisit,
 } from "@/lib/journey/model";
 import type { SupportedLocale } from "@/lib/locale/types";
+import { curriculumCatalogue, type CurriculumSummary } from "@/lib/course-system/intake/client";
+import { useCurriculumJourney, useOwnedIntakeRead } from "@/lib/course-system/intake/use-journey";
+import { admittedPath } from "@/lib/journey/admitted";
 
 type PathView = {
   line: LearningLine;
@@ -53,6 +57,7 @@ type PathView = {
   visit?: JourneyVisit;
   onOpen?: () => void;
 };
+type PublishPath = (id: string, path?: PathView) => void;
 const panel = "rounded-3xl border border-border bg-card p-6 md:p-8";
 /** Keep the current auth provider and the server-fn bearer middleware on internal transitions. */
 function JourneyLink({ href, ...props }: ComponentProps<"a"> & { href: string }) {
@@ -140,16 +145,48 @@ function PathCard({ path }: { path: PathView }) {
       </div>
       {path.line === "ai" && (
         <div className="mt-5 flex flex-wrap gap-5 text-sm font-semibold text-primary">
-          <JourneyLink href={`/analytics?locale=${locale}`}>{getUiString(locale, "sidebar.analytics")}</JourneyLink>
+          <JourneyLink href={`/analytics?locale=${locale}`}>
+            {getUiString(locale, "sidebar.analytics")}
+          </JourneyLink>
         </div>
       )}
     </article>
   );
 }
 export function JourneyPage() {
-  const { user } = useAuth();
+  const auth = useAuth();
+  const { user } = auth;
   const { locale, dir } = useLocale();
   const c = journeyCopy(locale);
+  const admittedOwner = useMemo(
+    () => ({ actor: user?.id, generation: auth.authGeneration, locale }),
+    [user?.id, auth.authGeneration, locale],
+  );
+  const latestOwner = useRef({ owner: admittedOwner, auth });
+  latestOwner.current = { owner: admittedOwner, auth };
+  const [admittedViews, setAdmittedViews] = useState<
+    Record<string, { owner: typeof admittedOwner; path: PathView }>
+  >({});
+  const publishAdmitted = useCallback<PublishPath>(
+    (id, path) => {
+      const owns = () =>
+        latestOwner.current.owner === admittedOwner &&
+        !latestOwner.current.auth.loading &&
+        latestOwner.current.auth.isAuthGenerationCurrent(admittedOwner.generation);
+      if (!owns()) return;
+      setAdmittedViews((previous) => {
+        if (!owns()) return previous;
+        if (!path) {
+          if (previous[id]?.owner !== admittedOwner) return previous;
+          const next = { ...previous };
+          delete next[id];
+          return next;
+        }
+        return { ...previous, [id]: { owner: admittedOwner, path } };
+      });
+    },
+    [admittedOwner],
+  );
   const ent = useEntitlement();
   const ai = useLessonProgress();
   const visits = useJourneyVisits();
@@ -189,9 +226,7 @@ export function JourneyPage() {
       );
     },
   });
-  const intro = PATHS.find((p) => p.id === "intro")!
-    .modules.flatMap((m) => m.lessons)
-    .filter((l) => l.state === "available");
+  const intro = selectIntroPrerequisiteLessons(PATHS.find((p) => p.id === "intro")!.modules);
   const introDone = intro.filter((l) => ai.getStatus(l.id) === "completed").length;
   const paths: PathView[] = [];
   if (ai.isLoaded && !ai.isError && ent.isLoaded)
@@ -266,7 +301,12 @@ export function JourneyPage() {
         })),
       })),
     );
-  const latest = paths
+  const latest = [
+    ...paths,
+    ...Object.values(admittedViews)
+      .filter((entry) => entry.owner === admittedOwner)
+      .map((entry) => entry.path),
+  ]
     .map((path) => ({ path, ...summarizeJourney(path.steps, path.visit) }))
     .filter((s) => s.resume && s.visitedAt)
     .sort((a, b) => Date.parse(b.visitedAt!) - Date.parse(a.visitedAt!))[0];
@@ -279,11 +319,12 @@ export function JourneyPage() {
           <p className="mt-3 text-lg text-muted-foreground">{c.progress}</p>
         </header>
         {visits.isError && <State error retry={() => void visits.refetch()} />}
-        {visits.isSuccess &&
-          ai.isLoaded &&
-          ent.isLoaded &&
-          !technical.isPending &&
-          !academic.isPending &&
+        {(latest?.path.id.startsWith("intake:") ||
+          (visits.isSuccess &&
+            ai.isLoaded &&
+            ent.isLoaded &&
+            !technical.isPending &&
+            !academic.isPending)) &&
           latest && (
             <section className="rounded-3xl border border-primary/20 bg-primary/5 p-6 md:p-8">
               <h2 className="text-xl font-bold">{c.resume}</h2>
@@ -323,7 +364,17 @@ export function JourneyPage() {
             <PathCard key={`${path.line}:${path.id}`} path={path} />
           ))}
         </section>
-        <KidsJourneys locale={locale} visits={visits.data ?? []} admin={ent.isAdmin} />
+        <KidsJourneys
+          locale={locale}
+          visits={visits.data ?? []}
+          admin={ent.isAdmin}
+          publishAdmitted={publishAdmitted}
+        />
+        <section className="grid gap-6 md:grid-cols-2" aria-label={c.progress}>
+          {(["ai", "academic", "technical"] as const).map((area) => (
+            <AdmittedJourneys key={area} area={area} locale={locale} publish={publishAdmitted} />
+          ))}
+        </section>
         <LearningRecordPanel />
       </main>
       <Footer />
@@ -334,10 +385,12 @@ function KidsJourneys({
   locale,
   visits,
   admin,
+  publishAdmitted,
 }: {
   locale: SupportedLocale;
   visits: JourneyVisit[];
   admin: boolean;
+  publishAdmitted: PublishPath;
 }) {
   const parent = useKidsParentStateSource();
   const c = journeyCopy(locale);
@@ -349,7 +402,16 @@ function KidsJourneys({
       {parent.state === "unavailable" && <State error retry={parent.refresh} />}
       {parent.state === "ready" &&
         parent.profiles.map((profile) => (
-          <ChildPath key={profile.id} profile={profile} visits={visits} locale={locale} />
+          <div key={profile.id} className="space-y-5">
+            <ChildPath profile={profile} visits={visits} locale={locale} />
+            <AdmittedJourneys
+              area="kids"
+              locale={locale}
+              profileId={profile.id}
+              subjectTitle={profile.display_name}
+              publish={publishAdmitted}
+            />
+          </div>
         ))}
       {parent.state !== "checking" &&
         parent.state !== "unavailable" &&
@@ -379,6 +441,91 @@ function KidsJourneys({
       )}
     </section>
   );
+}
+
+function AdmittedJourneys({
+  area,
+  locale,
+  profileId,
+  subjectTitle,
+  publish,
+}: {
+  area: LearningLine;
+  locale: SupportedLocale;
+  profileId?: string;
+  subjectTitle?: string;
+  publish: PublishPath;
+}) {
+  const catalogue = useOwnedIntakeRead(
+    JSON.stringify(["admitted-catalogue", area, locale, profileId]),
+    () => curriculumCatalogue(area, locale),
+  );
+  if (catalogue.isPending) return <State loading title={getLineCopy(locale)[area]} />;
+  if (catalogue.isError)
+    return <State error title={getLineCopy(locale)[area]} retry={catalogue.refetch} />;
+  return (
+    <>
+      {catalogue.data?.map((course) => (
+        <AdmittedPath
+          key={`${course.area}:${course.id}:${course.version}:${profileId ?? "adult"}`}
+          course={course}
+          locale={locale}
+          profileId={profileId}
+          subjectTitle={subjectTitle}
+          refreshCatalogue={catalogue.refetch}
+          publish={publish}
+        />
+      ))}
+    </>
+  );
+}
+
+function AdmittedPath({
+  course,
+  locale,
+  profileId,
+  subjectTitle,
+  refreshCatalogue,
+  publish,
+}: {
+  course: CurriculumSummary;
+  locale: SupportedLocale;
+  profileId?: string;
+  subjectTitle?: string;
+  refreshCatalogue: () => void;
+  publish: PublishPath;
+}) {
+  const { user } = useAuth();
+  const status = useCurriculumJourney({
+    area: course.area,
+    course: course.id,
+    locale,
+    version: course.version,
+    ...(profileId ? { profileId } : {}),
+  });
+  const path = useMemo(() => {
+    if (!status.data || !user || status.isError) return undefined;
+    const result = admittedPath(course, status.data, user.id);
+    return { ...result, title: subjectTitle ? `${subjectTitle} · ${result.title}` : result.title };
+  }, [course, status.data, status.isError, user?.id, subjectTitle]);
+  useEffect(() => {
+    if (!path) return;
+    publish(path.id, path);
+    return () => publish(path.id);
+  }, [path, publish]);
+  if (status.isPending) return <State loading title={course.title} />;
+  if (status.isError || !status.data || !user)
+    return (
+      <State
+        error
+        title={course.title}
+        retry={() => {
+          refreshCatalogue();
+          status.refetch();
+        }}
+      />
+    );
+  return path ? <PathCard path={path} /> : null;
 }
 function ChildPath({
   profile,

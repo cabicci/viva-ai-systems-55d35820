@@ -17,7 +17,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { useAuth } from "@/lib/auth-context";
-import { useEntitlement } from "@/lib/entitlements";
+import { useAdminRole } from "@/lib/use-admin-role";
 import {
   useActivityDraft,
   type ActivityValues,
@@ -67,13 +67,26 @@ export const Route = createFileRoute("/courses/$area/$courseId")({
   component: NewCurriculumPage,
 });
 function NewCurriculumPage() {
+  const { area } = Route.useParams();
+  return area === "kids" ? <KidsCurriculumPage /> : <CurriculumPage />;
+}
+
+function KidsCurriculumPage() {
+  const parent = useKidsParentStateSource();
+  return <CurriculumPage parent={parent} />;
+}
+
+function CurriculumPage({
+  parent = { profiles: [] },
+}: {
+  parent?: Pick<ReturnType<typeof useKidsParentStateSource>, "profiles">;
+}) {
   const { area, courseId } = Route.useParams();
   const search = Route.useSearch();
   const auth = useAuth();
-  const entitlement = useEntitlement();
+  const { isAdmin } = useAdminRole(auth.user?.id ?? null);
   const { locale, dir } = useLocale();
   const c = intakeCopy(locale);
-  const parent = useKidsParentStateSource();
   const chosen = search.lesson ?? "";
   const mode = search.lesson ? "lesson" : search.view === "contents" ? "contents" : "intro";
   const story = getPathStoryCopy(locale);
@@ -92,7 +105,7 @@ function NewCurriculumPage() {
     course?.stations[0].steps[0];
   const profileId =
     area === "kids" &&
-    entitlement.isAdmin &&
+    isAdmin &&
     auth.user &&
     (child === auth.user.id || (!child && parent.profiles.length === 0))
       ? auth.user.id
@@ -116,7 +129,7 @@ function NewCurriculumPage() {
     profileId,
   ]);
   const delivery = useQuery({
-    queryKey: ["curriculum-lesson", key],
+    queryKey: ["curriculum-lesson", key, mode],
     enabled:
       mode === "lesson" &&
       !!auth.user &&
@@ -125,10 +138,15 @@ function NewCurriculumPage() {
       (area !== "kids" || !!profileId),
     queryFn: () => curriculumCommand<Delivery>("lesson", { ...scope, locale }),
     retry: false,
+    refetchOnMount: "always",
     refetchInterval: 30000,
     staleTime: 0,
   });
-  const visible = !!auth.user && !auth.loading && !delivery.isError ? delivery.data : undefined;
+  // Cached delivery must not reveal protected content before this entry checks access.
+  const visible =
+    auth.user && !auth.loading && delivery.isSuccess && delivery.isFetchedAfterMount
+      ? delivery.data
+      : undefined;
   useEffect(() => {
     selectSection("");
   }, [key]);
@@ -233,9 +251,15 @@ function NewCurriculumPage() {
       <main id="main-content" className="mx-auto w-full min-w-0 max-w-7xl flex-1 px-4 py-8">
         {catalogue.isPending && <p>{c.loading}</p>}
         {catalogue.isError && <p role="alert">{c.error}</p>}
-        {visible && !visible.reviewOnly && step && (
+        {visible && !visible.reviewOnly && visible.recordId && step && (
           <div className="mb-4">
-            <LearningReadingPosition scope={scope} />
+            <LearningReadingPosition
+              scope={scope}
+              admitted={{ recordId: visible.recordId, contentVersion: visible.version, locale }}
+              onContentChanged={() => {
+                void delivery.refetch();
+              }}
+            />
           </div>
         )}
         <Link
@@ -255,7 +279,7 @@ function NewCurriculumPage() {
                 value={profileId ?? ""}
                 onChange={(e) => setChild(e.target.value)}
               >
-                {entitlement.isAdmin && auth.user && (
+                {isAdmin && auth.user && (
                   <option value={auth.user.id}>{c.adminReview}</option>
                 )}
                 {parent.profiles.map((p) => (
@@ -278,7 +302,7 @@ function NewCurriculumPage() {
             </p>
           )}
           {!course && catalogue.isSuccess && <p>{c.courseUnavailable}</p>}
-          {delivery.isPending && delivery.isFetching && <p role="status">{c.loading}</p>}
+          {!visible && delivery.isFetching && <p role="status">{c.loading}</p>}
           {visible && step && (
             <LearnerStep
               key={`${key}:${visible.version}`}
