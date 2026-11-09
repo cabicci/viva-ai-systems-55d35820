@@ -1,4 +1,4 @@
-import { successfulQuestionRpc, QUESTION_ID } from "./helpers/question-ledger";
+import { successfulQuestionRpc, withGrantedChildLedger, QUESTION_ID } from "./helpers/question-ledger";
 // @vitest-environment node
 import { describe, expect, it, vi } from "vitest";
 import { CARD_REGISTRY, validateCardRegistry } from "../card-assistant/registry";
@@ -44,7 +44,7 @@ async function fixture() {
     enabled: vi.fn(async () => true),
     access: vi.fn(async () => true),
     userId: "user",
-    billingRpc: vi.fn(async (name, body) => successfulQuestionRpc(name, body)),
+    billingRpc: vi.fn(withGrantedChildLedger(async (name, body) => successfulQuestionRpc(name, body))),
     embed: vi.fn(async () => vector()),
     retrieve: vi.fn(async () => chunks),
     source: vi.fn(async () => source()),
@@ -224,10 +224,10 @@ describe("whole-card grounded runtime", () => {
     if (mode === "disabled") deps.enabled = vi.fn(async () => false);
     if (mode === "access") deps.access = vi.fn(async () => false);
     if (mode === "limit")
-      deps.billingRpc = vi.fn(async () => ({
+      deps.billingRpc = vi.fn(withGrantedChildLedger(async () => ({
         ok: true as const,
         data: { status: "quota_exceeded", allowed: false },
-      }));
+      })));
     const reply = await runCardQuestion(input, deps);
     expect(reply.status).toBe(mode === "disabled" ? 503 : mode === "access" ? 403 : 429);
     expect(deps.embed).not.toHaveBeenCalled();

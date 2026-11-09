@@ -75,6 +75,13 @@ export async function askCurriculum(identity: QuestionIdentity) {
     identity,
     rpc,
     async (fingerprint) => {
+      // The reservation checks quota and consent. This read checks the exact
+      // teaching source before any learner text goes to an embedding provider.
+      if (!identity.lesson) throw new Error("CURRICULUM_SOURCE_UNAVAILABLE");
+      const permitted = await source(identity.lesson);
+      if (!permitted?.source || typeof permitted.version !== "string" || !permitted.version)
+        throw new Error("CURRICULUM_SOURCE_UNAVAILABLE");
+      version = permitted.version;
       const provider = <T>(model: string, run: () => Promise<T>) =>
         recordedQuestionProvider(
           rpc,
@@ -85,8 +92,8 @@ export async function askCurriculum(identity: QuestionIdentity) {
       const vector = (
         await provider("openai_embedding", () => courseEmbeddings([identity.query]))
       )[0];
-      const retrieved = await source(identity.lesson!, vector);
-      version = retrieved.version;
+      const retrieved = await source(identity.lesson, vector);
+      if (retrieved.version !== version) throw new Error("CURRICULUM_SOURCE_CHANGED");
       const chunks = retrieved.chunks ?? [];
       if (chunks.length > 6 || !(await verify(chunks)))
         throw new Error("CURRICULUM_SOURCE_CHANGED");
