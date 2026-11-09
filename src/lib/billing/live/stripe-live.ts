@@ -13,7 +13,7 @@ import {
   coordinateCheckout,
   type CheckoutIntent,
 } from "../../../../supabase/functions/_shared/stripe-checkout-intent";
-import { coordinateKidsCheckout } from "../../../../supabase/functions/_shared/checkout-coordinator";
+import { createScopedCheckout } from "./scoped-checkout-intent";
 import { decidePaidPlanEvidence } from "../../../../supabase/functions/_shared/stripe-generation-decisions";
 import { resolveStripeRefund } from "../../../../supabase/functions/_shared/stripe-refunds";
 import { financialDeliveryExpired } from "../../../../supabase/functions/_shared/account-financial-gate";
@@ -573,33 +573,14 @@ async function scopedCheckout(
     params.set(`metadata[${key}]`, value);
     params.set(`subscription_data[metadata][${key}]`, value);
   }
-  const window = Math.floor(Date.now() / 300_000);
-  const variantKey =
-    scope === "kids"
-      ? String(context.discounted)
-      : `${context.amount_minor}-${context.includes_assistant ? "assistant" : "standard"}`;
-  const session = await coordinateKidsCheckout({
-    begin: () =>
-      deps.rpc("lc09_begin_kids_checkout", {
-        p_user_id: user.id,
-        p_key: `${scope}-live-checkout-${user.id}-${context.market_code}-${context.billing_interval}-${variantKey}-${offer?.id ?? window}`,
-        p_parameters: params.toString(),
-      }),
-    create: (key) => stripe("/checkout/sessions", { method: "POST", params, idempotencyKey: key }),
-    record: (attempt, session, expired = false) =>
-      deps.rpc("lc09_record_kids_checkout", {
-        p_user_id: user.id,
-        p_attempt: attempt,
-        p_session: session,
-        p_expired: expired,
-      }),
-    expire: (session) =>
-      stripe(`/checkout/sessions/${encodeURIComponent(session)}/expire`, {
-        method: "POST",
-        params: new URLSearchParams(),
-      }),
+  const session = await createScopedCheckout({
+    userId: user.id,
+    scope,
+    parameters: params,
+    offer: offer !== null,
+    deps: { rpc: (name, body) => deps.rpc(name, body), stripe },
+    afterSession: (session) => bindOffer(offer, user, customerId, session, deps),
   });
-  await bindOffer(offer, user, customerId, session, deps);
   return { status: 200, body: { url: session.url, sessionId: session.id } };
 }
 
