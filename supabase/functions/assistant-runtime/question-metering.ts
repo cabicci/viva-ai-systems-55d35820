@@ -113,16 +113,17 @@ export async function runMeteredQuestion(identity: QuestionIdentity, rpc: Questi
     catch { result = { ...failure(503, "ASSISTANT_UNAVAILABLE"), outcome: "system_failure" }; }
     const response: QuestionResponse = { status: result.status, body: result.body,
       ...(result.proof === undefined ? {} : { proof: result.proof }) };
-    const settled = await rpc("settle_assistant_question", { p_user_id: identity.userId,
-      p_request_id: identity.requestId, p_fingerprint: fingerprint, p_outcome: result.outcome, p_response: response });
+    const settle = (outcome: QuestionOutcome, response: QuestionResponse) =>
+      rpc("settle_assistant_question", { p_user_id: identity.userId,
+        p_request_id: identity.requestId, p_fingerprint: fingerprint, p_outcome: outcome, p_response: response });
+    const settled = await settle(result.outcome, response);
     if (!settled.ok) {
       if (identity.area === "kids" && ["ASSISTANT_AI_CONSENT_REQUIRED", "ASSISTANT_AI_CONSENT_CHANGED", "ASSISTANT_ACCESS_DENIED"].includes(settled.error)) {
         // Retire a still-reserved denied question through the existing zero-charge
         // failure path. A previously committed settlement is never refunded or
         // rewritten; an uncertain cleanup does not imply that it succeeded.
-        try { await rpc("settle_assistant_question", { p_user_id: identity.userId,
-          p_request_id: identity.requestId, p_fingerprint: fingerprint, p_outcome: "system_failure",
-          p_response: failure(settled.status, settled.error) }); } catch { /* Preserve the actual denial. */ }
+        try { await settle("system_failure", failure(settled.status, settled.error)); }
+        catch { /* Preserve the actual denial. */ }
       }
       return failure(settled.status, settled.error);
     }
