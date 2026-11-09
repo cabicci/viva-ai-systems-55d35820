@@ -3,7 +3,7 @@ import { readFileSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-// Reviewed current inventory:29 suites/489 tests, including Live isolation and native schema proofs.
+// Reviewed current inventory:30 suites/493 tests, including Live isolation and native schema proofs.
 export const billingInventory = new Map([
   ["automatic-trial-absence.test.ts", 4],
   ["billing-concurrency.integration.test.ts", 3],
@@ -16,6 +16,7 @@ export const billingInventory = new Map([
   ["billing-public-rpc-bridge.test.ts", 15],
   ["billing-service-role-auth.test.ts", 9],
   ["billing-wiring.test.ts", 72],
+  ["commercial-lock-order.native.test.ts", 4],
   ["commercial-policy-db.test.ts", 19],
   ["live-endpoint-dispatch.test.ts", 6],
   ["live-offer-operations.test.ts", 16],
