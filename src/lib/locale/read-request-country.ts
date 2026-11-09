@@ -30,12 +30,3 @@ export function readCountryCodeFromHeaders(
   }
   return undefined;
 }
-
-/** Read geo country from the active SSR request (no-op on client). */
-export async function readRequestCountryCode(): Promise<string | undefined> {
-  if (!import.meta.env.SSR) return undefined;
-  const { readSsrRequestCountryCode } = await import(
-    "./locale-ssr-request.server"
-  );
-  return readSsrRequestCountryCode();
-}

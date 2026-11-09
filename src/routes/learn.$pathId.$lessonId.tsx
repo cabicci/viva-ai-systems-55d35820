@@ -49,8 +49,7 @@ import { CourseLessonAssistant } from "@/components/assistant/CourseLessonAssist
 import { buildLocalizedAssistantContextOverride } from "@/lib/assistant/resolve-assistant-learner-context";
 import { LocalePackageLessonRenderer } from "@/components/locale/LocalePackageLessonRenderer";
 import { loadLocalePackageLesson } from "@/lib/locale-lessons/load-locale-package-lesson";
-import { readRequestCookieLocale } from "@/lib/locale/locale-cookie";
-import { readRequestCountryCode } from "@/lib/locale/read-request-country";
+import { readLocaleRuntimeInputs } from "@/lib/locale/read-locale-runtime-inputs";
 import { useLocale } from "@/lib/locale/locale-context";
 import {
   getCurriculumLessonLabel,
@@ -178,8 +177,7 @@ export const Route = createFileRoute("/learn/$pathId/$lessonId")({
     if (!lesson) throw notFound();
 
     const previewSearch = parseLessonPreviewSearch(deps as Record<string, unknown>);
-    const cookieLocale = await readRequestCookieLocale();
-    const countryCode = await readRequestCountryCode();
+    const { cookieLocale, countryCode } = await readLocaleRuntimeInputs();
     let lessonAccess = resolveRouteLessonAccess(
       lesson.id,
       previewSearch,

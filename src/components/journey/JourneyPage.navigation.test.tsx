@@ -22,7 +22,8 @@ const state = vi.hoisted(() => ({
 
 // Adapt only the framework dispatch boundary. The registered generated client
 // middleware, learner handler, request resolver and route guard run unchanged.
-vi.mock("@tanstack/react-start", () => ({
+vi.mock("@tanstack/react-start", async (importOriginal) => ({
+  ...await importOriginal<typeof import("@tanstack/react-start")>(),
   createMiddleware: () => ({ client: (fn: typeof state.middleware) => {
     state.middleware = fn;
     return {};

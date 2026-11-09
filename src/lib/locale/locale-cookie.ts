@@ -43,14 +43,6 @@ export function readLocaleCookie(): string | undefined {
   return parseLocaleCookieHeader(document.cookie);
 }
 
-export async function readRequestCookieLocale(): Promise<string | undefined> {
-  if (import.meta.env.SSR) {
-    const { readSsrCookieLocale } = await import("./locale-ssr-request.server");
-    return readSsrCookieLocale();
-  }
-  return readLocaleCookie();
-}
-
 function cookieSecureSuffix(): string {
   if (typeof window === "undefined") return "";
   return window.location.protocol === "https:" ? "; Secure" : "";
