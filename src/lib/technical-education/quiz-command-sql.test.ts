@@ -64,7 +64,20 @@ it('preserves both installed free-window and learning wrapper bodies',async()=>{
  expect((await rows<any>("SELECT prosrc FROM pg_proc WHERE oid='public.learning_previous_technical_command(text,text,text,jsonb)'::regprocedure"))[0].prosrc).toBe(previousBody);
  expect((await rows<any>("SELECT prosrc FROM pg_proc WHERE oid='public.technical_command_before_quiz_ordering(text,text,text,jsonb)'::regprocedure"))[0].prosrc).toBe(freeBody);
 });
-it('unversioned reset fails before creating progress',async()=>{await expect(call('reset_quiz','M99-L01')).rejects.toThrow(/COMMAND_REQUIRED/);expect(await progress('M99-L01')).toBeNull();});
+it('accepts published-client writes until the learner and lesson use a versioned command', async () => {
+ const lessonId = 'M99-L01';
+ await expect(call('reset_quiz', lessonId)).resolves.toMatchObject({ allowed: true });
+ expect(await progress(lessonId)).toMatchObject({ quiz_revision: 1, quiz_passed: false });
+
+ await expect(call('quiz', lessonId, intent(1))).resolves.toMatchObject({
+  passed: true,
+  command: { currentRevision: 2 },
+ });
+ const acceptedProgress = await progress(lessonId);
+ await expect(call('reset_quiz', lessonId)).rejects.toThrow(/COMMAND_REQUIRED/);
+ await expect(call('reset_quiz', lessonId, { _technicalCommand: null })).rejects.toThrow(/COMMAND_REQUIRED/);
+ expect(await progress(lessonId)).toEqual(acceptedProgress);
+});
 it.each([{expectedRevision:-1},{expectedRevision:'0'},{expectedRevision:0.5},{expectedRevision:9007199254740992},{requestId:'not-uuid'},{extraField:true}])('rejects malformed command %j before mutation',async(change)=>{await expect(call('quiz','M99-L02',intent(0,{q:0},change))).rejects.toThrow(/COMMAND_INVALID/);expect(await progress('M99-L02')).toBeNull();});
 it('wrong actor is refused before any command or progress write',async()=>{await expect(call('quiz','M99-L03',intent(0,{q:0},{actorId:B}))).rejects.toThrow(/ACTOR_MISMATCH/);expect(await progress('M99-L03')).toBeNull();});
 it('quiz increments revision once and exact replay writes no duplicate event',async()=>{

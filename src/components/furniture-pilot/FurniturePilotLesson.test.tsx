@@ -6,12 +6,23 @@ import { FurniturePilotLesson } from "./FurniturePilotLesson";
 const state = vi.hoisted(() => ({
   progress: {} as Record<string, unknown>,
   command: vi.fn(),
+  quiz: vi.fn(),
   save: vi.fn(),
 }));
-vi.mock("@/lib/technical-education/client", () => ({
+vi.mock("@/lib/auth-context", () => ({
+  useAuth: () => ({
+    user: { id: "11111111-1111-4111-8111-111111111111" },
+    authGeneration: { value: 1 },
+    isAuthGenerationCurrent: () => true,
+  }),
+}));
+vi.mock("@/lib/technical-education/client", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@/lib/technical-education/client")>()),
   technicalCommand: state.command,
+  technicalQuizCommand: (_actor: string, _lesson: string, _locale: string, action: string) =>
+    action === "quiz" ? state.quiz() : Promise.resolve({ allowed: true }),
   technicalDownload: vi.fn(),
-  useTechnicalProgress: () => ({ progress: state.progress, update: state.save }),
+  useTechnicalProgress: () => ({ progress: state.progress, confirmed: true, update: state.save }),
 }));
 vi.mock("../technical-education/TechnicalDiagram", () => ({ TechnicalDiagram: () => null }));
 const fullCopy = getPilotCopy("en");
@@ -29,9 +40,10 @@ function answerAll() {
 }
 beforeEach(() => {
   state.progress = {};
-  state.command.mockReset();
+  state.command.mockReset().mockResolvedValue({ allowed: true, passed: true });
+  state.quiz.mockReset();
   state.save.mockReset().mockResolvedValue(undefined);
-  state.command.mockResolvedValue({
+  state.quiz.mockResolvedValue({
     allowed: true,
     score: 2,
     total: 2,
@@ -42,12 +54,13 @@ beforeEach(() => {
 afterEach(cleanup);
 
 it("shows three consistent saved completion marks without sending an attempt", () => {
-  state.progress = { "M04-L02": { read: true, quizPassed: true, practiceReviewed: true } };
+  state.progress = { "M04-L02": { read: true, quizPassed: true, quizRevision: 1, practiceReviewed: true } };
   setup();
   expect(screen.getByRole("progressbar")).toHaveAttribute("aria-valuetext", "3/3");
   expect(screen.getByText("✓ " + copy.labels.reading)).toBeTruthy();
   expect(screen.getByText("✓ " + copy.labels.quiz)).toBeTruthy();
   expect(screen.getByText("✓ " + copy.labels.assignment)).toBeTruthy();
+  expect(state.quiz).not.toHaveBeenCalled();
   expect(state.command).not.toHaveBeenCalled();
   expect(state.save).not.toHaveBeenCalled();
 });
@@ -58,15 +71,17 @@ it("explains incomplete input and never sends it, including direct form submissi
   expect(submit).toBeDisabled();
   expect(screen.getByText(copy.labels.quizMissing)).toBeTruthy();
   fireEvent.submit(submit.closest("form")!);
+  expect(state.quiz).not.toHaveBeenCalled();
   expect(state.command).not.toHaveBeenCalled();
   expect(state.save).not.toHaveBeenCalled();
   fireEvent.click(screen.getAllByRole("radio")[0]);
   expect(submit).toBeDisabled();
   fireEvent.submit(submit.closest("form")!);
+  expect(state.quiz).not.toHaveBeenCalled();
   expect(state.command).not.toHaveBeenCalled();
 });
 it("clears the previous storage failure on answer change and a successful later quiz", async () => {
-  state.command.mockRejectedValueOnce(new Error("Synthetic storage failure"));
+  state.quiz.mockRejectedValueOnce(new Error("Synthetic storage failure"));
   setup();
   openQuiz();
   answerAll();
@@ -77,10 +92,10 @@ it("clears the previous storage failure on answer change and a successful later 
   fireEvent.click(screen.getByRole("button", { name: copy.labels.check }));
   await screen.findByText(copy.labels.quizPassed);
   expect(screen.queryByRole("alert")).toBeNull();
-  expect(state.command).toHaveBeenCalledTimes(2);
+  expect(state.quiz).toHaveBeenCalledTimes(2);
 });
 it("clears the old failure after a successful practice without inventing a quiz result", async () => {
-  state.command.mockRejectedValueOnce(new Error("Synthetic storage failure"));
+  state.quiz.mockRejectedValueOnce(new Error("Synthetic storage failure"));
   setup();
   openQuiz();
   answerAll();
@@ -100,7 +115,7 @@ it("clears the old failure after a successful practice without inventing a quiz 
 });
 it("does not send duplicate quiz requests while the current save is pending", async () => {
   let finish!: (value: unknown) => void;
-  state.command.mockReturnValue(
+  state.quiz.mockReturnValue(
     new Promise((resolve) => {
       finish = resolve;
     }),
@@ -112,7 +127,7 @@ it("does not send duplicate quiz requests while the current save is pending", as
   fireEvent.click(submit);
   expect(submit).toBeDisabled();
   fireEvent.click(submit);
-  expect(state.command).toHaveBeenCalledTimes(1);
+  await waitFor(() => expect(state.quiz).toHaveBeenCalledTimes(1));
   finish({ allowed: true, score: 2, total: 2, passed: true, feedback: [] });
   await waitFor(() => expect(submit).toBeEnabled());
 });

@@ -100,6 +100,19 @@ BEGIN
  IF p_action IS NULL OR p_action NOT IN ('quiz','reset_quiz') THEN
   RETURN public.technical_command_before_quiz_ordering(p_action,p_lesson,p_locale,p_data);
  END IF;
+ -- Preserve the published client until this learner and lesson use a versioned command.
+ -- Both paths take the existing account lock before choosing or changing progress.
+ IF jsonb_typeof(p_data) = 'object' AND NOT (p_data ? '_technicalCommand') THEN
+  IF u IS NULL THEN RAISE EXCEPTION 'TECHNICAL_COMMAND_ACTOR_MISMATCH'; END IF;
+  PERFORM billing.commercial_lock(u);
+  PERFORM billing.commerce_assert_identity(u);
+  IF EXISTS (
+   SELECT 1 FROM learning_private.commands
+   WHERE account_id=u
+   AND fingerprint @> jsonb_build_object('namespace','technical-quiz-v1','lesson',p_lesson)
+  ) THEN RAISE EXCEPTION 'TECHNICAL_COMMAND_REQUIRED'; END IF;
+  RETURN public.technical_command_before_quiz_ordering(p_action,p_lesson,p_locale,p_data);
+ END IF;
  IF jsonb_typeof(p_data) IS DISTINCT FROM 'object'
  OR jsonb_typeof(p_data->'_technicalCommand') IS DISTINCT FROM 'object' THEN
   RAISE EXCEPTION 'TECHNICAL_COMMAND_REQUIRED';
