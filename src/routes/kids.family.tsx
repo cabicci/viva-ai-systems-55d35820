@@ -3,6 +3,7 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { KidsBrand } from "@/components/kids/KidsBrand";
 import { KidsParentPanel } from "@/components/kids/KidsParentPanel";
+import { KidsAiConsentControl } from "@/components/kids/KidsAiConsentControl";
 import { getKidsJourneyCopy } from "@/lib/kids/journey-copy";
 import { useLocale } from "@/lib/locale/locale-context";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
@@ -46,6 +47,7 @@ function KidsFamilyPage() {
             <p className="mt-3 text-muted-foreground">{copy.familyIntro}</p>
           </header>
           <KidsParentPanel />
+          <KidsAiConsentControl />
         </div>
       </main>
       <Footer />

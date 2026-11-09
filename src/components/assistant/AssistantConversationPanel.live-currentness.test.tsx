@@ -178,6 +178,24 @@ describe('r32 NEW genuine current, lifetime and unchanged AI connection controls
  });
  for(const status of [403,503])it('P03 current status copy remains visible '+status,async()=>{h.ask=()=>({status});const ui=mount();await act(async()=>{submit(ui);await turn();});expect(ui.getByRole('alert').textContent).toBe(getUiString('en',status===403?'assistant.panel.error.access':'assistant.panel.error.connection'));expect(ui.getByRole('textbox').hasAttribute('disabled')).toBe(false);expect(entries('setItem-entry')).toHaveLength(0);});
  it('P04 empty existing error bridge is quiet and releases current busy',async()=>{h.ask=()=>{throw new AssistantRequestError('');};const ui=mount();await act(async()=>{submit(ui);await turn();});expect(ui.queryByRole('alert')).toBeNull();expect(ui.getByRole('textbox').hasAttribute('disabled')).toBe(false);expect(entries('setItem-entry')).toHaveLength(0);});
+ it.each(['ASSISTANT_AI_CONSENT_CHANGED','CARD_ACCESS_REQUIRED'])(
+  'keeps previously delivered Kids turns withheld after %s and remount',async error=>{
+   const s={...scope('kids','en','level-1'),profileId:'private-profile'};
+   seed(s);
+   const ui=mount(s);
+   expect(ui.getByText('old scoped answer')).toBeVisible();
+   h.ask=()=>({status:403,error});
+   await act(async()=>{submit(ui);await turn();});
+   expect(ui.queryByText('old scoped answer')).toBeNull();
+   ui.unmount();
+   const reopened=mount(s);
+   expect(reopened.queryByText('old scoped answer')).toBeNull();
+   h.ask=()=>reply('new scoped answer');
+   await act(async()=>{submit(reopened);await turn();});
+   expect(reopened.getByText('new scoped answer')).toBeVisible();
+   expect(reopened.queryByText('old scoped answer')).toBeNull();
+   expect(h.calls.at(-1)?.history).toEqual([]);
+  });
  it('P05 genuine current request error preserves message',async()=>{h.ask=()=>{throw new AssistantRequestError('genuine r32 failure');};const ui=mount();await act(async()=>{submit(ui);await turn();});expect(ui.getByRole('alert').textContent).toBe('genuine r32 failure');expect(ui.getByRole('textbox').hasAttribute('disabled')).toBe(false);});
  it('P06 malformed current result remains an honest error',async()=>{h.ask=()=>reply('');const ui=mount();await act(async()=>{submit(ui);await turn();});expect(ui.getByRole('alert').textContent).toBe(getUiString('en','assistant.panel.error.connection'));expect(entries('setItem-entry')).toHaveLength(0);});
  it('P07 caller props cannot spoof the private frame',()=>{const props:AssistantConversationPanelProps={scope:scope(),accountId:'r32-A',ask:async()=>reply()};Object.defineProperty(props,'frame',{enumerable:true,value:null});const ui=render(<AssistantConversationPanel {...props}/>);expect(ui.getByRole('textbox').hasAttribute('disabled')).toBe(false);});

@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState, useId, type FormEvent } from "react";
+import { useLayoutEffect, useRef, useState, useId, type FormEvent, type MouseEvent } from "react";
 import { useAuth, type AuthGeneration } from "@/lib/auth-context";
 import { type AssistantAdapter, type AssistantCitation, type AssistantScope } from "@/lib/card-assistant/types";
 import { getUiString } from "@/lib/locale/ui-strings";
@@ -22,11 +22,20 @@ type Selected = Readonly<{ scope: Readonly<AssistantScope> | null; account: stri
   disabled: string | undefined; user: string | null; loading: unknown; generation: AuthGeneration | null;
   predicate: ((generation: AuthGeneration) => boolean) | null; ready: boolean }>;
 type Frame = { selected: Selected; key: number; retired: boolean; checking: boolean; current: Current };
-type Life = { retired: boolean };
+type Life = { retired: boolean; historyAccessDenied: boolean };
 type Action = { life: Life; pending: boolean };
-type View = { owner: Life | null; query: string; busy: boolean; error: string; turns: readonly ConversationTurn[] };
+type PanelTurn = ConversationTurn & { withheld?: true };
+type View = { owner: Life | null; query: string; busy: boolean; error: string; turns: readonly PanelTurn[] };
 const stale = Symbol("retired conversation");
 const nativeThen = Promise.prototype.then;
+const historyAccessDenials = new Set([
+  "ASSISTANT_ACCESS_DENIED",
+  "ASSISTANT_ACCESS_REQUIRED",
+  "ASSISTANT_ACCESS_CHANGED",
+  "ASSISTANT_PROOF_ACCESS_DENIED",
+  "ASSISTANT_AI_CONSENT_REQUIRED",
+  "ASSISTANT_AI_CONSENT_CHANGED",
+]);
 
 function own(value: unknown, key: string): unknown {
   if (!value || typeof value !== "object" || Array.isArray(value)) return undefined;
@@ -158,11 +167,11 @@ function citations(value: unknown, current: Current): AssistantCitation[] | null
   return Object.freeze(result) as unknown as AssistantCitation[];
 }
 
-// Preserve the real historyKey namespace, JSON format and readHistory/writeHistory
+// Preserve the real historyKey namespace, JSON array format and readHistory/writeHistory
 // limits. Those helpers do not accept a currentness guard; fence their individual
 // storage/parser operations here so retirement during argument preparation cannot
 // enter a later getItem/setItem/removeItem. Tests use the unchanged real helpers.
-function loadHistory(key: string | null, current: Current): readonly ConversationTurn[] {
+function loadHistory(key: string | null, current: Current): readonly PanelTurn[] {
   if (!key || typeof window === "undefined" || !current()) return [];
   try {
     const storage = window.localStorage;observeEager(storage);if (!current()) return [];
@@ -171,17 +180,18 @@ function loadHistory(key: string | null, current: Current): readonly Conversatio
     const parse = field(JSON, "parse", current);if (typeof parse !== "function" || !current()) return [];
     const parsed: unknown = Reflect.apply(parse, JSON, [raw ?? "[]"]);observeEager(parsed);if (!current() || !Array.isArray(parsed)) return [];
     const length = field(parsed, "length", current);if (typeof length !== "number" || !Number.isSafeInteger(length) || length < 0 || length > 20) return [];
-    const result: ConversationTurn[] = [];
+    const result: PanelTurn[] = [];
     for (let index = 0; index < length; index++) {
       const row = field(parsed, index, current), question = field(row, "question", current), answer = field(row, "answer", current);
       if (typeof question !== "string" || question.length > 1500 || typeof answer !== "string" || answer.length > 16000) continue;
       const copied = citations(field(row, "citations", current), current);
-      if (copied) result.push(Object.freeze({ question, answer, citations: copied }));
+      const withheld = field(row, "withheld", current) === true;
+      if (copied) result.push(Object.freeze({ question, answer, citations: copied, ...(withheld ? { withheld: true as const } : {}) }));
     }
     return Object.freeze(result);
   } catch (error) { observeEager(error);return []; }
 }
-function saveHistory(key: string | null, turns: readonly ConversationTurn[], current: Current): void {
+function saveHistory(key: string | null, turns: readonly PanelTurn[], current: Current): void {
   if (!key || typeof window === "undefined" || !current()) return;
   try {
     let raw: string | null = null;
@@ -249,7 +259,7 @@ function Conversation({ frame, cardTitle, ask, onCitation, compact }: AssistantC
       frame.current() && !captured.retired && lifeRef.current === captured && (!action || actionRef.current === action);
   }
   useLayoutEffect(() => {
-    const captured: Life = { retired: false };lifeRef.current = captured;actionRef.current = null;retryRequest.current = null;
+    const captured: Life = { retired: false, historyAccessDenied: false };lifeRef.current = captured;actionRef.current = null;retryRequest.current = null;
     const check = () => current(captured);
     if (check()) {
       setLife(previous => check() ? captured : previous);
@@ -273,7 +283,8 @@ function Conversation({ frame, cardTitle, ask, onCitation, compact }: AssistantC
   const renderedAction = actionRef.current;
   const callbackCurrent = () => current(life) && view.owner === life && viewRef.current === view && actionRef.current === renderedAction;
   const ready = current(life) && view.owner === life;
-  const turns = ready ? view.turns : [], query = ready ? view.query : "", busy = ready && view.busy;
+  const turns = ready && !life?.historyAccessDenied ? view.turns.filter(turn => !turn.withheld) : [];
+  const query = ready ? view.query : "", busy = ready && view.busy;
   const blocked = disabled || (!ready ? copy.signIn : undefined);
   async function submit(event: FormEvent) {
     // Cancelling a stale native form's default navigation is a deny action only.
@@ -311,14 +322,27 @@ function Conversation({ frame, cardTitle, ask, onCitation, compact }: AssistantC
       const status = field(result.value, "status", check);
       if (typeof status === "number" && check()) retryRequest.current = null;
       if (status !== 200) {
+        if (status === 403) {
+          const reason = field(result.value, "error", check);
+          if (typeof reason === "string" && (historyAccessDenials.has(reason) ||
+            (scope.area === "kids" && reason === "CARD_ACCESS_REQUIRED")) && check()) {
+            life.historyAccessDenied = true;
+            // A later successful question does not reauthorize earlier sources.
+            const withheld = Object.freeze(view.turns.map(turn => turn.withheld ? turn :
+              Object.freeze({ ...turn, withheld: true as const })));
+            if (view.turns.some(turn => !turn.withheld)) saveHistory(storage.current, withheld, check);
+            update(life, action, previous => ({ ...previous, turns: withheld }));
+          }
+        }
         const message = status === 401 ? copy.signIn : status === 403 ? copy.denied : status === 429 ? copy.limited : status === 422 ? copy.grounding : copy.unavailable;
         update(life, action, previous => ({ ...previous, error: message }));return;
       }
       const answer = field(result.value, "answer", check);
       if (typeof answer !== "string" || !answer.trim() || answer.length > 16000) throw new Error("Invalid assistant response");
       const copied = citations(field(result.value, "citations", check), check);if (!copied) throw new Error("Invalid assistant citations");
-      const next = Object.freeze([...turns.slice(-19), Object.freeze({ question, answer, citations: copied })]);
+      const next = Object.freeze([...view.turns.slice(-19), Object.freeze({ question, answer, citations: copied })]);
       if (!check()) return;saveHistory(storage.current, next, check);if (!check()) return;
+      life.historyAccessDenied = false;
       update(life, action, previous => ({ ...previous, turns: next, query: "" }));
     } catch (cause) {
       observeEager(cause);
@@ -337,8 +361,11 @@ function Conversation({ frame, cardTitle, ask, onCitation, compact }: AssistantC
     saveHistory(storage.current, [], check);
     if (check()) { update(life, action, previous => ({ ...previous, turns: [] }));action.pending = false; }
   }
+  function guardCitationNavigation(event: MouseEvent<HTMLAnchorElement>) {
+    if (!callbackCurrent() || life?.historyAccessDenied) event.preventDefault();
+  }
   function navigate(citation: AssistantCitation) {
-    if (!callbackCurrent()) return;
+    if (!callbackCurrent() || life?.historyAccessDenied) return;
     const callback = callbacks.current.onCitation;
     if (typeof callback !== "function" || !callbackCurrent()) return;
     try { observeEager(callback({ ...citation })); } catch (error) { observeEager(error);/* A caller cannot revive a retired conversation. */ }
@@ -355,11 +382,11 @@ function Conversation({ frame, cardTitle, ask, onCitation, compact }: AssistantC
           <ul className="mt-2 list-inside list-disc space-y-1">{turn.citations.map((citation, i) => <li key={`${citation.id}:${i}`}>
             {onCitation ? <button type="button" onClick={() => navigate(citation)} className="text-primary underline">{citation.label}</button>
               : typeof citation.href === "string" && /^\/(?!\/)/.test(citation.href) && !/[\\\u0000-\u0020]/.test(citation.href)
-                ? <a href={citation.href} onClick={event => { if (!callbackCurrent()) event.preventDefault(); }} className="text-primary underline">{citation.label}</a> : citation.label}
+                ? <a href={citation.href} onClick={guardCitationNavigation} onAuxClick={guardCitationNavigation} className="text-primary underline">{citation.label}</a> : citation.label}
           </li>)}</ul></div>}
       </article>)}
     </div>
-    {current(life) && turns.length > 0 && <button type="button" disabled={busy || !!blocked} className="text-sm underline" onClick={clear}>{t("assistant.panel.history.clear")}</button>}
+    {ready && view.turns.length > 0 && <button type="button" disabled={busy || !!blocked} className="text-sm underline" onClick={clear}>{t("assistant.panel.history.clear")}</button>}
     <p className="text-xs text-muted-foreground">{t("assistant.panel.history.independent")}</p>
     {blocked && <p role="status" className="text-sm">{blocked}</p>}
     <form onSubmit={event => void submit(event)} className="space-y-3">

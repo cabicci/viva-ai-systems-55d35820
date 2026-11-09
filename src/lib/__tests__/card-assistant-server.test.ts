@@ -1,4 +1,4 @@
-import { successfulQuestionRpc } from "./helpers/question-ledger";
+import { successfulQuestionRpc, withGrantedChildLedger } from "./helpers/question-ledger";
 // @vitest-environment node
 import { beforeEach, afterEach, describe, expect, it, vi, type Mock } from "vitest";
 import { sha256, sourceChunks, CARD_EMBEDDING_MODEL, type SourceDocument } from "../card-assistant/corpus";
@@ -23,8 +23,9 @@ beforeEach(async () => {
   const query = (data: unknown) => { const chain = { select: vi.fn(() => chain), eq: vi.fn(() => chain), maybeSingle: vi.fn(async () => ({ data, error: null })) }; return chain; };
   mocks.from.mockImplementation((table: string) => query(table === "card_assistant_policy" ? { runtime_enabled: true } : { approved_sha256: hash }));
   mocks.download.mockResolvedValue({ data: new Blob([raw]), error: null });
+  const ledger = withGrantedChildLedger(async (name, body) => successfulQuestionRpc(name, body));
   mocks.rpc.mockImplementation(async (name: string, body: Record<string, unknown>) => {
-    const result = successfulQuestionRpc(name, body);
+    const result = await ledger(name, body);
     return { data: result.ok ? result.data : name === "card_assistant_match" ? chunks : name === "card_assistant_existing" ? [] : 1, error: null };
   });
   mocks.ai.mockResolvedValue({ content: JSON.stringify({ grounding: "supported", answer: "Supported explanation", sourceIds: ["S1"] }) });

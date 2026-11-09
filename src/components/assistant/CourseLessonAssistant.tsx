@@ -8,6 +8,7 @@ import { AssistantPanel } from "./AssistantPanel";
 import { CardPathAssistant } from "./CardPathAssistant";
 import { useAuth } from "@/lib/auth-context";
 import { LessonAssistantAccess } from "./LessonAssistantAccess";
+import { getKidsAiConsentCopy } from "@/lib/kids/ai-consent-copy";
 
 type Props = { locale: SupportedLocale } & (
   | { area: "ai"; contextOverride: AssistantContextOverride | null; pathId: string; lessonId: string }
@@ -36,6 +37,11 @@ export function CourseLessonAssistant(props: Props) {
     fabAriaLabel={getUiString(props.locale, "learn.assistant.fabAria")} panelTitle={getUiString(props.locale, "sidebar.assistant")}
     {...(props.area === "kids" ? { initialOpen: props.assistantInitiallyOpen, onOpenChange: props.onAssistantOpenChange,
       panelAvailable: props.assistantAvailable, isPanelAvailable: props.assistantIsCurrent } : {})}>
+    {props.area === "kids" && user?.id && props.assistantAvailable !== false && <p className="mb-3 text-sm">
+      <a href={`/account?locale=${encodeURIComponent(props.locale)}#kids-ai-consent`} className="font-semibold text-foreground underline underline-offset-2">
+        {getKidsAiConsentCopy(props.locale).parentSettings}
+      </a>
+    </p>}
     {props.area === "kids" && props.assistantAvailable === false ? null : !user?.id || scopeMissing ? <p role="alert">{getUiString(props.locale, !user?.id
       ? "assistant.panel.error.auth" : "assistant.panel.scope.open")}</p> :
     props.area === "academic" ? <AcademicAssistantPanel courseId={props.cardId} lessonId={props.stepId} locale={props.locale} /> :
