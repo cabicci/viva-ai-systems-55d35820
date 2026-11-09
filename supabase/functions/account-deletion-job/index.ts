@@ -1,6 +1,8 @@
 import { createClient } from "npm:@supabase/supabase-js@2.105.4";
 import { authorizedDeletionJob } from "./handler.ts";
 import { createAccountLifecycleWorker } from "../_shared/account-lifecycle-worker.ts";
+import { createLiveAccountLifecycleWorker, lifecycleMode } from "../_shared/account-lifecycle-live-worker.ts";
+import { resolveLifecycleKey } from "../_shared/stripe-environment.ts";
 
 Deno.serve(async (request) => {
   if (request.method !== "POST") return new Response(null, { status: 405 });
@@ -11,9 +13,12 @@ Deno.serve(async (request) => {
   if (!deletionEnabled && !financialEnabled) return Response.json({ enabled: false });
   const url = Deno.env.get("SUPABASE_URL");
   const key = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
-  const stripeKey = Deno.env.get("STRIPE_SECRET_KEY");
-  if (!url || !key || !stripeKey || !/^(sk|rk)_test_/.test(stripeKey))
-    return new Response(null, { status: 503 });
+  let mode: "test" | "live", stripeKey: string;
+  try {
+    mode = lifecycleMode(Deno.env.get("STRIPE_BILLING_MODE"));
+    stripeKey = resolveLifecycleKey(mode, (name) => Deno.env.get(name));
+  } catch { return new Response(null, { status: 503 }); }
+  if (!url || !key) return new Response(null, { status: 503 });
   let userId: unknown;
   let action: unknown;
   try {
@@ -30,8 +35,11 @@ Deno.serve(async (request) => {
     (typeof userId !== "string" || !/^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$/i.test(userId))
   )
     return new Response(null, { status: 400 });
-  const db = createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } });
-  const { finalize, purge, runBatch } = createAccountLifecycleWorker(db, stripeKey);
+  const db = createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false },
+    ...(mode === "live" ? { global: { headers: { "x-masaarat-stripe-environment": "live" } } } : {}) });
+  const { finalize, purge, runBatch } = mode === "live"
+    ? createLiveAccountLifecycleWorker(db, stripeKey)
+    : createAccountLifecycleWorker(db, stripeKey);
   try {
     if (action === "run_batch") {
       // Separate switches: pausing account erasure must not silently postpone
