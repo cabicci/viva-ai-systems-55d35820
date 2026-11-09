@@ -3,6 +3,8 @@ import { readFileSync } from "node:fs";
 import ts from "typescript";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import * as worker from "../../../supabase/functions/_shared/account-lifecycle-worker";
+import * as liveWorker from "../../../supabase/functions/_shared/account-lifecycle-live-worker";
+import * as stripeEnvironment from "../../../supabase/functions/_shared/stripe-environment";
 import * as handlers from "../../../supabase/functions/account-deletion-job/handler";
 
 // Execute the actual authored entrypoint. Only npm/Deno host bindings are
@@ -41,12 +43,14 @@ beforeEach(() => {
     ACCOUNT_FINANCIAL_PURGE_ENABLED: "true",
   };
   new Function("require", "Deno", "exports", entrypoint)(
-    (name: string) =>
-      name.startsWith("npm:")
-        ? { createClient: () => ({ rpc }) }
-        : name.endsWith("account-lifecycle-worker.ts")
-          ? worker
-          : handlers,
+    (name: string) => {
+      if (name.startsWith("npm:")) return { createClient: () => ({ rpc }) };
+      if (name.endsWith("account-lifecycle-worker.ts")) return worker;
+      if (name.endsWith("account-lifecycle-live-worker.ts")) return liveWorker;
+      if (name.endsWith("stripe-environment.ts")) return stripeEnvironment;
+      if (name.endsWith("handler.ts")) return handlers;
+      throw new Error("Unexpected entrypoint import: " + name);
+    },
     {
       env: { get: (name: string) => environment[name] },
       serve: (fn: typeof endpoint) => {
