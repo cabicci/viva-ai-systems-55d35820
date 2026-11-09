@@ -33,7 +33,7 @@ it("uses the actual card identity and explains the whole-card boundary", async (
   await screen.findByText("Fresh answer");
   expect(state.ask).toHaveBeenCalledWith({ data: expect.objectContaining(initial) });
   expect(screen.getByText(/all stations and steps in this path/)).toBeVisible();
-  expect(screen.getByRole("link")).toHaveAttribute("href", "/academic/learn/AC-NEW-M02-L03?locale=en");
+  expect(screen.getByRole("link", { name: /^AC-NEW-M02-L03/ })).toHaveAttribute("href", "/academic/learn/AC-NEW-M02-L03?locale=en");
 });
 
 it("drops an old card response when a request finishes after switching cards", async () => {
@@ -96,10 +96,12 @@ it("shares bounded follow-up history across steps of the same card", async () =>
 });
 
 it("rejects sources from another card before displaying the answer", async () => {
-  state.ask.mockResolvedValueOnce({ status: 200, answer: "FOREIGN_CARD_ANSWER", sources: [{ lessonId: "AC-OTHER-M01-L01", sectionId: "concept" }] });
+  state.ask.mockResolvedValueOnce({ status: 200, answer: "FOREIGN_CARD_ANSWER", sources: [{ lessonId: "AC-OTHER-M01-L01", sectionId: "concept", label: "Foreign card reference" }] });
   render(<AcademicAssistantPanel {...initial} />);
+  await screen.findByRole("link", { name: "Buy additional questions" });
   submit();
   await screen.findByRole("alert");
+  expect(state.ask).toHaveBeenCalledTimes(1);
   expect(screen.queryByText("FOREIGN_CARD_ANSWER")).not.toBeInTheDocument();
-  expect(screen.queryByRole("link")).not.toBeInTheDocument();
+  expect(screen.queryByRole("link", { name: "Foreign card reference" })).not.toBeInTheDocument();
 });
