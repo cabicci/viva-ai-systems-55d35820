@@ -15,13 +15,8 @@ const LEARN_ROUTE = path.join(
 describe("localized package completion policy", () => {
   it("enables mark-complete on localized package pages", () => {
     const source = readFileSync(LEARN_ROUTE, "utf8");
-    expect(source).not.toMatch(
-      /const markCompleted = \(\) => \{[\s\S]*?if \(isLocalizedPackagePage\) return;/,
-    );
-    expect(source).toMatch(/\{!isCompleted && \(/);
-    expect(source).not.toMatch(
-      /\{!isCompleted && !isLocalizedPackagePage && \(/,
-    );
+    expect(source).toMatch(/\{ordinaryCompleted \? \([\s\S]*?<AiLessonCompletionAction/);
+    expect(source).not.toContain("CompletionReward");
   });
 
   it("applies mission-gate locking on localized package pages", () => {
@@ -51,10 +46,11 @@ describe("localized package completion policy", () => {
 });
 
 describe("mark-complete uses existing progress path", () => {
-  it("still writes lesson progress through setStatus in markCompleted", () => {
+  it("keeps the acknowledged progress action and activity callbacks wired", () => {
     const source = readFileSync(LEARN_ROUTE, "utf8");
-    expect(source).toContain('setStatus(lesson.id, "completed")');
-    expect(source).toContain("recordActivity()");
+    expect(source).toContain("progress={progress}");
+    expect(source).toContain("onRecordActivity={recordConfirmedActivity}");
+    expect(source).toContain("onLessonCompleted={recordConfirmedLesson}");
     expect(source).toContain('type: "lesson_completed"');
   });
 });

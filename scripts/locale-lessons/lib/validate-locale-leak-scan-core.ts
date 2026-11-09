@@ -27,13 +27,6 @@ const PAYWALL_BANNED_AR = [
   "ابدأ المقدمة",
 ] as const;
 
-const COMPLETION_BANNED_AR = [
-  "خلّصت الدرس! استمر",
-  "٣ أيام متتالية 🔥 العادة بتتثبّت!",
-  "إغلاق",
-  " يوم",
-] as const;
-
 const PREVIEW_QUIZ_BANNED_EN = "Preview quiz — answers hidden" as const;
 const SCREENSHOT_BANNED_EN = [
   "Platform preview",
@@ -163,14 +156,6 @@ export function validateLocaleLeakScan(): ValidatorResult {
     errors.push(
       "learn route errorComponent must not use fixed dir=\"rtl\" (use locale-aware direction)",
     );
-  }
-
-  const completionSource = readRepoFile("src/components/learn/CompletionReward.tsx");
-  if (!completionSource.includes("getUiString")) {
-    errors.push("CompletionReward.tsx must wire copy through getUiString()");
-  }
-  for (const hit of containsAny(completionSource, COMPLETION_BANNED_AR)) {
-    errors.push(`CompletionReward.tsx contains banned hardcoded Arabic: "${hit}"`);
   }
 
   const previewQuizSource = readRepoFile("src/components/locale/LocalePreviewQuiz.tsx");
