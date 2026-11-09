@@ -22,8 +22,7 @@ const state = vi.hoisted(() => ({
 
 // Adapt only the framework dispatch boundary. The registered generated client
 // middleware, learner handler, request resolver and route guard run unchanged.
-vi.mock("@tanstack/react-start", async (importOriginal) => ({
-  ...await importOriginal<typeof import("@tanstack/react-start")>(),
+vi.mock("@tanstack/react-start", async (original) => ({ ...await original<object>(),
   createMiddleware: () => ({ client: (fn: typeof state.middleware) => {
     state.middleware = fn;
     return {};
@@ -222,3 +221,5 @@ it.each(["missing SDK session", "unverifiable claims"])("blocks a stale journey 
   expect(state.loader).not.toHaveBeenCalled();
 });
 vi.mock("./LearningRecordPanel", () => ({ LearningRecordPanel: () => <section data-testid="learning-record-panel" /> }));
+
+vi.mock("@/lib/course-system/intake/functions", () => ({ readCurriculumJourney: vi.fn() }));
