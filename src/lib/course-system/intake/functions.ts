@@ -3,6 +3,52 @@ import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { COURSE_AREAS } from "../contract";
 import type { AssistantReply } from "@/lib/card-assistant/types";
+import {
+  curriculumJourneyInput,
+  curriculumJourneyResult,
+  curriculumPositionInput,
+  curriculumPositionResult,
+} from "./client";
+
+export const readCurriculumJourney = createServerFn({ method: "POST" })
+  .middleware([requireSupabaseAuth])
+  .inputValidator((input) => curriculumJourneyInput.parse(input))
+  .handler(async ({ data, context }) => {
+    if (data.expectedAccountId !== context.userId) throw new Error("CURRICULUM_ACCOUNT_CHANGED");
+    const { expectedAccountId: _actor, ...p_data } = data;
+    const r = await context.supabase.rpc(
+      "curriculum_command" as never,
+      { p_action: "journey", p_data } as never,
+    );
+    if (r.error) throw new Error(r.error.message);
+    const result = curriculumJourneyResult.parse(r.data);
+    if (
+      result.area !== data.area ||
+      result.course !== data.course ||
+      result.locale !== data.locale ||
+      result.activeVersion !== data.version ||
+      result.profileId !== (data.profileId ?? null)
+    )
+      throw new Error("CURRICULUM_CONTENT_CHANGED");
+    return result;
+  });
+
+export const curriculumPosition = createServerFn({ method: "POST" })
+  .middleware([requireSupabaseAuth])
+  .inputValidator((input) => curriculumPositionInput.parse(input))
+  .handler(async ({ data, context }) => {
+    if (data.expectedAccountId !== context.userId) throw new Error("CURRICULUM_ACCOUNT_CHANGED");
+    const { expectedAccountId: _actor, action: p_action, ...p_data } = data;
+    const r = await context.supabase.rpc(
+      "learning_command" as never,
+      { p_action, p_data } as never,
+    );
+    if (r.error) throw new Error(r.error.message);
+    const result = curriculumPositionResult.parse(r.data);
+    if ("contentVersion" in result && result.contentVersion !== data.contentVersion)
+      throw new Error("CURRICULUM_CONTENT_CHANGED");
+    return result;
+  });
 
 export const curriculumAsset = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
