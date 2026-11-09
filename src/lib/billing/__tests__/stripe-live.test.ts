@@ -166,28 +166,78 @@ describe("Live checkout when both switches are ON", () => {
     metadata: { user_id: USER.id, environment: "live" },
     ...o,
   });
-  const kidsHarness = (ctx = kidsCtx(), price: any = livePrice(), customer: any = liveCustomer()) =>
-    harness({
+  const kidsHarness = (
+    ctx = kidsCtx(),
+    price: any = livePrice(),
+    customer: any = liveCustomer(),
+  ) => {
+    const generation = "55555555-5555-4555-8555-555555555501";
+    let intent: any;
+    let session: any;
+    return harness({
       env: { STRIPE_LIVE_ENABLED: "true" },
       db: true,
       rpc: {
         get_kids_stripe_checkout_context: () => ctx,
-        lc09_begin_kids_checkout: () => ({ attempt_id: "a1", idempotency_key: "k1" }),
-        lc09_record_kids_checkout: () => true,
+        prepare_scoped_checkout_intent: (body: any) => {
+          const parameters = new URLSearchParams(body.p_parameters);
+          const expires = Math.floor(Date.now() / 1000) + 86400;
+          parameters.set("expires_at", String(expires));
+          parameters.set("metadata[checkout_generation]", generation);
+          parameters.set("subscription_data[metadata][checkout_generation]", generation);
+          intent ??= {
+            checkout_generation: generation,
+            checkout_session_id: null,
+            selection_matches: true,
+            idempotency_key: `scoped-kids-live-${generation}`,
+            parameters: parameters.toString(),
+            selection_parameters: body.p_parameters,
+            session_expires_at: new Date(expires * 1000).toISOString(),
+            create_started_at: new Date().toISOString(),
+            legacy: false,
+          };
+          return [{ ...intent }];
+        },
+        lc09_record_kids_checkout: (body: any) => {
+          intent.checkout_session_id = body.p_session;
+          return true;
+        },
+        attach_scoped_checkout_intent: () => true,
+        confirm_scoped_checkout_intent: () => true,
       },
       stripe: {
         "GET /prices/": price,
         "GET /customers/": customer,
         "GET /subscriptions": { object: "list", data: [], has_more: false },
-        "POST /checkout/sessions": {
-          id: "cs_live",
-          object: "checkout.session",
-          livemode: true,
-          status: "open",
-          url: "https://checkout.stripe.com/c/x",
+        "POST /checkout/sessions": (call: StripeCall) => {
+          const parameters = call.params!;
+          session = {
+            id: "cs_live",
+            object: "checkout.session",
+            livemode: true,
+            status: "open",
+            url: "https://checkout.stripe.com/c/x",
+            customer: "cus_live1",
+            client_reference_id: USER.id,
+            expires_at: Number(parameters.get("expires_at")),
+            metadata: {
+              user_id: USER.id,
+              product_scope: "kids",
+              environment: "live",
+              app: "masaarat",
+              checkout_generation: generation,
+            },
+            line_items: {
+              has_more: false,
+              data: [{ price: parameters.get("line_items[0][price]"), quantity: 1 }],
+            },
+          };
+          return session;
         },
+        "GET /checkout/sessions/cs_live": () => session,
       },
     });
+  };
   const kidsBody = { product: "kids", billingInterval: "month", marketCode: "EG" } as const;
 
   it("uses the verified registered price and never creates products or prices", async () => {
