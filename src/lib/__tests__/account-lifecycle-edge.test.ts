@@ -1,5 +1,6 @@
 // @vitest-environment node
 import { readFileSync } from "node:fs";
+import { dirname, isAbsolute, relative, resolve, sep } from "node:path";
 import ts from "typescript";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import * as worker from "../../../supabase/functions/_shared/account-lifecycle-worker";
@@ -59,6 +60,24 @@ beforeEach(() => {
     },
     {},
   );
+});
+it("keeps the Edge entrypoint's local modules within the Lovable function bundle", () => {
+  const root = resolve("supabase/functions");
+  const remaining = [resolve(root, "account-deletion-job/index.ts")];
+  const checked = new Set<string>();
+  for (const path of remaining) {
+    if (checked.has(path)) continue;
+    checked.add(path);
+    const imports = ts.preProcessFile(readFileSync(path, "utf8"), true, true).importedFiles;
+    for (const { fileName } of imports) {
+      if (!fileName.startsWith(".")) continue;
+      const target = resolve(dirname(path), fileName);
+      const location = relative(root, target);
+      expect(isAbsolute(location) || location === ".." || location.startsWith(".." + sep), fileName)
+        .toBe(false);
+      remaining.push(target);
+    }
+  }
 });
 describe("protected account lifecycle batch entrypoint", () => {
   it("runs due finance while general account deletion is paused, without fetching deletion candidates", async () => {
