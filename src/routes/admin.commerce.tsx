@@ -44,6 +44,10 @@ function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
     [busy, setBusy] = useState(false),
     [error, setError] = useState(""),
     [notice, setNotice] = useState("");
+  function openInvitations() {
+    setTab("email-access");
+    setPage(0);
+  }
   const result = useQuery({
     queryKey: ["commerce-admin"],
     queryFn: async () =>
@@ -200,7 +204,9 @@ function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
                 busy={busy}
               />
             )}
-            {tab === "groups" && <AdminOffers data={data} run={run} busy={busy} />}
+            {tab === "groups" && (
+              <AdminOffers data={data} run={run} busy={busy} onInvitations={openInvitations} />
+            )}
             {tab === "groups" && <AdminLiveOffers />}
             {tab === "groups" && (
               <details>
@@ -208,6 +214,7 @@ function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
                   {adminOfferCopy(locale).advanced}
                 </summary>
                 <AdminGroups
+                  onInvitations={openInvitations}
                   data={{
                     ...data,
                     invitations: data.invitations.filter(
@@ -242,7 +249,9 @@ function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
                 />
               </details>
             )}
-            {tab === "settings" && <AdminSettings data={data} w={w} run={run} busy={busy} />}
+            {tab === "settings" && (
+              <AdminSettings data={data} w={w} run={run} busy={busy} onInvitations={openInvitations} />
+            )}
             {tab === "audit" && (
               <section aria-label={w.audit} className="space-y-3">
                 {(data.audit ?? [])

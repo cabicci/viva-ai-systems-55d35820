@@ -49,6 +49,11 @@ export const emailAccessInput = z.discriminatedUnion("action", [
   }),
 ]);
 export type EmailAccessInput = z.infer<typeof emailAccessInput>;
+// Optional envelope binding preserves existing callers; canonical mutation data stays strict.
+export const emailAccessCommandInput = emailAccessInput.and(
+  z.object({ expectedAccountId: z.string().uuid().optional() }),
+);
+export type EmailAccessCommandInput = z.infer<typeof emailAccessCommandInput>;
 export type EmailAccessGrant = {
   id: string;
   recipient_email: string;
@@ -160,4 +165,66 @@ export function emailAccessCopy(locale: string) {
         activated: "تفعيل",
         extended: "تمديد",
       };
+}
+
+export function invitationImportCopy(locale: string) {
+  const ar = {
+    title: "استيراد دعوات المناهج",
+    input: "بيانات الدعوات (JSON)",
+    file: "رفع ملف الدعوات",
+    help: "حتى ١٠٠٠ دعوة. حدد لكل صف البريد، نوع الدعوة، النطاق والمناهج، المدة بالأيام أو null للدائم، لغة الدعوة، وطلب إرسال البريد. يمكن تكرار البريد لدعوات مستقلة. استخدم النموذج وأسماء المناهج المتاحة أدناه.",
+    template: "تنزيل نموذج",
+    prepare: "مراجعة كل الدعوات",
+    download: "تنزيل ملف الاستكمال",
+    execute: "حفظ الدعوات / استكمال المحاولة",
+    note: "نزّل ملف الاستكمال قبل الحفظ واحتفظ به بأمان؛ يحتوي على عناوين البريد. عند انقطاع العملية ارفع الملف نفسه، ولا تنشئ ملفًا جديدًا. تُحفظ كل دعوة بشكل مستقل. حفظ الدعوة لا يؤكد تسليم البريد.",
+    pending: "لم تُحاول بعد",
+    saved: "تم حفظ الدعوة",
+    uncertain: "النتيجة غير مؤكدة — أعد المحاولة بنفس الملف",
+    format: "الملف غير صالح: استخدم مصفوفة JSON من ١ إلى ١٠٠٠ صف، بحد أقصى مليوني حرف.",
+    invalid: "حقول ناقصة أو غير صالحة. راجع النموذج ونوع الدعوة والنطاق والمدة واللغة.",
+    catalogue: "منهج غير متاح أو مكرر داخل الدعوة.",
+    key: "معرّف محاولة مكرر. لكل دعوة مستقلة معرّف مستقل.",
+    row: "الصف",
+    reset: "بدء قائمة أخرى",
+    unavailable: "تعذر تحميل المناهج. حدّث الصفحة قبل المحاولة.",
+  };
+  if (locale === "en")
+    return {
+      title: "Import curriculum invitations",
+      input: "Invitation data (JSON)",
+      file: "Upload invitation file",
+      help: "Up to 1,000 invitations. Each row explicitly specifies email, invitation type, scope and catalogues, duration in days or null for permanent, language, and whether to request email. Separate invitations may share an email. Use the template and available catalogue identifiers below.",
+      template: "Download template",
+      prepare: "Review all invitations",
+      download: "Download resume file",
+      execute: "Save invitations / retry remaining",
+      note: "Download the resume file before saving and keep it private; it contains email addresses. After interruption, upload that same file instead of creating a new batch. Each invitation saves independently. Saved does not confirm email delivery.",
+      pending: "Not attempted",
+      saved: "Invitation saved",
+      uncertain: "Result uncertain — retry with the same file",
+      format: "Invalid file: use a JSON array of 1–1,000 rows, up to two million characters.",
+      invalid:
+        "Missing or invalid fields. Check the template, invitation type, scope, duration and language.",
+      catalogue: "A catalogue is unavailable or repeated within this invitation.",
+      key: "Repeated retry identifier. Separate invitations need separate identifiers.",
+      row: "Row",
+      reset: "Start another batch",
+      unavailable: "Could not load catalogues. Refresh before retrying.",
+    };
+  if (locale === "ar-EG")
+    return {
+      ...ar,
+      prepare: "راجع كل الدعوات",
+      download: "نزّل ملف الاستكمال",
+      execute: "احفظ الدعوات / كمّل المحاولة",
+    };
+  if (locale === "ar-Gulf")
+    return {
+      ...ar,
+      prepare: "راجع جميع الدعوات",
+      download: "حمّل ملف الاستكمال",
+      execute: "احفظ الدعوات / أكمل المحاولة",
+    };
+  return ar;
 }

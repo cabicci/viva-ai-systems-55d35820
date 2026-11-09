@@ -1,5 +1,3 @@
-import { useCommandKey } from "@/lib/commerce/use-command-key";
-import { packages, instant, dayInput } from "@/lib/commerce/admin-ui";
 import { useState } from "react";
 import { SUPPORTED_LOCALES, LOCALE_META } from "@/lib/locale/types";
 import type { AdminData, PaymentMethod } from "@/lib/commerce/contracts";
@@ -11,11 +9,13 @@ export function AdminSettings({
   w,
   run,
   busy,
+  onInvitations,
 }: {
   data: AdminData;
   w: CommerceCopy;
   run: RunCommand;
   busy: boolean;
+  onInvitations?: () => void;
 }) {
   return (
     <>
@@ -28,7 +28,12 @@ export function AdminSettings({
           ))}
         <p>{w.paymob}</p>
       </Panel>
-      <Grant w={w} run={run} busy={busy} />
+      <Panel title={w.canonicalInvitations}>
+        <p>{w.canonicalRequired}</p>
+        <Button disabled={busy || !onInvitations} onClick={onInvitations}>
+          {w.canonicalInvitations}
+        </Button>
+      </Panel>
       <Preferences w={w} run={run} busy={busy} />
     </>
   );
@@ -95,63 +100,6 @@ function Method({
       <Check label={w.enabled} checked={m.enabled} onChange={(enabled) => set({ ...m, enabled })} />
       <Save w={w} busy={busy} />
     </form>
-  );
-}
-function Grant({ w, run, busy }: { w: CommerceCopy; run: RunCommand; busy: boolean }) {
-  const requestKey = useCommandKey();
-  const [values, set] = useState({
-    user_id: "",
-    package: "pro",
-    duration_days: 30,
-    starts_at: dayInput(0),
-    reason: "",
-  });
-  return (
-    <Panel title={w.grants}>
-      <form
-        className="grid gap-3 sm:grid-cols-2"
-        onSubmit={(e) => {
-          e.preventDefault();
-          void run("grant", {
-            ...values,
-            starts_at: instant(values.starts_at),
-            key: requestKey(values),
-          });
-        }}
-      >
-        <Field
-          label={w.userId}
-          value={values.user_id}
-          onChange={(user_id) => set({ ...values, user_id })}
-          required
-        />
-        <Select
-          label={w.package}
-          value={values.package}
-          onChange={(pack) => set({ ...values, package: pack })}
-          options={packages}
-        />
-        <Field
-          label={w.days}
-          value={values.duration_days}
-          type="number"
-          onChange={(v) => set({ ...values, duration_days: Number(v) })}
-        />
-        <Field
-          label={w.date}
-          value={values.starts_at}
-          type="datetime-local"
-          onChange={(starts_at) => set({ ...values, starts_at })}
-        />
-        <Field
-          label={w.reason}
-          value={values.reason}
-          onChange={(reason) => set({ ...values, reason })}
-          required
-        />
-        <Save w={w} busy={busy} />
-      </form>
-    </Panel>
   );
 }
 function Preferences({ w, run, busy }: { w: CommerceCopy; run: RunCommand; busy: boolean }) {

@@ -9,6 +9,10 @@ export function paymentInstructions(
   return method.instructions_localized?.[locale] ?? method.instructions;
 }
 const en = {
+  canonicalInvitations: "Curriculum invitations",
+  canonicalRequired:
+    "Create free access as a curriculum invitation with an explicit scope. Existing access stays valid.",
+  paidImport: "Import paid orders. For free access, use curriculum invitations.",
   audit: "Administrator action history",
   delivered: "Delivered",
   delayed: "Delivery delayed",
@@ -181,6 +185,10 @@ const en = {
   offerEnabled: "Enable / disable offer",
 };
 const ar: Record<keyof typeof en, string> = {
+  canonicalInvitations: "دعوات المناهج",
+  canonicalRequired:
+    "أنشئ الوصول المجاني من دعوات المناهج وحدد نطاقه. تظل الصلاحيات المسجلة سارية.",
+  paidImport: "استيراد الطلبات المدفوعة. للوصول المجاني استخدم دعوات المناهج.",
   audit: "سجل إجراءات المسؤولين",
   delivered: "تم التسليم",
   delayed: "تأخر التسليم",

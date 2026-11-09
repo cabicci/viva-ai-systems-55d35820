@@ -25,11 +25,13 @@ export function AdminGroups({
   w,
   run,
   busy,
+  onInvitations,
 }: {
   data: AdminData;
   w: CommerceCopy;
   run: RunCommand;
   busy: boolean;
+  onInvitations?: () => void;
 }) {
   const [name, setName] = useState(""),
     [group, setGroup] = useState(""),
@@ -48,7 +50,7 @@ export function AdminGroups({
   const [defaults, setDefaults] = useState<Partial<Recipient>>({
     locale: "ar-EG",
     package: "pro",
-    access_kind: "complimentary",
+    access_kind: "external",
     duration_days: 30,
     start_rule: "acceptance",
     deadline: instant(dayInput(30)),
@@ -76,6 +78,7 @@ export function AdminGroups({
   }
   function validateLocal() {
     if (!table) return;
+    setError("");
     setPreview(
       previewImport(
         table,
@@ -84,12 +87,16 @@ export function AdminGroups({
         new Set(
           data.orders.filter((o) => o.review_status === "confirmed").map((o) => o.recipient_email),
         ),
+      ).map((row) =>
+        row.recipient?.access_kind === "complimentary"
+          ? { ...row, errors: [...row.errors, w.canonicalRequired] }
+          : row,
       ),
     );
     setValidated(false);
   }
   const accepted = preview
-    .filter((r) => !r.excluded && r.errors.length === 0 && r.recipient)
+    .filter((r) => !r.excluded && r.errors.length === 0 && r.recipient?.access_kind === "external")
     .map((r) => r.recipient!);
   async function verify() {
     setError("");
@@ -129,6 +136,10 @@ export function AdminGroups({
   return (
     <Panel title={w.groups}>
       <p>{w.sentNote}</p>
+      <p>{w.paidImport}</p>
+      <Button variant="outline" disabled={busy || !onInvitations} onClick={onInvitations}>
+        {w.canonicalInvitations}
+      </Button>
       <form
         className="flex flex-wrap items-end gap-3"
         onSubmit={async (e) => {
@@ -172,10 +183,7 @@ export function AdminGroups({
           label={w.kind}
           value={defaults.access_kind!}
           onChange={(v) => setDefaults({ ...defaults, access_kind: v as Recipient["access_kind"] })}
-          options={[
-            ["complimentary", w.complimentary],
-            ["external", w.external],
-          ]}
+          options={[["external", w.external]]}
         />
         <Field
           label={w.days}

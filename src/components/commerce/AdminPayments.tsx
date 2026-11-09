@@ -297,7 +297,13 @@ export function AdminPayments({
       </Panel>
       <Panel title={w.access}>
         {access.map((row) => (
-          <Access key={row.id} row={row} run={run} busy={busy} />
+          <Access
+            key={row.id}
+            row={row}
+            run={run}
+            busy={busy}
+            canExtend={couponExtensionAllowed(row, data)}
+          />
         ))}
       </Panel>
       <Refund data={data} run={run} busy={busy} />
@@ -410,7 +416,37 @@ function OrderCard({ order: o, run, busy }: { order: Order; run: RunCommand; bus
     </article>
   );
 }
-function Access({ row, run, busy }: { row: Entitlement; run: RunCommand; busy: boolean }) {
+export function couponExtensionAllowed(
+  row: Entitlement,
+  data: Pick<AdminData, "grants" | "orders">,
+) {
+  const grant = data.grants.find((g) => g.id === row.grant_id && g.user_id === row.user_id);
+  const orderId = grant && "offer_order_id" in grant ? grant.offer_order_id : undefined;
+  return (
+    !!orderId &&
+    data.orders.some(
+      (o) =>
+        o.id === orderId &&
+        o.user_id === row.user_id &&
+        o.final_minor === 0 &&
+        "offer_id" in o &&
+        typeof o.offer_id === "string" &&
+        "confirmed_at" in o &&
+        typeof o.confirmed_at === "string",
+    )
+  );
+}
+function Access({
+  row,
+  run,
+  busy,
+  canExtend,
+}: {
+  row: Entitlement;
+  run: RunCommand;
+  busy: boolean;
+  canExtend: boolean;
+}) {
   const requestKey = useCommandKey();
   const { locale } = useLocale(),
     w = commerceCopy(locale),
@@ -424,7 +460,7 @@ function Access({ row, run, busy }: { row: Entitlement; run: RunCommand; busy: b
       </p>
       <div className="flex flex-wrap items-end gap-2">
         <Field label={w.reason} value={reason} onChange={setReason} />
-        {row.grant_id && (
+        {canExtend && (
           <Field label={w.days} value={days} type="number" onChange={(x) => setDays(Number(x))} />
         )}
         <Button
@@ -441,7 +477,7 @@ function Access({ row, run, busy }: { row: Entitlement; run: RunCommand; busy: b
         >
           {w.revoke}
         </Button>
-        {row.grant_id && (
+        {canExtend && (
           <Button
             disabled={busy || !reason || !!row.revoked_at}
             onClick={() =>
