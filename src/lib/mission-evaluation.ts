@@ -139,7 +139,8 @@ export async function getReusableSubmissionForMission(
     .select("*")
     .eq("user_id", userId)
     .eq("mission_id", missionId)
-    .in("status", REUSABLE_STATUSES);
+    .in("status", REUSABLE_STATUSES)
+    .not("submission_metadata", "cs", '{"skipped":true}');
   if (lessonId) query = query.eq("lesson_id", lessonId);
   const { data, error } = await query
     .order("created_at", { ascending: false })
@@ -167,7 +168,8 @@ export async function getActiveSubmissionForMission(
     .select("*")
     .eq("user_id", userId)
     .eq("mission_id", missionId)
-    .in("status", ["submitted", "evaluating"]);
+    .in("status", ["submitted", "evaluating"])
+    .not("submission_metadata", "cs", '{"skipped":true}');
   if (lessonId) query = query.eq("lesson_id", lessonId);
   const { data, error } = await query
     .order("created_at", { ascending: false })
@@ -186,6 +188,12 @@ export async function getLatestEvaluatedSubmissionForMission(
   lessonId: string,
 ): Promise<MissionSubmission | null> {
   const userId = await requireUserId();
+  const passed = await supabase.from(TABLE).select("*")
+    .eq("user_id", userId).eq("mission_id", missionId).eq("lesson_id", lessonId)
+    .eq("status", "passed").not("submission_metadata", "cs", '{"skipped":true}')
+    .order("evaluated_at", { ascending: false, nullsFirst: false }).limit(1).maybeSingle();
+  if (passed.error) throw passed.error;
+  if (passed.data) return passed.data as unknown as MissionSubmission;
   const { data, error } = await supabase
     .from(TABLE)
     .select("*")
@@ -193,6 +201,7 @@ export async function getLatestEvaluatedSubmissionForMission(
     .eq("mission_id", missionId)
     .eq("lesson_id", lessonId)
     .in("status", ["passed", "needs_revision", "failed"])
+    .not("submission_metadata", "cs", '{"skipped":true}')
     .order("evaluated_at", { ascending: false, nullsFirst: false })
     .order("created_at", { ascending: false })
     .limit(1)
@@ -255,4 +264,16 @@ export async function submitForEvaluation(submissionId: string): Promise<Mission
   if (error) throw error;
   if (!data) throw new Error("mission-evaluation: submission not found");
   return data as unknown as MissionSubmission;
+}
+
+/** Durable continuation intent, separate from editable answers and evaluations. */
+export async function getSkippedSubmissionForMission(missionId: string, lessonId: string): Promise<{ id: string; user_id: string; mission_id: string; lesson_id: string | null } | null> {
+  const userId = await requireUserId();
+  const { data, error } = await supabase.from(TABLE)
+    .select("id,user_id,mission_id,lesson_id")
+    .eq("user_id", userId).eq("mission_id", missionId).eq("lesson_id", lessonId)
+    .contains("submission_metadata", { skipped: true })
+    .order("created_at", { ascending: false }).limit(1).maybeSingle();
+  if (error) throw error;
+  return data;
 }

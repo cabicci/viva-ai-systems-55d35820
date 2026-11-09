@@ -25,6 +25,7 @@ import { skipMissionServer } from "@/lib/mission-skip.functions";
 import {
   getActiveSubmissionForMission,
   getLatestEvaluatedSubmissionForMission,
+  getSkippedSubmissionForMission,
   type MissionSubmission,
   prepareSubmissionForAttempt,
   submitForEvaluation,
@@ -151,6 +152,7 @@ function MissionRubricSession({
   const skipServer = useServerFn(skipMissionServer);
   const [skipped, setSkipped] = React.useState(false);
   const [skipping, setSkipping] = React.useState(false);
+  const submissionOperation = React.useRef<"skip" | "submit" | null>(null);
 
   const writeHereLabel = getUiString(locale, "mission.template.writeHere");
 
@@ -174,10 +176,11 @@ function MissionRubricSession({
     void Promise.all([
       getActiveSubmissionForMission(missionId, lessonId),
       getLatestEvaluatedSubmissionForMission(missionId, lessonId),
+      getSkippedSubmissionForMission(missionId, lessonId),
     ])
-      .then(([active, evaluated]) => {
+      .then(([active, evaluated, skipMarker]) => {
         if (cancelled) return;
-        for (const row of [active, evaluated]) {
+        for (const row of [active, evaluated, skipMarker]) {
           if (
             row &&
             (row.user_id !== userId || row.mission_id !== missionId || row.lesson_id !== lessonId)
@@ -185,7 +188,9 @@ function MissionRubricSession({
             throw new Error("Mismatched mission submission owner");
           }
         }
-        const sub = evaluated?.status === "passed" ? evaluated : (active ?? evaluated);
+        const actualPass = evaluated?.status === "passed";
+        setSkipped(!actualPass && !!skipMarker);
+        const sub = actualPass ? evaluated : (active ?? evaluated);
         if (!sub) return;
         setAttemptCount(Number(sub.attempt_count ?? 0));
         setLastSubmissionId(sub.id);
@@ -221,12 +226,18 @@ function MissionRubricSession({
   }
 
   async function skipMission() {
-    if (skipping || restoring || restoreFailed) return;
+    if (submissionOperation.current || restoring || restoreFailed) return;
+    submissionOperation.current = "skip";
     setSkipping(true);
     try {
-      await skipServer({ data: { missionId, lessonId } });
+      const outcome = await skipServer({ data: { missionId, lessonId } });
       if (!alive.current) return;
       emitMissionPassed(missionId);
+      if (outcome.outcome === "already-passed") {
+        setSkipped(false);
+        setRestoreAttempt((n) => n + 1);
+        return;
+      }
       setSkipped(true);
       void logLearnerEvent({
         type: "mission_skipped",
@@ -241,6 +252,7 @@ function MissionRubricSession({
       if (!alive.current) return;
       toast.error(e instanceof Error ? e.message : getUiString(locale, "mission.skip.errorToast"));
     } finally {
+      submissionOperation.current = null;
       if (alive.current) setSkipping(false);
     }
   }
@@ -257,11 +269,12 @@ function MissionRubricSession({
   }
 
   async function submit() {
-    if (!user || submitting || restoring || restoreFailed) return;
+    if (!user || submissionOperation.current || restoring || restoreFailed) return;
     if (text.trim().length < 20) {
       toast.error(getUiString(locale, "mission.submit.tooShort"));
       return;
     }
+    submissionOperation.current = "submit";
     setSubmitting(true);
     try {
       const submission = await prepareSubmissionForAttempt({
@@ -316,6 +329,7 @@ function MissionRubricSession({
         err instanceof Error ? err.message : getUiString(locale, "mission.submit.errorToast"),
       );
     } finally {
+      submissionOperation.current = null;
       if (alive.current) setSubmitting(false);
     }
   }
@@ -500,7 +514,7 @@ function MissionRubricSession({
           )}
           <textarea
             id={answerId}
-            disabled={submitting}
+            disabled={submitting || skipping}
             value={text}
             onChange={(e) => changeText(e.target.value)}
             placeholder={
@@ -530,7 +544,7 @@ function MissionRubricSession({
               <button
                 type="button"
                 onClick={submit}
-                disabled={submitting}
+                disabled={submitting || skipping}
                 className="inline-flex items-center gap-2 rounded-lg border border-accent/30 bg-accent/15 px-3 py-2 text-xs font-semibold text-accent hover:bg-accent/25 transition disabled:opacity-50"
               >
                 {submitting ? (
@@ -547,7 +561,7 @@ function MissionRubricSession({
               <button
                 type="button"
                 onClick={skipMission}
-                disabled={skipping}
+                disabled={skipping || submitting}
                 className="inline-flex items-center gap-1.5 text-[11px] text-muted-foreground hover:text-foreground transition disabled:opacity-50"
                 title={getUiString(locale, "mission.skip.title")}
               >
@@ -585,6 +599,10 @@ function MissionRubricSession({
         <div className="rounded-xl border border-primary/25 bg-primary/[0.05] p-3 text-sm leading-relaxed text-foreground/90 inline-flex items-start gap-2">
           <SkipForward className="h-4 w-4 text-primary mt-0.5 shrink-0" />
           <span>{getUiString(locale, "mission.skipped.message")}</span>
+          <button type="button" className="underline underline-offset-4" onClick={() => {
+            setSkipped(false);
+            setResult(null);
+          }}>{getUiString(locale, "mission.skip.retry")}</button>
         </div>
       )}
     </div>
