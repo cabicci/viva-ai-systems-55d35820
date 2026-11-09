@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // Live-only orchestration. No dependency on checkout creation switches or Test adapters.
-import { verifyOfferSession } from "../../../src/lib/billing/live/offer-operations.ts";
+import { verifyOfferSession } from "./stripe-offer-operations.ts";
 type ObjectValue = Record<string, any>;
 type Customer = { id: string; gateway: string; mode: string | null };
 export type LiveClaim = {

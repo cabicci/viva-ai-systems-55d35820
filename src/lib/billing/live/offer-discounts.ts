@@ -1,30 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // Server-controlled mapping snapshots. Never accept Stripe IDs from a browser.
-export type OfferEvidence = {
-  id: string;
-  user_id: string;
-  customer_id: string | null;
-  session_id: string | null;
-  subscription_id: string | null;
-  consumed_invoice_id: string | null;
-  original_minor: number;
-  final_minor: number;
-  mapping: {
-    id: string;
-    package: string;
-    market_code: string;
-    currency: string;
-    billing_interval: string;
-    price_id: string;
-    product_id: string;
-    coupon_id: string;
-    promotion_code_id: string;
-    kind: "percent" | "fixed";
-    value_minor: number;
-    duration: "once" | "repeating" | "forever";
-    duration_in_months: number | null;
-  };
-};
+import type { OfferEvidence } from "../../../../supabase/functions/_shared/stripe-offer-operations.ts";
+export type { OfferEvidence } from "../../../../supabase/functions/_shared/stripe-offer-operations.ts";
 const id = (v: any): string | null =>
   typeof v === "string" ? v : typeof v?.id === "string" ? v.id : null;
 const fail = (): never => {
