@@ -35,10 +35,12 @@ export function AdminOffers({
   data,
   run,
   busy,
+  onInvitations,
 }: {
   data: AdminData;
   run: RunCommand;
   busy: boolean;
+  onInvitations?: () => void;
 }) {
   const { locale } = useLocale(),
     w = commerceCopy(locale),
@@ -95,6 +97,15 @@ export function AdminOffers({
     e.preventDefault();
     setError("");
     if (!price) return;
+    if (
+      audience !== "public" &&
+      scope === "subscription" &&
+      delivery === "invitation" &&
+      Number(percent) === 100
+    ) {
+      setError(w.canonicalRequired);
+      return;
+    }
     try {
       setReview(
         simpleOfferSchema.parse({
@@ -473,6 +484,22 @@ export function AdminOffers({
             </fieldset>
             <fieldset className="space-y-3">
               <legend className="font-semibold">{s.deliveryStep}</legend>
+              {audience !== "public" &&
+                scope === "subscription" &&
+                Number(percent) === 100 &&
+                delivery === "invitation" && (
+                  <div>
+                    <p>{w.canonicalRequired}</p>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      disabled={busy || !onInvitations}
+                      onClick={onInvitations}
+                    >
+                      {w.canonicalInvitations}
+                    </Button>
+                  </div>
+                )}
               {audience !== "public" && scope === "subscription" && (
                 <Select
                   label={w.kind}
