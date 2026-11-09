@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useAuth } from "@/lib/auth-context";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { getTechnicalCopy } from "@/lib/technical-education/copy";
@@ -8,6 +9,9 @@ import {
   useTechnicalProgress,
   technicalCompleted,
   technicalCommand,
+  technicalQuizCommand,
+  reconcileTechnicalQuiz,
+  displayedQuizRevision,
   technicalDownload,
   type QuizResult,
 } from "@/lib/technical-education/client";
@@ -15,20 +19,47 @@ const panel = "rounded-3xl border border-border bg-card p-5 md:p-8";
 function technicalDownloadName(type: string, title: string) {
   return `${type} — ${title}`.replace(/[:<>"/\\|?*]/g, " - ") + ".pdf";
 }
-export function TechnicalLessonView({
-  lesson,
-  video,
-  files,
-}: {
+// The server stores technical quiz progress by actor/lesson, across locales.
+// Keep a pending lane across component remounts so an earlier reset cannot
+// overtake a later quiz. The shared typed command lane also enforces the
+// server revision contract and durable ambiguous-request recovery.
+const writeLanes = new Map<string, Promise<void>>();
+function orderedWrite(key: string, work: () => Promise<void>) {
+  const result = (writeLanes.get(key) ?? Promise.resolve()).then(work);
+  const tail = result.then(() => {}, () => {});
+  writeLanes.set(key, tail);
+  void tail.then(() => { if (writeLanes.get(key) === tail) writeLanes.delete(key); });
+  return result;
+}
+type LessonViewProps = {
   lesson: TechnicalLesson;
   video: string;
   files: { kind: string; path: string }[];
-}) {
+};
+export function TechnicalLessonView(props: LessonViewProps) {
+  const { user, authGeneration, isAuthGenerationCurrent } = useAuth();
+  // A changed delivery, actor or auth lifetime must not inherit draft/result
+  // state. No backend content revision or authority is invented here.
+  const scope = JSON.stringify([user?.id, authGeneration.value, props.lesson]);
+  return <ScopedTechnicalLessonView key={scope} {...props}
+    actor={user?.id ?? ""}
+    actorCurrent={() => !!user && isAuthGenerationCurrent(authGeneration)} />;
+}
+function ScopedTechnicalLessonView({ lesson, video, files, actor, actorCurrent }:
+  LessonViewProps & { actor: string; actorCurrent: () => boolean }) {
+  const mounted = useRef(false);
+  useEffect(() => { mounted.current = true; return () => { mounted.current = false; }; }, []);
+  const current = () => mounted.current && actorCurrent();
+  const lane = JSON.stringify([actor, lesson.id]);
+  const quizRevision = useRef(0), draftRevision = useRef(0);
+  const resetNeeded = useRef(false), submitting = useRef(false), saving = useRef(false);
+  const [quizBusy, setQuizBusy] = useState(false), [practiceBusy, setPracticeBusy] = useState(false);
   const { locale } = lesson;
   const copy = getTechnicalCopy(locale);
   const bunnyEmbed = video;
-  const { progress, update } = useTechnicalProgress();
+  const { progress, confirmed, update } = useTechnicalProgress();
   const record = progress[lesson.id];
+  const serverRevision = displayedQuizRevision(record,confirmed);
   const [tab, setTab] = useState("reading");
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [submitted, setSubmitted] = useState(false);
@@ -41,7 +72,7 @@ export function TechnicalLessonView({
   const [criteria, setCriteria] = useState<boolean[]>(lesson.assignment.criteria.map(() => false));
   const [saved, setSaved] = useState(false);
   const [saveFailed, setSaveFailed] = useState(false);
-  const completed = technicalCompleted(record);
+  const completed = technicalCompleted(quizRevision.current > 0 && !submitted ? { ...record, quizPassed: false } : record);
   const [quizResult, setQuizResult] = useState<QuizResult | null>(null);
   const score = quizResult?.score ?? 0;
   const tabs = [
@@ -54,34 +85,86 @@ export function TechnicalLessonView({
     "assistant",
   ] as const;
   const [error, setError] = useState(false);
+  const refresh = async () => {
+    if (!current()) return;
+    try { await update({ id: lesson.id, locale, action: "refresh" }); return true; }
+    catch { if (current()) setError(true); return false; }
+  };
+  const resetQuiz = async (revision: number, observed: number|null) => {
+    const result = await technicalQuizCommand(actor, lesson.id, locale, "reset_quiz", {}, observed, current);
+    if (!result.allowed) throw new Error("Access required");
+    if (current() && quizRevision.current === revision) resetNeeded.current = false;
+  };
+  const editAnswer = (question: string, value: number) => {
+    if (!current()) return;
+    const revision = ++quizRevision.current, observed=serverRevision;
+    resetNeeded.current = true;
+    setAnswers((previous) => ({ ...previous, [question]: value }));
+    setSubmitted(false); setQuizResult(null); setError(false);
+    void orderedWrite(lane, async () => {
+      if (!current()) return;
+      await resetQuiz(revision,observed);
+      await refresh();
+    }).catch(() => { if (current()) setError(true); });
+  };
   const submitQuiz = async () => {
+    if (!current() || submitting.current || !lesson.quiz.every((q) => q.id in answers)) return;
+    submitting.current = true; setQuizBusy(true); setError(false);
+    const observed=serverRevision;
+    const revision = quizRevision.current, snapshot = { ...answers };
     try {
-      setError(false);
-      const result = await technicalCommand<QuizResult>("quiz", lesson.id, locale, { answers });
-      if (!result.allowed) throw new Error("Access required");
-      setQuizResult(result);
-      setSubmitted(true);
-      await update({ id: lesson.id, locale, action: "refresh" });
-    } catch {
-      setError(true);
-    }
+      await orderedWrite(lane, async () => {
+        if (!current() || quizRevision.current !== revision) return;
+        // A failed reset is retried and positively acknowledged before grading.
+        if (resetNeeded.current) await resetQuiz(revision,observed);
+        if (!current() || quizRevision.current !== revision) return;
+        const result = await technicalQuizCommand<QuizResult>(actor, lesson.id, locale, "quiz", { answers: snapshot }, observed, () => current() && quizRevision.current === revision);
+        if (!result.allowed) throw new Error("Access required");
+        if (!current() || quizRevision.current !== revision) return;
+        setQuizResult(result); setSubmitted(true);
+        await refresh(); // A refresh failure does not erase a confirmed grade.
+      });
+    } catch { if (current() && quizRevision.current === revision) setError(true); }
+    finally { submitting.current = false; if (current()) setQuizBusy(false); }
+  };
+  const recoverQuiz = async () => {
+    if (!current() || submitting.current) return;
+    submitting.current = true; setQuizBusy(true);
+    try {
+      await orderedWrite(lane, async () => {
+        if (!current()) return;
+        await reconcileTechnicalQuiz(actor, lesson.id, current);
+        const refreshed = await refresh();
+        if (current() && refreshed) setError(false);
+      });
+    } catch { if (current()) setError(true); }
+    finally { submitting.current = false; if (current()) setQuizBusy(false); }
   };
   const savePractice = async () => {
+    if (!current() || saving.current) return;
+    saving.current = true; setPracticeBusy(true); setSaveFailed(false);
+    const revision = draftRevision.current, values = [...draft], checks = [...criteria];
     try {
-      await update({
-        id: lesson.id,
-        locale,
-        action: "practice",
-        data: { values: draft, criteria },
+      await orderedWrite(lane, async () => {
+        if (!current() || draftRevision.current !== revision) return;
+        const result = await technicalCommand<{ allowed: boolean }>("practice", lesson.id, locale,
+          { values, criteria: checks });
+        if (!result.allowed) throw new Error("Access required");
+        if (!current()) return;
+        if (draftRevision.current === revision) setSaved(true);
+        await refresh();
       });
-      setSaved(true);
-      setSaveFailed(false);
-    } catch {
-      setSaveFailed(true);
-    }
+    } catch { if (current()) setSaveFailed(true); }
+    finally { saving.current = false; if (current()) setPracticeBusy(false); }
   };
   const persist = (action: string) => {
-    void update({ id: lesson.id, locale, action }).catch(() => setError(true));
+    if (!current()) return;
+    void orderedWrite(lane, async () => {
+      if (!current()) return;
+      const result = await technicalCommand<{ allowed: boolean }>(action, lesson.id, locale);
+      if (!result.allowed) throw new Error("Access required");
+      await refresh();
+    }).catch(() => { if (current()) setError(true); });
   };
   const download = (type: string) => {
     const file = files.find((f) => f.kind === type);
@@ -89,13 +172,14 @@ export function TechnicalLessonView({
       void technicalDownload(
         file.path,
         technicalDownloadName(copy[type as "workbook" | "worksheet"], lesson.title),
-      ).catch(() => setError(true));
+      ).catch(() => { if (current()) setError(true); });
   };
   return (
     <>
       {error && (
         <p role="alert">
           {locale === "en" ? "Could not save. Try again." : "تعذر الحفظ. حاول مجددًا."}
+          <button type="button" disabled={quizBusy} onClick={() => void recoverQuiz()}>{copy.retry}</button>
         </p>
       )}
       <header className={`${panel} bg-gradient-to-br from-accent/20 to-card`}>
@@ -221,12 +305,7 @@ export function TechnicalLessonView({
                         className="mt-1"
                         name={`${lesson.id}-${question.id}`}
                         checked={answers[question.id] === index}
-                        onChange={() => {
-                          setAnswers({ ...answers, [question.id]: index });
-                          setSubmitted(false);
-                          setQuizResult(null);
-                          persist("reset_quiz");
-                        }}
+                        onChange={() => editAnswer(question.id, index)}
                       />
                       <span className="leading-7">{option}</span>
                     </label>
@@ -245,7 +324,7 @@ export function TechnicalLessonView({
                 </fieldset>
               ))}
               <Button
-                disabled={!lesson.quiz.every((question) => question.id in answers)}
+                disabled={quizBusy || !lesson.quiz.every((question) => question.id in answers)}
                 onClick={() => void submitQuiz()}
               >
                 {copy.check}
@@ -267,6 +346,7 @@ export function TechnicalLessonView({
                   <textarea
                     value={draft[index] ?? ""}
                     onChange={(event) => {
+                      draftRevision.current++;
                       setDraft(
                         lesson.assignment.fields.map((_, i) =>
                           i === index ? event.target.value : (draft[i] ?? ""),
@@ -286,16 +366,15 @@ export function TechnicalLessonView({
                   <input
                     type="checkbox"
                     checked={criteria[index]}
-                    onChange={(event) =>
-                      setCriteria(
-                        criteria.map((value, i) => (i === index ? event.target.checked : value)),
-                      )
-                    }
+                    onChange={(event) => {
+                      draftRevision.current++; setSaved(false);
+                      setCriteria(criteria.map((value, i) => (i === index ? event.target.checked : value)));
+                    }}
                   />
                   <span>{criterion}</span>
                 </label>
               ))}
-              <Button onClick={() => void savePractice()}>{copy.save}</Button>
+              <Button disabled={practiceBusy} onClick={() => void savePractice()}>{copy.save}</Button>
               {saved && <p role="status">{copy.saved}</p>}
               {saveFailed && (
                 <p role="status">
