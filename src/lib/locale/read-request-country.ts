@@ -1,3 +1,4 @@
+import { createIsomorphicFn } from "@tanstack/react-start";
 import { normalizeCountryCode } from "./resolve-geo-locale";
 
 /** Request headers that may carry geo country (Cloudflare, Vercel, generic). */
@@ -32,10 +33,9 @@ export function readCountryCodeFromHeaders(
 }
 
 /** Read geo country from the active SSR request (no-op on client). */
-export async function readRequestCountryCode(): Promise<string | undefined> {
-  if (!import.meta.env.SSR) return undefined;
-  const { readSsrRequestCountryCode } = await import(
-    "./locale-ssr-request.server"
-  );
-  return readSsrRequestCountryCode();
-}
+export const readRequestCountryCode = createIsomorphicFn()
+  .server(async (): Promise<string | undefined> => {
+    const { readSsrRequestCountryCode } = await import("./locale-ssr-request.server");
+    return readSsrRequestCountryCode();
+  })
+  .client(async (): Promise<string | undefined> => undefined);

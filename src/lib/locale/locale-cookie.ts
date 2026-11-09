@@ -1,3 +1,4 @@
+import { createIsomorphicFn } from "@tanstack/react-start";
 import type { SupportedLocale } from "./types";
 
 export const LOCALE_COOKIE_NAME = "masaarat_locale";
@@ -43,13 +44,12 @@ export function readLocaleCookie(): string | undefined {
   return parseLocaleCookieHeader(document.cookie);
 }
 
-export async function readRequestCookieLocale(): Promise<string | undefined> {
-  if (import.meta.env.SSR) {
+export const readRequestCookieLocale = createIsomorphicFn()
+  .server(async (): Promise<string | undefined> => {
     const { readSsrCookieLocale } = await import("./locale-ssr-request.server");
     return readSsrCookieLocale();
-  }
-  return readLocaleCookie();
-}
+  })
+  .client(async (): Promise<string | undefined> => readLocaleCookie());
 
 function cookieSecureSuffix(): string {
   if (typeof window === "undefined") return "";
