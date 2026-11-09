@@ -92,6 +92,11 @@ function buildQuery() {
     filters.push([column, value]);
     return query;
   });
+  query.not = vi.fn((column: string, operator: string, value: string) => {
+    if (column !== "submission_metadata" || operator !== "cs" || value !== '{"skipped":true}') throw new Error("Unexpected marker predicate");
+    filters.push(["notSkipped", true]);
+    return query;
+  });
   query.maybeSingle = vi.fn(
     async () => mocks.queryResponder?.(payload, filters) ?? mocks.maybeSingleResults.shift() ?? { data: mocks.row, error: null },
   );
@@ -124,6 +129,7 @@ function claimFilters(status: string): Array<[string, unknown]> {
     ["user_id", "user-1"],
     ["mission_id", canonicalSource.missionId],
     ["status", status],
+    ...(status === "submitted" ? [["notSkipped", true] as [string, unknown]] : []),
     ...(status === "evaluating" ? [["updated_at", mocks.row!.updated_at] as [string, unknown]] : []),
   ];
 }
@@ -293,7 +299,7 @@ describe("evaluateMissionWithAI authority boundary", () => {
       let stored: Record<string, unknown> = { ...mocks.row!, status: "submitted" };
       let version = 0;
       mocks.queryResponder = (payload, filters) => {
-        if (!filters.every(([column, value]) => stored[column] === value)) {
+        if (!filters.every(([column, value]) => column === "notSkipped" ? (stored.submission_metadata as Record<string, unknown> | undefined)?.skipped !== true : stored[column] === value)) {
           return { data: null, error: null };
         }
         stored = {
@@ -404,4 +410,10 @@ describe("evaluateMissionWithAI authority boundary", () => {
     ).rejects.toThrow();
     expect(mocks.callAI).not.toHaveBeenCalled();
   });
+});
+it("a submitted skip marker cannot be claimed or invoke provider", async () => {
+  mocks.queryResponder = (_payload, filters) => filters.some(([key]) => key === "notSkipped") ? { data: null, error: null } : { data: mocks.row, error: null };
+  await expect(callEvaluate(evaluationArgs())).rejects.toThrow("غير متاح للتقييم");
+  expect(mocks.callAI).not.toHaveBeenCalled();
+  expect(mocks.updates).toEqual([{ status: "evaluating" }]);
 });

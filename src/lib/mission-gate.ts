@@ -14,7 +14,7 @@ import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
  * A lesson is "gated" when its content array contains a `kind: "mission"`
  * block that has a `rubric` (i.e. it ships with AI evaluation). For gated
  * lessons we look up `mission_submissions` to see if the current user has
- * a row with `status='passed'` for `mission_id = ${lessonId}::mission`.
+ * a true educational pass or an independent intentional skip for this exact lesson.
  *
  * If the lesson has no mission block, the gate is always "open".
  */
@@ -125,7 +125,8 @@ export type MissionGateState =
   | { kind: "no-mission" }
   | { kind: "loading" }
   | { kind: "needs-mission"; missionId: string }
-  | { kind: "passed"; missionId: string; score: number };
+  | { kind: "passed"; missionId: string; score: number }
+  | { kind: "skipped"; missionId: string };
 
 /**
  * Whether lesson navigation should be blocked by the mission gate.
@@ -149,21 +150,22 @@ function useMissionGateWithShape(
   const missionId = missionShape?.missionId ?? packageMissionId(lessonId);
 
   const { data, isLoading } = useQuery({
-    queryKey: [...QK, missionId, user?.id ?? null],
+    queryKey: [...QK, missionId, user?.id ?? null, lessonId],
     enabled: requiresMission && !!user?.id,
     staleTime: 30_000,
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from("mission_submissions")
-        .select("status, score")
-        .eq("mission_id", missionId)
-        .eq("user_id", user!.id)
-        .eq("status", "passed")
-        .order("evaluated_at", { ascending: false })
-        .limit(1)
-        .maybeSingle();
-      if (error) throw error;
-      return data as { status: string; score: number | null } | null;
+      const passed = await supabase.from("mission_submissions")
+        .select("status,score")
+        .eq("mission_id", missionId).eq("lesson_id", lessonId).eq("user_id", user!.id)
+        .eq("status", "passed").not("submission_metadata", "cs", '{"skipped":true}')
+        .order("evaluated_at", { ascending: false, nullsFirst: false }).limit(1).maybeSingle();
+      if (passed.error) throw passed.error;
+      if (passed.data) return { kind: "passed" as const, score: Number(passed.data.score ?? 0) };
+      const skipped = await supabase.from("mission_submissions")
+        .select("id").eq("mission_id", missionId).eq("lesson_id", lessonId).eq("user_id", user!.id)
+        .contains("submission_metadata", { skipped: true }).limit(1).maybeSingle();
+      if (skipped.error) throw skipped.error;
+      return skipped.data ? { kind: "skipped" as const } : null;
     },
   });
 
@@ -184,9 +186,8 @@ function useMissionGateWithShape(
   if (!requiresMission) return { kind: "no-mission" };
   if (!user) return { kind: "needs-mission", missionId };
   if (isLoading) return { kind: "loading" };
-  if (data?.status === "passed") {
-    return { kind: "passed", missionId, score: Number(data.score ?? 0) };
-  }
+  if (data?.kind === "passed") return { kind: "passed", missionId, score: data.score };
+  if (data?.kind === "skipped") return { kind: "skipped", missionId };
   return { kind: "needs-mission", missionId };
 }
 

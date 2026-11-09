@@ -43,6 +43,12 @@ beforeEach(() => {
         filters.push((row) => values.includes(row[key]));
         return query;
       },
+      not: (key: string, operator: string, value: string) => {
+        if (key !== "submission_metadata" || operator !== "cs") throw new Error("Unexpected exclusion");
+        const expected = JSON.parse(value);
+        filters.push(row => (row.submission_metadata as Record<string, unknown> | undefined)?.skipped !== expected.skipped);
+        return query;
+      },
       order: (key: string, options: Record<string, unknown>) => {
         mocks.orders.push([key, options]);
         return query;
@@ -96,10 +102,10 @@ describe("read-only evaluated submission lookup", () => {
       ["user_id", "fixture-user"],
       ["mission_id", "mission"],
       ["lesson_id", "lesson"],
+      ["status", "passed"],
     ]);
     expect(mocks.orders).toEqual([
       ["evaluated_at", { ascending: false, nullsFirst: false }],
-      ["created_at", { ascending: false }],
     ]);
   });
 
@@ -156,4 +162,14 @@ describe("read-only evaluated submission lookup", () => {
       passed: true,
     });
   });
+});
+
+it("legacy passed skip is not restored as a grade and genuine pass wins", async () => {
+  const common = { user_id: "fixture-user", mission_id: "mission", lesson_id: "lesson" };
+  mocks.rows = [
+    { ...common, id: "legacy-skip", status: "passed", submission_metadata: { skipped: true } },
+    { ...common, id: "latest-fail", status: "failed", score: 10 },
+    { ...common, id: "actual-pass", status: "passed", score: 70 },
+  ];
+  expect(await getLatestEvaluatedSubmissionForMission("mission", "lesson")).toMatchObject({ id: "actual-pass" });
 });

@@ -18,6 +18,7 @@ vi.mock("@/lib/mission-evaluation", async (importOriginal) => ({
   ...(await importOriginal<typeof import("@/lib/mission-evaluation")>()),
   getActiveSubmissionForMission: vi.fn().mockResolvedValue(null),
   getLatestEvaluatedSubmissionForMission: vi.fn().mockResolvedValue(null),
+  getSkippedSubmissionForMission: vi.fn().mockResolvedValue(null),
 }));
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");

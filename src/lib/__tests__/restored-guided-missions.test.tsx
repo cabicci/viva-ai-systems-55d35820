@@ -24,6 +24,7 @@ vi.mock("@/lib/mission-evaluation", async (importOriginal) => ({
   ...(await importOriginal<typeof import("@/lib/mission-evaluation")>()),
   getActiveSubmissionForMission: vi.fn().mockResolvedValue(null),
   getLatestEvaluatedSubmissionForMission: vi.fn().mockResolvedValue(null),
+  getSkippedSubmissionForMission: vi.fn().mockResolvedValue(null),
   prepareSubmissionForAttempt: vi.fn(() => {
     throw new Error("No submission authorized in this fixture");
   }),
@@ -39,7 +40,7 @@ vi.mock("@/lib/mission-ai-evaluation.functions", () => ({
     throw new Error("No reveal in this fixture");
   }),
 }));
-vi.mock("@/lib/mission-skip.functions", () => ({ skipMissionServer: vi.fn() }));
+vi.mock("@/lib/mission-skip.functions", () => ({ skipMissionServer: vi.fn().mockResolvedValue({id:"marker",outcome:"skipped"}) }));
 vi.mock("@/lib/learner-events", () => ({ logLearnerEvent: vi.fn() }));
 afterEach(cleanup);
 

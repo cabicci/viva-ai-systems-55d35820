@@ -90,6 +90,7 @@ export const evaluateMissionWithAI = createServerFn({ method: "POST" })
         .eq("user_id", userId)
         .eq("mission_id", data.missionId)
         .eq("status", "submitted")
+        .not("submission_metadata", "cs", '{"skipped":true}')
         .select("id, user_id, mission_id, lesson_id, submission_text, updated_at")
         .maybeSingle();
       if (rowErr) throw new Error("تعذّر التحقق من التسليم.");

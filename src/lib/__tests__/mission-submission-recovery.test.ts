@@ -32,6 +32,12 @@ function buildQuery() {
       filters.push((row) => values.includes(row[column]));
       return query;
     },
+    not: (key: string, operator: string, value: string) => {
+      if (key !== "submission_metadata" || operator !== "cs") throw new Error("Unexpected exclusion");
+      const expected = JSON.parse(value);
+      filters.push(row => (row.submission_metadata as Record<string, unknown> | undefined)?.skipped !== expected.skipped);
+      return query;
+    },
     order: () => query,
     limit: () => query,
     maybeSingle: async () => ({
@@ -94,4 +100,11 @@ describe("interrupted mission evaluation recovery", () => {
     expect(mocks.rows).toEqual([original]);
     expect(mocks.updated).not.toHaveBeenCalled();
   });
+});
+
+it("skipped draft is never reused or hydrated as the learner answer", async () => {
+  mocks.rows.unshift({ id: "marker", user_id: "user-1", mission_id: "mission-1", lesson_id: "lesson-1", status: "draft", submission_metadata: { skipped: true } });
+  expect(await getActiveSubmissionForMission("mission-1", "lesson-1")).toMatchObject({ id: "interrupted-claim" });
+  expect(await prepareSubmissionForAttempt({ missionId: "mission-1", lessonId: "lesson-1", submissionText: "A new real attempt" })).toMatchObject({ id: "fresh-draft" });
+  expect(mocks.updated).not.toHaveBeenCalled();
 });

@@ -4,8 +4,8 @@ import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { enforceRateLimit } from "./rate-limit.server";
 
 /**
- * Skip a mission — persists a `passed` submission with metadata.skipped=true
- * so the mastery gate and lesson-gate logic let the learner move on. Backed
+ * Skip a mission — persists an independent draft marker with metadata.skipped=true
+ * so lesson navigation can continue without awarding mastery or a grade. Backed
  * by the SQL function `skip_mission_for_user` (security definer, scoped to
  * `auth.uid()`).
  *
@@ -20,7 +20,7 @@ const Input = z.object({
 export const skipMissionServer = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .inputValidator((input) => Input.parse(input))
-  .handler(async ({ data, context }): Promise<{ id: string }> => {
+  .handler(async ({ data, context }): Promise<{ id: string; outcome: "skipped" | "already-passed" }> => {
     // Light per-user cap — skipping is cheap but should not be spammable.
     await enforceRateLimit({
       userId: context.userId,
@@ -37,7 +37,12 @@ export const skipMissionServer = createServerFn({ method: "POST" })
       console.error("[skipMissionServer] rpc failed", error);
       throw new Error("تعذّر تخطّي المهمة. حاول تاني.");
     }
-    const id = (row as { id?: string } | null)?.id;
-    if (!id) throw new Error("تعذّر تخطّي المهمة.");
-    return { id };
+    const result = row as { id?: string; user_id?: string; mission_id?: string; lesson_id?: string;
+      status?: string; submission_metadata?: { skipped?: unknown } } | null;
+    if (!result?.id || result.user_id !== context.userId || result.mission_id !== data.missionId || result.lesson_id !== data.lessonId) {
+      throw new Error("تعذّر تخطّي المهمة.");
+    }
+    const skipped = result.submission_metadata?.skipped === true;
+    if (!skipped && result.status !== "passed") throw new Error("تعذّر تخطّي المهمة.");
+    return { id: result.id, outcome: skipped ? "skipped" : "already-passed" };
   });

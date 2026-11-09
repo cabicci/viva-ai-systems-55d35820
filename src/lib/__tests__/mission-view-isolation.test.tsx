@@ -8,6 +8,7 @@ const mocks = vi.hoisted(() => ({
   locale: "en",
   active: vi.fn(),
   evaluated: vi.fn(),
+  skipped: vi.fn(),
   prepare: vi.fn(),
   submit: vi.fn(),
   evaluate: vi.fn(),
@@ -49,6 +50,7 @@ vi.mock("@/lib/locale/locale-context", () => ({
 vi.mock("@/lib/mission-evaluation", () => ({
   getActiveSubmissionForMission: mocks.active,
   getLatestEvaluatedSubmissionForMission: mocks.evaluated,
+  getSkippedSubmissionForMission: mocks.skipped,
   prepareSubmissionForAttempt: mocks.prepare,
   submitForEvaluation: mocks.submit,
 }));
@@ -127,11 +129,12 @@ beforeEach(() => {
   window.sessionStorage.clear();
   mocks.active.mockResolvedValue(null);
   mocks.evaluated.mockResolvedValue(null);
+  mocks.skipped.mockResolvedValue(null);
   mocks.log.mockResolvedValue(undefined);
   mocks.prepare.mockResolvedValue({ id: "new-submission" });
   mocks.submit.mockResolvedValue({ attempt_count: 1 });
   mocks.evaluate.mockResolvedValue(result);
-  mocks.skip.mockResolvedValue(undefined);
+  mocks.skip.mockResolvedValue({id:"marker",outcome:"skipped"});
 });
 afterEach(cleanup);
 
