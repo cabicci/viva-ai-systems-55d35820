@@ -11,14 +11,18 @@ const state = vi.hoisted(() => ({
   aiError: false,
   technicalError: false,
   user: "parent-a",
+  generation: { value: 1 },
   profiles: [] as { id: string; level_id: string; display_name: string }[],
   visits: [] as unknown[],
   rpc: vi.fn(),
   selectChild: vi.fn(),
 }));
+vi.mock("@/lib/course-system/intake/client", () => ({ curriculumCatalogue: async () => [] }));
 vi.mock("@/lib/kids/active-profile", () => ({ setActiveKidsProfile: state.selectChild }));
 vi.mock("@/lib/auth-context", () => ({
-  useAuth: () => ({ user: { id: state.user }, loading: false }),
+  useAuth: () => ({ user: { id: state.user }, loading: false,
+    authGeneration: state.generation,
+    isAuthGenerationCurrent: (generation: unknown) => generation === state.generation }),
 }));
 vi.mock("@/lib/locale/locale-context", () => ({
   useLocale: () => ({ locale: state.locale, dir: state.locale === "en" ? "ltr" : "rtl" }),
@@ -91,6 +95,7 @@ function setup() {
   return { ...view, client };
 }
 beforeEach(() => {
+  state.generation = { value: 1 };
   state.locale = "en";
   state.tier = "pro_plus";
   state.admin = false;
