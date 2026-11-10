@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { AssistantScope } from "@/lib/card-assistant/types";
 import { getAssistantQuestionBalance } from "@/lib/billing/question-balance.functions";
-import type { QuestionBalance } from "../../../supabase/functions/assistant-runtime/question-metering";
+import type { QuestionBalance } from "../../../supabase/functions/_shared/assistant-question-contract";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 const COPY = {

@@ -1,7 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
-import { questionBalance } from "../../../supabase/functions/assistant-runtime/question-metering";
+import { questionBalance } from "../../../supabase/functions/_shared/assistant-question-contract";
 
 export const getAssistantQuestionBalance = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])

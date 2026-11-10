@@ -11,10 +11,12 @@ const mock = vi.hoisted(() => ({
 vi.mock("@/integrations/supabase/client.server", () => ({ supabaseAdmin: { rpc: mock.rpc } }));
 vi.mock("../index.server", () => ({ courseEmbeddings: mock.embed }));
 vi.mock("@/lib/ai-providers.server", () => ({ callAI: mock.llm }));
-vi.mock("../../../../../supabase/functions/assistant-runtime/question-metering", () => ({
+vi.mock("../../../../../supabase/functions/_shared/assistant-question-contract", () => ({
   questionRpcFailure: () => {
     throw new Error("UNEXPECTED_BILLING_RPC");
   },
+}));
+vi.mock("../../../../../supabase/functions/assistant-runtime/question-metering", () => ({
   runMeteredQuestion: (
     _identity: unknown,
     _rpc: unknown,
