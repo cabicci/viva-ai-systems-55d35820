@@ -1,6 +1,6 @@
 import { createClient } from "npm:@supabase/supabase-js@2.105.4";
 import { sendTransactionalEmail } from "../_shared/resend.ts";
-import { runContactMailJob } from "../_shared/contact-mail-worker.ts";
+import { runContactAutomationJob } from "../_shared/contact-automation-worker.ts";
 import { contactMailEnabled } from "../_shared/contact-mail-enabled.ts";
 import { createAccountLifecycleWorker } from "../_shared/account-lifecycle-worker.ts";
 import { runMailStreams } from "./streams.ts";
@@ -10,13 +10,20 @@ import { runCommercePaymentMailJob } from "../_shared/commerce-payment-mail-work
 import { runAcademicMailJob } from "../_shared/academic-mail-worker.ts";
 import { runTechnicalMailJob } from "../_shared/technical-mail-worker.ts";
 import { runEmailAccessMailJob } from "../_shared/email-access-mail-worker.ts";
+import {
+  readContactAdministrationCommand,
+  verifyContactAdministrator,
+  runContactAdministrationCommand,
+} from "../_shared/contact-automation-admin-worker.ts";
 Deno.serve(async (request) => {
   if (request.method !== "POST") return new Response(null, { status: 405 });
   if (!(await authorizedWelcomeJob(request, Deno.env.get("ACCOUNT_WELCOME_JOB_SECRET"))))
     return new Response(null, { status: 401 });
   let immediate;
+  let contactAdministration;
   try {
-    immediate = await readImmediateMailTarget(request);
+    contactAdministration = await readContactAdministrationCommand(request.clone());
+    immediate = contactAdministration ? null : await readImmediateMailTarget(request);
   } catch {
     return new Response(null, { status: 400 });
   }
@@ -30,7 +37,8 @@ Deno.serve(async (request) => {
     !subscriptionEnabled &&
     !contactEnabled &&
     !deletionEnabled &&
-    !financialEnabled
+    !financialEnabled &&
+    !contactAdministration
   )
     return Response.json({ enabled: false });
   const apiKey = Deno.env.get("RESEND_API_KEY");
@@ -40,6 +48,17 @@ Deno.serve(async (request) => {
   if (!url || !key) return new Response(null, { status: 503 });
   try {
     const db = createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } });
+    if (contactAdministration) {
+      if (!(await verifyContactAdministrator(request, contactAdministration, db.auth)))
+        return new Response(null, { status: 401 });
+      return Response.json({
+        contactAdministration: await runContactAdministrationCommand(
+          db,
+          contactAdministration,
+          Deno.env.get("CONTACT_AUTOMATION_OWNER_EMAIL"),
+        ),
+      });
+    }
     const loadAcademicTitles = async (ids: string[], locale: string) => {
       const response = await db
         .from("academic_courses")
@@ -84,10 +103,11 @@ Deno.serve(async (request) => {
               ? await runCommercePaymentMailJob(db, send, immediate.id)
               : immediate.stream === "commerce_receipt"
                 ? await runCommercePaymentMailJob(db, send, undefined, immediate.id)
-                : await runContactMailJob(
+                : await runContactAutomationJob(
                     db,
                     (message, sender) =>
                       sendTransactionalEmail({ apiKey, ...sender, enabled: true }, message),
+                    Deno.env.get("CONTACT_AUTOMATION_OWNER_EMAIL"),
                     immediate.id,
                   );
       return Response.json({ [immediate.stream]: stats });
@@ -119,8 +139,11 @@ Deno.serve(async (request) => {
       contact: contactEnabled
         ? () => {
             if (!apiKey) throw new Error("mail_sender_unconfigured");
-            return runContactMailJob(db, (message, sender) =>
-              sendTransactionalEmail({ apiKey, ...sender, enabled: true }, message),
+            return runContactAutomationJob(
+              db,
+              (message, sender) =>
+                sendTransactionalEmail({ apiKey, ...sender, enabled: true }, message),
+              Deno.env.get("CONTACT_AUTOMATION_OWNER_EMAIL"),
             );
           }
         : null,

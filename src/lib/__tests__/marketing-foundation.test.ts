@@ -269,6 +269,8 @@ describe("route classification and crawler files", () => {
     expect(isDisallowed("/technical/learn/M01-L01", rules)).toBe(true);
     expect(isDisallowed("/courses/technical/reviewed-course", rules)).toBe(true);
     expect(isDisallowed("/admin/curricula", rules)).toBe(true);
+    expect(isDisallowed("/admin/communications", rules)).toBe(true);
+    expect(isDisallowed("/verify-phone", rules)).toBe(true);
     expect(
       ROUTE_CATALOG.find((route) => route.source === "courses.$area.$courseId.tsx")?.visibility,
     ).toBe("private");

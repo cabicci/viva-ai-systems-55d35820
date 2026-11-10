@@ -20,6 +20,7 @@ const accountLinks: { to: string; key: UiStringKey }[] = [
 const adminLinks: { to: string; key: UiStringKey }[] = [
   { to: "/admin", key: "sidebar.admin" },
   { to: "/admin/commerce", key: "sidebar.commerce" },
+  { to: "/admin/communications", key: "sidebar.communications" },
   { to: "/image-gallery", key: "sidebar.imageGallery" },
   { to: "/roadmap", key: "sidebar.roadmap" },
   { to: "/assistant-runtime", key: "sidebar.assistantRuntime" },

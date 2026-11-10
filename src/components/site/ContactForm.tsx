@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState, type FormEvent, type ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { getCountries, type CountryCode } from "libphonenumber-js";
@@ -14,13 +14,56 @@ import {
   normalizePhoneNumber,
   resolvePhoneCountry,
 } from "@/lib/contact-form";
-import { submitContactForm, type ContactSubmitResult } from "@/lib/contact-form.functions";
+import {
+  submitContactForm,
+  getContactSubmissionState,
+  type ContactSubmitResult,
+} from "@/lib/contact-form.functions";
 import { contactMailLabels } from "@/lib/contact-form";
 import { trackAcceptedContactOnce } from "@/lib/analytics";
 import { useLocale } from "@/lib/locale/locale-context";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 import type { UiStringKey } from "@/lib/locale/ui-strings";
+import type { ContactFormInput } from "@/lib/contact-form";
+import {
+  contactAttemptFingerprint,
+  contactAttemptIdentity,
+  readContactAttempt,
+  type ContactAttempt,
+} from "@/lib/contact-automation-attempt";
+
+const pendingCopy = {
+  "ar-EG": "لسه مش قادرين نأكد نتيجة الإرسال. احتفظ برقم المتابعة لنفس الطلب:",
+  "ar-MSA": "لم نتمكن من تأكيد نتيجة الإرسال. احتفظ بمرجع متابعة الطلب:",
+  "ar-Gulf": "ما قدرنا نأكد نتيجة الإرسال. احتفظ برقم متابعة الطلب:",
+  en: "We cannot yet confirm the submission outcome. Keep this reference for your request:",
+} as const;
+const withdrawnCopy = {
+  "ar-EG": "اتسحبت الموافقة على متابعة الطلب ده.",
+  "ar-MSA": "سُحبت الموافقة على متابعة هذا الطلب.",
+  "ar-Gulf": "انسحبت الموافقة على متابعة هالطلب.",
+  en: "Consent to process this request was withdrawn.",
+} as const;
+const lifecycleCopy = {
+  "ar-EG": {
+    closed: "الطلب اتقفل للمراجعة اليدوية؛ ده مش تأكيد إنه اتقبل في نظام المتابعة.",
+    fresh: "ابدأ طلب جديد",
+  },
+  "ar-MSA": {
+    closed: "أُغلق الطلب للمراجعة اليدوية؛ لا يعني ذلك تأكيد قبوله في نظام المتابعة.",
+    fresh: "ابدأ طلبًا جديدًا",
+  },
+  "ar-Gulf": {
+    closed: "الطلب تسكّر للمراجعة اليدوية؛ هذا مو تأكيد قبوله في نظام المتابعة.",
+    fresh: "ابدأ طلب جديد",
+  },
+  en: {
+    closed:
+      "This request was closed for manual handling. This does not confirm acceptance in the enquiry system.",
+    fresh: "Start a new request",
+  },
+} as const;
 
 function countryFlag(countryCode: CountryCode): string {
   return countryCode
@@ -45,6 +88,7 @@ export function ContactForm() {
   const { locale, lang, countryCode } = useLocale();
   const localeSearch = useLocaleLinkSearch();
   const submit = useServerFn(submitContactForm);
+  const recover = useServerFn(getContactSubmissionState);
   const [selectedCountry, setSelectedCountry] = useState<CountryCode>(() =>
     resolvePhoneCountry(countryCode, locale),
   );
@@ -56,6 +100,72 @@ export function ContactForm() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const leadKey = useRef({});
+  const attempt = useRef<ContactAttempt | null>(null);
+  const [pendingReview, setPendingReview] = useState(false);
+  const [closedReview, setClosedReview] = useState(false);
+  const persistAttempt = () => {
+    try {
+      if (attempt.current)
+        sessionStorage.setItem("masaarat.contact.attempt", JSON.stringify(attempt.current));
+      else sessionStorage.removeItem("masaarat.contact.attempt");
+    } catch {
+      /* Optional browser persistence. */
+    }
+  };
+  useEffect(() => {
+    try {
+      attempt.current = readContactAttempt(
+        JSON.parse(sessionStorage.getItem("masaarat.contact.attempt") ?? "null"),
+      );
+    } catch {
+      /* Unavailable storage. */
+    }
+    if (attempt.current?.status === "accepted") setSubmitted(true);
+    else if (attempt.current?.status === "closed_manual" || attempt.current?.status === "withdrawn")
+      setClosedReview(true);
+    else if (attempt.current) {
+      setPendingReview(true);
+      void refreshSubmissionState();
+    }
+  }, []);
+  async function refreshSubmissionState() {
+    const current = attempt.current;
+    if (!current?.recoveryToken) return;
+    try {
+      const result = await recover({
+        data: { attemptId: current.id, recoveryToken: current.recoveryToken },
+      });
+      if (attempt.current?.id !== current.id) return;
+      if (result.state === "accepted") {
+        current.status = "accepted";
+        current.conversionTracked = true;
+        setSubmitted(true);
+        setPendingReview(false);
+      } else if (result.state === "closed_manual" || result.state === "withdrawn") {
+        current.status = result.state;
+        setClosedReview(true);
+        setPendingReview(false);
+      }
+      // Unknown cannot authorize a replacement request: the first request
+      // could still be travelling to the server. Keep its identity for retry.
+      persistAttempt();
+    } catch {
+      setErrorKey("contact.error.service");
+    }
+  }
+  const startNewRequest = () => {
+    if (attempt.current?.status === "pending") return;
+    attempt.current = null;
+    persistAttempt();
+    leadKey.current = {};
+    formRef.current?.reset();
+    setSubmitted(false);
+    setClosedReview(false);
+    setPendingReview(false);
+    setErrorKey(null);
+    setTurnstileToken("");
+    setTurnstileResetKey((value) => value + 1);
+  };
 
   const countryLanguage = contactCountryLanguage(locale);
   const countries = useMemo(() => {
@@ -104,37 +214,85 @@ export function ContactForm() {
 
     setSubmitting(true);
     try {
+      const payload: ContactFormInput = {
+        requestType: data.get("requestType") === "sales" ? "sales" : "support",
+        firstName,
+        lastName,
+        email,
+        phone: phone ?? "",
+        countryCode: selectedCountry,
+        company,
+        message,
+        locale,
+        consentToProcess: true,
+        turnstileToken,
+        pageUri: window.location.href,
+      };
+      const fingerprint = await contactAttemptFingerprint(payload);
+      let previous = attempt.current;
+      try {
+        previous ??= readContactAttempt(
+          JSON.parse(sessionStorage.getItem("masaarat.contact.attempt") ?? "null"),
+        );
+      } catch {
+        /* In-memory identity still survives retries when storage is disabled. */
+      }
+      const hadPendingAttempt = previous?.status === "pending";
+      attempt.current = contactAttemptIdentity(fingerprint, previous);
+      persistAttempt();
+      if (attempt.current.status === "accepted") {
+        setSubmitted(true);
+        return;
+      }
+      if (attempt.current.status === "closed_manual" || attempt.current.status === "withdrawn") {
+        setClosedReview(true);
+        return;
+      }
+      if (attempt.current.fingerprint !== fingerprint) {
+        setPendingReview(true);
+        return;
+      }
       const result = await submit({
         data: {
-          requestType: data.get("requestType") === "sales" ? "sales" : "support",
-          firstName,
-          lastName,
-          email,
-          phone,
-          countryCode: selectedCountry,
-          company,
-          message,
-          locale,
-          consentToProcess: true,
-          turnstileToken,
-          pageUri: window.location.href,
+          ...payload,
+          attemptId: attempt.current.id,
+          recoveryToken: attempt.current.recoveryToken,
         },
       });
       if (!result.success) {
-        if (result.error === "invalid_phone") {
+        if (result.error === "pending_review") {
+          setPendingReview(true);
+        } else if (result.error === "closed_manual" || result.error === "withdrawn") {
+          attempt.current.status = result.error;
+          persistAttempt();
+          setPendingReview(false);
+          setClosedReview(true);
+        } else if (result.error === "invalid_phone") {
           setFieldErrors({ phone: "contact.error.phone" });
           formRef.current?.querySelector<HTMLElement>('[name="phone"]')?.focus();
         } else {
           setErrorKey(resultErrorKey(result));
+        }
+        if (
+          !hadPendingAttempt &&
+          ["invalid_phone", "captcha", "rate_limit"].includes(result.error)
+        ) {
+          attempt.current = null;
+          persistAttempt();
         }
         setTurnstileToken("");
         setTurnstileResetKey((value) => value + 1);
         return;
       }
       setSubmitted(true);
-      trackAcceptedContactOnce(result, leadKey.current);
+      const shouldTrack = !result.replayed && !attempt.current.conversionTracked;
+      attempt.current.status = "accepted";
+      attempt.current.conversionTracked = true;
+      persistAttempt();
+      if (shouldTrack) trackAcceptedContactOnce(result, leadKey.current);
     } catch (error) {
-      console.error("Contact form submission failed:", error);
+      console.error("Contact form submission failed");
+      setPendingReview(attempt.current?.status === "pending");
       setErrorKey("contact.error.service");
       setTurnstileToken("");
       setTurnstileResetKey((value) => value + 1);
@@ -163,6 +321,9 @@ export function ContactForm() {
         </span>
         <h2 className="text-2xl font-black md:text-3xl">{t("contact.success.title")}</h2>
         <p className="mt-3 max-w-md leading-7 text-muted-foreground">{t("contact.success.body")}</p>
+        <Button type="button" className="mt-4" onClick={startNewRequest}>
+          {lifecycleCopy[locale].fresh}
+        </Button>
       </div>
     );
   }
@@ -174,7 +335,14 @@ export function ContactForm() {
       ref={formRef}
       onChange={(event) => {
         const target = event.target;
-        if (!(target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement || target instanceof HTMLSelectElement)) return;
+        if (
+          !(
+            target instanceof HTMLInputElement ||
+            target instanceof HTMLTextAreaElement ||
+            target instanceof HTMLSelectElement
+          )
+        )
+          return;
         const field = target.name as ContactField;
         if (fieldErrors[field]) setFieldErrors((previous) => ({ ...previous, [field]: undefined }));
       }}
@@ -263,7 +431,9 @@ export function ContactForm() {
           >
             {countries.map((country) => (
               <option key={country.code} value={country.code}>
-                {countryFlag(country.code)} {country.name} ({country.callingCode})
+                {countryFlag(country.code)} {country.name} ({"\u2066"}
+                {country.callingCode}
+                {"\u2069"})
               </option>
             ))}
           </select>
@@ -341,6 +511,28 @@ export function ContactForm() {
         <p id="contact-consent-error" className="text-sm text-destructive">
           {t(fieldErrors.consentToProcess)}
         </p>
+      )}
+      {pendingReview && (
+        <p role="status" className="mt-4 rounded-xl border p-4 text-sm">
+          {pendingCopy[locale]} <span dir="ltr">{attempt.current?.id}</span>
+          {attempt.current?.recoveryToken && (
+            <Button type="button" onClick={refreshSubmissionState}>
+              {locale === "en" ? "Check request status" : "تحقق من حالة الطلب"}
+            </Button>
+          )}
+        </p>
+      )}
+      {closedReview && (
+        <div role="status" className="mt-4 space-y-3 rounded-xl border p-4 text-sm">
+          <p>
+            {attempt.current?.status === "withdrawn"
+              ? withdrawnCopy[locale]
+              : lifecycleCopy[locale].closed}
+          </p>
+          <Button type="button" onClick={startNewRequest}>
+            {lifecycleCopy[locale].fresh}
+          </Button>
+        </div>
       )}
 
       <div className="mt-6 overflow-hidden rounded-xl">

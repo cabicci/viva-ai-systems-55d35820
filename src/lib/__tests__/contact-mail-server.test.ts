@@ -1,6 +1,10 @@
 // @vitest-environment node
 import { beforeEach, afterEach, describe, expect, it, vi } from "vitest";
-import { queueContactAcknowledgement } from "../contact-mail.server";
+import {
+  queueContactAcknowledgement,
+  reserveContactSubmission,
+  completeContactSubmission,
+} from "../contact-mail.server";
 import { contactFormInputSchema } from "../contact-form";
 const { rpc, dispatch } = vi.hoisted(() => ({ rpc: vi.fn(), dispatch: vi.fn() }));
 vi.mock("@/integrations/supabase/client.server", () => ({ supabaseAdmin: { rpc } }));
@@ -31,17 +35,64 @@ beforeEach(() => {
 });
 afterEach(() => vi.unstubAllEnvs());
 describe("server acknowledgement", () => {
+  it("persists a payload-bound pending intake even when delivery is disabled, without dispatching", async () => {
+    vi.stubEnv("CONTACT_MAIL_DIRECT_ENABLED", "false");
+    rpc.mockImplementation(async (name) => ({
+      error: null,
+      data:
+        name === "auth_signup_email_profile"
+          ? []
+          : name === "reserve_contact_intake"
+            ? { state: "dispatch", claim: id }
+            : true,
+    }));
+    expect(await reserveContactSubmission({ ...input, attemptId: id })).toEqual({
+      state: "dispatch",
+      claim: id,
+    });
+    expect(rpc).toHaveBeenCalledWith(
+      "reserve_contact_intake",
+      expect.objectContaining({
+        p_id: id,
+        p_recipient: input.email,
+        p_payload_hash: expect.stringMatching(/^[0-9a-f]{64}$/),
+      }),
+    );
+    expect(dispatch).not.toHaveBeenCalled();
+    await completeContactSubmission(id, id, true);
+    expect(rpc).toHaveBeenLastCalledWith("complete_contact_intake", {
+      p_id: id,
+      p_claim: id,
+      p_accepted: true,
+    });
+  });
+  it("cannot queue a withdrawn processing consent or a missing receipt", async () => {
+    await expect(
+      queueContactAcknowledgement({ ...input, consentToProcess: false as never }, id),
+    ).rejects.toThrow("contact_automation_intake_invalid");
+    await expect(queueContactAcknowledgement(input, "")).rejects.toThrow(
+      "contact_automation_intake_invalid",
+    );
+    expect(rpc).not.toHaveBeenCalled();
+    expect(dispatch).not.toHaveBeenCalled();
+  });
   it("persists frozen content before dispatching only the submitted message", async () => {
     await queueContactAcknowledgement(input, id);
     expect(rpc.mock.calls.map((c) => c[0])).toEqual([
       "auth_signup_email_profile",
-      "queue_contact_acknowledgement",
+      "queue_contact_automation",
     ]);
     expect(dispatch).toHaveBeenCalledExactlyOnceWith({ stream: "contact", id });
     expect(rpc.mock.invocationCallOrder[1]).toBeLessThan(dispatch.mock.invocationCallOrder[0]);
     expect(rpc).toHaveBeenCalledWith(
-      "queue_contact_acknowledgement",
-      expect.objectContaining({ p_id: id, p_recipient: input.email, p_locale: "en" }),
+      "queue_contact_automation",
+      expect.objectContaining({
+        p_id: id,
+        p_recipient: input.email,
+        p_locale: "en",
+        p_processing_consent: true,
+        p_owner_text: expect.stringContaining(input.message),
+      }),
     );
   });
   it.each(["false", ""])("does nothing when the direct switch is %s", async (flag) => {
@@ -62,7 +113,7 @@ describe("server acknowledgement", () => {
       "mail_dispatch_unavailable",
     );
     expect(rpc).toHaveBeenCalledWith(
-      "queue_contact_acknowledgement",
+      "queue_contact_automation",
       expect.objectContaining({ p_id: id }),
     );
     expect(rpc).toHaveBeenCalledTimes(2);
@@ -77,14 +128,14 @@ describe("server acknowledgement", () => {
     }));
     await queueContactAcknowledgement(input, id);
     expect(rpc).toHaveBeenCalledWith(
-      "queue_contact_acknowledgement",
+      "queue_contact_automation",
       expect.objectContaining({ p_locale: "ar-EG", p_html: expect.stringContaining("Saved Name") }),
     );
   });
   it("does not dispatch when persistence fails", async () => {
     rpc.mockImplementation(async (name) => ({
       data: [],
-      error: name === "queue_contact_acknowledgement" ? "failed" : null,
+      error: name === "queue_contact_automation" ? "failed" : null,
     }));
     await expect(queueContactAcknowledgement(input, id)).rejects.toThrow(
       "contact_mail_queue_failed",
