@@ -226,7 +226,7 @@ async function main(): Promise<void> {
   });
 
   try {
-    writeCellAttemptMeta({
+    if (!(result.receipt.failureCode === "PROVIDER_COST_UNAVAILABLE" && !result.providerAttempted)) writeCellAttemptMeta({
       artifactsRoot,
       cellId,
       providerAttempted: result.providerAttempted,
@@ -267,7 +267,7 @@ async function main(): Promise<void> {
       status: result.receipt.status,
       cellId: result.receipt.cellId,
       mapping: Boolean(result.mapping),
-      costMicros: result.costMicros.toString(),
+      costMicros: result.costMicros?.toString() ?? null,
       providerAttempted: result.providerAttempted,
       attemptSlotKey: result.attemptSlotKey,
       transportKind: selected.kind,

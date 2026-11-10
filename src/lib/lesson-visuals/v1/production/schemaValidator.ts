@@ -241,7 +241,13 @@ export function validateRunSummarySchema(obj: unknown): { ok: boolean; errors: s
       errors.push(`${k} must be number`);
     }
   }
-  reqStr(s.totalCostMicros, "totalCostMicros", errors);
+  if (s.totalCostMicros !== null &&
+      (typeof s.totalCostMicros !== "string" || !/^\d+$/.test(s.totalCostMicros))) {
+    errors.push("totalCostMicros must be integer micros or null for an unresolved charge");
+  }
+  if (s.totalCostMicros === null && (s.finalRunStatus === "SUCCESS" || !s.errors?.length)) {
+    errors.push("unresolved charge cannot be a successful or unexplained run");
+  }
   reqSha64(s.artifactIndexSha256, "artifactIndexSha256", errors);
   if (!["SUCCESS", "FAILED", "PARTIAL"].includes(s.finalRunStatus as string)) {
     errors.push("finalRunStatus invalid");

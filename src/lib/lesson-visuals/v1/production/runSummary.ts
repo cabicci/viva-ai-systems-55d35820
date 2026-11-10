@@ -1,3 +1,4 @@
+import { hasKnownCharge } from "./knownCharge";
 import { createHash } from "node:crypto";
 import { assertAggregateCost } from "./budget";
 import type { UsdMicros } from "./money";
@@ -39,6 +40,11 @@ export function buildRunSummary(args: {
   const attempted = receipts.length - skipped;
 
   const errors: string[] = [];
+  const unresolvedCosts = receipts.filter((r) =>
+    r.failureCode === "PROVIDER_COST_UNAVAILABLE" ||
+    (r.status !== "SKIPPED" && r.providerRequestId !== null &&
+      !hasKnownCharge(r.costMicros, r.method, r.providerName)));
+  if (unresolvedCosts.length) errors.push(`provider charge unresolved for ${unresolvedCosts.map((r) => r.cellId).join(", ")}; recorded total is unknown`);
   const agg = assertAggregateCost(args.totalCostMicros, args.runCostCeilingMicros);
   if (agg) errors.push(agg);
   if (args.providerAttemptsUsed > args.providerAttemptQuota) {
@@ -110,7 +116,7 @@ export function buildRunSummary(args: {
     failed,
     retryable,
     nonRetryable,
-    totalCostMicros: args.totalCostMicros.toString(),
+    totalCostMicros: unresolvedCosts.length ? null : args.totalCostMicros.toString(),
     quotaUsage: args.providerAttemptsUsed,
     quotaCeiling: args.providerAttemptQuota,
     providerAttemptQuota: args.providerAttemptQuota,

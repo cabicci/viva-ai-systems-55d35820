@@ -39,7 +39,8 @@ export interface ProviderAdapterResult {
   independentChecksum: string | null;
 }
 
-function parseCost(raw: string): UsdMicros {
+function parseCost(raw: string | null): UsdMicros {
+  if (raw === null) throw new Error("provider cost unavailable; reconciliation required");
   if (!/^\d+$/.test(raw)) throw new Error("providerReportedCostMicros malformed");
   return BigInt(raw);
 }

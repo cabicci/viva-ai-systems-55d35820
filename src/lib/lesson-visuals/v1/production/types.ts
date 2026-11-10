@@ -80,7 +80,8 @@ export interface ProviderGenerationResponse {
   width: number;
   height: number;
   byteLength: number;
-  providerReportedCostMicros: string;
+  /** Null means the provider did not report an authoritative monetary charge. */
+  providerReportedCostMicros: string | null;
   generationTimestamp: string;
   providerMetadata: Record<string, string>;
   rightsProvenance: RightsProvenanceRecord;
@@ -213,7 +214,8 @@ export interface ProductionRunSummary {
   failed: number;
   retryable: number;
   nonRetryable: number;
-  totalCostMicros: string;
+  /** Null when a provider response has an unresolved charge; never a zero estimate. */
+  totalCostMicros: string | null;
   quotaUsage: number;
   quotaCeiling: number;
   providerAttemptQuota: number;

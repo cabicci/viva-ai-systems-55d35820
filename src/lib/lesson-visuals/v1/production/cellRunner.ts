@@ -1,4 +1,5 @@
-import { existsSync, mkdirSync, writeFileSync } from "node:fs";
+import { hasKnownCharge } from "./knownCharge";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { FIXTURE_RECEIPT_MARKER } from "../constants";
 import type { Locale, Method } from "../types";
@@ -69,7 +70,7 @@ export interface RunCellArgs {
 export interface RunCellResult {
   receipt: ProductionCellReceipt;
   mapping: ProductionMapping | null;
-  costMicros: bigint;
+  costMicros: bigint | null;
   providerAttempted: boolean;
   attemptSlotKey: string | null;
   attemptSlotIndex: number | null;
@@ -99,7 +100,32 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
   const fixtureMarker =
     args.config.executionMode === "dry-run" ? FIXTURE_RECEIPT_MARKER : null;
 
+  // A received image with an unresolved charge must not trigger another paid attempt.
+  // Keep the exact evidence immutable until an explicit billing reconciliation exists.
+  const existingReceiptPath = cellReceiptPath(args.artifactsRoot, cellId);
+  if (existsSync(existingReceiptPath)) {
+    const previous = JSON.parse(readFileSync(existingReceiptPath, "utf8")) as ProductionCellReceipt;
+    if (previous.failureCode === "PROVIDER_COST_UNAVAILABLE") {
+      const valid = validateReceiptSchema(previous);
+      if (!valid.ok || previous.runId !== args.runId || previous.cellId !== cellId ||
+          previous.contentSha !== args.contentSha || previous.executionSha !== args.executionSha ||
+          previous.approvedManifestSha256 !== args.approvedManifestSha256 ||
+          previous.idempotencyKey !== idempotencyKey || previous.method !== args.method ||
+          previous.controlRoomAuthorizationId !== args.controlRoomAuthorizationId ||
+          previous.lessonId !== args.lessonId || previous.locale !== args.locale) {
+        throw new Error("unreconciled provider charge evidence has a different identity; refusing overwrite");
+      }
+      return { receipt: previous, mapping: null, costMicros: null, providerAttempted: false,
+        attemptSlotKey: null, attemptSlotIndex: null };
+    }
+  }
+
+
   if (args.priorAcceptedReceipt?.status === "ACCEPTED") {
+    if (!hasKnownCharge(args.priorAcceptedReceipt.costMicros,
+        args.priorAcceptedReceipt.method, args.priorAcceptedReceipt.providerName)) {
+      throw new Error("Prior accepted receipt has an unresolved charge; refusing skipped reuse");
+    }
     const expectedFp = fingerprintProductionReceipt({
       runId: args.priorAcceptedReceipt.runId,
       cellId,
@@ -458,12 +484,17 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
     configForCall = { ...configForCall, providerApiKeyPresent: true };
   }
 
-  if (countsExternal) {
-    args.onProviderAttempt?.();
-  }
+  let providerInvoked = false;
   const result = await executeProviderContract(request, {
     config: configForCall,
-    transport: args.transport,
+    transport: {
+      generate: async (request) => {
+        providerInvoked = true;
+        if (countsExternal) args.onProviderAttempt?.();
+        return args.transport.generate(request);
+      },
+      resolveSecureBytes: args.transport.resolveSecureBytes?.bind(args.transport),
+    },
     expectedProviderName,
     remainingRunBudgetMicros: args.remainingRunBudgetMicros,
     seenProviderRequestIds: args.seenProviderRequestIds,
@@ -476,7 +507,7 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
         schemaVersion: "lesson-visual-attempt-claim/v1",
         ...slot.slot,
         claimedAt: now,
-        providerInvoked: true,
+        providerInvoked,
       },
       null,
       2,
@@ -490,8 +521,12 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
   mkdirSync(join(args.artifactsRoot, "validations"), { recursive: true });
 
   if (!result.ok || !result.response || !result.bytes || !result.validation || !result.independentChecksum) {
+    const unresolvedCharge = countsExternal && result.response !== null && result.costMicros === null;
+    const unreconciledPath = unresolvedCharge && result.bytes
+      ? join(cellDir, "unreconciled-output.png") : null;
+    if (unreconciledPath && result.bytes) writeFileSync(unreconciledPath, result.bytes, { flag: "wx" });
     const receipt = buildReceipt({
-      status: "RETRYABLE_FAILURE",
+      status: unresolvedCharge ? "NON_RETRYABLE_FAILURE" : "RETRYABLE_FAILURE",
       runId: args.runId,
       controlRoomAuthorizationId: args.controlRoomAuthorizationId,
       contentSha: args.contentSha,
@@ -509,7 +544,7 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
       providerAuthId: result.response?.providerAuthId ?? null,
       idempotencyKey,
       attemptNumber: args.attemptNumber,
-      outputPathOrStorageKey: null,
+      outputPathOrStorageKey: unreconciledPath,
       mimeType: null,
       width: null,
       height: null,
@@ -518,8 +553,8 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
       costMicros: result.costMicros?.toString() ?? null,
       rightsProvenanceRef: null,
       validationRef: null,
-      failureCode: "PROVIDER_OR_VALIDATION_FAILED",
-      retryable: true,
+      failureCode: unresolvedCharge ? "PROVIDER_COST_UNAVAILABLE" : "PROVIDER_OR_VALIDATION_FAILED",
+      retryable: !unresolvedCharge,
       error: result.errors.join("; "),
       producedAt: now,
       completedAt: new Date().toISOString(),
@@ -529,7 +564,7 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
       args,
       receipt,
       result.errors,
-      countsExternal,
+      countsExternal && providerInvoked,
       slot.slot.slotKey,
       slot.slot.slotIndex,
     );
@@ -577,7 +612,7 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
       args,
       receipt,
       gfStorage.errors,
-      countsExternal,
+      countsExternal && providerInvoked,
       slot.slot.slotKey,
       slot.slot.slotIndex,
     );
@@ -636,7 +671,7 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
       args,
       receipt,
       rightsSchema.errors,
-      countsExternal,
+      countsExternal && providerInvoked,
       slot.slot.slotKey,
       slot.slot.slotIndex,
     );
@@ -762,7 +797,7 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
     receipt,
     mapping,
     costMicros: result.costMicros ?? 0n,
-    providerAttempted: countsExternal,
+    providerAttempted: countsExternal && providerInvoked,
     attemptSlotKey: slot.slot.slotKey,
     attemptSlotIndex: slot.slot.slotIndex,
   };
@@ -795,7 +830,9 @@ function writeFailure(
   return {
     receipt,
     mapping: null,
-    costMicros: 0n,
+    // A known failed response still costs money; an unresolved external charge stays null.
+    costMicros: receipt.costMicros !== null && /^\d+$/.test(receipt.costMicros)
+      ? BigInt(receipt.costMicros) : providerAttempted ? null : 0n,
     providerAttempted,
     attemptSlotKey,
     attemptSlotIndex,

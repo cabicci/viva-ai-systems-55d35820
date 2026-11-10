@@ -1,3 +1,4 @@
+import { hasKnownCharge } from "./knownCharge";
 /**
  * Intentional prior-receipt bundle loader for failed-only mode.
  * Does not scan arbitrary paths — only an explicitly authorized directory.
@@ -123,6 +124,10 @@ export function loadPriorAcceptedReceipts(input: PriorReceiptLoadInput): PriorRe
     }
     seenCells.add(receipt.cellId);
 
+    if (!hasKnownCharge(receipt.costMicros, receipt.method, receipt.providerName)) {
+      errors.push(`receipt ${receipt.cellId} has no authoritative OpenAI charge; reconciliation required`);
+      continue;
+    }
     if (receipt.status !== "ACCEPTED") {
       errors.push(`receipt ${receipt.cellId} status ${receipt.status} not ACCEPTED`);
       continue;

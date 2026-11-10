@@ -224,7 +224,8 @@ describe("Method 2 OpenAI Images contract (offline)", () => {
     const response = await transport.generate(baseRequest({ method: 2, lessonId: master.lessonId }));
     expect(httpCalls).toBe(1);
     expect(response.providerRequestId).toBe("req_openai_test_1");
-    expect(response.providerReportedCostMicros).toBe("0");
+    expect(response.providerReportedCostMicros).toBeNull();
+    expect(response.providerMetadata.costStatus).toBe("unknown");
     expect(response.providerMetadata.costSource).toBe("openai-images-api-no-cost-field");
     expect(response.width).toBe(DEFAULT_REQUIRED_WIDTH);
     expect(response.height).toBe(DEFAULT_REQUIRED_HEIGHT);

@@ -137,7 +137,8 @@ export function mapOpenAIImagesResponseToInternal(args: {
   if (first!.revised_prompt) {
     metadata.revisedPromptPresent = "true";
   }
-  // OpenAI Images generations JSON does not include a cost field — report 0, not an estimate.
+  // Token usage is not an authoritative monetary charge. Do not invent zero or a tariff.
+  metadata.costStatus = "unknown";
   metadata.costSource = "openai-images-api-no-cost-field";
 
   const rights = buildGreenfieldRights({
@@ -172,7 +173,7 @@ export function mapOpenAIImagesResponseToInternal(args: {
     width: args.requiredWidth,
     height: args.requiredHeight,
     byteLength: bytes.length,
-    providerReportedCostMicros: "0",
+    providerReportedCostMicros: null,
     generationTimestamp: args.generatedAt,
     providerMetadata: metadata,
     rightsProvenance: rights,
