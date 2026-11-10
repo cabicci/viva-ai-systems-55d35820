@@ -1,7 +1,7 @@
 """Build a review-only private import bundle. This script never connects to a service."""
 import argparse, hashlib, json
 from pathlib import Path
-from expand_lessons import validate, LOCALES
+from validate_package import validate, LOCALES
 from media_registry import checked_media, load_registry
 ROOT=Path(__file__).resolve().parents[2]
 

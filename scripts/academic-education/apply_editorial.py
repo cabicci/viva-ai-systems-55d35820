@@ -23,6 +23,6 @@ def apply(root, patches):
 if __name__ == '__main__':
     p = argparse.ArgumentParser()
     p.add_argument('input', type=Path)
-    p.add_argument('--patches', type=Path, default=Path(__file__).with_name('editorial-corrections.json'))
+    p.add_argument('--patches', type=Path, required=True)
     a = p.parse_args()
     print({'applied': apply(a.input, json.loads(a.patches.read_text()))})
