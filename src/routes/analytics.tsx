@@ -12,6 +12,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { loadPersonalAnalytics } from "@/lib/analytics/personal";
 import { useAuth } from "@/lib/auth-context";
 import { AuthSessionGate, requireAuthBeforeLoad } from "@/lib/auth-route-guard";
 import { Sidebar } from "@/components/dashboard/Sidebar";
@@ -113,39 +114,13 @@ function AnalyticsContent() {
   const { user } = useAuth();
   const userId = user!.id;
 
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, isError, isFetching, refetch } = useQuery({
     enabled: !!userId,
     queryKey: ["personal-analytics", userId],
     queryFn: async () => {
       const since = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString();
 
-      const [eventsRes, lessonStatusRes, missionRes, quizRes, streakRes, timeRes] =
-        await Promise.all([
-          supabase
-            .from("learner_events")
-            .select("event_type, path_id, created_at")
-            .gte("created_at", since),
-          supabase.from("user_lesson_status").select("status, lesson_id"),
-          supabase.from("mission_submissions").select("status, mission_id, score"),
-          supabase
-            .from("lesson_quiz_attempts")
-            .select("is_correct, bloom_level, attempted_at")
-            .gte("attempted_at", since),
-          supabase
-            .from("user_streaks")
-            .select("current_streak, longest_streak, last_activity_date")
-            .maybeSingle(),
-          supabase.from("user_activity_time").select("total_seconds").maybeSingle(),
-        ]);
-
-      return {
-        events: eventsRes.data ?? [],
-        lessonStatus: lessonStatusRes.data ?? [],
-        missions: missionRes.data ?? [],
-        quizzes: quizRes.data ?? [],
-        streak: streakRes.data,
-        time: timeRes.data,
-      };
+      return loadPersonalAnalytics(supabase, userId, since);
     },
   });
 
@@ -228,7 +203,19 @@ function AnalyticsContent() {
           <p className="text-sm text-muted-foreground">{t("analytics.intro")}</p>
         </div>
 
-        {isLoading || !stats ? (
+        {isError ? (
+          <div role="alert" className="glass rounded-2xl p-8 text-center text-sm">
+            <p>{t("analytics.error")}</p>
+            <button
+              type="button"
+              className="mt-3 rounded-lg border px-4 py-2"
+              disabled={isFetching}
+              onClick={() => void refetch()}
+            >
+              {t("analytics.retry")}
+            </button>
+          </div>
+        ) : isLoading || !stats ? (
           <div className="glass rounded-2xl p-8 text-center text-sm text-muted-foreground">
             {t("analytics.loading")}
           </div>
@@ -266,10 +253,16 @@ function AnalyticsContent() {
                 icon={Target}
                 label={t("analytics.completedMissions")}
                 value={stats.missionCounts["passed"] ?? 0}
-                hint={t("analytics.evaluating").replace(
-                  "{count}",
-                  String(stats.missionCounts["submitted"] ?? 0),
-                )}
+                hint={
+                  t("analytics.evaluating").replace(
+                    "{count}",
+                    String(stats.missionCounts["submitted"] ?? 0),
+                  ) + " · " +
+                  t("analytics.skippedMissions").replace(
+                    "{count}",
+                    String(stats.missionCounts["skipped"] ?? 0),
+                  )
+                }
               />
             </section>
 
