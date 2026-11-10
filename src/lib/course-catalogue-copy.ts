@@ -16,8 +16,6 @@ export function getCourseCatalogueCopy(locale: SupportedLocale) {
     lessons: c.steps,
     modules: c.stations,
     modulesForCount: (count: number) =>
-      locale !== "en" && new Intl.PluralRules("ar").select(count) === "few"
-        ? "محطات"
-        : c.stations,
+      locale !== "en" && new Intl.PluralRules("ar").select(count) === "few" ? "محطات" : c.stations,
   };
 }
