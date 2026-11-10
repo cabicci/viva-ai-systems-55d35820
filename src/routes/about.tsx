@@ -49,8 +49,8 @@ function About() {
             )}
           </p>
           {locale === "en" && (
-            <p lang="ar" dir="rtl" className="mt-2">
-              الاسم القانوني: خليل وحيد إبراهيم عبد الغني لطفي
+            <p lang="en" dir="ltr" className="mt-2">
+              Legal name (Arabic): <bdi lang="ar" dir="rtl">خليل وحيد إبراهيم عبد الغني لطفي</bdi>
             </p>
           )}
           <p className="mt-3">

@@ -27,7 +27,7 @@ function PrivacyPage() {
       <Navbar />
       <main id="main-content" className="flex-1 container mx-auto px-4 py-12 max-w-3xl">
         <header className="mb-10">
-          <p className="text-xs font-mono uppercase tracking-widest text-accent mb-3">
+          <p className="text-xs font-mono uppercase tracking-widest text-foreground mb-3">
             {t("privacy.eyebrow")}
           </p>
           <h1 className="text-3xl md:text-4xl font-black mb-3">{t("privacy.title")}</h1>
