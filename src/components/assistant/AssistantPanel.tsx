@@ -12,6 +12,7 @@ import { buildAssistantRuntimePayload, resolveAssistantLearnerContext,
 import { callGuardedAssistantRuntimeBoxed } from "@/lib/assistant-runtime";
 import { AssistantConversationPanel } from "./AssistantConversationPanel";
 import { AssistantRequestError } from "@/lib/card-assistant/errors";
+import { readAssistantRetryEvidence, terminalAssistantErrorStatus } from "@/lib/card-assistant/retry";
 import type { AssistantAdapter, AssistantQuestion, AssistantReply, AssistantCitation } from "@/lib/card-assistant/types";
 
 interface Props { compact?: boolean; contextOverride?: AssistantContextOverride | null }
@@ -240,7 +241,10 @@ export function AssistantPanel({ compact = false, contextOverride = null }: Prop
       if (!box || !check()) throw stale;
       const reply = field(box.value, "reply", check);
       if (reply === null || reply === undefined) throw new TypeError("Invalid assistant response");
-      if (field(reply, "ok", check) === false) return { status: 503 };
+      if (field(reply, "ok", check) === false) {
+        const evidence = readAssistantRetryEvidence(key => field(reply, key, check));
+        return { status: terminalAssistantErrorStatus(evidence.error) ?? 503, ...evidence };
+      }
       const answerValue = field(reply, "answer", check);
       const answer = answerValue ?? field(reply, "message", check);
       if (answer !== undefined && typeof answer !== "string") throw new TypeError("Invalid assistant answer");

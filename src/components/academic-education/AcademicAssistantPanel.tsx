@@ -2,6 +2,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { AssistantConversationPanel } from "@/components/assistant/AssistantConversationPanel";
 import { askAcademicAssistant } from "@/lib/academic-education/assistant.functions";
 import { useAuth } from "@/lib/auth-context";
+import { readAssistantRetryEvidence } from "@/lib/card-assistant/retry";
 import type { SupportedLocale } from "@/lib/locale/types";
 
 /** Academic transport adapter; conversation, history and rendering are shared by all areas. */
@@ -23,6 +24,7 @@ export function AcademicAssistantPanel({ courseId, lessonId, locale }: {
         !source.lessonId.startsWith(`${scope.cardId}-`) || typeof source.sectionId !== "string"))
         return { status: 503 };
       return { status: data.status, answer: data.answer, error: data.error,
+        ...readAssistantRetryEvidence(key => Reflect.get(data, key)),
         citations: sources.map(source => ({ id: `${source.lessonId}:${source.sectionId}`,
           label: source.label || `${source.lessonId} — ${source.sectionId}`,
           stepId: source.lessonId, sourceId: source.sectionId,

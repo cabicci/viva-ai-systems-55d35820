@@ -3,6 +3,7 @@ import type { RagPackageLocale } from "@/lib/locale-lessons/types";
 import { validateRuntimeLocale } from "@/lib/rag/runtime-locale";
 import { getUiString } from "@/lib/locale/ui-strings";
 import { AssistantRequestError } from "@/lib/card-assistant/errors";
+import { readAssistantRetryEvidence, type AssistantRetryEvidence } from "@/lib/card-assistant/retry";
 export type AssistantCitation = { citationId?: string; chunkId?: string; lessonId: string; title: string; productionRoute: string | null; excerpt: string };
 
 /**
@@ -388,6 +389,7 @@ export function callGuardedAssistantRuntimeBoxed(
     if (error) {
       let code: unknown;
       let reason: unknown;
+      let retryEvidence: AssistantRetryEvidence = {};
       try {
         const ctx = owner.read(() => runtimeProperty(error, "context"));
         if (ctx) {
@@ -400,6 +402,10 @@ export function callGuardedAssistantRuntimeBoxed(
             const parsed = await owner.awaitEntered(jsonEntry);owner.check();
             code = parsed.value == null ? undefined : owner.read(() => runtimeProperty(parsed.value, "error"));
             reason = parsed.value == null ? undefined : owner.read(() => runtimeProperty(parsed.value, "reason"));
+            if (parsed.value != null) {
+              retryEvidence = readAssistantRetryEvidence(key => key === "error" ? code :
+                owner.read(() => runtimeProperty(parsed.value, key)));
+            }
           }
         }
       } catch {
@@ -425,9 +431,11 @@ export function callGuardedAssistantRuntimeBoxed(
         throw new AssistantRequestError(owner.read(() => getUiString(locale, "assistant.panel.error.quota")));
       }
       if (reason === "insufficient_grounding") {
-        throw new AssistantRequestError(owner.read(() => getUiString(locale, "assistant.panel.error.grounding")));
+        throw new AssistantRequestError(owner.read(() => getUiString(locale, "assistant.panel.error.grounding")), 500, retryEvidence);
       }
-      throw new AssistantRequestError(owner.read(() => getUiString(locale, "assistant.panel.error.connection")));
+      const terminalStatus = status === 409 || (status === 400 && retryEvidence.error === "ASSISTANT_INVALID_REQUEST");
+      throw new AssistantRequestError(owner.read(() => getUiString(locale, "assistant.panel.error.connection")),
+        terminalStatus ? status : 500, retryEvidence);
     }
     if (!data) throw new AssistantRequestError(owner.read(() => getUiString(locale, "assistant.panel.error.connection")));
     const adopted = await owner.resolveReturn(data);owner.check();

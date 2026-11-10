@@ -362,6 +362,28 @@ describe("R37 actual AI/common connection with public provider fixtures",()=>{
     await waitFor(()=>expect(screen.getByText(getUiString("en","assistant.panel.error.connection"))).toBeDefined());expect(c.invokeCalls).toBe(1);
     fail=false;submit(view,"fixture retry again");await waitFor(()=>expect(screen.getByText("owned answer")).toBeDefined(), { timeout: 10_000 });expect(c.invokeCalls).toBe(2);
   }, 30_000);
+  it.each([
+    { status: 503, body: { error: "ASSISTANT_BILLING_UNAVAILABLE" }, reuse: true },
+    { status: 409, body: { error: "ASSISTANT_REQUEST_IN_PROGRESS" }, reuse: true },
+    { status: 502, body: { error: "ASSISTANT_PROVIDER_UNAVAILABLE", chargedUnits: 0 }, reuse: false },
+    { status: 409, body: { error: "ASSISTANT_REQUEST_EXPIRED" }, reuse: false },
+  ])("U05 preserves the real AI request identity only while settlement is uncertain: $body.error",
+    async ({ status, body, reuse }) => {
+      const c = slot.current();
+      c.failure = denial(c, status, body.error, undefined, () => native(body));
+      const view = mountCurrent(c);
+      const question = "The same test question";
+      submit(view, question);
+      await screen.findByText(getUiString("en", "assistant.panel.error.connection"));
+      const first = (c.lastArgs[1] as { body: AssistantRuntimeRequestPayload }).body.requestId;
+      c.failure = undefined;
+      submit(view, question);
+      await screen.findByText("owned answer", {}, { timeout: 10000 });
+      const second = (c.lastArgs[1] as { body: AssistantRuntimeRequestPayload }).body.requestId;
+      expect(c.invokeCalls).toBe(2);
+      expect(first).toMatch(/^[a-f0-9-]{36}$/i);
+      expect(second === first).toBe(reuse);
+    }, 30000);
   it("U04 truthy ok:false preserves actual caller503 without invented success",async()=>{
     const c=slot.current();c.response={...reply(),ok:false};const view=mountCurrent(c);submit(view,"fixture not-ok");await act(async()=>{await pulse();await pulse();});expect(c.invokeCalls).toBe(1);expect(screen.queryByText("owned answer")).toBeNull();expect(c.storageOps.filter(x=>x.op==="set")).toHaveLength(0);
   }, 30_000);
