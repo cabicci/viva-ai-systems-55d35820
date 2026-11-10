@@ -61,7 +61,15 @@ function setup(lessonId = "AC-BUS-M01-L02") {
       <AcademicLessonPage courseId="AC-BUS" lessonId={lessonId} />
     </QueryClientProvider>,
   );
-  return { ...view, queryClient: client };
+  return {
+    ...view,
+    queryClient: client,
+    showLesson: (id = lessonId, courseId = "AC-BUS") => view.rerender(
+      <QueryClientProvider client={client}>
+        <AcademicLessonPage courseId={courseId} lessonId={id} />
+      </QueryClientProvider>,
+    ),
+  };
 }
 beforeEach(() => {
   state.user = { id: "learner-1" };
@@ -401,4 +409,232 @@ it("keeps unsent values when the same lesson receives the appended-field content
   expect(state.command.mock.calls.every(([action]) => ["lesson", "status"].includes(action))).toBe(
     true,
   );
+});
+
+
+// Actual component/React Query with controlled command completions. No server,
+// persistence adapter or browser storage is introduced by these tests.
+function pendingCommand() {
+  let resolve!: (value: unknown) => void;
+  let reject!: (error: Error) => void;
+  const promise = new Promise<unknown>((yes, no) => { resolve = yes; reject = no; });
+  return { promise, resolve, reject };
+}
+async function openPractice(text = "Scoped learner response") {
+  await screen.findByText("Paid lesson explanation");
+  fireEvent.click(screen.getByRole("button", { name: "Practice" }));
+  fireEvent.change(screen.getByRole("textbox"), { target: { value: text } });
+}
+const savePractice = () => fireEvent.click(screen.getByRole("button", { name: "Save practice submission" }));
+const saveUnconfirmed = "Could not confirm the save. Your draft is still here. Try saving again.";
+
+it.each(["network rejection", "lost acknowledgement"])("preserves practice on %s and retries the submitted values", async (failure) => {
+  const first = pendingCommand(), second = pendingCommand();
+  let writes = 0;
+  let lessonRequests = 0;
+  const unavailableRefetch = pendingCommand();
+  let recorded: unknown;
+  state.command.mockImplementation((action: string, _course: string, _lesson: string, _locale: string, data: unknown) => {
+    if (action === "practice") {
+      writes++;
+      if (failure === "lost acknowledgement") recorded = data;
+      return writes === 1 ? first.promise : second.promise;
+    }
+    if (action === "lesson") return ++lessonRequests === 1
+      ? Promise.resolve(delivery) : unavailableRefetch.promise;
+    return Promise.resolve({ progress: {} });
+  });
+  setup();
+  await openPractice();
+  savePractice();
+  expect(screen.getByRole("button", { name: "Save practice submission" })).toBeDisabled();
+  await act(async () => {
+    first.reject(new Error("synthetic transport interruption"));
+    await first.promise.catch(() => {});
+    // Flush React Query's scheduled cache notification as well as the save.
+    await new Promise(resolve => setTimeout(resolve, 0));
+  });
+  expect(screen.getByRole("textbox")).toHaveValue("Scoped learner response");
+  expect(await screen.findByRole("alert")).toHaveTextContent(saveUnconfirmed);
+  expect(screen.queryByText("Saved to your account.")).toBeNull();
+  expect(state.command.mock.calls.filter(([action]) => action === "lesson")).toHaveLength(1);
+  if (failure === "lost acknowledgement") expect(recorded).toEqual({ values: ["Scoped learner response"] });
+  savePractice();
+  expect(screen.queryByRole("alert")).toBeNull();
+  await act(async () => second.resolve({ allowed: true }));
+  expect(await screen.findByText("Saved to your account.")).toBeVisible();
+  expect(screen.getByRole("textbox")).toHaveValue("Scoped learner response");
+  expect(state.command.mock.calls.filter(([action]) => action === "practice").map(call => call[4])).toEqual([
+    { values: ["Scoped learner response"] }, { values: ["Scoped learner response"] },
+  ]);
+});
+
+it("preserves selected quiz answers on failure and displays only the confirmed retry result", async () => {
+  const first = pendingCommand(), second = pendingCommand();
+  let attempts = 0;
+  state.command.mockImplementation((action: string) => action === "quiz"
+    ? (++attempts === 1 ? first.promise : second.promise)
+    : Promise.resolve(action === "lesson" ? delivery : { progress: {} }));
+  setup();
+  await screen.findByText("Paid lesson explanation");
+  fireEvent.click(screen.getByRole("button", { name: "Check understanding" }));
+  fireEvent.click(screen.getByRole("radio", { name: "Follower count" }));
+  fireEvent.click(screen.getByRole("button", { name: "Submit answers" }));
+  await act(async () => first.reject(new Error("synthetic offline")));
+  expect(await screen.findByRole("alert")).toHaveTextContent(saveUnconfirmed);
+  expect(screen.getByRole("radio", { name: "Follower count" })).toBeChecked();
+  fireEvent.click(screen.getByRole("button", { name: "Submit answers" }));
+  await act(async () => second.resolve({ allowed: true, score: 0, total: 1, passed: false,
+    feedback: [{ id: "q1", correct: false, explanation: "Confirmed retry feedback" }] }));
+  expect(await screen.findByText("Confirmed retry feedback")).toBeVisible();
+  expect(state.command.mock.calls.filter(([action]) => action === "quiz").map(call => call[4])).toEqual([
+    { answers: { q1: 1 } }, { answers: { q1: 1 } },
+  ]);
+});
+
+it("does not interpret a malformed save acknowledgement as success or access revocation", async () => {
+  state.command.mockImplementation(async (action: string) => action === "lesson" ? delivery
+    : action === "practice" ? null : { progress: {} });
+  setup();
+  await openPractice();savePractice();
+  expect(screen.getByRole("textbox")).toHaveValue("Scoped learner response");
+  expect(await screen.findByRole("alert")).toHaveTextContent(saveUnconfirmed);
+  expect(screen.queryByText("Saved to your account.")).toBeNull();
+});
+
+it("enforces explicit practice access revocation and does not carry its draft into reauthorization", async () => {
+  const saving = pendingCommand();
+  let allowed = true;
+  state.command.mockImplementation((action: string) => action === "practice" ? saving.promise
+    : Promise.resolve(action === "lesson" ? (allowed ? delivery : { allowed: false }) : { progress: {} }));
+  const { queryClient } = setup();await openPractice();savePractice();
+  allowed = false;
+  await act(async () => saving.resolve({ allowed: false }));
+  expect(await screen.findByText("This lesson requires an active Academic subscription.")).toBeVisible();
+  expect(screen.queryByRole("textbox")).toBeNull();
+  allowed = true;
+  await act(async () => { await queryClient.invalidateQueries({ queryKey: ["academic", "learner-1"] }); });
+  await screen.findByText("Paid lesson explanation");
+  fireEvent.click(screen.getByRole("button", { name: "Practice" }));
+  expect(screen.getByRole("textbox")).toHaveValue("");
+});
+
+it("drops account-scoped drafts and ignores a previous account's late denial", async () => {
+  const saving = pendingCommand();
+  state.command.mockImplementation((action: string) => action === "practice" ? saving.promise
+    : Promise.resolve(action === "lesson" ? delivery : { progress: {} }));
+  const { showLesson, queryClient } = setup();await openPractice("Account one draft");savePractice();
+  state.user = { id: "learner-2" };showLesson();
+  await screen.findByText("Paid lesson explanation");
+  fireEvent.click(screen.getByRole("button", { name: "Practice" }));
+  expect(screen.getByRole("textbox")).toHaveValue("");
+  fireEvent.change(screen.getByRole("textbox"), { target: { value: "Account two draft" } });
+  await act(async () => saving.resolve({ allowed: false }));
+  expect(screen.getByRole("textbox")).toHaveValue("Account two draft");
+  expect(queryClient.getQueryData(["academic", "learner-1", "AC-BUS", delivery.lesson.id, "en"])).toMatchObject({ allowed: true });
+  expect(state.command.mock.calls.filter(([action]) => action === "lesson")).toHaveLength(2);
+});
+
+it("does not reuse a draft after sign out and sign in to the same account", async () => {
+  const { showLesson } = setup();await openPractice();
+  state.user = null;showLesson();
+  expect(await screen.findByText("Sign in to continue")).toBeVisible();
+  state.user = { id: "learner-1" };showLesson();
+  await screen.findByText("Paid lesson explanation");
+  fireEvent.click(screen.getByRole("button", { name: "Practice" }));
+  expect(screen.getByRole("textbox")).toHaveValue("");
+});
+
+it("scopes a pending save to its lesson and never refetches it after navigation", async () => {
+  const saving = pendingCommand();
+  state.command.mockImplementation((action: string, _course: string, lessonId: string) => action === "practice" ? saving.promise
+    : Promise.resolve(action === "lesson" ? { ...delivery, lesson: { ...delivery.lesson, id: lessonId } } : { progress: {} }));
+  const { showLesson } = setup();await openPractice("First lesson draft");savePractice();
+  showLesson("AC-BUS-M01-L03");
+  await screen.findByText("Paid lesson explanation");
+  fireEvent.click(screen.getByRole("button", { name: "Practice" }));
+  expect(screen.getByRole("textbox")).toHaveValue("");
+  fireEvent.change(screen.getByRole("textbox"), { target: { value: "Second lesson draft" } });
+  const statuses = state.command.mock.calls.filter(([action]) => action === "status").length;
+  await act(async () => saving.resolve({ allowed: true }));
+  expect(screen.getByRole("textbox")).toHaveValue("Second lesson draft");
+  expect(screen.queryByText("Saved to your account.")).toBeNull();
+  expect(state.command.mock.calls.filter(([action]) => action === "status")).toHaveLength(statuses);
+});
+
+it("retains the current draft when an equivalent lesson delivery is refreshed", async () => {
+  const { queryClient } = setup();await openPractice();
+  await act(async () => { await queryClient.invalidateQueries({ queryKey: ["academic", "learner-1"] }); });
+  expect(screen.getByRole("textbox")).toHaveValue("Scoped learner response");
+});
+
+it("clears draft values when a same-length assignment changes meaning", async () => {
+  const { queryClient } = setup();await openPractice();
+  act(() => queryClient.setQueryData(["academic", "learner-1", "AC-BUS", delivery.lesson.id, "en"], {
+    ...delivery, lesson: { ...delivery.lesson, assignment: { ...delivery.lesson.assignment, prompt: "Revised task", fields: ["Different evidence"] } },
+  }));
+  expect(await screen.findByLabelText("Different evidence")).toHaveValue("");
+  expect(screen.getByRole("button", { name: "Save practice submission" })).toBeDisabled();
+});
+
+it("does not reuse quiz answer positions after question options are reordered", async () => {
+  const { queryClient } = setup();await screen.findByText("Paid lesson explanation");
+  fireEvent.click(screen.getByRole("button", { name: "Check understanding" }));
+  fireEvent.click(screen.getByRole("radio", { name: "Capacity" }));
+  act(() => queryClient.setQueryData(["academic", "learner-1", "AC-BUS", delivery.lesson.id, "en"], {
+    ...delivery, lesson: { ...delivery.lesson, quiz: [{ ...delivery.lesson.quiz[0], options: ["Follower count", "Capacity"] }] },
+  }));
+  await waitFor(() => expect(screen.getByRole("button", { name: "Submit answers" })).toBeDisabled());
+  expect(screen.getByRole("radio", { name: "Follower count" })).not.toBeChecked();
+  expect(screen.getByRole("radio", { name: "Capacity" })).not.toBeChecked();
+});
+
+it.each(["denial", "success", "failure"])("ignores a late %s after a revised assignment has been saved", async (late) => {
+  const initial = pendingCommand(), revised = pendingCommand();
+  let calls = 0;
+  state.command.mockImplementation((action: string) => action === "practice" ? (++calls === 1 ? initial.promise : revised.promise)
+    : Promise.resolve(action === "lesson" ? delivery : { progress: {} }));
+  const { queryClient } = setup();await openPractice("Initial task response");savePractice();
+  act(() => queryClient.setQueryData(["academic", "learner-1", "AC-BUS", delivery.lesson.id, "en"], {
+    ...delivery, lesson: { ...delivery.lesson, assignment: { ...delivery.lesson.assignment, fields: ["Revised task response"] } },
+  }));
+  const input = await screen.findByLabelText("Revised task response");
+  expect(input).toHaveValue("");
+  fireEvent.change(input, { target: { value: "Scoped revised answer" } });savePractice();
+  await act(async () => revised.resolve({ allowed: true }));
+  expect(await screen.findByText("Saved to your account.")).toBeVisible();
+  const requestCount = state.command.mock.calls.length;
+  await act(async () => late === "failure" ? initial.reject(new Error("late synthetic failure"))
+    : initial.resolve({ allowed: late === "success" }));
+  expect(screen.getByRole("textbox")).toHaveValue("Scoped revised answer");
+  expect(screen.getByText("Saved to your account.")).toBeVisible();
+  expect(screen.queryByRole("alert")).toBeNull();
+  expect(state.command).toHaveBeenCalledTimes(requestCount);
+});
+
+it("does not label edits made during a save as acknowledged", async () => {
+  const saving = pendingCommand();
+  state.command.mockImplementation((action: string) => action === "practice" ? saving.promise
+    : Promise.resolve(action === "lesson" ? delivery : { progress: {} }));
+  setup();await openPractice("Submitted answer");savePractice();
+  fireEvent.change(screen.getByRole("textbox"), { target: { value: "Further unsent edits" } });
+  await act(async () => saving.resolve({ allowed: true }));
+  expect(screen.getByRole("textbox")).toHaveValue("Further unsent edits");
+  expect(screen.queryByText("Saved to your account.")).toBeNull();
+  expect(screen.getByRole("button", { name: "Save practice submission" })).toBeEnabled();
+});
+
+it("keeps acknowledged save status when only the progress refresh fails", async () => {
+  let reads = 0;
+  state.command.mockImplementation(async (action: string) => {
+    if (action === "lesson") return delivery;
+    if (action === "practice") return { allowed: true };
+    if (++reads > 1) throw new Error("synthetic progress refresh failure");
+    return { progress: {} };
+  });
+  setup();await openPractice();savePractice();
+  expect(await screen.findByText("Saved to your account.")).toBeVisible();
+  await waitFor(() => expect(reads).toBe(2));
+  expect(screen.queryByRole("alert")).toBeNull();
+  expect(screen.getByRole("textbox")).toHaveValue("Scoped learner response");
 });
