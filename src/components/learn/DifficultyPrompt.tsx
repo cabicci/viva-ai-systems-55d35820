@@ -29,7 +29,11 @@ interface Props {
 /**
  * Dynamic Difficulty Sensor — appears after every 3 completed lessons.
  */
-export function DifficultyPrompt({
+export function DifficultyPrompt(props: Props) {
+  return <ScopedDifficultyPrompt key={JSON.stringify([props.pathId, props.moduleId, props.lessonId])} {...props} />;
+}
+
+function ScopedDifficultyPrompt({
   lessonId,
   pathId,
   moduleId,
@@ -40,24 +44,29 @@ export function DifficultyPrompt({
   const { locale, dir } = useLocale();
   const storageKey = `lovable.difficulty.${lessonId}`;
   const [answered, setAnswered] = useState<Rating | "dismissed" | null>(null);
+  // Saved feedback suppresses another survey; guidance belongs only to the
+  // current selection and stays available until dismissal or lesson departure.
+  const [guidanceOpen, setGuidanceOpen] = useState(false);
   const countLabel = String(completedCount);
 
   useEffect(() => {
     try {
       const raw = localStorage.getItem(storageKey);
-      if (raw) setAnswered(raw as Rating | "dismissed");
+      setAnswered(raw === "hard" || raw === "ok" || raw === "easy" || raw === "dismissed" ? raw : null);
     } catch {
       /* ignore */
     }
   }, [storageKey]);
 
-  const shouldShow =
-    isCompleted && completedCount > 0 && completedCount % 3 === 0 && !answered;
+  const adviceAvailable = guidanceOpen && (answered === "hard" || (answered === "easy" && !!nextLessonHref));
+  const shouldShow = adviceAvailable ||
+    (isCompleted && completedCount > 0 && completedCount % 3 === 0 && !answered);
 
   if (!shouldShow) return null;
 
   const pick = (rating: Rating) => {
     setAnswered(rating);
+    setGuidanceOpen(rating === "hard" || (rating === "easy" && !!nextLessonHref));
     try {
       localStorage.setItem(storageKey, rating);
     } catch {
@@ -74,6 +83,7 @@ export function DifficultyPrompt({
 
   const dismiss = () => {
     setAnswered("dismissed");
+    setGuidanceOpen(false);
     try {
       localStorage.setItem(storageKey, "dismissed");
     } catch {
@@ -99,7 +109,7 @@ export function DifficultyPrompt({
           count: countLabel,
         })}
       </p>
-      <p className="text-sm font-semibold mb-3">
+      {!answered && <><p className="text-sm font-semibold mb-3">
         {interpolate(getUiString(locale, "learn.difficulty.question"), {
           count: countLabel,
         })}
@@ -129,10 +139,10 @@ export function DifficultyPrompt({
         >
           <Smile className="h-4 w-4" /> {getUiString(locale, "learn.difficulty.easy")}
         </Button>
-      </div>
+      </div></>}
 
       {answered === "hard" && (
-        <div className="mt-4 rounded-xl border border-rose-400/30 bg-rose-400/[0.06] p-3 text-[13px] leading-relaxed">
+        <div role="status" className="mt-4 rounded-xl border border-rose-400/30 bg-rose-400/[0.06] p-3 text-[13px] leading-relaxed">
           <p className="font-semibold text-rose-300 mb-1">
             {getUiString(locale, "learn.difficulty.hardTitle")}
           </p>
@@ -142,7 +152,7 @@ export function DifficultyPrompt({
         </div>
       )}
       {answered === "easy" && nextLessonHref && (
-        <div className="mt-4 rounded-xl border border-emerald-400/30 bg-emerald-400/[0.06] p-3 text-[13px]">
+        <div role="status" className="mt-4 rounded-xl border border-emerald-400/30 bg-emerald-400/[0.06] p-3 text-[13px]">
           <p className="font-semibold text-emerald-300 mb-1">
             {getUiString(locale, "learn.difficulty.easyTitle")}
           </p>
