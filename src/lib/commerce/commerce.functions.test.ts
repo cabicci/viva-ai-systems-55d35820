@@ -268,3 +268,28 @@ it("leaves the lifetime no-coupon quote unchanged", async () => {
     ),
   ).toEqual(lifetime);
 });
+
+it.each(["invitation", "accept"])(
+  "rejects a stale account for %s before reading or mutating the invitation",
+  async (action) => {
+    const request = {
+      action,
+      expectedAccountId: "11111111-1111-4111-8111-111111111111",
+      data: { id: "22222222-2222-4222-8222-222222222222" },
+    };
+    const invoke = commerceCommand as unknown as (input: {
+      data: typeof request;
+      context: { userId: string; supabase: { rpc: typeof state.rpc } };
+    }) => Promise<unknown>;
+    const supabase = { rpc: state.rpc };
+    await expect(
+      invoke({ data: request, context: { userId: request.data.id, supabase } }),
+    ).rejects.toThrow("ACCOUNT_CHANGED");
+    expect(state.rpc).not.toHaveBeenCalled();
+    await invoke({ data: request, context: { userId: request.expectedAccountId, supabase } });
+    expect(state.rpc).toHaveBeenCalledExactlyOnceWith("commerce_command", {
+      p_action: action,
+      p_data: request.data,
+    });
+  },
+);

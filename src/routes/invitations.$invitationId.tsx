@@ -1,11 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { commerceCommand } from "@/lib/commerce/commerce.functions";
 import { commerceCopy } from "@/lib/commerce/copy";
 import type { Invitation } from "@/lib/commerce/contracts";
 import { useAuth } from "@/lib/auth-context";
+import { isInvitationAuthReturn } from "@/lib/kids/auth-intent";
 import { useLocale } from "@/lib/locale/locale-context";
 import { Navbar } from "@/components/site/Navbar";
 import { OfferPhone } from "@/components/commerce/OfferPhone";
@@ -17,24 +18,56 @@ export const Route = createFileRoute("/invitations/$invitationId")({
   component: InvitationPage,
 });
 function InvitationPage() {
-  const { invitationId } = Route.useParams(),
-    { user, loading } = useAuth(),
-    { locale } = useLocale(),
+  const { invitationId } = Route.useParams();
+  const { user, loading } = useAuth();
+  const userId = user?.id ?? null;
+  return (
+    <ScopedInvitation
+      key={JSON.stringify([invitationId, userId])}
+      invitationId={invitationId}
+      userId={userId}
+      loading={loading}
+    />
+  );
+}
+
+function ScopedInvitation({
+  invitationId,
+  userId,
+  loading,
+}: {
+  invitationId: string;
+  userId: string | null;
+  loading: boolean;
+}) {
+  const returnTo = `/invitations/${invitationId}`;
+  const validInvitation = isInvitationAuthReturn(returnTo);
+  const { locale } = useLocale(),
     w = commerceCopy(locale),
     command = useServerFn(commerceCommand),
     qc = useQueryClient();
   const [busy, setBusy] = useState(false),
     [error, setError] = useState(""),
     [phone, setPhone] = useState("");
+  const active = useRef(false);
+  useLayoutEffect(() => {
+    active.current = true;
+    return () => {
+      active.current = false;
+    };
+  }, []);
   const result = useQuery({
-    queryKey: ["commerce-invitation", user?.id, invitationId],
-    queryFn: async () =>
-      (await command({
-        data: { action: "invitation", data: { id: invitationId } },
-      })) as unknown as Invitation,
-    enabled: !!user,
+    queryKey: ["commerce-invitation", userId, invitationId],
+    queryFn: async () => {
+      if (!userId) throw new Error("ACCOUNT_CHANGED");
+      return (await command({
+        data: { action: "invitation", expectedAccountId: userId, data: { id: invitationId } },
+      })) as unknown as Invitation;
+    },
+    enabled: !!userId && !loading && validInvitation,
   });
   async function accept() {
+    if (!active.current || !userId || loading || !validInvitation || !result.data || busy) return;
     setError("");
     if (result.data?.offer_id && !normalizeOfferPhone(phone)) {
       setError(adminOfferCopy(locale).phoneError);
@@ -45,18 +78,23 @@ function InvitationPage() {
       await command({
         data: {
           action: "accept",
+          expectedAccountId: userId,
           data: {
             id: invitationId,
             ...(result.data?.offer_id ? { phone: normalizeOfferPhone(phone) } : {}),
           },
         },
       });
-      void result.refetch();
-      void qc.invalidateQueries({ queryKey: ["user-subscription"] });
+      if (active.current) void result.refetch();
+      void qc.invalidateQueries({
+        queryKey: ["user-subscription", userId],
+        exact: true,
+        refetchType: active.current ? "active" : "none",
+      });
     } catch (err) {
-      setError(offerError(err, locale, w.error));
+      if (active.current) setError(offerError(err, locale, w.error));
     } finally {
-      setBusy(false);
+      if (active.current) setBusy(false);
     }
   }
   return (
@@ -67,18 +105,19 @@ function InvitationPage() {
         dir={locale === "en" ? "ltr" : "rtl"}
       >
         <h1 className="text-2xl font-bold">{w.inviteTitle}</h1>
-        {!user && !loading ? (
+        {!validInvitation ? (
+          <p role="alert">{w.verify}</p>
+        ) : loading ? (
+          <p>{w.pending}</p>
+        ) : !userId ? (
           <>
             <p>{w.verify}</p>
-            <Link to="/login" search={{ locale }} className="text-primary underline">
+            <Link to="/login" search={{ locale, returnTo }} className="text-primary underline">
               {w.continue}
             </Link>
-            <p className="text-sm">
-              {locale === "en"
-                ? "After signing in, return to this invitation link."
-                : "بعد تسجيل الدخول، ارجع إلى رابط الدعوة."}
-            </p>
           </>
+        ) : result.error ? (
+          <p role="alert">{w.verify}</p>
         ) : result.data ? (
           <>
             <p>
@@ -119,8 +158,6 @@ function InvitationPage() {
               </>
             )}
           </>
-        ) : result.error ? (
-          <p role="alert">{w.verify}</p>
         ) : (
           <p>{w.pending}</p>
         )}

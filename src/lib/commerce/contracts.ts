@@ -212,8 +212,8 @@ export const commandSchemas = {
 } as const;
 export type CommerceAction = keyof typeof commandSchemas;
 export function parseCommand(input: unknown) {
-  const { action, data } = z
-    .object({ action: z.string(), data: z.unknown().default({}) })
+  const { action, data, expectedAccountId } = z
+    .object({ action: z.string(), data: z.unknown().default({}), expectedAccountId: uuid.optional() })
     .parse(input);
   if (!(action in commandSchemas)) throw new Error("Invalid commerce action");
   const parsed = commandSchemas[action as CommerceAction].parse(data);
@@ -227,6 +227,7 @@ export function parseCommand(input: unknown) {
   return {
     action: action as CommerceAction,
     data: parsed,
+    ...(expectedAccountId === undefined ? {} : { expectedAccountId }),
   };
 }
 export interface PaymentMethod {

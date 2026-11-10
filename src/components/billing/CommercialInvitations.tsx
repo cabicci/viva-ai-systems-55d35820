@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import {
@@ -62,13 +62,24 @@ const copy = {
     retry: "Try again",
   },
 };
-export function CommercialInvitations({
-  userId,
-  locale,
-}: {
+type CommercialInvitationsProps = {
   userId: string;
   locale: SupportedLocale;
-}) {
+};
+
+export function CommercialInvitations(props: CommercialInvitationsProps) {
+  return <AccountInvitations key={props.userId} {...props} />;
+}
+
+function AccountInvitations({ userId, locale }: CommercialInvitationsProps) {
+  const active = useRef(false);
+  useLayoutEffect(() => {
+    active.current = true;
+    return () => {
+      active.current = false;
+    };
+  }, []);
+
   const c = copy[locale],
     client = useQueryClient();
   const key = ["commercial-invitations", userId];
@@ -94,14 +105,20 @@ export function CommercialInvitations({
     setError(false);
     try {
       await acceptCommercialInvitation({ data: { expectedAccountId: userId, invitationId: id } });
-      await client.invalidateQueries({ queryKey: key });
-      await client.invalidateQueries({ queryKey: ["user-subscription", userId] });
-      await client.invalidateQueries({ queryKey: ["commercial-content-access", userId] });
-      await client.invalidateQueries({ queryKey: ["scheduled-free-access", userId] });
+      const refetchType = active.current ? "active" : "none";
+      await Promise.all(
+        [
+          key,
+          ["account-subscription-display", userId],
+          ["user-subscription", userId],
+          ["commercial-content-access", userId],
+          ["scheduled-free-access", userId],
+        ].map((queryKey) => client.invalidateQueries({ queryKey, exact: true, refetchType })),
+      );
     } catch {
-      setError(true);
+      if (active.current) setError(true);
     } finally {
-      setBusy(null);
+      if (active.current) setBusy(null);
     }
   }
   return (

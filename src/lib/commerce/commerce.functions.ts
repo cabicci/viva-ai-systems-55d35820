@@ -8,6 +8,13 @@ export const commerceCommand = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .validator(parseCommand)
   .handler(async ({ data, context }): Promise<import("@/integrations/supabase/types").Json> => {
+    if (
+      (data.action === "invitation" || data.action === "accept") &&
+      data.expectedAccountId !== undefined &&
+      data.expectedAccountId !== context.userId
+    ) {
+      throw new Error("ACCOUNT_CHANGED");
+    }
     if (data.action === "email_confirmation") {
       const orderId = (data.data as { id: string }).id;
       const queued = (await context.supabase.rpc(
