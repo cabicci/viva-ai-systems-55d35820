@@ -1,4 +1,4 @@
-import { questionBalance } from "../../supabase/functions/assistant-runtime/question-metering";
+import { questionBalance } from "../../supabase/functions/_shared/assistant-question-contract";
 import { resolveVerifiedRequestUser } from "./ssr-request-auth.server";
 import { PATHS } from "./curriculum-data";
 

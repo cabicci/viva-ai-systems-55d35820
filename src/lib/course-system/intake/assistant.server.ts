@@ -3,13 +3,8 @@ import {
   ASSISTANT_ANSWER_POLICY,
   parseAssistantAnswer,
 } from "../../../../supabase/functions/assistant-runtime/answer-contract";
-import {
-  questionRpcFailure,
-  recordedQuestionProvider,
-  runMeteredQuestion,
-  type QuestionIdentity,
-  type QuestionRpc,
-} from "../../../../supabase/functions/assistant-runtime/question-metering";
+import { questionRpcFailure, type QuestionIdentity, type QuestionRpc } from "../../../../supabase/functions/_shared/assistant-question-contract";
+import { recordedQuestionProvider, runMeteredQuestion } from "../../../../supabase/functions/assistant-runtime/question-metering";
 import { sha256 } from "@/lib/card-assistant/corpus";
 import { curriculumChunks } from "./corpus";
 import { courseEmbeddings } from "./index.server";

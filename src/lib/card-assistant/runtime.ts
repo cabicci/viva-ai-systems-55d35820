@@ -2,12 +2,8 @@ import {
   ASSISTANT_ANSWER_POLICY,
   parseAssistantAnswer,
 } from "../../../supabase/functions/assistant-runtime/answer-contract";
-import {
-  runMeteredQuestion,
-  recordedQuestionProvider,
-  type QuestionRpc,
-  type QuestionOutcome,
-} from "../../../supabase/functions/assistant-runtime/question-metering";
+import type { QuestionRpc, QuestionOutcome } from "../../../supabase/functions/_shared/assistant-question-contract";
+import { runMeteredQuestion, recordedQuestionProvider } from "../../../supabase/functions/assistant-runtime/question-metering";
 import { registeredStep } from "./registry";
 import { sourceChunks, validVector, type CardChunk, type SourceDocument } from "./corpus";
 import type { AssistantQuestion, AssistantReply } from "./types";
