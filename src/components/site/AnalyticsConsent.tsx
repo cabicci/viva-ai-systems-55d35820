@@ -1,5 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { ANALYTICS_CONSENT_COPY } from "@/lib/analytics-consent-copy";
 import { applyTrustedSiteConsent } from "@/lib/trustedsite";
 import { useLocale } from "@/lib/locale/locale-context";
@@ -116,13 +117,13 @@ export function AnalyticsConsentGate() {
       </aside>
     );
   }
-  return (
+  const controls = (
     <>
       <button
         type="button"
         dir={dir}
         lang={lang}
-        className="fixed bottom-3 start-3 z-[90] rounded-full border border-border bg-background/90 px-3 py-2 text-xs font-semibold shadow-lg backdrop-blur"
+        className="m-3 inline-flex rounded-full border border-border bg-background/90 px-3 py-2 text-xs font-semibold shadow-lg backdrop-blur"
         aria-label={copy.settingsAria}
         aria-expanded={settingsOpen}
         aria-controls="analytics-consent-settings"
@@ -165,4 +166,7 @@ export function AnalyticsConsentGate() {
       ) : null}
     </>
   );
+  const controlsRoot =
+    typeof document === "undefined" ? null : document.getElementById("privacy-settings-controls");
+  return controlsRoot ? createPortal(controls, controlsRoot) : controls;
 }

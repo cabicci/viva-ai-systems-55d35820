@@ -179,6 +179,28 @@ describe("settled localized page-view metadata", () => {
     expect(pageViews()).toHaveLength(3);
   });
 
+  it("places privacy controls at the end of the page and keeps withdrawal available", async () => {
+    const host = document.createElement("div");
+    host.id = "privacy-settings-controls";
+    document.body.append(host);
+
+    try {
+      await mountRouter();
+      const copy = ANALYTICS_CONSENT_COPY.en;
+      const button = await screen.findByRole("button", { name: copy.settingsAria });
+      expect(host.contains(button)).toBe(true);
+      expect(button.className.split(" ")).not.toContain("fixed");
+
+      fireEvent.click(button);
+      expect(button).toHaveAttribute("aria-expanded", "true");
+      fireEvent.click(screen.getByRole("button", { name: copy.withdraw }));
+      expect(button).toHaveAttribute("aria-expanded", "false");
+      expect(localStorage.getItem(ANALYTICS_CONSENT_STORAGE_KEY)).toBe("denied");
+    } finally {
+      host.remove();
+    }
+  });
+
   it("does not emit the destination if consent is withdrawn while its head is pending", async () => {
     const fixture = await mountRouter();
     fixture.holdHead();
