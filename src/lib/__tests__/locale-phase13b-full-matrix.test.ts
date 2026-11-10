@@ -1,7 +1,7 @@
 import { mkdtemp, mkdir, rm, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 import {
   buildPhase13BFullCollectReport,
   phase13BCollectReportExitCode,
@@ -36,10 +36,7 @@ import {
   isCanonicalArMsaLessonsPath,
   learnerFinalLessonsDirForLocale,
 } from "../../../scripts/locale-lessons/lib/phase13b-output-paths.ts";
-import { runPhase13BFullCell } from "../../../scripts/locale-lessons/run-phase13b-full-cell.ts";
-import { runPhase13BLocaleBatch } from "../../../scripts/locale-lessons/run-phase13b-locale-batch.ts";
 import { loadMsaLessonPackage } from "../../../scripts/locale-lessons/lib/source-package.ts";
-import { readPhase13BJobResult } from "../../../scripts/locale-lessons/lib/phase13b-job-result.ts";
 import {
   buildPhase13BArtifactIndex,
   parsePhase13BBatchArtifactDirName,
@@ -49,7 +46,6 @@ import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
 
 const SAMPLE_LESSON_ID = "intro-m1-l1-what-is-ai";
 const tempDirs: string[] = [];
-const writtenJobResults: string[] = [];
 
 const INTERNAL_PRODUCTION_VIDEO_SECTION = {
   role: "Video block (production reference only)",
@@ -72,9 +68,6 @@ function withInternalProductionVideoSection(
 }
 
 afterEach(async () => {
-  await Promise.all(
-    writtenJobResults.splice(0).map((filePath) => rm(filePath, { force: true })),
-  );
   await Promise.all(tempDirs.splice(0).map((dir) => rm(dir, { recursive: true, force: true })));
 });
 
@@ -216,52 +209,7 @@ describe("Phase 13B full-scale matrix", () => {
   });
 });
 
-describe("Phase 13B cell runner (dry-run, no paid API)", () => {
-  it("derives ar-MSA learner-final deterministically without paid API", async () => {
-    const sourceBefore = withInternalProductionVideoSection(
-      await loadMsaLessonPackage(SAMPLE_LESSON_ID),
-    );
-    const summary = await runPhase13BFullCell({
-      locale: "ar-MSA",
-      lessonId: SAMPLE_LESSON_ID,
-      dryRun: true,
-      confirmPaidApi: false,
-      confirmWrite: false,
-      writeJobResult: false,
-    });
-
-    expect(summary.requiresPaidApi).toBe(false);
-    expect(summary.skippedPaidApi).toBe(true);
-    expect(summary.pipeline).toBe("learner-final-derived");
-    expect(summary.ok).toBe(true);
-    expect(summary.wrotePackage).toBe(false);
-
-    const sourceAfter = withInternalProductionVideoSection(
-      await loadMsaLessonPackage(SAMPLE_LESSON_ID),
-    );
-    expect(sourceAfter).toEqual(sourceBefore);
-    expect(
-      sourceAfter.sections.some((section) => section.role.includes("Video block")),
-    ).toBe(true);
-  });
-
-  it("keeps ar-Gulf/en cells paid-adaptation gated in dry-run", async () => {
-    for (const locale of ["ar-Gulf", "en"] as const) {
-      const summary = await runPhase13BFullCell({
-        locale,
-        lessonId: SAMPLE_LESSON_ID,
-        dryRun: true,
-        confirmPaidApi: false,
-        confirmWrite: false,
-        writeJobResult: false,
-      });
-
-      expect(summary.requiresPaidApi).toBe(true);
-      expect(summary.skippedPaidApi).toBe(true);
-      expect(summary.pipeline).toBe("fragment-adapt");
-      expect(summary.wrotePackage).toBe(false);
-    }
-  });
+describe("Phase 13B learner-final derivation", () => {
 
   it("derives sanitized learner-final ar-MSA from canonical source in memory", async () => {
     const source = withInternalProductionVideoSection(
@@ -279,34 +227,6 @@ describe("Phase 13B cell runner (dry-run, no paid API)", () => {
     ).toBe(true);
   });
 
-  it("locale batch dry-run writes per-cell job results without paid APIs", async () => {
-    const lessonIds = [SAMPLE_LESSON_ID, "intro-m1-l2-first-prompt"];
-    const summary = await runPhase13BLocaleBatch({
-      locale: "ar-MSA",
-      lessonIds,
-      dryRun: true,
-      confirmPaidApi: false,
-      confirmWrite: false,
-    });
-
-    expect(summary.cellCount).toBe(2);
-    expect(summary.okCount).toBe(2);
-    expect(summary.failedCount).toBe(0);
-    expect(summary.dryRun).toBe(true);
-
-    for (const lessonId of lessonIds) {
-      const job = await readPhase13BJobResult("ar-MSA", lessonId);
-      expect(job?.ok).toBe(true);
-      expect(job?.skippedPaidApi).toBe(true);
-      writtenJobResults.push(
-        path.join(
-          process.cwd(),
-          "src/lib/locale-lessons/ar-MSA/reports/phase13b-full-jobs/ar-MSA",
-          `${lessonId}.result.json`,
-        ),
-      );
-    }
-  });
 });
 
 describe("Phase 13B collector dry-run", () => {
@@ -650,39 +570,7 @@ describe("Phase 13B collector paid run", () => {
   });
 });
 
-describe("Phase 13B thrown-cell failure persistence", () => {
-  it("writes failed job results when runPhase13BFullCell throws", async () => {
-    const lessonId = SAMPLE_LESSON_ID;
-    const spy = vi
-      .spyOn(await import("../../../scripts/locale-lessons/run-phase13b-full-cell.ts"), "runPhase13BFullCell")
-      .mockRejectedValueOnce(new Error("OpenAI fragment JSON parse failed for test"));
-
-    const summary = await runPhase13BLocaleBatch({
-      locale: "en",
-      lessonIds: [lessonId],
-      dryRun: false,
-      confirmPaidApi: true,
-      confirmWrite: true,
-      generatedAt: "2026-07-07T00:00:00.000Z",
-    });
-
-    spy.mockRestore();
-
-    expect(summary.failedCount).toBe(1);
-    const job = await readPhase13BJobResult("en", lessonId);
-    expect(job?.ok).toBe(false);
-    expect(job?.mode).toBe("error");
-    expect(job?.skippedPaidApi).toBe(false);
-    expect(job?.errors[0]).toContain("OpenAI fragment JSON parse failed");
-
-    writtenJobResults.push(
-      path.join(
-        process.cwd(),
-        "src/lib/locale-lessons/ar-MSA/reports/phase13b-full-jobs/en",
-        `${lessonId}.result.json`,
-      ),
-    );
-  });
+describe("Phase 13B failed artifact collection", () => {
 
   it("collects persisted thrown-cell failures as failed retry cells", async () => {
     const root = await makeTempArtifactsRoot();

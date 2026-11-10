@@ -10,7 +10,7 @@ import {
   selectPilotLessonIds,
 } from "../../../scripts/locale-lessons/lib/pilot-lesson-ids.ts";
 import { SAMPLE_LESSON_IDS } from "../../../scripts/locale-lessons/lib/sample-lesson-ids.ts";
-import { validatePilotTargetPackage } from "../../../scripts/locale-lessons/generate-localized-pilot.ts";
+import { validatePilotTargetPackage } from "../../../scripts/locale-lessons/validate-localized-pilot.ts";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
 

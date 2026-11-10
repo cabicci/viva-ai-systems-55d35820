@@ -4,11 +4,6 @@ import { injectLocalizedFields } from "../../../scripts/locale-lessons/lib/injec
 import { mockLocalizeTextMap } from "../../../scripts/locale-lessons/lib/mock-localize-text-map.ts";
 import { getValueAtFieldPath } from "../../../scripts/locale-lessons/lib/inject-localized-fields.ts";
 import {
-  buildFragmentLocalizationPrompt,
-  OpenAiFragmentParseError,
-  parseOpenAiFragmentResponse,
-} from "../../../scripts/locale-lessons/lib/openai-fragment-adapter.ts";
-import {
   buildFragmentPilotMatrix,
   fragmentPilotArtifactName,
   parseLessonIdsArg,
@@ -95,32 +90,6 @@ describe("empty source text extraction", () => {
     expect(paths).toContain("sections[0].tables[0].rows[0][1]");
   });
 
-  it("does not include empty fields in OpenAI fragment prompt payload", () => {
-    const pkg = {
-      lessonId: "test-empty-fields",
-      canonicalVersion: "test",
-      locale: "ar-MSA",
-      title: "عنوان",
-      sections: [
-        {
-          role: "Orientation",
-          heading: "Heading",
-          contentMarkdown: "",
-          bullets: [],
-          tables: [],
-        },
-      ],
-    } as unknown as LocalizedLessonPackage;
-
-    const map = extractLocalizableFields(pkg);
-    const prompt = buildFragmentLocalizationPrompt(map, "en");
-
-    expect(map.fields.some((field) => field.fieldPath.endsWith("contentMarkdown"))).toBe(
-      false,
-    );
-    expect(prompt.userPrompt).not.toContain("sections[0].contentMarkdown");
-  });
-
   it("leaves skipped empty fields unchanged after injection", () => {
     const pkg = {
       lessonId: "test-empty-fields",
@@ -160,26 +129,6 @@ describe("empty source text extraction", () => {
     expect(field?.sourceText.trim().length).toBeGreaterThan(0);
   });
 
-  it("still rejects empty localizedText for non-empty sourceText", async () => {
-    const source = await loadMsaLessonPackage("analyst-m2-l1-feeling-to-question");
-    const textMap = extractLocalizableFields(source);
-
-    expect(() =>
-      parseOpenAiFragmentResponse(
-        JSON.stringify({
-          lessonId: textMap.lessonId,
-          fields: textMap.fields.map((field) => ({
-            fieldPath: field.fieldPath,
-            localizedText:
-              field.fieldPath === "sections[3].contentMarkdown"
-                ? "   "
-                : "Localized text",
-          })),
-        }),
-        textMap,
-      ),
-    ).toThrow(OpenAiFragmentParseError);
-  });
 });
 
 describe("one-lesson fragment pipeline", () => {

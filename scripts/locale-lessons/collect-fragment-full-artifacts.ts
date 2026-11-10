@@ -21,7 +21,7 @@ import { validateFragmentPipelineArtifact } from "./lib/validate-structural-pari
 import { finalizeLearnerFacingLocalePackageForWrite } from "./lib/phase13-pilot-lesson-output.ts";
 import { validateFinalLessonFile } from "./lib/validate-final-lesson-package.ts";
 import { selectFullLessonIds } from "./lib/full-lesson-ids.ts";
-import { openAiAdaptationModel } from "./providers/types.ts";
+import { fragmentArtifactReportModel } from "./lib/fragment-pilot-report.ts";
 
 interface ArtifactSource { runId: string; dir: string }
 interface LoadedArtifact { pkg: AdaptedLessonPackage; sourceRunId: string }
@@ -178,7 +178,7 @@ export async function collectFragmentFullArtifacts(input: {
         pipeline: "fragment",
         incomplete: false,
         provider: "openai-fragment",
-        providerModel: openAiAdaptationModel(),
+        providerModel: fragmentArtifactReportModel(),
         generatedAt,
         canonicalSource: "src/lib/locale-lessons/ar-MSA",
         lessonCount: packages.length,

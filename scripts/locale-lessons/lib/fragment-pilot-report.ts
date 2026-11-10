@@ -1,6 +1,10 @@
 import type { AdaptationTargetLocale } from "../../../src/lib/locale-lessons/types.ts";
 import type { FragmentPipelineValidationResult } from "./validate-structural-parity.ts";
 
+export function fragmentArtifactReportModel(): string {
+  return process.env.LOCALE_ADAPTATION_MODEL?.trim() || "gpt-4o-mini";
+}
+
 export interface FragmentPilotLessonResult {
   lessonId: string;
   fieldCount: number;

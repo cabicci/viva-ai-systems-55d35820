@@ -199,5 +199,5 @@ Learner routes `/curriculum`, `/dashboard`, `/learn/$pathId/$lessonId` use:
 ## 7. Related docs
 
 - `HANDOFF.md` — 3-file rule for new ar-EG lessons
-- `scripts/locale-lessons/README-pilot-generation.md` — fragment CI workflows
+- `scripts/locale-lessons/README.md` — validation of prepared lesson locale packages
 - Phase 12.5A–D — curriculum path/module/lesson labels + learner chrome

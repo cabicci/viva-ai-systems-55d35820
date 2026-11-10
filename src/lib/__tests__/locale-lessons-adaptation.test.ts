@@ -10,7 +10,7 @@ import type {
 import { ADAPTATION_TARGET_LOCALES, REQUIRED_LESSON_COUNT } from "@/lib/locale-lessons/types";
 import { buildAdaptationPrompt } from "../../../scripts/locale-lessons/prompts/build-prompt.ts";
 import { buildAdaptationPlan } from "../../../scripts/locale-lessons/plan-adaptation.ts";
-import { validateSampleTargetPackage } from "../../../scripts/locale-lessons/generate-localized-samples.ts";
+import { validateSampleTargetPackage } from "../../../scripts/locale-lessons/validate-localized-samples.ts";
 import {
   loadMsaLessonPackage,
   manifestPathForLocale,
