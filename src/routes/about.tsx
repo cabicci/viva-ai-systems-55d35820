@@ -38,19 +38,19 @@ function About() {
           <p className="mt-3">
             {locale === "en" ? (
               <>
-                masaarat.ai is owned by Khalil Wahid Ibrahim Abdelghany Lotfy, a sole
-                proprietor in Egypt.
+                masaarat.ai is owned by Khalil Wahid Ibrahim Abdelghany Lotfy, a sole proprietor in
+                Egypt.
               </>
             ) : (
-              <>
-                موقع masaarat.ai مملوك لخليل وحيد إبراهيم عبد الغني لطفي، صاحب منشأة فردية
-                مصرية.
-              </>
+              <>موقع masaarat.ai مملوك لخليل وحيد إبراهيم عبد الغني لطفي، صاحب منشأة فردية مصرية.</>
             )}
           </p>
           {locale === "en" && (
             <p lang="en" dir="ltr" className="mt-2">
-              Legal name (Arabic): <bdi lang="ar" dir="rtl">خليل وحيد إبراهيم عبد الغني لطفي</bdi>
+              Legal name (Arabic):{" "}
+              <bdi lang="ar" dir="rtl">
+                خليل وحيد إبراهيم عبد الغني لطفي
+              </bdi>
             </p>
           )}
           <p className="mt-3">
