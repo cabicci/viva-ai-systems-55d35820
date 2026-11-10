@@ -243,12 +243,16 @@ it("replays the persisted grounded answer after a lost settlement reply without 
   ).toHaveLength(2);
 });
 
-it.each([{ corrupt: true }, { empty: true }, { withdraw: true }])(
+it.each([
+  [{ corrupt: true }, 422],
+  [{ empty: true }, 422],
+  [{ withdraw: true }, 403],
+] as const)(
   "blocks unapproved/empty/withdrawn source without generation: %j",
-  async (options) => {
+  async (options, status) => {
     const f = fixture(options);
     const response = await handleAssistantRuntimeRequest(request(), f.deps);
-    expect([403, 422]).toContain(response.status);
+    expect(response.status).toBe(status);
     expect(f.calls()).toBe(0);
     const body = await response.json();
     expect(body.ok).toBe(false);
