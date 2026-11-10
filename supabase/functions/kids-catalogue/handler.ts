@@ -49,6 +49,7 @@ export async function handleKidsCatalogue(
   const auth = { apikey: service, Authorization: `Bearer ${service}` };
   try {
     const launch = await fetcher(new URL("/rest/v1/rpc/kids_public_launch_open", base), {
+      redirect: "error",
       method: "POST",
       headers: { ...auth, "Content-Type": "application/json" },
       body: "{}",
@@ -61,7 +62,7 @@ export async function handleKidsCatalogue(
     approvalsUrl.searchParams.set("select", "lesson_number,approved_sha256");
     approvalsUrl.searchParams.set("order", "lesson_number.asc");
     approvalsUrl.searchParams.set("limit", "13");
-    const approval = await fetcher(approvalsUrl, { headers: auth });
+    const approval = await fetcher(approvalsUrl, { redirect: "error", headers: auth });
     if (!approval.ok) return respond(request, 503, { error: "Unavailable" });
     const rows = (await approval.json()) as Array<{
       lesson_number?: number;
@@ -82,6 +83,7 @@ export async function handleKidsCatalogue(
         const object = await fetcher(
           new URL(`/storage/v1/object/kids-lesson-content/${path}`, base),
           {
+            redirect: "error",
             headers: auth,
           },
         );

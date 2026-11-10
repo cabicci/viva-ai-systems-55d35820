@@ -52,6 +52,7 @@ export async function handleKidsPlayback(
 
   try {
     const user = await fetcher(new URL("/auth/v1/user", base), {
+      redirect: "error",
       headers: { Authorization: bearer, apikey: anon },
     });
     if (!user.ok) return reply(request, 401, { error: "Unauthorized" });
@@ -60,6 +61,7 @@ export async function handleKidsPlayback(
 
     // The caller's JWT, rather than the service key, establishes auth.uid() in the RPC.
     const access = await fetcher(new URL("/rest/v1/rpc/kids_can_access_lesson", base), {
+      redirect: "error",
       method: "POST",
       headers: { Authorization: bearer, apikey: anon, "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -79,6 +81,7 @@ export async function handleKidsPlayback(
     mediaUrl.searchParams.set("select", "video_guid");
     mediaUrl.searchParams.set("limit", "2");
     const media = await fetcher(mediaUrl, {
+      redirect: "error",
       headers: { Authorization: `Bearer ${service}`, apikey: service },
     });
     if (!media.ok) return reply(request, 503, { error: "Unavailable" });

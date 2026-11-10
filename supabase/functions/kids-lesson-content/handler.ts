@@ -68,11 +68,13 @@ export async function handleKidsLessonContent(
   if (!input) return error(request, 400);
   try {
     const user = await fetcher(new URL("/auth/v1/user", base), {
+      redirect: "error",
       headers: { Authorization: bearer, apikey: anon },
     });
     const userId = user.ok ? (await user.json())?.id : null;
     if (!userId) return error(request, 401);
     const gate = await fetcher(new URL("/rest/v1/rpc/kids_can_access_lesson", base), {
+      redirect: "error",
       method: "POST",
       headers: { Authorization: bearer, apikey: anon, "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -91,6 +93,7 @@ export async function handleKidsLessonContent(
     approvalUrl.searchParams.set("select", "approved_sha256");
     approvalUrl.searchParams.set("limit", "2");
     const approval = await fetcher(approvalUrl, {
+      redirect: "error",
       headers: { Authorization: `Bearer ${service}`, apikey: service },
     });
     if (!approval.ok) return error(request, 503);
@@ -100,6 +103,7 @@ export async function handleKidsLessonContent(
     }
     const path = `${input.levelId}/lesson-${String(input.lessonNumber).padStart(2, "0")}/${input.locale}.json`;
     const object = await fetcher(new URL(`/storage/v1/object/kids-lesson-content/${path}`, base), {
+      redirect: "error",
       headers: { Authorization: `Bearer ${service}`, apikey: service },
     });
     if (!object.ok || Number(object.headers.get("Content-Length") ?? "0") > MAX_LESSON_BYTES) {
@@ -133,6 +137,7 @@ export async function handleKidsLessonContent(
     if (!result) return error(request, 503);
     if (action === "quiz-check" && requestId) {
       const saved = await fetcher(new URL("/rest/v1/rpc/record_learning_assessment", base), {
+        redirect: "error",
         method: "POST", headers: { Authorization: `Bearer ${service}`, apikey: service, "Content-Type": "application/json" },
         body: JSON.stringify({ p_user: userId, p_request: requestId, p_profile: input.profileId,
           p_area: "kids", p_course: input.levelId, p_lesson: String(input.lessonNumber), p_locale: input.locale,
