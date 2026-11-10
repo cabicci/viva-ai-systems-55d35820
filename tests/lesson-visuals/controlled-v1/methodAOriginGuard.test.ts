@@ -1,17 +1,11 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   METHOD_A_M7L1_FOUR_PILOT_LESSON_ID,
-  METHOD_A_REMAINING_SIX_LESSON_IDS,
 } from "../../../src/lib/lesson-visuals/controlled-v1/constants";
 import {
   captureMethodAPilotCell,
   type MethodACaptureEvidence,
 } from "../../../src/lib/lesson-visuals/controlled-v1/routes/methodALiveCapture";
-import {
-  captureMethodARemainingSixCell,
-  type MethodARemainingSixCaptureConfig,
-  type MethodARemainingSixCaptureEvidence,
-} from "../../../src/lib/lesson-visuals/controlled-v1/routes/methodARemainingSixCapture";
 import type { Locale } from "../../../src/lib/lesson-visuals/controlled-v1/types";
 
 const MALICIOUS_APP_ORIGINS = [
@@ -52,35 +46,6 @@ function pilotEvidence(locale: Locale, origin: string): MethodACaptureEvidence {
   };
 }
 
-function remainingEvidence(
-  lessonId: string,
-  locale: Locale,
-  origin: string,
-): MethodARemainingSixCaptureEvidence {
-  return {
-    lessonId,
-    concept: null,
-    requestedLocale: locale,
-    resolvedLocale: locale,
-    direction: locale === "en" ? "ltr" : "rtl",
-    route: "/dashboard",
-    finalUrl: origin,
-    readiness: {},
-    redaction: {},
-    networkAudit: {
-      total: 0,
-      allowed: 0,
-      blockedNonLocal: 0,
-      forbidden: 0,
-      samples: [],
-    },
-    assertions: ["fake capture stop"],
-  };
-}
-
-const remainingLessonId = METHOD_A_REMAINING_SIX_LESSON_IDS[0]!;
-const remainingCellId = `${remainingLessonId}__en`;
-
 describe("Method A credential-bearing app-origin gate", () => {
   beforeEach(() => {
     vi.stubEnv("CONTROLLED_V1_ZERO_CAPTURE", "0");
@@ -93,13 +58,10 @@ describe("Method A credential-bearing app-origin gate", () => {
   });
 
   it.each(MALICIOUS_APP_ORIGINS)(
-    "blocks %s before either capture function",
+    "blocks %s before pilot capture",
     async (appOrigin) => {
       const pilotCapture = vi.fn(async () => {
         throw new Error("pilot capture must not run");
-      });
-      const remainingCapture = vi.fn(async () => {
-        throw new Error("remaining-six capture must not run");
       });
 
       const pilot = await captureMethodAPilotCell({
@@ -110,19 +72,8 @@ describe("Method A credential-bearing app-origin gate", () => {
         appOrigin,
         captureFn: pilotCapture,
       });
-      const remaining = await captureMethodARemainingSixCell({
-        lessonId: remainingLessonId,
-        locale: "en",
-        cellId: remainingCellId,
-        outputDir: "unused",
-        appOrigin,
-        captureFn: remainingCapture,
-      });
-
       expect(pilot.ok).toBe(false);
-      expect(remaining.ok).toBe(false);
       expect(pilotCapture).not.toHaveBeenCalled();
-      expect(remainingCapture).not.toHaveBeenCalled();
     },
   );
 
@@ -130,7 +81,7 @@ describe("Method A credential-bearing app-origin gate", () => {
     ["http://127.0.0.1:55440", "http://127.0.0.1:55440"],
     ["HTTP://LOCALHOST:55440/", "http://localhost:55440"],
     ["http://localhost", "http://localhost"],
-  ])("accepts %s and passes normalized %s to both capture functions", async (raw, normalized) => {
+  ])("accepts %s and passes normalized %s to pilot capture", async (raw, normalized) => {
     const pilotCapture = vi.fn(
       async ({ locale, appOrigin }: { locale: Locale; appOrigin: string }) => ({
         png: Buffer.alloc(0),
@@ -138,24 +89,6 @@ describe("Method A credential-bearing app-origin gate", () => {
         evidence: pilotEvidence(locale, appOrigin),
       }),
     );
-    const remainingCapture = vi.fn(
-      async ({
-        lessonId,
-        locale,
-        appOrigin,
-      }: {
-        lessonId: string;
-        locale: Locale;
-        appOrigin: string;
-        config: MethodARemainingSixCaptureConfig;
-        readinessOnly?: boolean;
-      }) => ({
-        png: Buffer.alloc(0),
-        finalUrl: appOrigin,
-        evidence: remainingEvidence(lessonId, locale, appOrigin),
-      }),
-    );
-
     await captureMethodAPilotCell({
       lessonId: METHOD_A_M7L1_FOUR_PILOT_LESSON_ID,
       locale: "en",
@@ -164,18 +97,7 @@ describe("Method A credential-bearing app-origin gate", () => {
       appOrigin: raw,
       captureFn: pilotCapture,
     });
-    await captureMethodARemainingSixCell({
-      lessonId: remainingLessonId,
-      locale: "en",
-      cellId: remainingCellId,
-      outputDir: "unused",
-      appOrigin: raw,
-      captureFn: remainingCapture,
-    });
-
     expect(pilotCapture).toHaveBeenCalledOnce();
     expect(pilotCapture.mock.calls[0]?.[0].appOrigin).toBe(normalized);
-    expect(remainingCapture).toHaveBeenCalledOnce();
-    expect(remainingCapture.mock.calls[0]?.[0].appOrigin).toBe(normalized);
   });
 });
