@@ -32,12 +32,16 @@ export async function runAutomaticDriver(deps: AutomaticDriverDependencies): Pro
       return result.disabled === true ? "disabled" : "busy";
     }
     if (result.replayed === true) throw new Error("AUTOMATION_REQUEST_ALREADY_CONSUMED");
-    if (result.held === true) {
+    if (result.done === true) {
+      if (held) throw new Error("AUTOMATION_REVIEW_REQUIRED");
+      const heldCount = result.held;
+      if (typeof heldCount !== "number" || !Number.isSafeInteger(heldCount) || heldCount < 0)
+        throw new Error("AUTOMATION_RESPONSE_INVALID");
+      if (heldCount > 0) throw new Error("AUTOMATION_REVIEW_REQUIRED");
+      return "complete";
+    } else if (result.held === true) {
       held = true;
       deps.log(JSON.stringify({ state: "held", code: /^AUTOMATION_[A-Z0-9_]{1,64}$/.test(String(result.code)) ? result.code : "AUTOMATION_OPERATION_UNAVAILABLE" }));
-    } else if (result.done === true) {
-      if (held || Number(result.held) > 0) throw new Error("AUTOMATION_REVIEW_REQUIRED");
-      return "complete";
     } else if (result.progressed === true) {
       if (!["ai", "kids", "technical", "academic"].includes(String(result.area)) || typeof result.cardId !== "string" ||
         !/^[A-Za-z0-9-]{1,80}$/.test(result.cardId) || !Number.isSafeInteger(result.completedScopes) || !Number.isSafeInteger(result.totalScopes) ||
