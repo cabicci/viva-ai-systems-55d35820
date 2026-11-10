@@ -11,6 +11,10 @@ export type CheckStatus = "pass" | "fail" | "notes" | "skipped" | "unknown";
 
 export interface LessonAuditEntry {
   lessonId: string;
+  /** Opaque digest of source, actual request and execution settings. */
+  inputIdentity?: string;
+  /** Uncertain includes a persisted pre-dispatch marker; never auto-retry. */
+  requestState?: "not-started" | "settled" | "uncertain";
   result: AuditResultLabel;
   preflightPassed: boolean;
   preflightErrors: string[];
@@ -56,7 +60,8 @@ export interface ApiReviewResponse {
 export interface Reviewer {
   name: string;
   model: string;
-  reviewLesson(input: ReviewInput): Promise<ApiReviewResponse>;
+  requestIdentity(input: ReviewInput): string;
+  reviewLesson(input: ReviewInput, signal?: AbortSignal, expectedRequestIdentity?: string): Promise<ApiReviewResponse>;
 }
 
 export interface ReviewInput {

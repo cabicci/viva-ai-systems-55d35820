@@ -1,4 +1,6 @@
-import type { Reviewer } from "../types.ts";
+import { inputFingerprint, assertRequestIdentity } from "../lib/input-identity.ts";
+import { ReviewUncertainError, ReviewRejectedError, reviewHttpError } from "../lib/retry.ts";
+import type { Reviewer, ReviewInput } from "../types.ts";
 import {
   SYSTEM_PROMPT,
   buildUserPrompt,
@@ -22,14 +24,7 @@ export function createGeminiReviewer(): Reviewer {
   const model = process.env.AI_REVIEW_MODEL ?? "gemini-2.5-flash";
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 
-  return {
-    name: "gemini",
-    model,
-    async reviewLesson(input) {
-      const res = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
+  const requestBody = (input: ReviewInput) => ({
           generationConfig: {
             temperature: 0.1,
             responseMimeType: "application/json",
@@ -44,12 +39,28 @@ export function createGeminiReviewer(): Reviewer {
               ],
             },
           ],
-        }),
+        });
+  const requestDigest = (payload: unknown) => inputFingerprint({
+    provider: "gemini", model, endpoint: url.split("?")[0], method: "POST",
+    payload, parser: parseReviewJson.toString(),
+  });
+
+  return {
+    name: "gemini",
+    model,
+    requestIdentity(input) { return requestDigest(requestBody(input)); },
+    async reviewLesson(input, signal, expectedRequestIdentity) {
+      const payload = requestBody(input);
+      assertRequestIdentity(requestDigest(payload), expectedRequestIdentity);
+      signal?.throwIfAborted();
+      try {
+      const res = await fetch(url, {
+        method: "POST",
+        signal,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
-      if (!res.ok) {
-        const err = await res.text();
-        throw new Error(`Gemini API ${res.status}: ${err.slice(0, 400)}`);
-      }
+      if (!res.ok) throw reviewHttpError(res.status);
       const data = (await res.json()) as {
         candidates?: Array<{
           content?: { parts?: Array<{ text?: string }> };
@@ -57,7 +68,12 @@ export function createGeminiReviewer(): Reviewer {
       };
       const content =
         data.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
+      signal?.throwIfAborted();
       return parseReviewJson(content);
+      } catch (error) {
+        if (error instanceof ReviewRejectedError || error instanceof ReviewUncertainError) throw error;
+        throw new ReviewUncertainError();
+      }
     },
   };
 }

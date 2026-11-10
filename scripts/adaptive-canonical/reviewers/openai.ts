@@ -1,4 +1,6 @@
-import type { Reviewer } from "../types.ts";
+import { inputFingerprint, assertRequestIdentity } from "../lib/input-identity.ts";
+import { ReviewUncertainError, ReviewRejectedError, reviewHttpError } from "../lib/retry.ts";
+import type { Reviewer, ReviewInput } from "../types.ts";
 import {
   SYSTEM_PROMPT,
   buildUserPrompt,
@@ -10,17 +12,7 @@ export function createOpenAiReviewer(): Reviewer {
   if (!apiKey) throw new Error("OPENAI_API_KEY is not set");
   const model = process.env.AI_REVIEW_MODEL ?? "gpt-4o-mini";
 
-  return {
-    name: "openai",
-    model,
-    async reviewLesson(input) {
-      const res = await fetch("https://api.openai.com/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
+  const requestBody = (input: ReviewInput) => ({
           model,
           temperature: 0.1,
           response_format: { type: "json_object" },
@@ -28,17 +20,41 @@ export function createOpenAiReviewer(): Reviewer {
             { role: "system", content: SYSTEM_PROMPT },
             { role: "user", content: buildUserPrompt(input) },
           ],
-        }),
+        });
+  const requestDigest = (payload: unknown) => inputFingerprint({
+    provider: "openai", model, endpoint: "https://api.openai.com/v1/chat/completions", method: "POST",
+    payload, parser: parseReviewJson.toString(),
+  });
+
+  return {
+    name: "openai",
+    model,
+    requestIdentity(input) { return requestDigest(requestBody(input)); },
+    async reviewLesson(input, signal, expectedRequestIdentity) {
+      const payload = requestBody(input);
+      assertRequestIdentity(requestDigest(payload), expectedRequestIdentity);
+      signal?.throwIfAborted();
+      try {
+      const res = await fetch("https://api.openai.com/v1/chat/completions", {
+        method: "POST",
+        signal,
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       });
-      if (!res.ok) {
-        const err = await res.text();
-        throw new Error(`OpenAI API ${res.status}: ${err.slice(0, 400)}`);
-      }
+      if (!res.ok) throw reviewHttpError(res.status);
       const data = (await res.json()) as {
         choices?: Array<{ message?: { content?: string } }>;
       };
       const content = data.choices?.[0]?.message?.content ?? "";
+      signal?.throwIfAborted();
       return parseReviewJson(content);
+      } catch (error) {
+        if (error instanceof ReviewRejectedError || error instanceof ReviewUncertainError) throw error;
+        throw new ReviewUncertainError();
+      }
     },
   };
 }

@@ -21,38 +21,43 @@ export function maxAttempts(): number {
   return Number.isFinite(n) && n > 0 ? Math.floor(n) : DEFAULT_ATTEMPTS;
 }
 
-export class ReviewTimeoutError extends Error {
+/** Client cancellation is not proof that remote generation or billing stopped. */
+export class ReviewUncertainError extends Error {
+  constructor(message = "Review completion is uncertain; reconciliation required before another request") {
+    super(message); this.name = "ReviewUncertainError";
+  }
+}
+export class ReviewTimeoutError extends ReviewUncertainError {
   constructor(timeoutMs: number) {
-    super(`API review timed out after ${timeoutMs}ms`);
+    super(`API review timed out after ${timeoutMs}ms; cancellation requested, remote completion/billing unknown`);
     this.name = "ReviewTimeoutError";
   }
 }
-
-export function isRetryableError(err: unknown): boolean {
-  const msg = String(err).toLowerCase();
-  if (err instanceof ReviewTimeoutError) return true;
-  if (msg.includes("timed out") || msg.includes("timeout")) return true;
-  if (msg.includes("network") || msg.includes("fetch failed") || msg.includes("econnreset")) {
-    return true;
+export class ReviewRejectedError extends Error {
+  constructor(public readonly status: number) {
+    super(`Reviewer explicitly rejected request: HTTP ${status}`); this.name = "ReviewRejectedError";
   }
-  if (msg.includes("429") || msg.includes("rate limit") || msg.includes("overloaded")) {
-    return true;
-  }
-  if (/\b5\d{2}\b/.test(msg)) return true;
-  if (msg.includes("reviewer returned no json")) return true;
-  if (msg.includes("reviewer json missing")) return true;
-  return false;
 }
-
-export async function withTimeout<T>(promise: Promise<T>, timeoutMs: number): Promise<T> {
+export function reviewHttpError(status: number): Error {
+  return status >= 500 ? new ReviewUncertainError("Reviewer server error; remote completion/billing unknown") : new ReviewRejectedError(status);
+}
+export function isRetryableError(err: unknown): boolean {
+  // Only an observed rate-limit rejection is automatically retried, after the
+  // preceding request settles. Timeouts/network/parse failures are ambiguous.
+  return err instanceof ReviewRejectedError && err.status === 429;
+}
+export async function withTimeout<T>(task: (signal: AbortSignal) => Promise<T>, timeoutMs: number): Promise<T> {
+  if (!Number.isFinite(timeoutMs) || timeoutMs <= 0) throw new Error("Invalid review timeout");
+  const controller = new AbortController();
   let timer: ReturnType<typeof setTimeout> | undefined;
   try {
-    return await Promise.race([
-      promise,
-      new Promise<T>((_, reject) => {
-        timer = setTimeout(() => reject(new ReviewTimeoutError(timeoutMs)), timeoutMs);
-      }),
-    ]);
+    const deadline = new Promise<never>((_, reject) => {
+      timer = setTimeout(() => {
+        // Reject the deadline first: abort listeners may reject the task too.
+        reject(new ReviewTimeoutError(timeoutMs)); controller.abort();
+      }, timeoutMs);
+    });
+    return await Promise.race([Promise.resolve().then(() => task(controller.signal)), deadline]);
   } finally {
     if (timer) clearTimeout(timer);
   }
