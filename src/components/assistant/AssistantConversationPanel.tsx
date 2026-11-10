@@ -6,6 +6,7 @@ import { historyKey, type ConversationTurn } from "@/lib/card-assistant/history"
 import { AssistantAnswer } from "./AssistantAnswer";
 import { AssistantUsage } from "./AssistantUsage";
 import { AssistantRequestError } from "@/lib/card-assistant/errors";
+import { isTerminalAssistantRetry, readAssistantRetryEvidence } from "@/lib/card-assistant/retry";
 
 export type AssistantConversationPanelProps = {
   scope: AssistantScope;
@@ -320,10 +321,13 @@ function Conversation({ frame, cardTitle, ask, onCitation, compact }: AssistantC
       const pending = Reflect.apply(adapter, undefined, [args]);
       const result = await adopt(pending, check);if (!result || !check()) return;
       const status = field(result.value, "status", check);
-      if (typeof status === "number" && check()) retryRequest.current = null;
       if (status !== 200) {
+        const reason = field(result.value, "error", check);
+        // A temporary failure can hide a running or already settled reservation.
+        // Retain the request until the server confirms settlement or invalidation.
+        const evidence = readAssistantRetryEvidence(key => key === "error" ? reason : field(result.value, key, check));
+        if (isTerminalAssistantRetry(status, evidence) && check()) retryRequest.current = null;
         if (status === 403) {
-          const reason = field(result.value, "error", check);
           if (typeof reason === "string" && (historyAccessDenials.has(reason) ||
             (scope.area === "kids" && reason === "CARD_ACCESS_REQUIRED")) && check()) {
             life.historyAccessDenied = true;
@@ -342,13 +346,25 @@ function Conversation({ frame, cardTitle, ask, onCitation, compact }: AssistantC
       const copied = citations(field(result.value, "citations", check), check);if (!copied) throw new Error("Invalid assistant citations");
       const next = Object.freeze([...view.turns.slice(-19), Object.freeze({ question, answer, citations: copied })]);
       if (!check()) return;saveHistory(storage.current, next, check);if (!check()) return;
+      retryRequest.current = null;
       life.historyAccessDenied = false;
       update(life, action, previous => ({ ...previous, turns: next, query: "" }));
     } catch (cause) {
       observeEager(cause);
       if (check()) {
         let message = copy.unavailable;
-        try { if (cause instanceof AssistantRequestError) { const detail = field(cause, "message", check);if (typeof detail === "string") message = detail; } } catch { /* Retired or malformed error. */ }
+        try {
+          if (cause instanceof AssistantRequestError) {
+            const detail = field(cause, "message", check);
+            if (typeof detail === "string") message = detail;
+            const retry = field(cause, "retry", check);
+            if (retry) {
+              const status = field(cause, "status", check);
+              const evidence = readAssistantRetryEvidence(key => field(retry, key, check));
+              if (isTerminalAssistantRetry(status, evidence) && check()) retryRequest.current = null;
+            }
+          }
+        } catch { /* Retired or malformed error. */ }
         update(life, action, previous => ({ ...previous, error: message }));
       }
     } finally {

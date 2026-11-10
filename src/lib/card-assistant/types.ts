@@ -15,6 +15,8 @@ export type AssistantReply = {
   answer?: string;
   citations?: AssistantCitation[];
   error?: string;
+  chargedUnits?: 0 | 1;
+  replay?: boolean;
 };
 export type AssistantExchange = { question: string; answer: string };
 export type AssistantQuestion = { scope: AssistantScope; query: string; requestId: string; history?: AssistantExchange[] };

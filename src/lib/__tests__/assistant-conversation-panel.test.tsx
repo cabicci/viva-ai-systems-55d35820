@@ -18,6 +18,8 @@ import tls from "node:tls";
 import dns from "node:dns";
 import dgram from "node:dgram";
 import { syncBuiltinESMExports } from "node:module";
+import { webcrypto } from "node:crypto";
+import { runMeteredQuestion } from "../../../supabase/functions/assistant-runtime/question-metering";
 import type { useAuth, AuthGeneration } from "@/lib/auth-context";
 import { AssistantConversationPanel } from "@/components/assistant/AssistantConversationPanel";
 import { historyKey, readHistory, writeHistory, type ConversationTurn } from "@/lib/card-assistant/history";
@@ -155,6 +157,85 @@ it.each([401, 403, 429, 500])("rejects an answer returned with error status %s",
   expect(screen.queryByText("ERROR_RESPONSE_MUST_NOT_RENDER")).not.toBeInTheDocument();
   expect(readHistory(historyKey(scope, "account-a"))).toEqual([]);
   expect(screen.getByRole("textbox")).toBeEnabled();
+});
+
+it.each([409, 500, 502, 503, 504])("reuses the durable request identity after retryable numeric status %s", async status => {
+  ask.mockResolvedValueOnce({status}).mockResolvedValueOnce(reply("Recovered answer"));
+  render(<AssistantConversationPanel scope={scope} accountId="account-a" ask={ask} />);
+  send("Retry the same question");
+  expect(await screen.findByRole("alert")).toBeVisible();
+  const original = ask.mock.calls[0][0].requestId;
+  expect(original).toMatch(/^[a-f0-9-]{36}$/i);
+  send("Retry the same question");
+  await screen.findByText("Recovered answer");
+  expect(ask.mock.calls[1][0].requestId).toBe(original);
+  expect(readHistory(historyKey(scope,"account-a"))).toHaveLength(1);
+});
+
+it.each([
+  { status: 429 },
+  { status: 200, answer: "", citations: [] },
+])("retains a pending identity across a later inconclusive reply %j", async inconclusive => {
+  ask.mockResolvedValueOnce({ status: 503 })
+    .mockResolvedValueOnce(inconclusive)
+    .mockResolvedValueOnce(reply("Recovered answer"));
+  render(<AssistantConversationPanel scope={scope} accountId="account-a" ask={ask} />);
+  send("Retry the same question");
+  await screen.findByRole("alert");
+  send("Retry the same question");
+  await screen.findByRole("alert");
+  send("Retry the same question");
+  await screen.findByText("Recovered answer");
+  expect(ask.mock.calls.map(([question]) => question.requestId))
+    .toEqual(Array(3).fill(ask.mock.calls[0][0].requestId));
+});
+
+it("uses a new request identity for a different question after a retryable response", async () => {
+  ask.mockResolvedValueOnce({status:503}).mockResolvedValueOnce(reply("Different answer"));
+  render(<AssistantConversationPanel scope={scope} accountId="account-a" ask={ask} />);
+  send("First question");await screen.findByRole("alert");
+  const original=ask.mock.calls[0][0].requestId;
+  send("Different question");await screen.findByText("Different answer");
+  expect(ask.mock.calls[1][0].requestId).not.toBe(original);
+});
+
+it.each([
+  {status:503,chargedUnits:0},
+  {status:503,replay:true},
+  {status:409,error:"ASSISTANT_REQUEST_EXPIRED"},
+])("allows a fresh attempt after a known terminal response %j", async terminal => {
+  ask.mockResolvedValueOnce(terminal).mockResolvedValueOnce(reply("New attempt"));
+  render(<AssistantConversationPanel scope={scope} accountId="account-a" ask={ask} />);
+  send("Same question");await screen.findByRole("alert");
+  const original=ask.mock.calls[0][0].requestId;
+  send("Same question");await screen.findByText("New attempt");
+  expect(ask.mock.calls[1][0].requestId).not.toBe(original);
+});
+
+it('replays a settled answer after a lost settlement acknowledgement without a second synthetic debit',async()=>{
+  vi.stubGlobal('crypto',webcrypto);
+  const settled=new Map<string,unknown>();let debit=0,executions=0,lostAcknowledgement=true;
+  const rpc=vi.fn(async(name:string,args:Record<string,unknown>)=>{
+    const id=args.p_request_id as string;
+    if(name==='reserve_assistant_question')return settled.has(id)
+      ?{ok:true as const,data:{status:'replay',response:settled.get(id),balance:{monthly_remaining:10-debit,purchased_remaining:0}}}
+      :{ok:true as const,data:{status:'reserved',allowed:true}};
+    if(name==='settle_assistant_question'){
+      settled.set(id,args.p_response);debit++;
+      if(lostAcknowledgement){lostAcknowledgement=false;return {ok:false as const,status:503,error:'ASSISTANT_BILLING_UNAVAILABLE'};}
+      return {ok:true as const,data:{status:'settled',response:args.p_response,charged_units:1,balance:{monthly_remaining:10-debit,purchased_remaining:0}}};
+    }
+    throw new Error('Unexpected billing operation');
+  });
+  ask.mockImplementation(async(input:{requestId:string;query:string;history:[]})=>{
+    const response=await runMeteredQuestion({userId:'account-a',area:'academic',course:'AC-ONE',lesson:scope.stepId!,locale:'en',childId:null,requestId:input.requestId,query:input.query,history:input.history},rpc,
+      async()=>{executions++;return {status:200,body:{answer:'Persisted answer',citations:[]},outcome:'answered'};},async()=>true);
+    return {...response.body,status:response.status};
+  });
+  render(<AssistantConversationPanel scope={scope} accountId="account-a" ask={ask}/>);
+  send('Explain the same concept');await screen.findByRole('alert');expect(debit).toBe(1);
+  send('Explain the same concept');await screen.findByText('Persisted answer');
+  expect(executions).toBe(1);expect(debit).toBe(1);expect(settled.size).toBe(1);
 });
 
 it("blocks duplicate form submission while the provider request is pending", async () => {
