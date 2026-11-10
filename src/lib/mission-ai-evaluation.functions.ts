@@ -262,7 +262,7 @@ export const revealModelMissionAnswer = createServerFn({ method: "POST" })
 
     const { data: row, error: rowErr } = await supabaseAdmin
       .from("mission_submissions")
-      .select("id, user_id, mission_id, lesson_id, attempt_count, status, submission_metadata")
+      .select("id, user_id, mission_id, lesson_id, attempt_count, status, submission_metadata, updated_at")
       .eq("id", data.submissionId)
       .eq("user_id", userId)
       .eq("mission_id", data.missionId)
@@ -296,6 +296,11 @@ export const revealModelMissionAnswer = createServerFn({ method: "POST" })
     // Server-side guard — escape hatch only after 2 real submit attempts.
     if ((row.attempt_count ?? 0) < 2) {
       throw new Error("لازم تحاول مرتين قبل ما تشوف نموذج الإجابة.");
+    }
+    // Reuse the database's exact row version, as the evaluator claim already
+    // does. A generated example has no authority to replace a later attempt.
+    if (typeof row.updated_at !== "string" || !row.updated_at) {
+      throw new Error(getUiString(data.locale, "mission.reveal.submissionChanged"));
     }
 
     const lessonId = z.string().min(1).max(200).parse(row.lesson_id);
@@ -337,7 +342,7 @@ export const revealModelMissionAnswer = createServerFn({ method: "POST" })
     };
 
     // Persist model answer only — do not pass/unlock; learner must resubmit.
-    const { error: updErr } = await supabaseAdmin
+    const { data: saved, error: updErr } = await supabaseAdmin
       .from("mission_submissions")
       .update({
         submission_metadata: {
@@ -348,10 +353,19 @@ export const revealModelMissionAnswer = createServerFn({ method: "POST" })
         },
       })
       .eq("id", data.submissionId)
-      .eq("user_id", userId);
+      .eq("user_id", userId)
+      .eq("mission_id", row.mission_id)
+      .eq("lesson_id", lessonId)
+      .eq("status", row.status)
+      .eq("updated_at", row.updated_at)
+      .select("id")
+      .maybeSingle();
     if (updErr) {
       console.error("[revealModelMissionAnswer] persist failed", updErr);
       throw new Error("تم توليد النموذج لكن تعذّر حفظ النتيجة.");
+    }
+    if (!saved) {
+      throw new Error(getUiString(data.locale, "mission.reveal.submissionChanged"));
     }
 
     return result;
