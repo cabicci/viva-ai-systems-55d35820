@@ -1,7 +1,7 @@
 """Assemble only complete generated locale sets. Keeps editorial acceptance OPEN."""
 import argparse, hashlib, json
 from pathlib import Path
-from expand_lessons import validate,LOCALES
+from validate_package import validate,LOCALES
 ROOT=Path(__file__).resolve().parents[2]
 p=argparse.ArgumentParser();p.add_argument('input',type=Path);a=p.parse_args()
 briefs=json.loads((ROOT/'experiments/academic/course/authored-briefs.json').read_text())

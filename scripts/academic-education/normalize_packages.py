@@ -1,7 +1,7 @@
 """Lossless schema adaptation for review artifacts; never fabricates missing content."""
 import argparse, copy, json
 from pathlib import Path
-from expand_lessons import validate
+from validate_package import validate
 
 def normalize(source):
     d = copy.deepcopy(source)

@@ -6,7 +6,7 @@ Run `python scripts/academic-education/media_plan.py` to prepare the 156 additio
 
 Full-course media production remains subject to the actual listening acceptance recorded in `docs/academic/AUDIO_REVIEW.md`. Prepared plans are not videos. The existing pilot-only workflow/request must not be widened implicitly or used to overwrite pilot identities. Review changes to pronunciation against real audio before scaling; keep source wording separate from provider-only pronunciation instructions.
 
-`expand_lessons.py` performs bounded original lesson expansion from committed authored briefs using the existing Gemini credential. Outputs are review-only, never imported or published automatically. The request caps 39 lessons × four locales × two attempts. The pilot is not regenerated. A refusal does not trigger safety-evasion rewriting. Secret values and provider bodies are not logged.
+Academic lessons are authored outside the repository. Use the offline validation and delivery commands below to review prepared packages before import.
 
 `integration-candidate.sql` is deliberately outside `supabase/migrations`. It is a central-integration review candidate, not an applied migration. It reuses stored account/admin identity and existing commerce entitlement records. It creates inactive course/content, private downloads and server-graded quiz/progress delivery. Academic and assistant rights are independent. Missing video is nullable. Practice submission is not represented as academic grading.
 
@@ -14,9 +14,9 @@ Central dependencies before activation: extend existing commerce package constra
 
 ## Local review and delivery
 
-The durable authored content is `experiments/academic/course/expanded/{locale}.json`. Generation artifacts expire after 14 days; `repair_truncated_drafts.py` documents local recovery from retained drafts and requires those original artifacts if replayed. Do not regenerate already accepted outputs merely because temporary artifacts expired.
+The durable authored content is `experiments/academic/course/expanded/{locale}.json`. Retain accepted packages as delivery inputs.
 
-For a new bounded production request: normalize only the new artifact directory, apply the exact editorial corrections, then assemble once all 39 additional packages per locale are present:
+For prepared lesson packages, normalize the input directory, apply the exact editorial corrections, then assemble once all 39 additional packages per locale are present:
 
 ```sh
 python scripts/academic-education/normalize_packages.py INPUT tmp/normalized
