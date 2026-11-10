@@ -8,6 +8,7 @@ import { PaymentMethods } from "./PaymentMethods";
 import { ReceiptView } from "./ReceiptUpload";
 import { AdminGroups } from "./AdminGroups";
 import { AdminPayments } from "./AdminPayments";
+import { adminPaymentsPresentation } from "@/lib/commerce/admin-payments-presentation";
 import { AdminSettings } from "./AdminSettings";
 import { moneyToMinor } from "@/lib/commerce/admin-ui";
 import { commerceCopy } from "@/lib/commerce/copy";
@@ -114,6 +115,7 @@ describe("administrator payment amounts", () => {
       </QueryClientProvider>,
     );
     const w = commerceCopy(locale);
+    fireEvent.click(screen.getByRole("button", { name: adminPaymentsPresentation(locale).record }));
     const form = within(screen.getByRole("button", { name: w.confirm }).closest("form")!);
     if (initialOrderId) return { run, form, w };
     fireEvent.click(form.getByRole("checkbox", { name: /SYNTHETIC-ORDER/ }));
@@ -186,7 +188,9 @@ describe("administrator payment amounts", () => {
     fireEvent.change(form.getByLabelText(`${w.received} (EGP)`), { target: { value: "169" } });
     run.mockResolvedValue(undefined);
     fireEvent.click(form.getByRole("button", { name: w.confirm }));
-    expect(await form.findByRole("alert")).toHaveTextContent(w.error);
+    expect(await form.findByRole("alert")).toHaveTextContent(
+      adminPaymentsPresentation("en").savedInputs,
+    );
     expect(form.queryByText(w.paymentRecorded)).toBeNull();
   });
   it("parses major units without rounding or accepting invalid precision", () => {
