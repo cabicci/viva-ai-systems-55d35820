@@ -5,17 +5,72 @@ import json
 import os
 from pathlib import Path
 import re
+import subprocess
 import tempfile
 import urllib.parse
 
-from cleanup_merged_branches import API, REPO, read_main, write_report, delete_ref, verify_deleted, verify_retained_pull_head
-from preserve_production import git, tag_verified, snapshot, deletion_guard, REMOTE
+from cleanup_merged_branches import API, REPO, git_auth_env, read_main, write_report, delete_ref, verify_deleted, verify_retained_pull_head
 
 ROOT = Path(__file__).resolve().parents[2]
 PLAN = ROOT / 'docs/maintenance/dormant-branches-2026-10-10.json'
 DIGEST = '67199156088add2d5e8e341fd4dd0839c667753566f50d8699d326b8d864a985'
 BASELINE = 'd74fdc503f80ada0d091c4608e1a0c230111fae4'
 PREFIX = 'archive/dormant/2026-10-10/'
+REMOTE = 'https://github.com/' + REPO + '.git'
+
+
+def git(directory, args, token=None):
+    result = subprocess.run(['git', '-C', str(directory), *args],
+        env=git_auth_env(token) if token else None,
+        stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=180)
+    if result.returncode:
+        raise RuntimeError('Git preservation operation failed; transport output withheld')
+    return result.stdout
+
+
+def tag_verified(directory, source, token):
+    ref = 'refs/tags/' + source['tag']
+    found = git(directory, ['ls-remote', '--refs', REMOTE, ref], token).decode().strip()
+    if found and found != source['sha'] + '\t' + ref:
+        raise RuntimeError('Archive tag exists at a different head; never overwrite')
+    if not found:
+        git(directory, ['push', '--porcelain', '--force-with-lease=' + ref + ':', REMOTE, source['sha'] + ':' + ref], token)
+    if git(directory, ['ls-remote', '--refs', REMOTE, ref], token).decode().strip() != source['sha'] + '\t' + ref:
+        raise RuntimeError('Archive tag was not independently verified')
+
+
+def snapshot(api):
+    branches = {b['name']: b for b in api.pages('branches')}
+    pulls = api.pages('pulls?state=open')
+    runs = []
+    for status in ('queued','in_progress','waiting','pending','requested'):
+        runs.extend(api.pages('actions/runs?status=' + status, key='workflow_runs'))
+    deployments = api.pages('deployments')
+    return {'branches': branches, 'pulls': pulls, 'runs': runs, 'deployments': deployments}
+
+
+def deletion_guard(api, target, workflows, state):
+    name = target['branch']
+    encoded = urllib.parse.quote(name, safe='')
+    branch = state['branches'].get(name)
+    if branch is None:
+        return 'already absent'
+    if branch['commit']['sha'] != target['sha'] or branch.get('protected'):
+        return 'changed or protected head'
+    if name in workflows:
+        return 'current workflow reference'
+    for pr in state['pulls']:
+        if (pr.get('head', {}).get('ref') == name or pr.get('base', {}).get('ref') == name):
+            return 'open PR dependency'
+    if any(r['head_branch'] == name and r['status'] != 'completed' for r in state['runs']):
+        return 'unfinished Actions run'
+    for d in state['deployments']:
+        if d['ref'] != name:
+            continue
+        statuses = api.get('deployments/' + str(d['id']) + '/statuses?per_page=1')
+        if not statuses or statuses[0]['state'] not in ('inactive','failure','error'):
+            return 'active or unknown deployment'
+    return None
 
 
 def validate(plan):
