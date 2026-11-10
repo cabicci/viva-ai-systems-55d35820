@@ -16,11 +16,10 @@ Central dependencies before activation: extend existing commerce package constra
 
 The durable authored content is `experiments/academic/course/expanded/{locale}.json`. Retain accepted packages as delivery inputs.
 
-For prepared lesson packages, normalize the input directory, apply the exact editorial corrections, then assemble once all 39 additional packages per locale are present:
+For prepared lesson packages, normalize the input directory, then assemble once all 39 additional packages per locale are present:
 
 ```sh
 python scripts/academic-education/normalize_packages.py INPUT tmp/normalized
-python scripts/academic-education/apply_editorial.py tmp/normalized
 python scripts/academic-education/assemble.py tmp/normalized
 python -m unittest discover -s scripts/academic-education -p '*_test.py'
 npx vitest run src/lib/academic-education/integration.test.ts src/components/academic-education/AcademicLessonPage.test.tsx
@@ -32,6 +31,8 @@ ACADEMIC_EXPORT_PDFS=1 node experiments/academic/course-review.mjs
 python scripts/academic-education/build_rag_corpus.py
 python scripts/academic-education/prepare_delivery.py
 ```
+
+If packages need editorial corrections, review the correction set against those exact packages. Apply it to the normalized working copy before assembly with `python scripts/academic-education/apply_editorial.py tmp/normalized --patches REVIEWED_CORRECTIONS.json`. The repository’s historical correction set is scoped to its original packages.
 
 Set `ACADEMIC_CHROME` and runtime library paths only when required by the installed browser. Course review runs on the exported file. `ACADEMIC_LOCALES` supports bounded local batches; a one-locale report is not four-locale acceptance. Refresh the HTML after generating pilot PDFs so embedded downloads match the final files. Exported content and PDFs are review artifacts; private import remains inactive until central approval.
 
