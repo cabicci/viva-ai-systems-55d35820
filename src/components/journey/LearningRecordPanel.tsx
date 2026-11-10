@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { getUiString } from "@/lib/locale/ui-strings";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { useAuth } from "@/lib/auth-context";
@@ -16,7 +17,13 @@ export function LearningRecordPanel() {
   const { locale } = useLocale();
   const c = learningCopy(locale);
   const parent = useKidsParentStateSource();
+  const title = useRef<HTMLHeadingElement>(null);
+  const focusRetry = useRef<AbortController | null>(null);
+  useEffect(() => () => focusRetry.current?.abort(), []);
   const [selected, setSelected] = useState<string>("");
+  const readScope = useMemo(() => ({}), [auth.user?.id, locale, selected]);
+  const currentReadScope = useRef(readScope);
+  currentReadScope.current = readScope;
   const [source, setSource] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(false);
@@ -120,6 +127,48 @@ export function LearningRecordPanel() {
       }
     }
   }
+  async function retryRead(
+    refetch: () => Promise<{ isSuccess: boolean }>,
+    button: HTMLButtonElement,
+  ) {
+    const generation = auth.authGeneration;
+    const scope = currentReadScope.current;
+    const document = button.ownerDocument;
+    const restoreFocus = document.activeElement === button;
+    focusRetry.current?.abort();
+    const controller = new AbortController();
+    focusRetry.current = controller;
+    let moved = !restoreFocus;
+    const onFocus = (event: FocusEvent) => {
+      if (event.target !== button && (event.target !== document.body || button.isConnected)) {
+        moved = true;
+      }
+    };
+    const onPointer = (event: PointerEvent) => {
+      if (!button.contains(event.target as Node)) moved = true;
+    };
+    const onWindowBlur = () => {
+      moved = true;
+    };
+    document.addEventListener("focusin", onFocus, { signal: controller.signal });
+    document.addEventListener("pointerdown", onPointer, { signal: controller.signal });
+    document.defaultView?.addEventListener("blur", onWindowBlur, { signal: controller.signal });
+    try {
+      const result = await refetch();
+      if (
+        !controller.signal.aborted && !moved && result.isSuccess &&
+        auth.isAuthGenerationCurrent(generation) && currentReadScope.current === scope &&
+        (document.activeElement === button || document.activeElement === document.body)
+      ) {
+        title.current?.focus();
+      }
+    } catch {
+      // The query retains its error state and retry control.
+    } finally {
+      controller.abort();
+      if (focusRetry.current === controller) focusRetry.current = null;
+    }
+  }
   async function download() {
     if (!record) return;
     const generation = auth.authGeneration;
@@ -144,12 +193,21 @@ export function LearningRecordPanel() {
       className="space-y-5 rounded-3xl border bg-card p-6"
       dir={locale === "en" ? "ltr" : "rtl"}
     >
-      <h2 className="text-2xl font-bold">{c.title}</h2>
+      <h2
+        ref={title}
+        tabIndex={-1}
+        className="text-2xl font-bold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+      >
+        {c.title}
+      </h2>
       {records.isPending ? (
-        <p role="status">{c.saving}</p>
+        <p role="status">{c.loading}</p>
       ) : records.isError ? (
         <p role="alert">
-          {c.load} <Button onClick={() => void records.refetch()}>{c.retry}</Button>
+          {c.load} {" "}
+          <Button onClick={(event) => void retryRead(records.refetch, event.currentTarget)}>
+            {c.retry}
+          </Button>
         </p>
       ) : !record ? (
         <p>{c.empty}</p>
@@ -210,9 +268,13 @@ export function LearningRecordPanel() {
               </ul>
             </div>
           )}
+          {detail.isPending && <p role="status">{c.loading}</p>}
           {detail.isError && (
             <p role="alert">
-              {c.load} <Button onClick={() => void detail.refetch()}>{c.retry}</Button>
+              {c.load} {" "}
+              <Button onClick={(event) => void retryRead(detail.refetch, event.currentTarget)}>
+                {c.retry}
+              </Button>
             </p>
           )}
           <ol className="max-h-96 space-y-3 overflow-auto">
@@ -289,9 +351,14 @@ export function LearningRecordPanel() {
           <h3 className="text-xl font-semibold">{c.reports}</h3>
           <p>{c.included}</p>
           <p className="text-sm text-muted-foreground">{c.notePrivate}</p>
-          {reports.isError ? (
+          {reports.isPending ? (
+            <p role="status">{c.loading}</p>
+          ) : reports.isError ? (
             <p role="alert">
-              {c.load} <Button onClick={() => void reports.refetch()}>{c.retry}</Button>
+              {c.load} {" "}
+              <Button onClick={(event) => void retryRead(reports.refetch, event.currentTarget)}>
+                {c.retry}
+              </Button>
             </p>
           ) : !chosen ? (
             <p>{c.noSources}</p>
@@ -361,6 +428,10 @@ function AssessmentEvidence({
     evidence.outcome && typeof evidence.outcome === "object"
       ? (evidence.outcome as Record<string, unknown>)
       : evidence;
+  const marker = evidence.submission_metadata;
+  if (marker && typeof marker === "object" && (marker as Record<string, unknown>).skipped === true) {
+    return <p>{getUiString(locale, "mission.skipped.message")}</p>;
+  }
   const score = outcome.score;
   const submission = evidence.submission ?? evidence.submission_text;
   const texts = (value: unknown, depth = 0): string[] => {

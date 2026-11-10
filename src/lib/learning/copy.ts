@@ -15,6 +15,7 @@ const en = {
   notes: "Personal lesson notes",
   saved: "Save confirmed",
   saving: "Saving…",
+  loading: "Loading…",
   pending: "Saved on this device; cloud save is not confirmed.",
   conflict:
     "This note changed on another device. Your local draft is kept. Review both before saving.",
@@ -65,6 +66,7 @@ const ar = {
   notes: "ملاحظات الدرس الشخصية",
   saved: "تأكد الحفظ",
   saving: "جارٍ الحفظ…",
+  loading: "جارٍ التحميل…",
   pending: "المسودة محفوظة على هذا الجهاز؛ لم يتأكد حفظها على حسابك.",
   conflict: "تغيرت الملاحظة من جهاز آخر. مسودتك محفوظة؛ راجع النسختين قبل الحفظ.",
   retry: "إعادة المحاولة",
@@ -102,6 +104,7 @@ const eg: typeof en = {
   empty: "سجلك هيظهر هنا لما تبدأ تتعلم.",
   saved: "اتأكد الحفظ",
   saving: "بنحفظ…",
+  loading: "بنحمّل…",
   pending: "المسودة محفوظة على الجهاز؛ لسه ما اتأكدش حفظها على حسابك.",
   conflict: "الملاحظة اتغيرت من جهاز تاني. مسودتك محفوظة؛ راجع النسختين قبل الحفظ.",
   load: "ما قدرناش نحمّل سجل التعلم.",
@@ -113,6 +116,7 @@ const gulf: typeof en = {
   empty: "سجلك بيظهر هنا لما تبدأ تتعلم.",
   saved: "تأكد الحفظ",
   saving: "نحفظ…",
+  loading: "نحمّل…",
   pending: "المسودة محفوظة على الجهاز؛ ما تأكد حفظها في حسابك.",
   retry: "حاول مرة ثانية",
 };

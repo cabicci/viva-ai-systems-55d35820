@@ -4,6 +4,7 @@ import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { PGlite } from "@electric-sql/pglite";
 import { readFileSync } from "node:fs";
 import { a, b, child, child2, fixture, monthFunction } from "./test-fixture";
+import { learningCommandResponseSchemas, learningReportListResponseSchema } from "./contracts";
 
 describe("student record migration in isolated PostgreSQL", () => {
   let db: PGlite;
@@ -52,6 +53,10 @@ describe("student record migration in isolated PostgreSQL", () => {
   it("keeps existing progress and notes without inventing older attempts", async () => {
     const records = await command("records");
     const detail = await command("detail", { recordId: records[0].id });
+    const exported = await command("export", { recordId: records[0].id });
+    expect(learningCommandResponseSchemas.records.safeParse(records).success).toBe(true);
+    expect(learningCommandResponseSchemas.detail.safeParse(detail).success).toBe(true);
+    expect(learningCommandResponseSchemas.export.safeParse(exported).success).toBe(true);
     expect(detail.notes).toContainEqual(
       expect.objectContaining({ lesson: "L1", content: "existing personal note" }),
     );
@@ -143,7 +148,9 @@ describe("student record migration in isolated PostgreSQL", () => {
     expect(await reserve(id)).toEqual({ state: "pending" });
     await reserve();
     await expect(reserve()).rejects.toThrow("LEARNING_REPORT_LIMIT");
-    expect((await reports("list")).sources[0].used).toBe(2);
+    const list = await reports("list");
+    expect(learningReportListResponseSchema.safeParse(list).success).toBe(true);
+    expect(list.sources[0].used).toBe(2);
     expect(JSON.stringify(first.snapshot)).not.toContain("private text");
     expect(JSON.stringify(first.snapshot)).not.toContain("existing personal note");
   });
