@@ -73,8 +73,8 @@ jobs:
         run: |
           bun run contextual-visuals:verify
           node node_modules/vitest/vitest.mjs run \
-            tests/lesson-visuals/controlled-v1/contextualV2RuntimeIntegration.test.ts \
-            tests/lesson-visuals/controlled-v1/controlledV1ProductRenderer.test.tsx \
+            tests/lesson-visuals/contextual-v2/contextualV2RuntimeIntegration.test.ts \
+            tests/lesson-visuals/contextual-v2/contextualV2ProductRenderer.test.tsx \
             src/lib/__tests__/locale-strict-visual-hardening.test.tsx \
             src/lib/__tests__/locale-strict-visual-no-ar-eg-fallback.test.tsx \
             --maxWorkers=2 --reporter=json --outputFile="$B023_RECEIPTS_ROOT/runtime-tests.json"
