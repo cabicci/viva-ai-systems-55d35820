@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { useId } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { useLocale } from "@/lib/locale/locale-context";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
@@ -28,6 +29,7 @@ export function LineLogo({ line, className = "" }: { line: LearningLine; classNa
 }
 
 export function LearningLineCards({ learning = false }: { learning?: boolean } = {}) {
+  const cardId = useId();
   const { locale } = useLocale();
   const search = useLocaleLinkSearch();
   const c = getLineCopy(locale);
@@ -43,14 +45,16 @@ export function LearningLineCards({ learning = false }: { learning?: boolean } =
           key={line}
           to={LINE_ROUTES[line]}
           search={search()}
+          aria-labelledby={`${cardId}-${line}-title`}
+          aria-describedby={`${cardId}-${line}-intro`}
           className="group flex min-w-0 flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
         >
-          <div className="flex h-32 items-center px-5 sm:h-36">
+          <div aria-hidden="true" className="flex h-32 items-center px-5 sm:h-36">
             <LineLogo line={line} />
           </div>
           <div className="flex flex-1 flex-col p-6">
-            <h2 className="text-center text-2xl font-black">{c[line]}</h2>
-            <p className="mt-4 flex-1 leading-relaxed text-muted-foreground">{c[`${line}Intro`]}</p>
+            <h2 id={`${cardId}-${line}-title`} className="text-center text-2xl font-black">{c[line]}</h2>
+            <p id={`${cardId}-${line}-intro`} className="mt-4 flex-1 leading-relaxed text-muted-foreground">{c[`${line}Intro`]}</p>
 
             <span className="mt-6 flex items-center justify-between gap-2 font-bold text-primary">
               {c.enter}

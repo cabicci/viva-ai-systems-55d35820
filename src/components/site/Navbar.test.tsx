@@ -77,7 +77,9 @@ describe("learning lines and shared account navigation", () => {
       const line = LEARNING_LINES[index];
       expect(card).toHaveAttribute("href", `${LINE_ROUTES[line]}?locale=${locale}`);
       expect(within(card).getByRole("heading")).toHaveTextContent(c[line]);
-      expect(within(card).getByRole("img")).toHaveAttribute(
+      expect(card).toHaveAccessibleName(c[line]);
+      expect(card).toHaveAccessibleDescription(c[`${line}Intro`]);
+      expect(within(card).getByRole("img", { hidden: true })).toHaveAttribute(
         "src",
         `/brand/masaarat-${line === "technical" ? "tech" : line}.png`,
       );

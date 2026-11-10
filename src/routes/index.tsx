@@ -23,7 +23,7 @@ export function Index() {
   return (
     <div className="min-h-dvh" dir={dir}>
       <Navbar />
-      <main id="main-content" style={{ background: "var(--gradient-hero)" }}>
+      <main id="main-content" tabIndex={-1} style={{ background: "var(--gradient-hero)" }}>
         <div className="container mx-auto max-w-6xl px-4 py-12 md:py-20">
           <header className="mx-auto mb-12 max-w-3xl text-center">
             <p className="text-sm font-bold text-primary">{c.eyebrow}</p>

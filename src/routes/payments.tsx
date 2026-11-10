@@ -109,7 +109,7 @@ function Payments() {
   return (
     <div className="min-h-dvh bg-background">
       <Sidebar />
-      <main className="mx-auto max-w-5xl space-y-6 px-4 py-8">
+      <main id="main-content" tabIndex={-1} className="mx-auto max-w-5xl space-y-6 px-4 py-8">
         <h1 className="text-2xl font-bold">{w.orders}</h1>
         <div className="flex gap-3">
           <Button onClick={refresh}>{w.refresh}</Button>

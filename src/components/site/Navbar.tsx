@@ -191,6 +191,20 @@ export function Navbar({ variant = "public" }: { variant?: "public" | "account" 
               closeLabel={t("common.close")}
               side={dir === "rtl" ? "left" : "right"}
               className="w-[min(88vw,360px)] overflow-y-auto"
+              onFocusCapture={({ currentTarget: drawer, target }) => {
+                if (!(target instanceof HTMLElement)) return;
+                // Keep the keyboard focus ring inside the drawer's own scrollport.
+                requestAnimationFrame(() => {
+                  if (document.activeElement !== target || !drawer.contains(target) ||
+                      !target.matches(":focus-visible")) return;
+                  const { top, bottom } = target.getBoundingClientRect();
+                  const start = drawer.getBoundingClientRect().top + drawer.clientTop;
+                  const end = start + drawer.clientHeight;
+                  const clearance = 8;
+                  if (top < start + clearance) drawer.scrollTop += top - start - clearance;
+                  else if (bottom > end - clearance) drawer.scrollTop += bottom - end + clearance;
+                });
+              }}
             >
               <SheetHeader>
                 <SheetTitle>{line ? c[line] : c.home}</SheetTitle>
