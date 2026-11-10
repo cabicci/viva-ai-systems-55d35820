@@ -150,6 +150,7 @@ function RootComponent() {
               <CloudHydration />
               <AnalyticsConsentGate />
               <Outlet />
+              <div id="privacy-settings-controls" />
               <BackToDashboard />
               <LocaleToaster />
             </>
@@ -157,6 +158,7 @@ function RootComponent() {
             <OwnedJourneyReadBoundary enabled={journeyReadMode === "read-only-shadow"}>
               <AnalyticsConsentGate />
               <Outlet />
+              <div id="privacy-settings-controls" />
               <BackToDashboard />
               <LocaleToaster />
             </OwnedJourneyReadBoundary>
