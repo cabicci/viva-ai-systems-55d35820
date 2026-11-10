@@ -13,7 +13,12 @@ type Send = (
   sender: { from: string; replyTo: string },
 ) => Promise<{ ok: true; emailId: string } | { ok: false; retryable: boolean }>;
 /** Claims contain frozen locale, sender and content; retries never rebuild a message. */
-export async function runContactMailJob(db: Db, send: Send, outboxId?: string) {
+export async function runContactMailJob(
+  db: Db,
+  send: Send,
+  outboxId?: string,
+  beforeSend?: (claim: { id: string; claim_token: string }) => Promise<boolean>,
+) {
   // A form request claims only its own immutable message. Scheduled retries use the batch.
   const claims = outboxId
     ? await db.rpc("claim_contact_acknowledgement", { p_id: outboxId })
@@ -33,6 +38,12 @@ export async function runContactMailJob(db: Db, send: Send, outboxId?: string) {
   }>) {
     if (!["info@mail.masaarat.ai", "sales@mail.masaarat.ai"].includes(row.sender))
       throw new Error("contact_mail_sender_invalid");
+    // Recheck each row after a batch claim, immediately before starting its
+    // provider request. A withdrawal while earlier rows send stops later rows.
+    if (beforeSend && !(await beforeSend(row))) {
+      stats.deferred++;
+      continue;
+    }
     let result: Awaited<ReturnType<Send>>;
     try {
       result = await send(

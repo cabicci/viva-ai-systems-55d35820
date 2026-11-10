@@ -14,6 +14,11 @@ export const HUBSPOT_CONTACT_FORM_ID = "c1bee095-d92a-441f-8da1-9e91a8130bd1";
 const countryCodes = new Set<string>(getCountries());
 
 export const contactFormInputSchema = z.object({
+  attemptId: z.string().uuid().optional(),
+  recoveryToken: z
+    .string()
+    .regex(/^[0-9a-f]{64}$/)
+    .optional(),
   requestType: z.enum(["support", "sales"]).optional(),
   firstName: z.string().trim().min(1).max(80),
   lastName: z.string().trim().max(80).optional().default(""),
@@ -56,19 +61,12 @@ export function resolvePhoneCountry(
   locale: SupportedLocale,
 ): CountryCode {
   const normalized = ipCountryCode?.toUpperCase();
-  return isCountryCode(normalized)
-    ? normalized
-    : fallbackCountryForLocale(locale);
+  return isCountryCode(normalized) ? normalized : fallbackCountryForLocale(locale);
 }
 
-export function normalizePhoneNumber(
-  rawNumber: string,
-  countryCode: CountryCode,
-): string | null {
+export function normalizePhoneNumber(rawNumber: string, countryCode: CountryCode): string | null {
   const parsed = parsePhoneNumberFromString(rawNumber, countryCode);
-  return parsed?.isValid() && parsed.country === countryCode
-    ? parsed.number
-    : null;
+  return parsed?.isValid() && parsed.country === countryCode ? parsed.number : null;
 }
 
 export function getCallingCode(countryCode: CountryCode): string {

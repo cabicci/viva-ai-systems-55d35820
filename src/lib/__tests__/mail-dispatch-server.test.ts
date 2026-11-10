@@ -1,6 +1,6 @@
 // @vitest-environment node
 import { beforeEach, afterEach, describe, expect, it, vi } from "vitest";
-import { dispatchImmediateMail } from "../mail-dispatch.server";
+import { dispatchImmediateMail, dispatchContactAdministration } from "../mail-dispatch.server";
 const target = { stream: "welcome", id: "b08ff00f-e77a-4489-925f-8336d814a750" } as const;
 const secret = "synthetic-existing-worker-authorization-only";
 const fetcher = vi.fn();
@@ -18,6 +18,34 @@ afterEach(() => {
   vi.restoreAllMocks();
 });
 describe("server-only existing worker dispatch", () => {
+  it("reads contact administration from the worker without an immediate mail target or SSR routing address", async () => {
+    vi.stubEnv("CONTACT_AUTOMATION_OWNER_EMAIL", "ssr-different@example.test");
+    const command = { actor: target.id, action: "status" as const, id: null, reference: null };
+    fetcher.mockResolvedValue(Response.json({ contactAdministration: { ownerConfigured: true } }));
+    expect(await dispatchContactAdministration(command, "Bearer synthetic-user-token")).toEqual({
+      ownerConfigured: true,
+    });
+    expect(JSON.parse(fetcher.mock.calls[0][1].body)).toEqual({ contactAdministration: command });
+    expect(JSON.stringify(fetcher.mock.calls)).not.toContain("ssr-different");
+    expect(fetcher.mock.calls[0][1].headers["X-Contact-Admin-Authorization"]).toBe(
+      "Bearer synthetic-user-token",
+    );
+    expect(fetcher).toHaveBeenCalledTimes(1);
+  });
+  it("rejects an invalid administration operation before the worker request", async () => {
+    await expect(
+      dispatchContactAdministration(
+        {
+          actor: target.id,
+          action: "send",
+          id: null,
+          reference: null,
+        } as never,
+        "Bearer synthetic-user-token",
+      ),
+    ).rejects.toThrow("contact_admin_request_invalid");
+    expect(fetcher).not.toHaveBeenCalled();
+  });
   it("reuses the existing worker authorization and bounds the attempt without following credential redirects", async () => {
     expect(await dispatchImmediateMail(target)).toEqual({ accepted: 1, deferred: 0 });
     expect(fetcher).toHaveBeenCalledExactlyOnceWith(
@@ -84,4 +112,14 @@ describe("server-only existing worker dispatch", () => {
       deferred: 0,
     });
   });
+});
+
+it("does not use scheduler authority alone for contact administration", async () => {
+  await expect(
+    dispatchContactAdministration(
+      { actor: target.id, action: "status", id: null, reference: null },
+      "",
+    ),
+  ).rejects.toThrow("contact_admin_authorization_required");
+  expect(fetcher).not.toHaveBeenCalled();
 });

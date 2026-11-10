@@ -45,6 +45,7 @@ import type { SupportedLocale } from "@/lib/locale/types";
 import { KidsConsentControl } from "@/components/kids/KidsConsentControl";
 import { KidsAiConsentControl } from "@/components/kids/KidsAiConsentControl";
 import { CommercialInvitations } from "@/components/billing/CommercialInvitations";
+import { PhoneVerification } from "@/components/communications/PhoneVerification";
 
 const DATE_LOCALE: Record<SupportedLocale, string> = {
   "ar-EG": "ar-EG",
@@ -374,6 +375,7 @@ function AccountContent() {
 
         <div className="mb-5"><KidsAiConsentControl hideWhenEmpty /></div>
 
+        <PhoneVerification key={userId} />
         <CommercialInvitations userId={userId} locale={locale} />
 
         <section className="glass rounded-2xl p-6 border border-border/50">

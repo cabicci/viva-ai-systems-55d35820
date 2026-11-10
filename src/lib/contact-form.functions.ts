@@ -1,3 +1,4 @@
+import { z } from "zod";
 import { createServerFn } from "@tanstack/react-start";
 import { getRequest } from "@tanstack/react-start/server";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
@@ -8,14 +9,27 @@ import {
   HUBSPOT_PORTAL_ID,
 } from "./contact-form";
 import { enforceRateLimit, RateLimitExceededError } from "./rate-limit.server";
-import { queueContactAcknowledgement } from "./contact-mail.server";
+import {
+  reserveContactSubmission,
+  completeContactSubmission,
+  dispatchAcceptedContact,
+  beginContactSubmission,
+  readContactRecovery,
+} from "./contact-mail.server";
 import { verifyTurnstileToken } from "./turnstile.server";
 
 export type ContactSubmitResult =
-  | { success: true }
+  | { success: true; replayed?: boolean }
   | {
       success: false;
-      error: "invalid_phone" | "captcha" | "rate_limit" | "service_unavailable";
+      error:
+        | "invalid_phone"
+        | "captcha"
+        | "rate_limit"
+        | "service_unavailable"
+        | "pending_review"
+        | "closed_manual"
+        | "withdrawn";
     };
 
 function readClientIp(headers: Headers): string | undefined {
@@ -55,6 +69,8 @@ async function stableAnonymousId(ipAddress: string | undefined): Promise<string>
 export const submitContactForm = createServerFn({ method: "POST" })
   .inputValidator((input) => contactFormInputSchema.parse(input))
   .handler(async ({ data }): Promise<ContactSubmitResult> => {
+    const attemptId = data.attemptId;
+    if (!attemptId) return { success: false, error: "service_unavailable" };
     const request = getRequest();
     const ipAddress = readClientIp(request.headers);
     if (data.phone) {
@@ -90,7 +106,24 @@ export const submitContactForm = createServerFn({ method: "POST" })
       hutk: readCookie(request.headers.get("cookie"), "hubspotutk"),
     });
 
+    let intake: Awaited<ReturnType<typeof reserveContactSubmission>>;
     try {
+      intake = await reserveContactSubmission(data);
+    } catch {
+      return { success: false, error: "service_unavailable" };
+    }
+    if (intake.state === "reconciliation_required")
+      return { success: false, error: "pending_review" };
+    if (intake.state === "withdrawn") return { success: false, error: "withdrawn" };
+    if (intake.state === "closed_manual") return { success: false, error: "closed_manual" };
+    if (intake.state === "accepted") {
+      await dispatchAcceptedContact(attemptId).catch(() => {});
+      return { success: true, replayed: true };
+    }
+    const claim = intake.claim;
+    try {
+      if (!(await beginContactSubmission(attemptId, claim)))
+        return { success: false, error: "pending_review" };
       const response = await fetch(endpoint, {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -98,23 +131,50 @@ export const submitContactForm = createServerFn({ method: "POST" })
         signal: AbortSignal.timeout(12_000),
       });
       if (!response.ok) {
+        await completeContactSubmission(attemptId, claim, false).catch(() => {});
         console.error("HubSpot contact submission failed", {
           status: response.status,
         });
         return {
           success: false,
-          error: response.status === 429 ? "rate_limit" : "service_unavailable",
+          error: "pending_review",
         };
       }
+      await completeContactSubmission(attemptId, claim, true);
       try {
-        await queueContactAcknowledgement(data, crypto.randomUUID());
+        await dispatchAcceptedContact(attemptId);
       } catch {
         // HubSpot already accepted the request. Do not invite a duplicate submission.
         console.error("Contact acknowledgement processing deferred");
       }
       return { success: true };
     } catch (error) {
-      console.error("HubSpot contact submission unavailable:", error);
-      return { success: false, error: "service_unavailable" };
+      // A timeout can follow remote acceptance. Never issue a second POST under
+      // this attempt ID; retain the frozen request for human reconciliation.
+      await completeContactSubmission(attemptId, claim, false).catch(() => {});
+      console.error("Contact intake requires reconciliation");
+      return { success: false, error: "pending_review" };
     }
+  });
+
+// Capability lookup returns no identity, content or delivery credentials.
+export const getContactSubmissionState = createServerFn({ method: "POST" })
+  .inputValidator((input: unknown) =>
+    z
+      .object({
+        attemptId: z.string().uuid(),
+        recoveryToken: z.string().regex(/^[0-9a-f]{64}$/),
+      })
+      .strict()
+      .parse(input),
+  )
+  .handler(async ({ data }) => {
+    const request = getRequest();
+    await enforceRateLimit({
+      userId: await stableAnonymousId(readClientIp(request.headers)),
+      bucketKey: "public:contact-state",
+      maxCalls: 30,
+      windowSeconds: 60,
+    });
+    return { state: await readContactRecovery(data.attemptId, data.recoveryToken) };
   });

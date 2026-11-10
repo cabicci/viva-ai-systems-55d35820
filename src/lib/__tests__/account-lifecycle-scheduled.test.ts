@@ -7,7 +7,8 @@ import * as mailHandlers from "../../../supabase/functions/account-welcome-job/h
 import * as streams from "../../../supabase/functions/account-welcome-job/streams";
 import * as enabled from "../../../supabase/functions/_shared/contact-mail-enabled";
 import * as immediate from "../../../supabase/functions/_shared/immediate-mail-request";
-import * as contact from "../../../supabase/functions/_shared/contact-mail-worker";
+import * as contact from "../../../supabase/functions/_shared/contact-automation-worker";
+import * as contactAdministration from "../../../supabase/functions/_shared/contact-automation-admin-worker";
 import * as commerce from "../../../supabase/functions/_shared/commerce-payment-mail-worker";
 import * as academic from "../../../supabase/functions/_shared/academic-mail-worker";
 import * as technical from "../../../supabase/functions/_shared/technical-mail-worker";
@@ -22,13 +23,17 @@ const secret = "existing-scheduler-test-only-token";
 let endpoint: (request: Request) => Promise<Response>;
 let environment: Record<string, string>;
 const rpc = vi.fn();
-const createClient = vi.fn(() => ({ rpc }));
+const getUser = vi.fn();
+const createClient = vi.fn(() => ({ rpc, auth: { getUser } }));
 const batch = vi.fn();
-const call = (authorization = `Bearer ${secret}`, body?: string) =>
+const call = (authorization = `Bearer ${secret}`, body?: string, adminAuthorization?: string) =>
   endpoint(
     new Request("https://isolated.test/account-welcome-job", {
       method: "POST",
-      headers: { Authorization: authorization },
+      headers: {
+        Authorization: authorization,
+        ...(adminAuthorization ? { "X-Contact-Admin-Authorization": adminAuthorization } : {}),
+      },
       body,
     }),
   );
@@ -53,7 +58,8 @@ beforeEach(() => {
       if (name.endsWith("/streams.ts")) return streams;
       if (name.endsWith("/contact-mail-enabled.ts")) return enabled;
       if (name.endsWith("/immediate-mail-request.ts")) return immediate;
-      if (name.endsWith("/contact-mail-worker.ts")) return contact;
+      if (name.endsWith("/contact-automation-worker.ts")) return contact;
+      if (name.endsWith("/contact-automation-admin-worker.ts")) return contactAdministration;
       if (name.endsWith("/commerce-payment-mail-worker.ts")) return commerce;
       if (name.endsWith("/technical-mail-worker.ts")) return technical;
       if (name.endsWith("/academic-mail-worker.ts")) return academic;
@@ -100,7 +106,8 @@ describe("packaged lifecycle dependency boundary", () => {
     inspect(resolve("supabase/functions/_shared/account-lifecycle-worker.ts"));
     inspect(resolve("supabase/functions/_shared/account-welcome-worker.ts"));
     inspect(resolve("supabase/functions/_shared/immediate-mail-request.ts"));
-    inspect(resolve("supabase/functions/_shared/contact-mail-worker.ts"));
+    inspect(resolve("supabase/functions/_shared/contact-automation-worker.ts"));
+    inspect(resolve("supabase/functions/_shared/contact-automation-admin-worker.ts"));
     inspect(resolve("supabase/functions/_shared/commerce-payment-mail-worker.ts"));
     inspect(resolve("supabase/functions/_shared/technical-mail-worker.ts"));
     inspect(resolve("supabase/functions/_shared/email-access-mail-worker.ts"));
@@ -119,7 +126,6 @@ describe("target-only immediate worker entrypoint", () => {
   });
   it.each([
     ["welcome", "claim_account_welcome_email", "p_user"],
-    ["contact", "claim_contact_acknowledgement", "p_id"],
   ])(
     "claims only the requested %s and never unrelated mail or deletion",
     async (stream, name, key) => {
@@ -156,7 +162,7 @@ describe("target-only immediate worker entrypoint", () => {
     rpc.mockImplementation(async (name) => ({
       error: null,
       data:
-        name === "claim_contact_acknowledgement"
+        name === "claim_contact_automation"
           ? [
               {
                 id,
@@ -168,21 +174,46 @@ describe("target-only immediate worker entrypoint", () => {
                 html_body: "Saved html",
               },
             ]
-          : true,
+          : name === "prepare_contact_automation"
+            ? { scheduled: 0, awaiting_owner: 0 }
+            : true,
     }));
-    expect(await (await call(undefined, request("contact"))).json()).toEqual({
+    expect(await (await call(undefined, request("contact"))).json()).toMatchObject({
       contact: { accepted: 1, deferred: 0 },
     });
     expect(send).toHaveBeenCalledWith(
       expect.objectContaining({ from: "info@mail.masaarat.ai", enabled: true }),
       expect.objectContaining({ subject: "Frozen", idempotencyKey: `contact-ack-v1/${id}` }),
     );
-    expect(rpc).toHaveBeenLastCalledWith("complete_contact_acknowledgement", {
+    expect(rpc).toHaveBeenNthCalledWith(2, "claim_contact_automation", { p_owner: null, p_id: id });
+    expect(rpc).toHaveBeenNthCalledWith(3, "begin_contact_mail_send", {
+      p_id: id, p_claim: "lease", p_owner: null,
+    });
+    expect(rpc).toHaveBeenNthCalledWith(4, "complete_contact_acknowledgement", {
       p_id: id,
       p_claim: "lease",
       p_email_id: "synthetic-provider-id",
       p_block: false,
     });
+    expect(batch).not.toHaveBeenCalled();
+  });
+  it("requires the forwarded admin identity and runs no delivery for administration", async () => {
+    const actor = "12345678-1234-4234-8234-123456789012";
+    const body = JSON.stringify({
+      contactAdministration: { actor, action: "status", id: null, reference: null },
+    });
+    expect((await call(undefined, body)).status).toBe(401);
+    expect(rpc).not.toHaveBeenCalled();
+
+    getUser.mockResolvedValue({ data: { user: { id: actor } }, error: null });
+    rpc.mockResolvedValue({ data: { ownerConfigured: false }, error: null });
+    const response = await call(undefined, body, "Bearer test-administrator");
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({ contactAdministration: { ownerConfigured: false } });
+    expect(rpc).toHaveBeenCalledExactlyOnceWith("admin_contact_automation_command", {
+      p_actor: actor, p_action: "status", p_id: null, p_owner: null, p_reference: null,
+    });
+    expect(send).not.toHaveBeenCalled();
     expect(batch).not.toHaveBeenCalled();
   });
   it("claims only the requested email grant invitation through existing scheduler authorization", async () => {

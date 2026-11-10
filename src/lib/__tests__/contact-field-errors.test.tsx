@@ -2,12 +2,16 @@ import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/re
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { getUiString } from "@/lib/locale/ui-strings";
 import type { SupportedLocale } from "@/lib/locale/types";
+import { webcrypto } from "node:crypto";
 const state = vi.hoisted(() => ({ submit: vi.fn(), locale: "en" as SupportedLocale }));
 vi.mock("@tanstack/react-start", () => ({ useServerFn: () => state.submit }));
 vi.mock("@tanstack/react-router", () => ({
   Link: ({ children }: { children: React.ReactNode }) => children,
 }));
-vi.mock("@/lib/contact-form.functions", () => ({ submitContactForm: {} }));
+vi.mock("@/lib/contact-form.functions", () => ({
+  submitContactForm: {},
+  getContactSubmissionState: {},
+}));
 vi.mock("@/lib/analytics", () => ({ trackAcceptedContactOnce: vi.fn() }));
 vi.mock("@/lib/locale/locale-context", () => ({
   useLocale: () => ({
@@ -31,8 +35,13 @@ import { ContactForm } from "@/components/site/ContactForm";
 beforeEach(() => {
   vi.clearAllMocks();
   state.locale = "en";
+  vi.stubGlobal("crypto", webcrypto);
+  sessionStorage.clear();
 });
-afterEach(cleanup);
+afterEach(() => {
+  cleanup();
+  vi.unstubAllGlobals();
+});
 it.each(["en", "ar-EG", "ar-MSA", "ar-Gulf"] as const)(
   "associates localized errors and focuses the first invalid field in %s without submitting",
   (locale) => {
