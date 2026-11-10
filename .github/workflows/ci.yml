@@ -41,6 +41,9 @@ jobs:
           python -m unittest discover -s scripts -p test_verify_action_pins.py
           python scripts/verify_action_pins.py
 
+      - name: Roadmap binding (disposable local Git repositories)
+        run: bun test scripts/__tests__/roadmap-guard.test.ts
+
       - name: Backup key text conversion (synthetic keys only)
         run: python -m unittest discover -s scripts/recovery -p 'test_*.py'
 

@@ -1,6 +1,6 @@
-import { execSync } from "node:child_process";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { createClient } from "@supabase/supabase-js";
+import { captureLocalRoadmapState } from "./roadmap-state";
 
 const args = process.argv.slice(2);
 
@@ -18,21 +18,8 @@ const source = readArg("source") ?? "ai";
 const status = readArg("status") ?? "in_progress";
 let scope = readArg("scope") ?? "other"; // ui | lessons | db | infra | content | other
 const markerOnly = args.includes("--marker-only");
-
-function run(command: string): string {
-  try {
-    return execSync(command, { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim();
-  } catch {
-    return "";
-  }
-}
-
-function changedFiles(): string[] {
-  const tracked = run("git diff --name-only --diff-filter=ACMRTUXB HEAD --");
-  const staged = run("git diff --cached --name-only --diff-filter=ACMRTUXB --");
-  const untracked = run("git ls-files --others --exclude-standard");
-  return Array.from(new Set([...tracked.split("\n"), ...staged.split("\n"), ...untracked.split("\n")].filter(Boolean)));
-}
+// Capture before any write. Git errors must not become an empty successful record.
+const localState = captureLocalRoadmapState();
 
 function inferScope(files: string[]): string {
   if (files.some((file) => file.startsWith("src/components/intro/lessons/") || file.includes("curriculum") || file.includes("lesson"))) return "lessons";
@@ -50,7 +37,7 @@ function summarizeChanges(files: string[]): string {
 }
 
 if (auto) {
-  const files = changedFiles().filter((file) => file !== ".lovable/roadmap-sync.md" && !file.startsWith(".lovable/"));
+  const files = localState.changedTrackedFiles;
   title ??= `Auto roadmap sync ${new Date().toISOString().slice(0, 10)}`;
   summary ??= summarizeChanges(files);
   if (!readArg("scope")) scope = inferScope(files);
@@ -128,6 +115,12 @@ async function syncDatabase(): Promise<void> {
 
 await syncDatabase();
 
+if (captureLocalRoadmapState().stateSha256 !== localState.stateSha256) {
+  throw new Error(
+    "Project changed during roadmap recording; no local binding written. Remote operation may have completed; verify it before any retry.",
+  );
+}
+
 if (!roadmapId) {
   console.error("Could not resolve roadmap item id.");
   process.exit(1);
@@ -138,12 +131,15 @@ const content = [
   ``,
   `[roadmap:${roadmapId}]`,
   `date: ${today}`,
+  `base-head: ${localState.baseHead}`,
+  `state-sha256: ${localState.stateSha256}`,
+  `database-write: ${markerOnly ? "not-verified-marker-only" : "logger-completed"}`,
   `scope: ${scope}`,
   `source: ${source}`,
   `summary: ${summary}`,
   ``,
-  `This file is updated after the matching roadmap_items row is updated.`,
-  `The build's roadmap guard fails on ANY meaningful project change without a fresh marker.`,
+  `This record binds local scoped changes. The guard does not independently verify the remote roadmap row.`,
+  `Marker-only mode is an explicit operator assertion, not proof of a database write.`,
   ``,
 ].join("\n");
 
