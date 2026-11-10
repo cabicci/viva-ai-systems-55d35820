@@ -74,7 +74,8 @@ def summarize(entries, index, detail):
         if len(parts) == 4 and parts[0] == "DRAFT":
             by_key[(parts[1], parts[2])].append(video)
     counts = {"expected": len(entries), "exactUniqueTitle": 0, "videoReady": 0,
-              "captionReady": 0, "ready": 0, "missing": []}
+              "captionReady": 0, "digestVerified": 0, "digestUnverified": 0,
+              "digestInvalid": 0, "digestMismatch": 0, "ready": 0, "missing": []}
     for entry in entries:
         key = (entry["lessonId"], entry["locale"])
         candidates = by_key[key]
@@ -93,7 +94,18 @@ def summarize(entries, index, detail):
         if str(video.get("videoLibraryId")) != LIBRARY:
             raise RuntimeError("Bunny detail library mismatch")
         original_hash = video.get("originalHash")
-        digest_ok = not original_hash or original_hash.lower() == entry["sha256"]
+        # A title containing the expected digest is not independent byte evidence.
+        # Absent or malformed provider evidence must never imply a positive match.
+        digest_ok = False
+        if original_hash is None or original_hash == "":
+            counts["digestUnverified"] += 1
+        elif not isinstance(original_hash, str) or not SHA.fullmatch(original_hash.lower()):
+            counts["digestInvalid"] += 1
+        elif original_hash.lower() != entry["sha256"]:
+            counts["digestMismatch"] += 1
+        else:
+            digest_ok = True
+            counts["digestVerified"] += 1
         playable = video.get("status") in (3, 4) and int(video.get("storageSize") or 0) > 0
         good_video = digest_ok and playable
         language = "en" if key[1] == "en" else "ar"

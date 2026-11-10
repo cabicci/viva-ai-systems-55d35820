@@ -16,6 +16,36 @@ TITLE = f"DRAFT kids-l1-01 en {SHA}"
 
 
 class KidsAuditTest(unittest.TestCase):
+    def digest_report(self, value=SHA, present=True):
+        detail = {"title": TITLE, "videoLibraryId": 761387,
+                  "status": 4, "storageSize": 123,
+                  "captions": [{"srclang": "en", "label": "en"}]}
+        if present:
+            detail["originalHash"] = value
+        return audit.summarize([ENTRY], [{"title": TITLE, "guid": GUID}], lambda _: detail)
+
+    def test_absent_provider_digest_is_unverified_not_ready(self):
+        for present, value in [(False, None), (True, None), (True, "")]:
+            with self.subTest(present=present, value=value):
+                report = self.digest_report(value, present)
+                self.assertEqual(report["ready"], 0)
+                self.assertEqual((report["digestUnverified"], report["digestVerified"], report["ready"]), (1, 0, 0))
+                self.assertEqual(report["missing"], ["kids-l1-01/en"])
+
+    def test_malformed_digest_is_invalid_not_match_or_missing(self):
+        for value in [False, 0, [], {}, "not-a-digest", "a" * 32, " " + SHA]:
+            with self.subTest(value=value):
+                report = self.digest_report(value)
+                self.assertEqual((report["digestInvalid"], report["digestUnverified"], report["ready"]), (1, 0, 0))
+
+    def test_valid_mismatched_digest_is_separate_from_unverified(self):
+        report = self.digest_report("b" * 64)
+        self.assertEqual((report["digestMismatch"], report["digestUnverified"], report["ready"]), (1, 0, 0))
+
+    def test_valid_case_insensitive_match_is_verified(self):
+        report = self.digest_report(SHA.upper())
+        self.assertEqual((report["digestVerified"], report["digestUnverified"], report["ready"]), (1, 0, 1))
+
     def test_complete_video_and_caption_with_no_guid_in_output(self):
         index = [{"title": TITLE, "guid": GUID}]
         detail = {"title": TITLE, "videoLibraryId": 761387, "originalHash": SHA,
