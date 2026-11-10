@@ -1,17 +1,4 @@
 #!/usr/bin/env bun
-import { writeContactSheet } from "../contactSheets";
-import {
-  runFailedOnly,
-  runFull400,
-  runMethodAFourCellPilot,
-  runMethodBToCFourCellPilot,
-  runMethodBToCRemainingEight,
-  runMethodCCanonicalRepair,
-  runMethodCRemaining,
-  runPilot,
-  runPreflight,
-  runReportOnly,
-} from "../runner";
 import type { RunnerMode } from "../types";
 
 function parseArgs(argv: string[]): {
@@ -22,11 +9,13 @@ function parseArgs(argv: string[]): {
   priorArtifactRunId?: string;
 } {
   const mode = argv[0] as RunnerMode | undefined;
+  if (mode === "failed-only") {
+    throw new Error("controlled-v1 failed-only is retired: source-manifest recovery is unsupported; assets and receipts are preserved.");
+  }
   const validModes: RunnerMode[] = [
     "preflight",
     "pilot",
     "full-400",
-    "failed-only",
     "report-only",
     "method-c-remaining",
     "method-c-canonical-repair",
@@ -72,6 +61,19 @@ async function main() {
   if (mode === "preflight" || mode === "report-only" || mode === "method-c-canonical-repair") {
     process.env.CONTROLLED_V1_ZERO_RENDER = "1";
   }
+
+  const {
+    runFull400,
+    runMethodAFourCellPilot,
+    runMethodBToCFourCellPilot,
+    runMethodBToCRemainingEight,
+    runMethodCCanonicalRepair,
+    runMethodCRemaining,
+    runPilot,
+    runPreflight,
+    runReportOnly,
+  } = await import("../runner");
+  const { writeContactSheet } = await import("../contactSheets");
 
   let result;
   switch (mode) {
@@ -126,10 +128,6 @@ async function main() {
         sourceExecutionSha:
           process.env.METHOD_C_SOURCE_EXECUTION_SHA ?? "6d01bbe07e0e97a02a84cdd38a7a722daad95d75",
       });
-      break;
-    case "failed-only":
-      result = runFailedOnly();
-      writeContactSheet("failed-only", result.receipts);
       break;
     case "report-only":
       result = runReportOnly();
