@@ -35,7 +35,7 @@ assert KEYS, "no GEMINI_API_KEY* found"
 print(f"Loaded {len(KEYS)} Gemini keys", flush=True)
 
 MODEL = "gemini-2.5-pro"
-ENDPOINT_TPL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}"
+ENDPOINT_TPL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 _key_lock = threading.Lock()
 _key_cycle = cycle(KEYS)
 def next_key():
@@ -172,21 +172,34 @@ def call_gemini(persona: dict, idx: int, lesson: dict, retries: int = 4) -> dict
             "maxOutputTokens": 4000,
         },
     }
+    failure_context = {
+        "persona_id": persona["id"],
+        "lesson_id": lesson["id"],
+        "_idx": idx + 1,
+        "_path": lesson["path"],
+    }
     for attempt in range(retries):
         key = next_key()
-        url = ENDPOINT_TPL.format(model=MODEL, key=key)
+        url = ENDPOINT_TPL.format(model=MODEL)
         try:
-            r = requests.post(url, json=payload, timeout=180)
-            if r.status_code in (429, 503):
-                time.sleep(8 * (attempt + 1)); continue
-            if r.status_code == 400 and "API key" in r.text:
-                time.sleep(2); continue
+            r = requests.post(
+                url, headers={"x-goog-api-key": key}, json=payload, timeout=180, allow_redirects=False
+            )
+            if 300 <= r.status_code < 400:
+                return {"error": "PROVIDER_REDIRECT", **failure_context}
+            if attempt < retries - 1:
+                if r.status_code in (429, 503):
+                    time.sleep(8 * (attempt + 1))
+                    continue
+                if r.status_code == 400 and "API key" in r.text:
+                    time.sleep(2)
+                    continue
             r.raise_for_status()
             jr = r.json()
             cand = jr.get("candidates", [{}])[0]
             txt = "".join(p.get("text","") for p in cand.get("content",{}).get("parts",[]))
             if not txt:
-                raise RuntimeError(f"empty: {json.dumps(jr)[:200]}")
+                raise RuntimeError("Empty provider response")
             txt = re.sub(r"^```(?:json)?\s*|\s*```$", "", txt.strip())
             try:
                 data = json.loads(txt)
@@ -202,7 +215,11 @@ def call_gemini(persona: dict, idx: int, lesson: dict, retries: int = 4) -> dict
             return data
         except Exception as e:
             if attempt == retries - 1:
-                return {"error": str(e)[:300], "persona_id": persona["id"], "lesson_id": lesson["id"], "_idx": idx+1, "_path": lesson["path"]}
+                # Exception text may echo request URLs, headers or response bodies.
+                # Persist only a bounded diagnostic category, never that text.
+                status = getattr(getattr(e, "response", None), "status_code", None)
+                diagnostic = f"HTTP_{status}" if type(status) is int and 400 <= status <= 599 else "PROVIDER_RESPONSE_FAILED"
+                return {"error": diagnostic, **failure_context}
             time.sleep(3 * (attempt + 1))
 
 CKPT = OUT_DIR / "persona-sim-v18-checkpoint.json"
