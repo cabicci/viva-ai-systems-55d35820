@@ -8,6 +8,7 @@ const MAX_DEPTH = 4;
 const MAX_NODES = 80;
 const MAX_ITEMS = 20;
 const URL_ENTITIES: Record<string, string> = { amp: "&", colon: ":", sol: "/", quest: "?", num: "#", equals: "=", commat: "@" };
+const HOST_SUFFIX = /\.[a-z]{2,}\.?(?::\d+)?$/i;
 
 function decodeForInspection(value: string): string | null {
   if (value.length > MAX_INPUT) return null;
@@ -50,6 +51,25 @@ export function sanitizeLogUrl(value: string): string {
   } catch { return BAD_URL; }
 }
 
+function urlTokenStart(token: string): number {
+  const protocol = token.search(/\b(?:https?|wss?|blob|data|javascript|file):(?=\S)|\/\/(?=\S)/i);
+  let start = protocol < 0 ? token.length : protocol;
+  const slash = token.indexOf("/");
+  const lastParameter = Math.max(token.lastIndexOf("?"), token.lastIndexOf("#"));
+  if (slash < 0 && lastParameter < 0) return start;
+  if (slash >= 0 && slash < lastParameter) start = Math.min(start, slash);
+
+  // Inspect each maximal host-like run once instead of trying every dotted suffix.
+  for (const match of token.matchAll(/[a-z\d.-]+(?::\d+)?/gi)) {
+    if (match.index >= start) break;
+    const next = token[match.index + match[0].length];
+    if ((next === "/" || next === "?" || next === "#") && HOST_SUFFIX.test(match[0])) {
+      return match.index;
+    }
+  }
+  return start;
+}
+
 export function sanitizeLogText(value: string, limit = 2000): string {
   const decoded = decodeForInspection(value);
   if (decoded == null) return REDACTED;
@@ -57,13 +77,25 @@ export function sanitizeLogText(value: string, limit = 2000): string {
   // ambiguous text rather than turning an encoded query into visible prose.
   const delimiters = (text: string) => text.match(/[\s"'<>`]/g)?.join("") ?? "";
   if (delimiters(decoded) !== delimiters(value)) return REDACTED;
-  if (/\bhttps?:\/\/[^\s]*:\s+[^\r\n]*@|\bhttps?:\/\/[^\s]*[?#][^\s]*=\s+/i.test(decoded)) return REDACTED;
   // Whole URL tokens are sanitized before length truncation, including encoded
   // query delimiters. Stack-frame line/column suffixes in paths remain useful.
+  let splitSecret = false;
   const text = decoded
-    .replace(/\b(?:https?|wss?|blob|data|javascript|file):[^\s]+|\/\/[^\s]+|\b(?:[a-z\d-]+\.)+[a-z]{2,}(?::\d+)?[/?#][^\s]*|\/(?!\/)[^\s]*[?#][^\s]*/gi, token => sanitizeLogUrl(token))
+    .replace(/\S+/g, (token: string, offset: number) => {
+      if (splitSecret) return REDACTED;
+      const start = urlTokenStart(token);
+      if (start === token.length) return token;
+      const url = token.slice(start);
+      const followedByWhitespace = offset + token.length < decoded.length;
+      if (followedByWhitespace &&
+        (url.endsWith(":") || (url.endsWith("=") && /[?#]/.test(url)))) {
+        splitSecret = true;
+        return REDACTED;
+      }
+      return token.slice(0, start) + sanitizeLogUrl(url);
+    })
     .replace(/\b(Bearer|Basic)\s+[^\s"',;<>]+/gi, "$1 [redacted]");
-  return text.slice(0, limit);
+  return splitSecret ? REDACTED : text.slice(0, limit);
 }
 
 function sensitiveKey(key: string): boolean {

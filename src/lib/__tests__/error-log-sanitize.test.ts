@@ -41,8 +41,22 @@ describe("URL minimization", () => {
     `Failed https://example.test/?token="${MARK}"`,
     `Failed https://user: "${MARK}"@example.test/path`,
     `Failed https://example.test/?token= "${MARK}"`,
+    `Failed //user: ${MARK}@example.test/path`,
+    `Failed example.test/?token= ${MARK}`,
+    `Failed /login?token= ${MARK}`,
   ])("does not expose credentials split by literal quotes or malformed whitespace: %s", text => {
     expect(sanitizeLogText(text)).not.toContain(MARK);
+  });
+  it("handles long URL-like tokens without preserving their query values", () => {
+    const repeated = "http://?".repeat(1_250);
+    expect(sanitizeLogText(repeated)).toBe("[redacted URL]");
+    const dotted = "a.".repeat(5_000);
+    const slashed = "/a".repeat(5_000);
+    expect(sanitizeLogText(dotted, dotted.length)).toBe(dotted);
+    expect(sanitizeLogText(`${slashed}?secret= ${MARK}`)).toBe("[redacted]");
+  });
+  it("redacts query values on a malformed bare hostname", () => {
+    expect(sanitizeLogText(`Failure broken..example.test?token=${MARK}`)).not.toContain(MARK);
   });
   it.each([`Bearer ${MARK}`, `Basic ${MARK}`, encodeURIComponent(`Bearer ${MARK}`)])("redacts authorization values in prose: %s", text => {
     expect(sanitizeLogText(text)).not.toContain(MARK);
