@@ -1,5 +1,6 @@
+import { selectIntroPrerequisiteLessons } from "@/lib/intro-prerequisite";
 import { JourneyVisitRecorder } from "@/components/journey/JourneyVisitRecorder";
-import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, useNavigate, useRouter } from "@tanstack/react-router";
 import {
   ArrowLeft,
   ArrowRight,
@@ -25,6 +26,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { useLessonProgress } from "@/lib/lesson-progress";
 import { LessonProgressFeedback } from "@/components/learn/LessonProgressFeedback";
+import { LessonContentError } from "@/components/learn/LessonContentError";
 import { AiLessonCompletionAction, type AiCompletionContext } from "@/components/learn/AiLessonCompletionAction";
 import { useAuth } from "@/lib/auth-context";
 import { IntroLessonRenderer } from "@/components/intro/IntroLessonRenderer";
@@ -33,7 +35,7 @@ import { getContinuityForLocale } from "@/lib/locale-curriculum/resolve-continui
 import { buildLocalizedLearnerMeta } from "@/lib/locale/build-learner-route-meta";
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 import { getPath, type CurriculumLesson, type PathId } from "@/lib/curriculum-data";
-import { useEntitlement, useLessonGate, useStreak } from "@/lib/entitlements";
+import { useLessonGate, useStreak } from "@/lib/entitlements";
 import { PaywallCard, IntroGateCard } from "@/components/learn/PaywallCard";
 import {
   isLessonNavigationMissionLocked,
@@ -223,15 +225,17 @@ function LearnerLessonPage() {
   );
 }
 
-function LearnLessonError({ error }: { error: unknown }) {
+function LearnLessonError() {
   const { dir } = useLocale();
-  const t = useUiString();
-
+  const router = useRouter();
+  const [retrying, setRetrying] = useState(false);
+  function retry() {
+    setRetrying(true);
+    void router.invalidate({ sync: true }).catch(() => {}).finally(() => setRetrying(false));
+  }
   return (
     <div className="min-h-dvh grid place-items-center p-6" dir={dir}>
-      <p className="text-sm text-destructive">
-        {error instanceof Error ? error.message : t("learn.error.load")}
-      </p>
+      <LessonContentError retry={retry} retrying={retrying} />
     </div>
   );
 }
@@ -265,37 +269,55 @@ function UnifiedLessonPage() {
   const effectiveAccess = lessonAccess;
   const isLocalizedPackagePage =
     effectiveAccess.contentSource === "locale-package-json" && localizedPackage !== null;
+  const auth = useAuth();
+  const progress = useLessonProgress();
+  const { getStatus, isLoaded: isProgressLoaded } = progress;
+  const introIds = useMemo(
+    () => selectIntroPrerequisiteLessons(getPath("intro")?.modules ?? []).map((l) => l.id),
+    [],
+  );
+  const introDone = introIds.filter((id) => getStatus(id) === "completed").length;
+  const { gate, entitlement, isLoaded: isGateLoaded } = useLessonGate(lesson.id, introDone);
+  const { isAdmin } = entitlement;
+  const isGateReady = isProgressLoaded && isGateLoaded;
+  const canReadCanonical = isGateReady && gate.kind === "open" && !isLocalizedPackagePage;
+  const [contentAttempt, setContentAttempt] = useState(0);
+  const contentScope = useMemo(() => ({}), [
+    auth.user?.id, auth.authGeneration, pathId, lesson.id, lesson.slug, locale,
+    canReadCanonical, contentAttempt,
+  ]);
+  const currentContentScope = useRef(contentScope);
+  currentContentScope.current = contentScope;
   const [egyptianContent, setEgyptianContent] = useState<{
-    lessonSlug: string;
+    scope: object;
+    failed: boolean;
     content: Awaited<ReturnType<typeof loadIntroLessonContent>>;
   } | null | undefined>(undefined);
 
   useEffect(() => {
-    if (isLocalizedPackagePage) {
-      setEgyptianContent(null);
-      return;
-    }
+    if (!canReadCanonical) return;
     let cancelled = false;
-    const lessonSlug = lesson.slug;
-    void loadIntroLessonContent(lessonSlug).then((loaded) => {
-      if (!cancelled) setEgyptianContent({ lessonSlug, content: loaded });
-    });
+    const current = () =>
+      !cancelled &&
+      currentContentScope.current === contentScope &&
+      auth.isAuthGenerationCurrent(auth.authGeneration);
+    void loadIntroLessonContent(lesson.slug).then(
+      (loaded) => {
+        if (current()) setEgyptianContent({ scope: contentScope, failed: false, content: loaded });
+      },
+      () => {
+        if (current()) setEgyptianContent({ scope: contentScope, failed: true, content: null });
+      },
+    );
     return () => {
       cancelled = true;
     };
-  }, [lesson.slug, isLocalizedPackagePage]);
+  }, [contentScope]);
 
-  const content = isLocalizedPackagePage
-    ? null
-    : egyptianContent?.lessonSlug === lesson.slug
-      ? egyptianContent.content
-      : undefined;
-  const progress = useLessonProgress();
-  const { getStatus, isLoaded: isProgressLoaded } = progress;
-  const auth = useAuth();
+  const currentContent = egyptianContent?.scope === contentScope ? egyptianContent : undefined;
+  const content = currentContent?.content;
   const navigate = useNavigate();
   const { recordActivity } = useStreak();
-  const { isAdmin } = useEntitlement();
   const meta = PATH_META[pathId];
   const Icon = meta.icon;
   const toneClasses =
@@ -395,8 +417,9 @@ function UnifiedLessonPage() {
     lesson.slug,
     localizedPackage,
     isLocalizedPackagePage,
+    content,
   );
-  const missionGate = useMissionGateForPage(lesson.slug, localizedPackage, isLocalizedPackagePage);
+  const missionGate = useMissionGateForPage(lesson.slug, missionShape, isAdmin);
   const nextLocked = isLessonNavigationMissionLocked(missionGate);
 
   const assistantContextOverride = useMemo(() => {
@@ -428,19 +451,6 @@ function UnifiedLessonPage() {
     displayTitle,
     nextLessonTitle,
   ]);
-
-  // Access gate: count Intro completions to decide whether to lock.
-  const introIds = useMemo(
-    () =>
-      (getPath("intro")?.modules ?? [])
-        .flatMap((m) => m.lessons)
-        .filter((l) => l.state === "available")
-        .map((l) => l.id),
-    [],
-  );
-  const introDone = introIds.filter((id) => getStatus(id) === "completed").length;
-  const { gate, isLoaded: isGateLoaded } = useLessonGate(lesson.id, introDone);
-  const isGateReady = isProgressLoaded && isGateLoaded;
 
   // Best-effort effects are separate from the owned progress acknowledgement.
   // Actor transport and effect persistence are not acknowledged by these calls.
@@ -564,9 +574,11 @@ function UnifiedLessonPage() {
           <IntroGateCard done={gate.introDone} total={gate.introTotal} />
         ) : isLocalizedPackagePage && localizedPackage ? (
           <LocalePackageLessonRenderer pkg={localizedPackage} />
+        ) : currentContent?.failed ? (
+          <LessonContentError retry={() => setContentAttempt((value) => value + 1)} />
         ) : content === undefined ? (
-          <div className="rounded-2xl border border-border/40 bg-muted/20 p-8 text-center text-sm text-muted-foreground">
-            {t("learn.loading.access")}
+          <div role="status" className="rounded-2xl border border-border/40 bg-muted/20 p-8 text-center text-sm text-muted-foreground">
+            {t("learn.content.loading")}
           </div>
         ) : content ? (
           <IntroLessonRenderer
@@ -693,15 +705,13 @@ function UnifiedLessonPage() {
                       actionContextKey={actionContextKey}
                       completeLabel={t("learn.nav.markComplete")}
                       continueLabel={next ? t("learn.nav.next") : t("learn.backToDashboard")}
-                      disabled={nextLocked && !!missionShape?.hasRubric}
+                      disabled={nextLocked}
                       onRecordActivity={recordConfirmedActivity}
                       onLessonCompleted={recordConfirmedLesson}
                       onConfirmed={(context) => {
                         if (isCompletionCurrent(context)) setCompletionReceipt(context);
                       }}
-                      onContinue={nextLocked && (next || missionShape?.hasRubric)
-                        ? undefined
-                        : continueConfirmedLesson}
+                      onContinue={nextLocked ? undefined : continueConfirmedLesson}
                     />
                     {!next && nextLocked && missionShape?.hasRubric && (
                       <Button asChild variant="violet" size="sm">

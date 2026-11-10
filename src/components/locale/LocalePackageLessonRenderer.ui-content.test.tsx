@@ -294,31 +294,31 @@ afterEach((context) => {
 
 // Exact C0-approved scalar values, independently fixed expected text; no fake lookup.
 type UiChromeKey =
-  | "learn.loading.access"
+  | "learn.content.loading"
   | "mission.copy.cta"
   | "mission.copy.done"
   | "intro.mission.jumpCta";
 const EXPECTED_UI = {
   "ar-EG": {
-    "learn.loading.access": "جاري تحميل حالة الوصول للخطوة...",
+    "learn.content.loading": "بنحمّل محتوى الخطوة…",
     "mission.copy.cta": "انسخ خطوات المهمة",
     "mission.copy.done": "اتنسخت ✓",
     "intro.mission.jumpCta": "روح للمهمة ↓",
   },
   "ar-MSA": {
-    "learn.loading.access": "جارٍ تحميل حالة الوصول إلى الخطوة...",
+    "learn.content.loading": "جارٍ تحميل محتوى الخطوة…",
     "mission.copy.cta": "انسخ خطوات المهمة",
     "mission.copy.done": "تم النسخ ✓",
     "intro.mission.jumpCta": "انتقل إلى المهمة ↓",
   },
   "ar-Gulf": {
-    "learn.loading.access": "جاري تحميل حالة الوصول للخطوة...",
+    "learn.content.loading": "جارٍ تحميل محتوى الخطوة…",
     "mission.copy.cta": "انسخ خطوات المهمة",
     "mission.copy.done": "اننسخ ✓",
     "intro.mission.jumpCta": "روح للمهمة ↓",
   },
   en: {
-    "learn.loading.access": "Loading step access…",
+    "learn.content.loading": "Loading step content…",
     "mission.copy.cta": "Copy mission steps",
     "mission.copy.done": "Copied ✓",
     "intro.mission.jumpCta": "Go to mission ↓",
@@ -345,7 +345,7 @@ describe("NEW functional outer UI / package material separation", () => {
       sourceBoundary.pending.set(pkg.lessonId, pending.promise);
       render(page(pkg, ui));
       // Actual selected public dictionary values are independently fixed above.
-      expect(screen.getByText(EXPECTED_UI[ui]["learn.loading.access"])).toBeTruthy();
+      expect(screen.getByText(EXPECTED_UI[ui]["learn.content.loading"])).toBeTruthy();
       expect(sourceBoundary.canonicalCalls).toEqual([pkg.lessonId]);
       expect(sourceBoundary.renders).toHaveLength(0);
       sample("loading-observed");
@@ -385,7 +385,7 @@ describe("NEW functional outer UI / package material separation", () => {
     sourceBoundary.available.add(pkg.lessonId);
     sourceBoundary.pending.set(pkg.lessonId, pending.promise);
     render(page(pkg, "ar-MSA"));
-    expect(screen.getByText(EXPECTED_UI["ar-MSA"]["learn.loading.access"])).toBeTruthy();
+    expect(screen.getByText(EXPECTED_UI["ar-MSA"]["learn.content.loading"])).toBeTruthy();
     sample("before-canonical-resolution");
     const canonical = adaptLocalizedPackageToIntroContent(pkg, null);
     await act(async () => {
@@ -459,7 +459,7 @@ describe("NEW functional outer UI / package material separation", () => {
     const view = render(page(pkg, "ar-MSA"));
     view.rerender(page(pkg, "en"));
     sample("after-UI-rerender");
-    expect(screen.getByText(EXPECTED_UI["en"]["learn.loading.access"])).toBeTruthy();
+    expect(screen.getByText(EXPECTED_UI["en"]["learn.content.loading"])).toBeTruthy();
     expect(sourceBoundary.canonicalCalls).toEqual([pkg.lessonId]);
     expect(sourceBoundary.renders).toHaveLength(0);
   });
@@ -530,7 +530,7 @@ describe("NEW functional outer UI / package material separation", () => {
     expect(lastRendered().props.lessonId).toBe(first.lessonId);
     const priorRenders = sourceBoundary.renders.length;
     view.rerender(page(second, "en"));
-    expect(screen.getByText(EXPECTED_UI.en["learn.loading.access"])).toBeTruthy();
+    expect(screen.getByText(EXPECTED_UI.en["learn.content.loading"])).toBeTruthy();
     expect(sourceBoundary.renders).toHaveLength(priorRenders);
     await act(async () => {
       secondPending.resolve(adaptLocalizedPackageToIntroContent(second, null));

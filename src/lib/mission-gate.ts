@@ -94,11 +94,13 @@ export function useLessonMissionShapeForPage(
   lessonId: string,
   localizedPackage: LocalizedLessonPackage | null,
   isLocalizedPackagePage: boolean,
+  canonicalContent: IntroLessonContent | null | undefined,
 ): LessonMissionShape | null | undefined {
-  const egyptianShape = useLessonMissionShape(lessonId);
   const packageShape = useLocalizedPackageMissionShape(localizedPackage);
-  if (!isLocalizedPackagePage) return egyptianShape;
-  return packageShape;
+  return React.useMemo(() => {
+    if (isLocalizedPackagePage) return packageShape;
+    return canonicalContent ? extractLessonMission(canonicalContent, lessonId) : undefined;
+  }, [isLocalizedPackagePage, packageShape, canonicalContent, lessonId]);
 }
 
 /** @deprecated Prefer loadLessonMission or useLessonMissionShape. */
@@ -142,9 +144,9 @@ const QK = ["mission-gate"] as const;
 function useMissionGateWithShape(
   lessonId: string,
   missionShape: LessonMissionShape | null | undefined,
+  isAdmin: boolean,
 ): MissionGateState {
   const { user } = useAuth();
-  const { isAdmin } = useEntitlement();
   const qc = useQueryClient();
   const requiresMission = !!missionShape?.hasRubric && !isAdmin;
   const missionId = missionShape?.missionId ?? packageMissionId(lessonId);
@@ -193,18 +195,14 @@ function useMissionGateWithShape(
 
 export function useMissionGate(lessonId: string): MissionGateState {
   const missionShape = useLessonMissionShape(lessonId);
-  return useMissionGateWithShape(lessonId, missionShape);
+  const { isAdmin } = useEntitlement();
+  return useMissionGateWithShape(lessonId, missionShape, isAdmin);
 }
 
 export function useMissionGateForPage(
   lessonId: string,
-  localizedPackage: LocalizedLessonPackage | null,
-  isLocalizedPackagePage: boolean,
+  missionShape: LessonMissionShape | null | undefined,
+  isAdmin: boolean,
 ): MissionGateState {
-  const missionShape = useLessonMissionShapeForPage(
-    lessonId,
-    localizedPackage,
-    isLocalizedPackagePage,
-  );
-  return useMissionGateWithShape(lessonId, missionShape);
+  return useMissionGateWithShape(lessonId, missionShape, isAdmin);
 }

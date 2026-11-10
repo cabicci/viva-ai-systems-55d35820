@@ -2,6 +2,7 @@ import * as React from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
+import { selectIntroPrerequisiteLessons } from "@/lib/intro-prerequisite";
 import { PATHS, getPath, type CurriculumPath } from "@/lib/curriculum-data";
 import { captureWarn } from "@/lib/error-capture";
 import { useFreeAccessSnapshot } from "@/lib/commerce/free-access-client";
@@ -247,9 +248,7 @@ export function decideLessonGate(args: {
 /** Convenience hook: combines auth+subscription+intro progress. */
 export function useLessonGate(lessonId: string, introCompletedCount: number) {
   const ent = useEntitlement();
-  const introTotal = (getPath("intro")?.modules ?? [])
-    .flatMap((m) => m.lessons)
-    .filter((l) => l.state === "available").length;
+  const introTotal = selectIntroPrerequisiteLessons(getPath("intro")?.modules ?? []).length;
   const gate = decideLessonGate({
     lessonId,
     tier: ent.tier,
