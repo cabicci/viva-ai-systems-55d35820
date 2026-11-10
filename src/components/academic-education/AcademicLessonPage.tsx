@@ -112,8 +112,37 @@ function AuthorizedLesson({
     [result, setResult] = useState<AcademicQuizResult | null>(null),
     [fields, setFields] = useState(lesson.assignment.fields.map(() => "")),
     [busy, setBusy] = useState(false),
-    [error, setError] = useState(false),
+    [error, setError] = useState<"save" | "download" | null>(null),
     [saved, setSaved] = useState(false);
+  // Drafts live only in this account/course/lesson/locale component. A content
+  // revision also invalidates pending acknowledgements and response state.
+  const revision = JSON.stringify(lesson);
+  const [scope, setScope] = useState({ revision });
+  const currentScope = useRef(scope);
+  currentScope.current = scope;
+  const mounted = useRef(true);
+  const request = useRef<symbol | null>(null);
+  const draftEdits = useRef(0);
+  useEffect(() => {
+    mounted.current = true;
+    return () => { mounted.current = false; request.current = null; };
+  }, []);
+  if (scope.revision !== revision) {
+    setScope({ revision });
+    // Retain only the explicit append-only practice migrations already reviewed
+    // by the course contract. Other revisions must not reassign draft answers.
+    const appended = fields.length < lesson.assignment.fields.length
+      ? normalizeAcademicPracticeValues(lesson.id, locale, lesson.assignment.fields.length, fields)
+      : null;
+    setFields(appended ?? lesson.assignment.fields.map(() => ""));
+    setAnswers({});
+    setResult(null);
+    setBusy(false);
+    setError(null);
+    setSaved(false);
+    request.current = null;
+    draftEdits.current++;
+  }
   const sectionRef = useRef<HTMLElement>(null);
   const previousTab = useRef(tab);
   useEffect(() => {
@@ -159,8 +188,13 @@ function AuthorizedLesson({
       ? delivery.video
       : null;
   async function save(action: "read" | "practice" | "quiz") {
+    if (request.current) return;
+    const operation = Symbol("academic-save");
+    request.current = operation;
+    const submittedEdits = draftEdits.current;
+    const isCurrent = () => mounted.current && currentScope.current === scope && request.current === operation;
     setBusy(true);
-    setError(false);
+    setError(null);
     setSaved(false);
     setResult(null);
     try {
@@ -173,20 +207,33 @@ function AuthorizedLesson({
         locale,
         data,
       );
-      if (!response.allowed) {
+      if (!isCurrent()) return;
+      if (response?.allowed === false) {
         revoke();
         return;
       }
-      if (action === "quiz") setResult(response);
-      setSaved(true);
-      await progress.refetch();
+      if (response?.allowed !== true) {
+        setError("save");
+        return;
+      }
+      if (submittedEdits === draftEdits.current) {
+        if (action === "quiz") setResult(response);
+        setSaved(true);
+      }
+      // A progress refresh failure does not undo an acknowledged submission.
+      void progress.refetch().catch(() => {});
     } catch {
-      setError(true);
-      revoke();
+      // The command contract throws on transport/RPC failure, not on an
+      // explicit access denial. Keep the draft available for the learner to retry.
+      if (isCurrent()) setError("save");
     } finally {
-      setBusy(false);
+      if (isCurrent()) {
+        request.current = null;
+        setBusy(false);
+      }
     }
   }
+
   return (
     <>
       <a
@@ -213,7 +260,7 @@ function AuthorizedLesson({
                   onClick={() => {
                     setTab(key);
                     setSaved(false);
-                    setError(false);
+                    setError(null);
                   }}
                   aria-pressed={key === tab}
                   aria-controls="academic-lesson-section"
@@ -237,9 +284,11 @@ function AuthorizedLesson({
         >
           {error && (
             <p role="alert">
-              {en
-                ? "Could not save. Please reload and retry."
-                : "تعذر الحفظ. أعد تحميل الدرس وحاول مجددًا."}
+              {error === "download"
+                ? (en ? "Could not download. Please try again." : "تعذر التنزيل. حاول مجددًا.")
+                : (en
+                  ? "Could not confirm the save. Your draft is still here. Try saving again."
+                  : "تعذر تأكيد الحفظ. مسودتك ما زالت هنا. حاول الحفظ مرة أخرى.")}
             </p>
           )}
           {saved && <p role="status">{c.saved}</p>}
@@ -314,8 +363,10 @@ function AuthorizedLesson({
                         disabled={busy}
                         checked={answers[q.id] === i}
                         onChange={() => {
+                          draftEdits.current++;
                           setAnswers({ ...answers, [q.id]: i });
                           setResult(null);
+                          setSaved(false);
                         }}
                       />
                       <span className="min-w-0 flex-1">
@@ -357,11 +408,13 @@ function AuthorizedLesson({
                     rows={4}
                     maxLength={5000}
                     value={practiceFields[i] ?? ""}
-                    onChange={(event) =>
+                    onChange={(event) => {
+                      draftEdits.current++;
+                      setSaved(false);
                       setFields(
                         practiceFields.map((value, j) => (i === j ? event.target.value : value)),
-                      )
-                    }
+                      );
+                    }}
                     className="mt-3 w-full rounded-xl border bg-background p-3 font-normal leading-7"
                   />
                 </label>
@@ -376,7 +429,11 @@ function AuthorizedLesson({
                     lesson.assignment.fields.length,
                     draft,
                   );
-                  if (restored) setFields(restored);
+                  if (restored) {
+                    draftEdits.current++;
+                    setSaved(false);
+                    setFields(restored);
+                  }
                 }}
               >
                 {c.restore}
@@ -420,7 +477,7 @@ function AuthorizedLesson({
                   key={file.path}
                   onClick={() =>
                     void academicDownload(file.path, `${lesson.id}-${locale}.pdf`).catch(() =>
-                      setError(true),
+                      setError("download"),
                     )
                   }
                 >
