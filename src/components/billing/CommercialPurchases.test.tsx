@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { CommercialPurchases } from "./CommercialPurchases";
@@ -63,6 +63,15 @@ function setup(area: "ai" | "kids" = "ai") {
     </QueryClientProvider>,
   );
 }
+async function openPurchase(index: number) {
+  fireEvent.click(screen.getAllByRole("button", { name: "Continue to payment" })[index]);
+  return within(await screen.findByRole("dialog"));
+}
+
+function closePurchase() {
+  fireEvent.click(screen.getByRole("button", { name: "Back to packages" }));
+}
+
 describe("one-time commercial purchases", () => {
   it.each(["en", "ar-EG", "ar-MSA", "ar-Gulf"])(
     "labels furniture for customers in %s",
@@ -85,8 +94,9 @@ describe("one-time commercial purchases", () => {
     fireEvent.change(screen.getByLabelText("Choose one curriculum"), {
       target: { value: "ai-complete" },
     });
-    fireEvent.click(screen.getAllByRole("button", { name: "Continue to payment" })[0]);
-    await screen.findByRole("alert");
+    const lifetime = await openPurchase(0);
+    fireEvent.click(lifetime.getByRole("button", { name: "Continue to payment" }));
+    await lifetime.findByRole("alert");
     const first = mock.checkout.mock.calls[0][0];
     expect(first).toMatchObject({
       product: "curriculum_lifetime",
@@ -95,16 +105,18 @@ describe("one-time commercial purchases", () => {
       marketCode: "EG",
     });
     expect(first).not.toHaveProperty("childId");
-    fireEvent.click(screen.getAllByRole("button", { name: "Continue to payment" })[0]);
+    fireEvent.click(lifetime.getByRole("button", { name: "Continue to payment" }));
     await waitFor(() => expect(mock.checkout).toHaveBeenCalledTimes(2));
     expect(mock.checkout.mock.calls[1][0].requestId).toBe(first.requestId);
-    await screen.findByRole("alert");
+    await lifetime.findByRole("alert");
+    closePurchase();
     fireEvent.change(screen.getByLabelText("Learning path"), { target: { value: "academic" } });
     expect(screen.getByLabelText("Choose one curriculum")).toHaveValue("");
     fireEvent.change(screen.getByLabelText("Choose one curriculum"), {
       target: { value: "AC-BUS" },
     });
-    fireEvent.click(screen.getAllByRole("button", { name: "Continue to payment" })[0]);
+    const next = await openPurchase(0);
+    fireEvent.click(next.getByRole("button", { name: "Continue to payment" }));
     await waitFor(() => expect(mock.checkout).toHaveBeenCalledTimes(3));
     expect(mock.checkout.mock.calls[2][0]).toMatchObject({ area: "academic", course: "AC-BUS" });
     expect(mock.checkout.mock.calls[2][0].requestId).not.toBe(first.requestId);
@@ -120,15 +132,18 @@ describe("one-time commercial purchases", () => {
     fireEvent.change(screen.getByLabelText("Choose one child"), {
       target: { value: "owned-child-two" },
     });
-    fireEvent.click(screen.getAllByRole("button", { name: "Continue to payment" })[0]);
-    await screen.findByRole("alert");
+    const lifetime = await openPurchase(0);
+    fireEvent.click(lifetime.getByRole("button", { name: "Continue to payment" }));
+    await lifetime.findByRole("alert");
     expect(mock.checkout.mock.calls[0][0]).toMatchObject({
       product: "curriculum_lifetime",
       area: "kids",
       course: "KIDS-ONE",
       childId: "owned-child-two",
     });
-    fireEvent.click(screen.getAllByRole("button", { name: "Continue to payment" })[1]);
+    closePurchase();
+    const topup = await openPurchase(1);
+    fireEvent.click(topup.getByRole("button", { name: "Continue to payment" }));
     await waitFor(() => expect(mock.checkout).toHaveBeenCalledTimes(2));
     expect(mock.checkout.mock.calls[1][0]).toMatchObject({
       product: "question_topup",
@@ -140,26 +155,29 @@ describe("one-time commercial purchases", () => {
 
   it("allows account top-up without a current curriculum selection and binds an explicit coupon", async () => {
     setup();
-    fireEvent.change(screen.getByLabelText("Offer code (optional)"), {
+    const topup = await openPurchase(1);
+    fireEvent.change(topup.getByLabelText("Offer code (optional)"), {
       target: { value: " extra100 " },
     });
-    expect(screen.getAllByRole("button", { name: "Continue to payment" })[1]).toBeDisabled();
-    fireEvent.click(screen.getByRole("button", { name: "Review price" }));
+    expect(topup.getByRole("button", { name: "Continue to payment" })).toBeDisabled();
+    fireEvent.click(topup.getByRole("button", { name: "Review price" }));
     await waitFor(() =>
-      expect(screen.getAllByRole("button", { name: "Continue to payment" })[1]).toBeEnabled(),
+      expect(topup.getByRole("button", { name: "Continue to payment" })).toBeEnabled(),
     );
-    fireEvent.click(screen.getAllByRole("button", { name: "Continue to payment" })[1]);
-    await screen.findByRole("alert");
+    fireEvent.click(topup.getByRole("button", { name: "Continue to payment" }));
+    await topup.findByRole("alert");
     expect(mock.checkout.mock.calls[0][0]).toMatchObject({
       product: "question_topup",
       walletScope: "account",
       offer: { code: "EXTRA100" },
     });
+    closePurchase();
     await screen.findByRole("option", { name: "Complete AI curriculum" });
     fireEvent.change(screen.getByLabelText("Choose one curriculum"), {
       target: { value: "ai-complete" },
     });
-    fireEvent.click(screen.getAllByRole("button", { name: "Continue to payment" })[0]);
+    const lifetime = await openPurchase(0);
+    fireEvent.click(lifetime.getByRole("button", { name: "Continue to payment" }));
     await waitFor(() => expect(mock.checkout).toHaveBeenCalledTimes(2));
     expect(mock.checkout.mock.calls[1][0].product).toBe("curriculum_lifetime");
     expect(mock.checkout.mock.calls[1][0]).not.toHaveProperty("offer");

@@ -26,7 +26,7 @@ export function CommercialPurchases({ area }: { area: Area }) {
   const [childId, setChildId] = useState("");
   const [busy, setBusy] = useState(false);
   const [manualBusy, setManualBusy] = useState(false);
-  const [failed, setFailed] = useState(false);
+  const [failed, setFailed] = useState<"curriculum_lifetime" | "question_topup" | null>(null);
   const pending = useRef<{ signature: string; id: string; offerKey: string } | null>(null);
   const running = useRef(false);
   const options = useQuery({
@@ -84,7 +84,7 @@ export function CommercialPurchases({ area }: { area: Area }) {
     };
     running.current = true;
     setBusy(true);
-    setFailed(false);
+    setFailed(null);
     try {
       // One-time products never fall back to a subscription or another payment rail.
       const url = await resolveCheckoutUrl(request, async () => {
@@ -94,7 +94,7 @@ export function CommercialPurchases({ area }: { area: Area }) {
     } catch (error) {
       if (error instanceof BillingUnavailableError && error.code === "COMMERCIAL_REQUEST_EXPIRED")
         pending.current = null;
-      setFailed(true);
+      setFailed(kind);
     } finally {
       running.current = false;
       setBusy(false);
@@ -123,6 +123,7 @@ export function CommercialPurchases({ area }: { area: Area }) {
                   value={selectedArea}
                   disabled={busy || manualBusy}
                   onChange={(e) => {
+                    setFailed(null);
                     setSelectedArea(e.target.value as Area);
                     setCourse("");
                     setChildId("");
@@ -142,7 +143,10 @@ export function CommercialPurchases({ area }: { area: Area }) {
                   className={input}
                   value={course}
                   disabled={busy || manualBusy || options.isPending || !!options.error}
-                  onChange={(e) => setCourse(e.target.value)}
+                  onChange={(e) => {
+                    setCourse(e.target.value);
+                    setFailed(null);
+                  }}
                 >
                   <option value="">—</option>
                   {curricula.map((item) => (
@@ -161,7 +165,10 @@ export function CommercialPurchases({ area }: { area: Area }) {
                     className={input}
                     value={childId}
                     disabled={busy || manualBusy || options.isPending || !!options.error}
-                    onChange={(e) => setChildId(e.target.value)}
+                    onChange={(e) => {
+                      setChildId(e.target.value);
+                      setFailed(null);
+                    }}
                   >
                     <option value="">—</option>
                     {children.map((item) => (
@@ -186,6 +193,25 @@ export function CommercialPurchases({ area }: { area: Area }) {
                   wallet_scope: selectedArea === "kids" ? "family" : "account",
                 }}
                 disabled={busy || !selected || (selectedArea === "kids" && !child)}
+                checkout={{
+                  title: w.lifetime,
+                  error: failed === "curriculum_lifetime" ? w.unavailable : undefined,
+                  summary: (
+                    <div className="space-y-1">
+                      <p>{w.lifetimePrice}</p>
+                      <p>
+                        {selectedArea === "technical" && course === "furniture"
+                          ? getLineCopy(locale).furniture
+                          : selected?.title}
+                      </p>
+                      {selectedArea === "kids" && child && (
+                        <p>
+                          {w.child}: {child.name}
+                        </p>
+                      )}
+                    </div>
+                  ),
+                }}
                 stripe={() => checkout("curriculum_lifetime")}
                 onBusyChange={setManualBusy}
               >
@@ -214,6 +240,18 @@ export function CommercialPurchases({ area }: { area: Area }) {
                 busy ||
                 (area === "kids" && (options.isPending || !!options.error || !children.length))
               }
+              checkout={{
+                title: w.topup,
+                error: failed === "question_topup" ? w.unavailable : undefined,
+                summary: (
+                  <div className="space-y-1">
+                    <p>{w.topupPrice}</p>
+                    <p>
+                      {w.scope}: {area === "kids" ? w.familyAccount : w.account}
+                    </p>
+                  </div>
+                ),
+              }}
               stripe={(offer) => checkout("question_topup", offer)}
             >
               {w.buy}
@@ -226,7 +264,7 @@ export function CommercialPurchases({ area }: { area: Area }) {
           <a href={`/login?locale=${locale}`}>{w.signIn}</a>
         </Button>
       )}
-      {(failed || options.error) && (
+      {options.error && (
         <p role="alert" className="text-destructive">
           {w.unavailable}
         </p>

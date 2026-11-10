@@ -1,11 +1,14 @@
-import { useState } from "react";
-import { toast } from "sonner";
+import { CheckoutPlanSummary } from "@/components/billing/CheckoutPlanSummary";
+import { useRef, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useLocale } from "@/lib/locale/locale-context";
 import { Button } from "@/components/ui/button";
 import { PaymentMethods } from "@/components/commerce/PaymentMethods";
-import { StripeCheckoutTrust } from "@/components/billing/StripeCheckoutTrust";
-import { BillingUnavailableError, billingUnavailableMessage, resolveCheckoutUrl } from "@/lib/billing/checkout-client";
+import {
+  BillingUnavailableError,
+  billingUnavailableMessage,
+  resolveCheckoutUrl,
+} from "@/lib/billing/checkout-client";
 
 const copy = {
   "ar-EG": {
@@ -36,9 +39,15 @@ export function KidsCheckoutButtons({ market }: { market: "EG" | "INTL" }) {
   const [pending, setPending] = useState(false);
   const [selectedInterval, setSelectedInterval] = useState<"month" | "year" | null>(null);
 
+  const [checkoutError, setCheckoutError] = useState<string>();
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
+  const [paymentBusy, setPaymentBusy] = useState(false);
+  const returnFocusRef = useRef<HTMLButtonElement | null>(null);
+
   async function checkout(billingInterval: "month" | "year") {
     if (pending) return;
     setPending(true);
+    setCheckoutError(undefined);
     try {
       const { data: session } = await supabase.auth.getSession();
       if (!session.session) {
@@ -66,41 +75,53 @@ export function KidsCheckoutButtons({ market }: { market: "EG" | "INTL" }) {
       );
       window.location.assign(url);
     } catch (e) {
-      toast.error(e instanceof BillingUnavailableError ? billingUnavailableMessage(locale) : words.error);
+      setCheckoutError(
+        e instanceof BillingUnavailableError ? billingUnavailableMessage(locale) : words.error,
+      );
       setPending(false);
     }
   }
 
   return (
     <div className="mt-4 grid gap-2 sm:grid-cols-2">
-      <Button type="button" disabled={pending} onClick={() => setSelectedInterval("month")}>
-        {words.month}
-      </Button>
-      <Button
-        type="button"
-        variant="outline"
-        disabled={pending}
-        onClick={() => setSelectedInterval("year")}
-      >
-        {words.year}
-      </Button>
-      {!selectedInterval && (
-        <div className="sm:col-span-2">
-          <StripeCheckoutTrust />
-        </div>
-      )}
+      {(["month", "year"] as const).map((period) => (
+        <Button
+          key={period}
+          type="button"
+          variant={period === "year" ? "outline" : "default"}
+          disabled={pending || paymentBusy}
+          onClick={(event) => {
+            returnFocusRef.current = event.currentTarget;
+            setSelectedInterval(period);
+            setCheckoutError(undefined);
+            setCheckoutOpen(true);
+          }}
+        >
+          {words[period]}
+        </Button>
+      ))}
       {selectedInterval && (
-        <div className="sm:col-span-2">
-          <PaymentMethods
-            packageKey="kids"
-            interval={selectedInterval}
-            market={market}
-            disabled={pending}
-            stripe={() => void checkout(selectedInterval)}
-          >
-            {words[selectedInterval]}
-          </PaymentMethods>
-        </div>
+        <PaymentMethods
+          packageKey="kids"
+          interval={selectedInterval}
+          market={market}
+          disabled={pending}
+          onBusyChange={setPaymentBusy}
+          stripe={() => checkout(selectedInterval)}
+          checkout={{
+            title: locale === "en" ? "Kids family plan" : "باقة كيدز العائلية",
+            error: checkoutError,
+            open: checkoutOpen,
+            onOpenChange: setCheckoutOpen,
+            hideTrigger: true,
+            returnFocusRef,
+            summary: (
+              <CheckoutPlanSummary product="kids" market={market} interval={selectedInterval} />
+            ),
+          }}
+        >
+          {words[selectedInterval]}
+        </PaymentMethods>
       )}
     </div>
   );
