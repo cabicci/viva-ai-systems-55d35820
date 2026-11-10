@@ -20,10 +20,7 @@ import { getValueHookForLocale } from "./value-hooks";
 import { resolveLearnerLessonIcon } from "./resolve-learner-lesson-icon";
 import { useLocale } from "@/lib/locale/locale-context";
 import { getUiString } from "@/lib/locale/ui-strings";
-import {
-  getStrictVisualUiString,
-  strictVisualUiOrEmpty,
-} from "@/lib/locale-lessons/strict-visual-ui";
+import { strictVisualUiOrEmpty } from "@/lib/locale-lessons/strict-visual-ui";
 import type { LessonPackageLocale } from "@/lib/locale-lessons/types";
 import type { SupportedLocale } from "@/lib/locale/types";
 import {
@@ -32,6 +29,7 @@ import {
 } from "@/lib/lesson-visuals/contextual-v2/runtime/contextualV2BrowserResolver";
 
 const VIDEO_UI_KEYS = {
+  videoPlayerTitle: "a11y.lessonVideo",
   videoMissingTitle: "safety.video.title",
   videoMissingBody: "safety.video.body",
   videoOptionalBadge: "intro.video.optionalBadge",
@@ -90,7 +88,7 @@ function StrictLocaleVideoSlot({
           allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
           allowFullScreen
           className="h-full w-full"
-          title={getStrictVisualUiString(locale, VIDEO_UI_KEYS.videoMissingTitle) ?? ""}
+          title={strictVisualUiOrEmpty(locale, VIDEO_UI_KEYS.videoPlayerTitle)}
         />
       </div>
       {caption ? (
