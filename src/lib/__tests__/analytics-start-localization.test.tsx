@@ -14,6 +14,9 @@ const state = vi.hoisted(() => ({
   seen: vi.fn(),
   analytics: undefined as unknown,
   from: vi.fn(),
+  isError: false,
+  isFetching: false,
+  refetch: vi.fn(),
 }));
 vi.mock("@tanstack/react-router", () => ({
   createFileRoute: (path: string) => (options: { component: ComponentType }) => {
@@ -43,7 +46,13 @@ vi.mock("@tanstack/react-router", () => ({
   ),
 }));
 vi.mock("@tanstack/react-query", () => ({
-  useQuery: () => ({ data: state.analytics, isLoading: false }),
+  useQuery: () => ({
+    data: state.analytics,
+    isLoading: false,
+    isError: state.isError,
+    isFetching: state.isFetching,
+    refetch: state.refetch,
+  }),
 }));
 vi.mock("@tanstack/react-start", async (importOriginal) => ({
   ...await importOriginal<typeof import("@tanstack/react-start")>(),
@@ -78,6 +87,8 @@ function setup(path: "/start" | "/analytics", locale: SupportedLocale = "en") {
 }
 beforeEach(() => {
   vi.clearAllMocks();
+  state.isError = false;
+  state.isFetching = false;
   state.run.mockResolvedValue({ text: "Synthetic exercise output" });
   state.log.mockResolvedValue(undefined);
   state.analytics = {
@@ -93,6 +104,28 @@ beforeEach(() => {
   };
 });
 afterEach(cleanup);
+
+it.each(["en", "ar-EG", "ar-MSA", "ar-Gulf"] as const)(
+  "shows a localized error and retry rather than cached metrics for %s",
+  (locale) => {
+    state.isError = true;
+    setup("/analytics", locale);
+    expect(screen.getByRole("alert")).toHaveTextContent(getUiString(locale, "analytics.error"));
+    expect(screen.queryByText("1h 1m")).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: getUiString(locale, "analytics.retry") }));
+    expect(state.refetch).toHaveBeenCalledTimes(1);
+  },
+);
+
+it("shows the error instead of endless loading without cached data and prevents duplicate retries", () => {
+  state.analytics = undefined;
+  state.isError = true;
+  state.isFetching = true;
+  setup("/analytics");
+  expect(screen.getByRole("alert")).toBeVisible();
+  expect(screen.queryByText("Loading your analytics…")).not.toBeInTheDocument();
+  expect(screen.getByRole("button", { name: "Retry" })).toBeDisabled();
+});
 
 it("renders English analytics, duration, singular counts and locale-preserving navigation without a query write", () => {
   const { container } = setup("/analytics");
