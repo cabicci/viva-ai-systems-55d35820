@@ -5,7 +5,7 @@ import path from "node:path";
 /** A test may repair this owned copy; reference bytes are never the write target. */
 export async function withCopiedReferenceTree<T>(
   source: string,
-  use: (ownedRoot: string) => Promise<T>,
+  callback: (ownedRoot: string) => Promise<T>,
 ): Promise<T> {
   const tempRoot = await fs.realpath(os.tmpdir());
   const owner = await fs.mkdtemp(path.join(tempRoot, "masaarat-owned-reference-"));
@@ -21,13 +21,14 @@ export async function withCopiedReferenceTree<T>(
         return true;
       },
     });
-    return await use(root);
+    return await callback(root);
   } finally {
     // Only the exact directory created above is owned by this helper.
-    const ownedPath = await fs.realpath(owner);
-    if (ownedPath !== owner || path.dirname(ownedPath) !== tempRoot) {
-      throw new Error("Fixture ownership mismatch");
+    const ownedPath = await fs.realpath(owner).catch(() => undefined);
+    if (ownedPath === owner && path.dirname(ownedPath) === tempRoot) {
+      await fs.rm(ownedPath, { recursive: true, force: true });
+    } else {
+      process.emitWarning("Fixture cleanup skipped because ownership could not be verified");
     }
-    await fs.rm(ownedPath, { recursive: true, force: true });
   }
 }
