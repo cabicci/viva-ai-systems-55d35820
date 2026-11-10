@@ -13,8 +13,14 @@ import { loadIntroLessonContent } from "@/components/intro/lessons";
 import { renderLocalizedLesson } from "@/lib/__tests__/locale-test-utils";
 import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
 
+const authFixture = vi.hoisted(() => ({ generation: { value: 0 } }));
 vi.mock("@/lib/auth-context", () => ({
-  useAuth: () => ({ user: { id: "audit62-test-user" }, loading: false }),
+  useAuth: () => ({
+    user: { id: "audit62-test-user" },
+    loading: false,
+    authGeneration: authFixture.generation,
+    isAuthGenerationCurrent: (generation: unknown) => generation === authFixture.generation,
+  }),
 }));
 vi.mock("@/components/intro/QuizBlock", () => ({ QuizBlock: () => null }));
 vi.mock("@/components/intro/value-hooks", () => ({
