@@ -240,6 +240,8 @@ export interface PaymentMethod {
 }
 export interface Quote {
   live_stripe_available?: boolean;
+  offer_id?: string | null;
+  automatic_discount?: boolean;
   original_minor: number;
   final_minor: number;
   currency: string;

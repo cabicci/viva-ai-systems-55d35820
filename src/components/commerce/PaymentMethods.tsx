@@ -3,6 +3,7 @@ import { CheckoutStep, type CheckoutPresentation } from "./CheckoutStep";
 import { useServerFn } from "@tanstack/react-start";
 import { Link } from "@tanstack/react-router";
 import { useLocale } from "@/lib/locale/locale-context";
+import { getUiString } from "@/lib/locale/ui-strings";
 import { commerceCommand } from "@/lib/commerce/commerce.functions";
 import { commerceCopy, formatAmount, paymentInstructions } from "@/lib/commerce/copy";
 import type {
@@ -109,15 +110,20 @@ export function PaymentMethods({
   const activeSelection = useRef(selection);
   activeSelection.current = selection;
   const quote = quoteValue?.selection === selection ? quoteValue.quote : undefined;
+  const hasOfferCode = !!code.trim();
+  const automaticDiscount =
+    hasOfferCode &&
+    packageKey === "kids" &&
+    quote?.automatic_discount === true &&
+    quote.offer_id == null;
   const codedCardUnavailable =
-    !oneTime &&
-    !!code &&
+    hasOfferCode &&
     method === "stripe" &&
-    quote?.offer_kind !== "complimentary" &&
+    (oneTime || quote?.offer_kind !== "complimentary") &&
     !quote?.live_stripe_available;
   const confirmationBlocked =
     manualInventoryUnavailable ||
-    ((method !== "stripe" || !!code) && !quote) ||
+    ((method !== "stripe" || hasOfferCode) && !quote) ||
     codedCardUnavailable ||
     (!!quote?.phone_required && !normalizeOfferPhone(phone));
   const actionInFlight = useRef(false);
@@ -193,7 +199,7 @@ export function PaymentMethods({
     if (oneTime && method === "stripe") {
       try {
         await stripe(
-          code
+          hasOfferCode
             ? {
                 code,
                 ...(quote?.phone_required
@@ -207,7 +213,7 @@ export function PaymentMethods({
       }
       return;
     }
-    if (!oneTime && code && method === "stripe" && !free) {
+    if (!oneTime && hasOfferCode && method === "stripe" && !free) {
       if (!quote?.live_stripe_available) return;
       try {
         const selection: LiveCheckoutRequest =
@@ -395,7 +401,7 @@ export function PaymentMethods({
                 maxLength={64}
               />
             </label>
-            {(method !== "stripe" || code) && (
+            {(method !== "stripe" || hasOfferCode) && (
               <Button
                 type="button"
                 variant="outline"
@@ -420,6 +426,12 @@ export function PaymentMethods({
                   setRequestKey(crypto.randomUUID());
                 }}
               />
+            )}
+            {quote && codedCardUnavailable && (
+              <p role="status">{getUiString(locale, "commerce.coupon.cardUnavailable")}</p>
+            )}
+            {automaticDiscount && (
+              <p role="status">{getUiString(locale, "commerce.coupon.automaticBetter")}</p>
             )}
             {!oneTime && method !== "stripe" && (
               <>

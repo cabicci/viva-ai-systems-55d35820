@@ -50,7 +50,9 @@ beforeEach(() => {
   mock.command
     .mockReset()
     .mockImplementation(async ({ data }: { data: { action: string } }) =>
-      data.action === "methods" ? [] : { original_minor: 5000, final_minor: 4000, currency: "EGP" },
+      data.action === "methods"
+        ? []
+        : { original_minor: 5000, final_minor: 4000, currency: "EGP", live_stripe_available: true },
     );
 });
 afterEach(cleanup);
