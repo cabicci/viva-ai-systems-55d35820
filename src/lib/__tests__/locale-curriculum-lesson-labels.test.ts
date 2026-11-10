@@ -16,8 +16,6 @@ const TITLE_INDEXES = {
 
 const WIRED_SOURCES = [
   "src/routes/curriculum.tsx",
-  "src/routes/dashboard.tsx",
-  "src/components/dashboard/ReviewsDueCard.tsx",
   "src/routes/learn.$pathId.$lessonId.tsx",
 ].map((path) => ({
   path,
@@ -169,7 +167,11 @@ describe("locale curriculum lesson labels (Phase 12.5C)", () => {
   });
 
   it("does not eager-import full lesson JSON in curriculum/dashboard", () => {
-    for (const { path, source } of WIRED_SOURCES) {
+    const redirectSource = {
+      path: "src/routes/dashboard.tsx",
+      source: readFileSync(resolve(process.cwd(), "src/routes/dashboard.tsx"), "utf8"),
+    };
+    for (const { path, source } of [...WIRED_SOURCES, redirectSource]) {
       expect(
         /from ["']@\/lib\/locale-lessons\/(en|ar-MSA|ar-Gulf)\/lessons\//.test(
           source,

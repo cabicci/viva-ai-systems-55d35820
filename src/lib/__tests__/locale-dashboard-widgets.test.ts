@@ -16,9 +16,7 @@ const DASHBOARD_WIDGET_KEYS = DASHBOARD_UI_KEYS.filter((key) =>
 );
 
 const WIDGET_SOURCES = [
-  "src/components/dashboard/WelcomeChecklist.tsx",
   "src/components/dashboard/StartWowBanner.tsx",
-  "src/components/dashboard/ReviewsDueCard.tsx",
 ].map((path) => readFileSync(resolve(process.cwd(), path), "utf8"));
 
 describe("locale dashboard widgets (Phase 12.4B)", () => {
