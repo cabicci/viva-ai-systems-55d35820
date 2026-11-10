@@ -7,15 +7,20 @@ test("the exact product build runs every guard before instrumented Vite", () => 
   const product = JSON.parse(readFileSync(new URL("../../../package.json", import.meta.url), "utf8"));
   assert.equal(product.scripts.build, REVIEWED_BUILD);
   const calls = [];
-  runReviewedBuildGuards(product.scripts.build, (script) => calls.push(script));
-  assert.deepEqual(calls, ["assistant:verify", "roadmap:guard", "contextual-visuals:verify"]);
+  runReviewedBuildGuards(product.scripts.build, (...args) => calls.push(args));
+  assert.deepEqual(calls, [
+    ["assistant:verify"],
+    ["roadmap:guard", "--for-build"],
+    ["contextual-visuals:verify"],
+  ]);
 });
 
 for (const [name, script] of [
-  ["missing assistant verification", "bun run roadmap:guard && bun run contextual-visuals:verify && vite build"],
+  ["missing assistant verification", "bun run roadmap:guard --for-build && bun run contextual-visuals:verify && vite build"],
   ["missing roadmap verification", "bun run assistant:verify && bun run contextual-visuals:verify && vite build"],
-  ["missing contextual verification", "bun run assistant:verify && bun run roadmap:guard && vite build"],
-  ["reordered guards", "bun run roadmap:guard && bun run assistant:verify && bun run contextual-visuals:verify && vite build"],
+  ["missing contextual verification", "bun run assistant:verify && bun run roadmap:guard --for-build && vite build"],
+  ["reordered guards", "bun run roadmap:guard --for-build && bun run assistant:verify && bun run contextual-visuals:verify && vite build"],
+  ["different roadmap invocation", REVIEWED_BUILD.replace(" --for-build", "")],
   ["extra command", REVIEWED_BUILD + " && echo unreviewed"],
   ["changed Vite mode", REVIEWED_BUILD + " --mode development"],
   ["absent build", undefined],
@@ -36,5 +41,17 @@ test("a failed guard prevents every later guard and Vite entry", () => {
     calls.push("vite build");
   }, /invalid course/);
   assert.deepEqual(calls, ["assistant:verify"]);
+});
+
+test("a failed roadmap guard still prevents contextual verification and Vite", () => {
+  const calls = [];
+  assert.throws(() => {
+    runReviewedBuildGuards(REVIEWED_BUILD, (...args) => {
+      calls.push(args);
+      if (args[0] === "roadmap:guard") throw new Error("unbound source");
+    });
+    calls.push(["vite build"]);
+  }, /unbound source/);
+  assert.deepEqual(calls, [["assistant:verify"], ["roadmap:guard", "--for-build"]]);
 });
 
