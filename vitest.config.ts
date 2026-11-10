@@ -26,8 +26,7 @@ export default defineConfig({
     setupFiles: ["./src/test/setup.ts"],
     include: [
       "src/**/*.{test,spec}.{ts,tsx}",
-      "tests/lesson-visuals/v1/**/*.{test,spec}.{ts,tsx}",
-      "tests/lesson-visuals/controlled-v1/**/*.{test,spec}.{ts,tsx}",
+      "tests/lesson-visuals/contextual-v2/**/*.{test,spec}.{ts,tsx}",
       "tests/tools/**/*.{test,spec}.{ts,tsx}",
     ],
     css: false,

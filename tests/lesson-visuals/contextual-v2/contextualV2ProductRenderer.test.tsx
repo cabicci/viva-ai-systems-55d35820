@@ -1,14 +1,9 @@
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { PlayCircle } from "lucide-react";
 import { fireEvent, render } from "@testing-library/react";
 import { GalleryGrid } from "../../../src/components/image-gallery/GalleryGrid";
 import { IntroLessonRenderer } from "../../../src/components/intro/IntroLessonRenderer";
 import type { IntroLessonContent } from "../../../src/components/intro/intro-lesson-types";
-import {
-  getControlledV1BrowserManifestEntries,
-  resolveControlledV1Visual,
-  setControlledV1AssetUrlMapForTests,
-} from "../../../src/lib/lesson-visuals/controlled-v1/runtime/controlledV1BrowserResolver";
 import { getContextualV2BrowserManifestEntries } from "../../../src/lib/lesson-visuals/contextual-v2/runtime/contextualV2BrowserResolver";
 import auditRevisions from "../../../src/lib/lesson-visuals/contextual-v2/runtime/contextualV2AuditRevisions.json";
 import { LocaleProvider } from "../../../src/lib/locale/locale-context";
@@ -23,8 +18,6 @@ vi.mock("@tanstack/react-router", () => ({
   ),
   createLink: (component: unknown) => component,
 }));
-
-afterEach(() => setControlledV1AssetUrlMapForTests(null));
 
 const lessonId = "creator-m2-l1-know-audience";
 const contentWithLegacyVisual: IntroLessonContent = [
@@ -50,7 +43,7 @@ const contentWithoutLegacyVisual: IntroLessonContent = [
   },
 ];
 
-describe("contextual-v2 product wiring with controlled-v1 archive preserved", () => {
+describe("contextual-v2 product wiring", () => {
   it("mounts exactly one contextual image for all 100 lessons in all four locales", () => {
     const entries = getContextualV2BrowserManifestEntries();
     expect(entries).toHaveLength(400);
@@ -203,27 +196,5 @@ describe("contextual-v2 product wiring with controlled-v1 archive preserved", ()
       expect(getByText(`${expected[locale].close} ✕`)).toBeTruthy();
       unmount();
     }
-  });
-
-  it("keeps the frozen controlled-v1 resolver independently available", () => {
-    const entry = getControlledV1BrowserManifestEntries().find(
-      (candidate) =>
-        candidate.lessonId === "builder-m7-l1-tables-columns" && candidate.locale === "ar-EG",
-    );
-    expect(entry).toBeDefined();
-    if (!entry) return;
-    setControlledV1AssetUrlMapForTests({ [entry.assetKey]: "archive://accepted" });
-    const archived = resolveControlledV1Visual({
-      lessonId: "builder-m7-l1-tables-columns",
-      locale: "ar-EG",
-      expectedMethod: "A",
-    });
-    expect(archived).toMatchObject({
-      ok: true,
-      lessonId: "builder-m7-l1-tables-columns",
-      locale: "ar-EG",
-      method: "A",
-      url: "archive://accepted",
-    });
   });
 });
