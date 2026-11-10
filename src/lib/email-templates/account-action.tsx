@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text } from "@react-email/components";
+import { Text } from "react-email";
 import { MasaaratShell, bodyTextForLocale, RecipientName } from "./masaarat-shell";
 import type { SignupProfile } from "./signup-profile";
 
