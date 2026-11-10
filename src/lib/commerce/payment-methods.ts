@@ -25,3 +25,28 @@ export function effectivePaymentMethod(
     ? requested
     : "stripe";
 }
+
+/** Validate declared inventory metadata before displaying configured methods. */
+export function isPaymentMethodList(value: unknown): value is PaymentMethod[] {
+  return (
+    Array.isArray(value) &&
+    value.every((entry: unknown) => {
+      if (!entry || typeof entry !== "object") return false;
+      const item = entry as Record<string, unknown>;
+      return (
+        typeof item.code === "string" &&
+        typeof item.enabled === "boolean" &&
+        typeof item.instructions === "string" &&
+        typeof item.destination === "string" &&
+        Array.isArray(item.currencies) &&
+        item.currencies.every((currency: unknown) => typeof currency === "string") &&
+        (item.qr_url === undefined || item.qr_url === null || typeof item.qr_url === "string") &&
+        (item.instructions_localized === undefined ||
+          (!!item.instructions_localized &&
+            typeof item.instructions_localized === "object" &&
+            !Array.isArray(item.instructions_localized) &&
+            Object.values(item.instructions_localized).every((text) => typeof text === "string")))
+      );
+    })
+  );
+}

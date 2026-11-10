@@ -235,7 +235,7 @@ export interface PaymentMethod {
   instructions: string;
   instructions_localized?: Partial<Record<z.infer<typeof localeSchema>, string>>;
   destination: string;
-  qr_url?: string;
+  qr_url?: string | null;
   currencies: string[];
 }
 export interface Quote {

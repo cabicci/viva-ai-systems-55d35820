@@ -8,7 +8,6 @@ import { StripeCheckoutButtons } from "@/components/billing/StripeCheckoutButton
 import { RenewalNotice } from "@/components/billing/PlanAllowance";
 import { packageBenefits } from "@/lib/billing/package-benefits";
 import { PlanPrices } from "@/components/site/PlanPrices";
-import { Badge } from "@/components/ui/badge";
 import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { useLocale } from "@/lib/locale/locale-context";
@@ -148,14 +147,6 @@ function PricingPage() {
             </article>
 
             <article className="glass min-w-0 rounded-2xl border border-primary/30 bg-primary/[0.03] p-6 md:p-8 flex flex-col relative overflow-hidden">
-              <div className="mb-4 flex min-w-0 flex-wrap">
-                <Badge
-                  variant="outline"
-                  className="max-w-full whitespace-normal break-words border-primary/40 bg-primary/10 text-primary text-[11px] font-semibold"
-                >
-                  {t("pricing.badge.testMode")}
-                </Badge>
-              </div>
               <div className="mb-6">
                 <h2 className="text-2xl font-black">{t("pricing.plan.pro.name")}</h2>
                 <p className="text-sm text-muted-foreground mt-1">
@@ -181,14 +172,6 @@ function PricingPage() {
             </article>
 
             <article className="glass min-w-0 rounded-2xl border border-accent/40 bg-accent/[0.04] p-6 md:p-8 flex flex-col relative overflow-hidden">
-              <div className="mb-4 flex min-w-0 flex-wrap">
-                <Badge
-                  variant="outline"
-                  className="max-w-full whitespace-normal break-words border-accent/40 bg-accent/10 text-accent text-[11px] font-semibold"
-                >
-                  {t("pricing.badge.testMode")}
-                </Badge>
-              </div>
               <div className="mb-6">
                 <h2 className="text-2xl font-black">{t("pricing.plan.proPlus.name")}</h2>
                 <p className="text-sm text-muted-foreground mt-1">

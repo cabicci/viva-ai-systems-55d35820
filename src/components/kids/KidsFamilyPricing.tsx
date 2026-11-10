@@ -68,12 +68,12 @@ export function KidsFamilyPricing() {
       </div>
       <p className="mt-6 border-t border-border/40 pt-5 text-sm leading-relaxed text-muted-foreground">
         {en
-          ? "Review payment details before confirming. Manual transfers require administrator verification. Prices exclude tax. The 10% discount applies to Kids while Pro or Pro Plus is active; the automatic discount or an eligible coupon is applied, whichever saves you more, never both. Adult prices stay the same. Annual billing costs the equivalent of 10 monthly payments. Choose the market matching the parent account's country."
+          ? "Prices exclude tax. The 10% discount applies to Kids while Pro or Pro Plus is active; the automatic discount or an eligible coupon is applied, whichever saves you more, never both. Adult prices stay the same. Annual billing costs the equivalent of 10 monthly payments. Choose the market matching the parent account's country."
           : eg
-            ? "راجع تفاصيل الدفع قبل التأكيد. التحويل اليدوي بيحتاج مراجعة الإدارة. الأسعار من غير ضرائب. خصم ١٠٪ على كيدز وقت ما تكون باقة Pro أو Pro Plus فعّالة؛ بيتحسب الخصم التلقائي أو الكوبون، أيهما أوفر لك، من غير جمعهم. سعر الكبار ما بيتغيرش. السنة بسعر ١٠ شهور. اختار سوق بلد حساب وليّ الأمر."
+            ? "الأسعار من غير ضرائب. خصم ١٠٪ على كيدز وقت ما تكون باقة Pro أو Pro Plus فعّالة؛ بيتحسب الخصم التلقائي أو الكوبون، أيهما أوفر لك، من غير جمعهم. سعر الكبار ما بيتغيرش. السنة بسعر ١٠ شهور. اختار سوق بلد حساب وليّ الأمر."
             : gulf
-              ? "راجع تفاصيل الدفع قبل التأكيد. التحويل اليدوي يحتاج مراجعة الإدارة. الأسعار ما تشمل الضريبة. خصم ١٠٪ على كيدز إذا باقة Pro أو Pro Plus فعّالة؛ ينحسب الخصم التلقائي أو الكوبون، أيهما أوفر لك، بدون جمعهم. سعر الكبار ما يتغير. السنة بسعر ١٠ شهور. اختر سوق بلد حساب وليّ الأمر."
-              : "راجع تفاصيل الدفع قبل التأكيد. التحويل اليدوي يحتاج مراجعة الإدارة. الأسعار لا تشمل الضرائب. خصم 10% يطبق على كيدز أثناء سريان Pro أو Pro Plus؛ يُطبّق الخصم التلقائي أو الكوبون، أيهما أوفر لك، دون الجمع بينهما. تبقى أسعار باقات الكبار كما هي. سعر السنة يعادل 10 أشهر. اختر سوق بلد حساب وليّ الأمر."}
+              ? "الأسعار ما تشمل الضريبة. خصم ١٠٪ على كيدز إذا باقة Pro أو Pro Plus فعّالة؛ ينحسب الخصم التلقائي أو الكوبون، أيهما أوفر لك، بدون جمعهم. سعر الكبار ما يتغير. السنة بسعر ١٠ شهور. اختر سوق بلد حساب وليّ الأمر."
+              : "الأسعار لا تشمل الضرائب. خصم 10% يطبق على كيدز أثناء سريان Pro أو Pro Plus؛ يُطبّق الخصم التلقائي أو الكوبون، أيهما أوفر لك، دون الجمع بينهما. تبقى أسعار باقات الكبار كما هي. سعر السنة يعادل 10 أشهر. اختر سوق بلد حساب وليّ الأمر."}
       </p>
     </section>
   );

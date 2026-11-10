@@ -1,3 +1,4 @@
+import { CheckoutPlanSummary } from "@/components/billing/CheckoutPlanSummary";
 import { CommercialPurchases } from "@/components/billing/CommercialPurchases";
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
@@ -42,6 +43,8 @@ function TechnicalPricing() {
     offers = adminOfferCopy(locale);
   const { user } = useAuth();
   const { stripe: hasStripe } = useTechnicalProgress();
+  const [paymentBusy, setPaymentBusy] = useState(false);
+  const [checkoutError, setCheckoutError] = useState<string>();
   const [interval, setInterval] = useState<"month" | "year">("month");
   const [market, setMarket] = useState<"EG" | "INTL">("EG");
   const [busy, setBusy] = useState(false),
@@ -71,7 +74,7 @@ function TechnicalPricing() {
   }
   async function checkout() {
     setBusy(true);
-    setError(false);
+    setCheckoutError(undefined);
     try {
       const url = await resolveCheckoutUrl(
         { product: "technical", billingInterval: interval, marketCode: market, locale },
@@ -87,8 +90,9 @@ function TechnicalPricing() {
       );
       window.location.assign(url);
     } catch (e) {
-      if (e instanceof BillingUnavailableError) toast.error(billingUnavailableMessage(locale));
-      setError(true);
+      setCheckoutError(
+        e instanceof BillingUnavailableError ? billingUnavailableMessage(locale) : w.error,
+      );
       setBusy(false);
     }
   }
@@ -112,7 +116,11 @@ function TechnicalPricing() {
                   <select
                     className="mt-2 w-full rounded border bg-background p-3"
                     value={interval}
-                    onChange={(e) => setInterval(e.target.value as "month" | "year")}
+                    disabled={busy || paymentBusy}
+                    onChange={(e) => {
+                      setInterval(e.target.value as "month" | "year");
+                      setCheckoutError(undefined);
+                    }}
                   >
                     <option value="month">{w.month}</option>
                     <option value="year">{w.year}</option>
@@ -123,19 +131,41 @@ function TechnicalPricing() {
                   <select
                     className="mt-2 w-full rounded border bg-background p-3"
                     value={market}
-                    onChange={(e) => setMarket(e.target.value as "EG" | "INTL")}
+                    disabled={busy || paymentBusy}
+                    onChange={(e) => {
+                      setMarket(e.target.value as "EG" | "INTL");
+                      setCheckoutError(undefined);
+                    }}
                   >
-                    <option value="EG">{offers.egypt} — EGP</option>
-                    <option value="INTL">{offers.international} — USD</option>
+                    <option value="EG">
+                      {offers.egypt}
+                      {locale !== "en" && " — EGP"}
+                    </option>
+                    <option value="INTL">
+                      {offers.international}
+                      {locale !== "en" && " — USD"}
+                    </option>
                   </select>
                 </label>
                 <PaymentMethods
                   packageKey="technical"
                   interval={interval}
                   market={market}
-                  stripe={() => void checkout()}
+                  stripe={() => checkout()}
                   disabled={busy}
                   initialMethod="instapay"
+                  onBusyChange={setPaymentBusy}
+                  checkout={{
+                    title: text.title,
+                    error: checkoutError,
+                    summary: (
+                      <CheckoutPlanSummary
+                        product="technical"
+                        market={market}
+                        interval={interval}
+                      />
+                    ),
+                  }}
                 >
                   {w.continue}
                 </PaymentMethods>
