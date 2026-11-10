@@ -51,7 +51,7 @@ export function AddedCurricula({ area }: { area: CourseArea }) {
                 {c.lessons}
               </span>
               <span>
-                {numbers.format(course.stations.length)} {c.modules}
+                {numbers.format(course.stations.length)} {c.modulesForCount(course.stations.length)}
               </span>
             </p>
           </div>

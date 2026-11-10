@@ -45,7 +45,7 @@ export function CourseCatalogue({
               </span>
               {course.moduleCount > 0 && (
                 <span>
-                  {numbers.format(course.moduleCount)} {c.modules}
+                  {numbers.format(course.moduleCount)} {c.modulesForCount(course.moduleCount)}
                 </span>
               )}
             </p>
