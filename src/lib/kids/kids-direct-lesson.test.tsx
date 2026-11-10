@@ -515,8 +515,10 @@ describe("Kids assistant window revalidation", () => {
     await waitFor(() => expect(mock.campaignRpc).toHaveBeenCalled());
     mock.campaignRpc.mockResolvedValue({ data: false, error: null });
     mock.freeTargets = []; page.rerender(<KidsLessonPage />);
-    await waitFor(() => expect(dialog()).toBeNull());
-    expect(mock.panelLive).toBe(0);
+    await waitFor(() => {
+      expect(dialog()).toBeNull();
+      expect(mock.panelLive).toBe(0);
+    });
     mock.campaignRpc.mockResolvedValue({ data: true, error: null });
     setParent({ state: "checking", profiles: [] }); page.rerender(<KidsLessonPage />);
     profiles(); page.rerender(<KidsLessonPage />);

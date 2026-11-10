@@ -1,35 +1,14 @@
-// Captures the original Error out-of-band so server.ts can recover the stack
-// when h3 has already swallowed the throw into a generic 500 Response.
-
-let lastCapturedError: { error: unknown; at: number } | undefined;
-const TTL_MS = 5_000;
-
-function record(error: unknown) {
-  lastCapturedError = { error, at: Date.now() };
-}
+import { sanitizeErrorLog } from "@/lib/error-log-sanitize";
 
 if (typeof globalThis.addEventListener === "function") {
   globalThis.addEventListener("error", (event) => {
     const err = (event as ErrorEvent).error ?? event;
-    record(err);
     void reportToServer("window.onerror", err);
   });
   globalThis.addEventListener("unhandledrejection", (event) => {
     const reason = (event as PromiseRejectionEvent).reason;
-    record(reason);
     void reportToServer("unhandledrejection", reason);
   });
-}
-
-export function consumeLastCapturedError(): unknown {
-  if (!lastCapturedError) return undefined;
-  if (Date.now() - lastCapturedError.at > TTL_MS) {
-    lastCapturedError = undefined;
-    return undefined;
-  }
-  const { error } = lastCapturedError;
-  lastCapturedError = undefined;
-  return error;
 }
 
 /* ---------------------------------------------------------------- */
@@ -84,20 +63,18 @@ async function reportToServer(scope: string, err: unknown): Promise<void> {
     const message =
       err instanceof Error ? err.message : typeof err === "string" ? err : String(err);
     const stack = err instanceof Error ? err.stack ?? null : null;
-    const key = `${scope}::${message}`;
+    const data = sanitizeErrorLog({
+      scope,
+      message,
+      stack,
+      url: typeof location !== "undefined" ? location.href : null,
+      userAgent: typeof navigator !== "undefined" ? navigator.userAgent : null,
+      release: null,
+    });
+    const key = `${data.scope}::${data.message}`;
     if (!shouldReport(key)) return;
     const { logClientError } = await import("@/lib/error-log.functions");
-    await logClientError({
-      data: {
-        scope,
-        message: message.slice(0, 2000),
-        stack: stack ? stack.slice(0, 10_000) : null,
-        url: typeof location !== "undefined" ? location.href.slice(0, 2000) : null,
-        userAgent:
-          typeof navigator !== "undefined" ? navigator.userAgent.slice(0, 500) : null,
-        release: null,
-      },
-    });
+    await logClientError({ data });
   } catch {
     // Swallow — logging must never throw.
   }
@@ -105,10 +82,8 @@ async function reportToServer(scope: string, err: unknown): Promise<void> {
 
 /**
  * Non-fatal warning. Silent in production, console.warn in dev.
- * Also records into the last-error capture so SSR can recover context.
  */
 export function captureWarn(scope: string, err: unknown): void {
-  record(err);
   void reportToServer(scope, err);
   if (IS_DEV && typeof console !== "undefined") {
     console.warn(`[${scope}]`, err);
@@ -117,10 +92,8 @@ export function captureWarn(scope: string, err: unknown): void {
 
 /**
  * Recoverable error. Silent in production, console.error in dev.
- * Records into the last-error capture.
  */
 export function captureError(scope: string, err: unknown): void {
-  record(err);
   void reportToServer(scope, err);
   if (IS_DEV && typeof console !== "undefined") {
     console.error(`[${scope}]`, err);
