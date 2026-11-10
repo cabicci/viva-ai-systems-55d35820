@@ -43,7 +43,7 @@ export function LocaleLessonVideo({
           allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
           allowFullScreen
           className="h-full w-full"
-          title={getUiString(locale, "safety.video.title")}
+          title={getUiString(locale, "a11y.lessonVideo")}
         />
       </div>
     </figure>

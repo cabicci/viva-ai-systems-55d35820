@@ -1,6 +1,9 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
+import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
+import { LocaleLessonVideo } from "@/components/locale/LocaleLessonVideo";
+import { getUiString } from "@/lib/locale/ui-strings";
 import { renderLocalizedLesson } from "@/lib/__tests__/locale-test-utils";
 import {
   BUNNY_LIBRARY_ID,
@@ -97,12 +100,29 @@ describe("locale pilot video placement matrix", () => {
 
         expect(container.querySelector('[data-locale-video="player"]')).not.toBeNull();
         expect(container.querySelector('[data-locale-video="placeholder"]')).toBeNull();
-        expect(container.querySelector("iframe")?.getAttribute("src")).toBe(
+        const player = container.querySelector("iframe");
+        expect(player?.getAttribute("src")).toBe(
           getLocalizedBunnyEmbedUrl(cell.lessonId, cell.locale),
         );
+        expect(player).toHaveAttribute("title", getUiString(cell.locale, "a11y.lessonVideo"));
+        expect(player).not.toHaveAttribute("title", getUiString(cell.locale, "safety.video.title"));
       });
     });
   }
+
+  it("names the standalone player and reserves missing-video copy for its placeholder", () => {
+    const { rerender } = render(
+      <LocaleLessonVideo lessonId="intro-m1-l1-what-is-ai" locale="en" />,
+    );
+    expect(screen.getByTitle("Lesson video")).toHaveAttribute(
+      "src",
+      getLocalizedBunnyEmbedUrl("intro-m1-l1-what-is-ai", "en"),
+    );
+
+    rerender(<LocaleLessonVideo lessonId="missing-localized-video-fixture" locale="en" />);
+    expect(screen.queryByTitle("Lesson video")).toBeNull();
+    expect(screen.getByText(getUiString("en", "safety.video.title"))).toBeVisible();
+  });
 
   it("legacy Egyptian fallback uses plain lessonId when locale is omitted", () => {
     const lessonId = "intro-m1-l4-ai-can-cannot";
