@@ -103,8 +103,6 @@ export const SYSTEM_STATE_UI_KEYS = [
   "systemState.section.video.title",
   "systemState.video.bunny.title",
   "systemState.video.bunny.body",
-  "systemState.video.remotion.title",
-  "systemState.video.remotion.body",
   "systemState.video.relationship.title",
   "systemState.video.relationship.body",
   "systemState.video.variants.title",

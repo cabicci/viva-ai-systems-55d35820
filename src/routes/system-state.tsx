@@ -406,11 +406,6 @@ export function SystemStatePage() {
               body={t("systemState.video.bunny.body")}
             />
             <AIRow
-              title={t("systemState.video.remotion.title")}
-              status="live"
-              body={t("systemState.video.remotion.body")}
-            />
-            <AIRow
               title={t("systemState.video.relationship.title")}
               status="live"
               body={t("systemState.video.relationship.body")}
