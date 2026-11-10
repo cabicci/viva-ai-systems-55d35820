@@ -183,36 +183,52 @@ export type LiveCheckoutBody =
   | SubscriptionCheckoutBody
   | (CommercialPurchaseSelection & { offer?: SubscriptionCheckoutBody["offer"] });
 
+type AutomaticOfferDecision = {
+  use_offer: false;
+  quote: { automatic_discount: true; offer_id: null; final_minor: number };
+};
+
 async function reserveOffer(
   user: LiveUser,
   body: SubscriptionCheckoutBody,
   deps: LiveDeps,
-): Promise<OfferEvidence | null> {
-  if (!body.offer) return null;
+): Promise<{ offer: OfferEvidence | null; automaticAmount?: number }> {
+  if (!body.offer) return { offer: null };
   if (deps.getEnv("STRIPE_BILLING_MODE")?.trim().toLowerCase() !== "live")
     throw new Error("LIVE_OFFER_MODE_REQUIRED");
-  if (body.product === "kids") {
-    const selected = await deps.rpc<{ use_offer: boolean }>("select_commercial_discount", {
+  const reservation = await deps.rpc<OfferEvidence | AutomaticOfferDecision>(
+    "reserve_stripe_live_offer",
+    {
       p_user_id: user.id,
-      p_package: body.product,
+      p_code: body.offer.code,
+      p_package: body.product === "core" ? body.planKey : body.product,
       p_market: body.marketCode,
       p_interval: body.billingInterval,
-      p_code: body.offer.code,
+      p_phone: body.offer.phone ?? null,
+      p_key: body.offer.key,
       p_renewal: body.offer.renewal ?? false,
-    });
-    if (selected?.use_offer === false) return null;
-    if (selected?.use_offer !== true) throw new Error("LIVE_DISCOUNT_SELECTION_UNVERIFIED");
+    },
+  );
+  if (!reservation || typeof reservation !== "object")
+    throw new Error("LIVE_OFFER_RESERVATION_UNVERIFIED");
+  if ("use_offer" in reservation) {
+    if (
+      body.product === "kids" &&
+      reservation.use_offer === false &&
+      reservation.quote?.automatic_discount === true &&
+      reservation.quote.offer_id === null &&
+      Number.isSafeInteger(reservation.quote.final_minor) &&
+      reservation.quote.final_minor > 0 &&
+      !("id" in reservation) &&
+      !("mapping" in reservation)
+    ) {
+      return { offer: null, automaticAmount: reservation.quote.final_minor };
+    }
+    throw new Error("LIVE_DISCOUNT_SELECTION_UNVERIFIED");
   }
-  return deps.rpc<OfferEvidence>("reserve_stripe_live_offer", {
-    p_user_id: user.id,
-    p_code: body.offer.code,
-    p_package: body.product === "core" ? body.planKey : body.product,
-    p_market: body.marketCode,
-    p_interval: body.billingInterval,
-    p_phone: body.offer.phone ?? null,
-    p_key: body.offer.key,
-    p_renewal: body.offer.renewal ?? false,
-  });
+  if (typeof reservation.id !== "string" || !reservation.id || !reservation.mapping)
+    throw new Error("LIVE_OFFER_RESERVATION_UNVERIFIED");
+  return { offer: reservation };
 }
 
 async function bindOffer(
@@ -319,7 +335,7 @@ async function coreCheckout(
   deps: LiveDeps,
 ): Promise<LiveResult> {
   const stripe = liveStripe(deps);
-  const offer = await reserveOffer(user, body, deps);
+  const { offer } = await reserveOffer(user, body, deps);
   const context = await deps.rpc<CoreContext>("get_stripe_checkout_context", {
     p_user_id: user.id,
     p_plan_key: body.planKey,
@@ -477,7 +493,7 @@ async function scopedCheckout(
   deps: LiveDeps,
 ): Promise<LiveResult> {
   const stripe = liveStripe(deps);
-  const offer = await reserveOffer(user, body, deps);
+  const { offer, automaticAmount } = await reserveOffer(user, body, deps);
   const scope = body.product;
   const contextRpc =
     scope === "kids"
@@ -491,6 +507,9 @@ async function scopedCheckout(
     p_billing_interval: body.billingInterval,
   });
   if (context.email !== user.email) throw new Error("PARENT_EMAIL_MISMATCH");
+  if (automaticAmount !== undefined &&
+      (context.discounted !== true || context.amount_minor !== automaticAmount))
+    throw new Error("LIVE_DISCOUNT_SELECTION_UNVERIFIED");
   if (offer) {
     // Guardian/market checks above still run; replace family price with standard mapped base.
     context.gateway_price_id = offer.mapping.price_id;
