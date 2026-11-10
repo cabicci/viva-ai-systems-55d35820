@@ -80,7 +80,7 @@ export function captureLocalRoadmapState(root = process.cwd()): LocalRoadmapStat
       rel.startsWith("..\\")
     )
       throw new Error("ROADMAP_PATH_OUTSIDE_REPOSITORY");
-    const index = git(root, ["ls-files", "--stage", "-z", "--", file])
+    const index = git(root, ["--literal-pathspecs", "ls-files", "--stage", "-z", "--", file])
       .split("\0")
       .filter(Boolean)
       .map((entry) => {

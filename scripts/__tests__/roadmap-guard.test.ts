@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { test, after } from "node:test";
 import { execFileSync, spawnSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import {
   copyFileSync,
   mkdtempSync,
@@ -281,4 +282,24 @@ test("the exported build flag cannot skip a different working directory", () => 
   const result = run(fixture(), "--for-build");
   assert.equal(result.status, 1);
   assert.doesNotMatch(result.stdout, /skipped/);
+});
+
+test("a filename with Git pattern characters does not bind an unrelated index entry", () => {
+  const dir = repo();
+  const path = "src/[e]xample.ts";
+  const contents = "export const synthetic = true;\n";
+  put(dir, path, contents);
+  const state = captureLocalRoadmapState(dir);
+  assert.deepEqual(state.changedTrackedFiles, [path]);
+  const sha256 = (value: string) => createHash("sha256").update(value).digest("hex");
+  assert.equal(
+    state.stateSha256,
+    sha256(
+      JSON.stringify({
+        version: 1,
+        baseHead: state.baseHead,
+        entries: [{ path, index: [], worktree: { kind: "file", sha256: sha256(contents) } }],
+      }),
+    ),
+  );
 });
