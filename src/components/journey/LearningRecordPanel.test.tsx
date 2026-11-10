@@ -6,6 +6,9 @@ const m = vi.hoisted(() => ({
   user: "a",
   generation: {},
   used: 0,
+  recordsError: false,
+  recordsGate: null as Promise<void> | null,
+  reportsGate: null as Promise<void> | null,
   current: vi.fn(),
   generate: vi.fn(),
 }));
@@ -22,22 +25,29 @@ vi.mock("@/lib/kids/parent-state", () => ({ useKidsParentStateSource: () => ({ p
 vi.mock("@tanstack/react-start", () => ({ useServerFn: () => m.generate }));
 vi.mock("@/lib/learning/reports.functions", () => ({ createLearningReport: () => {} }));
 vi.mock("@/lib/learning/client", () => ({
-  learningCommand: async (action: string) =>
-    action === "records"
-      ? [{ id: `r-${m.user}`, subject_id: m.user, area: "ai", course: "ai" }]
-      : { events: [], notes: [] },
-  learningReports: async () => ({
-    sources: [
-      {
-        sourceKey: "package",
-        used: m.used,
-        limit: 2,
-        startsAt: "2026-11-01",
-        endsAt: "2026-12-01",
-      },
-    ],
-    reports: [],
-  }),
+  learningCommand: async (action: string) => {
+    if (action === "records") {
+      if (m.recordsGate) await m.recordsGate;
+      if (m.recordsError) throw new Error("synthetic read failure");
+      return [{ id: `r-${m.user}`, subject_id: m.user, area: "ai", course: "ai" }];
+    }
+    return { events: [], notes: [] };
+  },
+  learningReports: async () => {
+    if (m.reportsGate) await m.reportsGate;
+    return {
+      sources: [
+        {
+          sourceKey: "package",
+          used: m.used,
+          limit: 2,
+          startsAt: "2026-11-01",
+          endsAt: "2026-12-01",
+        },
+      ],
+      reports: [],
+    };
+  },
 }));
 function mount() {
   const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
@@ -54,10 +64,24 @@ beforeEach(() => {
   m.user = "a";
   m.generation = {};
   m.used = 0;
+  m.recordsError = false;
+  m.recordsGate = null;
+  m.reportsGate = null;
   m.current.mockImplementation((g) => g === m.generation);
   m.generate.mockReset();
 });
 afterEach(cleanup);
+it("does not report that a package is missing while loading report eligibility", async () => {
+  let finish!: () => void;
+  m.reportsGate = new Promise<void>((resolve) => { finish = resolve; });
+  mount();
+  await screen.findByRole("heading", { name: "AI learning reports" });
+  expect(screen.getByRole("status")).toHaveTextContent("Loading");
+  expect(screen.queryByText(/No eligible package/)).toBeNull();
+  expect(screen.queryByRole("button", { name: "Create report" })).toBeNull();
+  await act(async () => finish());
+  expect(await screen.findByRole("button", { name: "Create report" })).toBeEnabled();
+});
 it("shows the per-package report limit and disables generation when exhausted", async () => {
   m.used = 2;
   mount();
@@ -104,4 +128,58 @@ it("does not let an old account response clear a newer account's active request"
   expect(screen.getByRole("button", { name: "Preparing report…" })).toBeDisabled();
   await act(async () => resolveB({ state: "pending" }));
   expect(await screen.findByRole("button", { name: "Create report" })).toBeEnabled();
+});
+
+it("returns keyboard focus to the record heading after a successful read retry", async () => {
+  m.recordsError = true;
+  mount();
+  const retry = await screen.findByRole("button", { name: "Retry" });
+  retry.focus();
+  m.recordsError = false;
+  fireEvent.click(retry);
+  await waitFor(() => expect(screen.getByRole("heading", { name: "Learning record" })).toHaveFocus());
+});
+it("preserves focus moved elsewhere while a read retry is pending", async () => {
+  m.recordsError = true;
+  mount();
+  const retry = await screen.findByRole("button", { name: "Retry" });
+  let resume!: () => void;
+  m.recordsGate = new Promise<void>((resolve) => { resume = resolve; });
+  m.recordsError = false;
+  retry.focus();
+  fireEvent.click(retry);
+  const elsewhere = document.createElement("button");
+  elsewhere.textContent = "Elsewhere";
+  document.body.appendChild(elsewhere);
+  elsewhere.focus();
+  try {
+    await act(async () => resume());
+    await screen.findByRole("button", { name: "Create report" });
+    expect(elsewhere).toHaveFocus();
+  } finally {
+    elsewhere.remove();
+  }
+});
+
+it("does not reclaim focus after the user leaves the retry and later blurs", async () => {
+  m.recordsError = true;
+  mount();
+  const retry = await screen.findByRole("button", { name: "Retry" });
+  let resume!: () => void;
+  m.recordsGate = new Promise<void>((resolve) => { resume = resolve; });
+  m.recordsError = false;
+  retry.focus();
+  fireEvent.click(retry);
+  const elsewhere = document.createElement("button");
+  document.body.appendChild(elsewhere);
+  elsewhere.focus();
+  elsewhere.blur();
+  try {
+    await act(async () => resume());
+    await screen.findByRole("button", { name: "Create report" });
+    expect(screen.getByRole("heading", { name: "Learning record" })).not.toHaveFocus();
+    expect(document.body).toHaveFocus();
+  } finally {
+    elsewhere.remove();
+  }
 });
