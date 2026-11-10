@@ -1,24 +1,16 @@
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 import type { AdaptedLessonPackage } from "@/lib/locale-lessons/types";
-import {
-  buildQualityRetryUserPrompt,
-  QUALITY_RETRY_FORBIDDEN_PHRASES,
-  QUALITY_RETRY_QUIZ_RULES,
-} from "../../../scripts/locale-lessons/lib/adaptation-retry-prompt.ts";
-import { AdaptedLessonQualityError } from "../../../scripts/locale-lessons/lib/adaptation-quality-error.ts";
 import {
   detectQuizIntegrityWarnings,
   validateAdaptedLessonWarnings,
 } from "../../../scripts/locale-lessons/lib/quality-warnings.ts";
 import {
   finalizeAdaptedPackage,
+  parseAdaptedLessonJson,
   validateAdaptedLessonPackage,
 } from "../../../scripts/locale-lessons/lib/validate-adapted-lesson.ts";
-import { adaptLessonFromAnthropicResponse } from "../../../scripts/locale-lessons/providers/anthropic-adaptation.ts";
-import { adaptLessonWithOpenAiRetries } from "../../../scripts/locale-lessons/providers/openai-adaptation.ts";
 import { loadMsaLessonPackage } from "../../../scripts/locale-lessons/lib/source-package.ts";
 
-const TEST_API_KEY = "sk-test-openai-key-not-real";
 
 function mockAdaptedSections(
   source: Awaited<ReturnType<typeof loadMsaLessonPackage>>,
@@ -72,21 +64,7 @@ function minimalAdaptedJson(
   });
 }
 
-function mockFetchWithResponses(responses: string[]): typeof fetch {
-  let callCount = 0;
-  return vi.fn(async () => {
-    const text = responses[callCount] ?? responses[responses.length - 1];
-    callCount += 1;
-    return new Response(
-      JSON.stringify({
-        choices: [{ message: { content: text } }],
-      }),
-      { status: 200, headers: { "Content-Type": "application/json" } },
-    );
-  }) as typeof fetch;
-}
-
-describe("locale-lessons quality retry", () => {
+describe("locale-lessons quiz quality", () => {
   it("flags correctIndex out of range when only two options exist for index 2", async () => {
     const source = await loadMsaLessonPackage(
       "analyst-m1-l1-from-automation-to-insight",
@@ -138,25 +116,6 @@ describe("locale-lessons quality retry", () => {
     ).toBe(true);
   });
 
-  it("builds quality retry feedback with quiz and forbidden phrase rules", () => {
-    const prompt = buildQualityRetryUserPrompt({
-      baseUserPrompt: "Adapt this lesson.",
-      qualityErrors: [
-        "analyst-m1-l1-from-automation-to-insight quiz section: correctIndex 2 is out of range for 2 options",
-      ],
-      attempt: 2,
-      maxAttempts: 3,
-    });
-
-    expect(prompt).toContain("QUALITY CORRECTION REQUIRED");
-    expect(prompt).toContain("Regenerate valid JSON only");
-    expect(prompt).toContain("correctIndex 2 is out of range for 2 options");
-    expect(prompt).toContain(QUALITY_RETRY_QUIZ_RULES);
-    expect(prompt).toContain(QUALITY_RETRY_FORBIDDEN_PHRASES);
-    expect(prompt).toContain("localize quiz.options[i] text only");
-    expect(prompt).toContain("Egyptian production");
-  });
-
   it("rejects invalid quiz during finalization without silent repair", async () => {
     const source = await loadMsaLessonPackage("builder-m6-l1-idea-to-page");
     const invalidJson = minimalAdaptedJson(
@@ -166,55 +125,15 @@ describe("locale-lessons quality retry", () => {
       0,
     );
 
-    await expect(
-      adaptLessonFromAnthropicResponse({
+    expect(() =>
+      finalizeAdaptedPackage(
         source,
-        targetLocale: "en",
-        content: invalidJson,
-      }),
-    ).rejects.toBeInstanceOf(AdaptedLessonQualityError);
-  });
-
-  it("retries OpenAI adaptation with quality feedback and accepts a repaired quiz", async () => {
-    const source = await loadMsaLessonPackage("builder-m6-l1-idea-to-page");
-    const invalidJson = minimalAdaptedJson(
-      source,
-      "en",
-      [],
-      0,
-    );
-    const validJson = minimalAdaptedJson(
-      source,
-      "en",
-      [
-        "Draw the user flow from goal to plan.",
-        "Pick the best AI model first.",
-        "Design the final results screen.",
-      ],
-      0,
-    );
-    const fetchFn = mockFetchWithResponses([invalidJson, validJson]);
-
-    const result = await adaptLessonWithOpenAiRetries(
-      { source, targetLocale: "en" },
-      { apiKey: TEST_API_KEY, fetchFn },
-    );
-
-    expect(result.lessonId).toBe(source.lessonId);
-    expect(fetchFn).toHaveBeenCalledTimes(2);
-
-    const secondCallBody = JSON.parse(
-      String(((fetchFn as unknown as { mock: { calls: unknown[][] } }).mock.calls[1]?.[1] as RequestInit | undefined)?.body),
-    ) as {
-      messages: Array<{ content: string }>;
-    };
-    expect(secondCallBody.messages[1]?.content).toContain("QUALITY CORRECTION REQUIRED");
-    expect(secondCallBody.messages[1]?.content).toMatch(
-      /cannot finalize with empty quiz options|expected exactly 3 quiz options/,
-    );
-
-    const warnings = validateAdaptedLessonWarnings(source, result, "en");
-    expect(warnings).toEqual([]);
+        parseAdaptedLessonJson(invalidJson),
+        "en",
+        "synthetic-source.json",
+        "2026-06-20T00:00:00.000Z",
+      ),
+    ).toThrow(/cannot finalize with empty quiz options/);
   });
 
   it("passes a valid repaired analyst-m4 quiz after finalization", async () => {

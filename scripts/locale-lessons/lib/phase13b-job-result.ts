@@ -29,15 +29,6 @@ export function phase13BJobResultPath(
   return path.join(phase13BJobsDir(), locale, `${lessonId}.result.json`);
 }
 
-export async function writePhase13BJobResult(
-  result: Phase13BJobResult,
-): Promise<string> {
-  const filePath = phase13BJobResultPath(result.locale, result.lessonId);
-  await fs.mkdir(path.dirname(filePath), { recursive: true });
-  await fs.writeFile(filePath, `${JSON.stringify(result, null, 2)}\n`, "utf8");
-  return filePath;
-}
-
 export async function readPhase13BJobResult(
   locale: LessonPackageLocale,
   lessonId: string,

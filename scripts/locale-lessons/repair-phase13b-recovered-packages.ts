@@ -10,7 +10,7 @@
  */
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import type { AdaptedLessonPackage } from "../../src/lib/locale-lessons/types.ts";
+import type { AdaptedLessonPackage, LocalizedLessonPackage } from "../../src/lib/locale-lessons/types.ts";
 import { collectPhase13BRecoveredReport } from "./collect-phase13b-recovered-report.ts";
 import {
   auditRecoveredPackage,
@@ -26,8 +26,9 @@ import { deepEqual } from "./lib/phase13b-semantic-diff.ts";
 import { readJsonFile } from "./lib/source-package.ts";
 import { PHASE13B_RECOVERED_PACKAGES_ROOT } from "./collect-phase13b-recovered-report.ts";
 
-async function listPackagePaths(): Promise<Array<{ locale: string; lessonId: string; filePath: string }>> {
-  const report = await collectPhase13BRecoveredReport();
+async function listPackagePaths(packagesRoot?: string): Promise<Array<{ locale: string; lessonId: string; filePath: string }>> {
+  const report = await collectPhase13BRecoveredReport(packagesRoot === undefined ? undefined : { root: packagesRoot });
+  const root = packagesRoot ?? PHASE13B_RECOVERED_PACKAGES_ROOT;
   const cells: Array<{ locale: string; lessonId: string; filePath: string }> = [];
 
   for (const locale of PHASE13B_RECOVERED_LOCALES) {
@@ -36,7 +37,7 @@ async function listPackagePaths(): Promise<Array<{ locale: string; lessonId: str
       cells.push({
         locale,
         lessonId,
-        filePath: path.join(PHASE13B_RECOVERED_PACKAGES_ROOT, locale, `${lessonId}.json`),
+        filePath: path.join(root, locale, `${lessonId}.json`),
       });
     }
   }
@@ -47,7 +48,7 @@ async function loadPackage(filePath: string): Promise<AdaptedLessonPackage> {
   return readJsonFile<AdaptedLessonPackage>(filePath);
 }
 
-export async function repairAllRecoveredPackages(): Promise<{
+export async function repairAllRecoveredPackages(input?: { packagesRoot?: string }): Promise<{
   packagesScanned: number;
   filesWritten: number;
   skippedIdentical: number;
@@ -55,14 +56,16 @@ export async function repairAllRecoveredPackages(): Promise<{
   auditBefore: number;
   auditAfter: number;
 }> {
-  const before = await auditAllRecoveredPackages();
-  const cells = await listPackagePaths();
+  const before = await auditAllRecoveredPackages(input);
+  const cells = await listPackagePaths(input?.packagesRoot);
   const touched: string[] = [];
   let filesWritten = 0;
   let skippedIdentical = 0;
 
   for (const cell of cells) {
-    const source = await loadPhase13BRecoveredMsaAuditBaseline(cell.lessonId);
+    const source = input?.packagesRoot === undefined
+        ? await loadPhase13BRecoveredMsaAuditBaseline(cell.lessonId)
+        : await readJsonFile<LocalizedLessonPackage>(path.join(input.packagesRoot, "ar-MSA", `${cell.lessonId}.json`));
     const pkg = await loadPackage(cell.filePath);
     if (!packageNeedsRepair(source, pkg)) {
       skippedIdentical++;
@@ -80,7 +83,7 @@ export async function repairAllRecoveredPackages(): Promise<{
     touched.push(`${cell.locale}/${cell.lessonId}`);
   }
 
-  const after = await auditAllRecoveredPackages();
+  const after = await auditAllRecoveredPackages(input);
 
   return {
     packagesScanned: cells.length,
@@ -92,17 +95,19 @@ export async function repairAllRecoveredPackages(): Promise<{
   };
 }
 
-export async function auditAllRecoveredPackages(): Promise<{
+export async function auditAllRecoveredPackages(input?: { packagesRoot?: string }): Promise<{
   packagesScanned: number;
   issues: Phase13BAuditIssue[];
   byKind: ReturnType<typeof summarizeAuditIssues>;
 }> {
-  const cells = await listPackagePaths();
+  const cells = await listPackagePaths(input?.packagesRoot);
   const issues: Phase13BAuditIssue[] = [];
 
   for (const cell of cells) {
     try {
-      const source = await loadPhase13BRecoveredMsaAuditBaseline(cell.lessonId);
+      const source = input?.packagesRoot === undefined
+        ? await loadPhase13BRecoveredMsaAuditBaseline(cell.lessonId)
+        : await readJsonFile<LocalizedLessonPackage>(path.join(input.packagesRoot, "ar-MSA", `${cell.lessonId}.json`));
       const pkg = await loadPackage(cell.filePath);
       issues.push(...auditRecoveredPackage(source, pkg));
     } catch (error) {

@@ -3,11 +3,11 @@ import type {
   LocalizedSampleManifest,
 } from "../../src/lib/locale-lessons/types.ts";
 import { ADAPTATION_TARGET_LOCALES } from "../../src/lib/locale-lessons/types.ts";
-import { validateSampleTargetPackage, collectSamplePackageWarnings } from "./generate-localized-samples.ts";
+import { validateSampleTargetPackage, collectSamplePackageWarnings } from "./validate-localized-samples.ts";
 import {
   validatePilotTargetPackage,
   collectPilotPackageWarnings,
-} from "./generate-localized-pilot.ts";
+} from "./validate-localized-pilot.ts";
 import {
   manifestPathForLocale,
   pathExists,

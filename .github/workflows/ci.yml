@@ -236,7 +236,9 @@ jobs:
           bunx vitest run src/lib/kids/kids-direct-lesson.test.tsx src/lib/kids/kids-nested-routes.test.tsx src/components/site/LinePages.test.tsx src/lib/__tests__/entitlements.test.ts
 
       - name: Localization contract
-        run: bun run scripts/locale-lessons/validate-localization-contract.ts
+        run: |
+          bun run scripts/locale-lessons/validate-localization-contract.ts
+          bun run locale-lessons:validate-localized -- --target all
 
       - name: Locale regression tests (Phase 12.6)
         run: >-
@@ -253,6 +255,15 @@ jobs:
           src/lib/__tests__/locale-phase13a-pilot-manifest.test.ts
           src/lib/__tests__/locale-phase13a-pilot-collector.test.ts
           src/lib/__tests__/locale-phase13a-pilot-sanitize-output.test.ts
+          src/lib/__tests__/locale-lessons-adaptation.test.ts
+          src/lib/__tests__/locale-lessons-pilot.test.ts
+          src/lib/__tests__/locale-learner-package-finalization.test.ts
+          src/lib/__tests__/locale-lessons-fragment-pipeline.test.ts
+          src/lib/__tests__/locale-lessons-quiz-quality.test.ts
+          src/lib/__tests__/locale-phase13b-full-matrix.test.ts
+          src/lib/__tests__/locale-phase13b-merge-readiness.test.ts
+          src/lib/__tests__/locale-lessons-json-parse.test.ts
+          tests/tools/recovered-package-fixture-isolation.test.ts
 
       - name: Technical integration (private assets and isolated billing)
         run: |

@@ -5,7 +5,6 @@ import {
   finalizeAdaptedPackage,
   validateAdaptedLessonPackage,
 } from "../../../scripts/locale-lessons/lib/validate-adapted-lesson.ts";
-import { requireAnthropicApiKey } from "../../../scripts/locale-lessons/providers/types.ts";
 import {
   SAMPLE_LESSON_COUNT,
   SAMPLE_LESSON_IDS,
@@ -19,13 +18,6 @@ describe("locale-lessons sample adaptation validation", () => {
       "builder-m6-l1-idea-to-page",
       "business-m1-l2-reactive-vs-proactive",
     ]);
-  });
-
-  it("requires ANTHROPIC_API_KEY with a clear error when missing", () => {
-    const original = process.env.ANTHROPIC_API_KEY;
-    delete process.env.ANTHROPIC_API_KEY;
-    expect(() => requireAnthropicApiKey()).toThrow(/Missing ANTHROPIC_API_KEY/);
-    if (original) process.env.ANTHROPIC_API_KEY = original;
   });
 
   it("validates adapted package preserves structure from ar-MSA source", async () => {

@@ -11,6 +11,7 @@ import {
 } from "./lib/source-package.ts";
 import {
   buildFragmentPilotReport,
+  fragmentArtifactReportModel,
   type FragmentPilotLessonResult,
 } from "./lib/fragment-pilot-report.ts";
 import {
@@ -31,7 +32,6 @@ import {
   clampPilotLessonCount,
   DEFAULT_PILOT_LESSON_COUNT,
 } from "./lib/pilot-lesson-ids.ts";
-import { openAiAdaptationModel } from "./providers/types.ts";
 import { finalizeLearnerFacingLocalePackageForWrite } from "./lib/phase13-pilot-lesson-output.ts";
 import { validateFinalLessonFile } from "./lib/validate-final-lesson-package.ts";
 
@@ -307,11 +307,11 @@ export async function collectFragmentPilotArtifacts(
           lessonCount: packages.length,
           pilotLessonIds,
           lessonIds: packages.map((p) => p.lessonId).sort(),
-          providerModel: openAiAdaptationModel(),
+          providerModel: fragmentArtifactReportModel(),
         });
         const report = buildFragmentPilotReport({
           targetLocale: locale,
-          providerModel: openAiAdaptationModel(),
+          providerModel: fragmentArtifactReportModel(),
           generatedAt,
           pilotLessonIds,
           lessonResults,
@@ -326,11 +326,11 @@ export async function collectFragmentPilotArtifacts(
           generatedAt,
           pilotLessonIds,
           packages,
-          providerModel: openAiAdaptationModel(),
+          providerModel: fragmentArtifactReportModel(),
         });
         const report = buildFragmentPilotReport({
           targetLocale: locale,
-          providerModel: openAiAdaptationModel(),
+          providerModel: fragmentArtifactReportModel(),
           generatedAt,
           pilotLessonIds,
           lessonResults,

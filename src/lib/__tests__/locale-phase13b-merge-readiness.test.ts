@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { promises as fs } from "node:fs";
 import path from "node:path";
+import { withCopiedReferenceTree } from "../../test/owned-reference-tree";
 import type {
   AdaptedLessonPackage,
   LocalizedLessonPackage,
@@ -198,11 +199,13 @@ describe("phase13b known defect packages", () => {
 
 describe("phase13b repair idempotence and scope", () => {
   it("second repair run writes zero files", async () => {
-    const first = await repairAllRecoveredPackages();
-    const second = await repairAllRecoveredPackages();
-    expect(second.filesWritten).toBe(0);
-    expect(second.auditAfter).toBe(0);
-    expect(first.auditAfter).toBe(0);
+    await withCopiedReferenceTree(path.dirname(MSA_RECOVERED_BASELINE), async (packagesRoot) => {
+      const first = await repairAllRecoveredPackages({ packagesRoot });
+      const second = await repairAllRecoveredPackages({ packagesRoot });
+      expect(second.filesWritten).toBe(0);
+      expect(second.auditAfter).toBe(0);
+      expect(first.auditAfter).toBe(0);
+    });
   }, 120_000);
 
   it("repair is idempotent for known defect packages", async () => {

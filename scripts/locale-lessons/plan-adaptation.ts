@@ -19,10 +19,7 @@ import {
 import { AR_GULF_PROMPT_META } from "./prompts/ar-gulf.ts";
 import { EN_PROMPT_META } from "./prompts/en.ts";
 
-const GENERATION_BLOCK_REASON =
-  "No approved contextual adaptation provider is wired for lesson package generation. " +
-  "scripts/adaptive-canonical reviewers call external APIs for audit only — not for localized lesson authoring. " +
-  "Use dry-run planning until a dedicated adaptation provider is chartered.";
+const GENERATION_BLOCK_REASON = "Lesson locale packages are authored outside this repository.";
 
 function promptMetaFor(target: AdaptationTargetLocale) {
   return target === "ar-Gulf" ? AR_GULF_PROMPT_META : EN_PROMPT_META;
@@ -65,9 +62,7 @@ export async function buildAdaptationPlan(
     generationBlockReason: GENERATION_BLOCK_REASON,
     generatedAt,
     nextSteps: [
-      "Charter an approved contextual adaptation provider (separate from canonical audit reviewers).",
-      `Implement provider adapter in scripts/locale-lessons/providers/ (not included in Phase 2B).`,
-      `Run: bun run locale-lessons:generate-localized -- --target ${targetLocale} --generate`,
+      "Prepare the localized lesson packages outside this repository using the locale contract.",
       `Validate: bun run locale-lessons:validate-localized -- --target ${targetLocale}`,
       "Human review adapted lessons before any runtime wiring.",
     ],
