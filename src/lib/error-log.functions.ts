@@ -1,5 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
+import { sanitizeErrorLog } from "@/lib/error-log-sanitize";
 import type { Json } from "@/integrations/supabase/types";
 import { getRequestHeader } from "@tanstack/react-start/server";
 import { createClient } from "@supabase/supabase-js";
@@ -63,11 +64,11 @@ export const logClientError = createServerFn({ method: "POST" })
               global: { headers: { Authorization: authHeader } },
               auth: { persistSession: false, autoRefreshToken: false },
             });
-            const { data: claims } = await client.auth.getClaims(
+            const { data: claims, error: claimsError } = await client.auth.getClaims(
               authHeader.slice(7),
             );
             const sub = claims?.claims?.sub;
-            if (typeof sub === "string") resolvedUserId = sub;
+            if (!claimsError && typeof sub === "string") resolvedUserId = sub;
           }
         } catch {
           resolvedUserId = null;
@@ -80,17 +81,20 @@ export const logClientError = createServerFn({ method: "POST" })
       );
       if (!rateLimitAllowed) return { ok: false as const };
 
+      // Browser cleanup is not a trust boundary: forged callers are sanitized too.
+      const clean = sanitizeErrorLog(data);
       const supabaseAdmin = await loadSupabaseAdmin();
-      await supabaseAdmin.from("client_error_logs").insert({
-        scope: data.scope,
-        message: data.message,
-        stack: data.stack ?? null,
-        url: data.url ?? null,
-        user_agent: data.userAgent ?? null,
-        release: data.release ?? null,
-        extra: (data.extra ?? null) as Json | null,
+      const { error: insertError } = await supabaseAdmin.from("client_error_logs").insert({
+        scope: clean.scope,
+        message: clean.message,
+        stack: clean.stack ?? null,
+        url: clean.url ?? null,
+        user_agent: clean.userAgent ?? null,
+        release: clean.release ?? null,
+        extra: (clean.extra ?? null) as Json | null,
         user_id: resolvedUserId,
       });
+      if (insertError) return { ok: false as const };
       return { ok: true as const };
     } catch {
       // Never let logging failures bubble up to the caller.

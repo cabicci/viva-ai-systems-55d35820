@@ -1,6 +1,5 @@
 import "./lib/error-capture";
 
-import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
 
 type ServerEntry = {
@@ -50,19 +49,55 @@ function isCatastrophicSsrErrorBody(body: string, responseStatus: number): boole
   );
 }
 
+const SSR_ERROR_BODY_LIMIT = 1024;
+const SSR_ERROR_PROBE_TIMEOUT_MS = 100;
+const SSR_ERROR_PROBE_CHUNKS = 128;
+
+async function readSmallSsrError(response: Response): Promise<string | null> {
+  if (!response.body || response.bodyUsed || response.body.locked ||
+    Number(response.headers.get("content-length")) > SSR_ERROR_BODY_LIMIT) return null;
+
+  const reader = response.clone().body?.getReader();
+  if (!reader) return null;
+  const decoder = new TextDecoder();
+  let timeout: ReturnType<typeof setTimeout> | undefined;
+  const deadline = new Promise<null>(resolve => {
+    timeout = setTimeout(() => resolve(null), SSR_ERROR_PROBE_TIMEOUT_MS);
+  });
+  let bytes = 0;
+  let text = "";
+  try {
+    for (let count = 0; count < SSR_ERROR_PROBE_CHUNKS; count++) {
+      const part = await Promise.race([reader.read(), deadline]);
+      if (part === null) return null;
+      if (part.done) return text + decoder.decode();
+      bytes += part.value.byteLength;
+      if (bytes > SSR_ERROR_BODY_LIMIT) return null;
+      text += decoder.decode(part.value, { stream: true });
+    }
+    return null;
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timeout);
+    // Cancelling a tee branch can wait for the original response to finish.
+    void reader.cancel().catch(() => {});
+  }
+}
+
 // h3 swallows in-handler throws into a normal 500 Response with body
-// {"unhandled":true,"message":"HTTPError"} — try/catch alone never fires for those.
+// {"unhandled":true,"message":"HTTPError"} instead of throwing.
 async function normalizeCatastrophicSsrResponse(response: Response): Promise<Response> {
   if (response.status < 500) return response;
   const contentType = response.headers.get("content-type") ?? "";
   if (!contentType.includes("application/json")) return response;
 
-  const body = await response.clone().text();
-  if (!isCatastrophicSsrErrorBody(body, response.status)) {
+  const body = await readSmallSsrError(response);
+  if (body === null || !isCatastrophicSsrErrorBody(body, response.status)) {
     return response;
   }
 
-  console.error(consumeLastCapturedError() ?? new Error(`h3 swallowed SSR error: ${body}`));
+  console.error("SSR_HTTP_ERROR_NORMALIZED");
   return brandedErrorResponse();
 }
 
@@ -96,8 +131,8 @@ export default {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
       return await normalizeCatastrophicSsrResponse(response);
-    } catch (error) {
-      console.error(error);
+    } catch {
+      console.error("SERVER_REQUEST_FAILED");
       return brandedErrorResponse();
     }
   },
