@@ -12,7 +12,16 @@ vi.mock("@tanstack/react-start", () => ({
   },
 }));
 vi.mock("@/integrations/supabase/auth-middleware", () => ({ requireSupabaseAuth: {} }));
-vi.mock("@/integrations/supabase/client.server", () => ({ supabaseAdmin: { rpc: state.portal } }));
+vi.mock("@/integrations/supabase/client.server", () => ({
+  supabaseAdmin: {
+    rpc: state.portal,
+    from: () => ({
+      select: () => ({
+        in: () => ({ not: async () => ({ count: 0, error: null }) }),
+      }),
+    }),
+  },
+}));
 import { getAccountSubscriptions } from "../subscription-display.functions";
 import { getAdminOverview, type AdminOverview } from "../../admin.functions";
 

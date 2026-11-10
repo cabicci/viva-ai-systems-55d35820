@@ -1,9 +1,11 @@
+import { assertAdminRole as assertAdmin } from "@/lib/admin-role.server";
 import { createServerFn } from "@tanstack/react-start";
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import type { Database } from "@/integrations/supabase/types";
+import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { z } from "zod";
 import { adminSubscriptionSchema, type AdminSubscriptionSnapshot } from "@/lib/billing/subscription-display";
+import { assertReportRead } from "@/lib/reporting/read-result";
 
 // IMPORTANT: do NOT import `@/integrations/supabase/client.server` at the top
 // level — server-fn modules only strip handler bodies from the client bundle.
@@ -20,14 +22,6 @@ async function loadSupabaseAdmin() {
  *  3. Uses supabaseAdmin to bypass RLS for aggregate reads
  */
 
-async function assertAdmin(context: { supabase: SupabaseClient<Database>; userId: string }) {
-  const { data, error } = await context.supabase.rpc("has_role", {
-    _user_id: context.userId,
-    _role: "admin",
-  });
-  if (error) throw new Error("Authorization check failed");
-  if (!data) throw new Error("Forbidden: admin role required");
-}
 
 /* -------------------------------------------------------------- */
 /* Server-side gate for /admin route (beforeLoad)                 */
@@ -55,7 +49,7 @@ export const assertAdminAccess = createServerFn({ method: "GET" }).handler(
       _role: "admin",
     });
     if (error) throw new Error("Authorization check failed");
-    return { isAdmin: Boolean(data), userId: auth.userId };
+    return { isAdmin: data === true, userId: auth.userId };
   },
 );
 
@@ -93,12 +87,19 @@ export const getAdminOverview = createServerFn({ method: "GET" })
   .middleware([requireSupabaseAuth])
   .handler(async ({ context }): Promise<AdminOverview> => {
     await assertAdmin(context);
-
-    const [{ data, error }, subscriptionSnapshot] = await Promise.all([
+    const supabaseAdmin = await loadSupabaseAdmin();
+    const [overview, subscriptionSnapshot, missionRead] = await Promise.all([
       context.supabase.rpc("get_admin_overview"),
       readSubscriptionSummary(context),
+      supabaseAdmin
+        .from("mission_submissions")
+        .select("id", { count: "exact", head: true })
+        .in("status", ["submitted", "evaluating", "passed", "failed", "needs_revision"])
+        .not("submission_metadata", "cs", '{"skipped":true}'),
     ]);
-    if (error) throw new Error(`Failed to load admin overview: ${error.message}`);
+    const { data } = assertReportRead("admin overview", overview);
+    const { count: missionsSubmitted } = assertReportRead("submitted missions", missionRead);
+    if (missionsSubmitted == null) throw new Error("Submitted mission count unavailable");
     const row = (data ?? {}) as Record<string, number | string | null>;
     const n = (v: unknown) => Number(v ?? 0) || 0;
     return {
@@ -106,7 +107,7 @@ export const getAdminOverview = createServerFn({ method: "GET" })
       newUsers7d: n(row.new_users_7d),
       activeToday: n(row.active_today),
       lessonsCompleted: n(row.lessons_completed),
-      missionsSubmitted: n(row.missions_submitted),
+      missionsSubmitted,
       subscriptionSnapshot,
     };
   });
@@ -154,10 +155,10 @@ export const getAdminActivity = createServerFn({ method: "GET" })
     // but we re-sort defensively before slicing.
     const collected: Array<{ id: string; email?: string | null; created_at: string }> = [];
     for (let page = 1; page <= 5; page++) {
-      const { data: usersPage } = await supabaseAdmin.auth.admin.listUsers({
+      const { data: usersPage } = assertReportRead("recent signups", await supabaseAdmin.auth.admin.listUsers({
         page,
         perPage: 100,
-      });
+      }));
       const batch = usersPage?.users ?? [];
       if (batch.length === 0) break;
       collected.push(...batch);
@@ -172,11 +173,11 @@ export const getAdminActivity = createServerFn({ method: "GET" })
         createdAt: u.created_at,
       }));
 
-    const { data: lessonRows } = await supabaseAdmin
+    const { data: lessonRows } = assertReportRead("recent lessons", await supabaseAdmin
       .from("user_lesson_status")
       .select("user_id, lesson_id, status, updated_at")
       .order("updated_at", { ascending: false })
-      .limit(20);
+      .limit(20));
     const lessons: RecentLesson[] = (lessonRows ?? []).map((r) => ({
       userId: r.user_id,
       lessonId: r.lesson_id,
@@ -184,17 +185,17 @@ export const getAdminActivity = createServerFn({ method: "GET" })
       updatedAt: r.updated_at,
     }));
 
-    const { data: missionRows } = await supabaseAdmin
+    const { data: missionRows } = assertReportRead("recent missions", await supabaseAdmin
       .from("mission_submissions")
-      .select("user_id, mission_id, lesson_id, status, score, submitted_at, updated_at")
+      .select("user_id, mission_id, lesson_id, status, score, submitted_at, updated_at, skipped:submission_metadata->skipped")
       .order("updated_at", { ascending: false })
-      .limit(10);
+      .limit(10));
     const missions: RecentMission[] = (missionRows ?? []).map((r) => ({
       userId: r.user_id,
       missionId: r.mission_id,
       lessonId: r.lesson_id,
-      status: r.status,
-      score: r.score == null ? null : Number(r.score),
+      status: r.skipped === true ? "skipped" : r.status,
+      score: r.skipped === true || r.score == null ? null : Number(r.score),
       submittedAt: r.submitted_at ?? r.updated_at,
     }));
 
@@ -233,11 +234,10 @@ export const listUsers = createServerFn({ method: "GET" })
     const supabaseAdmin = await loadSupabaseAdmin();
 
     const { page, pageSize } = data;
-    const { data: res, error } = await supabaseAdmin.auth.admin.listUsers({
-      page,
-      perPage: pageSize,
-    });
-    if (error) throw new Error(`Failed to list users: ${error.message}`);
+    const { data: res } = assertReportRead(
+      "users",
+      await supabaseAdmin.auth.admin.listUsers({ page, perPage: pageSize }),
+    );
 
     const rawUsers = res?.users ?? [];
     const users: AdminUserRow[] = rawUsers.map((u) => ({
@@ -280,8 +280,10 @@ export const getAdminInsights = createServerFn({ method: "GET" })
     await assertAdmin(context);
 
     // SQL-side aggregation — no row scan in JS.
-    const { data, error } = await context.supabase.rpc("get_admin_insights");
-    if (error) throw new Error(`Failed to load admin insights: ${error.message}`);
+    const { data } = assertReportRead(
+      "admin insights",
+      await context.supabase.rpc("get_admin_insights"),
+    );
     const payload = (data ?? {}) as {
       path_distribution?: Array<{
         path_id: string;
