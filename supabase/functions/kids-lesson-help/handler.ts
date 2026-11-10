@@ -78,6 +78,7 @@ export async function handleKidsLessonHelp(
 
   try {
     const user = await fetcher(new URL("/auth/v1/user", base), {
+      redirect: "error",
       headers: { Authorization: bearer, apikey: anon },
     });
     if (!user.ok) return reply(request, 401, { error: "Unauthorized" });
@@ -86,6 +87,7 @@ export async function handleKidsLessonHelp(
     // The caller JWT establishes auth.uid() for parent/profile, locale and
     // content approval checks; service role is used only after this gate.
     const access = await fetcher(new URL("/rest/v1/rpc/kids_can_access_lesson", base), {
+      redirect: "error",
       method: "POST",
       headers: { Authorization: bearer, apikey: anon, "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -107,6 +109,7 @@ export async function handleKidsLessonHelp(
       ".json";
     const objectUrl = new URL("/storage/v1/object/" + BUCKET + "/" + objectPath, base);
     const object = await fetcher(objectUrl, {
+      redirect: "error",
       headers: { Authorization: "Bearer " + service, apikey: service },
     });
     if (!object.ok) return reply(request, 503, { error: "Unavailable" });
@@ -125,6 +128,7 @@ export async function handleKidsLessonHelp(
     approvalUrl.searchParams.set("select", "approved_sha256");
     approvalUrl.searchParams.set("limit", "2");
     const approval = await fetcher(approvalUrl, {
+      redirect: "error",
       headers: { Authorization: "Bearer " + service, apikey: service },
     });
     if (!approval.ok) return reply(request, 503, { error: "Unavailable" });
