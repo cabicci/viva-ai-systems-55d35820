@@ -138,6 +138,7 @@ function quizReply(explanation = "Current explanation"): Reply {
 }
 const hintButton = () => screen.getByRole("button", { name: "What next?" });
 const quizButton = () => screen.getByRole("button", { name: "Check answer" });
+const quizRequestIdPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 function choose() { fireEvent.click(screen.getByRole("radio", { name: "Alpha" })); }
 function start(channel: "hint" | "quiz") {
   if (channel === "quiz") { choose(); fireEvent.click(quizButton()); }
@@ -146,18 +147,77 @@ function start(channel: "hint" | "quiz") {
 
 describe("Kids body action boundary", () => {
   it("B01 keeps current quiz payload, method receiver, correctness and autoplay", async () => {
-    const f = bodyFixture(); mock.invoke.mockImplementation(function (this: object) {
-      expect(this).toBe(mock.receiver); return Promise.resolve(quizReply());
+    const f = bodyFixture();
+    mock.invoke.mockImplementation(function (this: object) {
+      expect(this).toBe(mock.receiver);
+      return Promise.resolve(quizReply());
     });
-    render(<KidsLessonBody {...f.props} />); start("quiz");
+    render(<KidsLessonBody {...f.props} />);
+    start("quiz");
     expect(await screen.findByText("Current explanation")).toBeInTheDocument();
-    expect(mock.invoke).toHaveBeenCalledExactlyOnceWith("kids-lesson-content", { body: {
-      profileId: "same-id", levelId: "level-2", lessonNumber: 2, locale: "en",
-      action: "quiz-check", questionId: "q1", selectedIndex: 0,
-    } });
-    expect(screen.getByTitle("Watch step: A protected lesson")).toHaveAttribute("src", embedUrl + "&autoplay=false");
+    expect(mock.invoke).toHaveBeenCalledExactlyOnceWith("kids-lesson-content", {
+      body: {
+        profileId: "same-id",
+        levelId: "level-2",
+        lessonNumber: 2,
+        locale: "en",
+        action: "quiz-check",
+        questionId: "q1",
+        selectedIndex: 0,
+        requestId: expect.stringMatching(quizRequestIdPattern),
+      },
+    });
+    expect(screen.getByTitle("Watch step: A protected lesson")).toHaveAttribute(
+      "src",
+      embedUrl + "&autoplay=false",
+    );
     expect(quizButton()).toBeEnabled();
   });
+
+  it("reuses the quiz request ID after a retryable SDK failure", async () => {
+    const f = bodyFixture();
+    mock.invoke
+      .mockResolvedValueOnce({ data: null, error: { context: { status: 503 } } })
+      .mockResolvedValueOnce(quizReply());
+    render(<KidsLessonBody {...f.props} />);
+    start("quiz");
+
+    expect(await screen.findByRole("alert")).toBeInTheDocument();
+    expect(quizButton()).toBeEnabled();
+    expect(mock.invoke).toHaveBeenCalledTimes(1);
+    const first = mock.invoke.mock.calls[0][1].body;
+    expect(first.requestId).toMatch(quizRequestIdPattern);
+
+    fireEvent.click(quizButton());
+    expect(await screen.findByText("Current explanation")).toBeInTheDocument();
+    expect(mock.invoke).toHaveBeenCalledTimes(2);
+    expect(mock.invoke.mock.calls[1][1].body).toEqual(first);
+  });
+
+  it("uses a new quiz request ID when the learner selects a different answer", async () => {
+    const f = bodyFixture();
+    mock.invoke.mockResolvedValue(quizReply());
+    render(<KidsLessonBody {...f.props} />);
+    start("quiz");
+
+    expect(await screen.findByText("Current explanation")).toBeInTheDocument();
+    expect(mock.invoke).toHaveBeenCalledTimes(1);
+    const first = mock.invoke.mock.calls[0][1].body;
+    expect(first.requestId).toMatch(quizRequestIdPattern);
+
+    fireEvent.click(screen.getByRole("radio", { name: "Beta" }));
+    fireEvent.click(quizButton());
+    await settle();
+    expect(mock.invoke).toHaveBeenCalledTimes(2);
+    const second = mock.invoke.mock.calls[1][1].body;
+    expect(second).toEqual({
+      ...first,
+      selectedIndex: 1,
+      requestId: expect.stringMatching(quizRequestIdPattern),
+    });
+    expect(second.requestId).not.toBe(first.requestId);
+  });
+
   it("B02 preserves independent concurrent hint and quiz state", async () => {
     const f = bodyFixture(), h = deferred(), q = deferred();
     mock.invoke.mockImplementation((name: string) => name === "kids-lesson-help" ? h.promise : q.promise);
