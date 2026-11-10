@@ -30,7 +30,7 @@ function ContactPage() {
         <div className="pointer-events-none absolute -left-44 bottom-10 h-[26rem] w-[26rem] rounded-full bg-accent/20 blur-[110px]" />
         <div className="container relative mx-auto grid max-w-6xl gap-10 px-4 py-12 lg:grid-cols-[0.78fr_1.22fr] lg:items-start lg:py-20">
           <section className="pt-4 lg:sticky lg:top-28 lg:pt-10">
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-foreground">
               {t("contact.eyebrow")}
             </p>
             <h1 className="mt-4 text-4xl font-black leading-[1.15] md:text-5xl">
