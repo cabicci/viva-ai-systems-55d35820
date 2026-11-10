@@ -1,11 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { useServerFn } from "@tanstack/react-start";
+import { getAccountSubscriptions } from "@/lib/billing/subscription-display.functions";
+import { currentSubscriptionData, subscriptionRefreshInterval, subscriptionCopy, sourceState, sourceTitle, paymentLabel, allowedPortalScope, type AccountSubscriptions, type DisplayLocale } from "@/lib/billing/subscription-display";
 import {
   User as UserIcon,
   Mail,
   Calendar,
-  BadgeCheck,
   Flame,
   Clock,
   BookCheck,
@@ -13,13 +15,12 @@ import {
   KeyRound,
   LogOut,
   Trash2,
-  CreditCard,
   ArrowLeft,
 } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
-import { AuthSessionGate, requireAuthBeforeLoad } from "@/lib/auth-route-guard";
+import { AuthSessionGate, requireAuthBeforeLoadWithIntent } from "@/lib/auth-route-guard";
 import { useEntitlement, useStreak } from "@/lib/entitlements";
 import { captureError } from "@/lib/error-capture";
 import { LESSONS } from "@/lib/lesson-catalog";
@@ -55,7 +56,8 @@ const DATE_LOCALE: Record<SupportedLocale, string> = {
 };
 
 export const Route = createFileRoute("/account")({
-  beforeLoad: requireAuthBeforeLoad,
+  beforeLoad: ({ search }) =>
+    requireAuthBeforeLoadWithIntent({ locale: search.locale, returnTo: "/account" }),
   head: async ({ match }) => {
     const locale = await resolveRouteHeadLocale({
       searchLocale: match.search.locale,
@@ -97,8 +99,9 @@ function formatDays(count: number, t: (key: UiStringKey) => string) {
 }
 
 function AccountPage() {
+  const { locale } = useLocale();
   return (
-    <AuthSessionGate>
+    <AuthSessionGate loginSearch={{ locale, returnTo: "/account" }}>
       <AccountContent />
     </AuthSessionGate>
   );
@@ -129,20 +132,14 @@ function AccountContent() {
   })();
   const totalLessons = ALL_LESSON_IDS.size;
 
-  const { data: sub } = useQuery({
-    queryKey: ["account-subscription", userId],
-    queryFn: async () => {
-      if (!userId) return null;
-      // Legacy archive metadata only — paid entitlement uses useEntitlement()
-      // (billing.subscriptions via get_my_billing_access_tier), not this table.
-      const { data } = await supabase
-        .from("user_subscriptions")
-        .select("tier, status, provider, current_period_end, created_at")
-        .eq("user_id", userId)
-        .maybeSingle();
-      return data;
-    },
+  const subscriptionFn = useServerFn(getAccountSubscriptions);
+  const subscriptions = useQuery({
+    queryKey: ["account-subscription-display", userId],
+    queryFn: () => subscriptionFn({ data: { expectedAccountId: userId! } }),
     enabled: !!userId,
+    retry: false,
+    refetchOnWindowFocus: "always",
+    refetchInterval: (query) => subscriptionRefreshInterval(query.state.data),
   });
 
   const { data: activitySec } = useQuery({
@@ -176,8 +173,6 @@ function AccountContent() {
     enabled: !!userId,
   });
 
-  const isPro = ent.isPro;
-  const planLabel = admin ? t("account.profile.adminBadge") : ent.tier === "pro_plus" ? "Pro Plus" : ent.tier === "pro" ? "Pro" : "Free";
 
   const handleSendReset = async () => {
     if (!email) return;
@@ -276,70 +271,13 @@ function AccountContent() {
           </section>
 
           <section className="glass min-w-0 max-w-full break-words rounded-2xl p-6 border border-border/50 flex flex-col">
-            <div className="flex items-start justify-between gap-3">
-              <div className="min-w-0 flex-1">
-                <p className="text-xs text-muted-foreground">{t(admin ? "account.subscription.adminRoleLabel" : "account.subscription.label")}</p>
-                <div className="mt-1 flex min-w-0 flex-wrap items-center gap-2">
-                  <h2 className="text-2xl font-black">{planLabel}</h2>
-                  {!admin && (
-                  <span
-                    className={`rounded-full px-2 py-0.5 text-[10px] font-mono uppercase tracking-widest ${
-                      isPro
-                        ? "bg-primary/15 text-primary border border-primary/30"
-                        : "bg-muted/50 text-muted-foreground border border-border/50"
-                    }`}
-                  >
-                    {isPro
-                      ? t("account.subscription.status.active")
-                      : t("account.subscription.status.free")}
-                  </span>
-                  )}
-                </div>
-              </div>
-              <BadgeCheck
-                className={`h-5 w-5 shrink-0 ${isPro ? "text-primary" : "text-muted-foreground"}`}
-              />
-            </div>
-
-            <div className="mt-4 space-y-2 text-sm flex-1">
-              {admin ? (
-                <div className="rounded-xl border border-primary/30 bg-primary/[0.05] p-3 text-xs text-primary">
-                  {t("account.subscription.adminAccessNotice")}
-                </div>
-              ) : (
-                <>
-                  <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-start gap-x-3 gap-y-1 text-muted-foreground">
-                    <span className="min-w-0">{t("account.subscription.field.status")}</span>
-                    <span className="min-w-0 max-w-full break-words sm:text-end text-foreground">
-                      {sub?.status ?? (isPro ? "active" : "—")}
-                    </span>
-                  </div>
-                  <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-start gap-x-3 gap-y-1 text-muted-foreground">
-                    <span className="min-w-0">{t("account.subscription.field.renewal")}</span>
-                    <span className="min-w-0 max-w-full break-words sm:text-end text-foreground">
-                      {formatDate(sub?.current_period_end, locale)}
-                    </span>
-                  </div>
-                  <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-start gap-x-3 gap-y-1 text-muted-foreground">
-                    <span className="min-w-0">{t("account.subscription.field.provider")}</span>
-                    <span className="min-w-0 max-w-full break-words sm:text-end text-foreground">
-                      {sub?.provider ?? "—"}
-                    </span>
-                  </div>
-                </>
-              )}
-            </div>
-
-            {!admin &&
-              (isPro ? (
-                <StripePortalButton />
-              ) : (
-                <Button asChild variant="violet" size="lg" className="mt-5">
-                  <Link to="/pricing">
-                    <CreditCard className="h-4 w-4" /> {t("account.subscription.ctaUpgrade")}
-                  </Link>
-                </Button>
-              ))}
+            {admin && <p className="mb-3 text-sm text-primary">{t("account.subscription.adminAccessNotice")}</p>}
+            <SubscriptionSources data={subscriptions.data} accountId={userId} locale={locale}
+              loading={subscriptions.isLoading} error={subscriptions.isError}
+              retry={() => { void subscriptions.refetch(); }} />
+            <Button asChild variant="outline" className="mt-5">
+              <Link to="/pricing">{subscriptionCopy[locale].browse}</Link>
+            </Button>
           </section>
         </div>
 
@@ -441,6 +379,108 @@ function StatTile({ icon, label, value }: { icon: React.ReactNode; label: string
         {icon} {label}
       </div>
       <p className="mt-2 text-xl font-black">{value}</p>
+    </div>
+  );
+}
+
+/** Exported presentation boundary: it never decides lesson or assistant rights. */
+export function SubscriptionSources({
+  data,
+  accountId,
+  locale,
+  loading,
+  error,
+  retry,
+}: {
+  data?: AccountSubscriptions;
+  accountId: string | null;
+  locale: DisplayLocale;
+  loading: boolean;
+  error: boolean;
+  retry: () => void;
+}) {
+  const c = subscriptionCopy[locale];
+  const current = currentSubscriptionData(data, accountId, error);
+  return (
+    <div aria-live="polite">
+      <h2 className="mb-4 text-xl font-bold">{c.title}</h2>
+      {loading ? (
+        <p>{c.loading}</p>
+      ) : !current ? (
+        <div role="alert">
+          <p>{c.unavailable}</p>
+          <Button variant="outline" onClick={retry}>
+            {c.retry}
+          </Button>
+        </div>
+      ) : current.sources.length === 0 ? (
+        <p>{c.empty}</p>
+      ) : (
+        <ul className="space-y-4">
+          {current.sources.map((source) => (
+            <li
+              key={source.sourceKey}
+              className="rounded-xl border border-border/50 p-3 text-sm space-y-2"
+            >
+              <h3 className="font-bold">{sourceTitle(source, locale)}</h3>
+              {source.kind !== "lifetime" && source.kind !== "topup" && (
+                <p className="text-muted-foreground">{c[source.kind]}</p>
+              )}
+              <p>{c[sourceState(source)]}</p>
+              <p>
+                {c.scope}:{" "}
+                {source.targets.includes("all_published")
+                  ? c.all
+                  : source.targets.join("، ") || c[source.area]}
+              </p>
+              {source.beneficiary && (
+                <p>
+                  {c.beneficiary}: {source.beneficiary}
+                </p>
+              )}
+              {source.startsAt && (
+                <p>
+                  {c.starts}: {formatDate(source.startsAt, locale)}
+                </p>
+              )}
+              {source.kind !== "topup" && (
+                <p>
+                  {c.ends}:{" "}
+                  {source.isLifetime
+                    ? c.lifetime
+                    : source.accessUntil
+                      ? formatDate(source.accessUntil, locale)
+                      : source.kind === "invitation" && source.startsAt
+                        ? c.unlimited
+                        : c.unknown}
+                </p>
+              )}
+              {source.isLifetime && <p>{c.lifetimeQuestions}</p>}
+              {source.termsUntil && (
+                <p>
+                  {c.terms}: {formatDate(source.termsUntil, locale)}
+                </p>
+              )}
+              {source.paymentMethod && (
+                <p>
+                  {c.method}: {paymentLabel(source, locale)}
+                </p>
+              )}
+              <p className="text-muted-foreground">
+                {source.kind.endsWith("subscription") &&
+                source.kind !== "manual_subscription" &&
+                !source.cancelAtPeriodEnd
+                  ? c.renewalUnknown
+                  : c.noRenewal}
+              </p>
+              {allowedPortalScope(source) && (
+                <StripePortalButton scope={source.portalScope === "kids" ? "kids" : "adult"} />
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
+      <p className="mt-4 text-xs text-muted-foreground">{c.note}</p>
     </div>
   );
 }

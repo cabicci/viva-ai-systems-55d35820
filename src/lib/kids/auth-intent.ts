@@ -2,6 +2,7 @@ import { z } from "zod";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 
 export const SAFE_LINE_RETURNS = [
+  "/account",
   "/verify-phone",
   "/my-learning",
   "/ai",
