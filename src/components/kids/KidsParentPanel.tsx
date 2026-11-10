@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useAuth } from "@/lib/auth-context";
 import { Link } from "@tanstack/react-router";
 import { KIDS_LEVELS, type KidsLevelId } from "@/lib/kids/catalogue";
 import { useKidsParentState } from "@/lib/kids/parent-state";
@@ -13,6 +14,11 @@ import { KIDS_FAMILY_POLICY } from "@/lib/kids/family-policy";
 import { useKidsPrivacyRecord } from "@/lib/kids/privacy-record";
 
 export function KidsParentPanel() {
+  const { authContinuity } = useAuth();
+  return <KidsParentPanelForAccount key={authContinuity.continuity} />;
+}
+
+function KidsParentPanelForAccount() {
   const { locale } = useLocale();
   const localeSearch = useLocaleLinkSearch();
   const copy = getKidsJourneyCopy(locale);

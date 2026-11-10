@@ -4,6 +4,7 @@ import { KidsParentPanel } from "./KidsParentPanel";
 
 const mock = vi.hoisted(() => ({
   state: "ready",
+  continuity: 1,
   createProfile: vi.fn(),
   record: { policy_id: "accepted-policy", policy_version: "v1", attested_at: "2026-09-25" },
 }));
@@ -17,6 +18,9 @@ vi.mock("@/lib/locale/locale-context", () => ({
 }));
 vi.mock("@/lib/locale/use-locale-link-search", () => ({
   useLocaleLinkSearch: () => () => ({}),
+}));
+vi.mock("@/lib/auth-context", () => ({
+  useAuth: () => ({ authContinuity: { continuity: mock.continuity } }),
 }));
 vi.mock("@/lib/kids/parent-state", () => ({
   useKidsParentState: () => ({
@@ -33,6 +37,7 @@ vi.mock("@/lib/kids/privacy-record", () => ({
 beforeEach(() => {
   vi.clearAllMocks();
   mock.state = "ready";
+  mock.continuity = 1;
   mock.createProfile.mockResolvedValue(undefined);
 });
 
@@ -47,5 +52,38 @@ describe("returning Kids parent", () => {
     await waitFor(() =>
       expect(mock.createProfile).toHaveBeenCalledWith("عمر", "level-1", "accepted-policy"),
     );
+  });
+
+  it("keeps a draft in the same session and clears it when accounts change", () => {
+    const { rerender } = render(<KidsParentPanel />);
+    const name = () => screen.getByLabelText(/اسم مختصر/);
+    fireEvent.change(name(), { target: { value: "First draft" } });
+    fireEvent.change(screen.getByRole("combobox"), { target: { value: "level-2" } });
+
+    rerender(<KidsParentPanel />);
+    expect(name()).toHaveValue("First draft");
+    expect(screen.getByRole("combobox")).toHaveValue("level-2");
+
+    mock.continuity++;
+    rerender(<KidsParentPanel />);
+    expect(name()).toHaveValue("");
+    expect(screen.getByRole("combobox")).toHaveValue("level-1");
+    expect(mock.createProfile).not.toHaveBeenCalled();
+  });
+
+  it("clears a filled draft across sign-out and sign-in", () => {
+    const { rerender } = render(<KidsParentPanel />);
+    const name = () => screen.getByLabelText(/اسم مختصر/);
+    fireEvent.change(name(), { target: { value: "Unsaved draft" } });
+
+    mock.state = "signed-out";
+    mock.continuity++;
+    rerender(<KidsParentPanel />);
+
+    mock.state = "ready";
+    mock.continuity++;
+    rerender(<KidsParentPanel />);
+    expect(name()).toHaveValue("");
+    expect(mock.createProfile).not.toHaveBeenCalled();
   });
 });
