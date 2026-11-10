@@ -1,3 +1,4 @@
+import { z } from "zod";
 import {
   ASSISTANT_ANSWER_POLICY,
   parseAssistantAnswer,
@@ -9,17 +10,52 @@ import {
   type QuestionIdentity,
   type QuestionRpc,
 } from "../../../../supabase/functions/assistant-runtime/question-metering";
-import { curriculumChunks, type TeachingSource } from "./corpus";
+import { sha256 } from "@/lib/card-assistant/corpus";
+import { curriculumChunks } from "./corpus";
 import { courseEmbeddings } from "./index.server";
+import { intakeCanonical } from "./package";
 import { callAI } from "@/lib/ai-providers.server";
-type Chunk = {
-  id: string;
-  lesson: string;
-  title: string;
-  content: string;
-  contentSha: string;
-  sourceSha: string;
-};
+
+const versionSchema = z.string().min(1);
+const digestSchema = z.string().regex(/^[a-f0-9]{64}$/);
+const chunkSchema = z.object({
+  id: z.string().min(1),
+  lesson: z.string().min(1),
+  title: z.string().min(1),
+  content: z.string().min(1),
+  contentSha: digestSchema,
+  sourceSha: digestSchema,
+});
+const chunkListSchema = z.array(chunkSchema).max(6);
+const proofSchema = z
+  .array(chunkSchema.extend({ version: versionSchema }))
+  .min(1)
+  .max(6);
+const retrievalSchema = z.object({ version: versionSchema, chunks: chunkListSchema });
+const teachingDocumentSchema = z.object({
+  version: versionSchema,
+  // Keep all stored metadata when recomputing the admitted document digest.
+  source: z
+    .object({
+      id: z.string().min(1),
+      title: z.string().min(1),
+      sections: z
+        .array(
+          z
+            .object({
+              id: z.string().min(1),
+              kind: z.string().min(1),
+              title: z.string().min(1),
+              paragraphs: z.array(z.string()),
+            })
+            .passthrough(),
+        )
+        .min(1)
+        .max(30),
+    })
+    .passthrough(),
+});
+type Chunk = z.infer<typeof chunkSchema>;
 export async function askCurriculum(identity: QuestionIdentity) {
   const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
   const rpc: QuestionRpc = async (name, args) => {
@@ -45,29 +81,39 @@ export async function askCurriculum(identity: QuestionIdentity) {
       } as never,
     );
     if (r.error) throw new Error("CURRICULUM_SOURCE_UNAVAILABLE");
-    return r.data as unknown as { version: string; source?: TeachingSource; chunks?: Chunk[] };
+    return r.data;
   };
-  let version: string | null = null;
-  const verify = async (chunks: Chunk[]) => {
+  const readTeachingDocument = async (lesson: string) => {
+    const result = teachingDocumentSchema.safeParse(await source(lesson));
+    if (!result.success || result.data.source.id !== lesson)
+      throw new Error("CURRICULUM_SOURCE_UNAVAILABLE");
+    return result.data;
+  };
+  const verify = async (chunks: Chunk[], expectedVersion?: string) => {
     if (!identity.lesson) return false;
-    const current = await source(identity.lesson);
-    if (version !== null && current.version !== version) return false;
-    version = current.version;
-    for (const lesson of new Set(chunks.map((x) => x.lesson))) {
-      const doc = await source(lesson);
-      if (doc.version !== version || !doc.source) return false;
-      const teaching = await curriculumChunks(doc.source);
-      if (
-        chunks
-          .filter((c) => c.lesson === lesson)
-          .some(
-            (c) =>
-              !teaching.some(
-                (x) => x.id === c.id && x.content === c.content && x.contentSha === c.contentSha,
-              ),
-          )
-      )
-        return false;
+    const current = await readTeachingDocument(identity.lesson);
+    if (expectedVersion !== undefined && current.version !== expectedVersion) return false;
+    for (const lesson of new Set(chunks.map((chunk) => chunk.lesson))) {
+      const doc = lesson === identity.lesson ? current : await readTeachingDocument(lesson);
+      if (doc.version !== current.version) return false;
+      const [teaching, sourceSha] = await Promise.all([
+        curriculumChunks(doc.source),
+        sha256(intakeCanonical(doc.source)),
+      ]);
+      const valid = chunks
+        .filter((chunk) => chunk.lesson === lesson)
+        .every(
+          (chunk) =>
+            chunk.sourceSha === sourceSha &&
+            chunk.title === doc.source.title &&
+            teaching.some(
+              (item) =>
+                item.id === chunk.id &&
+                item.content === chunk.content &&
+                item.contentSha === chunk.contentSha,
+            ),
+        );
+      if (!valid) return false;
     }
     return true;
   };
@@ -78,10 +124,7 @@ export async function askCurriculum(identity: QuestionIdentity) {
       // The reservation checks quota and consent. This read checks the exact
       // teaching source before any learner text goes to an embedding provider.
       if (!identity.lesson) throw new Error("CURRICULUM_SOURCE_UNAVAILABLE");
-      const permitted = await source(identity.lesson);
-      if (!permitted?.source || typeof permitted.version !== "string" || !permitted.version)
-        throw new Error("CURRICULUM_SOURCE_UNAVAILABLE");
-      version = permitted.version;
+      const { version } = await readTeachingDocument(identity.lesson);
       const provider = <T>(model: string, run: () => Promise<T>) =>
         recordedQuestionProvider(
           rpc,
@@ -92,11 +135,11 @@ export async function askCurriculum(identity: QuestionIdentity) {
       const vector = (
         await provider("openai_embedding", () => courseEmbeddings([identity.query]))
       )[0];
-      const retrieved = await source(identity.lesson, vector);
-      if (retrieved.version !== version) throw new Error("CURRICULUM_SOURCE_CHANGED");
-      const chunks = retrieved.chunks ?? [];
-      if (chunks.length > 6 || !(await verify(chunks)))
+      const retrieved = retrievalSchema.safeParse(await source(identity.lesson, vector));
+      if (!retrieved.success || retrieved.data.version !== version)
         throw new Error("CURRICULUM_SOURCE_CHANGED");
+      const { chunks } = retrieved.data;
+      if (!(await verify(chunks, version))) throw new Error("CURRICULUM_SOURCE_CHANGED");
       if (!chunks.length)
         return { status: 422, body: { error: "CARD_GROUNDING_REQUIRED" }, outcome: "insufficient" };
       const evidence = chunks.map((x, i) => ({
@@ -141,7 +184,7 @@ export async function askCurriculum(identity: QuestionIdentity) {
       if (
         !answer ||
         answer.sourceIds.some((id) => !evidence.some((x) => x.id === id)) ||
-        !(await verify(chunks))
+        !(await verify(chunks, version))
       )
         throw new Error("CURRICULUM_GROUNDING_INVALID");
       if (answer.grounding !== "supported")
@@ -173,11 +216,15 @@ export async function askCurriculum(identity: QuestionIdentity) {
       };
     },
     async (saved) => {
-      if (!Array.isArray(saved.proof) || !saved.proof.length)
+      if (saved.proof == null || (Array.isArray(saved.proof) && saved.proof.length === 0))
         return saved.status !== 200 && (await verify([]));
-      const proof = saved.proof as (Chunk & { version: string })[];
-      version = proof[0].version;
-      return proof.every((c) => c.version === version) && (await verify(proof));
+      const proof = proofSchema.safeParse(saved.proof);
+      if (!proof.success) return false;
+      const [{ version }] = proof.data;
+      return (
+        proof.data.every((chunk) => chunk.version === version) &&
+        (await verify(proof.data, version))
+      );
     },
   );
 }

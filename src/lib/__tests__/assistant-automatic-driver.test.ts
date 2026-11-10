@@ -33,8 +33,25 @@ describe("scheduled preparation driver", () => {
 
 it("reports a sanitized cache cleanup retry while preserving the indexing outcome", async () => {
   const log = vi.fn();
-  const call = vi.fn().mockResolvedValueOnce(ready).mockResolvedValueOnce({ done: true,
+  const call = vi.fn().mockResolvedValueOnce(ready).mockResolvedValueOnce({ done: true, held: 0,
     responseCachePrune: { state: "retry", code: "secret diagnostic" } });
   expect(await runAutomaticDriver({ call, log, wait: vi.fn(), now: () => 0 })).toBe("complete");
   expect(log).toHaveBeenCalledExactlyOnceWith(JSON.stringify({ state: "response-cache-retry", code: "ASSISTANT_CACHE_PRUNE_UNAVAILABLE" }));
+});
+
+it.each([undefined, null, false, true, "0", -1, 0.5])(
+  "rejects an invalid terminal held count %j without another tick",
+  async (held) => {
+    const call = vi.fn().mockResolvedValueOnce(ready).mockResolvedValueOnce({ done: true, held });
+    await expect(runAutomaticDriver({ call, wait: vi.fn(), now: () => 0, log: vi.fn() }))
+      .rejects.toThrow("AUTOMATION_RESPONSE_INVALID");
+    expect(call.mock.calls.map(([operation]) => operation)).toEqual(["status", "tick"]);
+  },
+);
+
+it("requires review when the completion receipt still reports held work", async () => {
+  const call = vi.fn().mockResolvedValueOnce(ready).mockResolvedValueOnce({ done: true, held: 1 });
+  await expect(runAutomaticDriver({ call, wait: vi.fn(), now: () => 0, log: vi.fn() }))
+    .rejects.toThrow("AUTOMATION_REVIEW_REQUIRED");
+  expect(call.mock.calls.map(([operation]) => operation)).toEqual(["status", "tick"]);
 });

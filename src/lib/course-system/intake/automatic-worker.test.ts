@@ -68,6 +68,8 @@ async function rpc(fn: string, args: Record<string, unknown>) {
   }
   throw new Error("unexpected " + fn);
 }
+// Admission uses its own plans without invoking legacy catalogue discovery.
+vi.mock("@/lib/assistant-automation/manifest", () => ({ automaticPlans: h.legacyPlans }));
 vi.mock("@/lib/assistant-automation/store.server", () => ({
   automationRpc: (fn: string, args: Record<string, unknown>) => rpc(fn, args),
   leaseArguments: (l: { jobId: string; requestId: string; leaseToken: string }) => ({

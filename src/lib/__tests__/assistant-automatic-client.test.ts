@@ -9,7 +9,7 @@ beforeEach(()=>{vi.resetModules();calls=[];published={schemaVersion:'assistant-a
  vi.spyOn(console,'log').mockImplementation(()=>{});
  vi.stubGlobal('fetch',vi.fn(async(url:string|URL,init:RequestInit={})=>{if(new URL(url).hostname==='fixture.actions.githubusercontent.com'){expect(new URL(url).searchParams.get('audience')).toBe('https://masaarat.ai/api/public/assistant-indexing');return Response.json({value:'synthetic-signed-identity'});}
  expect(String(url)).toBe('https://masaarat.ai/api/public/assistant-indexing');const body=JSON.parse(String(init.body));calls.push({operation:body.operation,headers:new Headers(init.headers),pruneResponseCache:body.pruneResponseCache});expect(Object.keys(body).sort()).toEqual(body.operation==='status'?['operation']:calls.filter(c=>c.operation==='tick').length===1?['operation','pruneResponseCache','requestId']:['operation','requestId']);
- if(body.operation==='status')return Response.json(published,{status:http});if(tickFails)throw Error('ACK uncertain');return Response.json(tickResults.shift()??{done:true});}));
+ if(body.operation==='status')return Response.json(published,{status:http});if(tickFails)throw Error('ACK uncertain');return Response.json(tickResults.shift()??{done:true,held:0});}));
 });
 afterEach(()=>{vi.restoreAllMocks();vi.unstubAllGlobals();vi.unstubAllEnvs();});
 const run=async()=> (await import('../../../scripts/assistant/automatic-worker-client')).runTrustedAutomaticClient();
@@ -21,7 +21,7 @@ it('sends both exact main identities on the first and only tick',async()=>{expec
 it('never retries an uncertain state-changing request',async()=>{tickFails=true;await expect(run()).rejects.toThrow('ACK uncertain');expect(calls.map(x=>x.operation)).toEqual(['status','tick']);});
 
 it('requests bounded cache cleanup only on the first tick of a scheduled run',async()=>{
- tickResults=[{progressed:true,area:'kids',cardId:'level-1',completedScopes:1,totalScopes:2},{done:true}];
+ tickResults=[{progressed:true,area:'kids',cardId:'level-1',completedScopes:1,totalScopes:2},{done:true,held:0}];
  expect(await run()).toBe('complete');
  expect(calls.filter(c=>c.operation==='tick').map(c=>c.pruneResponseCache)).toEqual([true,undefined]);
 });
