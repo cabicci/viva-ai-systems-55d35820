@@ -945,3 +945,98 @@ describe("protected administrator unlimited assistant", () => {
     expect(deps.callLlm).not.toHaveBeenCalled();
   });
 });
+
+describe("shared access decoding at final and saved-answer boundaries", () => {
+  const malformedAccess = {
+    card_id: "analyst",
+    lessons: { entitled_lesson_ids: REGISTERED_LESSON_IDS },
+  };
+  const requestBody = {
+    query: "Explain the current lesson",
+    learnerContext: { locale: "en", currentPath: "analyst" },
+  };
+
+  it("rejects a missing admin decision after generation and settles zero units", async () => {
+    let modelReturned = false;
+    const underlying = createDefaultBillingRpc();
+    const billingRpc = vi.fn(
+      async (name: string, body: Record<string, unknown>): Promise<BillingRpcResult> => {
+        if (name === "assistant_card_content_access" && modelReturned) {
+          return { ok: true, data: malformedAccess };
+        }
+        return underlying(name, body);
+      },
+    );
+    const deps = buildDeps({
+      billingRpc,
+      localeSemanticRetrieve: vi.fn(async () => ({
+        ok: true as const,
+        chunks: [loadRegisteredSample()],
+      })),
+      callLlm: vi.fn(async (_system: string, user: string) => {
+        modelReturned = true;
+        return groundedAnswerFixture(user, "Grounded answer");
+      }),
+    });
+    const response = await handleAssistantRuntimeRequest(buildRequest(requestBody), deps);
+    const body = await response.json();
+    expect(response.status).toBe(403);
+    expect(body.error).toBe("AI_ACCESS_DENIED");
+    expect(body.answer).toBeUndefined();
+    expect(body.chargedUnits).toBe(0);
+    expect(deps.callLlm).toHaveBeenCalledOnce();
+    const settlements = billingRpc.mock.calls.filter(
+      ([name]) => name === "settle_assistant_question",
+    );
+    expect(settlements).toHaveLength(1);
+    expect(settlements[0][1].p_outcome).toBe("system_failure");
+  });
+
+  it("rejects a malformed fresh decision when replaying a valid saved answer", async () => {
+    const underlying = createDefaultBillingRpc();
+    let savedResponse: unknown;
+    let replay = false;
+    let replayAccessReads = 0;
+    const billingRpc = vi.fn(
+      async (name: string, body: Record<string, unknown>): Promise<BillingRpcResult> => {
+        if (replay && name === "assistant_card_content_access") {
+          replayAccessReads += 1;
+          return replayAccessReads > 1
+            ? { ok: true, data: malformedAccess }
+            : entitlementSnapshot();
+        }
+        if (replay && name === "reserve_assistant_question") {
+          return {
+            ok: true,
+            data: {
+              status: "replay",
+              replay: true,
+              response: savedResponse,
+              balance: { monthly_remaining: 99, purchased_remaining: 0 },
+            },
+          };
+        }
+        if (name === "settle_assistant_question") savedResponse = body.p_response;
+        return underlying(name, body);
+      },
+    );
+    const deps = buildDeps({
+      billingRpc,
+      localeSemanticRetrieve: vi.fn(async () => ({
+        ok: true as const,
+        chunks: [loadRegisteredSample()],
+      })),
+    });
+    const first = await handleAssistantRuntimeRequest(buildRequest(requestBody), deps);
+    expect(first.status).toBe(200);
+    expect(savedResponse).toBeDefined();
+    replay = true;
+    const repeated = await handleAssistantRuntimeRequest(buildRequest(requestBody), deps);
+    expect(repeated.status).toBe(403);
+    expect((await repeated.json()).error).toBe("ASSISTANT_ACCESS_CHANGED");
+    expect(deps.callLlm).toHaveBeenCalledOnce();
+    expect(
+      billingRpc.mock.calls.filter(([name]) => name === "settle_assistant_question"),
+    ).toHaveLength(1);
+  });
+});
