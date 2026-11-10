@@ -99,11 +99,23 @@ function formatDays(count: number, t: (key: UiStringKey) => string) {
 }
 
 function AccountPage() {
-  const { locale } = useLocale();
+  const { locale, dir } = useLocale();
+  const { user, loading } = useAuth();
+  const ready = !loading && !!user;
+
   return (
-    <AuthSessionGate loginSearch={{ locale, returnTo: "/account" }}>
-      <AccountContent />
-    </AuthSessionGate>
+    <div className="min-h-dvh flex flex-col" dir={dir}>
+      {ready && <Sidebar />}
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className={ready ? "min-w-0 flex-1 px-4 sm:px-6 lg:px-10 py-8 max-w-5xl mx-auto w-full" : undefined}
+      >
+        <AuthSessionGate loginSearch={{ locale, returnTo: "/account" }}>
+          <AccountContent />
+        </AuthSessionGate>
+      </main>
+    </div>
   );
 }
 
@@ -222,153 +234,150 @@ function AccountContent() {
   );
 
   return (
-    <div className="min-h-dvh flex flex-col" dir={dir}>
-      <Sidebar />
-      <main id="main-content" tabIndex={-1} className="min-w-0 flex-1 px-4 sm:px-6 lg:px-10 py-8 max-w-5xl mx-auto w-full">
-        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 mb-8 sm:flex sm:justify-between">
-          <div className="min-w-0">
-            <h1 className="text-3xl sm:text-4xl font-black tracking-tight">{t("account.title")}</h1>
-            <p className="text-sm text-muted-foreground mt-1">{t("account.subtitle")}</p>
+    <>
+      <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 mb-8 sm:flex sm:justify-between">
+        <div className="min-w-0">
+          <h1 className="text-3xl sm:text-4xl font-black tracking-tight">{t("account.title")}</h1>
+          <p className="text-sm text-muted-foreground mt-1">{t("account.subtitle")}</p>
+        </div>
+        <Button asChild variant="glass" size="sm" className="shrink-0">
+          <Link to="/dashboard">
+            <ArrowLeft className={`h-4 w-4 ${dir === "rtl" ? "rotate-180" : ""}`} />{" "}
+            {t("sidebar.dashboard")}
+          </Link>
+        </Button>
+      </div>
+
+      <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-5 md:grid-cols-2 mb-5">
+        <section className="glass min-w-0 max-w-full rounded-2xl p-6 border border-border/50">
+          <div className="flex min-w-0 items-center gap-4">
+            <div className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-[image:var(--gradient-primary)] text-2xl font-black text-primary-foreground glow-primary">
+              {avatarLetter}
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="text-xs text-muted-foreground">{t("account.profile.label")}</p>
+              <p className="text-lg font-bold truncate">{email || t("sidebar.guest")}</p>
+              {admin && (
+                <span className="mt-1 inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2 py-0.5 text-[10px] font-semibold tracking-wide text-primary">
+                  <Shield className="h-3 w-3" /> {t("account.profile.adminBadge")}
+                </span>
+              )}
+            </div>
           </div>
-          <Button asChild variant="glass" size="sm" className="shrink-0">
-            <Link to="/dashboard">
-              <ArrowLeft className={`h-4 w-4 ${dir === "rtl" ? "rotate-180" : ""}`} />{" "}
-              {t("sidebar.dashboard")}
-            </Link>
+          <div className="mt-5 space-y-2 text-sm">
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <Mail className="h-4 w-4 shrink-0" />
+              <span className="min-w-0 truncate">{email || "—"}</span>
+            </div>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <Calendar className="h-4 w-4 shrink-0" />
+              <span className="min-w-0 break-words">{joinedLabel}</span>
+            </div>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <UserIcon className="h-4 w-4 shrink-0" />
+              <span className="min-w-0 font-mono text-xs truncate">{userId ?? "—"}</span>
+            </div>
+          </div>
+        </section>
+
+        <section className="glass min-w-0 max-w-full break-words rounded-2xl p-6 border border-border/50 flex flex-col">
+          {admin && <p className="mb-3 text-sm text-primary">{t("account.subscription.adminAccessNotice")}</p>}
+          <SubscriptionSources data={subscriptions.data} accountId={userId} locale={locale}
+            loading={subscriptions.isLoading} error={subscriptions.isError}
+            retry={() => { void subscriptions.refetch(); }} />
+          <Button asChild variant="outline" className="mt-5">
+            <Link to="/pricing">{subscriptionCopy[locale].browse}</Link>
+          </Button>
+        </section>
+      </div>
+
+      <section className="glass rounded-2xl p-6 border border-border/50 mb-5">
+        <p className="text-xs text-muted-foreground mb-4">{t("account.stats.title")}</p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <StatTile
+            icon={<Flame className="h-4 w-4 text-orange-400" />}
+            label={t("account.stats.streakCurrent")}
+            value={formatDays(streak.current_streak, t)}
+          />
+          <StatTile
+            icon={<Flame className="h-4 w-4 text-amber-400" />}
+            label={t("account.stats.streakLongest")}
+            value={formatDays(streak.longest_streak, t)}
+          />
+          <StatTile
+            icon={<Clock className="h-4 w-4 text-sky-400" />}
+            label={t("account.stats.activityTime")}
+            value={formatDuration(activitySec ?? 0, t)}
+          />
+          <StatTile
+            icon={<BookCheck className="h-4 w-4 text-emerald-400" />}
+            label={t("account.stats.lessonsCompleted")}
+            value={`${completedCount ?? 0} / ${totalLessons}`}
+          />
+        </div>
+      </section>
+
+      <section className="glass rounded-2xl p-6 border border-border/50 mb-5">
+        <KidsConsentControl />
+      </section>
+
+      <div className="mb-5"><KidsAiConsentControl hideWhenEmpty /></div>
+
+      <PhoneVerification key={userId} />
+      <CommercialInvitations userId={userId} locale={locale} />
+
+      <section className="glass rounded-2xl p-6 border border-border/50">
+        <p className="text-xs text-muted-foreground mb-4">{t("account.manage.title")}</p>
+        <div className="grid gap-3 md:grid-cols-3">
+          <Button
+            variant="glass"
+            size="lg"
+            onClick={handleSendReset}
+            disabled={sendingReset || !email}
+            className="justify-start"
+          >
+            <KeyRound className="h-4 w-4" />
+            {sendingReset
+              ? t("account.manage.resetPasswordSending")
+              : t("account.manage.resetPassword")}
+          </Button>
+          <Button variant="glass" size="lg" onClick={() => signOut()} className="justify-start">
+            <LogOut className="h-4 w-4" /> {t("sidebar.signOut")}
+          </Button>
+          <Button
+            variant="destructive"
+            size="lg"
+            onClick={() => setConfirmDelete(true)}
+            className="justify-start"
+          >
+            <Trash2 className="h-4 w-4" /> {t("account.manage.deleteAccount")}
           </Button>
         </div>
+        <p className="text-xs text-muted-foreground mt-4">{t("account.manage.deleteNote")}</p>
+      </section>
 
-        <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-5 md:grid-cols-2 mb-5">
-          <section className="glass min-w-0 max-w-full rounded-2xl p-6 border border-border/50">
-            <div className="flex min-w-0 items-center gap-4">
-              <div className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-[image:var(--gradient-primary)] text-2xl font-black text-primary-foreground glow-primary">
-                {avatarLetter}
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="text-xs text-muted-foreground">{t("account.profile.label")}</p>
-                <p className="text-lg font-bold truncate">{email || t("sidebar.guest")}</p>
-                {admin && (
-                  <span className="mt-1 inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2 py-0.5 text-[10px] font-semibold tracking-wide text-primary">
-                    <Shield className="h-3 w-3" /> {t("account.profile.adminBadge")}
-                  </span>
-                )}
-              </div>
-            </div>
-            <div className="mt-5 space-y-2 text-sm">
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <Mail className="h-4 w-4 shrink-0" />
-                <span className="min-w-0 truncate">{email || "—"}</span>
-              </div>
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <Calendar className="h-4 w-4 shrink-0" />
-                <span className="min-w-0 break-words">{joinedLabel}</span>
-              </div>
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <UserIcon className="h-4 w-4 shrink-0" />
-                <span className="min-w-0 font-mono text-xs truncate">{userId ?? "—"}</span>
-              </div>
-            </div>
-          </section>
-
-          <section className="glass min-w-0 max-w-full break-words rounded-2xl p-6 border border-border/50 flex flex-col">
-            {admin && <p className="mb-3 text-sm text-primary">{t("account.subscription.adminAccessNotice")}</p>}
-            <SubscriptionSources data={subscriptions.data} accountId={userId} locale={locale}
-              loading={subscriptions.isLoading} error={subscriptions.isError}
-              retry={() => { void subscriptions.refetch(); }} />
-            <Button asChild variant="outline" className="mt-5">
-              <Link to="/pricing">{subscriptionCopy[locale].browse}</Link>
+      <Dialog open={confirmDelete} onOpenChange={setConfirmDelete}>
+        <DialogContent
+          dir={dir}
+          className="max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] overflow-y-auto sm:max-w-lg"
+        >
+          <DialogHeader>
+            <DialogTitle>{t("account.deleteDialog.title")}</DialogTitle>
+            <DialogDescription>{t("account.deleteDialog.description")}</DialogDescription>
+          </DialogHeader>
+          <DialogFooter className="gap-2">
+            <Button variant="glass" onClick={() => setConfirmDelete(false)} disabled={deleting}>
+              {t("account.deleteDialog.cancel")}
             </Button>
-          </section>
-        </div>
-
-        <section className="glass rounded-2xl p-6 border border-border/50 mb-5">
-          <p className="text-xs text-muted-foreground mb-4">{t("account.stats.title")}</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <StatTile
-              icon={<Flame className="h-4 w-4 text-orange-400" />}
-              label={t("account.stats.streakCurrent")}
-              value={formatDays(streak.current_streak, t)}
-            />
-            <StatTile
-              icon={<Flame className="h-4 w-4 text-amber-400" />}
-              label={t("account.stats.streakLongest")}
-              value={formatDays(streak.longest_streak, t)}
-            />
-            <StatTile
-              icon={<Clock className="h-4 w-4 text-sky-400" />}
-              label={t("account.stats.activityTime")}
-              value={formatDuration(activitySec ?? 0, t)}
-            />
-            <StatTile
-              icon={<BookCheck className="h-4 w-4 text-emerald-400" />}
-              label={t("account.stats.lessonsCompleted")}
-              value={`${completedCount ?? 0} / ${totalLessons}`}
-            />
-          </div>
-        </section>
-
-        <section className="glass rounded-2xl p-6 border border-border/50 mb-5">
-          <KidsConsentControl />
-        </section>
-
-        <div className="mb-5"><KidsAiConsentControl hideWhenEmpty /></div>
-
-        <PhoneVerification key={userId} />
-        <CommercialInvitations userId={userId} locale={locale} />
-
-        <section className="glass rounded-2xl p-6 border border-border/50">
-          <p className="text-xs text-muted-foreground mb-4">{t("account.manage.title")}</p>
-          <div className="grid gap-3 md:grid-cols-3">
-            <Button
-              variant="glass"
-              size="lg"
-              onClick={handleSendReset}
-              disabled={sendingReset || !email}
-              className="justify-start"
-            >
-              <KeyRound className="h-4 w-4" />
-              {sendingReset
-                ? t("account.manage.resetPasswordSending")
-                : t("account.manage.resetPassword")}
+            <Button variant="destructive" onClick={handleDelete} disabled={deleting}>
+              {deleting
+                ? t("account.deleteDialog.confirming")
+                : t("account.deleteDialog.confirm")}
             </Button>
-            <Button variant="glass" size="lg" onClick={() => signOut()} className="justify-start">
-              <LogOut className="h-4 w-4" /> {t("sidebar.signOut")}
-            </Button>
-            <Button
-              variant="destructive"
-              size="lg"
-              onClick={() => setConfirmDelete(true)}
-              className="justify-start"
-            >
-              <Trash2 className="h-4 w-4" /> {t("account.manage.deleteAccount")}
-            </Button>
-          </div>
-          <p className="text-xs text-muted-foreground mt-4">{t("account.manage.deleteNote")}</p>
-        </section>
-
-        <Dialog open={confirmDelete} onOpenChange={setConfirmDelete}>
-          <DialogContent
-            dir={dir}
-            className="max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] overflow-y-auto sm:max-w-lg"
-          >
-            <DialogHeader>
-              <DialogTitle>{t("account.deleteDialog.title")}</DialogTitle>
-              <DialogDescription>{t("account.deleteDialog.description")}</DialogDescription>
-            </DialogHeader>
-            <DialogFooter className="gap-2">
-              <Button variant="glass" onClick={() => setConfirmDelete(false)} disabled={deleting}>
-                {t("account.deleteDialog.cancel")}
-              </Button>
-              <Button variant="destructive" onClick={handleDelete} disabled={deleting}>
-                {deleting
-                  ? t("account.deleteDialog.confirming")
-                  : t("account.deleteDialog.confirm")}
-              </Button>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
-      </main>
-    </div>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 }
 

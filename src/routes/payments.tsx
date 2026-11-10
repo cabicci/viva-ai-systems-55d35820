@@ -45,10 +45,22 @@ export const Route = createFileRoute("/payments")({
 });
 function PaymentRoute() {
   const { order } = Route.useSearch();
+  const { user, loading } = useAuth();
+  const ready = !loading && !!user;
+
   return (
-    <AuthSessionGate loginSearch={order ? { order, paymentView: "customer" } : undefined}>
-      <Payments />
-    </AuthSessionGate>
+    <div className="min-h-dvh bg-background">
+      {ready && <Sidebar />}
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className={ready ? "mx-auto max-w-5xl space-y-6 px-4 py-8" : undefined}
+      >
+        <AuthSessionGate loginSearch={order ? { order, paymentView: "customer" } : undefined}>
+          <Payments />
+        </AuthSessionGate>
+      </main>
+    </div>
   );
 }
 function Payments() {
@@ -107,173 +119,170 @@ function Payments() {
     }
   }
   return (
-    <div className="min-h-dvh bg-background">
-      <Sidebar />
-      <main id="main-content" tabIndex={-1} className="mx-auto max-w-5xl space-y-6 px-4 py-8">
-        <h1 className="text-2xl font-bold">{w.orders}</h1>
-        <div className="flex gap-3">
-          <Button onClick={refresh}>{w.refresh}</Button>
-          <Link to="/pricing" search={{ locale }} className="text-primary underline">
-            {w.package}
-          </Link>
-        </div>
-        {targetOrderId && (
-          <Link
-            to="/payments"
-            search={{ locale, order: undefined }}
-            className="block text-primary underline"
-          >
-            {w.all}
-          </Link>
-        )}
-        {error && (
-          <p role="alert" className="text-destructive">
-            {error}
+    <>
+      <h1 className="text-2xl font-bold">{w.orders}</h1>
+      <div className="flex gap-3">
+        <Button onClick={refresh}>{w.refresh}</Button>
+        <Link to="/pricing" search={{ locale }} className="text-primary underline">
+          {w.package}
+        </Link>
+      </div>
+      {targetOrderId && (
+        <Link
+          to="/payments"
+          search={{ locale, order: undefined }}
+          className="block text-primary underline"
+        >
+          {w.all}
+        </Link>
+      )}
+      {error && (
+        <p role="alert" className="text-destructive">
+          {error}
+        </p>
+      )}
+      {(rows.isError || (targetOrderId && target.isError)) && (
+        <div role="alert" className="space-y-2 text-destructive">
+          <p>
+            {t(
+              targetOrderId && target.isError
+                ? "payments.state.requestedError"
+                : "payments.state.readError",
+            )}
           </p>
-        )}
-        {(rows.isError || (targetOrderId && target.isError)) && (
-          <div role="alert" className="space-y-2 text-destructive">
-            <p>
-              {t(
-                targetOrderId && target.isError
-                  ? "payments.state.requestedError"
-                  : "payments.state.readError",
-              )}
-            </p>
-            <Button
-              variant="outline"
-              onClick={() => {
-                void rows.refetch();
-                if (targetOrderId) void target.refetch();
-              }}
-            >
-              {t("payments.state.retry")}
-            </Button>
-          </div>
-        )}
-        {(rows.isLoading || (targetOrderId && target.isLoading)) && (
-          <p role="status">{t("payments.state.loading")}</p>
-        )}
-        {!targetOrderId && (
-          <>
-            <RedeemOffer />
-            <MailPreferences />
-            <section>
-              <h2 className="text-xl font-bold">{w.access}</h2>
-              {rows.isSuccess && rows.data.entitlements.length === 0 && (
-                <p>{t("payments.state.noEntitlements")}</p>
-              )}
-              <div className="grid gap-3 sm:grid-cols-2">
-                {rows.data?.entitlements.map((e) => (
-                  <article key={e.id} className="rounded-xl border p-4">
-                    <strong>{e.package}</strong>
-                    <p>{w[accessState(e)]}</p>
-                    <p>
-                      {new Date(e.starts_at).toLocaleDateString()} —{" "}
-                      {new Date(e.ends_at).toLocaleDateString()}
-                    </p>
-                  </article>
-                ))}
-              </div>
-            </section>
-          </>
-        )}
-        <section className="space-y-4">
-          {!targetOrderId && rows.isSuccess && rows.data.orders.length === 0 && (
-            <p>{t("payments.state.noOrders")}</p>
-          )}
-          {targetOrderId && target.isSuccess && !target.data && (
-            <p role="status">{t("payments.state.requestedMissing")}</p>
-          )}
-          {orders?.map((o) => (
-            <article key={o.id} className="rounded-xl border p-4 space-y-3">
-              <h2 className="font-bold">
-                <bdi>{o.reference}</bdi> · {commerceProductLabel(o.package, locale)}
-              </h2>
-              <p>
-                {formatAmount(o.final_minor, o.currency, locale)} ·{" "}
-                {o.method === "admin" && o.review_status === "confirmed"
-                  ? w.complimentary
-                  : (w[o.review_status as "pending"] ?? o.review_status)}
-              </p>
-              <p>{o.review_reason}</p>
-              {o.commercial_purchase && (
-                <p>
-                  {o.commercial_purchase.state === "held"
-                    ? locale === "en"
-                      ? "This purchase is on hold. Contact support."
-                      : "تم تعليق هذا الشراء. تواصل مع الدعم."
-                    : o.commercial_purchase.state === "fulfilled"
-                      ? o.package === "lifetime_course"
-                        ? commercialCopy(locale).lifetimeDetail
-                        : commercialCopy(locale).topupDetail
-                      : o.commercial_purchase.state === "expired"
-                        ? w.expired
-                        : w.pending}
-                </p>
-              )}
-              {o.review_status === "confirmed" &&
-                !o.entitlement &&
-                !o.commercial_purchase_id &&
-                rows.isSuccess && (
+          <Button
+            variant="outline"
+            onClick={() => {
+              void rows.refetch();
+              if (targetOrderId) void target.refetch();
+            }}
+          >
+            {t("payments.state.retry")}
+          </Button>
+        </div>
+      )}
+      {(rows.isLoading || (targetOrderId && target.isLoading)) && (
+        <p role="status">{t("payments.state.loading")}</p>
+      )}
+      {!targetOrderId && (
+        <>
+          <RedeemOffer />
+          <MailPreferences />
+          <section>
+            <h2 className="text-xl font-bold">{w.access}</h2>
+            {rows.isSuccess && rows.data.entitlements.length === 0 && (
+              <p>{t("payments.state.noEntitlements")}</p>
+            )}
+            <div className="grid gap-3 sm:grid-cols-2">
+              {rows.data?.entitlements.map((e) => (
+                <article key={e.id} className="rounded-xl border p-4">
+                  <strong>{e.package}</strong>
+                  <p>{w[accessState(e)]}</p>
                   <p>
-                    {w.paidWait}
-                    {o.package === "kids" && (
-                      <Link to="/kids/family" search={{ locale }} className="block underline">
-                        {w.kids}
-                      </Link>
-                    )}
+                    {new Date(e.starts_at).toLocaleDateString()} —{" "}
+                    {new Date(e.ends_at).toLocaleDateString()}
                   </p>
-                )}
-              {o.review_status === "confirmed" && o.package === "academic" && (
-                <Link to="/academic" search={{ locale }} className="block underline">
-                  Masaarat Academic
-                </Link>
-              )}
-              {o.review_status === "confirmed" && o.package === "technical" && (
-                <Link to="/technical/curriculum" search={{ locale }} className="block underline">
-                  Masaarat TECH
-                </Link>
-              )}
-              {["awaiting_receipt", "pending", "more_info", "rejected"].includes(
-                o.review_status,
-              ) && (
-                <>
-                  <p className="whitespace-pre-wrap">
-                    {paymentInstructions(o.instructions_snapshot, locale)}
-                  </p>
-                  <bdi className="break-all">{o.instructions_snapshot.destination}</bdi>
-                  {o.instructions_snapshot.qr_url && (
-                    <img
-                      src={o.instructions_snapshot.qr_url}
-                      alt={`${w.instapay} QR`}
-                      className="max-h-48"
-                    />
-                  )}
-                  <ReceiptUpload orderId={o.id} onUploaded={refresh} />
-                  <Button
-                    variant="outline"
-                    disabled={busy}
-                    onClick={() => void run("cancel_order", { id: o.id })}
-                  >
-                    {w.cancel}
-                  </Button>
-                </>
-              )}
-              <OrderReceipts id={o.id} />
-              {o.review_status === "confirmed" && !o.commercial_purchase_id && (
+                </article>
+              ))}
+            </div>
+          </section>
+        </>
+      )}
+      <section className="space-y-4">
+        {!targetOrderId && rows.isSuccess && rows.data.orders.length === 0 && (
+          <p>{t("payments.state.noOrders")}</p>
+        )}
+        {targetOrderId && target.isSuccess && !target.data && (
+          <p role="status">{t("payments.state.requestedMissing")}</p>
+        )}
+        {orders?.map((o) => (
+          <article key={o.id} className="rounded-xl border p-4 space-y-3">
+            <h2 className="font-bold">
+              <bdi>{o.reference}</bdi> · {commerceProductLabel(o.package, locale)}
+            </h2>
+            <p>
+              {formatAmount(o.final_minor, o.currency, locale)} ·{" "}
+              {o.method === "admin" && o.review_status === "confirmed"
+                ? w.complimentary
+                : (w[o.review_status as "pending"] ?? o.review_status)}
+            </p>
+            <p>{o.review_reason}</p>
+            {o.commercial_purchase && (
+              <p>
+                {o.commercial_purchase.state === "held"
+                  ? locale === "en"
+                    ? "This purchase is on hold. Contact support."
+                    : "تم تعليق هذا الشراء. تواصل مع الدعم."
+                  : o.commercial_purchase.state === "fulfilled"
+                    ? o.package === "lifetime_course"
+                      ? commercialCopy(locale).lifetimeDetail
+                      : commercialCopy(locale).topupDetail
+                    : o.commercial_purchase.state === "expired"
+                      ? w.expired
+                      : w.pending}
+              </p>
+            )}
+            {o.review_status === "confirmed" &&
+              !o.entitlement &&
+              !o.commercial_purchase_id &&
+              rows.isSuccess && (
                 <p>
-                  {w.noAutopay}{" "}
-                  <Link to="/pricing" search={{ locale }} className="underline">
-                    {w.renew}
-                  </Link>
+                  {w.paidWait}
+                  {o.package === "kids" && (
+                    <Link to="/kids/family" search={{ locale }} className="block underline">
+                      {w.kids}
+                    </Link>
+                  )}
                 </p>
               )}
-            </article>
-          ))}
-        </section>
-      </main>
-    </div>
+            {o.review_status === "confirmed" && o.package === "academic" && (
+              <Link to="/academic" search={{ locale }} className="block underline">
+                Masaarat Academic
+              </Link>
+            )}
+            {o.review_status === "confirmed" && o.package === "technical" && (
+              <Link to="/technical/curriculum" search={{ locale }} className="block underline">
+                Masaarat TECH
+              </Link>
+            )}
+            {["awaiting_receipt", "pending", "more_info", "rejected"].includes(
+              o.review_status,
+            ) && (
+              <>
+                <p className="whitespace-pre-wrap">
+                  {paymentInstructions(o.instructions_snapshot, locale)}
+                </p>
+                <bdi className="break-all">{o.instructions_snapshot.destination}</bdi>
+                {o.instructions_snapshot.qr_url && (
+                  <img
+                    src={o.instructions_snapshot.qr_url}
+                    alt={`${w.instapay} QR`}
+                    className="max-h-48"
+                  />
+                )}
+                <ReceiptUpload orderId={o.id} onUploaded={refresh} />
+                <Button
+                  variant="outline"
+                  disabled={busy}
+                  onClick={() => void run("cancel_order", { id: o.id })}
+                >
+                  {w.cancel}
+                </Button>
+              </>
+            )}
+            <OrderReceipts id={o.id} />
+            {o.review_status === "confirmed" && !o.commercial_purchase_id && (
+              <p>
+                {w.noAutopay}{" "}
+                <Link to="/pricing" search={{ locale }} className="underline">
+                  {w.renew}
+                </Link>
+              </p>
+            )}
+          </article>
+        ))}
+      </section>
+    </>
   );
 }
 function OrderReceipts({ id }: { id: string }) {

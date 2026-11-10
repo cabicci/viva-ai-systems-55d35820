@@ -7,6 +7,9 @@ const state = vi.hoisted(() => ({
   Page: undefined as ComponentType | undefined,
   locale: "en" as SupportedLocale,
   order: undefined as string | undefined,
+  authLoading: false,
+  user: { id: "synthetic-user" } as { id: string } | null,
+  navigate: vi.fn(),
   command: vi.fn(),
   refetch: vi.fn(),
   targetRefetch: vi.fn(),
@@ -18,6 +21,7 @@ vi.mock("@tanstack/react-router", () => ({
     state.Page = options.component;
     return { ...options, useSearch: () => ({ order: state.order }) };
   },
+  useNavigate: () => state.navigate,
   Link: ({ children, to }: { children: ReactNode; to: string }) => <a href={to}>{children}</a>,
 }));
 vi.mock("@tanstack/react-query", () => ({
@@ -31,11 +35,10 @@ vi.mock("@tanstack/react-query", () => ({
 }));
 vi.mock("@tanstack/react-start", () => ({ useServerFn: () => state.command }));
 vi.mock("@/lib/commerce/commerce.functions", () => ({ commerceCommand: {} }));
-vi.mock("@/lib/auth-route-guard", () => ({
-  requireAuthBeforeLoad: vi.fn(),
-  AuthSessionGate: ({ children }: { children: ReactNode }) => <>{children}</>,
+vi.mock("@/integrations/supabase/client", () => ({ supabase: {} }));
+vi.mock("@/lib/auth-context", () => ({
+  useAuth: () => ({ user: state.user, loading: state.authLoading }),
 }));
-vi.mock("@/lib/auth-context", () => ({ useAuth: () => ({ user: { id: "synthetic-user" } }) }));
 vi.mock("@/lib/locale/locale-context", () => ({ useLocale: () => ({ locale: state.locale }) }));
 vi.mock("@/lib/locale/use-ui-strings", () => ({
   useUiString: () => (key: Parameters<typeof getUiString>[1]) => getUiString(state.locale, key),
@@ -51,6 +54,8 @@ beforeEach(() => {
   vi.clearAllMocks();
   state.locale = "en";
   state.order = undefined;
+  state.authLoading = false;
+  state.user = { id: "synthetic-user" };
   state.rows = { isLoading: false, isSuccess: false, isError: false, refetch: state.refetch };
   state.target = {
     isLoading: false,
@@ -64,6 +69,42 @@ function setup() {
   const Page = state.Page!;
   return render(<Page />);
 }
+it("keeps focus on the same main landmark when authentication finishes", () => {
+  state.authLoading = true;
+  state.user = null;
+  const Page = state.Page!;
+  const { rerender } = render(<Page />);
+  const main = screen.getByRole("main");
+
+  expect(main).toHaveAttribute("id", "main-content");
+  expect(main).toHaveAttribute("tabindex", "-1");
+  expect(screen.queryByRole("heading", { name: "Orders" })).toBeNull();
+  expect(state.navigate).not.toHaveBeenCalled();
+  main.focus();
+
+  state.authLoading = false;
+  state.user = { id: "synthetic-user" };
+  rerender(<Page />);
+
+  expect(screen.getByRole("main")).toBe(main);
+  expect(main).toHaveFocus();
+  expect(screen.getByRole("heading", { name: "Orders" })).toBeVisible();
+  expect(state.navigate).not.toHaveBeenCalled();
+});
+it("redirects a signed-out visitor without mounting protected orders", () => {
+  state.user = null;
+  state.order = "synthetic-order";
+  setup();
+
+  expect(screen.getByRole("main")).toHaveAttribute("id", "main-content");
+  expect(screen.queryByRole("heading", { name: "Orders" })).toBeNull();
+  expect(state.navigate).toHaveBeenCalledWith({
+    to: "/login",
+    search: { order: "synthetic-order", paymentView: "customer" },
+    replace: true,
+  });
+  expect(state.command).not.toHaveBeenCalled();
+});
 it("shows loading without a premature empty or access-loss message", () => {
   state.rows.isLoading = true;
   setup();
