@@ -1,17 +1,11 @@
+import { assertAdminRole as assertAdmin } from "@/lib/admin-role.server";
 import { createServerFn } from "@tanstack/react-start";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { z } from "zod";
 import { PATHS, totalLessons, totalAvailableLessons } from "@/lib/curriculum-data";
 import { enforceRateLimit } from "./rate-limit.server";
+import { captureReportRead as safe, reportSampleLabel } from "@/lib/reporting/read-result";
 
-async function assertAdmin(context: { supabase: any; userId: string }) {
-  const { data, error } = await context.supabase.rpc("has_role", {
-    _user_id: context.userId,
-    _role: "admin",
-  });
-  if (error) throw new Error("Authorization check failed");
-  if (!data) throw new Error("Forbidden: admin role required");
-}
 
 const DNA_REPORTS_BUCKET = "dna-reports";
 
@@ -54,10 +48,6 @@ async function storageFetch(path: string, init: RequestInit = {}) {
   });
 }
 
-function safe<T>(label: string, p: PromiseLike<T>): Promise<T | { __error: string }> {
-  return Promise.resolve(p).catch((e) => ({ __error: `${label}: ${e?.message ?? String(e)}` }));
-}
-
 function truncate(s: string | null | undefined, max = 2000): string {
   if (!s) return "";
   if (s.length <= max) return s;
@@ -82,7 +72,7 @@ function countOf(v: unknown): number | null {
   if (!v || typeof v !== "object") return null;
   if ("__error" in (v as any)) return null;
   const c = (v as any).count;
-  return typeof c === "number" ? c : null;
+  return typeof c === "number" && Number.isSafeInteger(c) && c >= 0 ? c : null;
 }
 
 export const generateDnaReport = createServerFn({ method: "POST" })
@@ -104,7 +94,7 @@ export const generateDnaReport = createServerFn({ method: "POST" })
     const now = new Date();
     const stamp = now.toISOString();
 
-    // Cap each aggregate read so a runaway table cannot DoS the DB.
+    // Bound response rows. Exact counts may still scan all matching rows.
     const ROW_CAP = 5000;
 
     // ---------- Parallel data collection ----------
@@ -123,13 +113,13 @@ export const generateDnaReport = createServerFn({ method: "POST" })
       rolesRes,
     ] = await Promise.all([
       safe("user_active_device count", supabase.from("user_active_device").select("user_id", { count: "exact", head: true })),
-      safe("user_subscriptions tiers", supabase.from("user_subscriptions").select("tier,status").limit(ROW_CAP)),
-      safe("lesson_progress all", supabase.from("lesson_progress").select("user_id,lesson_id,status").limit(ROW_CAP)),
-      safe("user_lesson_status all", supabase.from("user_lesson_status").select("user_id,lesson_id,status").limit(ROW_CAP)),
+      safe("user_subscriptions tiers", supabase.from("user_subscriptions").select("tier,status", { count: "exact" }).limit(ROW_CAP)),
+      safe("lesson_progress all", supabase.from("lesson_progress").select("user_id,lesson_id,status", { count: "exact" }).limit(ROW_CAP)),
+      safe("user_lesson_status all", supabase.from("user_lesson_status").select("user_id,lesson_id,status", { count: "exact" }).limit(ROW_CAP)),
       safe("user_activity_time top", supabase.from("user_activity_time").select("user_id,total_seconds").order("total_seconds", { ascending: false }).limit(10)),
-      safe("user_streaks all", supabase.from("user_streaks").select("user_id,current_streak,longest_streak,last_activity_date").limit(ROW_CAP)),
-      safe("mission_submissions all", supabase.from("mission_submissions").select("status,score,mission_id,evaluated_at,created_at").limit(ROW_CAP)),
-      safe("learner_events all", supabase.from("learner_events").select("event_type,created_at").order("created_at", { ascending: false }).limit(ROW_CAP)),
+      safe("user_streaks all", supabase.from("user_streaks").select("user_id,current_streak,longest_streak,last_activity_date", { count: "exact" }).limit(ROW_CAP)),
+      safe("mission_submissions all", supabase.from("mission_submissions").select("status,score,mission_id,evaluated_at,created_at,skipped:submission_metadata->skipped", { count: "exact" }).limit(ROW_CAP)),
+      safe("learner_events all", supabase.from("learner_events").select("event_type,created_at", { count: "exact" }).order("created_at", { ascending: false }).limit(ROW_CAP)),
       safe("client_error_logs recent", supabase.from("client_error_logs").select("scope,message,created_at").gte("created_at", new Date(Date.now() - 7 * 86400_000).toISOString()).order("created_at", { ascending: false }).limit(50)),
       safe("knowledge_chunks count", supabase.from("knowledge_chunks").select("id", { count: "exact", head: true })),
       safe("roadmap_items all", supabase.from("roadmap_items").select("*").order("phase").order("sort_order").limit(1000)),
@@ -144,7 +134,7 @@ export const generateDnaReport = createServerFn({ method: "POST" })
     const h3 = (t: string) => push(`\n### ${t}\n`);
 
     // ===== 1. Executive Summary =====
-    h1("DNA Report — Snapshot كامل للمنصة");
+    h1("DNA Report — لقطة للمنصة مع توضيح حدود القراءات");
     push(`> **Generated:** ${stamp}`);
     push(`> **Purpose:** الملف ده هو DNA المنصة. أي حد يقراه يفهم كل اللي بنبنيه ويقدر يكمل من نفس النقطة من غير ما يرجعلنا.`);
     h2("1. نظرة عامة");
@@ -256,9 +246,6 @@ export const generateDnaReport = createServerFn({ method: "POST" })
     push(`- \`match_knowledge_chunks(...)\` — vector search للـ RAG.`);
     push(`- \`protect_mission_submission_insert/admin_columns()\` — triggers تمنع المستخدم من تعديل score/feedback.`);
 
-    h3("Storage buckets");
-    push(`- \`audio-assets\` (public)`);
-
     h3("Secrets (الأسماء فقط)");
     const SECRETS = [
       "SUPABASE_URL", "SUPABASE_PUBLISHABLE_KEY", "SUPABASE_SERVICE_ROLE_KEY", "SUPABASE_DB_URL", "SUPABASE_JWKS",
@@ -280,6 +267,11 @@ export const generateDnaReport = createServerFn({ method: "POST" })
 
     // ===== 6. Live Stats =====
     h2("6. Live Platform Stats");
+    push("الأعداد والتوزيعات والمتوسطات المبنية على الصفوف التالية تخص العينة المسترجعة فقط. حد الطلب ليس ضمانًا لاكتمال النتائج. العدّ الدقيق موضّح منفصلًا.");
+    const failedReads = [activeDevicesRes, subscriptionsRes, lessonProgressRes,
+      userLessonStatusRes, activityTimeRes, streaksRes, missionsAggRes,
+      learnerEventsRes, errorLogsRes, knowledgeChunksRes, roadmapRes, rolesRes].filter(fmtErr);
+    if (failedReads.length) push(`> **التقرير غير مكتمل:** تعذّرت ${failedReads.length} قراءة. راجع الأقسام المعلّمة أدناه وأعد إنشاء التقرير للمحاولة مجددًا.`);
 
     const subsErr = fmtErr(subscriptionsRes);
     if (subsErr) push(`**Subscriptions:** ${subsErr}`);
@@ -287,82 +279,92 @@ export const generateDnaReport = createServerFn({ method: "POST" })
       const subs = rows<{ tier: string; status: string | null }>(subscriptionsRes);
       const byTier: Record<string, number> = {};
       for (const s of subs) byTier[s.tier] = (byTier[s.tier] ?? 0) + 1;
-      push(`- **إجمالي السجلات في user_subscriptions:** ${subs.length}`);
-      for (const [tier, n] of Object.entries(byTier)) push(`  - \`${tier}\`: ${n}`);
+      push(`- **user_subscriptions:** ${reportSampleLabel(subs.length, ROW_CAP, countOf(subscriptionsRes))}`);
+      for (const [tier, n] of Object.entries(byTier)) push(`  - في العينة، \`${tier}\`: ${n}`);
     }
 
     const devCount = countOf(activeDevicesRes);
-    if (devCount !== null) push(`- **مستخدمون عندهم device نشط:** ${devCount}`);
+    if (fmtErr(activeDevicesRes)) push(`- **مستخدمون عندهم device نشط:** ${fmtErr(activeDevicesRes)}`);
+    else push(`- **مستخدمون عندهم device نشط (عدّ دقيق):** ${devCount ?? "العدد غير متاح"}`);
 
     const rolesErr = fmtErr(rolesRes);
-    if (!rolesErr) {
+    if (rolesErr) push(`- **User roles:** ${rolesErr}`);
+    else {
       const roles = rows<{ user_id: string; role: string }>(rolesRes);
       const byRole: Record<string, number> = {};
       for (const r of roles) byRole[r.role] = (byRole[r.role] ?? 0) + 1;
-      push(`- **User roles:** ${Object.entries(byRole).map(([r, n]) => `${r}=${n}`).join(", ") || "—"}`);
+      push(`- **User roles:** ${reportSampleLabel(roles.length, 1000)} — ${Object.entries(byRole).map(([r, n]) => `${r}=${n}`).join(", ") || "—"}`);
     }
 
     const lpErr = fmtErr(lessonProgressRes);
-    if (!lpErr) {
+    if (lpErr) push(`- **lesson_progress:** ${lpErr}`);
+    else {
       const lp = rows<{ user_id: string; lesson_id: string; status: string }>(lessonProgressRes);
       const completed = lp.filter((r) => r.status === "completed").length;
       const usersWithProgress = new Set(lp.map((r) => r.user_id)).size;
-      push(`- **lesson_progress:** ${lp.length} سجل، منهم ${completed} completed. مستخدمون عندهم progress: ${usersWithProgress}`);
+      push(`- **lesson_progress:** ${reportSampleLabel(lp.length, ROW_CAP, countOf(lessonProgressRes))}، في العينة: ${completed} completed. مستخدمون عندهم progress: ${usersWithProgress}`);
     }
 
     const ulsErr = fmtErr(userLessonStatusRes);
-    if (!ulsErr) {
+    if (ulsErr) push(`- **user_lesson_status:** ${ulsErr}`);
+    else {
       const uls = rows<{ status: string }>(userLessonStatusRes);
       const byStatus: Record<string, number> = {};
       for (const r of uls) byStatus[r.status] = (byStatus[r.status] ?? 0) + 1;
-      push(`- **user_lesson_status:** ${uls.length} سجل — ${Object.entries(byStatus).map(([s, n]) => `${s}=${n}`).join(", ")}`);
+      push(`- **user_lesson_status:** ${reportSampleLabel(uls.length, ROW_CAP, countOf(userLessonStatusRes))} — في العينة: ${Object.entries(byStatus).map(([s, n]) => `${s}=${n}`).join(", ")}`);
     }
 
     const stkErr = fmtErr(streaksRes);
-    if (!stkErr) {
+    if (stkErr) push(`- **Streaks:** ${stkErr}`);
+    else {
       const stk = rows<{ current_streak: number; longest_streak: number }>(streaksRes);
       const avgCur = stk.length ? (stk.reduce((s, r) => s + r.current_streak, 0) / stk.length).toFixed(2) : "0";
       const maxLong = stk.length ? Math.max(...stk.map((r) => r.longest_streak)) : 0;
-      push(`- **Streaks:** ${stk.length} مستخدم، متوسط current_streak=${avgCur}، أعلى longest_streak=${maxLong}`);
+      push(`- **Streaks:** ${reportSampleLabel(stk.length, ROW_CAP, countOf(streaksRes))}، في العينة: متوسط current_streak=${avgCur}، أعلى longest_streak=${maxLong}`);
     }
 
     const atErr = fmtErr(activityTimeRes);
-    if (!atErr) {
+    if (atErr) push(`- **Top 10 users by activity time:** ${atErr}`);
+    else {
       const at = rows<{ user_id: string; total_seconds: number }>(activityTimeRes);
-      push(`- **Top 10 users by activity time:**`);
+      push(`- **Top 10 users by activity time:** ${reportSampleLabel(at.length, 10)}`);
       for (const r of at) push(`  - \`${r.user_id.slice(0, 8)}…\` — ${(r.total_seconds / 60).toFixed(1)} دقيقة`);
     }
 
     const msErr = fmtErr(missionsAggRes);
-    if (!msErr) {
-      const ms = rows<{ status: string; score: number | null; evaluated_at: string | null }>(missionsAggRes);
+    if (msErr) push(`- **Mission submissions:** ${msErr}`);
+    else {
+      const ms = rows<{ status: string; score: number | null; evaluated_at: string | null; skipped?: unknown }>(missionsAggRes);
       const byStatus: Record<string, number> = {};
-      for (const r of ms) byStatus[r.status] = (byStatus[r.status] ?? 0) + 1;
-      const scored = ms.filter((r) => typeof r.score === "number");
+      for (const r of ms) { const kind = r.skipped === true ? "skipped" : r.status; byStatus[kind] = (byStatus[kind] ?? 0) + 1; }
+      const scored = ms.filter((r) => r.skipped !== true && typeof r.score === "number");
       const avg = scored.length ? (scored.reduce((s, r) => s + (r.score ?? 0), 0) / scored.length).toFixed(2) : "—";
-      push(`- **Mission submissions:** ${ms.length} إجمالي — ${Object.entries(byStatus).map(([s, n]) => `${s}=${n}`).join(", ")}`);
-      push(`  - متوسط الدرجة (للمقيّم): ${avg}`);
-      push(`  - submissions في حالة \`submitted\` ومستنية تقييم: ${byStatus.submitted ?? 0}`);
+      push(`- **Mission records (skipped is not a graded submission):** ${reportSampleLabel(ms.length, ROW_CAP, countOf(missionsAggRes))} — في العينة: ${Object.entries(byStatus).map(([s, n]) => `${s}=${n}`).join(", ")}`);
+      push(`  - متوسط الدرجة (للمقيّم في العينة): ${avg}`);
+      push(`  - submissions في العينة بحالة \`submitted\` ومستنية تقييم: ${byStatus.submitted ?? 0}`);
     }
 
     const leErr = fmtErr(learnerEventsRes);
-    if (!leErr) {
+    if (leErr) push(`- **learner_events:** ${leErr}`);
+    else {
       const le = rows<{ event_type: string }>(learnerEventsRes);
-      if (le.length === 0) push(`- **learner_events:** مفيش أحداث في النافذة المطلوبة.`);
+      if (le.length === 0) push(`- **learner_events:** ${reportSampleLabel(0, ROW_CAP, countOf(learnerEventsRes))}؛ لم ترجع القراءة أحداثًا.`);
       else {
         const byType: Record<string, number> = {};
         for (const e of le) byType[e.event_type] = (byType[e.event_type] ?? 0) + 1;
-        push(`- **learner_events:** ${le.length} إجمالي — ${Object.entries(byType).map(([t, n]) => `${t}=${n}`).join(", ")}`);
+        push(`- **learner_events:** ${reportSampleLabel(le.length, ROW_CAP, countOf(learnerEventsRes))} — في العينة: ${Object.entries(byType).map(([t, n]) => `${t}=${n}`).join(", ")}`);
       }
     }
 
     const kcCount = countOf(knowledgeChunksRes);
-    if (kcCount !== null) push(`- **knowledge_chunks (RAG vectors):** ${kcCount}`);
+    if (fmtErr(knowledgeChunksRes)) push(`- **knowledge_chunks (RAG vectors):** ${fmtErr(knowledgeChunksRes)}`);
+    else push(`- **knowledge_chunks (RAG vectors, عدّ دقيق):** ${kcCount ?? "العدد غير متاح"}`);
 
     const errErr = fmtErr(errorLogsRes);
-    if (!errErr) {
+    if (errErr) push(`- **client_error_logs آخر 7 أيام:** ${errErr}`);
+    else {
       const errs = rows<{ scope: string; message: string; created_at: string }>(errorLogsRes);
-      push(`- **client_error_logs آخر 7 أيام:** ${errs.length}`);
+      push(`- **client_error_logs آخر 7 أيام:** ${reportSampleLabel(errs.length, 50)}`);
       if (errs.length > 0) {
         const byScope: Record<string, number> = {};
         for (const e of errs) byScope[e.scope] = (byScope[e.scope] ?? 0) + 1;
@@ -373,7 +375,7 @@ export const generateDnaReport = createServerFn({ method: "POST" })
     }
 
     // ===== 7. Roadmap State =====
-    h2("7. Roadmap State (شامل)");
+    h2("7. Roadmap State (قراءة محدودة)");
     const rmErr = fmtErr(roadmapRes);
     if (rmErr) push(rmErr);
     else {
@@ -388,6 +390,7 @@ export const generateDnaReport = createServerFn({ method: "POST" })
         completed_at: string | null;
         created_at: string;
       }>(roadmapRes);
+      push(reportSampleLabel(items.length, 1000));
       const byPhase: Record<string, typeof items> = { A: [], B: [], C: [], D: [], inbox: [] };
       for (const it of items) (byPhase[it.phase] ??= []).push(it);
       const labels: Record<string, string> = {
@@ -418,15 +421,15 @@ export const generateDnaReport = createServerFn({ method: "POST" })
     h2("8. Conventions & Rules");
     push(`- **Lesson ID:** \`{pathId}-{moduleSlug}-{lessonSlug}\``);
     push(`- **Design tokens:** ممنوع تكتب لون مباشر زي \`text-white\` أو \`bg-black\`. استخدم semantic tokens من \`src/styles.css\` (\`bg-background\`, \`text-foreground\`, \`bg-primary\`, …).`);
-    push(`- **اللغة:** Egyptian Arabic — راجع \`mem://design/egyptian-arabic-prompt-rules\` لقواعد الـ TTS والكلمات الممنوعة.`);
-    push(`- **Paths lineup (dashboard order):** Business → Creator → Analyst → Automator → Builder — كلهم مكتملين ومنشورين. متقولش "coming soon" على أي واحد فيهم.`);
+    push(`- **اللغة:** الواجهة تدعم ar-EG وar-MSA وar-Gulf وen وفق locale ومفاتيح الترجمة المعتمدة.`);
+    push(`- **Paths lineup (dashboard order):** Business → Creator → Analyst → Automator → Builder. إتاحة كل مسار تُستمد من تعريفات المحتوى وصلاحيات المستخدم.`);
     push(`- **Path integration / visual journey map:** مؤجل لحد إشعار آخر.`);
     push(`- **Server functions:** \`createServerFn\` + \`requireSupabaseAuth\` للمحمي. عمرك ما تستخدم Supabase Edge Functions لـ app-internal logic.`);
     push(`- **Auth:** Google عبر Lovable broker، مش raw \`supabase.auth.signInWithOAuth("google")\`.`);
 
     // ===== 9. Next-up Investments =====
     h2("9. Next-up Investments");
-    push(`الـ Phase A debts (Admin Stats RPC, Pagination, learner_events) كلهم اتقفلوا. الـ debts/investments الجاية اتسجّلت كبنود في الـ roadmap — راجع القسم 7 أعلاه للقايمة الكاملة بحالتها الحالية.`);
+    push(`الـ Phase A debts (Admin Stats RPC, Pagination, learner_events) كلهم اتقفلوا. الـ debts/investments الجاية اتسجّلت كبنود في الـ roadmap — راجع القسم 7 أعلاه للبنود المسترجعة وحالتها ضمن حدود القراءة الموضّحة.`);
 
     // ===== 10. How to Continue =====
     h2("10. How to Continue (دليل تشغيلي)");
