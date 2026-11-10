@@ -1,3 +1,4 @@
+import { assertAdminRole as assertAdmin } from "@/lib/admin-role.server";
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
@@ -32,14 +33,6 @@ export interface RoadmapItem {
   updated_at: string;
 }
 
-async function assertAdmin(context: { supabase: any; userId: string }) {
-  const { data, error } = await context.supabase.rpc("has_role", {
-    _user_id: context.userId,
-    _role: "admin",
-  });
-  if (error) throw new Error("Authorization check failed");
-  if (!data) throw new Error("Forbidden: admin role required");
-}
 
 export const listRoadmapItems = createServerFn({ method: "GET" })
   .middleware([requireSupabaseAuth])

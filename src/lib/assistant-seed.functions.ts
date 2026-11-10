@@ -1,3 +1,4 @@
+import { assertAdminRole as assertAdmin } from "@/lib/admin-role.server";
 /**
  * Admin-only knowledge_chunks seed flow for the Assistant runtime.
  *
@@ -80,14 +81,6 @@ export interface SeedReport {
 /* Helpers — admin gate                                            */
 /* -------------------------------------------------------------- */
 
-async function assertAdmin(context: { supabase: any; userId: string }) {
-  const { data, error } = await context.supabase.rpc("has_role", {
-    _user_id: context.userId,
-    _role: "admin",
-  });
-  if (error) throw new Error("Authorization check failed");
-  if (!data) throw new Error("Forbidden: admin role required");
-}
 
 /* -------------------------------------------------------------- */
 /* Helpers — text extraction & chunking                            */
