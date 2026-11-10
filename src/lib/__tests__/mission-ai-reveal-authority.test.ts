@@ -9,6 +9,7 @@ const mocks = vi.hoisted(() => ({
   enforceRateLimit: vi.fn(),
   from: vi.fn(),
   updateError: null as null | { message: string },
+  applied: [] as Array<Record<string, unknown>>,
 }));
 
 vi.mock("@tanstack/react-start", () => ({
@@ -61,6 +62,7 @@ beforeEach(() => {
   mocks.updates.length = 0;
   mocks.eqCalls.length = 0;
   mocks.updateError = null;
+  mocks.applied.length = 0;
   mocks.row = {
     id: submissionId,
     user_id: "user-1",
@@ -68,22 +70,39 @@ beforeEach(() => {
     lesson_id: canonicalSource.lessonId,
     attempt_count: 2,
     status: "needs_revision",
+    updated_at: "2026-11-04T19:00:00.123456Z",
     submission_metadata: { nextStep: "Preserve me" },
   };
   mocks.from.mockImplementation(() => {
     const q: Record<string, unknown> = {};
+    const filters: Array<[string, unknown]> = [];
+    let pendingUpdate: Record<string, unknown> | undefined;
     q.select = vi.fn(() => q);
     q.eq = vi.fn((key: string, value: unknown) => {
       mocks.eqCalls.push([key, value]);
+      filters.push([key, value]);
       return q;
     });
-    q.maybeSingle = vi.fn(async () => ({ data: mocks.row, error: null }));
+    let writing = false;
+    const finish = () => {
+      if (writing && mocks.updateError) return { data: null, error: mocks.updateError };
+      const row = mocks.row;
+      if (!row || !filters.every(([key, value]) => row[key] === value)) return { data: null, error: null };
+      if (writing && pendingUpdate) {
+        mocks.row = { ...row, ...pendingUpdate };
+        mocks.applied.push(pendingUpdate);
+      }
+      return { data: structuredClone(mocks.row), error: null };
+    };
+    q.maybeSingle = vi.fn(async () => finish());
     q.update = vi.fn((payload: Record<string, unknown>) => {
+      writing = true;
+      pendingUpdate = payload;
       mocks.updates.push(payload);
       return q;
     });
     q.then = (resolve: (value: unknown) => unknown, reject?: (error: unknown) => unknown) =>
-      Promise.resolve({ error: mocks.updateError }).then(resolve, reject);
+      Promise.resolve(finish()).then(resolve, reject);
     return q;
   });
   mocks.resolveSource.mockResolvedValue(canonicalSource);
@@ -94,6 +113,54 @@ beforeEach(() => {
 });
 
 describe("revealModelMissionAnswer canonical locale contract", () => {
+  it.each(["resubmit", "evaluation claim", "completed evaluation", "feedback", "deleted", "owner", "mission", "lesson"])(
+    "a delayed reveal cannot replace a concurrent %s change",
+    async (change) => {
+      let started!: () => void;
+      const providerStarted = new Promise<void>(resolve => { started = resolve; });
+      let complete!: (value: { content: string }) => void;
+      const provider = new Promise<{ content: string }>(resolve => { complete = resolve; });
+      mocks.callAI.mockImplementationOnce(() => { started(); return provider; });
+      const pending = callReveal(request());
+      await providerStarted;
+      const row = structuredClone(mocks.row!);
+      if (change === "deleted") mocks.row = null;
+      else {
+        mocks.row = { ...row, updated_at: "2026-11-04T19:01:00.654321Z" };
+        if (change === "resubmit") Object.assign(mocks.row, { status: "submitted", attempt_count: 3, submission_text: "Improved submission" });
+        if (change === "evaluation claim") Object.assign(mocks.row, { status: "evaluating", submission_metadata: { claim: "current-evaluation" } });
+        if (change === "completed evaluation") Object.assign(mocks.row, { status: "passed", score: 100, feedback: "Accepted", submission_metadata: { nextStep: "Current feedback" } });
+        if (change === "feedback") Object.assign(mocks.row, { submission_metadata: { nextStep: "Preserve current feedback", feedbackRevision: 2 } });
+        if (change === "owner") mocks.row.user_id = "other-user";
+        if (change === "mission") mocks.row.mission_id = "other-mission";
+        if (change === "lesson") mocks.row.lesson_id = "other-lesson";
+      }
+      const current = structuredClone(mocks.row);
+      complete({ content: JSON.stringify({ modelAnswer: "Delayed example", note: "Delayed note" }) });
+      await expect(pending).rejects.toThrow();
+      expect(mocks.row).toEqual(current);
+      expect(mocks.applied).toEqual([]);
+    },
+  );
+
+  it("saves a delayed example when its captured row version still matches", async () => {
+    mocks.callAI.mockImplementationOnce(async () => {
+      await Promise.resolve();
+      return { content: JSON.stringify({ modelAnswer: "Confirmed example", note: "Useful note" }) };
+    });
+    expect(await callReveal(request())).toEqual({ modelAnswer: "Confirmed example", note: "Useful note" });
+    expect(mocks.applied).toHaveLength(1);
+    expect(mocks.row!.status).toBe("needs_revision");
+    expect(mocks.eqCalls).toContainEqual(["updated_at", "2026-11-04T19:00:00.123456Z"]);
+  });
+
+  it("refuses missing persisted row version before generating an answer", async () => {
+    delete mocks.row!.updated_at;
+    await expect(callReveal(request())).rejects.toThrow();
+    expect(mocks.callAI).not.toHaveBeenCalled();
+    expect(mocks.applied).toEqual([]);
+  });
+
   it.each([
     ["ar-EG", "العربية المصرية"],
     ["ar-MSA", "Modern Standard Arabic"],
