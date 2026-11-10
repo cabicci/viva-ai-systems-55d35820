@@ -45,7 +45,7 @@ export async function callDirectAssistantModel(
       detail: name === "TimeoutError" || name === "AbortError" ? "timeout" : "body_unreadable" };
   }
   const choice = body?.choices?.[0];
-  const answer = choice?.message?.content;
+  let answer = choice?.message?.content;
   const invalid = (detail: string): LlmResult =>
     ({ ok: false, status: 502, error: "ASSISTANT_PROVIDER_INVALID_RESPONSE", detail });
   if (choice?.finish_reason !== "stop") {
@@ -55,6 +55,23 @@ export async function callDirectAssistantModel(
   }
   if (choice?.message?.refusal != null) return invalid("refusal_present");
   if (typeof answer !== "string") return invalid("content_missing");
+  if (!parseAssistantAnswer(answer) && answer.length <= 24000) {
+    try {
+      const value = JSON.parse(answer);
+      const sources = value?.sourceIds;
+      if ((value?.grounding === "insufficient" || value?.grounding === "out_of_scope") &&
+          Array.isArray(sources) && sources.length <= 8 &&
+          new Set(sources).size === sources.length &&
+          sources.every(id => typeof id === "string" && id.trim() !== "" && id.length <= 512 && admittedSourceIds.includes(id))) {
+        // Refusals never use evidence. Only discard already-admitted IDs;
+        // the strict parser below still rejects every other invalid field.
+        const normalized = JSON.stringify({ ...value, sourceIds: [] });
+        if (parseAssistantAnswer(normalized)) answer = normalized;
+      }
+    } catch {
+      // Malformed provider JSON remains a contract failure.
+    }
+  }
   if (!parseAssistantAnswer(answer)) return invalid("schema_invalid");
   return { ok: true, answer: answer.trim() };
 }

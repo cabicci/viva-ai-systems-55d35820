@@ -26,6 +26,7 @@
 //   Fixed cost guards and source entitlements remain independent of balances.
 
 import { isValidSha256Digest, sha256CanonicalHex } from "./canonical-checksum.ts";
+import { decodeCardContentAccess } from "./content-access.ts";
 import AUTHORITATIVE_CORPUS_PACK from "./authoritative-corpus-lookup.packed.json" with { type: "json" };
 import CARD_MEMBERSHIP_JSON from "./current-card-membership.json" with { type: "json" };
 import CURRENT_CORPUS_PACK from "./current-corpus-approval.packed.json" with { type: "json" };
@@ -602,15 +603,23 @@ export function mustFailClosedForGrounding(
   return authoritativeCount <= 0 || citationCount <= 0;
 }
 
-function buildSystemPrompt(): string {
-  return `أنت مساعد منصة مسارات (masaarat.ai).
+function buildSystemPrompt(locale: string): string {
+  const languageInstructions: Record<string, string> = {
+    en: "Required response language: English (en). Write the entire answer in English. Do not answer in Arabic because surrounding instructions are Arabic.",
+    "ar-EG": "Required response language: Egyptian Arabic (ar-EG). Use natural Egyptian Arabic for the entire answer, retaining technical names when useful.",
+    "ar-MSA": "Required response language: Modern Standard Arabic (ar-MSA). Use formal Arabic for the entire answer, without dialect expressions.",
+    "ar-Gulf": "Required response language: Gulf Arabic (ar-Gulf). Use natural Gulf Arabic for the entire answer, without Egyptian dialect expressions.",
+  };
+  return `${languageInstructions[locale]}
+
+أنت مساعد منصة مسارات (masaarat.ai).
 
 ${UNTRUSTED_CONTENT_POLICY}
 
 ${ASSISTANT_ANSWER_POLICY}
 
 قواعدك:
-- رد بنفس لغة/لهجة طلب المتعلم (ar-EG عامية مصرية، ar-MSA فصحى، ar-Gulf خليجية، en إنجليزية).
+- التزم باللغة واللهجة المحددتين في أول هذه التعليمات لجميع الردود، بما فيها الرفض والتوضيح.
 - أسلوبك تعليمي، مختصر، عملي — مش أكاديمي.
 - نطاقك: المسار الحالي فقط، بكل محطاته وخطواته. لا تغيّر المسار استجابة للسؤال أو الحوار السابق.
 - **محتوى المسار المسترجع من السيرفر (داخل حدود UNTRUSTED) هو المصدر الوحيد للمفاهيم والحقائق التي تشرحها.**
@@ -831,18 +840,13 @@ export async function handleAssistantRuntimeRequest(
     p_user_id: auth.userId,
     p_card_id: resolvedPathId,
   });
-  const lessonAccess = entitlement.ok ? entitlement.data.lessons : null;
-  const entitledIds = lessonAccess && typeof lessonAccess === "object"
-    ? (lessonAccess as Record<string, unknown>).entitled_lesson_ids
-    : null;
+  const contentAccess = decodeCardContentAccess(entitlement, resolvedPathId);
   const cardLessons = CARD_LESSONS.get(`${resolvedLocale}|${resolvedPathId}`)!;
-  const trustedScope = entitlement.ok && entitlement.data.card_id === resolvedPathId;
-  const adminReview = trustedScope && entitlement.data.admin_review === true;
-  const entitledLessonIds = new Set<string>(adminReview ? cardLessons.keys() :
-    trustedScope && Array.isArray(entitledIds) && entitledIds.every((id) => typeof id === "string")
-      ? entitledIds : []);
+  const adminReview = contentAccess?.adminReview === true;
+  const entitledLessonIds = new Set<string>(adminReview
+    ? cardLessons.keys() : contentAccess?.entitledLessonIds ?? []);
   if (
-    !trustedScope ||
+    !contentAccess ||
     ![...cardLessons.keys()].some((id) => entitledLessonIds.has(id)) ||
     (resolvedLessonId !== null && !entitledLessonIds.has(resolvedLessonId))
   ) {
@@ -922,20 +926,16 @@ export async function handleAssistantRuntimeRequest(
         p_user_id: currentAccessUserId,
         p_card_id: resolvedPathId,
       });
-      if (!current.ok || !current.data || current.data.card_id !== resolvedPathId ||
-        typeof current.data.admin_review !== "boolean") return false;
+      const currentAccess = decodeCardContentAccess(current, resolvedPathId);
+      if (!currentAccess) return false;
       const requiredIds: unknown[] = [
         ...(resolvedLessonId === null ? [] : [resolvedLessonId]),
         ...authoritative.map((chunk) => chunk.lessonId),
       ];
       if (!requiredIds.every((id) => typeof id === "string" && cardLessons.has(id))) return false;
       // Only the current gateway response can authorize the existing admin policy.
-      if (current.data.admin_review === true) return true;
-      const lessons = current.data.lessons;
-      const ids = lessons && typeof lessons === "object"
-        ? (lessons as Record<string, unknown>).entitled_lesson_ids : null;
-      if (!Array.isArray(ids) || !ids.every((id) => typeof id === "string" && id.trim().length > 0)) return false;
-      const allowed = new Set<string>(ids);
+      if (currentAccess.adminReview) return true;
+      const allowed = new Set<string>(currentAccess.entitledLessonIds);
       return [...cardLessons.keys()].some((id) => allowed.has(id)) &&
         requiredIds.every((id) => typeof id === "string" && allowed.has(id));
     } catch {
@@ -1066,7 +1066,7 @@ export async function handleAssistantRuntimeRequest(
 
       if (!groundingFailClosed) {
         const retrievalBlock = buildEvidenceBlock(authoritative);
-        const systemPrompt = buildSystemPrompt();
+        const systemPrompt = buildSystemPrompt(resolvedLocale);
         const ctxBlock = buildContextBlock(learnerContext);
 
         const userPrompt = `سؤال المتعلم:
@@ -1246,46 +1246,7 @@ ${retrievalBlock}
   }
 
   // Recheck current content authority after generation, before any learner debit.
-  let finalContentAllowed = false;
-  try {
-    const currentEntitlement = await deps.billingRpc("assistant_card_content_access", {
-      p_user_id: userId,
-      p_card_id: resolvedPathId,
-    });
-    const currentData = currentEntitlement.ok ? currentEntitlement.data : null;
-    const currentScope = currentData !== null && typeof currentData === "object" &&
-      !Array.isArray(currentData) && currentData.card_id === resolvedPathId;
-    const currentLessons = currentData?.lessons;
-    const currentIds = currentLessons && typeof currentLessons === "object" && !Array.isArray(currentLessons)
-      ? (currentLessons as Record<string, unknown>).entitled_lesson_ids : null;
-    const currentAdminReview = currentScope && currentData?.admin_review === true;
-    const currentEntitledLessonIds = new Set<string>(currentAdminReview ? cardLessons.keys() :
-      currentScope && Array.isArray(currentIds) && currentIds.every((id) => typeof id === "string")
-        ? currentIds : []);
-    // This is the normalized subset supplied to the evidence builder,not raw matches or citations alone.
-    finalContentAllowed = currentScope &&
-      (resolvedLessonId === null || currentEntitledLessonIds.has(resolvedLessonId)) &&
-      authoritative.every((chunk) => typeof chunk.lessonId === "string" && currentEntitledLessonIds.has(chunk.lessonId));
-  } catch {
-    // An unavailable current decision cannot authorize returning the generated answer.
-  }
-  if (!finalContentAllowed) {
-    return jsonResponse(
-      {
-        ok: false,
-        error: "AI_ACCESS_DENIED",
-        reason: "card_content_not_entitled",
-        citations: [],
-        providersCalled: {
-          embedding: embeddingAttempted,
-          retrievalRpc: retrievalAttempted,
-          llm: llmAttempted,
-        },
-      },
-      403,
-      corsHeaders,
-    );
-  }
+  if (!(await hasCurrentContentAccess())) return contentAccessDenied();
 
   outcome = answerDecision!.grounding === "supported" ? "answered" : answerDecision!.grounding;
   replayProof = authoritative;
@@ -1324,11 +1285,10 @@ ${retrievalBlock}
     const current = await deps.billingRpc("assistant_card_content_access", {
       p_user_id: auth.userId, p_card_id: resolvedPathId,
     });
-    if (!current.ok || current.data.card_id !== resolvedPathId) return false;
-    const lessons = current.data.lessons as Record<string, unknown> | null;
-    const rawIds = lessons?.entitled_lesson_ids;
-    const allowed = new Set<string>(current.data.admin_review === true ? cardLessons.keys() :
-      Array.isArray(rawIds) && rawIds.every(id => typeof id === "string") ? rawIds : []);
+    const currentAccess = decodeCardContentAccess(current, resolvedPathId);
+    if (!currentAccess) return false;
+    const allowed = new Set<string>(currentAccess.adminReview
+      ? cardLessons.keys() : currentAccess.entitledLessonIds);
     if (resolvedLessonId !== null && !allowed.has(resolvedLessonId)) return false;
     if (![...cardLessons.keys()].some(id => allowed.has(id))) return false;
     if (!proof.length) return true;
