@@ -21,7 +21,11 @@ describe("signup confirmation email", () => {
       const direction = locale === "en" ? "ltr" : "rtl";
       const alignment = locale === "en" ? "left" : "right";
       expect(doc.body.getAttribute("dir")).toBe(direction);
-      const cells = doc.querySelectorAll("td[dir]");
+      doc.querySelectorAll("td[dir]").forEach((cell) => {
+        expect(cell.getAttribute("dir")).toBe(direction);
+        expect((cell as HTMLElement).style.textAlign).toBe(alignment);
+      });
+      const cells = doc.querySelectorAll('td[data-id="__react-email-column"][dir]');
       expect(cells.length).toBe(3);
       cells.forEach((cell) => {
         expect(cell.getAttribute("dir")).toBe(direction);

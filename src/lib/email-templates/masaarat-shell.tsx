@@ -14,7 +14,7 @@ import {
   Row,
   Section,
   Text,
-} from "@react-email/components";
+} from "react-email";
 
 const LOGO_URL = "https://masaarat.ai/brand/masaarat-logo-lockup.png";
 const CONTACT_URL = "https://masaarat.ai/contact";
