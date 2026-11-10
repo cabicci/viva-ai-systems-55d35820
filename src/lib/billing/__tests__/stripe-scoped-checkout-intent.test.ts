@@ -4,7 +4,12 @@ import { createLiveCheckout, type LiveDeps } from "@/lib/billing/live/stripe-liv
 // All data and services in this fixture are synthetic. No HTTP client is created.
 const actor = { id: "55555555-5555-4555-8555-555555555505", email: "m05@example.invalid" };
 type Scope = "kids" | "technical" | "academic";
-function fixture(scope: Scope, coded = false, retireOnBind = false) {
+function fixture(
+  scope: Scope,
+  coded = false,
+  retireOnBind = false,
+  automaticContext?: "matching" | "full-price",
+) {
   const attempts = new Map<string, any>();
   const sessions = new Map<string, any>();
   let expired = 0,
@@ -35,11 +40,11 @@ function fixture(scope: Scope, coded = false, retireOnBind = false) {
     },
   };
   const params = {
-    amount_minor: 30900,
+    amount_minor: automaticContext === "matching" ? 27810 : 30900,
     currency_code: "egp",
     market_code: "EG",
     billing_interval: "month",
-    discounted: false,
+    discounted: automaticContext === "matching",
     includes_assistant: true,
     gateway_customer_id: "cus_m05",
     gateway_product_id: `prod_m05_${scope}`,
@@ -52,8 +57,11 @@ function fixture(scope: Scope, coded = false, retireOnBind = false) {
     databaseLiveEnabled: async () => true,
     rpc: async <T>(name: string, body: Record<string, unknown>): Promise<T> => {
       if (name === `get_${scope}_stripe_checkout_context`) return { ...params } as T;
-      if (name === "select_commercial_discount") return { use_offer: true } as T;
-      if (name === "reserve_stripe_live_offer") return offer as T;
+      if (name === "reserve_stripe_live_offer") {
+        return (automaticContext
+          ? { use_offer: false, quote: { automatic_discount: true, offer_id: null, final_minor: 27810 } }
+          : offer) as T;
+      }
       if (name === "bind_stripe_live_offer") {
         bound++;
         return true as T;
@@ -172,7 +180,7 @@ function fixture(scope: Scope, coded = false, retireOnBind = false) {
           has_more: false,
           data: [{ price: params.gateway_price_id, quantity: 1 }],
         };
-        if (coded) {
+        if (coded && !automaticContext) {
           session.mode = "subscription";
           session.currency = "egp";
           session.metadata.offer_reservation_id = offer.id;
@@ -294,5 +302,24 @@ describe("M05 actual coded scoped caller", () => {
     expect(result.body.error).toBe("CHECKOUT_INTENT_SUPERSEDED");
     expect(result.body).not.toHaveProperty("url");
     expect(f.bound()).toBe(1);
+  });
+});
+
+describe("Kids automatic discount selection with a weaker code", () => {
+  it("uses the matching automatic price without binding a coded offer", async () => {
+    const f = fixture("kids", true, false, "matching");
+    expect((await f.checkout()).status).toBe(200);
+    expect(f.bound()).toBe(0);
+    expect(f.sessions.size).toBe(1);
+    const parameters = new URLSearchParams([...f.attempts.values()][0].parameters);
+    expect(parameters.get("line_items[0][price]")).toBe("price_m05_kids");
+    expect(parameters.has("discounts[0][promotion_code]")).toBe(false);
+  });
+
+  it("stops before creating a provider session when the context loses the discount", async () => {
+    const f = fixture("kids", true, false, "full-price");
+    expect((await f.checkout()).status).toBe(503);
+    expect(f.attempts.size).toBe(0);
+    expect(f.sessions.size).toBe(0);
   });
 });
