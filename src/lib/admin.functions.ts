@@ -3,6 +3,7 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import type { Database } from "@/integrations/supabase/types";
 import { z } from "zod";
+import { adminSubscriptionSchema, type AdminSubscriptionSnapshot } from "@/lib/billing/subscription-display";
 
 // IMPORTANT: do NOT import `@/integrations/supabase/client.server` at the top
 // level — server-fn modules only strip handler bodies from the client bundle.
@@ -68,16 +69,35 @@ export type AdminOverview = {
   activeToday: number;
   lessonsCompleted: number;
   missionsSubmitted: number;
-  proUsers: number;
+  subscriptionSnapshot: AdminSubscriptionSnapshot | null;
 };
+
+async function readSubscriptionSummary(context: {
+  supabase: SupabaseClient<Database>;
+  userId: string;
+}): Promise<AdminSubscriptionSnapshot | null> {
+  try {
+    const { data, error } = await context.supabase.rpc("commerce_command" as never, {
+      p_action: "admin_subscription_display",
+      p_data: {},
+    } as never);
+    if (error) return null;
+    const parsed = adminSubscriptionSchema.safeParse(data);
+    return parsed.success && parsed.data.actorUserId === context.userId ? parsed.data : null;
+  } catch {
+    return null;
+  }
+}
 
 export const getAdminOverview = createServerFn({ method: "GET" })
   .middleware([requireSupabaseAuth])
   .handler(async ({ context }): Promise<AdminOverview> => {
     await assertAdmin(context);
 
-    // Single SQL aggregation in Postgres (cheap, scales).
-    const { data, error } = await context.supabase.rpc("get_admin_overview");
+    const [{ data, error }, subscriptionSnapshot] = await Promise.all([
+      context.supabase.rpc("get_admin_overview"),
+      readSubscriptionSummary(context),
+    ]);
     if (error) throw new Error(`Failed to load admin overview: ${error.message}`);
     const row = (data ?? {}) as Record<string, number | string | null>;
     const n = (v: unknown) => Number(v ?? 0) || 0;
@@ -87,7 +107,7 @@ export const getAdminOverview = createServerFn({ method: "GET" })
       activeToday: n(row.active_today),
       lessonsCompleted: n(row.lessons_completed),
       missionsSubmitted: n(row.missions_submitted),
-      proUsers: n(row.pro_users),
+      subscriptionSnapshot,
     };
   });
 

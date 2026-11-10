@@ -4,6 +4,13 @@ import { isSafeAuthReturn, kidsSignupRedirect, parseAuthIntentSearch } from "./a
 const lesson = "/learn/builder/builder-m1-l1-what-is-llm";
 
 describe("safe learner authentication destinations", () => {
+  it("returns a learner to their account without changing locale", () => {
+    const search = parseAuthIntentSearch({ locale: "ar-EG", returnTo: "/account" });
+    expect(search).toMatchObject({ locale: "ar-EG", returnTo: "/account" });
+    expect(kidsSignupRedirect("https://masaarat.ai", search)).toBe(
+      "https://masaarat.ai/account?locale=ar-EG",
+    );
+  });
   it("retains a valid invitation email for signup and existing-account login", () => {
     expect(
       parseAuthIntentSearch({ locale: "ar-Gulf", email: "  Learner+invite@example.test  " }),

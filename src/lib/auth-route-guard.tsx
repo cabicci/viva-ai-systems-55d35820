@@ -20,11 +20,19 @@ function hasValidSession(session: { access_token?: string } | null | undefined):
  * before the route renders so a hydrated session is not mistaken for logged-out.
  */
 export async function requireAuthBeforeLoad() {
+  return requireAuthBeforeLoadWithIntent();
+}
+
+export async function requireAuthBeforeLoadWithIntent(loginSearch?: AuthIntentSearch) {
   if (typeof window === "undefined") return;
 
   const { data } = await supabase.auth.getSession();
   if (!hasValidSession(data.session)) {
-    throw redirect({ to: "/login", replace: true });
+    throw redirect({
+      to: "/login",
+      replace: true,
+      ...(loginSearch ? { search: parseAuthIntentSearch(loginSearch) } : {}),
+    });
   }
 }
 

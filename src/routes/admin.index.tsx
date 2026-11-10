@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { useEntitlement } from "@/lib/entitlements";
+import { useAuth } from "@/lib/auth-context";
+import { currentSubscriptionData, subscriptionCopy, type SubscriptionSummary, type DisplayLocale } from "@/lib/billing/subscription-display";
 
 import {
   getAdminOverview,
@@ -69,6 +71,8 @@ function AdminPage() {
 
 function AdminDashboard() {
   const { locale } = useLocale();
+  const { user } = useAuth();
+  const userId = user?.id ?? null;
   const overviewFn = useServerFn(getAdminOverview);
   const activityFn = useServerFn(getAdminActivity);
   const insightsFn = useServerFn(getAdminInsights);
@@ -77,10 +81,12 @@ function AdminDashboard() {
   const usersPageSize = 25;
 
   const overview = useQuery({
-    queryKey: ["admin-overview"],
+    queryKey: ["admin-overview", userId],
+    enabled: !!userId,
     queryFn: () => overviewFn(),
     refetchInterval: 60_000,
   });
+  const subscriptionData = currentSubscriptionData(overview.data?.subscriptionSnapshot ?? undefined, userId, overview.isError);
   const activity = useQuery({
     queryKey: ["admin-activity"],
     queryFn: () => activityFn(),
@@ -164,11 +170,21 @@ function AdminDashboard() {
             />
             <StatCard
               icon={Crown}
-              label="Pro users"
-              value={overview.data?.proUsers}
+              label={subscriptionCopy[locale].paidAccounts}
+              value={subscriptionData?.summary.activePaidAccounts}
               loading={overview.isLoading}
             />
           </div>
+          {subscriptionData ? (
+            <SubscriptionTotals summary={subscriptionData.summary} locale={locale} />
+          ) : !overview.isLoading ? (
+            <div role="alert" className="mt-4 flex flex-wrap items-center gap-3 text-sm">
+              <p>{subscriptionCopy[locale].unavailable}</p>
+              <Button variant="outline" size="sm" disabled={overview.isFetching} onClick={() => void overview.refetch()}>
+                {subscriptionCopy[locale].retry}
+              </Button>
+            </div>
+          ) : null}
         </section>
 
         {/* Recent activity */}
@@ -417,4 +433,38 @@ function formatRelative(iso: string | null | undefined): string {
   const day = Math.floor(hr / 24);
   if (day < 30) return `من ${day} يوم`;
   return d.toLocaleDateString("ar-EG");
+}
+
+export function SubscriptionTotals({
+  summary,
+  locale,
+}: {
+  summary: SubscriptionSummary;
+  locale: DisplayLocale;
+}) {
+  const copy = subscriptionCopy[locale];
+  return (
+    <div className="mt-4 space-y-2 text-sm">
+      <p>
+        {copy.paidSources}: {summary.activePaidSources}
+      </p>
+      <p>
+        {copy.invitations}: {summary.activeInvitationSources} · {copy.grants}:{" "}
+        {summary.activeGrantSources}
+      </p>
+      <p>
+        {copy.lifetimeCount}: {summary.activeLifetimeSources}
+      </p>
+      {Object.entries(summary.byArea).map(
+        ([area, counts]) =>
+          counts && (
+            <p key={area}>
+              {copy[area as keyof SubscriptionSummary["byArea"]]}: {counts.accounts} —{" "}
+              {copy.paidSources}: {counts.sources}
+            </p>
+          ),
+      )}
+      <p className="text-muted-foreground">{copy.countsNote}</p>
+    </div>
+  );
 }
