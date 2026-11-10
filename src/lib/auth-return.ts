@@ -1,4 +1,10 @@
-import { isAcademicAuthReturn, isLearnerAuthReturn, isTechnicalAuthReturn, parseAuthIntentSearch } from "@/lib/kids/auth-intent";
+import {
+  isAcademicAuthReturn,
+  isInvitationAuthReturn,
+  isLearnerAuthReturn,
+  isTechnicalAuthReturn,
+  parseAuthIntentSearch,
+} from "@/lib/kids/auth-intent";
 import { isSupportedLocale } from "@/lib/locale/resolve-locale";
 
 /** Recovery carries only validated navigation context, never a requested email or payment data. */
@@ -22,6 +28,14 @@ export function authReturnNavigation(raw: Record<string, unknown>) {
   if (search.intent === "kids") {
     return {
       to: "/kids/family" as const,
+      search: { locale: search.locale },
+      replace: true as const,
+    };
+  }
+  if (isInvitationAuthReturn(search.returnTo)) {
+    return {
+      to: "/invitations/$invitationId" as const,
+      params: { invitationId: search.returnTo.slice("/invitations/".length) },
       search: { locale: search.locale },
       replace: true as const,
     };

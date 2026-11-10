@@ -18,7 +18,8 @@ describe("email access contracts and isolated invitation delivery", () => {
     const signup = links.find((link) => link.pathname === "/signup")!;
     expect(signup.searchParams.get("email")).toBe("Invited+one@example.test");
     expect(signup.searchParams.get("locale")).toBe("ar-Gulf");
-    expect([...signup.searchParams.keys()]).toEqual(["locale", "email"]);
+    expect(signup.searchParams.get("returnTo")).toBe("/account");
+    expect([...signup.searchParams.keys()]).toEqual(["locale", "returnTo", "email"]);
     expect(content.html).not.toContain("https://masaarat.ai/login");
   });
   it("validates scopes, permanent access, duration and rejects user/role injection", () => {

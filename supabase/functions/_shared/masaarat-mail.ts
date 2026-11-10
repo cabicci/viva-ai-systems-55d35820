@@ -68,7 +68,7 @@ export function emailAccessInvitationContent(grant: {
       action: "Create your account",
     },
   }[locale];
-  const query = new URLSearchParams({ locale });
+  const query = new URLSearchParams({ locale, returnTo: "/account" });
   const email = grant.recipient_email?.trim();
   if (email && email.length <= 254 && /^[^\s<>@]+@[^\s<>@]+\.[^\s<>@]+$/.test(email))
     query.set("email", email);

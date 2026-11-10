@@ -23,7 +23,24 @@ type LearnerReturn =
   `/learn/${"intro" | "business" | "creator" | "analyst" | "automator" | "builder"}/${string}`;
 type AcademicReturn = `/academic/learn/${string}`;
 type TechnicalReturn = `/technical/learn/${string}`;
-type SafeReturn = (typeof SAFE_LINE_RETURNS)[number] | LearnerReturn | AcademicReturn | TechnicalReturn;
+type InvitationReturn = `/invitations/${string}`;
+type SafeReturn =
+  | (typeof SAFE_LINE_RETURNS)[number]
+  | LearnerReturn
+  | AcademicReturn
+  | TechnicalReturn
+  | InvitationReturn;
+const invitationIdSchema = z.string().uuid();
+
+export function isInvitationAuthReturn(value: unknown): value is InvitationReturn {
+  const prefix = "/invitations/";
+  return (
+    typeof value === "string" &&
+    value === value.trim() &&
+    value.startsWith(prefix) &&
+    invitationIdSchema.safeParse(value.slice(prefix.length)).success
+  );
+}
 
 export function isLearnerAuthReturn(value: unknown): value is LearnerReturn {
   return (
@@ -51,14 +68,18 @@ export function isTechnicalAuthReturn(value: unknown): value is TechnicalReturn 
   );
 }
 
-/** Only fixed local paths or plain lesson paths; never URLs, queries or encoded redirects.
+/** Only fixed local paths, plain lesson paths or UUID invitation paths.
+ * Reject URLs, queries and encoded redirects.
  * /build-logs always re-enters its mandatory server admin guard; it grants no access.
  */
 export function isSafeAuthReturn(value: unknown): value is SafeReturn {
   return (
     typeof value === "string" &&
     (SAFE_LINE_RETURNS.includes(value as (typeof SAFE_LINE_RETURNS)[number]) ||
-      isLearnerAuthReturn(value) || isAcademicAuthReturn(value) || isTechnicalAuthReturn(value))
+      isLearnerAuthReturn(value) ||
+      isAcademicAuthReturn(value) ||
+      isTechnicalAuthReturn(value) ||
+      isInvitationAuthReturn(value))
   );
 }
 
