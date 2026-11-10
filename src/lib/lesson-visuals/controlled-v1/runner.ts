@@ -292,6 +292,27 @@ export function runPreflight(): RunResult {
   };
 }
 
+/** A generated report is not proof that every required cell was accepted. */
+export function controlledAcceptanceErrors(
+  cells: Array<{ cellId: string }>,
+  receipts: Array<Pick<CellReceipt, "cellId" | "status" | "reason" | "controlledFailureInjected">>,
+): string[] {
+  const errors: string[] = [];
+  const expected = new Set(cells.map((cell) => cell.cellId));
+  if (cells.length === 0) errors.push("no required cells selected");
+  if (expected.size !== cells.length) errors.push("duplicate required manifest cell identity");
+  const seen = new Set<string>();
+  for (const receipt of receipts) {
+    if (!expected.has(receipt.cellId)) errors.push(`unexpected receipt cell ${receipt.cellId}`);
+    if (seen.has(receipt.cellId)) errors.push(`duplicate receipt cell ${receipt.cellId}`);
+    seen.add(receipt.cellId);
+    if (receipt.status !== "ACCEPTED") errors.push(`${receipt.cellId}: ${receipt.reason ?? receipt.status}`);
+    if (receipt.controlledFailureInjected) errors.push(`${receipt.cellId}: controlled failure was injected`);
+  }
+  for (const id of expected) if (!seen.has(id)) errors.push(`missing receipt cell ${id}`);
+  return errors;
+}
+
 export function runPilot(): RunResult {
   // Each pilot dispatch starts with a clean controlled-failure latch so the
   // intentional failure fires exactly once per pilot run.
@@ -300,9 +321,12 @@ export function runPilot(): RunResult {
   const pilotManifest = buildPilotManifest(classification);
   const receipts = pilotManifest.cells.map((cell) => runCell(cell, "pilot"));
   for (const r of receipts) writeReceipt(r);
+  const acceptanceErrors = controlledAcceptanceErrors(pilotManifest.cells, receipts);
 
   writeJson(`${ARTIFACTS_RECEIPTS_DIR}/pilot/_summary.json`, {
     generatedAt: new Date().toISOString(),
+    ok: acceptanceErrors.length === 0,
+    errors: acceptanceErrors,
     counts: receiptCounts(receipts),
     controlledFailureState: getControlledFailureState(),
     receipts,
@@ -310,6 +334,8 @@ export function runPilot(): RunResult {
 
   writeRunReport("pilot", {
     generatedAt: new Date().toISOString(),
+    ok: acceptanceErrors.length === 0,
+    errors: acceptanceErrors,
     counts: receiptCounts(receipts),
     controlledFailureState: getControlledFailureState(),
     cells: receipts.map((r) => ({ cellId: r.cellId, status: r.status, reason: r.reason })),
@@ -317,10 +343,10 @@ export function runPilot(): RunResult {
 
   return {
     mode: "pilot",
-    ok: true,
+    ok: acceptanceErrors.length === 0,
     summary: `pilot: ${receipts.length} cells, counts=${JSON.stringify(receiptCounts(receipts))}`,
     receipts,
-    errors: [],
+    errors: acceptanceErrors,
   };
 }
 
@@ -345,30 +371,31 @@ export function runFull400(confirmToken: string | undefined): RunResult {
 
   const receipts = manifest.cells.map((cell) => runCell(cell, "full-400"));
   for (const r of receipts) writeReceipt(r);
+  const acceptanceErrors = controlledAcceptanceErrors(manifest.cells, receipts);
 
   const unresolvedLedger = buildUnresolvedLedger(manifest);
   writeJson(`${ARTIFACTS_RECEIPTS_DIR}/full-400/_summary.json`, {
     generatedAt: new Date().toISOString(),
+    ok: acceptanceErrors.length === 0,
+    errors: acceptanceErrors,
     counts: receiptCounts(receipts),
     receipts,
   });
   writeRunReport("full-400", {
     generatedAt: new Date().toISOString(),
+    ok: acceptanceErrors.length === 0,
+    errors: acceptanceErrors,
     confirmToken,
     counts: receiptCounts(receipts),
     unresolvedCount: unresolvedLedger.entries.length,
   });
 
-  const anyControlledFailure = receipts.some((r) => r.controlledFailureInjected);
-
   return {
     mode: "full-400",
-    ok: !anyControlledFailure,
+    ok: acceptanceErrors.length === 0,
     summary: `full-400: ${receipts.length} cells, counts=${JSON.stringify(receiptCounts(receipts))}`,
     receipts,
-    errors: anyControlledFailure
-      ? ["controlled failure was injected during full-400 — this must never happen"]
-      : [],
+    errors: acceptanceErrors,
   };
 }
 
