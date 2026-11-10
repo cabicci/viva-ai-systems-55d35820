@@ -55,6 +55,9 @@ jobs:
       - name: Curriculum admission, student activities and native migration (isolated; no provider calls)
         run: bun run test:run -- src/lib/course-system/intake src/components/course-intake
 
+      - name: Canonical review retry and checkpoint safety (synthetic requests)
+        run: bun run test:run -- tests/adaptive-canonical
+
       - name: TypeScript check
         run: bunx tsc --noEmit
 

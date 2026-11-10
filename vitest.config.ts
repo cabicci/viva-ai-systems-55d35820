@@ -28,6 +28,7 @@ export default defineConfig({
       "src/**/*.{test,spec}.{ts,tsx}",
       "tests/lesson-visuals/contextual-v2/**/*.{test,spec}.{ts,tsx}",
       "tests/tools/**/*.{test,spec}.{ts,tsx}",
+      "tests/adaptive-canonical/**/*.{test,spec}.{ts,tsx}",
     ],
     css: false,
   },

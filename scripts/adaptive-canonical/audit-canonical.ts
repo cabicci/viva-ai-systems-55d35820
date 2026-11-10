@@ -1,12 +1,15 @@
+import { normalizeApiResult } from "./types.ts";
+import { inputFingerprint, CheckpointReviewRequired } from "./lib/input-identity.ts";
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import type { AuditResultLabel, LessonAuditEntry } from "./types.ts";
+import type { AuditResultLabel, LessonAuditEntry, ReviewInput } from "./types.ts";
 import {
   buildRunPlan,
   loadCheckpoint,
   loadPreviousEntries,
   mergeEntries,
   writeCheckpoint,
+  writePreservingFile,
 } from "./lib/checkpoint.ts";
 import {
   CANONICAL_DIR,
@@ -21,7 +24,7 @@ import {
   localCanonicalHeuristics,
 } from "./lib/extract.ts";
 import { acquireLock, forceUnlock, releaseLock } from "./lib/lock.ts";
-import { isRetryableError, reviewTimeoutMs, withRetry, withTimeout } from "./lib/retry.ts";
+import { ReviewUncertainError, ReviewRejectedError, reviewTimeoutMs, withRetry, withTimeout } from "./lib/retry.ts";
 import { resolveReviewer } from "./reviewers/index.ts";
 
 interface CliArgs {
@@ -209,12 +212,12 @@ function enforceForeground(all: boolean, allowBackground: boolean) {
   }
 }
 
-async function auditLesson(
+async function prepareAuditLesson(
   lessonId: string,
   pathsIds: Set<string>,
   dryRun: boolean,
   reviewer: ReturnType<typeof resolveReviewer> | null,
-): Promise<LessonAuditEntry> {
+) {
   const pre = await preflightLesson(lessonId, pathsIds);
   const canonicalMd = await fs.readFile(pre.canonicalFile, "utf8");
   const local = localCanonicalHeuristics(lessonId, canonicalMd);
@@ -243,25 +246,40 @@ async function auditLesson(
     canonicalFile: pre.canonicalFile,
   };
 
+  let prodTs: string | null = null;
+  try { prodTs = await fs.readFile(pre.productionFile,"utf8"); }
+  catch (error) { if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error; }
+  const prod = pre.ok && prodTs !== null ? extractProductionText(prodTs) : {summary:"",quizMission:""};
+  const canon = pre.ok ? extractCanonicalSections(canonicalMd) : {summary:"",quizMission:"",metadata:""};
+  const input: ReviewInput = {lessonId, productionSummary:prod.summary, canonicalSummary:canon.summary,
+    productionQuizMission:prod.quizMission, canonicalQuizMission:canon.quizMission, metadataBlock:canon.metadata};
+  const requestIdentity = !dryRun && reviewer && pre.ok ? reviewer.requestIdentity(input) : null;
+  entry.inputIdentity = inputFingerprint({lessonId, productionSource:prodTs, canonicalSource:canonicalMd,
+    preflight:{ok:pre.ok,errors:pre.errors}, local, input, requestIdentity,
+    provider:reviewer?.name ?? "none",model:reviewer?.model ?? "",dryRun,
+    logic:[extractProductionText.toString(),extractCanonicalSections.toString(),localCanonicalHeuristics.toString(),mergeResult.toString()]});
+  entry.requestState = "not-started";
+  return {entry,pre,local,input,requestIdentity};
+}
+
+async function auditLesson(
+  lessonId: string,
+  pathsIds: Set<string>,
+  dryRun: boolean,
+  reviewer: ReturnType<typeof resolveReviewer> | null,
+  prepared?: Awaited<ReturnType<typeof prepareAuditLesson>>,
+): Promise<LessonAuditEntry> {
+  const context = prepared ?? await prepareAuditLesson(lessonId,pathsIds,dryRun,reviewer);
+  const {pre,local,input,requestIdentity} = context;
+  const entry = {...context.entry};
   if (!pre.ok) {
-    entry.result = "CONTENT FAIL";
-    entry.summary = "Preflight failed — API review skipped.";
-    return entry;
+    entry.result="CONTENT FAIL";entry.summary="Preflight failed — API review skipped.";return entry;
   }
-
-  const prodTs = await fs.readFile(pre.productionFile, "utf8");
-  const prod = extractProductionText(prodTs);
-  const canon = extractCanonicalSections(canonicalMd);
-
   if (dryRun || !reviewer) {
-    entry.result = mergeResult(pre.ok, local.hardBlockers, local.softNotes, null);
-    entry.summary =
-      entry.result === "CONTENT FAIL"
-        ? "Local preflight/heuristic checks failed."
-        : "Local preflight/heuristic checks passed (no API review).";
+    entry.result=mergeResult(pre.ok,local.hardBlockers,local.softNotes,null);
+    entry.summary=entry.result==="CONTENT FAIL"?"Local preflight/heuristic checks failed.":"Local preflight/heuristic checks passed (no API review).";
     return entry;
   }
-
   const timeoutMs = reviewTimeoutMs();
   let attemptCount = 0;
 
@@ -270,14 +288,7 @@ async function auditLesson(
       async () => {
         attemptCount += 1;
         return await withTimeout(
-          reviewer.reviewLesson({
-            lessonId,
-            productionSummary: prod.summary,
-            canonicalSummary: canon.summary,
-            productionQuizMission: prod.quizMission,
-            canonicalQuizMission: canon.quizMission,
-            metadataBlock: canon.metadata,
-          }),
+          (signal) => reviewer.reviewLesson(input, signal, requestIdentity ?? undefined),
           timeoutMs,
         );
       },
@@ -285,6 +296,7 @@ async function auditLesson(
 
     entry.attemptCount = attemptCount;
     entry.apiReviewed = true;
+    entry.requestState = "settled";
     entry.objectivePreservation = api.objectivePreservation;
     entry.oneAhaPreservation = api.oneAhaPreservation;
     entry.missionRubricPreservation = api.missionRubricPreservation;
@@ -299,15 +311,13 @@ async function auditLesson(
     entry.softNotes = [...entry.softNotes, ...api.softNotes];
     entry.fixRecommendations = api.fixRecommendations;
     entry.summary = api.summary;
-    entry.result = mergeResult(pre.ok, local.hardBlockers, local.softNotes, api);
+    entry.result = mergeResult(pre.ok, local.hardBlockers, local.softNotes, {...api,result:normalizeApiResult(api.result)});
   } catch (err) {
     entry.attemptCount = attemptCount || undefined;
     entry.apiError = String(err);
     entry.summary = `API review failed after retries: ${entry.apiError}`;
-    entry.result = isRetryableError(err) ? "ERROR_RETRY_REQUIRED" : "CONTENT FAIL";
-    if (!isRetryableError(err)) {
-      entry.hardBlockers.push(`api: ${entry.apiError}`);
-    }
+    entry.result = "ERROR_RETRY_REQUIRED";
+    entry.requestState = err instanceof ReviewRejectedError || err instanceof CheckpointReviewRequired ? "settled" : "uncertain";
   }
 
   return entry;
@@ -375,24 +385,6 @@ async function main() {
       process.exit(1);
     }
 
-    const prior =
-      args.resume || args.retryErrors || args.retryContentFails
-        ? await loadPreviousEntries()
-        : new Map<string, LessonAuditEntry>();
-    const plan = buildRunPlan(selected, prior, {
-      resume: args.resume,
-      retryErrors: args.retryErrors,
-      retryContentFails: args.retryContentFails,
-    });
-
-    if (plan.skipped.length) {
-      console.log(`Skipping ${plan.skipped.length} previously completed lesson(s).`);
-    }
-    if (!plan.queue.length) {
-      console.log("Nothing to audit in this run.");
-      return;
-    }
-
     let reviewer: ReturnType<typeof resolveReviewer> | null = null;
     let providerName = "none";
     let modelName = "";
@@ -407,6 +399,26 @@ async function main() {
       console.log("Dry-run mode — preflight + local heuristics only");
     }
 
+    // Always inspect prior evidence, even without --resume: unverified work must
+    // not be silently overwritten or trigger mass regeneration.
+    const prior = await loadPreviousEntries();
+    const prepared = new Map<string, Awaited<ReturnType<typeof prepareAuditLesson>>>();
+    for (const id of selected) prepared.set(id, await prepareAuditLesson(id,pathsIds,args.dryRun,reviewer));
+    const plan = buildRunPlan(selected, prior, {
+      identities: new Map([...prepared].map(([id, context])=>[id,context.entry.inputIdentity!])),
+      resume: args.resume,
+      retryErrors: args.retryErrors,
+      retryContentFails: args.retryContentFails,
+    });
+
+    if (plan.skipped.length) {
+      console.log(`Skipping ${plan.skipped.length} previously completed lesson(s).`);
+    }
+    if (!plan.queue.length) {
+      console.log("Nothing to audit in this run.");
+      return;
+    }
+
     const checkpoint = await loadCheckpoint();
     const runStartedAt =
       args.resume && checkpoint?.generatedAt
@@ -418,7 +430,16 @@ async function main() {
     for (let i = 0; i < plan.queue.length; i++) {
       const id = plan.queue[i];
       console.log(`[${i + 1}/${plan.queue.length}] Auditing ${id}...`);
-      const entry = await auditLesson(id, pathsIds, args.dryRun, reviewer);
+      const context = prepared.get(id)!;
+      if (!args.dryRun && reviewer && context.pre.ok) {
+        const pending: LessonAuditEntry = {...context.entry, result:"ERROR_RETRY_REQUIRED",
+          requestState:"uncertain", apiError:"Request dispatch pending or in flight; reconcile before retry",
+          summary:"Request completion and billing not yet confirmed."};
+        await writeCheckpoint(mergeEntries(plan.prior,[...touched,pending]), {
+          provider:providerName,model:modelName,dryRun:args.dryRun,generatedAt:runStartedAt,renderReport,
+        });
+      }
+      const entry = await auditLesson(id, pathsIds, args.dryRun, reviewer, context);
       touched.push(entry);
       console.log(`  → ${entry.result}${entry.apiError ? ` (${entry.apiError.slice(0, 80)})` : ""}`);
 
@@ -431,6 +452,9 @@ async function main() {
         renderReport,
       });
 
+      if (entry.requestState === "uncertain") {
+        throw new ReviewUncertainError("Audit stopped: request completion/billing uncertain; checkpoint preserved for reconciliation");
+      }
       if (!args.dryRun && i < plan.queue.length - 1) await sleep(delayMs);
     }
 
@@ -443,13 +467,12 @@ async function main() {
       dryRun: args.dryRun,
       generatedAt: runStartedAt,
     });
-    await fs.writeFile(reportPath, report, "utf8");
+    await writePreservingFile(reportPath, report);
 
     const jsonPath = path.join(REPORTS_DIR, `API_AUDIT_${todayStamp()}.json`);
-    await fs.writeFile(
+    await writePreservingFile(
       jsonPath,
-      JSON.stringify({ generatedAt: runStartedAt, completedAt: new Date().toISOString(), entries: finalEntries }, null, 2),
-      "utf8",
+      JSON.stringify({ generatedAt: runStartedAt, completedAt: new Date().toISOString(), provider:providerName,model:modelName,dryRun:args.dryRun, entries: finalEntries }, null, 2),
     );
 
     const counts: Record<AuditResultLabel, number> = {
