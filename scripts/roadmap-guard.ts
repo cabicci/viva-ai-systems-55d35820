@@ -1,4 +1,5 @@
 import { lstatSync, readFileSync, realpathSync } from "node:fs";
+import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   captureLocalRoadmapState,
@@ -6,6 +7,7 @@ import {
   ROADMAP_MARKER_PATH,
 } from "./roadmap-state";
 
+/** Allow the export exception only when the package sits outside a Git checkout. */
 function isExportedBuild(): boolean {
   if (
     !process.argv.includes("--for-build") ||
@@ -15,16 +17,21 @@ function isExportedBuild(): boolean {
   ) {
     return false;
   }
-  if (
-    realpathSync(process.cwd()) !== realpathSync(fileURLToPath(new URL("../", import.meta.url)))
-  ) {
+  const packageRoot = realpathSync(fileURLToPath(new URL("../", import.meta.url)));
+  if (realpathSync(process.cwd()) !== packageRoot) {
     return false;
   }
-  try {
-    lstatSync(".git");
-    return false;
-  } catch (error) {
-    return (error as NodeJS.ErrnoException).code === "ENOENT";
+  let directory = packageRoot;
+  while (true) {
+    try {
+      lstatSync(join(directory, ".git"));
+      return false;
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== "ENOENT") return false;
+    }
+    const parent = dirname(directory);
+    if (parent === directory) return true;
+    directory = parent;
   }
 }
 

@@ -284,6 +284,15 @@ test("the exported build flag cannot skip a different working directory", () => 
   assert.doesNotMatch(result.stdout, /skipped/);
 });
 
+test("a package inside an ancestor Git checkout cannot skip roadmap binding", () => {
+  const ancestor = repo();
+  const nested = resolve(ancestor, "nested-package");
+  putBuildGuard(nested);
+  const result = runPackageScript(nested, "build");
+  assert.equal(result.status, 1);
+  assert.doesNotMatch(result.stdout, /skipped/);
+});
+
 test("a filename with Git pattern characters does not bind an unrelated index entry", () => {
   const dir = repo();
   const path = "src/[e]xample.ts";
