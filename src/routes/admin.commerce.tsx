@@ -9,61 +9,93 @@ import { commerceCommand } from "@/lib/commerce/commerce.functions";
 import { commerceCopy, accessState } from "@/lib/commerce/copy";
 import type { AdminData } from "@/lib/commerce/contracts";
 import { useLocale } from "@/lib/locale/locale-context";
+import { useAuth } from "@/lib/auth-context";
 import { Button } from "@/components/ui/button";
 import { AdminPayments } from "@/components/commerce/AdminPayments";
 import { AdminSettings } from "@/components/commerce/AdminSettings";
 import { AdminOffers } from "@/components/commerce/AdminOffers";
 import { AdminLiveOffers } from "@/components/commerce/AdminLiveOffers";
-import { adminOfferCopy, offerError } from "@/lib/commerce/admin-offer-copy";
+import { offerError } from "@/lib/commerce/admin-offer-copy";
 import { AdminGroups } from "@/components/commerce/AdminGroups";
 import { AdminEmailAccess } from "@/components/commerce/AdminEmailAccess";
 import { AdminFreeAccess } from "@/components/commerce/AdminFreeAccess";
-import { freeAccessCopy } from "@/lib/commerce/free-access";
-import { emailAccessCopy } from "@/lib/commerce/email-access";
+import {
+  commerceAdminNavigation,
+  COMMERCE_PAYMENT_FILTERS,
+  type CommerceAdminView,
+} from "@/lib/commerce/admin-navigation";
 import { Select } from "@/components/commerce/AdminShared";
 import { exportCommerce } from "@/lib/commerce/report";
 export const Route = createFileRoute("/admin/commerce")({
-  head: () => ({ meta: [{ name: "robots", content: "noindex, nofollow" }, { title: "Commerce administration | Masaarat" }, { name: "description", content: "Masaarat payment, access and reviewed Live discount administration." }, { property: "og:title", content: "Commerce administration | Masaarat" }, { property: "og:description", content: "Masaarat payment, access and reviewed Live discount administration." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }] }),
+  head: () => ({
+    meta: [
+      { name: "robots", content: "noindex, nofollow" },
+      { title: "Commerce administration | Masaarat" },
+      {
+        name: "description",
+        content: "Masaarat payment, access and reviewed Live discount administration.",
+      },
+      { property: "og:title", content: "Commerce administration | Masaarat" },
+      {
+        property: "og:description",
+        content: "Masaarat payment, access and reviewed Live discount administration.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+    ],
+  }),
   validateSearch: parsePaymentSearch,
   beforeLoad: ({ search }) => guardPaymentLink(requireAdminBeforeLoad, search.order, "admin"),
   component: CommerceAdminRoute,
 });
 function CommerceAdminRoute() {
   const { order } = Route.useSearch();
-  return <CommerceAdmin key={order ?? "all"} targetOrderId={order} />;
+  const { user } = useAuth();
+  const { locale } = useLocale();
+  if (!user) return <p role="status">{commerceAdminNavigation(locale).loading}</p>;
+  return (
+    <CommerceAdmin key={JSON.stringify([user.id, order])} actorId={user.id} targetOrderId={order} />
+  );
 }
-function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
+function CommerceAdmin({ actorId, targetOrderId }: { actorId: string; targetOrderId?: string }) {
   const { locale } = useLocale(),
     w = commerceCopy(locale),
     command = useServerFn(commerceCommand),
     qc = useQueryClient();
-  const [tab, setTab] = useState("payments"),
+  const [tab, setTab] = useState<CommerceAdminView>("payments"),
     [page, setPage] = useState(0),
     [search, setSearch] = useState(targetOrderId ?? ""),
     [filter, setFilter] = useState("all"),
     [busy, setBusy] = useState(false),
     [error, setError] = useState(""),
     [notice, setNotice] = useState("");
-  function openInvitations() {
-    setTab("email-access");
+  const navigation = commerceAdminNavigation(locale);
+  const selectedView = navigation.views[tab];
+  function selectView(view: CommerceAdminView) {
+    if (view === tab) return;
+    setTab(view);
     setPage(0);
+    setSearch(view === "payments" ? (targetOrderId ?? "") : "");
+    setFilter("all");
+    setError("");
+    setNotice("");
   }
   const result = useQuery({
-    queryKey: ["commerce-admin"],
+    queryKey: ["commerce-admin", actorId],
     queryFn: async () =>
       (await command({ data: { action: "admin_list", data: {} } })) as unknown as AdminData,
   });
   const running = useRef(false);
   async function run(action: string, data: unknown) {
-    if (running.current) return;
+    if (running.current || result.error) return;
     running.current = true;
     setBusy(true);
     setError("");
     setNotice("");
     try {
       const response = await command({ data: { action, data } });
-      await qc.invalidateQueries({ queryKey: ["commerce-admin"] });
-      await qc.invalidateQueries({ queryKey: ["commerce-admin-order"] });
+      await qc.invalidateQueries({ queryKey: ["commerce-admin", actorId] });
+      await qc.invalidateQueries({ queryKey: ["commerce-admin-order", actorId] });
       setNotice(w.saved);
       return response;
     } catch (err) {
@@ -91,37 +123,66 @@ function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
   return (
     <div className="min-h-dvh bg-background" dir={locale === "en" ? "ltr" : "rtl"}>
       <header className="flex flex-wrap justify-between gap-3 border-b p-4">
-        <h1 className="text-xl font-bold">{w.title}</h1>
+        <h1 className="text-xl font-bold">{navigation.title}</h1>
         <Link to="/admin" search={{ locale }} className="text-primary underline">
           {w.back}
         </Link>
       </header>
       <main className="mx-auto max-w-6xl space-y-6 px-4 py-6">
-        <nav className="flex flex-wrap gap-2">
-          {[
-            ["payments", w.payments],
-            ["groups", adminOfferCopy(locale).title],
-            ["email-access", emailAccessCopy(locale).title],
-            ["free-access", freeAccessCopy(locale).title],
-            ["settings", w.settings],
-            ["audit", w.audit],
-          ].map(([id, title]) => (
+        <nav aria-label={navigation.areaLabel} className="grid grid-cols-2 gap-2 md:grid-cols-4">
+          {navigation.areas.map(({ id, title, defaultView }) => (
             <Button
               key={id}
-              variant={tab === id ? "default" : "outline"}
-              onClick={() => {
-                setTab(id);
-                setPage(0);
-              }}
+              className="h-auto min-h-11 min-w-0 whitespace-normal px-2 text-center"
+              disabled={busy}
+              aria-pressed={selectedView.area === id}
+              variant={selectedView.area === id ? "default" : "outline"}
+              onClick={() => selectedView.area !== id && selectView(defaultView)}
             >
-              {title}
+              <span
+                className={
+                  selectedView.area === id ? "font-bold underline underline-offset-4" : undefined
+                }
+              >
+                {title}
+              </span>
             </Button>
           ))}
-          <Button variant="outline" onClick={() => void result.refetch()}>
-            {w.refresh}
-          </Button>
         </nav>
-        {tab !== "groups" && tab !== "email-access" && tab !== "free-access" && (
+        {selectedView.area !== "payments" && (
+          <nav aria-label={navigation.viewLabel} className="flex flex-wrap gap-2 border-b pb-4">
+            {(Object.keys(navigation.views) as CommerceAdminView[])
+              .filter((view) => navigation.views[view].area === selectedView.area)
+              .map((view) => (
+                <Button
+                  key={view}
+                  className="h-auto min-h-11 min-w-0 whitespace-normal px-2 text-center"
+                  disabled={busy}
+                  aria-pressed={tab === view}
+                  variant={tab === view ? "secondary" : "outline"}
+                  onClick={() => selectView(view)}
+                >
+                  <span
+                    className={tab === view ? "font-bold underline underline-offset-4" : undefined}
+                  >
+                    {navigation.views[view].title}
+                  </span>
+                </Button>
+              ))}
+          </nav>
+        )}
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div className="space-y-1">
+            <h2 className="text-lg font-semibold">{selectedView.title}</h2>
+            <p className="max-w-3xl text-sm text-muted-foreground">{selectedView.description}</p>
+          </div>
+          {tab !== "email-access" && tab !== "free-access" && (
+            <Button variant="outline" onClick={() => void result.refetch()}>
+              {w.refresh}
+            </Button>
+          )}
+        </div>
+        {(tab === "payments" || tab === "audit") && (
           <div className="flex flex-wrap gap-3">
             <input
               aria-label={w.search}
@@ -133,49 +194,45 @@ function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
               }}
               className="min-h-11 flex-1 rounded border bg-background px-3"
             />
-            <Select
-              label={w.select}
-              value={filter}
-              onChange={(value) => {
-                setFilter(value);
-                setPage(0);
-              }}
-              options={[
-                ["all", w.all],
-                ...[
-                  "pending",
-                  "awaiting_receipt",
-                  "confirmed",
-                  "rejected",
-                  "more_info",
-                  "cancelled",
-                  "active",
-                  "expired",
-                  "revoked",
-                  "scheduled",
-                  "sent",
-                  "accepted",
-                ].map((s) => [s, w[s as "pending"]] as const),
-              ]}
-            />
-            <Button
-              variant="outline"
-              disabled={!data}
-              onClick={() => data && download("Masaarat_Commerce_Export.csv", exportCommerce(data))}
-            >
-              {w.export}
-            </Button>
+            {tab === "payments" && (
+              <Select
+                label={w.select}
+                value={filter}
+                onChange={(value) => {
+                  setFilter(value);
+                  setPage(0);
+                }}
+                options={[
+                  ["all", w.all],
+                  ...COMMERCE_PAYMENT_FILTERS.map((s) => [s, w[s]] as const),
+                ]}
+              />
+            )}
+            {tab === "payments" && (
+              <Button
+                variant="outline"
+                disabled={!data || !!result.error}
+                onClick={() =>
+                  data && download("Masaarat_Commerce_Export.csv", exportCommerce(data))
+                }
+              >
+                {navigation.exportAvailable}
+              </Button>
+            )}
           </div>
         )}
         {tab !== "email-access" && tab !== "free-access" && (error || result.error) && (
           <p role="alert" className="text-destructive">
-            {error || w.disabled}
+            {error || navigation.loadFailed}
           </p>
         )}
         {notice && <p role="status">{notice}</p>}
+        {tab !== "email-access" && tab !== "free-access" && result.isPending && (
+          <p role="status">{navigation.loading}</p>
+        )}
         {tab === "email-access" && <AdminEmailAccess />}
         {tab === "free-access" && <AdminFreeAccess />}
-        {data && tab === "payments" && (
+        {data && !result.error && tab === "payments" && (
           <div className="flex items-center gap-3">
             <Button variant="outline" disabled={page === 0} onClick={() => setPage(page - 1)}>
               {w.back}
@@ -193,9 +250,10 @@ function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
           </div>
         )}
         {data && (
-          <>
+          <div hidden={!!result.error} className="space-y-4">
             {tab === "payments" && (
               <AdminPayments
+                actorId={actorId}
                 initialOrderId={targetOrderId}
                 data={data}
                 orders={orders.slice(page * 25, (page + 1) * 25)}
@@ -204,53 +262,32 @@ function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
                 busy={busy}
               />
             )}
-            {tab === "groups" && (
-              <AdminOffers data={data} run={run} busy={busy} onInvitations={openInvitations} />
+            {tab === "offers" && (
+              <AdminOffers
+                data={data}
+                run={run}
+                busy={busy}
+                onInvitations={() => selectView("email-access")}
+              />
             )}
-            {tab === "groups" && <AdminLiveOffers />}
+            {tab === "card-offers" && <AdminLiveOffers />}
             {tab === "groups" && (
-              <details>
-                <summary className="cursor-pointer text-sm text-muted-foreground">
-                  {adminOfferCopy(locale).advanced}
-                </summary>
-                <AdminGroups
-                  onInvitations={openInvitations}
-                  data={{
-                    ...data,
-                    invitations: data.invitations.filter(
-                      (i) =>
-                        `${i.email} ${i.package}`.toLowerCase().includes(search.toLowerCase()) &&
-                        (filter === "all" ||
-                          (filter === "pending" && !i.accepted_at) ||
-                          (filter === "accepted" && !!i.accepted_at) ||
-                          (filter === "sent" && i.send_status === "sent") ||
-                          (filter === "active" &&
-                            data.entitlements.some(
-                              (e) =>
-                                ((e.order_id === i.order_id && !!i.order_id) ||
-                                  data.grants.some(
-                                    (g) => g.id === e.grant_id && g.invitation_id === i.id,
-                                  )) &&
-                                accessState(e) === "active",
-                            )) ||
-                          (filter === "expired" &&
-                            new Date(i.deadline) <= new Date() &&
-                            !i.accepted_at) ||
-                          (filter === "rejected" &&
-                            data.orders.some(
-                              (o) => o.id === i.order_id && o.review_status === "rejected",
-                            )) ||
-                          (filter === "revoked" && !!i.revoked_at)),
-                    ),
-                  }}
-                  w={w}
-                  run={run}
-                  busy={busy}
-                />
-              </details>
+              <AdminGroups
+                onInvitations={() => selectView("email-access")}
+                data={data}
+                w={w}
+                run={run}
+                busy={busy}
+              />
             )}
             {tab === "settings" && (
-              <AdminSettings data={data} w={w} run={run} busy={busy} onInvitations={openInvitations} />
+              <AdminSettings
+                data={data}
+                w={w}
+                run={run}
+                busy={busy}
+                onInvitations={() => selectView("email-access")}
+              />
             )}
             {tab === "audit" && (
               <section aria-label={w.audit} className="space-y-3">
@@ -273,7 +310,7 @@ function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
                   ))}
               </section>
             )}
-          </>
+          </div>
         )}
       </main>
     </div>
