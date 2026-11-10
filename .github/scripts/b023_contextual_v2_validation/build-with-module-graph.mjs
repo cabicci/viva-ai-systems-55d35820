@@ -111,8 +111,8 @@ async function main() {
     productConfig: "vite.config.ts",
   };
   try {
-    runReviewedBuildGuards(packageJson.scripts?.build, (script) => {
-      execFileSync(bun, ["run", script], { cwd: repo, env: process.env, stdio: "inherit" });
+    runReviewedBuildGuards(packageJson.scripts?.build, (...args) => {
+      execFileSync(bun, ["run", ...args], { cwd: repo, env: process.env, stdio: "inherit" });
     });
     const { createBuilder } = await import(pathToFileURL(requireRepo.resolve("vite")).href);
     const plugin = createModuleGraphObserver({ repo, receive: (graph) => {
