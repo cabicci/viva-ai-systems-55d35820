@@ -2,7 +2,6 @@
 // Arbitrary package commands must be reviewed here before this harness executes them.
 const GUARDS = [
   ["assistant:verify"],
-  ["roadmap:guard", "--for-build"],
   ["contextual-visuals:verify"],
 ];
 export const REVIEWED_BUILD = [
@@ -14,6 +13,8 @@ export function runReviewedBuildGuards(buildScript, run) {
   if (buildScript !== REVIEWED_BUILD) {
     throw new Error("Build script differs from the reviewed B023 sequence; inspect rather than skipping a build step");
   }
+  // The instrumented CI build runs in a Git checkout.
+  run("roadmap:guard");
   for (const args of GUARDS) run(...args);
 }
 

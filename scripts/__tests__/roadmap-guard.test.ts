@@ -3,7 +3,6 @@ import { test, after } from "node:test";
 import { execFileSync, spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import {
-  copyFileSync,
   mkdtempSync,
   mkdirSync,
   readFileSync,
@@ -78,38 +77,14 @@ function repo() {
   );
   return dir;
 }
-function run(root: string, ...args: string[]) {
-  const child = spawnSync(process.execPath, ["--no-install", guard, ...args], {
+function run(root: string, extraEnv: NodeJS.ProcessEnv = {}) {
+  const child = spawnSync(process.execPath, ["--no-install", guard], {
     cwd: root,
-    encoding: "utf8",
-    env,
-  });
-  assert.equal(child.error, undefined);
-  return child;
-}
-function putBuildGuard(dir: string) {
-  mkdirSync(resolve(dir, "scripts"), { recursive: true });
-  copyFileSync(guard, resolve(dir, "scripts/roadmap-guard.ts"));
-  copyFileSync(resolve(here, "../roadmap-state.ts"), resolve(dir, "scripts/roadmap-state.ts"));
-  put(
-    dir,
-    "package.json",
-    JSON.stringify({
-      scripts: {
-        build: "bun run roadmap:guard --for-build",
-        "roadmap:guard": "bun run scripts/roadmap-guard.ts",
-      },
-    }),
-  );
-}
-function runPackageScript(dir: string, script: string, extraEnv?: NodeJS.ProcessEnv) {
-  const result = spawnSync(process.execPath, ["run", script], {
-    cwd: dir,
     encoding: "utf8",
     env: { ...env, ...extraEnv },
   });
-  assert.equal(result.error, undefined);
-  return result;
+  assert.equal(child.error, undefined);
+  return child;
 }
 function record(root: string) {
   const state = captureLocalRoadmapState(root);
@@ -248,49 +223,13 @@ const cases: [string, () => void][] = [
 ];
 for (const [name, fn] of cases) if (selected.test(name)) test(name, fn);
 
-test("an exported package build reports a skip while its direct guard fails", () => {
+test("the Git guard fails closed without usable Git metadata", () => {
   const dir = fixture();
-  putBuildGuard(dir);
-  const build = runPackageScript(dir, "build");
-  assert.equal(build.status, 0, build.stderr);
-  assert.match(build.stdout, /Roadmap binding skipped for exported source/);
-  assert.equal(runPackageScript(dir, "roadmap:guard").status, 1);
-});
-
-test("the build guard rejects scoped changes in a Git checkout", () => {
-  const dir = repo();
-  putBuildGuard(dir);
-  put(dir, "src/example.ts", "export const value=2;\n");
-  const build = runPackageScript(dir, "build");
-  assert.equal(build.status, 1);
-  assert.match(build.stderr, /Changed project files require their own changed roadmap record/);
-});
-
-test("the build guard rejects invalid or explicitly missing Git metadata", () => {
-  const dir = fixture();
-  putBuildGuard(dir);
-  const declared = runPackageScript(dir, "build", { GIT_DIR: resolve(dir, "missing-git") });
-  assert.equal(declared.status, 1);
-  assert.doesNotMatch(declared.stdout, /skipped/);
+  assert.equal(run(dir).status, 1);
+  const checkout = repo();
+  assert.equal(run(checkout, { GIT_DIR: resolve(checkout, "missing-git") }).status, 1);
   put(dir, ".git", "invalid synthetic Git metadata\n");
-  const corrupt = runPackageScript(dir, "build");
-  assert.equal(corrupt.status, 1);
-  assert.doesNotMatch(corrupt.stdout, /skipped/);
-});
-
-test("the exported build flag cannot skip a different working directory", () => {
-  const result = run(fixture(), "--for-build");
-  assert.equal(result.status, 1);
-  assert.doesNotMatch(result.stdout, /skipped/);
-});
-
-test("a package inside an ancestor Git checkout cannot skip roadmap binding", () => {
-  const ancestor = repo();
-  const nested = resolve(ancestor, "nested-package");
-  putBuildGuard(nested);
-  const result = runPackageScript(nested, "build");
-  assert.equal(result.status, 1);
-  assert.doesNotMatch(result.stdout, /skipped/);
+  assert.equal(run(dir).status, 1);
 });
 
 test("a filename with Git pattern characters does not bind an unrelated index entry", () => {
