@@ -28,6 +28,7 @@ export default defineConfig({
       "src/**/*.{test,spec}.{ts,tsx}",
       "tests/lesson-visuals/v1/**/*.{test,spec}.{ts,tsx}",
       "tests/lesson-visuals/controlled-v1/**/*.{test,spec}.{ts,tsx}",
+      "tests/tools/**/*.{test,spec}.{ts,tsx}",
     ],
     css: false,
   },
