@@ -34,23 +34,97 @@ export const commerceCommand = createServerFn({ method: "POST" })
       { p_action: data.action, p_data: data.data } as never,
     );
     if (error) throw new Error(error.message);
-    if (data.action === "quote" && result && typeof result === "object" && !Array.isArray(result)) {
-      const quote = result as Record<string, import("@/integrations/supabase/types").Json | undefined>;
-      if (quote.offer_id && quote.offer_kind !== "complimentary") {
-        const { liveRuntime } = await import("@/lib/billing/live/runtime.server");
-        const runtime = liveRuntime();
+    if (
+      (data.action === "quote" || data.action === "one_time_quote") &&
+      result &&
+      typeof result === "object" &&
+      !Array.isArray(result)
+    ) {
+      const quote = result as Record<
+        string,
+        import("@/integrations/supabase/types").Json | undefined
+      >;
+      const selection = data.data as {
+        package?: string;
+        market?: "EG" | "INTL";
+        billing_interval?: "month" | "year";
+        academicAssistant?: boolean;
+        kind?: string;
+        code?: string;
+      };
+      const topup = data.action === "one_time_quote" && selection.kind === "question_topup";
+      const packageKey =
+        data.action === "quote" ? selection.package : topup ? "question_topup" : null;
+      const market = topup ? "EG" : selection.market;
+      const interval = topup ? "one_time" : selection.billing_interval;
+      const currency = market === "EG" ? "EGP" : market === "INTL" ? "USD" : null;
+      const automaticKids =
+        packageKey === "kids" &&
+        !!selection.code?.trim() &&
+        quote.automatic_discount === true &&
+        quote.offer_id == null;
+      const offerId =
+        typeof quote.offer_id === "string" && quote.offer_kind !== "complimentary"
+          ? quote.offer_id
+          : null;
+
+      if (packageKey && (offerId || automaticKids)) {
         let available = false;
-        if (runtime.getEnv("STRIPE_BILLING_MODE")?.trim().toLowerCase() === "live"
-          && runtime.getEnv("STRIPE_LIVE_ENABLED") === "true" && await runtime.databaseLiveEnabled()) {
-          const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-          const selection = data.data as { package: string; market: string; billing_interval: string; academicAssistant?: boolean };
-          const mapped = await supabaseAdmin.from("stripe_live_offer_mappings").select("id")
-            .eq("offer_id", String(quote.offer_id)).eq("enabled", true).eq("package", selection.package)
-            .eq("market_code", selection.market).eq("billing_interval", selection.billing_interval)
-            .in("duration", ["once", "forever"]).limit(1);
-          available = !selection.academicAssistant && !mapped.error && !!mapped.data?.length;
+        // Manual renewals stay on the established manual term. The automatic
+        // Kids decision is rechecked in the coded Live checkout on confirmation.
+        if (
+          !selection.academicAssistant &&
+          quote.term_renewal !== true &&
+          currency &&
+          quote.currency === currency &&
+          typeof quote.final_minor === "number" &&
+          Number.isSafeInteger(quote.final_minor) &&
+          quote.final_minor > 0
+        ) {
+          try {
+            const { liveRuntime } = await import("@/lib/billing/live/runtime.server");
+            const runtime = liveRuntime();
+            if (
+              runtime.getEnv("STRIPE_BILLING_MODE")?.trim().toLowerCase() === "live" &&
+              runtime.getEnv("STRIPE_LIVE_ENABLED") === "true" &&
+              (await runtime.databaseLiveEnabled())
+            ) {
+              if (automaticKids) {
+                available = true;
+              } else if (offerId && market && interval) {
+                const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+                const mapped = await supabaseAdmin
+                  .from("stripe_live_offer_mappings")
+                  .select("duration,duration_in_months")
+                  .eq("offer_id", offerId)
+                  .eq("enabled", true)
+                  .eq("package", packageKey)
+                  .eq("market_code", market)
+                  .eq("currency", currency)
+                  .eq("billing_interval", interval)
+                  .in("duration", topup ? ["once"] : ["once", "repeating", "forever"])
+                  .order("version", { ascending: false })
+                  .limit(1);
+                available =
+                  !mapped.error &&
+                  !!mapped.data?.some((mapping) =>
+                    mapping.duration === "repeating"
+                      ? !topup &&
+                        Number.isInteger(mapping.duration_in_months) &&
+                        Number(mapping.duration_in_months) >= 1 &&
+                        Number(mapping.duration_in_months) <= 1200
+                      : (mapping.duration === "once" ||
+                          (!topup && mapping.duration === "forever")) &&
+                        mapping.duration_in_months === null,
+                  );
+              }
+            }
+          } catch {
+            // A payment-channel lookup failure does not invalidate a manual quote.
+            available = false;
+          }
         }
-        return { ...quote, live_stripe_available: available } as import("@/integrations/supabase/types").Json;
+        return { ...quote, live_stripe_available: available };
       }
     }
     if (data.action === "confirm" || data.action === "allocate") {
