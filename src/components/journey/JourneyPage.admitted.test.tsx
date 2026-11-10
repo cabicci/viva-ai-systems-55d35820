@@ -133,15 +133,17 @@ function screen() {
 describe("M14 journey page integration with excluded content stubs", () => {
   it("adds an admitted card with actual route and keeps static card", async () => {
     const result = screen();
-    await waitFor(() => expect(result.getByText("Synthetic admitted course")).toBeTruthy());
-    const card = result.container.querySelector(
-      '[data-journey-path="academic:intake:academic:synthetic:' + actor + '"]',
-    );
-    expect(card).toBeTruthy();
-    expect(card?.querySelector('a[href*="/courses/academic/synthetic"]')).toBeTruthy();
-    expect(
-      result.container.querySelector('[data-journey-path="technical:furniture"]'),
-    ).toBeTruthy();
+    // The loading placeholder has the same title. Wait for the linked card.
+    await waitFor(() => {
+      const card = result.container.querySelector(
+        '[data-journey-path="academic:intake:academic:synthetic:' + actor + '"]',
+      );
+      expect(card).toBeTruthy();
+      expect(card?.querySelector('a[href*="/courses/academic/synthetic"]')).toBeTruthy();
+      expect(
+        result.container.querySelector('[data-journey-path="technical:furniture"]'),
+      ).toBeTruthy();
+    });
   });
   it("shows private-read failure without removing other path cards or faking progress", async () => {
     state.read.mockRejectedValue(new Error("offline"));
