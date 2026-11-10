@@ -80,7 +80,7 @@ async function consumeRateLimit(
       resetAt: String(row?.reset_at ?? new Date().toISOString()),
     };
   } catch (e) {
-    console.error("[assistant-runtime] rate-limit exception", (e as Error).message);
+    console.error("[assistant-runtime] rate-limit exception");
     return { allowed: false, resetAt: new Date().toISOString() };
   }
 }
@@ -121,7 +121,7 @@ async function billingRpc(
       } catch {
         // Non-JSON error body — keep the generic message above.
       }
-      console.error(`[assistant-runtime] billing rpc ${fnName} failed`, res.status, message);
+      console.error("[assistant-runtime] billing rpc failed", res.status);
       return ["reserve_assistant_question", "settle_assistant_question", "assistant_question_provider_attempt"].includes(fnName)
         ? questionRpcFailure(message) : { ok: false, status: res.status, error: message };
     }
@@ -129,7 +129,7 @@ async function billingRpc(
     const data = (await res.json()) as Record<string, unknown> | null;
     return { ok: true, data: data ?? {} };
   } catch (e) {
-    console.error(`[assistant-runtime] billing rpc ${fnName} exception`, (e as Error).message);
+    console.error("[assistant-runtime] billing rpc exception");
     return { ok: false, status: 500, error: "Billing RPC unavailable" };
   }
 }
@@ -145,11 +145,8 @@ async function embedQuery(text: string, apiKey: string): Promise<number[] | null
       body: JSON.stringify({ model: EMBEDDING_MODEL, input: text }),
     });
     if (!res.ok) {
-      console.warn(
-        "[assistant-runtime] embed failed",
-        res.status,
-        (await res.text()).slice(0, 200),
-      );
+      await res.body?.cancel().catch(() => undefined);
+      console.warn("[assistant-runtime] embed failed", res.status);
       return null;
     }
     const json = await res.json();
@@ -157,7 +154,7 @@ async function embedQuery(text: string, apiKey: string): Promise<number[] | null
     if (!Array.isArray(v) || v.length !== EMBEDDING_DIM) return null;
     return v;
   } catch (e) {
-    console.warn("[assistant-runtime] embed exception", (e as Error).message);
+    console.warn("[assistant-runtime] embed exception");
     return null;
   }
 }
@@ -205,8 +202,8 @@ async function localeSemanticRetrieve(
       }),
     });
     if (!res.ok) {
-      const detail = (await res.text()).slice(0, 200);
-      console.warn("[assistant-runtime] locale semantic rpc failed", res.status, detail);
+      await res.body?.cancel().catch(() => undefined);
+      console.warn("[assistant-runtime] locale semantic rpc failed", res.status);
       return {
         ok: false,
         status: res.status >= 400 ? res.status : 502,
@@ -245,7 +242,7 @@ async function localeSemanticRetrieve(
       }));
     return { ok: true, chunks };
   } catch (e) {
-    console.warn("[assistant-runtime] locale semantic exception", (e as Error).message);
+    console.warn("[assistant-runtime] locale semantic exception");
     return { ok: false, status: 500, error: "Retrieval RPC exception" };
   }
 }

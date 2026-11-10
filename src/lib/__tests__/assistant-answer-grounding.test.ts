@@ -169,18 +169,27 @@ describe("answer grounding belongs to the current turn", () => {
     expect(f.deps.callLlm).toHaveBeenCalledTimes(2);
   });
 
-  it("enforces the contract through the real direct adapter and handler with a simulated HTTP response", async () => {
+  it.each([
+    { grounding: "insufficient", cite: false },
+    { grounding: "insufficient", cite: true },
+    { grounding: "out_of_scope", cite: true },
+  ])("returns a safe $grounding reply through the direct adapter (cites: $cite)", async ({ grounding, cite }) => {
     const f = fixture();
+    const decision = { grounding, answer: "Private provider refusal prose",
+      sourceIds: cite ? [f.chunks[0].sourceId] : [] };
     const request = vi.fn<typeof fetch>().mockResolvedValue(new Response(JSON.stringify({
-      choices: [{ finish_reason: "stop", message: { content: JSON.stringify({ grounding: "insufficient", answer: "No evidence.", sourceIds: [] }) } }],
+      choices: [{ finish_reason: "stop", message: { content: JSON.stringify(decision) } }],
     })));
     vi.mocked(f.deps.callLlm).mockImplementation((system, user, key, admitted) => callDirectAssistantModel(system, user, key, request, admitted));
     const response = await handleAssistantRuntimeRequest(f.request("Recipe?"), f.deps);
     const body = await response.json();
     expect(response.status).toBe(200);
     expect(body.answer).toBe(insufficientGroundingMessage("ar-EG"));
+    expect(body.answerGrounding).toBe(grounding);
     expect(body.citations).toEqual([]);
+    expect(JSON.stringify(body)).not.toContain(decision.answer);
     expect(request).toHaveBeenCalledTimes(1);
+    expect(f.deps.billingRpc).toHaveBeenCalledWith("settle_assistant_question", expect.objectContaining({ p_outcome: grounding }));
     const payload = JSON.parse(String(request.mock.calls[0][1]!.body));
     expect(payload.messages[0].content).toContain("CURRENT QUESTION");
     expect(payload.messages[0].content).toContain('grounding="insufficient"');

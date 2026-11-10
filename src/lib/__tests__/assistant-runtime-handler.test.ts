@@ -171,6 +171,7 @@ describe("current-card isolation and content entitlement", () => {
     expect(json.citations[0].sameLesson).toBe(false);
     expect(json.retrieval).toMatchObject({ cardScoped: true, lessonScoped: false, allowModuleFallback: false, resolvedPathId: current.pathId });
     expect(deps.localeSemanticRetrieve).toHaveBeenCalledWith(expect.any(Array), current.locale, current.pathId, null, null, null, false);
+    expect(vi.mocked(deps.callLlm).mock.calls[0]?.[0].split("\n")[0]).toContain(`(${current.locale}).`);
     expect(deps.billingRpc).toHaveBeenCalledWith("reserve_assistant_question", expect.objectContaining({ p_lesson: current.lessonId, p_user_id: "user-1" }));
   });
 
@@ -311,6 +312,7 @@ describe("current-card isolation and content entitlement", () => {
   it.each([
     { card_id: "builder", admin_review: true },
     { card_id: "analyst", admin_review: "true" },
+    { card_id: "analyst", lessons: { entitled_lesson_ids: REGISTERED_LESSON_IDS } },
     { card_id: "analyst", admin_review: false },
   ])("fails closed on mismatched or untrusted admin review signals: %j", async (data) => {
     const deps = buildDeps({ billingRpc: vi.fn(async () => ({ ok: true as const, data })) });
