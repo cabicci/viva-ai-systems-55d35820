@@ -37,7 +37,7 @@ export function AuthShell({
           <p className="mt-4 text-muted-foreground">{copy.platformIntro}</p>
         </div>
       </div>
-      <div className="flex min-w-0 flex-1 items-center justify-center px-4 py-8 sm:p-6">
+      <main id="main-content" tabIndex={-1} className="flex min-w-0 flex-1 items-center justify-center px-4 py-8 sm:p-6">
         <div className="w-full max-w-md">
           {showLanguageSelector && (
             <div className="mb-6 flex justify-end">
@@ -58,7 +58,7 @@ export function AuthShell({
           <p className="text-muted-foreground mt-2 mb-8">{subtitle}</p>
           {children}
         </div>
-      </div>
+      </main>
     </div>
   );
 }

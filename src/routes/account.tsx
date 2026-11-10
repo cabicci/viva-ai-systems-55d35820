@@ -224,7 +224,7 @@ function AccountContent() {
   return (
     <div className="min-h-dvh flex flex-col" dir={dir}>
       <Sidebar />
-      <main className="min-w-0 flex-1 px-4 sm:px-6 lg:px-10 py-8 max-w-5xl mx-auto w-full">
+      <main id="main-content" tabIndex={-1} className="min-w-0 flex-1 px-4 sm:px-6 lg:px-10 py-8 max-w-5xl mx-auto w-full">
         <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 mb-8 sm:flex sm:justify-between">
           <div className="min-w-0">
             <h1 className="text-3xl sm:text-4xl font-black tracking-tight">{t("account.title")}</h1>
