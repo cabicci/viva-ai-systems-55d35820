@@ -69,7 +69,6 @@ import {
 } from "./routes/instructionalComposition";
 import type { CellReceipt, ManifestCell, ProductionManifest, RunnerMode } from "./types";
 import { validateProductionManifest } from "./validateManifest";
-import { reconcileFailedOnlyIntoPilot } from "./reconcileFailedOnlyIntoPilot";
 
 function sha256HexOfBuffer(buf: Buffer): string {
   return createHash("sha256").update(buf).digest("hex").toUpperCase();
@@ -1142,87 +1141,13 @@ export function selectFailedCellIdsFromReceipts(all: CellReceipt[]): string[] {
     .sort();
 }
 
-/** Reprocesses only cells whose latest known receipt has status FAILED. */
-export function runFailedOnly(manifest: ProductionManifest = buildProductionManifest()): RunResult {
-  const all = collectAllReceipts();
-  const failedCellIds = selectFailedCellIdsFromReceipts(all);
-
-  const cellsById = new Map(manifest.cells.map((c) => [c.cellId, c]));
-  const toRerun = failedCellIds
-    .map((id) => cellsById.get(id))
-    .filter((c): c is ManifestCell => Boolean(c));
-
-  const receipts = toRerun.map((cell) => runCell(cell, "failed-only"));
-  for (const r of receipts) writeReceipt(r);
-
-  writeJson(`${ARTIFACTS_RECEIPTS_DIR}/failed-only/_summary.json`, {
-    generatedAt: new Date().toISOString(),
-    rerunCellIds: failedCellIds,
-    counts: receiptCounts(receipts),
-    receipts,
-  });
-  writeRunReport("failed-only", {
-    generatedAt: new Date().toISOString(),
-    rerunCellIds: failedCellIds,
-    counts: receiptCounts(receipts),
-  });
-
-  const acceptedRecoveries = receipts.filter((r) => r.status === "ACCEPTED").map((r) => r.cellId);
-  const stillFailed = receipts.filter((r) => r.status === "FAILED").map((r) => r.cellId);
-
-  if (stillFailed.length > 0) {
-    return {
-      mode: "failed-only",
-      ok: false,
-      summary: `failed-only: ${stillFailed.length} cell(s) remain FAILED after rerun`,
-      receipts,
-      errors: stillFailed.map((id) => `failed-only rerun did not accept ${id}`),
-    };
-  }
-
-  if (acceptedRecoveries.length === 0) {
-    return {
-      mode: "failed-only",
-      ok: true,
-      summary: `failed-only: reran 0 previously FAILED cell(s)`,
-      receipts,
-      errors: [],
-    };
-  }
-
-  const classification = loadClassification100();
-  const pilotManifest = buildPilotManifest(classification);
-  const reconciliation = reconcileFailedOnlyIntoPilot({
-    recoveredCellIds: acceptedRecoveries,
-    pilotManifest,
-  });
-
-  writeJson(`${ARTIFACTS_REPORTS_DIR}/failed-only-reconciliation-report.json`, {
-    generatedAt: new Date().toISOString(),
-    recoveredCellIds: acceptedRecoveries,
-    promotedCellIds: reconciliation.promotedCellIds,
-    noopCellIds: reconciliation.noopCellIds,
-    inventory: reconciliation.inventory,
-    errors: reconciliation.errors,
-  });
-
-  if (!reconciliation.ok) {
-    return {
-      mode: "failed-only",
-      ok: false,
-      summary: `failed-only: recovery rendered but canonical pilot reconciliation failed`,
-      receipts,
-      errors: reconciliation.errors,
-    };
-  }
-
-  return {
-    mode: "failed-only",
-    ok: true,
-    summary: `failed-only: reran ${receipts.length} cell(s); canonical pilot reconciled to ACCEPTED=${reconciliation.inventory.accepted} FAILED=${reconciliation.inventory.failed}`,
-    receipts,
-    errors: [],
-  };
+/** Retired unsafe entry: recovery was not bound to its original manifest.
+ * Keep an explicit no-side-effect failure for direct callers. Existing assets,
+ * canonical receipts and evidence remain untouched. No fallback generation.
+ */
+export function runFailedOnly(_manifest?: ProductionManifest): RunResult {
+  const reason = "controlled-v1 failed-only is retired: recovery was not bound to its source manifest. Existing assets and receipts are preserved; no recovery or generation was started.";
+  return { mode: "failed-only", ok: false, summary: reason, receipts: [], errors: [reason] };
 }
 
 export function runReportOnly(): RunResult {
