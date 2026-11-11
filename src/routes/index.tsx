@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
+import { FreeAccessAnnouncement } from "@/components/site/FreeAccessAnnouncement";
 import { LearningLineCards } from "@/components/site/LearningLines";
 import { PathStory } from "@/components/site/PathStory";
 import { getLineCopy } from "@/lib/learning-lines";
@@ -41,6 +42,7 @@ export function Index() {
         </div>
       </main>
       <Footer />
+      <FreeAccessAnnouncement />
     </div>
   );
 }

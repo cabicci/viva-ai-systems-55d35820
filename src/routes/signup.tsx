@@ -31,6 +31,7 @@ function SignupPage() {
   const [email, setEmail] = useState(search.email ?? "");
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
+  const [offerEmails, setOfferEmails] = useState(false);
   const [loading, setLoading] = useState(false);
 
   async function onSubmit(e: React.FormEvent) {
@@ -42,7 +43,11 @@ function SignupPage() {
       password,
       options: {
         emailRedirectTo: kidsSignupRedirect(window.location.origin, search),
-        data: { full_name: fullName.trim(), preferred_locale: locale },
+        data: {
+          full_name: fullName.trim(),
+          preferred_locale: locale,
+          ...(offerEmails ? { offer_email_consent: "signup-offer-email-v1" } : {}),
+        },
       },
     });
     setLoading(false);
@@ -94,6 +99,20 @@ function SignupPage() {
             minLength={6}
           />
         </div>
+        <label className="flex min-h-11 items-start gap-2 text-sm">
+          <input
+            className="mt-1"
+            type="checkbox"
+            checked={offerEmails}
+            onChange={(event) => setOfferEmails(event.currentTarget.checked)}
+          />
+          <span>
+            {t("auth.signup.offerEmails")}
+            <small className="block text-muted-foreground">
+              {t("auth.signup.offerEmailsHint")}
+            </small>
+          </span>
+        </label>
         <nav
           aria-label={t("auth.signup.policies")}
           className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm"

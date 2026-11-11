@@ -259,6 +259,105 @@ describe("campaign access, questions and email notices", () => {
     email_notices: true,
   });
 
+  describe("signup offer email consent", () => {
+    beforeEach(async () => {
+      await db.exec("ALTER TABLE auth.users ADD COLUMN raw_app_meta_data jsonb DEFAULT '{}'");
+      await db.exec(sql("drizzle/migrations/0060_signup_offer_email_consent.sql"));
+    });
+
+    async function signup(email: string, metadata: Record<string, unknown> = {}) {
+      const id = randomUUID();
+      await db.query(
+        `INSERT INTO auth.users(id,email,raw_user_meta_data,raw_app_meta_data)
+         VALUES($1,$2,$3::jsonb,'{"provider":"email"}')`,
+        [id, email, JSON.stringify(metadata)],
+      );
+      return id;
+    }
+
+    const confirm = (id: string) =>
+      db.query("UPDATE auth.users SET email_confirmed_at=now() WHERE id=$1", [id]);
+    const consent = (email: string) =>
+      value(
+        "SELECT (SELECT campaign_opted_in_at FROM billing.commerce_mail_preferences WHERE email=$1) v",
+        [email],
+      );
+    const affirmative = { offer_email_consent: "signup-offer-email-v1" };
+
+    it("activates a recorded affirmative choice only at the first email confirmation", async () => {
+      const email = "signup-opt-in@example.test";
+      const id = await signup(email, affirmative);
+      expect(await consent(email)).toBeNull();
+      const recorded = await value(
+        "SELECT raw_app_meta_data->'masaarat_signup_offer_email'->>'at' v FROM auth.users WHERE id=$1",
+        [id],
+      );
+      expect(recorded).toBeTruthy();
+      await confirm(id);
+      await actor(id);
+      expect(await control("preferences")).toEqual({ opted_in: true });
+      expect(new Date(await consent(email)).toISOString()).toBe(new Date(recorded).toISOString());
+      expect(await control("preferences", { opted_in: false })).toEqual({ opted_in: false });
+      await confirm(id);
+      expect(await control("preferences")).toEqual({ opted_in: false });
+    });
+
+    it("leaves the default and later user-metadata edits unsubscribed", async () => {
+      const email = "signup-no-choice@example.test";
+      const id = await signup(email);
+      await db.query("UPDATE auth.users SET raw_user_meta_data=$2::jsonb WHERE id=$1", [
+        id,
+        JSON.stringify(affirmative),
+      ]);
+      await confirm(id);
+      await actor(id);
+      expect(await control("preferences")).toEqual({ opted_in: false });
+      expect(await consent(email)).toBeNull();
+    });
+
+    it("binds consent to the original address and preserves delivery suppression", async () => {
+      const changed = await signup("original-address@example.test", affirmative);
+      await db.query("UPDATE auth.users SET email='new-address@example.test' WHERE id=$1", [
+        changed,
+      ]);
+      await confirm(changed);
+      expect(await consent("new-address@example.test")).toBeNull();
+
+      const email = "suppressed-signup@example.test";
+      await db.query(
+        "INSERT INTO billing.commerce_mail_preferences(email,suppressed) VALUES($1,true)",
+        [email],
+      );
+      await confirm(await signup(email, affirmative));
+      expect(await consent(email)).toBeNull();
+    });
+  });
+
+  it("publishes only the end time of an active platform-wide offer to visitors", async () => {
+    await db.exec(sql("drizzle/migrations/0061_free_access_public_announcement.sql"));
+    const read = () => value("SELECT public.get_free_access_announcement() v");
+    expect(await read()).toBeNull();
+    await actor(admin);
+    await free("create", opening());
+    expect(await read()).toBeNull();
+
+    const targets = await value(`SELECT jsonb_agg(t->>'id') v
+      FROM jsonb_array_elements(billing.free_access_targets()) t
+      WHERE t->'published'='true'::jsonb AND t->>'id' NOT LIKE 'ai:%'`);
+    const { id } = await free("create", { ...opening(), targets });
+    const publicRead = await recover(async () => {
+      await db.exec("SET LOCAL ROLE anon");
+      const result = (await db.query("SELECT public.get_free_access_announcement() v")).rows[0];
+      await db.exec("RESET ROLE");
+      return result;
+    });
+    expect(publicRead).toEqual({
+      v: { id, ends_at: expect.any(String), server_time: expect.any(String) },
+    });
+    await db.query("UPDATE billing.free_access_windows SET enabled=false WHERE id=$1", [id]);
+    expect(await read()).toBeNull();
+  });
+
   it("queues one opted-in announcement and one notice after an in-period signup is confirmed", async () => {
     const signup = randomUUID();
     await actor(user);
