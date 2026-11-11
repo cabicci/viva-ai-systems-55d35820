@@ -680,6 +680,211 @@ describe("campaign access, questions and email notices", () => {
       ),
     ).toBe(true);
   });
+  describe("paid time frozen during the campaign", () => {
+    beforeEach(async () => {
+      await db.exec(sql("drizzle/migrations/0059_campaign_paid_clock_freeze.sql"));
+    });
+
+    it("freezes a manual paid balance from opening and resumes the same allowance and usage", async () => {
+      await offer();
+      const { order } = await manualPurchase();
+      const ent = await value("SELECT id v FROM billing.commerce_entitlements WHERE order_id=$1", [
+        order.id,
+      ]);
+      await db.query(
+        "UPDATE billing.commerce_orders SET confirmed_at=now()-interval '2 days' WHERE id=$1",
+        [order.id],
+      );
+      await db.query(
+        "UPDATE billing.commerce_entitlements SET starts_at=now()-interval '2 days',ends_at=now()+interval '10 days' WHERE id=$1",
+        [ent],
+      );
+      const key = "commerce:" + ent;
+      const sync = () =>
+        db.query("SELECT billing.assistant_sync_periods($1,'ai','ai',NULL)", [user]);
+      const allowance = () =>
+        value(
+          `SELECT (SELECT to_jsonb(p) FROM billing.assistant_allowance_periods p
+         WHERE user_id=$1 AND source_key=$2 ORDER BY starts_at DESC LIMIT 1) v`,
+          [user, key],
+        );
+      const sources = () =>
+        value(
+          "SELECT jsonb_agg(source_key ORDER BY source_key) v FROM billing.assistant_source_specs($1,'ai','ai',NULL,now())",
+          [user],
+        );
+      await sync();
+      const before = await allowance();
+      await db.query("UPDATE billing.assistant_allowance_periods SET used=7 WHERE id=$1", [
+        before.id,
+      ]);
+      const request = randomUUID();
+      const fingerprint = "f".repeat(64);
+      const lesson = "intro-m1-l1-what-is-ai";
+      await actor(user, true);
+      await value(
+        "SELECT public.reserve_assistant_question($1,'ai','ai',$2,'ar-EG',NULL,$3,$4) v",
+        [user, lesson, request, fingerprint],
+      );
+      expect(
+        await value("SELECT allowance_id v FROM billing.assistant_requests WHERE request_id=$1", [
+          request,
+        ]),
+      ).toBe(before.id);
+      await actor(admin);
+      const campaign = await free("create", { ...opening(), targets: ["ai"] });
+      expect(await sources()).not.toContain(key);
+      expect(await sources()).toContain("free-window:" + campaign.id);
+      await actor(user, true);
+      await expect(
+        value("SELECT public.settle_assistant_question($1,$2,$3,'answered',$4) v", [
+          user,
+          request,
+          fingerprint,
+          JSON.stringify({ proof: [{ lessonId: lesson }] }),
+        ]),
+      ).rejects.toThrow("ASSISTANT_QUOTA_SOURCE_EXPIRED");
+      expect(
+        await value("SELECT public.settle_assistant_question($1,$2,$3,'system_failure','{}') v", [
+          user,
+          request,
+          fingerprint,
+        ]),
+      ).toMatchObject({ charged_units: 0 });
+      expect(await value("SELECT public.award_campaign_manual_time() v")).toEqual({ awarded: 1 });
+      expect(await value("SELECT public.award_campaign_manual_time() v")).toEqual({ awarded: 0 });
+      expect(
+        await value(
+          `SELECT a.freeze_from=w.starts_at AND a.freeze_until=w.ends_at AND
+          a.new_end-a.old_end=w.ends_at-w.starts_at v
+        FROM billing.campaign_manual_time_awards a JOIN billing.free_access_windows w ON w.id=a.window_id
+        WHERE a.frozen_entitlement_id=$1`,
+          [ent],
+        ),
+      ).toBe(true);
+      await db.query(
+        "UPDATE billing.free_access_windows SET ends_at=now()-interval '1 second' WHERE id=$1",
+        [campaign.id],
+      );
+      expect(await sources()).toContain(key);
+      expect(await sources()).not.toContain("free-window:" + campaign.id);
+      await sync();
+      const resumed = await allowance();
+      expect(resumed).toMatchObject({
+        id: before.id,
+        starts_at: before.starts_at,
+        unit_limit: before.unit_limit,
+        used: 7,
+      });
+      expect(Date.parse(resumed.ends_at)).toBeGreaterThan(Date.parse(before.ends_at));
+    });
+
+    it("keeps the whole AI plan's paid questions available during a single-path campaign", async () => {
+      await offer();
+      const { order } = await manualPurchase();
+      const ent = await value("SELECT id v FROM billing.commerce_entitlements WHERE order_id=$1", [
+        order.id,
+      ]);
+      await actor(admin);
+      const campaign = await free("create", opening());
+      await actor(user, true);
+      expect(await value("SELECT public.award_campaign_manual_time() v")).toEqual({ awarded: 1 });
+      expect(
+        await value(
+          "SELECT jsonb_agg(source_key) v FROM billing.assistant_source_specs($1,'ai','ai',NULL,now())",
+          [user],
+        ),
+      ).toEqual(expect.arrayContaining(["commerce:" + ent, "free-window:" + campaign.id]));
+    });
+
+    it("only pauses a manual purchase for the time after the paid term starts", async () => {
+      await actor(admin);
+      await free("create", { ...opening(), targets: ["ai"] });
+      await offer();
+      const { order } = await manualPurchase();
+      await actor(user, true);
+      expect(await value("SELECT public.award_campaign_manual_time() v")).toEqual({ awarded: 1 });
+      expect(
+        await value(
+          `SELECT a.freeze_from>=o.confirmed_at AND a.freeze_from>w.starts_at
+          AND a.new_end-a.old_end=w.ends_at-a.freeze_from v
+        FROM billing.campaign_manual_time_awards a JOIN billing.free_access_windows w ON w.id=a.window_id
+        JOIN billing.commerce_entitlements e ON e.id=a.frozen_entitlement_id JOIN billing.commerce_orders o ON o.id=e.order_id
+        WHERE e.order_id=$1`,
+          [order.id],
+        ),
+      ).toBe(true);
+    });
+
+    it("uses the same paid clock for an eligible Stripe term and keeps expiry separate from campaign questions", async () => {
+      await actor(admin);
+      const campaign = await free("create", {
+        ...opening(),
+        targets: ["ai"],
+        starts_at: new Date(Date.now() - 2 * 3_600_000).toISOString(),
+        ends_at: new Date(Date.now() + 2 * 3_600_000).toISOString(),
+      });
+      await actor(user, true);
+      await db.exec(
+        "INSERT INTO billing.stripe_live_control(singleton,live_enabled) VALUES(true,true) ON CONFLICT(singleton) DO UPDATE SET live_enabled=true",
+      );
+      const internal = randomUUID();
+      await db.query(
+        `INSERT INTO billing.subscriptions(id,user_id,plan_version_id,market_price_id,access_state,billing_state,
+            current_period_start,current_period_end,market_code,currency_code,billing_interval,idempotency_key)
+          SELECT $1,$2,v.id,m.id,'paid_active','active',date_trunc('second',now())-interval '1 hour',
+            date_trunc('second',now())+interval '1 day','EG','EGP','month','freeze-stripe-core'
+          FROM billing.market_prices m JOIN billing.plan_versions v ON v.id=m.plan_version_id
+           JOIN billing.plan_catalog p ON p.id=v.plan_id
+          WHERE p.plan_key='pro' AND v.billing_interval='month' AND m.market_code='EG' AND m.status='active' LIMIT 1`,
+        [internal, user],
+      );
+      await db.query(
+        `INSERT INTO billing.gateway_subscriptions(subscription_id,gateway_code,gateway_subscription_id,gateway_customer_id,status,stripe_environment)
+          VALUES($1,'stripe_us_live','sub_freeze','cus_freeze','active','live')`,
+        [internal],
+      );
+      await db.query(
+        `INSERT INTO billing.payment_transactions(subscription_id,user_id,gateway_code,gateway_transaction_id,
+          transaction_type,status,amount_minor,currency_code,idempotency_key,initiated_at,succeeded_at,stripe_environment)
+         VALUES($1,$2,'stripe_us_live','in_freeze','checkout','succeeded',1000,'EGP','freeze-stripe-payment',now(),now(),'live')`,
+        [internal, user],
+      );
+      const key = "ai:" + internal;
+      const sources = (after: boolean) =>
+        value(
+          `SELECT jsonb_agg(source_key ORDER BY source_key) v FROM billing.assistant_source_specs(
+          $1,'ai','ai',NULL,CASE WHEN $2::boolean THEN now()+interval '3 hours' ELSE now() END)`,
+          [user, after],
+        );
+      expect(await sources(false)).not.toContain(key);
+      const [job] = await value("SELECT public.claim_campaign_stripe_renewals() v");
+      expect(job).toMatchObject({ internalId: internal, scope: "core", invoiceId: "in_freeze" });
+      expect(
+        await value(
+          `SELECT a.freeze_from=s.current_period_start AND
+          a.gift_end=date_trunc('second',a.paid_end+(w.ends_at-a.freeze_from)) v
+         FROM billing.campaign_stripe_renewals a JOIN billing.free_access_windows w ON w.id=a.window_id
+         JOIN billing.subscriptions s ON s.id=a.internal_id WHERE a.id=$1`,
+          [job.id],
+        ),
+      ).toBe(true);
+      const step = (name: string, start = job.paidStart) =>
+        value(
+          "SELECT public.step_campaign_stripe_renewal($1,$2,$3,'sub_sched_freeze','price_freeze',$4) v",
+          [job.id, job.lease, name, start],
+        );
+      expect(await step("create")).toBe(true);
+      expect(await step("bind", job.paidStart - 1)).toBe(false);
+      expect(await step("bind")).toBe(true);
+      expect(await step("authorize")).toBe(true);
+      expect(await step("scheduled")).toBe(true);
+      expect(await sources(false)).toContain("free-window:" + campaign.id);
+      expect(await sources(false)).not.toContain(key);
+      expect(await sources(true)).toContain(key);
+      expect(await sources(true)).not.toContain("free-window:" + campaign.id);
+    });
+  });
 });
 async function offer(extra: Record<string, unknown> = {}) {
   await actor(admin);
