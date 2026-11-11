@@ -34,6 +34,8 @@ export const AUTH_UI_KEYS = [
   "auth.signup.footerHasAccount",
   "auth.signup.toast.success",
   "auth.signup.nameRequired",
+  "auth.signup.offerEmails",
+  "auth.signup.offerEmailsHint",
   "auth.forgot.title",
   "auth.forgot.subtitle",
   "auth.forgot.submit",

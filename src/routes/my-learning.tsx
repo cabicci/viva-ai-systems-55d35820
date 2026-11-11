@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { JourneyPage } from "@/components/journey/JourneyPage";
+import { FreeAccessAnnouncement } from "@/components/site/FreeAccessAnnouncement";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { AuthSessionGate } from "@/lib/auth-route-guard";
 import { useLocale } from "@/lib/locale/locale-context";
@@ -23,6 +24,7 @@ function MyJourney() {
   return (
     <AuthSessionGate loginSearch={{ locale, returnTo: "/my-learning" }}>
       <JourneyPage />
+      <FreeAccessAnnouncement />
     </AuthSessionGate>
   );
 }
