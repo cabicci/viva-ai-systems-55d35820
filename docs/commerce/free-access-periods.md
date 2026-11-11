@@ -82,7 +82,8 @@ accounts and mail transport.
 
 Migration `0057` adds a private campaign and subscription receipt and leases for
 the existing scheduled `account-welcome-job`. A pending receipt requires a paid
-Live period and rechecks account and risk state before scheduling. The worker
+Live period and rechecks account and risk state before scheduling. A payment
+made before campaign close remains eligible when the worker runs after close. The worker
 uses Stripe's schedule migration and reads back the three phases. A signed
 subscription update or the scheduled worker verifies entry into the gift
 phase before extending the corresponding platform entitlement. A matching

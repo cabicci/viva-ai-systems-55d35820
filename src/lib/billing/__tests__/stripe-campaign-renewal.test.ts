@@ -22,6 +22,7 @@ const job = {
   scope: "core",
   state: "pending",
   invoiceId,
+  campaignEnd: paidStart + 10 * 86_400,
   subscriptionId,
   customerId,
   paidEnd,
@@ -108,6 +109,7 @@ const invoice = {
   customer: customerId,
   status: "paid",
   amount_paid: 5000,
+  status_transitions: { paid_at: paidStart + 1 },
   amount_remaining: 0,
   currency: "usd",
   parent: { subscription_details: { subscription: subscriptionId } },
@@ -248,6 +250,11 @@ describe("campaign Stripe renewals", () => {
   it.each([
     ["foreign schedule", { ...paidSubscription, schedule: "sub_sched_other" }, invoice],
     ["unpaid invoice", paidSubscription, { ...invoice, amount_paid: 0 }],
+    [
+      "payment after the campaign",
+      paidSubscription,
+      { ...invoice, status_transitions: { paid_at: job.campaignEnd } },
+    ],
     ["test subscription", { ...paidSubscription, livemode: false }, invoice],
     ["canceled renewal", { ...paidSubscription, cancel_at_period_end: true }, invoice],
   ] as const)("leaves Stripe untouched for %s", async (_label, sub, payment) => {

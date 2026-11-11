@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -54,8 +54,10 @@ export function CampaignRenewalControl({ sourceKey }: { sourceKey: string }) {
   const [open, setOpen] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(false);
+  const queryClient = useQueryClient();
+  const queryKey = ["campaign-renewal", sourceKey];
   const status = useQuery({
-    queryKey: ["campaign-renewal", sourceKey],
+    queryKey,
     queryFn: () => campaignRenewalStatus(sourceKey),
     retry: false,
     staleTime: 30_000,
@@ -69,7 +71,8 @@ export function CampaignRenewalControl({ sourceKey }: { sourceKey: string }) {
     try {
       const result = await campaignRenewalStatus(sourceKey, true);
       if (!result.canceled) throw new Error("CAMPAIGN_RENEWAL_NOT_CANCELED");
-      await status.refetch();
+      await queryClient.cancelQueries({ queryKey });
+      queryClient.setQueryData(queryKey, result);
       setOpen(false);
     } catch {
       setError(true);

@@ -571,7 +571,7 @@ describe("campaign access, questions and email notices", () => {
 
   it("extends scoped access only for the same paid Live invoice and honors a refund", async () => {
     await actor(admin);
-    await free("create", opening());
+    const window = await free("create", opening());
     await actor(user, true);
     await db.exec(
       "INSERT INTO billing.stripe_live_control(singleton,live_enabled) VALUES(true,true) ON CONFLICT(singleton) DO UPDATE SET live_enabled=true",
@@ -584,6 +584,10 @@ describe("campaign access, questions and email notices", () => {
     await db.query(insert, [user, "sub_academictest", "test"]);
     await actor(user, true);
     await db.query(insert, [user, "sub_academiclive", "live"]);
+    await db.query(
+      "UPDATE billing.free_access_windows SET ends_at=now()-interval '1 second' WHERE id=$1",
+      [window.id],
+    );
     const jobs = await value("SELECT public.claim_campaign_stripe_renewals() v");
     expect(jobs).toHaveLength(1);
     const [job] = jobs;

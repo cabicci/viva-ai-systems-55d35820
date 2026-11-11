@@ -22,6 +22,7 @@ type RenewalProof = {
 type RenewalJob = Omit<RenewalProof, "scheduleId" | "priceId"> & {
   lease: string;
   invoiceId: string;
+  campaignEnd: number;
   state: "pending" | "scheduled";
   scheduleId: string | null;
   priceId: string | null;
@@ -488,6 +489,7 @@ function paidPeriod(
   const end = item?.current_period_end;
   const priceId = id(price);
   const interval = recurring.interval;
+  const paidAt = record(invoice.status_transitions).paid_at;
   if (
     !subscriptionMatches(subscription, job) ||
     subscription.status !== "active" ||
@@ -520,6 +522,9 @@ function paidPeriod(
     typeof invoice.amount_paid !== "number" ||
     !Number.isSafeInteger(invoice.amount_paid) ||
     invoice.amount_paid <= 0 ||
+    typeof paidAt !== "number" ||
+    !Number.isSafeInteger(paidAt) ||
+    paidAt >= job.campaignEnd ||
     invoice.paid_out_of_band === true ||
     invoice.currency !== price.currency ||
     !rows(record(invoice.lines).data).some(

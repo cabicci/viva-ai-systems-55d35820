@@ -1,3 +1,10 @@
+-- Include campaigns open at rollout and campaigns created thereafter.
+-- A delayed worker can honor a paid overlap after a campaign closes normally.
+ALTER TABLE billing.free_access_windows ADD COLUMN stripe_renewal_eligible boolean NOT NULL DEFAULT false;
+UPDATE billing.free_access_windows SET stripe_renewal_eligible=true WHERE ends_at>now();
+ALTER TABLE billing.free_access_windows ALTER COLUMN stripe_renewal_eligible SET DEFAULT true;
+--> statement-breakpoint
+
 -- Stripe Live campaign time is bound to a confirmed invoice and a single schedule.
 CREATE TABLE billing.campaign_stripe_renewals (
  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -8,6 +15,7 @@ CREATE TABLE billing.campaign_stripe_renewals (
  subscription_id text NOT NULL,
  customer_id text NOT NULL,
  invoice_id text NOT NULL,
+ campaign_end timestamptz NOT NULL,
  price_id text,
  paid_start timestamptz,
  paid_end timestamptz NOT NULL,
@@ -38,7 +46,7 @@ CREATE INDEX campaign_stripe_renewals_core ON billing.campaign_stripe_renewals(i
 CREATE VIEW billing.campaign_stripe_paid AS
  SELECT s.user_id,'core'::text AS scope,s.id AS internal_id,
    g.gateway_subscription_id AS subscription_id,g.gateway_customer_id AS customer_id,
-   p.gateway_transaction_id AS invoice_id,s.current_period_end AS paid_end
+   p.gateway_transaction_id AS invoice_id,s.current_period_start AS period_start,s.current_period_end AS paid_end
  FROM billing.subscriptions s
  JOIN billing.gateway_subscriptions g ON g.subscription_id=s.id
  JOIN LATERAL (
@@ -51,15 +59,15 @@ CREATE VIEW billing.campaign_stripe_paid AS
  WHERE s.access_state='paid_active' AND NOT s.cancel_at_period_end AND g.stripe_environment='live'
    AND g.gateway_code='stripe_us_live' AND g.status='active'
  UNION ALL
- SELECT s.user_id,'academic',NULL,s.subscription_id,s.customer_id,s.paid_invoice_id,s.ends_at
+ SELECT s.user_id,'academic',NULL,s.subscription_id,s.customer_id,s.paid_invoice_id,s.starts_at,s.ends_at
  FROM billing.academic_stripe_subscriptions s
  WHERE s.stripe_environment='live' AND s.status='active' AND NOT s.refunded
  UNION ALL
- SELECT s.user_id,'technical',NULL,s.subscription_id,s.customer_id,s.paid_invoice_id,s.ends_at
+ SELECT s.user_id,'technical',NULL,s.subscription_id,s.customer_id,s.paid_invoice_id,s.starts_at,s.ends_at
  FROM billing.technical_stripe_subscriptions s
  WHERE s.stripe_environment='live' AND s.status='active' AND NOT s.refunded
  UNION ALL
- SELECT s.parent_id,'kids',NULL,s.gateway_subscription_id,s.gateway_customer_id,s.latest_paid_invoice_id,s.paid_through
+ SELECT s.parent_id,'kids',NULL,s.gateway_subscription_id,s.gateway_customer_id,s.latest_paid_invoice_id,e.active_from,s.paid_through
  FROM public.kids_stripe_subscriptions s JOIN public.kids_family_entitlements e ON e.parent_id=s.parent_id
    AND e.entitlement_reference='stripe-live:'||s.gateway_subscription_id AND e.active_until=s.paid_through
  WHERE s.stripe_environment='live' AND s.status='active';
@@ -74,13 +82,14 @@ BEGIN
  IF billing.current_stripe_environment()<>'live' THEN RAISE EXCEPTION 'CAMPAIGN_STRIPE_LIVE_REQUIRED' USING ERRCODE='42501'; END IF;
  IF NOT billing.stripe_live_enabled() OR NOT pg_try_advisory_xact_lock(hashtextextended('campaign-stripe-renewals',0))
  THEN RETURN '[]'::jsonb; END IF;
- INSERT INTO billing.campaign_stripe_renewals(window_id,user_id,scope,internal_id,subscription_id,customer_id,invoice_id,paid_end,gift_end)
- SELECT w.id,p.user_id,p.scope,p.internal_id,p.subscription_id,p.customer_id,p.invoice_id,p.paid_end,
+ INSERT INTO billing.campaign_stripe_renewals(window_id,user_id,scope,internal_id,subscription_id,customer_id,invoice_id,campaign_end,paid_end,gift_end)
+ SELECT w.id,p.user_id,p.scope,p.internal_id,p.subscription_id,p.customer_id,p.invoice_id,w.ends_at,p.paid_end,
    date_trunc('second',p.paid_end+(w.ends_at-w.starts_at))
  FROM billing.campaign_stripe_paid p
  JOIN LATERAL (
    SELECT win.* FROM billing.free_access_windows win
-   WHERE win.enabled AND win.starts_at<=now() AND now()<win.ends_at
+   WHERE win.enabled AND win.stripe_renewal_eligible AND win.starts_at<=now()
+     AND p.period_start<win.ends_at AND p.paid_end>win.starts_at
      AND win.ends_at-win.starts_at>=interval '1 second'
      AND NOT EXISTS(SELECT 1 FROM billing.campaign_stripe_renewals a WHERE a.window_id=win.id AND a.subscription_id=p.subscription_id)
    ORDER BY win.starts_at,win.id LIMIT 1
@@ -105,7 +114,7 @@ BEGIN
  )
  SELECT coalesce(jsonb_agg(jsonb_build_object(
    'id',a.id,'lease',a.lease_id,'userId',a.user_id,'scope',a.scope,'internalId',a.internal_id,'subscriptionId',a.subscription_id,
-   'customerId',a.customer_id,'invoiceId',a.invoice_id,'paidEnd',extract(epoch FROM a.paid_end)::bigint,
+   'customerId',a.customer_id,'invoiceId',a.invoice_id,'campaignEnd',extract(epoch FROM a.campaign_end)::double precision,'paidEnd',extract(epoch FROM a.paid_end)::bigint,
    'giftEnd',extract(epoch FROM a.gift_end)::bigint,'state',a.state,'scheduleId',a.schedule_id,
    'priceId',a.price_id,'paidStart',extract(epoch FROM a.paid_start)::bigint,
    'createStarted',extract(epoch FROM a.create_started_at)::bigint
@@ -134,7 +143,7 @@ BEGIN
   IF a.state<>'pending' OR a.paid_end<=now()+interval '20 seconds' OR NOT billing.stripe_live_enabled()
    OR NOT billing.commercial_account_allowed(owner_id) OR billing.stripe_live_hold_exists(a.subscription_id,owner_id)
    OR NOT EXISTS(SELECT 1 FROM billing.free_access_windows w WHERE w.id=a.window_id AND w.enabled
-     AND w.starts_at<=now() AND now()<w.ends_at
+     AND w.stripe_renewal_eligible AND w.starts_at<=now() AND w.ends_at=a.campaign_end
      AND date_trunc('second',a.paid_end+(w.ends_at-w.starts_at))=a.gift_end)
    OR NOT EXISTS(SELECT 1 FROM billing.campaign_stripe_paid p WHERE p.subscription_id=a.subscription_id
      AND p.user_id=owner_id AND p.scope=a.scope AND p.customer_id=a.customer_id
