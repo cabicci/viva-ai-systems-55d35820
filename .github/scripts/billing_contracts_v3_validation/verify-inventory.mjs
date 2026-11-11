@@ -3,7 +3,7 @@ import { readFileSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-// Reviewed current inventory:30 suites/493 tests, including Live isolation and native schema proofs.
+// Reviewed current inventory: 36 suites/606 tests, including Live isolation and native schema proofs.
 export const billingInventory = new Map([
   ["automatic-trial-absence.test.ts", 4],
   ["billing-concurrency.integration.test.ts", 3],
@@ -18,10 +18,12 @@ export const billingInventory = new Map([
   ["billing-wiring.test.ts", 72],
   ["commercial-lock-order.native.test.ts", 4],
   ["commercial-policy-db.test.ts", 19],
+  ["invitation-auth-continuity.test.ts", 16],
   ["live-endpoint-dispatch.test.ts", 6],
   ["live-offer-operations.test.ts", 16],
   ["live-price-inventory.integration.test.ts", 1],
   ["native-rehearsal-contract.test.ts", 5],
+  ["stripe-campaign-renewal.test.ts", 12],
   ["stripe-commercial-purchases.test.ts", 21],
   ["stripe-environment.test.ts", 13],
   ["stripe-generation-decisions.test.ts", 13],
@@ -34,6 +36,10 @@ export const billingInventory = new Map([
   ["stripe-refunds.integration.test.ts", 8],
   ["stripe-refunds.test.ts", 23],
   ["stripe-resubscription-generation.integration.test.ts", 10],
+  ["stripe-scoped-checkout-intent.test.ts", 12],
+  ["stripe-scoped-checkout-recovery.test.ts", 29],
+  ["subscription-display.functions.test.ts", 15],
+  ["subscription-display.test.ts", 29],
   ["test-stripe-lockdown.test.ts", 31],
 ]);
 
