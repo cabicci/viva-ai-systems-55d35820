@@ -507,8 +507,10 @@ async function scopedCheckout(
     p_billing_interval: body.billingInterval,
   });
   if (context.email !== user.email) throw new Error("PARENT_EMAIL_MISMATCH");
-  if (automaticAmount !== undefined &&
-      (context.discounted !== true || context.amount_minor !== automaticAmount))
+  if (
+    automaticAmount !== undefined &&
+    (context.discounted !== true || context.amount_minor !== automaticAmount)
+  )
     throw new Error("LIVE_DISCOUNT_SELECTION_UNVERIFIED");
   if (offer) {
     // Guardian/market checks above still run; replace family price with standard mapped base.

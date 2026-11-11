@@ -4,14 +4,32 @@ import { createLiveCheckout, type LiveDeps } from "@/lib/billing/live/stripe-liv
 // All data and services in this fixture are synthetic. No HTTP client is created.
 const actor = { id: "55555555-5555-4555-8555-555555555505", email: "m05@example.invalid" };
 type Scope = "kids" | "technical" | "academic";
+type Attempt = {
+  checkout_generation: string;
+  checkout_session_id: string | null;
+  idempotency_key: string;
+  parameters: string;
+  selection_parameters: unknown;
+  session_expires_at: string;
+  create_started_at: string;
+  legacy: boolean;
+  resolved?: boolean;
+};
+type FixtureSession = {
+  id: string;
+  status: string;
+  url: string;
+  metadata?: Record<string, string | null>;
+  [key: string]: unknown;
+};
 function fixture(
   scope: Scope,
   coded = false,
   retireOnBind = false,
   automaticContext?: "matching" | "full-price",
 ) {
-  const attempts = new Map<string, any>();
-  const sessions = new Map<string, any>();
+  const attempts = new Map<string, Attempt>();
+  const sessions = new Map<string, FixtureSession>();
   let expired = 0,
     bound = 0;
   const offer = {
@@ -58,9 +76,14 @@ function fixture(
     rpc: async <T>(name: string, body: Record<string, unknown>): Promise<T> => {
       if (name === `get_${scope}_stripe_checkout_context`) return { ...params } as T;
       if (name === "reserve_stripe_live_offer") {
-        return (automaticContext
-          ? { use_offer: false, quote: { automatic_discount: true, offer_id: null, final_minor: 27810 } }
-          : offer) as T;
+        return (
+          automaticContext
+            ? {
+                use_offer: false,
+                quote: { automatic_discount: true, offer_id: null, final_minor: 27810 },
+              }
+            : offer
+        ) as T;
       }
       if (name === "bind_stripe_live_offer") {
         bound++;
@@ -106,7 +129,9 @@ function fixture(
           !(retireOnBind && bound > 0)) as T;
       }
       if (name === "close_scoped_checkout_intent") {
-        attempts.get(String(body.p_generation)).resolved = true;
+        const row = attempts.get(String(body.p_generation));
+        if (!row) throw new Error("UNKNOWN_ATTEMPT");
+        row.resolved = true;
         return true as T;
       }
       throw new Error(`UNEXPECTED_RPC_${name}`);
