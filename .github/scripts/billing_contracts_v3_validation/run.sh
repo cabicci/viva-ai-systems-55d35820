@@ -55,7 +55,7 @@ reset_disposable_db() {
     return 1
   fi
   local reset_log="${REPORT_DIR}/db-reset.log"
-  if (cd "$DISPOSABLE_ROOT" && npx supabase db reset --yes) \
+  if (cd "$DISPOSABLE_ROOT" && supabase db reset --local --yes) \
     > "$reset_log" 2>&1; then
     prepare_disposable_prerequisites
     return $?
@@ -65,7 +65,7 @@ reset_disposable_db() {
   tail -n 40 "$reset_log" || true
   echo "[billing-v3-harness] retry after first reset failure" >> "$reset_log"
 
-  if (cd "$DISPOSABLE_ROOT" && npx supabase db reset --yes) \
+  if (cd "$DISPOSABLE_ROOT" && supabase db reset --local --yes) \
     >> "$reset_log" 2>&1; then
     echo "[billing-v3-harness] db reset recovered on retry"
     prepare_disposable_prerequisites
