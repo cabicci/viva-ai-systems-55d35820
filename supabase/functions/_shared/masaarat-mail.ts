@@ -134,6 +134,7 @@ function shell(
   action: string,
   path: string,
   name: string | null,
+  marketing = false,
 ) {
   const english = locale === "en";
   const url = escapeHtml(`https://masaarat.ai${path}`);
@@ -142,7 +143,17 @@ function shell(
     : english
       ? "Hello,"
       : "أهلًا بك،";
-  return `<!doctype html><html lang="${english ? "en" : "ar"}" dir="${english ? "ltr" : "rtl"}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;padding:24px 12px;background:#fdfefe;color:#243044;font-family:Tahoma,Arial,sans-serif"><table role="presentation" style="width:100%;max-width:560px;table-layout:fixed;margin:auto;border-collapse:collapse;background:#fdfefe;border:1px solid #dce6ed;border-radius:16px" cellpadding="0" cellspacing="0"><tr><td style="padding:30px 32px 18px;background:#e8f1f6;border-radius:16px 16px 0 0"><a href="https://masaarat.ai" style="color:#243044;text-decoration:none"><img src="${logo}" alt="مسارات | Masaarat" width="165" style="max-width:100%;height:auto;border:0;display:block"><span style="display:none">Masaarat</span></a></td></tr><tr><td dir="${english ? "ltr" : "rtl"}" style="padding:30px 32px;text-align:${english ? "left" : "right"}"><h1 style="font-size:24px;line-height:1.4;margin:0 0 18px;color:#243044">${escapeHtml(title)}</h1><p style="font-size:17px;line-height:1.8;margin:0 0 10px">${greeting}</p><p style="font-size:17px;line-height:1.8;margin:0 0 24px">${escapeHtml(body)}</p><a href="${url}" style="display:inline-block;background:#477eaa;color:#fff;padding:13px 22px;border-radius:10px;text-decoration:none;font-weight:bold">${escapeHtml(action)}</a><p style="font-size:13px;line-height:1.6;color:#566675;margin:24px 0 0"><a href="${url}" style="color:#356f9a;overflow-wrap:anywhere;word-wrap:break-word;word-break:break-word">${url}</a></p></td></tr><tr><td style="background:#f3f8f8;padding:18px 32px;border-radius:0 0 16px 16px;color:#566675;font-size:13px;line-height:1.7">${english ? "This is an account service message. Need help?" : "هذه رسالة خدمة تخص حسابك. تحتاج مساعدة؟"} <a href="https://masaarat.ai/contact?locale=${locale}" style="color:#356f9a">${english ? "Contact Masaarat" : "تواصل مع مسارات"}</a>.</td></tr></table></body></html>`;
+  const footer = marketing
+    ? english
+      ? "You received this Masaarat offer email."
+      : "وصلتك هذه الرسالة عن أحد عروض مسارات."
+    : english
+      ? "This is an account service message. Need help?"
+      : "هذه رسالة خدمة تخص حسابك. تحتاج مساعدة؟";
+  const preferences = marketing
+    ? ` · <a href="https://masaarat.ai/payments?locale=${locale}#mail-preferences" style="color:#356f9a">${english ? "Manage offer emails" : "إدارة رسائل العروض"}</a>`
+    : "";
+  return `<!doctype html><html lang="${english ? "en" : "ar"}" dir="${english ? "ltr" : "rtl"}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;padding:24px 12px;background:#fdfefe;color:#243044;font-family:Tahoma,Arial,sans-serif"><table role="presentation" style="width:100%;max-width:560px;table-layout:fixed;margin:auto;border-collapse:collapse;background:#fdfefe;border:1px solid #dce6ed;border-radius:16px" cellpadding="0" cellspacing="0"><tr><td style="padding:30px 32px 18px;background:#e8f1f6;border-radius:16px 16px 0 0"><a href="https://masaarat.ai" style="color:#243044;text-decoration:none"><img src="${logo}" alt="مسارات | Masaarat" width="165" style="max-width:100%;height:auto;border:0;display:block"><span style="display:none">Masaarat</span></a></td></tr><tr><td dir="${english ? "ltr" : "rtl"}" style="padding:30px 32px;text-align:${english ? "left" : "right"}"><h1 style="font-size:24px;line-height:1.4;margin:0 0 18px;color:#243044">${escapeHtml(title)}</h1><p style="font-size:17px;line-height:1.8;margin:0 0 10px">${greeting}</p><p style="font-size:17px;line-height:1.8;margin:0 0 24px">${escapeHtml(body)}</p><a href="${url}" style="display:inline-block;background:#477eaa;color:#fff;padding:13px 22px;border-radius:10px;text-decoration:none;font-weight:bold">${escapeHtml(action)}</a><p style="font-size:13px;line-height:1.6;color:#566675;margin:24px 0 0"><a href="${url}" style="color:#356f9a;overflow-wrap:anywhere;word-wrap:break-word;word-break:break-word">${url}</a></p></td></tr><tr><td style="background:#f3f8f8;padding:18px 32px;border-radius:0 0 16px 16px;color:#566675;font-size:13px;line-height:1.7">${footer} <a href="https://masaarat.ai/contact?locale=${locale}" style="color:#356f9a">${english ? "Contact Masaarat" : "تواصل مع مسارات"}</a>${preferences}.</td></tr></table></body></html>`;
 }
 function personalized(
   localeInput: unknown,
@@ -151,20 +162,169 @@ function personalized(
   body: string,
   action: string,
   path: string,
+  marketing = false,
 ) {
   const locale = mailLocale(localeInput);
   const name = safeName(nameInput);
   path = localizedPath(path, locale);
   const greeting = name ? `${locale === "en" ? "Hello" : "أهلًا"} ${name}،\n` : "";
   return {
-    text: `${greeting}${body}\n\nhttps://masaarat.ai${path}\n${locale === "en" ? "Help" : "للمساعدة"}: https://masaarat.ai/contact?locale=${locale}`,
-    html: shell(locale, title, body, action, path, name),
+    text: `${greeting}${body}\n\nhttps://masaarat.ai${path}\n${locale === "en" ? "Help" : "للمساعدة"}: https://masaarat.ai/contact?locale=${locale}${marketing ? `\n${locale === "en" ? "Manage offer emails" : "إدارة رسائل العروض"}: https://masaarat.ai/payments?locale=${locale}#mail-preferences` : ""}`,
+    html: shell(locale, title, body, action, path, name, marketing),
   };
 }
 export const legacyWelcomeContent = {
   subject: "مرحبًا بك في مسارات | Welcome to Masaarat",
   text: "تم تأكيد بريد حسابك في مسارات. حسابك جاهز لاستكشاف مجالات التعلّم ومتابعة تقدمك: https://masaarat.ai/my-learning\nللمساعدة: https://masaarat.ai/contact\n\nYour Masaarat email is confirmed. Your account is ready to explore learning areas and manage your progress: https://masaarat.ai/my-learning\nHelp: https://masaarat.ai/contact",
 };
+
+export type AccessNotice =
+  | {
+      kind: "campaign_start" | "campaign_signup" | "campaign_end";
+      title: string;
+      starts_at: string;
+      ends_at: string;
+      catalogues: string[];
+      questions: number;
+      marketing: boolean;
+    }
+  | {
+      kind: "coupon";
+      code: string;
+      package: string;
+      discount_kind: "complimentary" | "fixed" | "percent";
+      discount_value: number;
+      currency: string;
+      starts_at: string;
+      ends_at: string | null;
+      marketing: true;
+    }
+  | {
+      kind: "grant";
+      catalogues: string[];
+      catalogue_keys: string[];
+      scope_mode: string;
+      ends_at: string | null;
+      duration_days: number | null;
+      active: boolean;
+      acceptance_required: boolean;
+    };
+
+export function accessNoticeContent(notice: AccessNotice, localeInput: unknown) {
+  const locale = mailLocale(localeInput);
+  const english = locale === "en";
+  const date = (value: string) =>
+    new Intl.DateTimeFormat(english ? "en-GB" : "ar-EG", {
+      dateStyle: "long",
+      timeStyle: "short",
+      timeZone: "Africa/Cairo",
+    }).format(new Date(value));
+  const copy = {
+    "ar-EG": {
+      opening: "إتاحة مجانية على مسارات",
+      ending: "الإتاحة المجانية قربت تخلص",
+      coupon: "كوبون مسارات الخاص بيك",
+      grant: "إتاحة للتعلّم على مسارات",
+      learn: "ابدأ التعلّم",
+      redeem: "استخدم الكوبون",
+      account: "افتح حسابك",
+    },
+    "ar-MSA": {
+      opening: "إتاحة مجانية على مسارات",
+      ending: "اقترب انتهاء الإتاحة المجانية",
+      coupon: "كوبون مسارات الخاص بك",
+      grant: "إتاحة التعلّم على مسارات",
+      learn: "ابدأ التعلّم",
+      redeem: "استخدم الكوبون",
+      account: "افتح حسابك",
+    },
+    "ar-Gulf": {
+      opening: "إتاحة مجانية على مسارات",
+      ending: "الإتاحة المجانية قربت تنتهي",
+      coupon: "كوبون مسارات الخاص فيك",
+      grant: "إتاحة للتعلّم على مسارات",
+      learn: "ابدأ التعلّم",
+      redeem: "استخدم الكوبون",
+      account: "افتح حسابك",
+    },
+    en: {
+      opening: "Free access on Masaarat",
+      ending: "Your free access ends soon",
+      coupon: "Your Masaarat coupon",
+      grant: "Learning access on Masaarat",
+      learn: "Start learning",
+      redeem: "Use your coupon",
+      account: "Open your account",
+    },
+  }[locale];
+  let subject: string;
+  let body: string;
+  let action = copy.learn;
+  let path = "/my-learning";
+  if (notice.kind === "coupon") {
+    const amount =
+      notice.discount_kind === "complimentary"
+        ? "100%"
+        : notice.discount_kind === "percent"
+          ? `${notice.discount_value}%`
+          : new Intl.NumberFormat(english ? "en-GB" : "ar-EG", {
+              style: "currency",
+              currency: notice.currency,
+            }).format(notice.discount_value / 100);
+    const product = commerceProductLabel(notice.package, locale);
+    subject = copy.coupon;
+    body = english
+      ? `Use code ${notice.code} for ${amount} off ${product}. Valid from ${date(notice.starts_at)}${notice.ends_at ? ` until ${date(notice.ends_at)}` : " while redemptions are available"} (Cairo time).`
+      : `استخدم الكود ${notice.code} لخصم ${amount} على ${product}. متاح من ${date(notice.starts_at)}${notice.ends_at ? ` حتى ${date(notice.ends_at)}` : " حتى نفاد مرات الاستخدام"} بتوقيت القاهرة.`;
+    action = copy.redeem;
+    path = "/payments";
+  } else if (notice.kind === "grant") {
+    const scope =
+      notice.scope_mode === "all_published"
+        ? english
+          ? "all published courses"
+          : "كل المناهج المنشورة"
+        : notice.catalogues.join(english ? ", " : "، ") ||
+          (english ? "your assigned courses" : "المناهج الممنوحة لك");
+    const duration = notice.ends_at ? date(notice.ends_at) : notice.duration_days;
+    subject = copy.grant;
+    body = english
+      ? `You have been granted access to ${scope}.${duration ? ` Access ${notice.ends_at ? `ends at ${duration} (Cairo time)` : `lasts ${duration} days`}.` : ""} ${notice.acceptance_required && !notice.active ? "Sign in with this email and accept your invitation." : "Sign in using this email to see your courses."}`
+      : `تم منحك إتاحة لـ${scope}.${duration ? ` الإتاحة ${notice.ends_at ? `تنتهي في ${duration} بتوقيت القاهرة` : `مدتها ${duration} يومًا`}.` : ""} ${notice.acceptance_required && !notice.active ? "سجّل الدخول بنفس البريد واقبل الدعوة من حسابك." : "سجّل الدخول بنفس البريد لعرض مناهجك."}`;
+    if (!notice.active) {
+      action = copy.account;
+      path = "/account";
+    } else if (notice.catalogue_keys.length === 1) {
+      const key = notice.catalogue_keys[0];
+      if (/^academic:[A-Za-z0-9_-]+$/.test(key))
+        path = "/academic/courses/" + encodeURIComponent(key.slice(9)) + "/contents";
+      else if (key === "technical:furniture") path = "/technical/courses/furniture/contents";
+      else if (key === "kids") path = "/kids/curriculum";
+      else if (key === "ai:pro" || key === "ai:pro_plus") path = "/ai";
+    }
+  } else {
+    const ending = notice.kind === "campaign_end";
+    const scope = notice.catalogues.join(english ? ", " : "، ");
+    subject = ending ? copy.ending : copy.opening;
+    const time = `${date(notice.starts_at)} — ${date(notice.ends_at)}`;
+    body = english
+      ? `${notice.title}: ${scope}. Free access: ${time} (Cairo time).${notice.questions ? ` The campaign includes ${notice.questions} extra AI questions through its end.` : ""}${ending ? " Your progress is saved when free access ends." : ""}`
+      : `${notice.title}: ${scope}. فترة الإتاحة ${time} بتوقيت القاهرة.${notice.questions ? ` تشمل الفترة ${notice.questions} سؤالًا إضافيًا للمساعد حتى انتهائها.` : ""}${ending ? " تقدمك محفوظ بعد انتهاء الإتاحة." : ""}`;
+  }
+  return {
+    subject,
+    ...personalized(
+      locale,
+      null,
+      subject,
+      body,
+      action,
+      path,
+      "marketing" in notice && notice.marketing,
+    ),
+  };
+}
+
 export function welcomeContent(name: unknown, localeInput: unknown) {
   const locale = mailLocale(localeInput);
   const copy = {

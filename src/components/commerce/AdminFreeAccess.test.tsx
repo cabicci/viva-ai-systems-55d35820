@@ -10,6 +10,7 @@ vi.mock("@/lib/auth-context", () => ({
   useAuth: () => ({ user: { id: "synthetic-admin" }, loading: false }),
 }));
 vi.mock("@/lib/commerce/free-access.functions", () => ({ freeAccessCommand: mock.command }));
+vi.mock("@/lib/commerce/access-notice.functions", () => ({ accessNoticeCommand: vi.fn() }));
 let data: FreeAccessAdminData;
 beforeEach(() => {
   vi.clearAllMocks();
@@ -94,6 +95,9 @@ describe("free access administrator", () => {
   it("submits multiple paths/curricula together with fixed Cairo-derived UTC dates", async () => {
     setup();
     await fill();
+    fireEvent.change(screen.getByLabelText("Extra AI questions per account during the period"), {
+      target: { value: "25" },
+    });
     fireEvent.click(screen.getByRole("button", { name: "Create period" }));
     await waitFor(() =>
       expect(mock.command).toHaveBeenCalledWith({
@@ -103,6 +107,8 @@ describe("free access administrator", () => {
             targets: ["academic:AC-BUS", "ai:business"],
             starts_at: "2026-10-31T22:00:00.000Z",
             ends_at: "2026-11-14T22:00:00.000Z",
+            assistant_questions: 25,
+            email_notices: true,
           }),
         },
       }),

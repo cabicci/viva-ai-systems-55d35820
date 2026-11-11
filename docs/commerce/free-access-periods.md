@@ -30,9 +30,15 @@ changes cannot prolong a grant: readbacks use server-relative monotonic deadline
 
 ## Access composition
 
-- Paid tier, subscription/payment records and AI allowances are unchanged.
-- AI lesson/video evaluation gains only the explicitly selected lesson scope;
-  assistant runtime/RAG and builder tool privileges are unchanged.
+- AI lesson/video evaluation gains only the explicitly selected lesson scope.
+  When configured, the existing question ledger adds a one-time allowance shared
+  per account across the selected content. Its unused units expire with the
+  campaign. A date or limit edit preserves the number of units already used.
+  Existing lesson, RAG, guardian consent and assistant checks still apply.
+- A separate paid-time worker can append the campaign duration once to a
+  confirmed manual-payment subscription. This leaves the paid question
+  renewal window and order/payment evidence intact. Automatic card renewal
+  deferral requires a separate Stripe schedule implementation and verification.
 - Academic and Technical compose the new commercial alternative with existing
   authenticated, lifecycle, release and approved-locale checks.
 - Kids retains guardian, country, profile ownership, publication and consent
@@ -49,6 +55,25 @@ deadline, without resetting it on rerenders/remounts or discarding draft inputs
 after a successful refresh. Paid deliveries receive no new timer. Kids checks its
 protected SQL gate during an offer and at the observed end, preserving paid family
 access. Browser suspension/offline operation cannot authorize new server requests.
+
+## Campaign and access emails
+
+The existing account-welcome schedule and Resend transport process a separate
+mail stream when `ACCESS_NOTICE_MAIL_ENABLED` is set. An enabled period with
+email notices selected announces the period to confirmed accounts with explicit
+offer-email consent. Registrations made during the period receive one notice
+after confirmation. The closing reminder uses the current end time and skips
+accounts whose initial email was sent in the last 24 hours.
+
+Assigned coupons queue for their saved audience. An administrator can approve
+an email for a public coupon to accounts that opted into offers. Direct email
+grants use the same mail stream, and existing invitation emails continue on
+their original path. The existing signed receipt webhook records provider
+acceptance and delivery separately.
+
+`CAMPAIGN_MANUAL_TIME_ENABLED` controls the separate manual paid-time worker.
+Both settings remain off in review environments except for tests with synthetic
+accounts and mail transport.
 
 ## Database candidate and release boundary
 

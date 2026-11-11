@@ -11,6 +11,8 @@ const dates = z
     starts_at: z.string().datetime({ offset: true }),
     ends_at: z.string().datetime({ offset: true }),
     enabled: z.boolean(),
+    assistant_questions: z.number().int().min(0).max(1000).optional(),
+    email_notices: z.boolean().optional(),
     key: z.string().uuid(),
   })
   .strict();
@@ -47,6 +49,8 @@ export type FreeAccessWindow = {
   starts_at: string;
   ends_at: string;
   enabled: boolean;
+  assistant_questions?: number;
+  email_notices?: boolean;
   version: number;
   status: "scheduled" | "active" | "expired" | "paused";
 };
@@ -110,7 +114,11 @@ export function freeAccessCopy(locale: string) {
         error: "Could not save. Refresh and check for a newer edit before retrying.",
         dates:
           "Choose an end after the start. Cairo clock-change minutes that repeat or do not exist cannot be used.",
-        note: "One shared start and end for every registered account. Select multiple paths or curricula. Progress and paid subscriptions are preserved; AI allowances do not increase.",
+        note: "One shared start and end for every registered account. Learners keep their progress.",
+        questions: "Extra AI questions per account during the period",
+        questionsNote:
+          "The allowance is shared across selected courses and expires with the period. Enter 0 to keep the regular allowance only.",
+        emails: "Send campaign emails when enabled",
         unpublished: "Not published yet",
         empty: "No free access periods",
         scheduled: "Scheduled",
@@ -137,7 +145,11 @@ export function freeAccessCopy(locale: string) {
         error: "تعذر الحفظ. حدّث القائمة وتحقق من وجود تعديل أحدث قبل إعادة المحاولة.",
         dates:
           "اختر نهاية بعد البداية. لا يمكن استخدام دقيقة تتكرر أو لا توجد وقت تغيير الساعة في القاهرة.",
-        note: "بداية ونهاية موحّدتان لكل الحسابات المسجّلة. يمكنك اختيار عدة مسارات ومناهج. يظل التقدم والاشتراك المدفوع محفوظين، ولا تزيد حدود المساعد الذكي.",
+        note: "بداية ونهاية موحّدتان لكل الحسابات المسجّلة، ويظل تقدم المتعلمين محفوظًا.",
+        questions: "أسئلة إضافية للمساعد لكل حساب خلال الفترة",
+        questionsNote:
+          "الحصة مشتركة بين المناهج المحددة وتنتهي مع الفترة. اختر صفرًا للاكتفاء بالحصة المعتادة.",
+        emails: "إرسال رسائل الحملة عند تفعيل الفترة",
         unpublished: "غير منشور بعد",
         empty: "لا توجد فترات إتاحة مجانية",
         scheduled: "مجدول",

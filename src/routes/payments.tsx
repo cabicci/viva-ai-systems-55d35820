@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { commerceCommand } from "@/lib/commerce/commerce.functions";
+import { accessNoticeCommand } from "@/lib/commerce/access-notice.functions";
 import {
   commerceCopy,
   formatAmount,
@@ -245,9 +246,7 @@ function Payments() {
                 Masaarat TECH
               </Link>
             )}
-            {["awaiting_receipt", "pending", "more_info", "rejected"].includes(
-              o.review_status,
-            ) && (
+            {["awaiting_receipt", "pending", "more_info", "rejected"].includes(o.review_status) && (
               <>
                 <p className="whitespace-pre-wrap">
                   {paymentInstructions(o.instructions_snapshot, locale)}
@@ -307,27 +306,76 @@ function MailPreferences() {
   const { locale } = useLocale(),
     w = commerceCopy(locale),
     command = useServerFn(commerceCommand);
+  const { user } = useAuth();
+  const accessNotice = useServerFn(accessNoticeCommand);
+  const [saving, setSaving] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const offers = useQuery({
+    queryKey: ["access-notice-preferences", user?.id],
+    enabled: !!user,
+    queryFn: async () =>
+      (await accessNotice({ data: { action: "preferences", data: {} } })) as unknown as {
+        opted_in: boolean;
+      },
+  });
   const row = useQuery({
-    queryKey: ["commerce-self-mail-preferences"],
+    queryKey: ["commerce-self-mail-preferences", user?.id],
+    enabled: !!user,
     queryFn: async () =>
       (await command({ data: { action: "my_mail_preferences", data: {} } })) as {
         marketing_opt_out: boolean;
       },
   });
   return (
-    <label className="flex gap-2 min-h-11 items-center">
-      <input
-        type="checkbox"
-        checked={row.data?.marketing_opt_out ?? false}
-        disabled={!row.data}
-        onChange={async (e) => {
-          await command({
-            data: { action: "my_mail_preferences", data: { marketing_opt_out: e.target.checked } },
-          });
-          await row.refetch();
-        }}
-      />
-      {w.optOut}
-    </label>
+    <div id="mail-preferences">
+      <label className="flex gap-2 min-h-11 items-center">
+        <input
+          type="checkbox"
+          checked={row.data?.marketing_opt_out ?? false}
+          disabled={!row.data}
+          onChange={async (e) => {
+            await command({
+              data: {
+                action: "my_mail_preferences",
+                data: { marketing_opt_out: e.target.checked },
+              },
+            });
+            await row.refetch();
+            await offers.refetch();
+          }}
+        />
+        {w.optOut}
+      </label>
+      <label className="flex gap-2 min-h-11 items-center">
+        <input
+          type="checkbox"
+          checked={offers.data?.opted_in ?? false}
+          disabled={!offers.data || saving}
+          onChange={async (event) => {
+            const opted_in = event.target.checked;
+            setSaving(true);
+            setFailed(false);
+            try {
+              await accessNotice({ data: { action: "preferences", data: { opted_in } } });
+              await Promise.all([offers.refetch(), row.refetch()]);
+            } catch {
+              setFailed(true);
+            } finally {
+              setSaving(false);
+            }
+          }}
+        />
+        {locale === "en"
+          ? "Email me about Masaarat offers"
+          : "أوافق على استقبال عروض مسارات بالبريد"}
+      </label>
+      {(failed || offers.isError) && (
+        <p role="alert">
+          {locale === "en"
+            ? "Could not update offer emails."
+            : "تعذر تحميل أو حفظ إعداد رسائل العروض."}
+        </p>
+      )}
+    </div>
   );
 }

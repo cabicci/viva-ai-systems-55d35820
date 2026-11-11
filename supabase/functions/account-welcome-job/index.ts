@@ -10,6 +10,7 @@ import { runCommercePaymentMailJob } from "../_shared/commerce-payment-mail-work
 import { runAcademicMailJob } from "../_shared/academic-mail-worker.ts";
 import { runTechnicalMailJob } from "../_shared/technical-mail-worker.ts";
 import { runEmailAccessMailJob } from "../_shared/email-access-mail-worker.ts";
+import { runAccessNoticeMailJob } from "../_shared/access-notice-mail-worker.ts";
 import {
   readContactAdministrationCommand,
   verifyContactAdministrator,
@@ -32,12 +33,16 @@ Deno.serve(async (request) => {
   const contactEnabled = contactMailEnabled(Deno.env.get("CONTACT_MAIL_DIRECT_ENABLED"));
   const deletionEnabled = Deno.env.get("ACCOUNT_DELETION_ENABLED") === "true";
   const financialEnabled = Deno.env.get("ACCOUNT_FINANCIAL_PURGE_ENABLED") === "true";
+  const accessNoticeEnabled = Deno.env.get("ACCESS_NOTICE_MAIL_ENABLED") === "true";
+  const manualCampaignTimeEnabled = Deno.env.get("CAMPAIGN_MANUAL_TIME_ENABLED") === "true";
   if (
     !welcomeEnabled &&
     !subscriptionEnabled &&
     !contactEnabled &&
     !deletionEnabled &&
     !financialEnabled &&
+    !accessNoticeEnabled &&
+    !manualCampaignTimeEnabled &&
     !contactAdministration
   )
     return Response.json({ enabled: false });
@@ -116,6 +121,19 @@ Deno.serve(async (request) => {
       commerce: subscriptionEnabled ? () => runCommercePaymentMailJob(db, send) : null,
       email_access: subscriptionEnabled
         ? () => runEmailAccessMailJob(db, send, undefined, loadAcademicTitles)
+        : null,
+      access_notice: accessNoticeEnabled
+        ? () => {
+            if (!apiKey || !from) throw new Error("mail_sender_unconfigured");
+            return runAccessNoticeMailJob(db, send);
+          }
+        : null,
+      campaign_manual_time: manualCampaignTimeEnabled
+        ? async () => {
+            const result = await db.rpc("award_campaign_manual_time");
+            if (result.error) throw new Error("campaign_manual_time_failed");
+            return result.data;
+          }
         : null,
       welcome: welcomeEnabled
         ? () => {

@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useId, useRef, useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { useAuth } from "@/lib/auth-context";
@@ -7,6 +7,7 @@ import { PATHS } from "@/lib/curriculum-data";
 import { getCurriculumPathLabel } from "@/lib/locale-curriculum/resolve-curriculum-label";
 import { getPathDefinition } from "@/lib/path-story";
 import { Button } from "@/components/ui/button";
+import { AccessNoticeStatus } from "./AccessNoticeStatus";
 import { freeAccessCommand } from "@/lib/commerce/free-access.functions";
 import {
   cairoInputToUtc,
@@ -36,6 +37,9 @@ export function AdminFreeAccess() {
     [targets, setTargets] = useState<string[]>([]);
   const [start, setStart] = useState(""),
     [end, setEnd] = useState("");
+  const [questions, setQuestions] = useState("0");
+  const questionsId = useId();
+  const [emails, setEmails] = useState(true);
   const [enabled, setEnabled] = useState(true),
     [busy, setBusy] = useState(false);
   const [error, setError] = useState(""),
@@ -48,6 +52,8 @@ export function AdminFreeAccess() {
     setTargets([]);
     setStart("");
     setEnd("");
+    setQuestions("0");
+    setEmails(true);
     setEnabled(true);
   }
   function edit(row: FreeAccessWindow) {
@@ -56,6 +62,8 @@ export function AdminFreeAccess() {
     setTargets(row.targets);
     setStart(utcToCairoInput(row.starts_at));
     setEnd(utcToCairoInput(row.ends_at));
+    setQuestions(String(row.assistant_questions ?? 0));
+    setEmails(row.email_notices ?? false);
     setEnabled(row.enabled);
     setNotice("");
     setError("");
@@ -132,9 +140,18 @@ export function AdminFreeAccess() {
           try {
             const starts_at = cairoInputToUtc(start),
               ends_at = cairoInputToUtc(end);
-            if (starts_at >= ends_at) throw new Error("INVALID_RANGE");
+            if (starts_at >= ends_at || !/^(0|[1-9][0-9]{0,2}|1000)$/.test(questions))
+              throw new Error("INVALID_RANGE");
             void save(
-              { title: title.trim(), targets: [...targets].sort(), starts_at, ends_at, enabled },
+              {
+                title: title.trim(),
+                targets: [...targets].sort(),
+                starts_at,
+                ends_at,
+                enabled,
+                assistant_questions: Number(questions),
+                email_notices: emails,
+              },
               editing,
             );
           } catch {
@@ -195,6 +212,28 @@ export function AdminFreeAccess() {
               onChange={(e) => setEnd(e.target.value)}
             />
           </label>
+          <div>
+            <label htmlFor={questionsId}>{w.questions}</label>
+            <input
+              id={questionsId}
+              aria-describedby={questionsId + "-hint"}
+              className={inputClass}
+              type="number"
+              min={0}
+              max={1000}
+              step={1}
+              required
+              value={questions}
+              onChange={(e) => setQuestions(e.target.value)}
+            />
+            <small id={questionsId + "-hint"} className="text-muted-foreground">
+              {w.questionsNote}
+            </small>
+          </div>
+          <label className="flex gap-2">
+            <input type="checkbox" checked={emails} onChange={(e) => setEmails(e.target.checked)} />
+            {w.emails}
+          </label>
           <label className="flex gap-2">
             <input
               type="checkbox"
@@ -220,9 +259,15 @@ export function AdminFreeAccess() {
             {row.title} — {w[row.status]}
           </h3>
           <p>{row.targets.map(label).join(" · ")}</p>
+          {(row.assistant_questions ?? 0) > 0 && (
+            <p>
+              {w.questions} · {row.assistant_questions}
+            </p>
+          )}
           <p>
             {date(row.starts_at)} — {date(row.ends_at)}
           </p>
+          <AccessNoticeStatus id={row.id} />
           <div className="flex flex-wrap gap-2">
             <Button variant="outline" disabled={busy} onClick={() => edit(row)}>
               {w.edit}

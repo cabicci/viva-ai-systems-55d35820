@@ -158,7 +158,9 @@ beforeAll(async () => {
   await db.exec(sql("drizzle/migrations/0030_unified_manual_purchase_rails.sql"));
   // Rehearse the next learning layer on the installed commerce/privacy stack.
   // The old fixture's minimal progress table omitted these learner columns.
-  await db.exec("ALTER TABLE public.lesson_progress ADD COLUMN status text DEFAULT 'not-started', ADD COLUMN updated_at timestamptz DEFAULT now()");
+  await db.exec(
+    "ALTER TABLE public.lesson_progress ADD COLUMN status text DEFAULT 'not-started', ADD COLUMN updated_at timestamptz DEFAULT now()",
+  );
   const notes = sql("supabase/migrations/20260509012347_6670908b-5c45-46ea-a953-2bdbb5d91eeb.sql");
   await db.exec(notes.slice(notes.indexOf("-- Lesson notes per user")));
   await db.exec(sql("supabase/migrations/20260511203303_c68e200d-6663-4d38-bec1-54fdfa31ab1f.sql"));
@@ -199,6 +201,249 @@ manualPurchaseDbCases({
     );
     return { termOfferId: term.id as string, reservationId: reservation.id as string };
   },
+});
+
+describe("campaign access, questions and email notices", () => {
+  beforeEach(async () => {
+    const intake = sql("drizzle/migrations/0034_course_intake.sql");
+    const sourceStart = intake.indexOf(
+      "CREATE OR REPLACE FUNCTION billing.assistant_source_specs(",
+    );
+    const sourceEnd = intake.indexOf("--> statement-breakpoint", sourceStart);
+    const pause = sql("drizzle/migrations/0051_communications_drain_gate.sql");
+    const contact = sql("drizzle/migrations/0050_contact_automation.sql");
+    await db.exec(`
+      ALTER TABLE auth.users ADD COLUMN is_anonymous boolean DEFAULT false;
+      CREATE SCHEMA curriculum_private;
+      CREATE TABLE curriculum_private.courses(area text,id text);
+      ALTER FUNCTION billing.assistant_source_specs(uuid,text,text,uuid,timestamptz)
+        SET SCHEMA curriculum_private;
+      ALTER FUNCTION curriculum_private.assistant_source_specs(uuid,text,text,uuid,timestamptz)
+        RENAME TO previous_assistant_source_specs;
+    `);
+    await db.exec(intake.slice(sourceStart, sourceEnd));
+    await db.exec(
+      pause.slice(0, pause.indexOf("CREATE FUNCTION public.set_communications_starts_paused")),
+    );
+    await db.exec(
+      contact.slice(
+        contact.indexOf("CREATE FUNCTION billing.lock_contact_accounts"),
+        contact.indexOf("-- Resolve the full request family"),
+      ),
+    );
+    await db.exec(sql("drizzle/migrations/0055_free_access_campaign_notices.sql"));
+    await db.exec(sql("drizzle/migrations/0056_campaign_manual_paid_time.sql"));
+    await db.exec(
+      "UPDATE auth.users SET created_at=now()-interval '30 days',email_confirmed_at=now()-interval '29 days'",
+    );
+  });
+
+  const free = (action: string, data: Record<string, unknown>) =>
+    value("SELECT public.free_access_window_command($1,$2::jsonb) v", [
+      action,
+      JSON.stringify(data),
+    ]);
+  const notices = (action: string, data: Record<string, unknown> = {}) =>
+    value("SELECT public.access_notice_mail($1,$2::jsonb) v", [action, JSON.stringify(data)]);
+  const control = (action: string, data: Record<string, unknown> = {}) =>
+    value("SELECT public.access_notice_control($1,$2::jsonb) v", [action, JSON.stringify(data)]);
+  const opening = () => ({
+    key: randomUUID(),
+    title: "Synthetic learning period",
+    targets: ["ai:business"],
+    starts_at: new Date(Date.now() - 3_600_000).toISOString(),
+    ends_at: new Date(Date.now() + 13 * 86_400_000).toISOString(),
+    enabled: true,
+    assistant_questions: 25,
+    email_notices: true,
+  });
+
+  it("queues one opted-in announcement and one notice after an in-period signup is confirmed", async () => {
+    const signup = randomUUID();
+    await actor(user);
+    expect(await control("preferences", { opted_in: true })).toEqual({ opted_in: true });
+    await expect(control("status", { source_id: randomUUID() })).rejects.toThrow(
+      "ACCESS_NOTICE_ADMIN_REQUIRED",
+    );
+    await expect(notices("claim")).rejects.toThrow("ACCESS_NOTICE_SERVER_ONLY");
+    await actor(admin);
+    const input = opening();
+    const created = await free("create", input);
+    expect(await free("create", input)).toEqual(created);
+    await db.query(
+      "INSERT INTO auth.users(id,email,created_at) VALUES($1,'signup@example.test',now())",
+      [signup],
+    );
+    await actor(user, true);
+    const [first] = await notices("claim");
+    expect(first).toMatchObject({
+      recipient: "member@example.test",
+      payload: { kind: "campaign_start", questions: 25 },
+    });
+    const claim = { id: first.id, lease: first.lease };
+    expect(await notices("authorize", claim)).toBe(true);
+    expect(await notices("authorize", claim)).toBe(false);
+    expect(await notices("result", { ...claim, provider_id: "synthetic-confirmed-id" })).toBe(true);
+    await db.query("UPDATE auth.users SET email_confirmed_at=now() WHERE id=$1", [signup]);
+    const second = await notices("claim");
+    expect(second).toHaveLength(1);
+    expect(second[0]).toMatchObject({
+      recipient: "signup@example.test",
+      payload: { kind: "campaign_signup" },
+    });
+    expect(await notices("claim")).toEqual([]);
+    expect(
+      await value(
+        "SELECT public.record_contact_mail_receipt('event-fixture','synthetic-confirmed-id','member@example.test','email.delivered',now()) v",
+      ),
+    ).toBe("recorded");
+    await actor(admin);
+    expect(await control("status", { source_id: created.id })).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ recipient: "member@example.test", status: "email.delivered" }),
+      ]),
+    );
+  });
+
+  it("keeps the same assistant pool when edits change its limit and revokes it at pause", async () => {
+    await actor(admin);
+    const input = opening();
+    const { id, version } = await free("create", input);
+    const pool = () =>
+      value(
+        "SELECT (SELECT row_to_json(s) FROM billing.free_access_question_specs($1,'ai','ai',NULL,now()) s) v",
+        [user],
+      );
+    expect(await pool()).toMatchObject({ source_key: "free-window:" + id, units: 25 });
+    await db.query("SELECT billing.assistant_sync_periods($1,'ai','ai',NULL)", [user]);
+    await db.query(
+      "UPDATE billing.assistant_allowance_periods SET used=4 WHERE user_id=$1 AND source_key=$2",
+      [user, "free-window:" + id],
+    );
+    const base = {
+      ...input,
+      id,
+      expected_version: version,
+      key: randomUUID(),
+      assistant_questions: 30,
+    };
+    const updated = await free("update", base);
+    await db.query("SELECT billing.assistant_sync_periods($1,'ai','ai',NULL)", [user]);
+    expect(
+      await value(
+        "SELECT jsonb_build_array(unit_limit,used) v FROM billing.assistant_allowance_periods WHERE user_id=$1 AND source_key=$2",
+        [user, "free-window:" + id],
+      ),
+    ).toEqual([30, 4]);
+    expect(
+      await value("SELECT billing.assistant_source_permits($1,'intro-m1-l1-what-is-ai') v", [
+        "free-window:" + id,
+      ]),
+    ).toBe(false);
+    await free("update", {
+      ...base,
+      enabled: false,
+      expected_version: updated.version,
+      key: randomUUID(),
+    });
+    expect(await pool()).toBeNull();
+    expect(
+      await value("SELECT billing.assistant_source_permits($1,'__course__') v", [
+        "free-window:" + id,
+      ]),
+    ).toBe(false);
+  });
+
+  it("queues targeted coupons once and honors opt-out before a send", async () => {
+    const issued = await offer();
+    await actor(user);
+    await control("preferences", { opted_in: false });
+    await actor(user, true);
+    expect(await notices("claim")).toEqual([]);
+    await actor(user);
+    await control("preferences", { opted_in: true });
+    await actor(user, true);
+    expect(await notices("claim")).toEqual([
+      expect.objectContaining({
+        recipient: "member@example.test",
+        payload: expect.objectContaining({ kind: "coupon", code: "TEST" }),
+      }),
+    ]);
+    expect(
+      await value(
+        "SELECT count(*)::integer v FROM billing.access_notice_outbox WHERE source_id=$1",
+        [issued.id],
+      ),
+    ).toBe(1);
+  });
+
+  it("updates a pending end reminder after a date edit and skips last-day signup reminders", async () => {
+    const recent = randomUUID();
+    await actor(user);
+    await control("preferences", { opted_in: true });
+    await actor(admin);
+    const input = {
+      ...opening(),
+      starts_at: new Date(Date.now() - 2 * 86_400_000).toISOString(),
+      ends_at: new Date(Date.now() + 10 * 3_600_000).toISOString(),
+    };
+    const created = await free("create", input);
+    await db.query(
+      "INSERT INTO auth.users(id,email,created_at,email_confirmed_at) VALUES($1,'recent@example.test',now(),now())",
+      [recent],
+    );
+    await actor(user, true);
+    const openingNotices = await notices("claim");
+    expect(openingNotices).toHaveLength(2);
+    for (const row of openingNotices) {
+      const claim = { id: row.id, lease: row.lease };
+      expect(await notices("authorize", claim)).toBe(true);
+      expect(await notices("result", { ...claim, provider_id: "sent-" + row.id })).toBe(true);
+    }
+    await db.query(
+      "UPDATE billing.access_notice_outbox SET first_attempt_at=now()-interval '2 days' WHERE kind='campaign_start'",
+    );
+    const [reminder] = await notices("claim");
+    expect(reminder).toMatchObject({
+      recipient: "member@example.test",
+      payload: { kind: "campaign_end" },
+    });
+    await actor(admin);
+    const extended = new Date(Date.now() + 3 * 86_400_000).toISOString();
+    await free("update", {
+      ...input,
+      id: created.id,
+      expected_version: created.version,
+      key: randomUUID(),
+      ends_at: extended,
+    });
+    await actor(user, true);
+    expect(await notices("authorize", { id: reminder.id, lease: reminder.lease })).toBe(false);
+    expect(await notices("claim")).toEqual([]);
+  });
+
+  it("appends campaign time once to a paid manual purchase confirmed after the start", async () => {
+    await actor(admin);
+    const window = await free("create", opening());
+    await offer();
+    const { order } = await manualPurchase();
+    const award = () => value("SELECT public.award_campaign_manual_time() v");
+    await expect(award()).rejects.toThrow("COMMERCIAL_SERVICE_ONLY");
+    await actor(user, true);
+    expect(await award()).toEqual({ awarded: 1 });
+    expect(await award()).toEqual({ awarded: 0 });
+    expect(
+      await value(
+        `SELECT (a.new_end-a.old_end)=(w.ends_at-w.starts_at)
+          AND e.ends_at=a.new_end AND a.user_id=$3 v
+         FROM billing.campaign_manual_time_awards a
+         JOIN billing.free_access_windows w ON w.id=a.window_id
+         JOIN billing.commerce_entitlements e ON e.id=a.entitlement_id
+         WHERE w.id=$1 AND e.order_id=$2`,
+        [window.id, order.id, user],
+      ),
+    ).toBe(true);
+  });
 });
 async function offer(extra: Record<string, unknown> = {}) {
   await actor(admin);
