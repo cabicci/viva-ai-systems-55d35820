@@ -233,6 +233,7 @@ describe("campaign access, questions and email notices", () => {
     );
     await db.exec(sql("drizzle/migrations/0055_free_access_campaign_notices.sql"));
     await db.exec(sql("drizzle/migrations/0056_campaign_manual_paid_time.sql"));
+    await db.exec(sql("drizzle/migrations/0057_campaign_stripe_renewal.sql"));
     await db.exec(
       "UPDATE auth.users SET created_at=now()-interval '30 days',email_confirmed_at=now()-interval '29 days'",
     );
@@ -441,6 +442,237 @@ describe("campaign access, questions and email notices", () => {
          JOIN billing.commerce_entitlements e ON e.id=a.entitlement_id
          WHERE w.id=$1 AND e.order_id=$2`,
         [window.id, order.id, user],
+      ),
+    ).toBe(true);
+  });
+  it("claims a paid Live term once and keeps the gift access and question clocks separate", async () => {
+    await actor(admin);
+    const window = await free("create", opening());
+    const claim = () => value("SELECT public.claim_campaign_stripe_renewals() v");
+    await expect(claim()).rejects.toThrow("COMMERCIAL_SERVICE_ONLY");
+    await actor(user, true);
+    const internal = randomUUID();
+    await db.exec(
+      "INSERT INTO billing.stripe_live_control(singleton,live_enabled) VALUES(true,true) ON CONFLICT(singleton) DO UPDATE SET live_enabled=true",
+    );
+    expect(await claim()).toEqual([]);
+    await db.query(
+      `INSERT INTO billing.subscriptions(id,user_id,plan_version_id,market_price_id,access_state,billing_state,
+          current_period_start,current_period_end,market_code,currency_code,billing_interval,idempotency_key)
+        SELECT $1,$2,v.id,m.id,'paid_active','active',date_trunc('second',now())-interval '20 days',
+          date_trunc('second',now())+interval '1 day','EG','EGP','month','campaign-test-core'
+        FROM billing.market_prices m JOIN billing.plan_versions v ON v.id=m.plan_version_id
+          JOIN billing.plan_catalog p ON p.id=v.plan_id
+        WHERE p.plan_key='pro' AND v.billing_interval='month' AND m.market_code='EG' AND m.status='active' LIMIT 1`,
+      [internal, user],
+    );
+    await db.query(
+      `INSERT INTO billing.gateway_subscriptions(subscription_id,gateway_code,gateway_subscription_id,
+          gateway_customer_id,status,stripe_environment)
+        VALUES($1,'stripe_us_live','sub_campaign','cus_campaign','active','live')`,
+      [internal],
+    );
+    expect(await claim()).toEqual([]);
+    await db.query(
+      `INSERT INTO billing.payment_transactions(subscription_id,user_id,gateway_code,gateway_transaction_id,
+          transaction_type,status,amount_minor,currency_code,idempotency_key,initiated_at,succeeded_at,stripe_environment)
+        VALUES($1,$2,'stripe_us_live','in_campaign','checkout','succeeded',1000,'EGP','campaign-paid-fixture',
+          now(),now(),'live')`,
+      [internal, user],
+    );
+    const [job] = await claim();
+    expect(job).toMatchObject({
+      scope: "core",
+      internalId: internal,
+      userId: user,
+      subscriptionId: "sub_campaign",
+      invoiceId: "in_campaign",
+      state: "pending",
+    });
+    expect(await claim()).toEqual([]);
+    expect(job.giftEnd - job.paidEnd).toBeCloseTo(
+      await value(
+        "SELECT extract(epoch from ends_at-starts_at)::integer v FROM billing.free_access_windows WHERE id=$1",
+        [window.id],
+      ),
+      0,
+    );
+    const step = (action: string, lease = job.lease) =>
+      value(
+        "SELECT public.step_campaign_stripe_renewal($1,$2,$3,'sub_sched_campaign','price_campaign',$4) v",
+        [job.id, lease, action, job.paidEnd - 21 * 86_400],
+      );
+    expect(await step("create", randomUUID())).toBe(false);
+    expect(await step("create")).toBe(true);
+    expect(await step("bind")).toBe(true);
+    expect(await step("authorize")).toBe(true);
+    expect(await step("scheduled")).toBe(true);
+    expect(
+      await value(
+        "SELECT public.get_campaign_stripe_cancellation($1::uuid,md5($1::uuid::text||':ai:'||$2::text)) v",
+        [user, internal],
+      ),
+    ).toMatchObject({ id: job.id, scheduleId: "sub_sched_campaign" });
+    expect(
+      await value(
+        "SELECT public.get_campaign_stripe_cancellation($1,md5($2::text||':ai:'||$3::text)) v",
+        [other, user, internal],
+      ),
+    ).toBeNull();
+    const activate = () =>
+      value("SELECT public.activate_campaign_stripe_renewal($1,'sub_sched_campaign') v", [job.id]);
+    expect(await activate()).toBe(false);
+    await db.query(
+      `UPDATE billing.campaign_stripe_renewals SET paid_end=date_trunc('second',now())-interval '1 second',
+          gift_end=date_trunc('second',now())+interval '13 days' WHERE id=$1`,
+      [job.id],
+    );
+    await db.query(
+      `UPDATE billing.subscriptions SET current_period_end=date_trunc('second',now())-interval '1 second' WHERE id=$1`,
+      [internal],
+    );
+    expect(await activate()).toBe(true);
+    expect(await activate()).toBe(true);
+    expect(
+      await value(
+        `SELECT s.current_period_end=a.gift_end AND s.current_period_start=a.paid_start v
+       FROM billing.subscriptions s JOIN billing.campaign_stripe_renewals a ON a.internal_id=s.id WHERE a.id=$1`,
+        [job.id],
+      ),
+    ).toBe(true);
+    expect(
+      await value(
+        "SELECT EXISTS(SELECT 1 FROM billing.assistant_source_specs($1,'ai','ai',NULL,now()) WHERE source_key=$2 AND units=25) v",
+        [user, "free-window:" + window.id],
+      ),
+    ).toBe(true);
+    expect(
+      await value(
+        "SELECT EXISTS(SELECT 1 FROM billing.assistant_source_specs($1,'ai','ai',NULL,now()) WHERE source_key=$2) v",
+        [user, "ai:" + internal],
+      ),
+    ).toBe(false);
+    await db.query(
+      "UPDATE billing.free_access_windows SET ends_at=now()-interval '1 second' WHERE id=$1",
+      [window.id],
+    );
+    expect(
+      await value(
+        "SELECT EXISTS(SELECT 1 FROM billing.assistant_source_specs($1,'ai','ai',NULL,now()) WHERE source_key=$2) v",
+        [user, "free-window:" + window.id],
+      ),
+    ).toBe(false);
+    expect(
+      await value("SELECT current_period_end>now() v FROM billing.subscriptions WHERE id=$1", [
+        internal,
+      ]),
+    ).toBe(true);
+  });
+
+  it("extends scoped access only for the same paid Live invoice and honors a refund", async () => {
+    await actor(admin);
+    await free("create", opening());
+    await actor(user, true);
+    await db.exec(
+      "INSERT INTO billing.stripe_live_control(singleton,live_enabled) VALUES(true,true) ON CONFLICT(singleton) DO UPDATE SET live_enabled=true",
+    );
+    const insert = `INSERT INTO billing.academic_stripe_subscriptions(user_id,subscription_id,customer_id,price_id,status,
+        last_event_at,paid_invoice_id,starts_at,ends_at,stripe_environment)
+      VALUES($1,$2,'cus_academic','price_academic','active',now(),'in_academic',
+        date_trunc('second',now())-interval '1 month',date_trunc('second',now())+interval '1 day',$3)`;
+    await actor(user);
+    await db.query(insert, [user, "sub_academictest", "test"]);
+    await actor(user, true);
+    await db.query(insert, [user, "sub_academiclive", "live"]);
+    const jobs = await value("SELECT public.claim_campaign_stripe_renewals() v");
+    expect(jobs).toHaveLength(1);
+    const [job] = jobs;
+    expect(job).toMatchObject({ scope: "academic", subscriptionId: "sub_academiclive" });
+    await db.query(
+      `UPDATE billing.campaign_stripe_renewals SET state='scheduled',schedule_id='sub_sched_academic',
+          price_id='price_academic',paid_start=date_trunc('second',now())-interval '1 month',
+          paid_end=date_trunc('second',now())-interval '1 second',
+          gift_end=date_trunc('second',now())+interval '13 days' WHERE id=$1`,
+      [job.id],
+    );
+    await db.query(
+      `UPDATE billing.academic_stripe_subscriptions SET ends_at=date_trunc('second',now())-interval '1 second',
+          refunded=true WHERE subscription_id='sub_academiclive'`,
+    );
+    const activate = () =>
+      value("SELECT public.activate_campaign_stripe_renewal($1,'sub_sched_academic') v", [job.id]);
+    expect(await activate()).toBe(false);
+    await db.query(
+      "UPDATE billing.academic_stripe_subscriptions SET refunded=false WHERE subscription_id='sub_academiclive'",
+    );
+    expect(await activate()).toBe(true);
+    expect(
+      await value(
+        "SELECT ends_at=date_trunc('second',now())+interval '13 days' AND paid_invoice_id='in_academic' v FROM billing.academic_stripe_subscriptions WHERE subscription_id='sub_academiclive'",
+      ),
+    ).toBe(true);
+  });
+  it("keeps Kids access tied to the existing paid family entitlement", async () => {
+    await actor(admin);
+    await free("create", opening());
+    await actor(user, true);
+    await db.exec(
+      "INSERT INTO billing.stripe_live_control(singleton,live_enabled) VALUES(true,true) ON CONFLICT(singleton) DO UPDATE SET live_enabled=true",
+    );
+    await db.exec(
+      `INSERT INTO public.kids_stripe_prices(market_code,billing_interval,discounted,currency_code,
+         amount_minor,gateway_product_id,gateway_price_id,stripe_environment)
+       VALUES('EG','month',false,'egp',1000,'prod_kids','price_kids','live')`,
+    );
+    await db.query(
+      `INSERT INTO public.kids_stripe_subscriptions(parent_id,gateway_subscription_id,gateway_customer_id,
+          gateway_price_id,status,latest_paid_invoice_id,paid_through,last_event_at,stripe_environment)
+        VALUES($1,'sub_kidscampaign','cus_kids','price_kids','active','in_kids',
+          date_trunc('second',now())+interval '1 day',now(),'live')`,
+      [user],
+    );
+    const claim = () => value("SELECT public.claim_campaign_stripe_renewals() v");
+    expect(await claim()).toEqual([]);
+    await db.query(
+      `INSERT INTO public.kids_family_entitlements(parent_id,active_from,active_until,entitlement_reference)
+        VALUES($1,date_trunc('second',now())-interval '1 month',date_trunc('second',now())+interval '1 day',
+          'stripe-live:sub_kidscampaign')`,
+      [user],
+    );
+    const [job] = await claim();
+    expect(job.scope).toBe("kids");
+    await db.query(
+      `UPDATE billing.campaign_stripe_renewals SET state='scheduled',schedule_id='sub_sched_kids',
+          price_id='price_kids',paid_start=date_trunc('second',now())-interval '1 month',
+          paid_end=date_trunc('second',now())-interval '1 second',
+          gift_end=date_trunc('second',now())+interval '13 days' WHERE id=$1`,
+      [job.id],
+    );
+    await db.query(
+      `UPDATE public.kids_stripe_subscriptions SET paid_through=date_trunc('second',now())-interval '1 second'
+          WHERE parent_id=$1 AND stripe_environment='live'`,
+      [user],
+    );
+    await db.query(
+      `UPDATE public.kids_family_entitlements SET active_until=date_trunc('second',now())-interval '1 second',
+          entitlement_reference='manual:other-grant' WHERE parent_id=$1`,
+      [user],
+    );
+    const activate = () =>
+      value("SELECT public.activate_campaign_stripe_renewal($1,'sub_sched_kids') v", [job.id]);
+    expect(await activate()).toBe(false);
+    await db.query(
+      "UPDATE public.kids_family_entitlements SET entitlement_reference='stripe-live:sub_kidscampaign' WHERE parent_id=$1",
+      [user],
+    );
+    expect(await activate()).toBe(true);
+    expect(
+      await value(
+        `SELECT s.paid_through=e.active_until AND e.active_until=date_trunc('second',now())+interval '13 days'
+          AND s.latest_paid_invoice_id='in_kids' v
+        FROM public.kids_stripe_subscriptions s JOIN public.kids_family_entitlements e USING(parent_id)
+        WHERE s.parent_id=$1 AND s.stripe_environment='live'`,
+        [user],
       ),
     ).toBe(true);
   });

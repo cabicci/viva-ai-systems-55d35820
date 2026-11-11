@@ -87,6 +87,12 @@ export const liveCheckoutSchema = z.discriminatedUnion("product", [
     .strict(),
 ]);
 
-export const livePortalSchema = z.object({
-  scope: z.enum(["core", "kids", "academic", "technical"]),
-});
+export const livePortalSchema = z.union([
+  z.object({ scope: z.enum(["core", "kids", "academic", "technical"]) }),
+  z
+    .object({
+      action: z.enum(["campaign_status", "campaign_cancel"]),
+      sourceKey: z.string().regex(/^[a-f0-9]{32}$/),
+    })
+    .strict(),
+]);

@@ -28,6 +28,7 @@ import { PATHS } from "@/lib/curriculum-data";
 import { Sidebar } from "@/components/dashboard/Sidebar";
 import { Button } from "@/components/ui/button";
 import { StripePortalButton } from "@/components/billing/StripePortalButton";
+import { CampaignRenewalControl } from "@/components/billing/CampaignRenewalControl";
 import {
   Dialog,
   DialogContent,
@@ -484,6 +485,10 @@ export function SubscriptionSources({
               </p>
               {allowedPortalScope(source) && (
                 <StripePortalButton scope={source.portalScope === "kids" ? "kids" : "adult"} />
+              )}
+              {source.paymentEnvironment === "live" &&
+                source.kind.endsWith("_subscription") && source.kind !== "manual_subscription" && (
+                  <CampaignRenewalControl sourceKey={source.sourceKey} />
               )}
             </li>
           ))}

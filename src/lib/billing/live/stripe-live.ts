@@ -14,6 +14,10 @@ import {
   type CheckoutIntent,
 } from "../../../../supabase/functions/_shared/stripe-checkout-intent";
 import { createScopedCheckout } from "./scoped-checkout-intent";
+import {
+  campaignStripeMarker,
+  observeCampaignStripeWebhook,
+} from "../../../../supabase/functions/_shared/stripe-campaign-renewal";
 import { decidePaidPlanEvidence } from "../../../../supabase/functions/_shared/stripe-generation-decisions";
 import { resolveStripeRefund } from "../../../../supabase/functions/_shared/stripe-refunds";
 import { financialDeliveryExpired } from "../../../../supabase/functions/_shared/account-financial-gate";
@@ -870,6 +874,9 @@ export async function handleLiveWebhookEvent(
     if (await financialDeliveryExpired(metadata.user_id, deps.rpc))
       return { status: 200, body: { received: true, ignored: true, financial_erased: true } };
 
+    if (await observeCampaignStripeWebhook(event.type, object, subscription, get, deps.rpc))
+      return { status: 200, body: { received: true, campaign_gift_invoice: true } };
+
     // Checkout is notification only. Fulfillment for initial and delayed
     // payments is exclusively the signed, validated invoice.paid lifecycle.
     const evidence = await paidEvidence(event, subscription, get, deps);
@@ -961,6 +968,9 @@ export async function handleLiveWebhookEvent(
     const transition =
       event.type === "invoice.paid" ? evidence.transition : transitionFor(event, subscription);
     const isPaidInvoice = event.type === "invoice.paid";
+    // Trial and resume events do not replace the proved paid window. The gift
+    // is applied by its own verified receipt, and renewal requires a paid invoice.
+    const preserveCampaignPeriod = !isPaidInvoice && campaignStripeMarker(subscription) !== null;
     const result = await deps.rpc("apply_stripe_webhook_event", {
       p_gateway_event_id: event.id,
       p_event_type: event.type,
@@ -973,8 +983,10 @@ export async function handleLiveWebhookEvent(
       p_gateway_customer_id: customerId,
       p_gateway_subscription_id: gatewaySubscriptionId,
       p_gateway_status: subscription.status,
-      p_period_start: periodStart ? new Date(periodStart * 1000).toISOString() : null,
-      p_period_end: periodEnd ? new Date(periodEnd * 1000).toISOString() : null,
+      p_period_start:
+        !preserveCampaignPeriod && periodStart ? new Date(periodStart * 1000).toISOString() : null,
+      p_period_end:
+        !preserveCampaignPeriod && periodEnd ? new Date(periodEnd * 1000).toISOString() : null,
       p_cancel_at_period_end: Boolean(subscription.cancel_at_period_end),
       p_gateway_transaction_id: isPaidInvoice ? object.id : null,
       p_amount_minor: isPaidInvoice

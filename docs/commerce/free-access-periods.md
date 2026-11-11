@@ -37,8 +37,11 @@ changes cannot prolong a grant: readbacks use server-relative monotonic deadline
   Existing lesson, RAG, guardian consent and assistant checks still apply.
 - A separate paid-time worker can append the campaign duration once to a
   confirmed manual-payment subscription. This leaves the paid question
-  renewal window and order/payment evidence intact. Automatic card renewal
-  deferral requires a separate Stripe schedule implementation and verification.
+  renewal window and order/payment evidence intact. For confirmed Stripe Live
+  subscriptions, the paid phase keeps its original dates. An added free phase
+  runs immediately after it, then Stripe renews at the same price and interval.
+  A verified gift phase extends lesson access without opening another paid
+  question period. The campaign question pool expires at campaign close.
 - Academic and Technical compose the new commercial alternative with existing
   authenticated, lifecycle, release and approved-locale checks.
 - Kids retains guardian, country, profile ownership, publication and consent
@@ -72,8 +75,32 @@ their original path. The existing signed receipt webhook records provider
 acceptance and delivery separately.
 
 `CAMPAIGN_MANUAL_TIME_ENABLED` controls the separate manual paid-time worker.
-Both settings remain off in review environments except for tests with synthetic
+These settings remain off in review environments except for tests with synthetic
 accounts and mail transport.
+
+## Stripe Live renewal deferral
+
+Migration `0057` adds a private campaign and subscription receipt and leases for
+the existing scheduled `account-welcome-job`. A pending receipt requires a paid
+Live period and rechecks account and risk state before scheduling. The worker
+uses Stripe's schedule migration and reads back the three phases. A signed
+subscription update or the scheduled worker verifies entry into the gift
+phase before extending the corresponding platform entitlement. A matching
+zero invoice uses a separate acknowledgement. A positive renewal continues
+through the original payment verifier. While Stripe has a scheduled update,
+its portal restricts plan changes and cancellation. The Masaarat account
+page lets the subscription owner turn off renewal and keep the remaining time.
+
+Apply the reviewed migrations and deploy the matching worker and webhook
+before enabling `CAMPAIGN_STRIPE_RENEWAL_ENABLED` in the worker. The existing
+Live flag and database switch must be on, and the worker's existing
+`STRIPE_LIVE_SECRET_KEY` needs invoice and subscription read access and
+subscription schedule read/write access. The flag controls new worker writes.
+Already scheduled gifts are still handled by the signed webhook. Monitor
+`campaign_stripe_time` in the job response and the private receipt's
+`failure_code` for blocked or retried cases. Existing unrelated Stripe
+schedules, cancellations and terms that cannot be preserved are kept for
+review. An already scheduled gift keeps the duration verified at scheduling.
 
 ## Database candidate and release boundary
 
