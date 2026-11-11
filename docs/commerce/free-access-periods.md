@@ -35,13 +35,12 @@ changes cannot prolong a grant: readbacks use server-relative monotonic deadline
   per account across the selected content. Its unused units expire with the
   campaign. A date or limit edit preserves the number of units already used.
   Existing lesson, RAG, guardian consent and assistant checks still apply.
-- A separate paid-time worker can append the campaign duration once to a
-  confirmed manual-payment subscription. This leaves the paid question
-  renewal window and order/payment evidence intact. For confirmed Stripe Live
-  subscriptions, the paid phase keeps its original dates. An added free phase
-  runs immediately after it, then Stripe renews at the same price and interval.
-  A verified gift phase extends lesson access without opening another paid
-  question period. The campaign question pool expires at campaign close.
+- For confirmed manual payments and Stripe Live terms, the remaining paid time
+  carries over after the campaign. Terms that begin during the campaign receive
+  only the remaining campaign time. For a paid scope fully covered by the
+  campaign, the paid question allowance pauses and resumes with the same usage.
+  Campaign questions expire at closing. Independent purchased question balances
+  keep their existing rules.
 - Academic and Technical compose the new commercial alternative with existing
   authenticated, lifecycle, release and approved-locale checks.
 - Kids retains guardian, country, profile ownership, publication and consent
@@ -84,7 +83,10 @@ Migration `0057` adds a private campaign and subscription receipt and leases for
 the existing scheduled `account-welcome-job`. A pending receipt requires a paid
 Live period and rechecks account and risk state before scheduling. A payment
 made before campaign close remains eligible when the worker runs after close. The worker
-uses Stripe's schedule migration and reads back the three phases. A signed
+uses Stripe's schedule migration and reads back the three phases. The free
+phase follows the original paid phase in Stripe to move the next charge by
+the booked pause duration. Masaarat freezes the paid question allowance during
+the campaign itself. A signed
 subscription update or the scheduled worker verifies entry into the gift
 phase before extending the corresponding platform entitlement. A matching
 zero invoice uses a separate acknowledgement. A positive renewal continues
