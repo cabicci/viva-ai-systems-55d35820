@@ -67,7 +67,8 @@ export function FreeAccessAnnouncement() {
     <Dialog open onOpenChange={(open) => !open && close()}>
       <DialogContent
         dir={dir}
-        className="w-[calc(100%_-_2rem)] max-w-md rounded-2xl border-primary/20 p-6 text-start sm:p-8"
+        className="z-[111] w-[calc(100%_-_2rem)] max-w-md rounded-2xl border-primary/20 p-6 text-start sm:p-8"
+        overlayClassName="z-[110]"
         closeLabel={t("common.close")}
         closeButtonClassName="rtl:left-4 rtl:right-auto"
       >

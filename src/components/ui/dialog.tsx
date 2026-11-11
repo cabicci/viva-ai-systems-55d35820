@@ -35,6 +35,7 @@ const DialogContent = React.forwardRef<
     closeLabel?: string;
     closeDisabled?: boolean;
     closeButtonClassName?: string;
+    overlayClassName?: string;
   }
 >(
   (
@@ -44,12 +45,13 @@ const DialogContent = React.forwardRef<
       closeLabel = "Close",
       closeDisabled = false,
       closeButtonClassName,
+      overlayClassName,
       ...props
     },
     ref,
   ) => (
     <DialogPortal>
-      <DialogOverlay />
+      <DialogOverlay className={overlayClassName} />
       <DialogPrimitive.Content
         ref={ref}
         className={cn(
