@@ -14,6 +14,8 @@ import type { AdminData, Offer, PackageKey } from "@/lib/commerce/contracts";
 import { Button } from "@/components/ui/button";
 import { Field, Select, Panel, type RunCommand } from "./AdminShared";
 import { RegisteredEmailPicker } from "./RegisteredEmailPicker";
+import { AccessNoticeStatus } from "./AccessNoticeStatus";
+import { accessNoticeCommand } from "@/lib/commerce/access-notice.functions";
 
 type Price = {
   package: PackageKey | "question_topup";
@@ -59,6 +61,7 @@ export function AdminOffers({
   const [months, setMonths] = useState("3");
   const command = useServerFn(commerceCommand),
     dispatch = useServerFn(dispatchCommerceInvitations);
+  const sendCoupon = useServerFn(accessNoticeCommand);
   const [audience, setAudience] = useState<SimpleOfferInput["audience"]>("individual");
   const [emails, setEmails] = useState(""),
     [groupName, setGroupName] = useState("");
@@ -78,6 +81,37 @@ export function AdminOffers({
     [sending, setSending] = useState(false);
   const sendLock = useRef(false),
     saveLock = useRef(false);
+  const [queuedCoupons, setQueuedCoupons] = useState<string[]>([]);
+  async function queuePublicCoupon(id: string) {
+    if (sendLock.current) return;
+    sendLock.current = true;
+    setSending(true);
+    setError("");
+    try {
+      await sendCoupon({ data: { action: "queue_public_coupon", data: { id } } });
+      setQueuedCoupons((current) => [...current, id]);
+    } catch {
+      setError(locale === "en" ? "Could not queue the coupon email." : "تعذر جدولة بريد الكوبون.");
+    } finally {
+      sendLock.current = false;
+      setSending(false);
+    }
+  }
+  const publicCouponMail = (offer: Offer) => {
+    if (offer.delivery_mode !== "coupon" || offer.audience_emails?.length || !offer.enabled)
+      return null;
+    return queuedCoupons.includes(offer.id) ? (
+      <p role="status">{locale === "en" ? "Coupon email queued." : "اتجدول بريد الكوبون."}</p>
+    ) : (
+      <Button
+        variant="outline"
+        disabled={busy || sending}
+        onClick={() => void queuePublicCoupon(offer.id)}
+      >
+        {locale === "en" ? "Email learners opted into offers" : "أرسل للموافقين على رسائل العروض"}
+      </Button>
+    );
+  };
   const catalogue = useQuery({
     queryKey: ["commerce-offer-catalogue"],
     queryFn: async () =>
@@ -265,6 +299,8 @@ export function AdminOffers({
                   {created.code}
                 </p>
                 <p>{s.couponHint}</p>
+                {publicCouponMail(created)}
+                <AccessNoticeStatus id={created.id} />
                 <div className="flex flex-wrap gap-3">
                   <Button
                     variant="outline"
@@ -603,6 +639,7 @@ export function AdminOffers({
                     : s.noExpiry}{" "}
                   · {o.max_redemptions ?? s.unlimited}
                 </p>
+                {o.delivery_mode === "coupon" && <AccessNoticeStatus id={o.id} />}
               </div>
               <div className="flex flex-wrap gap-2">
                 {o.delivery_mode === "invitation" && (
@@ -610,6 +647,7 @@ export function AdminOffers({
                     {s.send}
                   </Button>
                 )}
+                {publicCouponMail(o)}
                 <Button
                   variant="outline"
                   disabled={busy}

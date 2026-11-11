@@ -24,6 +24,7 @@ import { useLocale } from "@/lib/locale/locale-context";
 import { Button } from "@/components/ui/button";
 import { Select } from "./AdminShared";
 import { RegisteredEmailPicker } from "./RegisteredEmailPicker";
+import { AccessNoticeStatus } from "./AccessNoticeStatus";
 import { SUPPORTED_LOCALES, LOCALE_META } from "@/lib/locale/types";
 
 export function AdminEmailAccess() {
@@ -362,6 +363,7 @@ function OwnedAdminEmailAccess({
           <p>
             {w.mail}: {g.invitation_status ?? w.none}
           </p>
+          {!g.invitation_status && <AccessNoticeStatus id={g.id} />}
           {g.status !== "revoked" && (
             <Button
               variant="outline"

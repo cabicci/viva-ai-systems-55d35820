@@ -10,6 +10,12 @@ import { runCommercePaymentMailJob } from "../_shared/commerce-payment-mail-work
 import { runAcademicMailJob } from "../_shared/academic-mail-worker.ts";
 import { runTechnicalMailJob } from "../_shared/technical-mail-worker.ts";
 import { runEmailAccessMailJob } from "../_shared/email-access-mail-worker.ts";
+import { runAccessNoticeMailJob } from "../_shared/access-notice-mail-worker.ts";
+import {
+  campaignStripeTransport,
+  runCampaignStripeRenewals,
+} from "../_shared/stripe-campaign-renewal.ts";
+import { resolveLifecycleKey } from "../_shared/stripe-environment.ts";
 import {
   readContactAdministrationCommand,
   verifyContactAdministrator,
@@ -32,12 +38,20 @@ Deno.serve(async (request) => {
   const contactEnabled = contactMailEnabled(Deno.env.get("CONTACT_MAIL_DIRECT_ENABLED"));
   const deletionEnabled = Deno.env.get("ACCOUNT_DELETION_ENABLED") === "true";
   const financialEnabled = Deno.env.get("ACCOUNT_FINANCIAL_PURGE_ENABLED") === "true";
+  const accessNoticeEnabled = Deno.env.get("ACCESS_NOTICE_MAIL_ENABLED") === "true";
+  const manualCampaignTimeEnabled = Deno.env.get("CAMPAIGN_MANUAL_TIME_ENABLED") === "true";
+  const stripeCampaignTimeEnabled =
+    Deno.env.get("CAMPAIGN_STRIPE_RENEWAL_ENABLED") === "true" &&
+    Deno.env.get("STRIPE_LIVE_ENABLED") === "true";
   if (
     !welcomeEnabled &&
     !subscriptionEnabled &&
     !contactEnabled &&
     !deletionEnabled &&
     !financialEnabled &&
+    !accessNoticeEnabled &&
+    !manualCampaignTimeEnabled &&
+    !stripeCampaignTimeEnabled &&
     !contactAdministration
   )
     return Response.json({ enabled: false });
@@ -116,6 +130,35 @@ Deno.serve(async (request) => {
       commerce: subscriptionEnabled ? () => runCommercePaymentMailJob(db, send) : null,
       email_access: subscriptionEnabled
         ? () => runEmailAccessMailJob(db, send, undefined, loadAcademicTitles)
+        : null,
+      access_notice: accessNoticeEnabled
+        ? () => {
+            if (!apiKey || !from) throw new Error("mail_sender_unconfigured");
+            return runAccessNoticeMailJob(db, send);
+          }
+        : null,
+      campaign_manual_time: manualCampaignTimeEnabled
+        ? async () => {
+            const result = await db.rpc("award_campaign_manual_time");
+            if (result.error) throw new Error("campaign_manual_time_failed");
+            return result.data;
+          }
+        : null,
+      campaign_stripe_time: stripeCampaignTimeEnabled
+        ? () => {
+            const liveDb = createClient(url, key, {
+              auth: { persistSession: false, autoRefreshToken: false },
+              global: { headers: { "x-masaarat-stripe-environment": "live" } },
+            });
+            return runCampaignStripeRenewals(
+              async <T>(name: string, args: Record<string, unknown>) => {
+                const result = await liveDb.rpc(name, args);
+                if (result.error) throw new Error("CAMPAIGN_STRIPE_DATABASE_UNAVAILABLE");
+                return result.data as T;
+              },
+              campaignStripeTransport(resolveLifecycleKey("live", (name) => Deno.env.get(name))),
+            );
+          }
         : null,
       welcome: welcomeEnabled
         ? () => {

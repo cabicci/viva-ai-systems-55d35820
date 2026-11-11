@@ -20,6 +20,7 @@ const mock = vi.hoisted(() => ({
   read: vi.fn(),
 }));
 vi.mock("@tanstack/react-start", () => ({ useServerFn: (fn: unknown) => fn }));
+vi.mock("@/lib/commerce/access-notice.functions", () => ({ accessNoticeCommand: vi.fn() }));
 vi.mock("@/lib/auth-context", () => ({
   useAuth: () => ({ user: { id: "synthetic-admin" }, loading: false }),
 }));

@@ -30,9 +30,18 @@ changes cannot prolong a grant: readbacks use server-relative monotonic deadline
 
 ## Access composition
 
-- Paid tier, subscription/payment records and AI allowances are unchanged.
-- AI lesson/video evaluation gains only the explicitly selected lesson scope;
-  assistant runtime/RAG and builder tool privileges are unchanged.
+- AI lesson/video evaluation gains only the explicitly selected lesson scope.
+  When configured, the existing question ledger adds a one-time allowance shared
+  per account across the selected content. Its unused units expire with the
+  campaign. A date or limit edit preserves the number of units already used.
+  Existing lesson, RAG, guardian consent and assistant checks still apply.
+- A separate paid-time worker can append the campaign duration once to a
+  confirmed manual-payment subscription. This leaves the paid question
+  renewal window and order/payment evidence intact. For confirmed Stripe Live
+  subscriptions, the paid phase keeps its original dates. An added free phase
+  runs immediately after it, then Stripe renews at the same price and interval.
+  A verified gift phase extends lesson access without opening another paid
+  question period. The campaign question pool expires at campaign close.
 - Academic and Technical compose the new commercial alternative with existing
   authenticated, lifecycle, release and approved-locale checks.
 - Kids retains guardian, country, profile ownership, publication and consent
@@ -49,6 +58,50 @@ deadline, without resetting it on rerenders/remounts or discarding draft inputs
 after a successful refresh. Paid deliveries receive no new timer. Kids checks its
 protected SQL gate during an offer and at the observed end, preserving paid family
 access. Browser suspension/offline operation cannot authorize new server requests.
+
+## Campaign and access emails
+
+The existing account-welcome schedule and Resend transport process a separate
+mail stream when `ACCESS_NOTICE_MAIL_ENABLED` is set. An enabled period with
+email notices selected announces the period to confirmed accounts with explicit
+offer-email consent. Registrations made during the period receive one notice
+after confirmation. The closing reminder uses the current end time and skips
+accounts whose initial email was sent in the last 24 hours.
+
+Assigned coupons queue for their saved audience. An administrator can approve
+an email for a public coupon to accounts that opted into offers. Direct email
+grants use the same mail stream, and existing invitation emails continue on
+their original path. The existing signed receipt webhook records provider
+acceptance and delivery separately.
+
+`CAMPAIGN_MANUAL_TIME_ENABLED` controls the separate manual paid-time worker.
+These settings remain off in review environments except for tests with synthetic
+accounts and mail transport.
+
+## Stripe Live renewal deferral
+
+Migration `0057` adds a private campaign and subscription receipt and leases for
+the existing scheduled `account-welcome-job`. A pending receipt requires a paid
+Live period and rechecks account and risk state before scheduling. A payment
+made before campaign close remains eligible when the worker runs after close. The worker
+uses Stripe's schedule migration and reads back the three phases. A signed
+subscription update or the scheduled worker verifies entry into the gift
+phase before extending the corresponding platform entitlement. A matching
+zero invoice uses a separate acknowledgement. A positive renewal continues
+through the original payment verifier. While Stripe has a scheduled update,
+its portal restricts plan changes and cancellation. The Masaarat account
+page lets the subscription owner turn off renewal and keep the remaining time.
+
+Apply the reviewed migrations and deploy the matching worker and webhook
+before enabling `CAMPAIGN_STRIPE_RENEWAL_ENABLED` in the worker. The existing
+Live flag and database switch must be on, and the worker's existing
+`STRIPE_LIVE_SECRET_KEY` needs invoice and subscription read access and
+subscription schedule read/write access. The flag controls new worker writes.
+Already scheduled gifts are still handled by the signed webhook. Monitor
+`campaign_stripe_time` in the job response and the private receipt's
+`failure_code` for blocked or retried cases. Existing unrelated Stripe
+schedules, cancellations and terms that cannot be preserved are kept for
+review. An already scheduled gift keeps the duration verified at scheduling.
 
 ## Database candidate and release boundary
 

@@ -32,6 +32,7 @@ vi.mock("@/lib/admin.functions", () => ({
   }),
 }));
 vi.mock("@/lib/commerce/email-access.functions", () => ({ emailAccessCommand: mock.command }));
+vi.mock("@/lib/commerce/access-notice.functions", () => ({ accessNoticeCommand: vi.fn() }));
 const data = {
   catalogues: [
     { id: "academic:AC-BUS", title: "Academic business" },
@@ -473,15 +474,45 @@ describe("M01-F1 bulk owner continuity", () => {
   });
   it("does not retire a newer file read when a superseded read settles", async () => {
     setup();
-    await waitFor(() => expect(screen.getByRole("button", { name: "Download template" })).toBeEnabled());
+    await waitFor(() =>
+      expect(screen.getByRole("button", { name: "Download template" })).toBeEnabled(),
+    );
     let first!: (value: string) => void, second!: (value: string) => void;
     const input = screen.getByLabelText("Upload invitation file");
-    fireEvent.change(input, { target: { files: [{ size: 100, text: () => new Promise<string>(resolve => { first = resolve; }) }] } });
-    fireEvent.change(input, { target: { files: [{ size: 100, text: () => new Promise<string>(resolve => { second = resolve; }) }] } });
-    await act(async () => { first(JSON.stringify(rows)); });
+    fireEvent.change(input, {
+      target: {
+        files: [
+          {
+            size: 100,
+            text: () =>
+              new Promise<string>((resolve) => {
+                first = resolve;
+              }),
+          },
+        ],
+      },
+    });
+    fireEvent.change(input, {
+      target: {
+        files: [
+          {
+            size: 100,
+            text: () =>
+              new Promise<string>((resolve) => {
+                second = resolve;
+              }),
+          },
+        ],
+      },
+    });
+    await act(async () => {
+      first(JSON.stringify(rows));
+    });
     expect(screen.getByLabelText("Invitation data (JSON)")).toBeDisabled();
     expect(screen.getByLabelText("Invitation data (JSON)")).toHaveValue("");
-    await act(async () => { second(JSON.stringify([rows[1]])); });
+    await act(async () => {
+      second(JSON.stringify([rows[1]]));
+    });
     expect(screen.getByLabelText("Invitation data (JSON)")).toBeEnabled();
     expect(screen.getByLabelText("Invitation data (JSON)")).toHaveValue(JSON.stringify([rows[1]]));
   });

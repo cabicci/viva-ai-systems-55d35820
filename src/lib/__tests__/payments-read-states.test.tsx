@@ -35,6 +35,7 @@ vi.mock("@tanstack/react-query", () => ({
 }));
 vi.mock("@tanstack/react-start", () => ({ useServerFn: () => state.command }));
 vi.mock("@/lib/commerce/commerce.functions", () => ({ commerceCommand: {} }));
+vi.mock("@/lib/commerce/access-notice.functions", () => ({ accessNoticeCommand: {} }));
 vi.mock("@/integrations/supabase/client", () => ({ supabase: {} }));
 vi.mock("@/lib/auth-context", () => ({
   useAuth: () => ({ user: state.user, loading: state.authLoading }),

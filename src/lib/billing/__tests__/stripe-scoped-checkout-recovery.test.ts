@@ -32,9 +32,15 @@ function fixture(offer = false) {
     params.set("expires_at", String(Date.now() / 1000 + 1800));
   }
   type Row = ScopedIntent & { resolved?: boolean };
+  type FixtureSession = {
+    id: string;
+    status: string;
+    url: string;
+    [key: string]: unknown;
+  };
   const rows: Row[] = [],
-    sessions = new Map<string, any>(),
-    byKey = new Map<string, any>();
+    sessions = new Map<string, FixtureSession>(),
+    byKey = new Map<string, FixtureSession>();
   const calls: { name: string; body: Record<string, unknown> }[] = [];
   const creates: { key: string; parameters: string }[] = [];
   const faults = {
@@ -328,7 +334,7 @@ describe("M05 sealed scoped recovery", () => {
       f.faults[fault] = true;
       await expect(f.run()).rejects.toThrow("CHECKOUT_INTENT_SUPERSEDED");
       expect(f.rows[0].checkout_session_id).toBe("cs_m05_1");
-      expect(f.sessions.get("cs_m05_1").status).toBe("expired");
+      expect(f.sessions.get("cs_m05_1")!.status).toBe("expired");
       expect(f.rows).toHaveLength(1);
     },
   );
@@ -361,12 +367,12 @@ describe("M05 sealed scoped recovery", () => {
     await f.run();
     f.params.set("success_url", "https://masaarat.ai/account?locale=en");
     await expect(f.run()).resolves.toHaveProperty("id", "cs_m05_2");
-    expect(f.sessions.get("cs_m05_1").status).toBe("expired");
+    expect(f.sessions.get("cs_m05_1")!.status).toBe("expired");
   });
   it("lost close response is recovered from persisted terminal evidence", async () => {
     const f = fixture();
     await f.run();
-    f.sessions.get("cs_m05_1").status = "expired";
+    f.sessions.get("cs_m05_1")!.status = "expired";
     f.faults.closeUnknown = true;
     await expect(f.run()).rejects.toThrow("CLOSE_RESPONSE_LOST");
     f.faults.closeUnknown = false;
@@ -418,7 +424,7 @@ describe("M05 sealed scoped recovery", () => {
   it("completion during binding rejects earlier open snapshot", async () => {
     const f = fixture();
     f.setAfter(async () => {
-      f.sessions.get("cs_m05_1").status = "complete";
+      f.sessions.get("cs_m05_1")!.status = "complete";
     });
     await expect(f.run()).rejects.toThrow("CHECKOUT_IN_PROGRESS");
   });
@@ -427,7 +433,7 @@ describe("M05 sealed scoped recovery", () => {
     async (url) => {
       const f = fixture();
       f.setAfter(async () => {
-        f.sessions.get("cs_m05_1").url = url;
+        f.sessions.get("cs_m05_1")!.url = url;
       });
       await expect(f.run()).rejects.toThrow("CHECKOUT_IN_PROGRESS");
     },

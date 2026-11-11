@@ -157,6 +157,25 @@ export async function resolvePortalUrl(
   return postLive("/api/stripe-live/portal", { scope }, "https://billing.stripe.com", deps);
 }
 
+export async function campaignRenewalStatus(
+  sourceKey: string,
+  cancel = false,
+  deps: BillingClientDeps = defaultDeps,
+): Promise<{ available: boolean; canceled: boolean }> {
+  const token = await deps.accessToken();
+  if (!token) throw new BillingUnavailableError("UNAUTHORIZED");
+  const response = await deps.fetch("/api/stripe-live/portal", {
+    method: "POST",
+    cache: "no-store",
+    headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+    body: JSON.stringify({ action: cancel ? "campaign_cancel" : "campaign_status", sourceKey }),
+  });
+  const data = await response.json().catch(() => null);
+  if (!response.ok || typeof data?.available !== "boolean" || typeof data?.canceled !== "boolean")
+    throw new BillingUnavailableError("CAMPAIGN_RENEWAL_UNAVAILABLE");
+  return { available: data.available, canceled: data.canceled };
+}
+
 const UNAVAILABLE: Record<Locale, string> = {
   "ar-EG": "الدفع غير متاح حاليًا. لم يتم خصم أي مبلغ، جرّب لاحقًا.",
   "ar-MSA": "الدفع غير متاح حاليًا. لم يُخصم أي مبلغ، حاول لاحقًا.",

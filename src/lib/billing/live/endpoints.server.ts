@@ -67,6 +67,24 @@ export async function handleLivePortal(request: Request): Promise<Response> {
   const parsed = livePortalSchema.safeParse(await request.json().catch(() => null));
   if (!parsed.success)
     return Response.json({ error: "INVALID_PORTAL_SCOPE" }, { status: 400, headers });
+  if ("action" in parsed.data) {
+    const { campaignStripeCancellation } =
+      await import("../../../../supabase/functions/_shared/stripe-campaign-renewal");
+    const runtime = liveRuntime();
+    try {
+      const result = await campaignStripeCancellation(
+        user.id,
+        parsed.data.sourceKey,
+        parsed.data.action === "campaign_cancel",
+        (path, params, idempotencyKey) =>
+          runtime.stripe(path, params ? { method: "POST", params, idempotencyKey } : undefined),
+        runtime.rpc,
+      );
+      return Response.json(result, { headers });
+    } catch {
+      return Response.json({ error: "CAMPAIGN_RENEWAL_UNAVAILABLE" }, { status: 503, headers });
+    }
+  }
   const { createLivePortal } = await import("./stripe-live");
   const result = await createLivePortal(user, parsed.data.scope, origin, liveRuntime());
   return Response.json(result.body, { status: result.status, headers });
