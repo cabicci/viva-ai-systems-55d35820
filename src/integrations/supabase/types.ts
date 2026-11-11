@@ -3374,9 +3374,21 @@ export type Database = {
         Args: { p_grant_id: string }
         Returns: Json
       }
+      access_notice_control: {
+        Args: { p_action: string; p_data?: Json }
+        Returns: Json
+      }
+      access_notice_mail: {
+        Args: { p_action: string; p_data?: Json }
+        Returns: Json
+      }
       account_phone_command: {
         Args: { p_action: string; p_actor: string; p_data?: Json }
         Returns: Json
+      }
+      activate_campaign_stripe_renewal: {
+        Args: { p_id: string; p_schedule: string }
+        Returns: boolean
       }
       activate_my_email_access_grants: { Args: never; Returns: number }
       activate_rag_index_version: {
@@ -3662,6 +3674,7 @@ export type Database = {
           preferred_locale: string
         }[]
       }
+      award_campaign_manual_time: { Args: never; Returns: Json }
       begin_contact_intake: {
         Args: { p_claim: string; p_id: string }
         Returns: boolean
@@ -3784,6 +3797,7 @@ export type Database = {
         }[]
       }
       claim_active_device: { Args: { p_device_id: string }; Returns: string }
+      claim_campaign_stripe_renewals: { Args: never; Returns: Json }
       claim_contact_acknowledgement: {
         Args: { p_id: string }
         Returns: {
@@ -4133,6 +4147,14 @@ export type Database = {
       }
       get_admin_insights: { Args: never; Returns: Json }
       get_admin_overview: { Args: never; Returns: Json }
+      get_campaign_stripe_cancellation: {
+        Args: { p_source: string; p_user: string }
+        Returns: Json
+      }
+      get_campaign_stripe_renewal: {
+        Args: { p_id: string; p_subscription: string }
+        Returns: Json
+      }
       get_commercial_purchase_by_payment: {
         Args: { p_payment_id: string }
         Returns: Json
@@ -5155,6 +5177,18 @@ export type Database = {
           isOneToOne: true
           isSetofReturn: false
         }
+      }
+      step_campaign_stripe_renewal: {
+        Args: {
+          p_code?: string
+          p_id: string
+          p_lease: string
+          p_price?: string
+          p_schedule?: string
+          p_start?: number
+          p_step: string
+        }
+        Returns: boolean
       }
       store_learning_content_version: {
         Args: {
