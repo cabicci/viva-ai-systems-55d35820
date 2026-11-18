@@ -4823,6 +4823,10 @@ export type Database = {
         Args: { p_event_key: string; p_provider: string; p_sender_hash: string }
         Returns: string
       }
+      support_claim_meta_event: {
+        Args: { p_event_key: string; p_provider: string; p_sender_hash: string }
+        Returns: string
+      }
       support_mark_event: {
         Args: { p_event_key: string; p_provider: string; p_status: string }
         Returns: boolean

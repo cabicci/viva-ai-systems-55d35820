@@ -194,15 +194,19 @@ describe("public comments", () => {
     expect(ans).not.toHaveBeenCalled();
     expect(send).not.toHaveBeenCalled();
   });
-  it("replies at most once per commenter per post, with a public-only thread", async () => {
+  it("answers each new comment once and keeps follow-ups in the same public thread", async () => {
     const m = memoryStore();
     const threads: unknown[] = [];
     const send = vi.fn(async () => "sent" as const);
     const deps = { appSecret: "sec", pageToken: "pt", store: async () => m.store, send, answer: async (_q: string, _p: boolean, t: unknown) => (threads.push(t), answer()) };
     await deliver([comment("c1", "الاشتراك بكام؟")], deps);
     await deliver([comment("c2", "طب والسنوي بكام؟")], deps);
+    await deliver([comment("c2", "طب والسنوي بكام؟")], deps);
     await deliver([comment("c3", "بكام؟", "u8")], deps);
-    expect(send).toHaveBeenCalledTimes(2);
+    expect(send).toHaveBeenCalledTimes(3);
+    expect(threads).toHaveLength(3);
+    expect(threads[1]).toEqual(threads[0]);
+    expect(threads[2]).not.toEqual(threads[0]);
     expect(threads[0]).toMatchObject({ visibility: "public", family: "messenger" });
     expect((threads[0] as { thread: string }).thread.startsWith("1298751943326788_42:")).toBe(true);
   });
