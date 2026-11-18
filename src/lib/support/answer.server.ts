@@ -137,7 +137,7 @@ export type AnswerDeps = {
  */
 export async function answerQuestion(
   question: string,
-  opts: { publicComment: boolean; thread?: ThreadRef },
+  opts: { publicComment: boolean; thread?: ThreadRef; factsOnly?: boolean },
   deps: AnswerDeps = {},
 ): Promise<SupportAnswer> {
   const lang = detectLang(question);
@@ -170,7 +170,7 @@ export async function answerQuestion(
     const line = offerLine(offer, lang);
     return finish(line ? `${decision.draft}\n${line}` : decision.draft, decision.link, lang);
   };
-  const apiKey = deps.openaiKey ?? process.env.OPENAI_API_KEY;
+  const apiKey = opts.factsOnly ? undefined : deps.openaiKey ?? process.env.OPENAI_API_KEY;
   if (!apiKey) return { text: deterministic(), source: decision.draft ? "deterministic" : "fallback" };
   const allowed = new Set([...numbersIn(facts.join(" ")), ...numbersIn(redacted)]);
   try {

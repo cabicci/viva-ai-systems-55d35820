@@ -1,6 +1,6 @@
 import type { SupportProvider } from "./config";
 
-export type ClaimDecision = "process" | "duplicate" | "handoff" | "rate_limited";
+export type ClaimDecision = "process" | "public_facts" | "duplicate" | "handoff" | "rate_limited";
 export type MarkStatus = "sending" | "replied" | "failed" | "ambiguous" | "ignored" | "handoff";
 export interface SupportStore {
   claim(provider: SupportProvider, eventKey: string, senderHash: string): Promise<ClaimDecision>;
@@ -18,12 +18,12 @@ export async function cloudSupportStore(): Promise<SupportStore> {
   };
   return {
     async claim(provider, eventKey, senderHash) {
-      const v = await rpc("support_claim_event", {
+      const v = await rpc(provider === "twilio_whatsapp" ? "support_claim_event" : "support_claim_meta_event", {
         p_provider: provider,
         p_event_key: eventKey,
         p_sender_hash: senderHash,
       });
-      if (v === "process" || v === "duplicate" || v === "handoff" || v === "rate_limited") return v;
+      if (v === "process" || v === "public_facts" || v === "duplicate" || v === "handoff" || v === "rate_limited") return v;
       throw new Error("SUPPORT_STORE_UNAVAILABLE");
     },
     async mark(provider, eventKey, status) {

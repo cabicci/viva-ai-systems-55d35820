@@ -44,7 +44,7 @@ export function extractMetaWork(payload: unknown): MetaWork[] {
       out.push({
         kind: "reply",
         provider: object === "page" ? "meta_messenger" : "meta_instagram_dm",
-        key: mid.slice(0, 200),
+        key: mid,
         family,
         senderId: sender,
         text,
@@ -74,7 +74,7 @@ export function extractMetaWork(payload: unknown): MetaWork[] {
       }
     }
   }
-  return out.slice(0, 5);
+  return out;
 }
 
 type SendResult = "sent" | "rejected" | "ambiguous";
@@ -117,7 +117,7 @@ export type MetaDeps = {
   verifyToken?: string;
   pageToken?: string;
   store: () => Promise<SupportStore>;
-  answer: (question: string, publicComment: boolean, thread: ThreadRef) => Promise<SupportAnswer>;
+  answer: (question: string, publicComment: boolean, thread: ThreadRef, factsOnly: boolean) => Promise<SupportAnswer>;
   send?: MetaSender;
 };
 
@@ -160,46 +160,63 @@ export async function handleMetaSupport(request: Request, deps: MetaDeps): Promi
   } catch {
     return new Response("Service Unavailable", { status: 503 });
   }
-  for (const item of work) {
+  async function processItem(item: MetaWork) {
+    let beforeSendKey: string | undefined;
     try {
       if (item.kind === "human_echo") {
         await store.handoff(await senderHash(item.family, item.customerId), 24);
-        continue;
+        return;
       }
       const hash = await senderHash(item.family, item.senderId);
-      if ((await store.claim(item.provider, item.key, hash)) !== "process") continue;
+      // The ledger accepts 200 characters. Preserve distinct long message IDs.
+      const key = item.key.length <= 200 ? item.key : "hash:" + await senderHash(item.provider, item.key);
+      const decision = await store.claim(item.provider, key, hash);
+      if (decision !== "process" && decision !== "public_facts") return;
+      beforeSendKey = key;
+      const factsOnly = decision === "public_facts";
       const publicComment = item.provider === "meta_page_comment" || item.provider === "meta_instagram_comment";
       let text: string | null = null;
       if (publicComment) {
         // Public threads: only genuine questions, scoped context per post+commenter (never DM context).
         if (isRelevantPublicQuestion(item.text))
-          text = (await deps.answer(item.text, true, { family: item.family, thread: `${item.postId}:${hash}`, visibility: "public" })).text;
+          text = (await deps.answer(item.text, true, { family: item.family, thread: `${item.postId}:${hash}`, visibility: "public" }, factsOnly)).text;
       } else if (wantsHuman(item.text)) text = handoffReply(detectLang(item.text));
-      else text = (await deps.answer(item.text, false, { family: item.family, thread: hash, visibility: "private" })).text;
+      else text = (await deps.answer(item.text, false, { family: item.family, thread: hash, visibility: "private" }, factsOnly)).text;
       if (!text) {
-        await store.mark(item.provider, item.key, "ignored");
-        continue;
+        await store.mark(item.provider, key, "ignored");
+        return;
       }
-      if (publicComment) {
-        // At most one public reply per commenter per post, ever: a durable lock row.
-        const once = `once:${item.postId}:${hash}`.slice(0, 200);
-        if ((await store.claim(item.provider, once, hash)) !== "process") {
-          await store.mark(item.provider, item.key, "ignored");
-          continue;
-        }
-        await store.mark(item.provider, once, "ignored");
-      }
-      if (!(await store.mark(item.provider, item.key, "sending"))) continue;
+      beforeSendKey = undefined;
+      if (!(await store.mark(item.provider, key, "sending"))) return;
       const result = await send(item.provider, item.target, text);
-      if (result === "sent") await store.mark(item.provider, item.key, "replied");
+      if (result === "sent") await store.mark(item.provider, key, "replied");
       else if (result === "rejected") {
-        await store.mark(item.provider, item.key, "failed");
+        await store.mark(item.provider, key, "failed");
         retry = true;
-      } else await store.mark(item.provider, item.key, "ambiguous");
+      } else await store.mark(item.provider, key, "ambiguous");
     } catch {
+      if (beforeSendKey && item.kind === "reply") {
+        await store.mark(item.provider, beforeSendKey, "failed").catch(() => false);
+      }
       retry = true;
     }
   }
+  // Keep messages and human handoffs for a sender in order, while other
+  // conversations can progress independently. The concurrency bound is not a batch limit.
+  const bySender = new Map<string, MetaWork[]>();
+  for (const item of work) {
+    const senderId = item.kind === "human_echo" ? item.customerId : item.senderId;
+    const queue = bySender.get(senderId);
+    if (queue) queue.push(item);
+    else bySender.set(senderId, [item]);
+  }
+  const conversations = bySender.values();
+  async function drain() {
+    for (const conversation of conversations) {
+      for (const item of conversation) await processItem(item);
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(4, bySender.size) }, drain));
   return retry
     ? new Response("Retry", { status: 500, headers: noStore })
     : new Response("EVENT_RECEIVED", { headers: noStore });

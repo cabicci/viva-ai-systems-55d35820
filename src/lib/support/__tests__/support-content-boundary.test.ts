@@ -41,10 +41,10 @@ function supportGraph(): string[] {
     if (file.endsWith(".json")) continue;
     for (const m of readFileSync(file, "utf8").matchAll(SPEC_RE)) {
       const next = resolveSpec(file, m[1] ?? m[2] ?? m[3]!);
-      if (next && !next.includes("/integrations/supabase/")) stack.push(next);
+      if (next && !next.replaceAll("\\", "/").includes("/integrations/supabase/")) stack.push(next);
     }
   }
-  return [...seen].map((f) => f.slice(ROOT.length + 1));
+  return [...seen].map((f) => f.slice(ROOT.length + 1).replaceAll("\\", "/"));
 }
 
 /** Real lesson sentences (≥ 25 chars) used as canaries; the support runtime never loads them. */
