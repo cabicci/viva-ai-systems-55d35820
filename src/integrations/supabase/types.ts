@@ -840,12 +840,33 @@ export type Database = {
       }
       contact_acknowledgement_outbox: {
         Row: {
+          automation_action: string
+          automation_due_at: string | null
+          automation_owner_html: string | null
+          automation_owner_subject: string | null
+          automation_owner_text: string | null
+          automation_parent_id: string | null
+          automation_processing_consent: boolean | null
+          automation_request_kind: string | null
+          automation_send_started_at: string | null
+          automation_withdrawn_at: string | null
+          automation_withdrawn_by: string | null
           blocked: boolean
           claim_token: string | null
           created_at: string
           first_attempt_at: string | null
           html_body: string
           id: string
+          intake_claim_token: string | null
+          intake_closed_at: string | null
+          intake_closed_by: string | null
+          intake_lease_until: string | null
+          intake_payload_hash: string | null
+          intake_recovery_hash: string | null
+          intake_reserved_at: string | null
+          intake_resolution_ref: string | null
+          intake_started_at: string | null
+          intake_state: string
           lease_until: string | null
           locale: string
           provider_email_id: string | null
@@ -857,12 +878,33 @@ export type Database = {
           text_body: string
         }
         Insert: {
+          automation_action?: string
+          automation_due_at?: string | null
+          automation_owner_html?: string | null
+          automation_owner_subject?: string | null
+          automation_owner_text?: string | null
+          automation_parent_id?: string | null
+          automation_processing_consent?: boolean | null
+          automation_request_kind?: string | null
+          automation_send_started_at?: string | null
+          automation_withdrawn_at?: string | null
+          automation_withdrawn_by?: string | null
           blocked?: boolean
           claim_token?: string | null
           created_at?: string
           first_attempt_at?: string | null
           html_body: string
           id: string
+          intake_claim_token?: string | null
+          intake_closed_at?: string | null
+          intake_closed_by?: string | null
+          intake_lease_until?: string | null
+          intake_payload_hash?: string | null
+          intake_recovery_hash?: string | null
+          intake_reserved_at?: string | null
+          intake_resolution_ref?: string | null
+          intake_started_at?: string | null
+          intake_state?: string
           lease_until?: string | null
           locale: string
           provider_email_id?: string | null
@@ -874,12 +916,33 @@ export type Database = {
           text_body: string
         }
         Update: {
+          automation_action?: string
+          automation_due_at?: string | null
+          automation_owner_html?: string | null
+          automation_owner_subject?: string | null
+          automation_owner_text?: string | null
+          automation_parent_id?: string | null
+          automation_processing_consent?: boolean | null
+          automation_request_kind?: string | null
+          automation_send_started_at?: string | null
+          automation_withdrawn_at?: string | null
+          automation_withdrawn_by?: string | null
           blocked?: boolean
           claim_token?: string | null
           created_at?: string
           first_attempt_at?: string | null
           html_body?: string
           id?: string
+          intake_claim_token?: string | null
+          intake_closed_at?: string | null
+          intake_closed_by?: string | null
+          intake_lease_until?: string | null
+          intake_payload_hash?: string | null
+          intake_recovery_hash?: string | null
+          intake_reserved_at?: string | null
+          intake_resolution_ref?: string | null
+          intake_started_at?: string | null
+          intake_state?: string
           lease_until?: string | null
           locale?: string
           provider_email_id?: string | null
@@ -890,7 +953,15 @@ export type Database = {
           subject?: string
           text_body?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "contact_acknowledgement_outbox_automation_parent_id_fkey"
+            columns: ["automation_parent_id"]
+            isOneToOne: false
+            referencedRelation: "contact_acknowledgement_outbox"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       contact_mail_receipts: {
         Row: {
@@ -962,6 +1033,111 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "kids_profiles"
             referencedColumns: ["id"]
+          },
+        ]
+      }
+      kids_ai_consent_events: {
+        Row: {
+          action: string
+          created_at: string
+          id: string
+          locale: string
+          notice_id: string
+          parent_id: string
+          profile_id: string
+          request_id: string
+          sequence: number
+          target_event_id: string | null
+          text_hash: string
+        }
+        Insert: {
+          action: string
+          created_at?: string
+          id?: string
+          locale: string
+          notice_id: string
+          parent_id: string
+          profile_id: string
+          request_id: string
+          sequence?: never
+          target_event_id?: string | null
+          text_hash: string
+        }
+        Update: {
+          action?: string
+          created_at?: string
+          id?: string
+          locale?: string
+          notice_id?: string
+          parent_id?: string
+          profile_id?: string
+          request_id?: string
+          sequence?: never
+          target_event_id?: string | null
+          text_hash?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "kids_ai_consent_events_notice_id_fkey"
+            columns: ["notice_id"]
+            isOneToOne: false
+            referencedRelation: "kids_ai_consent_notices"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "kids_ai_consent_events_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "kids_profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "kids_ai_consent_events_target_event_id_fkey"
+            columns: ["target_event_id"]
+            isOneToOne: false
+            referencedRelation: "kids_ai_consent_events"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      kids_ai_consent_notices: {
+        Row: {
+          country_code: string
+          enabled: boolean
+          id: string
+          published_at: string | null
+          review_reference: string | null
+          text_hashes: Json
+          texts: Json
+          version: string
+        }
+        Insert: {
+          country_code: string
+          enabled?: boolean
+          id?: string
+          published_at?: string | null
+          review_reference?: string | null
+          text_hashes?: Json
+          texts: Json
+          version: string
+        }
+        Update: {
+          country_code?: string
+          enabled?: boolean
+          id?: string
+          published_at?: string | null
+          review_reference?: string | null
+          text_hashes?: Json
+          texts?: Json
+          version?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "kids_ai_consent_notices_country_code_fkey"
+            columns: ["country_code"]
+            isOneToOne: false
+            referencedRelation: "kids_market_release"
+            referencedColumns: ["country_code"]
           },
         ]
       }
@@ -2684,6 +2860,7 @@ export type Database = {
           lesson_id: string
           practice_reviewed: boolean
           quiz_passed: boolean
+          quiz_revision: number
           read: boolean
           updated_at: string
           user_id: string
@@ -2693,6 +2870,7 @@ export type Database = {
           lesson_id: string
           practice_reviewed?: boolean
           quiz_passed?: boolean
+          quiz_revision?: number
           read?: boolean
           updated_at?: string
           user_id: string
@@ -2702,6 +2880,7 @@ export type Database = {
           lesson_id?: string
           practice_reviewed?: boolean
           quiz_passed?: boolean
+          quiz_revision?: number
           read?: boolean
           updated_at?: string
           user_id?: string
@@ -3195,13 +3374,39 @@ export type Database = {
         Args: { p_grant_id: string }
         Returns: Json
       }
+      access_notice_control: {
+        Args: { p_action: string; p_data?: Json }
+        Returns: Json
+      }
+      access_notice_mail: {
+        Args: { p_action: string; p_data?: Json }
+        Returns: Json
+      }
       account_phone_command: {
         Args: { p_action: string; p_actor: string; p_data?: Json }
         Returns: Json
       }
+      activate_campaign_stripe_renewal: {
+        Args: { p_id: string; p_schedule: string }
+        Returns: boolean
+      }
       activate_my_email_access_grants: { Args: never; Returns: number }
       activate_rag_index_version: {
         Args: { p_version_key: string }
+        Returns: Json
+      }
+      admin_account_phone_command: {
+        Args: { p_action: string; p_actor: string; p_data?: Json }
+        Returns: Json
+      }
+      admin_contact_automation_command: {
+        Args: {
+          p_action: string
+          p_actor: string
+          p_id: string
+          p_owner: string
+          p_reference?: string
+        }
         Returns: Json
       }
       apply_academic_stripe_event: {
@@ -3437,6 +3642,10 @@ export type Database = {
         }
         Returns: Json
       }
+      assistant_question_delivery: {
+        Args: { p_fingerprint: string; p_request_id: string; p_user_id: string }
+        Returns: Json
+      }
       assistant_question_provider_attempt: {
         Args: {
           p_attempt_id: string
@@ -3448,12 +3657,31 @@ export type Database = {
         }
         Returns: Json
       }
+      attach_scoped_checkout_intent: {
+        Args: {
+          p_generation: string
+          p_key: string
+          p_scope: string
+          p_session: string
+          p_user_id: string
+        }
+        Returns: boolean
+      }
       auth_signup_email_profile: {
         Args: { p_email: string }
         Returns: {
           full_name: string
           preferred_locale: string
         }[]
+      }
+      award_campaign_manual_time: { Args: never; Returns: Json }
+      begin_contact_intake: {
+        Args: { p_claim: string; p_id: string }
+        Returns: boolean
+      }
+      begin_contact_mail_send: {
+        Args: { p_claim: string; p_id: string; p_owner: string }
+        Returns: boolean
       }
       bind_commercial_purchase_session: {
         Args: {
@@ -3569,6 +3797,7 @@ export type Database = {
         }[]
       }
       claim_active_device: { Args: { p_device_id: string }; Returns: string }
+      claim_campaign_stripe_renewals: { Args: never; Returns: Json }
       claim_contact_acknowledgement: {
         Args: { p_id: string }
         Returns: {
@@ -3583,6 +3812,18 @@ export type Database = {
       }
       claim_contact_acknowledgements: {
         Args: never
+        Returns: {
+          claim_token: string
+          html_body: string
+          id: string
+          recipient: string
+          sender: string
+          subject: string
+          text_body: string
+        }[]
+      }
+      claim_contact_automation: {
+        Args: { p_id?: string; p_owner: string }
         Returns: {
           claim_token: string
           html_body: string
@@ -3615,6 +3856,18 @@ export type Database = {
           p_status: string
         }
         Returns: Json
+      }
+      close_scoped_checkout_intent: {
+        Args: {
+          p_disposition: string
+          p_generation: string
+          p_key: string
+          p_scope: string
+          p_session: string
+          p_subscription?: string
+          p_user_id: string
+        }
+        Returns: boolean
       }
       close_stripe_checkout_intent: {
         Args: {
@@ -3697,6 +3950,10 @@ export type Database = {
         }
         Returns: boolean
       }
+      complete_contact_intake: {
+        Args: { p_accepted: boolean; p_claim: string; p_id: string }
+        Returns: boolean
+      }
       complete_kids_step: {
         Args: {
           p_lesson: number
@@ -3712,6 +3969,16 @@ export type Database = {
           p_claim: string
           p_email_id: string
           p_event: string
+        }
+        Returns: boolean
+      }
+      confirm_scoped_checkout_intent: {
+        Args: {
+          p_generation: string
+          p_key: string
+          p_scope: string
+          p_session: string
+          p_user_id: string
         }
         Returns: boolean
       }
@@ -3741,6 +4008,10 @@ export type Database = {
           p_user_id: string
         }
         Returns: boolean
+      }
+      contact_automation_status: {
+        Args: { p_id?: string; p_owner: string }
+        Returns: Json
       }
       curriculum_admin: {
         Args: { p_action: string; p_data?: Json; p_user: string }
@@ -3876,6 +4147,14 @@ export type Database = {
       }
       get_admin_insights: { Args: never; Returns: Json }
       get_admin_overview: { Args: never; Returns: Json }
+      get_campaign_stripe_cancellation: {
+        Args: { p_source: string; p_user: string }
+        Returns: Json
+      }
+      get_campaign_stripe_renewal: {
+        Args: { p_id: string; p_subscription: string }
+        Returns: Json
+      }
       get_commercial_purchase_by_payment: {
         Args: { p_payment_id: string }
         Returns: Json
@@ -3885,6 +4164,7 @@ export type Database = {
         Returns: Json
       }
       get_entitlement_snapshot: { Args: { p_user_id: string }; Returns: Json }
+      get_free_access_announcement: { Args: never; Returns: Json }
       get_kids_stripe_checkout_context: {
         Args: {
           p_billing_interval: string
@@ -3967,6 +4247,16 @@ export type Database = {
         Args: { p_approve: boolean; p_parent_id: string; p_reference: string }
         Returns: undefined
       }
+      kids_ai_consent_context: {
+        Args: { p_profile: string; p_user: string }
+        Returns: Json
+      }
+      kids_ai_consent_history: {
+        Args: { p_before?: number; p_profile: string }
+        Returns: Json
+      }
+      kids_ai_consent_profiles: { Args: { p_after?: string }; Returns: Json }
+      kids_ai_consent_state: { Args: { p_profile: string }; Returns: Json }
       kids_block_retention_notice: {
         Args: { p_claim: string; p_notice: string }
         Returns: boolean
@@ -3996,6 +4286,18 @@ export type Database = {
       }
       kids_journey: {
         Args: { p_locale: string; p_profile: string }
+        Returns: Json
+      }
+      kids_parent_accept_ai_consent: {
+        Args: {
+          p_accepted: boolean
+          p_expected_event_id?: string
+          p_hash: string
+          p_locale: string
+          p_notice: string
+          p_profile: string
+          p_request_id: string
+        }
         Returns: Json
       }
       kids_parent_can_manage_profiles: { Args: never; Returns: boolean }
@@ -4030,6 +4332,14 @@ export type Database = {
             }
             Returns: string
           }
+      kids_parent_withdraw_ai_consent: {
+        Args: {
+          p_expected_event_id: string
+          p_profile: string
+          p_request_id: string
+        }
+        Returns: Json
+      }
       kids_parent_withdraw_consent: {
         Args: { p_profile: string }
         Returns: undefined
@@ -4074,6 +4384,11 @@ export type Database = {
       }
       lc09_claim_deletion: { Args: { p_user_id: string }; Returns: Json }
       lc09_claim_financial_purge: { Args: { p_user_id: string }; Returns: Json }
+      lc09_claim_live_deletion: { Args: { p_user_id: string }; Returns: Json }
+      lc09_claim_live_financial_purge: {
+        Args: { p_user_id: string }
+        Returns: Json
+      }
       lc09_complete_financial_purge: {
         Args: { p_lease_token: string; p_release?: boolean; p_user_id: string }
         Returns: Json
@@ -4238,6 +4553,24 @@ export type Database = {
         }
         Returns: boolean
       }
+      lc09_record_live_checkout_proof: {
+        Args: {
+          p_customer_id: string
+          p_disposition: string
+          p_intent_id: string
+          p_kind: string
+          p_lease_token: string
+          p_payment_id?: string
+          p_session_id: string
+          p_subscription_id?: string
+          p_user_id: string
+        }
+        Returns: boolean
+      }
+      lc09_renew_live_lifecycle_lease: {
+        Args: { p_lease_token: string; p_phase: string; p_user_id: string }
+        Returns: Json
+      }
       lc09_retained_apply_kids_stripe_event: {
         Args: {
           p_customer_id: string
@@ -4323,6 +4656,18 @@ export type Database = {
         Args: { p_user_id: string }
         Returns: Json
       }
+      m17_previous_advance_deletion: {
+        Args: { p_lease_token: string; p_next_stage: string; p_user_id: string }
+        Returns: Json
+      }
+      m17_previous_claim_financial_purge: {
+        Args: { p_user_id: string }
+        Returns: Json
+      }
+      m17_previous_complete_financial_purge: {
+        Args: { p_lease_token: string; p_release?: boolean; p_user_id: string }
+        Returns: Json
+      }
       mark_roadmap_done: { Args: { p_item_id: string }; Returns: undefined }
       match_knowledge_chunks: {
         Args: {
@@ -4397,6 +4742,19 @@ export type Database = {
         }
         Returns: Json
       }
+      prepare_contact_automation: {
+        Args: { p_id?: string; p_owner: string }
+        Returns: Json
+      }
+      prepare_scoped_checkout_intent: {
+        Args: {
+          p_offer?: boolean
+          p_parameters: string
+          p_scope: string
+          p_user_id: string
+        }
+        Returns: Json
+      }
       prepare_stripe_checkout: {
         Args: {
           p_billing_interval: string
@@ -4429,6 +4787,22 @@ export type Database = {
           p_text: string
         }
         Returns: undefined
+      }
+      queue_contact_automation: {
+        Args: {
+          p_html: string
+          p_id: string
+          p_locale: string
+          p_owner_html: string
+          p_owner_subject: string
+          p_owner_text: string
+          p_processing_consent: boolean
+          p_recipient: string
+          p_stream: string
+          p_subject: string
+          p_text: string
+        }
+        Returns: boolean
       }
       rag_activate_index_upgrade: {
         Args: { p_expected_active_version_key: string; p_version_key: string }
@@ -4577,6 +4951,10 @@ export type Database = {
         Returns: Json
       }
       rag_validate_staging_import: { Args: never; Returns: Json }
+      read_contact_intake_state: {
+        Args: { p_id: string; p_recovery_hash: string }
+        Returns: string
+      }
       record_contact_mail_receipt: {
         Args: {
           p_at: string
@@ -4700,6 +5078,24 @@ export type Database = {
         }
         Returns: Json
       }
+      reserve_contact_intake: {
+        Args: {
+          p_html: string
+          p_id: string
+          p_locale: string
+          p_owner_html: string
+          p_owner_subject: string
+          p_owner_text: string
+          p_payload_hash: string
+          p_processing_consent: boolean
+          p_recipient: string
+          p_recovery_hash?: string
+          p_stream: string
+          p_subject: string
+          p_text: string
+        }
+        Returns: Json
+      }
       reserve_learner_ai_access: {
         Args: {
           p_category: string
@@ -4743,6 +5139,10 @@ export type Database = {
         }
         Returns: Json
       }
+      set_communications_starts_paused: {
+        Args: { p_actor: string; p_paused: boolean }
+        Returns: Json
+      }
       settle_assistant_question: {
         Args: {
           p_fingerprint: string
@@ -4778,6 +5178,18 @@ export type Database = {
           isOneToOne: true
           isSetofReturn: false
         }
+      }
+      step_campaign_stripe_renewal: {
+        Args: {
+          p_code?: string
+          p_id: string
+          p_lease: string
+          p_price?: string
+          p_schedule?: string
+          p_start?: number
+          p_step: string
+        }
+        Returns: boolean
       }
       store_learning_content_version: {
         Args: {
@@ -4823,10 +5235,6 @@ export type Database = {
         Args: { p_event_key: string; p_provider: string; p_sender_hash: string }
         Returns: string
       }
-      support_claim_meta_event: {
-        Args: { p_event_key: string; p_provider: string; p_sender_hash: string }
-        Returns: string
-      }
       support_mark_event: {
         Args: { p_event_key: string; p_provider: string; p_status: string }
         Returns: boolean
@@ -4845,11 +5253,21 @@ export type Database = {
         }
         Returns: Json
       }
+      technical_command_before_quiz_ordering: {
+        Args: {
+          p_action: string
+          p_data?: Json
+          p_lesson?: string
+          p_locale?: string
+        }
+        Returns: Json
+      }
       technical_mail_command: {
         Args: { p_action: string; p_data?: Json }
         Returns: Json
       }
       technical_storage_allowed: { Args: { p_path: string }; Returns: boolean }
+      withdraw_contact_automation: { Args: { p_id: string }; Returns: boolean }
     }
     Enums: {
       app_role: "admin" | "moderator" | "user"
