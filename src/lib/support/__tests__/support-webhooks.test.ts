@@ -32,15 +32,15 @@ const answer = async () => ({ text: "أهلاً\n\nhttps://masaarat.ai/pricing\n
 
 describe("support reply policy", () => {
   it("keeps exactly one official link and the signature, dropping external links", () => {
-    const out = sanitizeAnswer("زور https://evil.example و www.other.com و masaarat.ai/x", "pricing", "ar")!;
+    const out = sanitizeAnswer("زور https://evil.example و www.other.com و masaarat.ai/x", "https://masaarat.ai/pricing", "ar")!;
     expect(countOfficialLinks(out)).toBe(1);
     expect(out).toContain("https://masaarat.ai/pricing");
     expect(out).not.toMatch(/evil|other\.com/);
     expect(out.endsWith("— فريق مسارات")).toBe(true);
   });
   it("rejects credential requests and certificate claims", () => {
-    expect(sanitizeAnswer("ابعتلي الباسورد بتاعك", "home", "ar")).toBeNull();
-    expect(sanitizeAnswer("You get an accredited certificate", "home", "other")).toBeNull();
+    expect(sanitizeAnswer("ابعتلي الباسورد بتاعك", "https://masaarat.ai", "ar")).toBeNull();
+    expect(sanitizeAnswer("You get an accredited certificate", "https://masaarat.ai", "en")).toBeNull();
   });
   it("redacts contact details before the model sees them", () => {
     const r = redactQuestion("رقمي 01012345678 وايميلي a@b.com و @ahmed https://x.co");
@@ -105,11 +105,20 @@ describe("WhatsApp webhook", () => {
     expect(first).toContain("<Message>");
     expect(second).not.toContain("<Message>");
   });
-  it("hands off to a human on request", async () => {
+  it("answers a request for a person truthfully: contact page, no promise, no silent mute", async () => {
     const m = memoryStore();
     const r = await handleWhatsAppSupport(await waRequest({ ...waFields, Body: "عايز اكلم موظف" }), { authToken: "tok", store: async () => m.store, answer });
-    expect(await r.text()).toContain("https://masaarat.ai/contact");
-    expect(m.handoffs.size).toBe(1);
+    const text = await r.text();
+    expect(text).toContain("https://masaarat.ai/contact");
+    expect(text).toContain("المساعد الآلي");
+    expect(text).not.toMatch(/هنحوّل|هيرد عليك|هنرد/);
+    expect(m.handoffs.size).toBe(0);
+  });
+  it("passes a private, sender-scoped thread to the answerer", async () => {
+    const m = memoryStore();
+    const seen: unknown[] = [];
+    await handleWhatsAppSupport(await waRequest(waFields), { authToken: "tok", store: async () => m.store, answer: async (_q, thread) => (seen.push(thread), answer()) });
+    expect(seen[0]).toMatchObject({ family: "whatsapp", visibility: "private" });
   });
 });
 
@@ -161,14 +170,52 @@ describe("Meta webhook", () => {
   });
 });
 
+describe("public comments", () => {
+  const comment = (id: string, text: string, from = "u7", post = "1298751943326788_42") => ({
+    field: "feed",
+    value: { item: "comment", verb: "add", comment_id: id, post_id: post, message: text, from: { id: from } },
+  });
+  async function deliver(changes: unknown[], deps: Parameters<typeof handleMetaSupport>[1]) {
+    const body = JSON.stringify(page([], changes));
+    return handleMetaSupport(
+      new Request("https://masaarat.ai/api/public/support-meta", {
+        method: "POST",
+        headers: { "x-hub-signature-256": await metaSignature("sec", new TextEncoder().encode(body)) },
+        body,
+      }),
+      deps,
+    );
+  }
+  it("ignores non-questions without calling the model", async () => {
+    const m = memoryStore();
+    const ans = vi.fn(answer);
+    const send = vi.fn(async () => "sent" as const);
+    await deliver([comment("c1", "😍😍 جميل"), comment("c2", "@friend")], { appSecret: "sec", pageToken: "pt", store: async () => m.store, answer: ans, send });
+    expect(ans).not.toHaveBeenCalled();
+    expect(send).not.toHaveBeenCalled();
+  });
+  it("replies at most once per commenter per post, with a public-only thread", async () => {
+    const m = memoryStore();
+    const threads: unknown[] = [];
+    const send = vi.fn(async () => "sent" as const);
+    const deps = { appSecret: "sec", pageToken: "pt", store: async () => m.store, send, answer: async (_q: string, _p: boolean, t: unknown) => (threads.push(t), answer()) };
+    await deliver([comment("c1", "الاشتراك بكام؟")], deps);
+    await deliver([comment("c2", "طب والسنوي بكام؟")], deps);
+    await deliver([comment("c3", "بكام؟", "u8")], deps);
+    expect(send).toHaveBeenCalledTimes(2);
+    expect(threads[0]).toMatchObject({ visibility: "public", family: "messenger" });
+    expect((threads[0] as { thread: string }).thread.startsWith("1298751943326788_42:")).toBe(true);
+  });
+});
+
 describe("live free-access mention", () => {
   it("adds the limited-time free line when active and the model omitted it", () => {
-    const out = sanitizeAnswer("الاشتراك شهري أو سنوي.", "pricing", "ar", { kind: "active", endsAt: "2026-12-01T00:00:00Z" })!;
+    const out = sanitizeAnswer("الاشتراك شهري أو سنوي.", "https://masaarat.ai/pricing", "ar", { kind: "active", endsAt: "2026-12-01T00:00:00Z" })!;
     expect(out).toMatch(/مجاناً لفترة محدودة/);
     expect(countOfficialLinks(out)).toBe(1);
   });
   it("adds nothing when no promotion is active", () => {
-    const out = sanitizeAnswer("Monthly or yearly.", "pricing", "other", { kind: "inactive" })!;
+    const out = sanitizeAnswer("Monthly or yearly.", "https://masaarat.ai/pricing", "en", { kind: "inactive" })!;
     expect(out).not.toMatch(/free/i);
   });
 });

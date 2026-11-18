@@ -8,7 +8,7 @@ export function handleWhatsAppSupportRequest(request: Request): Promise<Response
   return handleWhatsAppSupport(request, {
     authToken: process.env.TWILIO_AUTH_TOKEN,
     store: cloudSupportStore,
-    answer: (q) => answerQuestion(q, { publicComment: false }),
+    answer: (q, thread) => answerQuestion(q, { publicComment: false, thread }),
   });
 }
 
@@ -18,6 +18,6 @@ export function handleMetaSupportRequest(request: Request): Promise<Response> {
     verifyToken: process.env.META_WEBHOOK_VERIFY_TOKEN,
     pageToken: process.env.META_PAGE_ACCESS_TOKEN,
     store: cloudSupportStore,
-    answer: (q, publicComment) => answerQuestion(q, { publicComment }),
+    answer: (q, publicComment, thread) => answerQuestion(q, { publicComment, thread }),
   });
 }

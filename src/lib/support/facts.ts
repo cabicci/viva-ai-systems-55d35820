@@ -1,12 +1,22 @@
-// Public platform facts only (mirrors public site copy). No account data, prices or dates.
-export const PUBLIC_FACTS = `
-- Masaarat (مسارات) is an Arabic-first online learning platform at masaarat.ai.
-- Learning areas: AI learning paths (Builder, Creator, Automator, Analyst, Business), academic curricula, technical curricula, and a kids section.
-- Each lesson has an AI learning assistant that answers questions about the lesson content.
-- Free plan: a free account includes 10 assistant questions each month. There is no automatic free trial.
-- Paid subscriptions are billed monthly or yearly. Content stays available while the subscription is active.
-- Assistant questions on subscriptions renew on the monthly anniversary; unused questions do not roll over.
-- Extra question packs (100 questions) can be bought at any time; they accumulate and do not expire.
-- Prices depend on the country/market and are shown on the pricing page.
-- Billing, refunds, account access, invoices or anything about a specific person's account are handled by the support team through the contact page.
-`.trim();
+// General, non-price platform facts, built from the same public copy the site renders.
+// Prices, curricula and lessons come from ./sources (never typed here).
+import { getUiString } from "@/lib/locale/ui-strings";
+import { getPathStoryCopy } from "@/lib/path-story";
+
+function general(locale: "ar-EG" | "en"): string[] {
+  const t = (k: Parameters<typeof getUiString>[1]) => getUiString(locale, k);
+  const story = getPathStoryCopy(locale) as { body?: string };
+  return [
+    locale === "en"
+      ? "Masaarat (مسارات) is an Arabic-first online learning platform at masaarat.ai with AI paths, Academic, Technical and Kids programs."
+      : "مسارات منصة تعلّم أونلاين عربية على masaarat.ai فيها مسارات الذكاء الاصطناعي والأكاديمي والتقني وكيدز.",
+    ...(story.body ? [story.body] : []),
+    `${t("pricing.faq.1.q")} ${t("pricing.faq.1.a")}`,
+    `${t("pricing.faq.4.q")} ${t("pricing.faq.4.a")}`,
+    locale === "en"
+      ? "Billing, refunds, invoices and account access for a specific person are handled through the contact page."
+      : "الفواتير والاسترداد ومشاكل الحساب الشخصية بتتعمل من صفحة التواصل.",
+  ];
+}
+
+export const GENERAL_FACTS = { ar: general("ar-EG"), en: general("en") } as const;

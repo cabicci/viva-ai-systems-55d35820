@@ -1,11 +1,11 @@
 import { FACEBOOK_PAGE_ID, GRAPH_BASE, INSTAGRAM_ACCOUNT_ID, META_APP_ID, type SupportProvider } from "./config";
-import { detectLang, handoffReply, wantsHuman } from "./compose";
+import { detectLang, handoffReply, isRelevantPublicQuestion, wantsHuman } from "./compose";
 import { timingSafeEqualText, verifyMeta } from "./crypto";
-import type { SupportAnswer } from "./answer.server";
+import type { SupportAnswer, ThreadRef } from "./answer.server";
 import { senderHash, type SupportStore } from "./store.server";
 
 export type MetaWork =
-  | { kind: "reply"; provider: SupportProvider; key: string; family: string; senderId: string; text: string; target: string }
+  | { kind: "reply"; provider: SupportProvider; key: string; family: string; senderId: string; text: string; target: string; postId?: string }
   | { kind: "human_echo"; family: string; customerId: string };
 
 type Obj = Record<string, unknown>;
@@ -63,13 +63,14 @@ export function extractMetaWork(payload: unknown): MetaWork[] {
         const postId = str(value.post_id);
         const text = str(value.message);
         if (!commentId || !text || !postId?.startsWith(`${FACEBOOK_PAGE_ID}_`)) continue;
-        out.push({ kind: "reply", provider: "meta_page_comment", key: commentId, family, senderId: fromId, text, target: commentId });
+        out.push({ kind: "reply", provider: "meta_page_comment", key: commentId, family, senderId: fromId, text, target: commentId, postId });
       } else {
         if (change.field !== "comments") continue;
         const commentId = str(value.id);
         const text = str(value.text);
         if (!commentId || !text) continue;
-        out.push({ kind: "reply", provider: "meta_instagram_comment", key: commentId, family, senderId: fromId, text, target: commentId });
+        const mediaId = str(obj(value.media)?.id) ?? "unknown-media";
+        out.push({ kind: "reply", provider: "meta_instagram_comment", key: commentId, family, senderId: fromId, text, target: commentId, postId: mediaId });
       }
     }
   }
@@ -116,7 +117,7 @@ export type MetaDeps = {
   verifyToken?: string;
   pageToken?: string;
   store: () => Promise<SupportStore>;
-  answer: (question: string, publicComment: boolean) => Promise<SupportAnswer>;
+  answer: (question: string, publicComment: boolean, thread: ThreadRef) => Promise<SupportAnswer>;
   send?: MetaSender;
 };
 
@@ -168,14 +169,25 @@ export async function handleMetaSupport(request: Request, deps: MetaDeps): Promi
       const hash = await senderHash(item.family, item.senderId);
       if ((await store.claim(item.provider, item.key, hash)) !== "process") continue;
       const publicComment = item.provider === "meta_page_comment" || item.provider === "meta_instagram_comment";
-      let text: string | null;
-      if (!publicComment && wantsHuman(item.text)) {
-        await store.handoff(hash, 24);
-        text = handoffReply(detectLang(item.text));
-      } else text = (await deps.answer(item.text, publicComment)).text;
+      let text: string | null = null;
+      if (publicComment) {
+        // Public threads: only genuine questions, scoped context per post+commenter (never DM context).
+        if (isRelevantPublicQuestion(item.text))
+          text = (await deps.answer(item.text, true, { family: item.family, thread: `${item.postId}:${hash}`, visibility: "public" })).text;
+      } else if (wantsHuman(item.text)) text = handoffReply(detectLang(item.text));
+      else text = (await deps.answer(item.text, false, { family: item.family, thread: hash, visibility: "private" })).text;
       if (!text) {
         await store.mark(item.provider, item.key, "ignored");
         continue;
+      }
+      if (publicComment) {
+        // At most one public reply per commenter per post, ever: a durable lock row.
+        const once = `once:${item.postId}:${hash}`.slice(0, 200);
+        if ((await store.claim(item.provider, once, hash)) !== "process") {
+          await store.mark(item.provider, item.key, "ignored");
+          continue;
+        }
+        await store.mark(item.provider, once, "ignored");
       }
       if (!(await store.mark(item.provider, item.key, "sending"))) continue;
       const result = await send(item.provider, item.target, text);

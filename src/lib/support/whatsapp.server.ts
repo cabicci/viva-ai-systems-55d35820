@@ -1,7 +1,7 @@
 import { SUPPORT_WHATSAPP_NUMBER } from "./config";
 import { detectLang, handoffReply, wantsHuman } from "./compose";
 import { verifyTwilio } from "./crypto";
-import type { SupportAnswer } from "./answer.server";
+import type { SupportAnswer, ThreadRef } from "./answer.server";
 import { senderHash, type SupportStore } from "./store.server";
 
 const xmlHeaders = { "Content-Type": "text/xml; charset=utf-8", "Cache-Control": "no-store" };
@@ -17,7 +17,7 @@ export function messageTwiml(text: string): string {
 export type WhatsAppDeps = {
   authToken?: string;
   store: () => Promise<SupportStore>;
-  answer: (question: string) => Promise<SupportAnswer>;
+  answer: (question: string, thread: ThreadRef) => Promise<SupportAnswer>;
 };
 
 /** Twilio WhatsApp inbound webhook: signed, destination-bound, replies only with TwiML. */
@@ -54,10 +54,9 @@ export async function handleWhatsAppSupport(request: Request, deps: WhatsAppDeps
   }
   try {
     let text: string | null;
-    if (wantsHuman(body)) {
-      await store.handoff(hash, 24);
-      text = handoffReply(detectLang(body));
-    } else text = (await deps.answer(body)).text;
+    // No live agent is connected, so asking for one gets a truthful pointer, not a mute.
+    if (wantsHuman(body)) text = handoffReply(detectLang(body));
+    else text = (await deps.answer(body, { family: "whatsapp", thread: hash, visibility: "private" })).text;
     if (!text) {
       await store.mark("twilio_whatsapp", sid, "ignored");
       return new Response(EMPTY_TWIML, { headers: xmlHeaders });

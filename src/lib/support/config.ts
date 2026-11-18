@@ -6,10 +6,11 @@ export const INSTAGRAM_ACCOUNT_ID = "17841430598943682";
 export const GRAPH_BASE = "https://graph.facebook.com/v25.0";
 export const SUPPORT_MODEL = "gpt-4o-mini";
 
+export const OFFICIAL_ORIGIN = "https://masaarat.ai";
 export const OFFICIAL_LINKS = {
-  home: "https://masaarat.ai",
-  pricing: "https://masaarat.ai/pricing",
-  contact: "https://masaarat.ai/contact",
+  home: OFFICIAL_ORIGIN,
+  pricing: `${OFFICIAL_ORIGIN}/pricing`,
+  contact: `${OFFICIAL_ORIGIN}/contact`,
 } as const;
 export type OfficialLink = keyof typeof OFFICIAL_LINKS;
 
