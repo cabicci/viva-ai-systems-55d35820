@@ -43,3 +43,17 @@ export async function verifyMeta(secret: string, rawBody: Uint8Array<ArrayBuffer
   if (!header) return false;
   return timingSafeEqualText(await metaSignature(secret, rawBody), header.trim().toLowerCase());
 }
+
+const ECHO_PREFIX = "msr1";
+
+/** Send API metadata that proves an echo is this app's own outbound DM; bound to one conversation. */
+export async function echoToken(secret: string, family: string, recipient: string, nonce?: string): Promise<string> {
+  const n = nonce ?? hex(crypto.getRandomValues(new Uint8Array(16)));
+  return `${ECHO_PREFIX}.${n}.${hex(await hmac("SHA-256", secret, `masaarat-support-echo:v1:${family}:${recipient}:${n}`))}`;
+}
+
+export async function verifyEchoToken(secret: string, family: string, recipient: string, metadata: string): Promise<boolean> {
+  const m = /^msr1\.([a-f0-9]{32})\.[a-f0-9]{64}$/.exec(metadata);
+  if (!m) return false;
+  return timingSafeEqualText(await echoToken(secret, family, recipient, m[1]), metadata);
+}

@@ -140,7 +140,7 @@ describe("Meta webhook", () => {
         ],
       ),
     );
-    expect(work.map((w) => (w.kind === "reply" ? w.key : "echo"))).toEqual(["m1", "c1"]);
+    expect(work.map((w) => (w.kind === "reply" ? w.key : "echo"))).toEqual(["m1", "echo", "c1"]);
     expect(extractMetaWork(page([{ sender: { id: "u" }, recipient: { id: "999" }, message: { mid: "m", text: "t" } }], [], "999"))).toEqual([]);
     const ig = extractMetaWork({ object: "instagram", entry: [{ id: "17841430598943682", changes: [{ field: "comments", value: { id: "ic1", text: "كام السعر", from: { id: "ig9" } } }] }] });
     expect(ig[0]).toMatchObject({ provider: "meta_instagram_comment", target: "ic1" });

@@ -1,12 +1,12 @@
 import { FACEBOOK_PAGE_ID, GRAPH_BASE, INSTAGRAM_ACCOUNT_ID, META_APP_ID, type SupportProvider } from "./config";
 import { detectLang, handoffReply, isRelevantPublicQuestion, wantsHuman } from "./compose";
-import { timingSafeEqualText, verifyMeta } from "./crypto";
+import { echoToken, timingSafeEqualText, verifyEchoToken, verifyMeta } from "./crypto";
 import type { SupportAnswer, ThreadRef } from "./answer.server";
 import { senderHash, type SupportStore } from "./store.server";
 
 export type MetaWork =
   | { kind: "reply"; provider: SupportProvider; key: string; family: string; senderId: string; text: string; target: string; postId?: string }
-  | { kind: "human_echo"; family: string; customerId: string };
+  | { kind: "echo"; family: string; customerId: string; mid: string | null; appId: string | null; metadata: string | null };
 
 type Obj = Record<string, unknown>;
 const obj = (v: unknown): Obj | null => (v && typeof v === "object" && !Array.isArray(v) ? (v as Obj) : null);
@@ -31,9 +31,11 @@ export function extractMetaWork(payload: unknown): MetaWork[] {
       const recipient = str(obj(ev?.recipient)?.id);
       if (!ev || !message || !sender || !recipient) continue;
       if (message.is_echo === true) {
-        // A person replying from the Page/IG inbox (not this app) takes the conversation over.
-        if (sender === ownId && recipient !== ownId && String(message.app_id ?? "") !== META_APP_ID)
-          out.push({ kind: "human_echo", family, customerId: recipient });
+        // Everything the Page/IG account sends is echoed; ownership is decided when processing.
+        if (sender === ownId && recipient !== ownId && message.is_self !== true) {
+          const appId = typeof message.app_id === "number" || typeof message.app_id === "string" ? String(message.app_id) : null;
+          out.push({ kind: "echo", family, customerId: recipient, mid: str(message.mid), appId, metadata: str(message.metadata) });
+        }
         continue;
       }
       if (message.is_deleted === true || message.is_unsupported === true) continue;
@@ -62,7 +64,9 @@ export function extractMetaWork(payload: unknown): MetaWork[] {
         const commentId = str(value.comment_id);
         const postId = str(value.post_id);
         const text = str(value.message);
-        if (!commentId || !text || !postId?.startsWith(`${FACEBOOK_PAGE_ID}_`)) continue;
+        // Page posts arrive as "<page>_<post>"; owned videos/reels can arrive as a bare numeric ID.
+        // The verified signature plus entry.id === Page ID is the ownership boundary for both.
+        if (!commentId || !text || !postId || !(postId.startsWith(`${FACEBOOK_PAGE_ID}_`) || /^\d{1,40}$/.test(postId))) continue;
         out.push({ kind: "reply", provider: "meta_page_comment", key: commentId, family, senderId: fromId, text, target: commentId, postId });
       } else {
         if (change.field !== "comments") continue;
@@ -78,16 +82,24 @@ export function extractMetaWork(payload: unknown): MetaWork[] {
 }
 
 type SendResult = "sent" | "rejected" | "ambiguous";
-export type MetaSender = (provider: SupportProvider, target: string, text: string) => Promise<SendResult>;
+export type SendOutcome = { result: SendResult; messageId?: string };
+/** metadata is set only for Messenger DMs; Meta returns it on the echo of that message. */
+export type MetaSender = (provider: SupportProvider, target: string, text: string, metadata?: string) => Promise<SendResult | SendOutcome>;
+const outcomeOf = (v: SendResult | SendOutcome): SendOutcome => (typeof v === "string" ? { result: v } : v);
+
+/** Hash of a provider message ID, scoped to the channel family; the raw ID is never stored. */
+export const midHash = (family: string, mid: string) => senderHash(`mid:${family}`, mid);
 
 /** Graph endpoints per channel, using the Page token from Facebook Login for Business. */
 export function graphSender(pageToken: string, fetchImpl: typeof fetch = fetch): MetaSender {
-  return async (provider, target, text) => {
+  return async (provider, target, text, metadata) => {
     let url: string;
     let body: Obj;
     if (provider === "meta_messenger" || provider === "meta_instagram_dm") {
       url = `${GRAPH_BASE}/${FACEBOOK_PAGE_ID}/messages`;
-      body = { recipient: { id: target }, messaging_type: "RESPONSE", message: { text: text.slice(0, 990) } };
+      const message: Obj = { text: text.slice(0, 990) };
+      if (provider === "meta_messenger" && metadata) message.metadata = metadata;
+      body = { recipient: { id: target }, messaging_type: "RESPONSE", message };
     } else if (provider === "meta_page_comment") {
       url = `${GRAPH_BASE}/${encodeURIComponent(target)}/comments`;
       body = { message: text };
@@ -102,8 +114,12 @@ export function graphSender(pageToken: string, fetchImpl: typeof fetch = fetch):
         body: JSON.stringify(body),
         signal: AbortSignal.timeout(8000),
       });
+      if (res.ok) {
+        const data = obj(await res.json().catch(() => null));
+        const messageId = str(data?.message_id) ?? undefined;
+        return { result: "sent", messageId };
+      }
       await res.body?.cancel().catch(() => undefined);
-      if (res.ok) return "sent";
       console.error(`SUPPORT_GRAPH_STATUS_${res.status}`);
       return res.status >= 400 && res.status < 500 && res.status !== 408 ? "rejected" : "ambiguous";
     } catch {
@@ -153,6 +169,7 @@ export async function handleMetaSupport(request: Request, deps: MetaDeps): Promi
   const work = extractMetaWork(payload);
   if (!work.length) return new Response("EVENT_RECEIVED", { headers: noStore });
   const send = deps.send ?? graphSender(deps.pageToken);
+  const appSecret = deps.appSecret;
   let retry = false;
   let store: SupportStore;
   try {
@@ -160,11 +177,28 @@ export async function handleMetaSupport(request: Request, deps: MetaDeps): Promi
   } catch {
     return new Response("Service Unavailable", { status: 503 });
   }
+  /** own/automated echoes are ignored; only an echo not proven to be ours or automated is a manual takeover. */
+  async function classifyEcho(item: Extract<MetaWork, { kind: "echo" }>, conversation: string) {
+    if (item.metadata && (await verifyEchoToken(appSecret, item.family, item.customerId, item.metadata)))
+      return "own";
+    if (item.appId === META_APP_ID) return "own";
+    // Only Send API callers can attach metadata; native inbox replies by a person carry none.
+    if (item.metadata) return "automated";
+    if (item.mid && store.matchEcho) {
+      const match = await store.matchEcho(conversation, await midHash(item.family, item.mid));
+      if (match === "own") return "own";
+      if (match === "pending") return "retry";
+    }
+    return "human";
+  }
   async function processItem(item: MetaWork) {
     let beforeSendKey: string | undefined;
     try {
-      if (item.kind === "human_echo") {
-        await store.handoff(await senderHash(item.family, item.customerId), 24);
+      if (item.kind === "echo") {
+        const conversation = await senderHash(item.family, item.customerId);
+        const verdict = await classifyEcho(item, conversation);
+        if (verdict === "retry") retry = true;
+        else if (verdict === "human") await store.handoff(conversation, 24);
         return;
       }
       const hash = await senderHash(item.family, item.senderId);
@@ -188,7 +222,24 @@ export async function handleMetaSupport(request: Request, deps: MetaDeps): Promi
       }
       beforeSendKey = undefined;
       if (!(await store.mark(item.provider, key, "sending"))) return;
-      const result = await send(item.provider, item.target, text);
+      const dm = item.provider === "meta_messenger" || item.provider === "meta_instagram_dm";
+      const attempt = dm && store.beginOutbound ? await senderHash(`attempt:${item.provider}`, key) : null;
+      if (attempt) {
+        try {
+          // Recorded before sending, so an echo that beats the Send API response is retried, not taken as manual.
+          await store.beginOutbound!(attempt, hash);
+        } catch {
+          await store.mark(item.provider, key, "failed").catch(() => false);
+          retry = true;
+          return;
+        }
+      }
+      const metadata = item.provider === "meta_messenger" ? await echoToken(appSecret, item.family, item.target) : undefined;
+      const { result, messageId } = outcomeOf(await send(item.provider, item.target, text, metadata));
+      if (attempt && store.finishOutbound) {
+        const mh = messageId ? await midHash(item.family, messageId) : null;
+        await store.finishOutbound(attempt, mh, result).catch(() => console.error("SUPPORT_OUTBOUND_LEDGER_FINISH_FAILED"));
+      }
       if (result === "sent") await store.mark(item.provider, key, "replied");
       else if (result === "rejected") {
         await store.mark(item.provider, key, "failed");
@@ -205,7 +256,7 @@ export async function handleMetaSupport(request: Request, deps: MetaDeps): Promi
   // conversations can progress independently. The concurrency bound is not a batch limit.
   const bySender = new Map<string, MetaWork[]>();
   for (const item of work) {
-    const senderId = item.kind === "human_echo" ? item.customerId : item.senderId;
+    const senderId = item.kind === "echo" ? item.customerId : item.senderId;
     const queue = bySender.get(senderId);
     if (queue) queue.push(item);
     else bySender.set(senderId, [item]);
