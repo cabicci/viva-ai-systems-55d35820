@@ -65,13 +65,16 @@ describe("unknown market and program", () => {
   });
 });
 
-describe("named lesson with matching public source excerpt", () => {
-  it("resolves «حوّل الشعور لسؤال» to its Analyst lesson, module excerpt and URL", () => {
+describe("named lesson from the allowlisted public listing", () => {
+  it("resolves «حوّل الشعور لسؤال» to its Analyst lesson title, program name and URL only", () => {
     const d = decide("عايز أعرف عن درس حوّل الشعور لسؤال", "ar", null, staticCatalogue());
     expect(d.kind).toBe("facts");
     if (d.kind !== "facts") return;
     expect(d.link).toBe("https://masaarat.ai/learn/analyst/analyst-m2-l1-feeling-to-question");
-    expect(d.facts).toContain("مكانه في المنهج: التحليل › Analyst Thinking — حوّل الشعور لسؤال — والسؤال لقرار.");
+    expect(d.facts[0]).toBe("اسم الدرس: حوّل الشعور لسؤال");
+    expect(d.facts[1]).toMatch(/^البرنامج: /);
+    expect(d.facts).toHaveLength(3);
+    expect(d.model).toBe(false);
     expect(d.facts).toContain("الدرس ده متاح ضمن الباقات المدفوعة أو الوصول المناسب.");
     expect(d.topic).toMatchObject({ subject: "lesson", lesson: "analyst-m2-l1-feeling-to-question" });
   });
@@ -123,9 +126,9 @@ describe("excluded / private content", () => {
     const rows = liveLessons({
       ar: {
         academic: [
-          { id: "AC-OK", title: "منهج", released: true, lessons: [{ id: "AC-OK-M01-L01", title: "درس منشور", moduleId: "M01", position: 1, introductory: true }] },
-          { id: "AC-HIDDEN", title: "مخفي", released: false, lessons: [{ id: "AC-HIDDEN-M01-L01", title: "درس مخفي", moduleId: "M01", position: 1, introductory: false }] },
-          { id: "AC-REVIEW", title: "مراجعة", released: true, reviewOnly: true, lessons: [{ id: "AC-REVIEW-M01-L01", title: "درس مراجعة", moduleId: "M01", position: 1, introductory: false }] },
+          { id: "AC-OK", title: "منهج", released: true, lessons: [{ id: "AC-OK-M01-L01", title: "درس منشور", introductory: true }] },
+          { id: "AC-HIDDEN", title: "مخفي", released: false, lessons: [{ id: "AC-HIDDEN-M01-L01", title: "درس مخفي", introductory: false }] },
+          { id: "AC-REVIEW", title: "مراجعة", released: true, reviewOnly: true, lessons: [{ id: "AC-REVIEW-M01-L01", title: "درس مراجعة", introductory: false }] },
         ],
         kids: [{ levelId: "level-1", lessonNumber: 13, title: "خارج النطاق" }, { levelId: "level-9", lessonNumber: 1, title: "مستوى وهمي" }],
       },

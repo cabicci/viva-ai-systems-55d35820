@@ -52,6 +52,26 @@ export async function readFreeAccessState(fetchImpl: typeof fetch = fetch): Prom
   }
 }
 
+const str = (v: unknown) => (typeof v === "string" ? v : "");
+const rows = (v: unknown) => (Array.isArray(v) ? (v as Record<string, unknown>[]) : []);
+function projectAcademic(c: Record<string, unknown>) {
+  return {
+    id: str(c.id),
+    title: str(c.title),
+    released: c.released === false ? false : undefined,
+    reviewOnly: c.reviewOnly === true ? true : undefined,
+    lessons: rows(c.lessons).map((l) => ({ id: str(l.id), title: str(l.title), introductory: l.introductory === true })),
+  };
+}
+function projectIntake(c: Record<string, unknown>, area: (typeof COURSE_AREAS)[number]) {
+  return {
+    area,
+    id: str(c.id),
+    title: str(c.title),
+    stations: rows(c.stations).map((st) => ({ steps: rows(st.steps).map((x) => ({ id: str(x.id), title: str(x.title) })) })),
+  };
+}
+
 let liveCache: { at: number; value: CatalogueLesson[] } | null = null;
 /** Anonymous public catalogue reads (released academic, active intake, approved kids titles). */
 export async function readPublicCatalogue(fetchImpl: typeof fetch = fetch): Promise<CatalogueLesson[]> {
@@ -65,20 +85,21 @@ export async function readPublicCatalogue(fetchImpl: typeof fetch = fetch): Prom
       const locale = lang === "ar" ? "ar-EG" : "en";
       const entry: NonNullable<LiveCatalogueByLang["ar"]> = {};
       live[lang] = entry;
+      // Each response is projected to ids/titles immediately; no other field is kept.
       const academic = await client.rpc("academic_catalogue" as never, { p_locale: locale } as never).then(
-        (r) => (r.error || !Array.isArray(r.data) ? undefined : r.data),
+        (r) => (r.error || !Array.isArray(r.data) ? undefined : (r.data as Record<string, unknown>[]).map(projectAcademic)),
         () => undefined,
       );
-      if (academic) entry.academic = academic as never;
+      if (academic) entry.academic = academic;
       const intake = await Promise.all(
         COURSE_AREAS.map((area) =>
           client.rpc("curriculum_catalogue" as never, { p_area: area, p_locale: locale } as never).then(
-            (r) => (r.error || !Array.isArray(r.data) ? [] : (r.data as { id: string; title: string; stations: never[] }[]).map((c) => ({ ...c, area }))),
+            (r) => (r.error || !Array.isArray(r.data) ? [] : (r.data as Record<string, unknown>[]).map((c) => projectIntake(c, area))),
             () => [],
           ),
         ),
       );
-      entry.intake = intake.flat() as never;
+      entry.intake = intake.flat();
       const kids = await Promise.all(
         KIDS_LEVELS.map((level) =>
           client.functions.invoke("kids-catalogue", { body: { levelId: level.id, locale } }).then(
@@ -109,8 +130,10 @@ export type AnswerDeps = {
 };
 
 /**
- * Resolves the question against public sources first; sends only the redacted question and
- * the verified facts to OpenAI; always returns a safe reply with exactly one official link.
+ * Resolves the question against public sources first. Only plan/price/program/general
+ * questions are phrased by OpenAI, with the redacted question and allowlisted facts; any
+ * lesson, teaching, quiz/exercise or pasted-passage request is answered deterministically
+ * with a navigation link and never sent. Always returns one official link.
  */
 export async function answerQuestion(
   question: string,
@@ -134,6 +157,11 @@ export async function answerQuestion(
 
   if (decision.kind !== "facts") {
     return { text: finish(decision.text, decision.link, lang), source: "deterministic" };
+  }
+  // Lesson-scoped decisions never reach the model: the reply is the allowlisted listing only.
+  if (!decision.model) {
+    const line = offerLine(offer, lang);
+    return { text: finish(line ? `${decision.draft}\n${line}` : decision.draft, decision.link, lang), source: "deterministic" };
   }
 
   const facts = decision.draft ? decision.facts : [...decision.facts, ...GENERAL_FACTS[lang]];

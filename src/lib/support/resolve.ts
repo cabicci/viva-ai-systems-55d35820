@@ -1,6 +1,8 @@
 // Deterministic understanding of one (already redacted) question plus the thread's prior
-// opaque topic. Decides whether to clarify, refuse private content, or which public facts
-// and which single official link apply. The model only phrases what this allows.
+// opaque topic. Decides whether to clarify, redirect a teaching/content request to the
+// lesson page, or which public facts and which single official link apply. The model only
+// phrases what this allows, and never sees anything lesson- or teaching-related: every
+// lesson, teaching, quiz/exercise or pasted-passage decision is answered deterministically.
 import { cleanTopic, type SupportArea, type SupportMarket, type SupportTerm, type TopicRef } from "./context";
 import { AREA_LINKS, pricingFacts, programFacts, url, type CatalogueLesson, type SupportLang } from "./sources";
 
@@ -40,6 +42,24 @@ const OTHER_TERM_RE = /(ربع سنوي|3 شهور|تلات شهور|quarter|6 �
 const LESSON_RE = /(درس|الدرس|دروس|lesson|خطوه|step)/;
 const PROGRAM_RE = /(منهج|مناهج|مسار|مسارات|كورس|كورسات|course|curricul|program|بتدرسوا|بتعلموا|تتعلم|اتعلم|ادرس|study|learn)/;
 const PRIVATE_RE = /(ابعت(لي)? (الدرس|المحتوي|الشرح|الملف)|محتوي الدرس كامل|الدرس كامل|نص الدرس|pdf|full (lesson|content|text)|send me the (lesson|content|file)|الاجابات|الاجابه|answers|حل (الكويز|الاختبار|الامتحان)|quiz answers|كلمه السر|كلمه المرور|باسورد|password|unlock code)/;
+// Teaching / content requests: explain, summarise, quote, translate, solve, quiz, exercise.
+const TEACH_AR_RE = /(?:^|\s)(?:و|ف)?(?:ال)?(?:اشرح|شرح|فهمني|وضحلي|علمني|لخص|ملخص|تلخيص|ترجم|اقتبس)/;
+const TEACH_AR_WORD_RE = /(?:^|\s)(?:و|ف)?وضح(?:ها|ه|هم|لي)?(?:\s|$)/;
+const TEACH_AR_PHRASE_RE = /(يعني ايه|معني كلمه|بيقول ايه|بتقول ايه|بيتكلم عن ايه|محتواه|محتوي الدرس|تفاصيل الدرس|كمل الدرس|اكمل الدرس|نكمل الدرس)/;
+const TEACH_EN_RE = /\b(explain|summari[sz]e|summary|teach me|tutor|translate|quote|meaning of|define|walk me through|what does (?:it|the lesson|this lesson|this) (?:say|cover|teach|mean)|go deeper|continue the lesson|lesson (?:content|text|notes))\b/;
+// Assessment material: always navigation-only, whatever else the message mentions.
+const ASSESS_AR_RE = /(?:^|\s)(?:و|ف)?(?:ال)?(?:حلول|اجاوب|جاوب|اجابه|اجابات|كويز|اختبار|امتحان|تمرين|تمارين|واجب|سؤال رقم)/;
+const ASSESS_AR_WORD_RE = /(?:^|\s)(?:و|ف)?(?:ال)?حل(?:ها|ه|هم|لي|يلي)?(?:\s|$)/;
+const ASSESS_EN_RE = /\b(solve|solution|answers? (?:to|for)|quiz|exam|test question|exercise|assignment|homework|worksheet)\b/;
+const isTeaching = (n: string) => TEACH_AR_RE.test(n) || TEACH_AR_WORD_RE.test(n) || TEACH_AR_PHRASE_RE.test(n) || TEACH_EN_RE.test(n);
+const isAssessment = (n: string) => ASSESS_AR_RE.test(n) || ASSESS_AR_WORD_RE.test(n) || ASSESS_EN_RE.test(n);
+// Option markers typical of pasted quiz/exercise text: "a) b) c)", "أ) ب) ج)", "1) 2) 3)".
+const OPTIONS_RE = /(?:^|\s)(?:[a-d]|[أابجد]|[1-4])\s*[).:-]\s*\S+[\s\S]*(?:^|\s)(?:[a-d]|[أابجد]|[1-4])\s*[).:-]\s*\S+/im;
+/** Pasted passages never go to the model: long, multi-line or quiz-shaped messages. */
+export function looksLikePassage(raw: string): boolean {
+  const t = raw.trim();
+  return t.length > 280 || t.split(/\n/).filter((l) => l.trim()).length >= 3 || OPTIONS_RE.test(t) || /[«"“].{60,}[»"”]/s.test(t);
+}
 const FOLLOWUP_RE = /^(و|طب |طيب |and\b|what about\b|how about\b|ok\b|okay\b|اوك )|(?:^|\s)(it|that|same|ده|دي|بتاعه|بتاعها)(?:\s|$)/;
 
 export type Detected = {
@@ -51,6 +71,9 @@ export type Detected = {
   lessonWord: boolean;
   programWord: boolean;
   privateRequest: boolean;
+  teaching: boolean;
+  assessment: boolean;
+  passage: boolean;
   followup: boolean;
 };
 
@@ -88,6 +111,9 @@ export function detect(question: string): Detected {
     lessonWord: has(LESSON_RE, n),
     programWord: has(PROGRAM_RE, n),
     privateRequest: has(PRIVATE_RE, n),
+    teaching: isTeaching(n),
+    assessment: isAssessment(n),
+    passage: looksLikePassage(question),
     followup: has(FOLLOWUP_RE, n) || n.split(" ").length <= 4,
   };
 }
@@ -127,7 +153,9 @@ export function matchLessons(question: string, catalogue: CatalogueLesson[], are
 export type Decision =
   | { kind: "clarify"; text: string; link: string; topic: TopicRef }
   | { kind: "private"; text: string; link: string; topic: TopicRef }
-  | { kind: "facts"; facts: string[]; link: string; topic: TopicRef; draft: string };
+  | { kind: "navigate"; text: string; link: string; topic: TopicRef }
+  /** model=false: answered from `draft` only; the customer's text is never sent to the model. */
+  | { kind: "facts"; facts: string[]; link: string; topic: TopicRef; draft: string; model: boolean };
 
 const AREA_NAMES: Record<SupportLang, Record<SupportArea, string>> = {
   ar: { ai: "مسارات الذكاء الاصطناعي", academic: "الأكاديمي", technical: "التقني", kids: "كيدز للأطفال" },
@@ -138,6 +166,11 @@ function lessonTitle(l: CatalogueLesson, lang: SupportLang) {
   return l.titles[lang] ?? l.titles.ar ?? l.titles.en ?? l.id;
 }
 
+function programName(l: CatalogueLesson, lang: SupportLang) {
+  return l.programName[lang] ?? l.programName.ar ?? l.programName.en;
+}
+
+/** Allowlisted lesson facts only: visible title, public program name, access, link. */
 function lessonFacts(l: CatalogueLesson, lang: SupportLang): string[] {
   const access =
     l.access === "free"
@@ -145,11 +178,19 @@ function lessonFacts(l: CatalogueLesson, lang: SupportLang): string[] {
       : l.access === "plan"
         ? lang === "ar" ? "الدرس ده متاح ضمن الباقات المدفوعة أو الوصول المناسب." : "This lesson is available with a paid plan or the relevant access."
         : lang === "ar" ? "الوصول للدرس بيتحدد حسب حسابك وإتاحته." : "Access depends on your account and the lesson's availability.";
+  const name = programName(l, lang);
   return [
     lang === "ar" ? `اسم الدرس: ${lessonTitle(l, lang)}` : `Lesson: ${lessonTitle(l, lang)}`,
-    `${lang === "ar" ? "مكانه في المنهج" : "Where it sits"}: ${l.excerpt[lang] ?? l.excerpt.ar ?? l.excerpt.en ?? ""}`,
+    ...(name ? [lang === "ar" ? `البرنامج: ${name}` : `Program: ${name}`] : []),
     access,
   ];
+}
+
+function navigateText(l: CatalogueLesson | undefined, lang: SupportLang): string {
+  const named = l ? (lang === "ar" ? ` «${lessonTitle(l, lang)}»` : ` “${lessonTitle(l, lang)}”`) : "";
+  return lang === "ar"
+    ? `هنا بنرد على أسئلة الاشتراك والبرامج بس، ومش بنشرح أو نلخص أو نحل محتوى الدروس أو الكويزات أو التمارين. تقدر تفتح الدرس${named} من اللينك ده وتكمل جوه المنصة حسب الوصول المتاح لحسابك.`
+    : `This channel only answers questions about plans and programs; we don't explain, summarise or solve lesson content, quizzes or exercises here. You can open the lesson${named} from this link and continue on the platform, depending on your account's access.`;
 }
 
 export function decide(
@@ -172,8 +213,11 @@ export function decide(
     ((!!d.market || !!d.term) && !d.lessonWord && !d.programWord) ||
     (inherit && p.subject === "pricing" && !!d.area);
 
+  const matches = matchLessons(question, catalogue, area);
+  const priorLessonRef = inherit && p.subject === "lesson" && p.lesson ? catalogue.find((l) => l.id === p.lesson) : undefined;
+
   if (d.privateRequest) {
-    const m = matchLessons(question, catalogue, area)[0]?.lesson;
+    const m = matches[0]?.lesson ?? priorLessonRef;
     return {
       kind: "private",
       text:
@@ -181,12 +225,28 @@ export function decide(
           ? "معلش، مش بنقدر نبعت محتوى الدروس أو الإجابات أو أي بيانات دخول هنا. المحتوى متاح جوه صفحة الدرس على المنصة حسب الوصول المتاح لحسابك."
           : "Sorry, we can't share lesson content, answers or any sign-in details here. The content is available on the lesson page, depending on your account's access.",
       link: m?.url ?? (area ? AREA_LINKS[area].program : url()),
-      topic: { subject: "lesson", area: m?.area ?? area, lesson: m?.id },
+      topic: m ? { subject: "lesson", area: m.area, program: m.program, lesson: m.id } : { subject: "lesson", area },
+    };
+  }
+
+  // Teaching / pasted passage, or a non-price follow-up on a lesson topic: navigation only.
+  // "Explain the difference between Pro and Pro Plus" stays a public plan question; teaching
+  // about any lesson, assessment material and pasted passages are navigation-only.
+  const lessonSignal = d.lessonWord || matches.length > 0 || !!priorLessonRef;
+  const teachingBlocked = d.teaching && (lessonSignal || !(pricing || d.area || d.programWord));
+  if (d.passage || d.assessment || teachingBlocked || (priorLessonRef && !matches.length && !pricing && !d.area)) {
+    const top = matches[0];
+    const tied = top ? matches.filter((m) => Math.abs(m.score - top.score) < 1e-6) : [];
+    const l = tied.length === 1 ? top!.lesson : !top ? priorLessonRef : undefined;
+    return {
+      kind: "navigate",
+      text: navigateText(l, lang),
+      link: l?.url ?? (area ? AREA_LINKS[area].program : url("/curriculum")),
+      topic: l ? { subject: "lesson", area: l.area, program: l.program, lesson: l.id } : { subject: "lesson", area },
     };
   }
 
   // Named lesson (explicit, or same-thread lesson follow-up).
-  const matches = matchLessons(question, catalogue, area);
   if (matches.length || (d.lessonWord && !pricing)) {
     const top = matches[0];
     const tied = top ? matches.filter((m) => Math.abs(m.score - top.score) < 1e-6) : [];
@@ -194,10 +254,11 @@ export function decide(
       const l = top.lesson;
       return {
         kind: "facts",
-        facts: [...lessonFacts(l, lang), ...programFacts(l.area, lang).slice(0, 2)],
+        facts: lessonFacts(l, lang),
         link: l.url,
         topic: { subject: "lesson", area: l.area, program: l.program, lesson: l.id },
-        draft: lessonFacts(l, lang).join(" "),
+        draft: lessonFacts(l, lang).join("\n"),
+        model: false,
       };
     }
     const priorLesson = inherit && p.lesson ? catalogue.find((l) => l.id === p.lesson) : undefined;
@@ -207,7 +268,8 @@ export function decide(
         facts: lessonFacts(priorLesson, lang),
         link: priorLesson.url,
         topic: { subject: "lesson", area: priorLesson.area, program: priorLesson.program, lesson: priorLesson.id },
-        draft: lessonFacts(priorLesson, lang).join(" "),
+        draft: lessonFacts(priorLesson, lang).join("\n"),
+        model: false,
       };
     }
     const options = tied.slice(0, 3).map((m) => `«${lessonTitle(m.lesson, lang)}»`);
@@ -243,7 +305,7 @@ export function decide(
       return { kind: "clarify", text, link: area ? AREA_LINKS[area].pricing : url(), topic };
     }
     const f = pricingFacts(area, market, lang, { term, plan });
-    return { kind: "facts", facts: f.lines, link: f.link, topic, draft: f.lines.join("\n") };
+    return { kind: "facts", facts: f.lines, link: f.link, topic, draft: f.lines.join("\n"), model: true };
   }
 
   if (area) {
@@ -253,7 +315,8 @@ export function decide(
       facts,
       link: AREA_LINKS[area].program,
       topic: { subject: "program", area },
-      draft: facts.slice(0, 3).join(" "),
+      draft: facts.join(" "),
+      model: true,
     };
   }
 
@@ -270,5 +333,5 @@ export function decide(
   }
 
   const facts = (["ai", "academic", "technical", "kids"] as const).map((a) => `${AREA_NAMES[lang][a]}: ${programFacts(a, lang)[1]}`);
-  return { kind: "facts", facts, link: url(), topic: { subject: "general", ...(inherit ? p : {}) }, draft: "" };
+  return { kind: "facts", facts, link: url(), topic: { subject: "general", ...(inherit ? p : {}) }, draft: "", model: true };
 }
