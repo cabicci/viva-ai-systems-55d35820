@@ -5231,6 +5231,18 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      support_claim_event: {
+        Args: { p_event_key: string; p_provider: string; p_sender_hash: string }
+        Returns: string
+      }
+      support_mark_event: {
+        Args: { p_event_key: string; p_provider: string; p_status: string }
+        Returns: boolean
+      }
+      support_set_handoff: {
+        Args: { p_hours: number; p_sender_hash: string }
+        Returns: undefined
+      }
       technical_can_access: { Args: { p_lesson: string }; Returns: boolean }
       technical_command: {
         Args: {

@@ -65,6 +65,8 @@ import { Route as AiPathsAppliedRouteImport } from './routes/ai.paths.applied'
 import { Route as ApiBillingModeRouteImport } from './routes/api/billing/mode'
 import { Route as ApiPublicAssistantIndexingRouteImport } from './routes/api/public/assistant-indexing'
 import { Route as ApiPublicStripeLiveWebhookRouteImport } from './routes/api/public/stripe-live-webhook'
+import { Route as ApiPublicSupportMetaRouteImport } from './routes/api/public/support-meta'
+import { Route as ApiPublicSupportWhatsappRouteImport } from './routes/api/public/support-whatsapp'
 import { Route as ApiStripeLiveCheckoutRouteImport } from './routes/api/stripe-live/checkout'
 import { Route as ApiStripeLivePortalRouteImport } from './routes/api/stripe-live/portal'
 import { Route as CoursesAreaCourseIdRouteImport } from './routes/courses.$area.$courseId'
@@ -362,6 +364,17 @@ const ApiPublicStripeLiveWebhookRoute =
     path: '/api/public/stripe-live-webhook',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiPublicSupportMetaRoute = ApiPublicSupportMetaRouteImport.update({
+  id: '/api/public/support-meta',
+  path: '/api/public/support-meta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicSupportWhatsappRoute =
+  ApiPublicSupportWhatsappRouteImport.update({
+    id: '/api/public/support-whatsapp',
+    path: '/api/public/support-whatsapp',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiStripeLiveCheckoutRoute = ApiStripeLiveCheckoutRouteImport.update({
   id: '/api/stripe-live/checkout',
   path: '/api/stripe-live/checkout',
@@ -494,6 +507,8 @@ export interface FileRoutesByFullPath {
   '/api/billing/mode': typeof ApiBillingModeRoute
   '/api/public/assistant-indexing': typeof ApiPublicAssistantIndexingRoute
   '/api/public/stripe-live-webhook': typeof ApiPublicStripeLiveWebhookRoute
+  '/api/public/support-meta': typeof ApiPublicSupportMetaRoute
+  '/api/public/support-whatsapp': typeof ApiPublicSupportWhatsappRoute
   '/api/stripe-live/checkout': typeof ApiStripeLiveCheckoutRoute
   '/api/stripe-live/portal': typeof ApiStripeLivePortalRoute
   '/courses/$area/$courseId': typeof CoursesAreaCourseIdRoute
@@ -561,6 +576,8 @@ export interface FileRoutesByTo {
   '/api/billing/mode': typeof ApiBillingModeRoute
   '/api/public/assistant-indexing': typeof ApiPublicAssistantIndexingRoute
   '/api/public/stripe-live-webhook': typeof ApiPublicStripeLiveWebhookRoute
+  '/api/public/support-meta': typeof ApiPublicSupportMetaRoute
+  '/api/public/support-whatsapp': typeof ApiPublicSupportWhatsappRoute
   '/api/stripe-live/checkout': typeof ApiStripeLiveCheckoutRoute
   '/api/stripe-live/portal': typeof ApiStripeLivePortalRoute
   '/courses/$area/$courseId': typeof CoursesAreaCourseIdRoute
@@ -634,6 +651,8 @@ export interface FileRoutesById {
   '/api/billing/mode': typeof ApiBillingModeRoute
   '/api/public/assistant-indexing': typeof ApiPublicAssistantIndexingRoute
   '/api/public/stripe-live-webhook': typeof ApiPublicStripeLiveWebhookRoute
+  '/api/public/support-meta': typeof ApiPublicSupportMetaRoute
+  '/api/public/support-whatsapp': typeof ApiPublicSupportWhatsappRoute
   '/api/stripe-live/checkout': typeof ApiStripeLiveCheckoutRoute
   '/api/stripe-live/portal': typeof ApiStripeLivePortalRoute
   '/courses/$area/$courseId': typeof CoursesAreaCourseIdRoute
@@ -708,6 +727,8 @@ export interface FileRouteTypes {
     | '/api/billing/mode'
     | '/api/public/assistant-indexing'
     | '/api/public/stripe-live-webhook'
+    | '/api/public/support-meta'
+    | '/api/public/support-whatsapp'
     | '/api/stripe-live/checkout'
     | '/api/stripe-live/portal'
     | '/courses/$area/$courseId'
@@ -775,6 +796,8 @@ export interface FileRouteTypes {
     | '/api/billing/mode'
     | '/api/public/assistant-indexing'
     | '/api/public/stripe-live-webhook'
+    | '/api/public/support-meta'
+    | '/api/public/support-whatsapp'
     | '/api/stripe-live/checkout'
     | '/api/stripe-live/portal'
     | '/courses/$area/$courseId'
@@ -847,6 +870,8 @@ export interface FileRouteTypes {
     | '/api/billing/mode'
     | '/api/public/assistant-indexing'
     | '/api/public/stripe-live-webhook'
+    | '/api/public/support-meta'
+    | '/api/public/support-whatsapp'
     | '/api/stripe-live/checkout'
     | '/api/stripe-live/portal'
     | '/courses/$area/$courseId'
@@ -905,6 +930,8 @@ export interface RootRouteChildren {
   ApiBillingModeRoute: typeof ApiBillingModeRoute
   ApiPublicAssistantIndexingRoute: typeof ApiPublicAssistantIndexingRoute
   ApiPublicStripeLiveWebhookRoute: typeof ApiPublicStripeLiveWebhookRoute
+  ApiPublicSupportMetaRoute: typeof ApiPublicSupportMetaRoute
+  ApiPublicSupportWhatsappRoute: typeof ApiPublicSupportWhatsappRoute
   ApiStripeLiveCheckoutRoute: typeof ApiStripeLiveCheckoutRoute
   ApiStripeLivePortalRoute: typeof ApiStripeLivePortalRoute
   CoursesAreaCourseIdRoute: typeof CoursesAreaCourseIdRoute
@@ -1307,6 +1334,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicStripeLiveWebhookRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/support-meta': {
+      id: '/api/public/support-meta'
+      path: '/api/public/support-meta'
+      fullPath: '/api/public/support-meta'
+      preLoaderRoute: typeof ApiPublicSupportMetaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/support-whatsapp': {
+      id: '/api/public/support-whatsapp'
+      path: '/api/public/support-whatsapp'
+      fullPath: '/api/public/support-whatsapp'
+      preLoaderRoute: typeof ApiPublicSupportWhatsappRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/stripe-live/checkout': {
       id: '/api/stripe-live/checkout'
       path: '/api/stripe-live/checkout'
@@ -1545,6 +1586,8 @@ const rootRouteChildren: RootRouteChildren = {
   ApiBillingModeRoute: ApiBillingModeRoute,
   ApiPublicAssistantIndexingRoute: ApiPublicAssistantIndexingRoute,
   ApiPublicStripeLiveWebhookRoute: ApiPublicStripeLiveWebhookRoute,
+  ApiPublicSupportMetaRoute: ApiPublicSupportMetaRoute,
+  ApiPublicSupportWhatsappRoute: ApiPublicSupportWhatsappRoute,
   ApiStripeLiveCheckoutRoute: ApiStripeLiveCheckoutRoute,
   ApiStripeLivePortalRoute: ApiStripeLivePortalRoute,
   CoursesAreaCourseIdRoute: CoursesAreaCourseIdRoute,
