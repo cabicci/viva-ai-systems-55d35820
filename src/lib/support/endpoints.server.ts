@@ -18,6 +18,6 @@ export function handleMetaSupportRequest(request: Request): Promise<Response> {
     verifyToken: process.env.META_WEBHOOK_VERIFY_TOKEN,
     pageToken: process.env.META_PAGE_ACCESS_TOKEN,
     store: cloudSupportStore,
-    answer: (q, publicComment, thread) => answerQuestion(q, { publicComment, thread }),
+    answer: (q, publicComment, thread, factsOnly) => answerQuestion(q, { publicComment, thread, factsOnly }),
   });
 }
