@@ -1,7 +1,7 @@
 // Web Crypto only, so the same code runs in Workers, Bun and Node.
 const enc = new TextEncoder();
 
-async function hmac(algorithm: "SHA-1" | "SHA-256", secret: string, data: string | Uint8Array): Promise<Uint8Array> {
+async function hmac(algorithm: "SHA-1" | "SHA-256", secret: string, data: string | Uint8Array<ArrayBuffer>): Promise<Uint8Array> {
   const key = await crypto.subtle.importKey("raw", enc.encode(secret), { name: "HMAC", hash: algorithm }, false, ["sign"]);
   return new Uint8Array(await crypto.subtle.sign("HMAC", key, typeof data === "string" ? enc.encode(data) : data));
 }
@@ -35,11 +35,11 @@ export async function verifyTwilio(token: string, url: string, params: URLSearch
 }
 
 /** Meta: X-Hub-Signature-256 = "sha256=" + hex HMAC-SHA256(app secret, raw body). */
-export async function metaSignature(secret: string, rawBody: Uint8Array): Promise<string> {
+export async function metaSignature(secret: string, rawBody: Uint8Array<ArrayBuffer>): Promise<string> {
   return `sha256=${hex(await hmac("SHA-256", secret, rawBody))}`;
 }
 
-export async function verifyMeta(secret: string, rawBody: Uint8Array, header: string | null): Promise<boolean> {
+export async function verifyMeta(secret: string, rawBody: Uint8Array<ArrayBuffer>, header: string | null): Promise<boolean> {
   if (!header) return false;
   return timingSafeEqualText(await metaSignature(secret, rawBody), header.trim().toLowerCase());
 }
