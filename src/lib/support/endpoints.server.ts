@@ -2,13 +2,15 @@
 import { answerQuestion } from "./answer.server";
 import { commentReadback, handleMetaSupport } from "./meta.server";
 import { cloudSupportStore } from "./store.server";
+import { cloudContextStore } from "./context";
 import { handleWhatsAppSupport } from "./whatsapp.server";
 
 export function handleWhatsAppSupportRequest(request: Request): Promise<Response> {
   return handleWhatsAppSupport(request, {
     authToken: process.env.TWILIO_AUTH_TOKEN,
     store: cloudSupportStore,
-    answer: (q, thread) => answerQuestion(q, { publicComment: false, thread }),
+    // Durable follow-up topic across server instances (hashed key, allow-listed codes only).
+    answer: async (q, thread) => answerQuestion(q, { publicComment: false, thread }, { context: await cloudContextStore() }),
   });
 }
 

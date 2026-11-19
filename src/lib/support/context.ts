@@ -83,3 +83,43 @@ export function memoryContextStore(opts: { ttlMs?: number; max?: number; now?: (
 
 /** Process-wide default; best-effort only, never relied on for correctness. */
 export const defaultContextStore: ContextStore = memoryContextStore();
+
+/**
+ * Durable short-lived topic store shared by all server instances (service-only RPCs over the
+ * private support schema). Stores only cleanTopic() codes under the hashed key; on any error it
+ * falls back to the per-isolate memory store so a reply never fails because of context.
+ */
+export function durableContextStore(
+  rpc: (name: string, args: Record<string, unknown>) => Promise<unknown>,
+  fallback: ContextStore = defaultContextStore,
+): ContextStore {
+  return {
+    async get(key) {
+      try {
+        const v = await rpc("support_get_topic", { p_key: key });
+        if (v && typeof v === "object" && !Array.isArray(v)) return cleanTopic(v as TopicRef);
+        return null;
+      } catch {
+        return fallback.get(key);
+      }
+    },
+    async set(key, ref) {
+      const topic = cleanTopic(ref);
+      await fallback.set(key, topic).catch(() => undefined);
+      try {
+        await rpc("support_set_topic", { p_key: key, p_topic: topic });
+      } catch {
+        console.error("SUPPORT_CONTEXT_STORE_UNAVAILABLE");
+      }
+    },
+  };
+}
+
+export async function cloudContextStore(): Promise<ContextStore> {
+  const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+  return durableContextStore(async (name, args) => {
+    const r = await supabaseAdmin.rpc(name as never, args as never);
+    if (r.error) throw new Error("SUPPORT_CONTEXT_UNAVAILABLE");
+    return r.data as unknown;
+  });
+}

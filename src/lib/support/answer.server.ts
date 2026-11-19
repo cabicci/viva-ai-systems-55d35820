@@ -14,7 +14,7 @@ import {
   type FreeAccessState,
 } from "./compose";
 import { contextKey, defaultContextStore, type ContextStore, type SupportVisibility } from "./context";
-import { decide } from "./resolve";
+import { decide, isBareGreeting } from "./resolve";
 import { liveLessons, staticCatalogue, type CatalogueLesson, type LiveCatalogueByLang } from "./sources";
 import { GENERAL_FACTS } from "./facts";
 import { KIDS_LEVELS } from "@/lib/kids/catalogue";
@@ -145,6 +145,11 @@ export async function answerQuestion(
   const fetchImpl = deps.fetchImpl ?? fetch;
   const offerP = (deps.freeAccess ?? (() => readFreeAccessState(fetchImpl)))();
   if (!redacted) return { text: fallbackReply(lang, await offerP), source: "fallback" };
+  // A bare greeting gets a short greeting; a real question never gets a standalone welcome.
+  if (!opts.publicComment && isBareGreeting(redacted)) {
+    const body = lang === "ar" ? "أهلاً بيك! اسألني عن برامج مسارات أو الاشتراكات وأنا أساعدك." : "Hi! Ask me about Masaarat's programs or plans and I'll help.";
+    return { text: finish(body, OFFICIAL_LINKS.home, lang), source: "deterministic" };
+  }
   const store = deps.context ?? defaultContextStore;
   const key = opts.thread ? await contextKey(opts.thread.family, opts.thread.thread, opts.thread.visibility) : null;
   const [prior, catalogue, offer] = await Promise.all([

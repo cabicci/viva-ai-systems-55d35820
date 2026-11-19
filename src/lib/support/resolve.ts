@@ -63,6 +63,10 @@ export function looksLikePassage(raw: string): boolean {
 }
 const FOLLOWUP_RE = /^(و|طب |طيب |and\b|what about\b|how about\b|ok\b|okay\b|اوك )|(?:^|\s)(it|that|same|ده|دي|بتاعه|بتاعها)(?:\s|$)/;
 
+const GREETING_RE = /^(?:(?:يا )?(?:اهلا|اهلين|اهلا وسهلا|مرحبا|مرحبتين|هاي|هالو|السلام عليكم|سلام عليكم|السلام عليكم ورحمه الله|صباح الخير|مساء الخير|hi|hello|hey|good (?:morning|evening))\s*)+$/;
+/** Only a greeting and nothing else (no question, program or price words). */
+export const isBareGreeting = (text: string) => GREETING_RE.test(normalize(text));
+
 export type Detected = {
   area?: SupportArea;
   market?: SupportMarket;
