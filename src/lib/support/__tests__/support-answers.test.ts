@@ -202,3 +202,36 @@ describe("price answers keep the tax wording", () => {
     expect(r.text).toContain("Prices exclude tax.");
   });
 });
+
+describe("technical path names and official page (live Instagram regression)", () => {
+  const ig = (thread: string) => ({ family: "instagram", thread, visibility: "public" as const });
+  const pub = (q: string, context: ReturnType<typeof memoryContextStore>, thread: string) =>
+    answerQuestion(q, { publicComment: true, thread: ig(thread) }, { ...base, context });
+  it("«المسار الفني بيبدأ بأي مجال، وإيه لينك صفحته الرسمية؟» names carpentry and links /technical", async () => {
+    const r = await pub("المسار الفني بيبدأ بأي مجال، وإيه لينك صفحته الرسمية؟", memoryContextStore(), "reel:a1");
+    expect(r.text).toContain("النجارة وصناعة الأثاث");
+    expect(r.text).not.toMatch(/تحب تعرف عن أنهي واحد/);
+    expect(onlyLink(r.text)).toBe("https://masaarat.ai/technical");
+  });
+  it.each(["إيه هو التعليم الفني عندكم؟", "عايز أعرف عن الفني", "مسار فني"])("«%s» resolves to the technical path", (q) => {
+    expect(detect(q).area).toBe("technical");
+  });
+  it("same-author follow-up keeps the technical path in that public thread only", async () => {
+    const context = memoryContextStore();
+    await pub("المسار الفني بيبدأ بأي مجال، وإيه لينك صفحته الرسمية؟", context, "reel:a1");
+    const same = await pub("طب بكام في مصر؟", context, "reel:a1");
+    expect(same.text).toContain("اشتراك تقني");
+    expect(onlyLink(same.text)).toBe("https://masaarat.ai/technical/pricing");
+    const other = await pub("طب بكام في مصر؟", context, "reel:b2");
+    expect(other.text).not.toContain("اشتراك تقني");
+  });
+  it("a parent asking (ولي الأمر) is answered about Kids with /kids", async () => {
+    const r = await ask("أنا ولي الأمر، إيه المسار المناسب؟");
+    expect(r.text).toContain("الذكاء الاصطناعي");
+    expect(onlyLink(r.text)).toBe("https://masaarat.ai/kids");
+  });
+  it("technical words don't hijack unrelated questions", () => {
+    expect(detect("الدعم الفني مش بيرد").area).toBeUndefined();
+    expect(detect("فنيات التصوير").area).toBeUndefined();
+  });
+});

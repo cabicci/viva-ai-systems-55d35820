@@ -27,9 +27,10 @@ const has = (re: RegExp, n: string) => re.test(n);
 // All patterns run on normalize()d text (alef/ya/ta-marbuta folded, lowercase).
 const INTL_RE = /(برا مصر|بره مصر|خارج مصر|مش في مصر|مش ف مصر|دولار|\busd\b|\$|dollar|international|outside egypt|abroad|not in egypt|دولي|السعوديه|الامارات|الكويت|قطر|الخليج|الاردن|المغرب|الجزاير|العراق|عمان|البحرين|ليبيا|تونس|لبنان|saudi|uae|dubai|kuwait|qatar|oman|bahrain|jordan|morocco|\busa\b|\buk\b|europe|germany|canada|france)/;
 const EG_RE = /(مصر|مصري|بالجنيه|جنيه|جنيه|\begp\b|egypt|egyptian|cairo|القاهره|اسكندريه)/;
-const KIDS_RE = /(اطفال|طفل|ابني|بنتي|ولادي|عيالي|كيدز|\bkids?\b|child|children|\bson\b|daughter)/;
+const KIDS_RE = /(اطفال|طفل|ابني|بنتي|ولادي|عيالي|كيدز|ولي الامر|ولي امر|اولياء الامور|\bkids?\b|child|children|\bson\b|daughter|\bparents?\b)/;
 const ACADEMIC_RE = /(اكاديمي|academic|اداره الاعمال|business management)/;
-const TECH_RE = /(تقني|technical|نجار|اثاث|موبيليا|furniture|carpentr)/;
+// «الفني / التعليم الفني / المسار الفني» are the public names of the technical path.
+const TECH_RE = /(تقني|technical|vocational|نجار|اثاث|موبيليا|furniture|carpentr|(?:^|\s)(?:و|ف|ب|لل)?(?:ال)?فني(?:ه)?(?:\s|$))/;
 const AI_RE = /(ذكاء اصطناعي|الذكاء الاصطناعي|\bai\b|builder|creator|automator|analyst|chatgpt|prompt|برومبت|pro plus|\bpro\b|(?:^|\s)برو(?:\s|$)|برو ?بلس)/;
 const PRO_PLUS_RE = /(pro ?plus|pro\+|برو ?بلس)/;
 const PRO_RE = /(\bpro\b|(?:^|\s)برو(?:\s|$))/;
@@ -88,7 +89,7 @@ export function detect(question: string): Detected {
     ? "kids"
     : has(ACADEMIC_RE, n)
       ? "academic"
-      : has(TECH_RE, n)
+      : has(TECH_RE, n.replace(/(?:ال)?دعم (?:ال)?فني/g, " "))
         ? "technical"
         : has(AI_RE, n)
           ? "ai"

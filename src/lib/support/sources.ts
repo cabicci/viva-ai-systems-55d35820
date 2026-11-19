@@ -37,7 +37,7 @@ export const url = (path = "") => `${OFFICIAL_ORIGIN}${path}`;
 export const AREA_LINKS: Record<SupportArea, { program: string; pricing: string }> = {
   ai: { program: url("/curriculum"), pricing: url("/pricing") },
   academic: { program: url("/academic"), pricing: url("/academic/pricing") },
-  technical: { program: url("/technical/courses/furniture"), pricing: url("/technical/pricing") },
+  technical: { program: url("/technical"), pricing: url("/technical/pricing") },
   kids: { program: url("/kids"), pricing: url("/kids/pricing") },
 };
 
