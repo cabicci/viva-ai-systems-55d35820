@@ -66,6 +66,7 @@ import { Route as ApiBillingModeRouteImport } from './routes/api/billing/mode'
 import { Route as ApiPublicAssistantIndexingRouteImport } from './routes/api/public/assistant-indexing'
 import { Route as ApiPublicStripeLiveWebhookRouteImport } from './routes/api/public/stripe-live-webhook'
 import { Route as ApiPublicSupportMetaRouteImport } from './routes/api/public/support-meta'
+import { Route as ApiPublicSupportReconcileRouteImport } from './routes/api/public/support-reconcile'
 import { Route as ApiPublicSupportWhatsappRouteImport } from './routes/api/public/support-whatsapp'
 import { Route as ApiStripeLiveCheckoutRouteImport } from './routes/api/stripe-live/checkout'
 import { Route as ApiStripeLivePortalRouteImport } from './routes/api/stripe-live/portal'
@@ -369,6 +370,12 @@ const ApiPublicSupportMetaRoute = ApiPublicSupportMetaRouteImport.update({
   path: '/api/public/support-meta',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicSupportReconcileRoute =
+  ApiPublicSupportReconcileRouteImport.update({
+    id: '/api/public/support-reconcile',
+    path: '/api/public/support-reconcile',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiPublicSupportWhatsappRoute =
   ApiPublicSupportWhatsappRouteImport.update({
     id: '/api/public/support-whatsapp',
@@ -508,6 +515,7 @@ export interface FileRoutesByFullPath {
   '/api/public/assistant-indexing': typeof ApiPublicAssistantIndexingRoute
   '/api/public/stripe-live-webhook': typeof ApiPublicStripeLiveWebhookRoute
   '/api/public/support-meta': typeof ApiPublicSupportMetaRoute
+  '/api/public/support-reconcile': typeof ApiPublicSupportReconcileRoute
   '/api/public/support-whatsapp': typeof ApiPublicSupportWhatsappRoute
   '/api/stripe-live/checkout': typeof ApiStripeLiveCheckoutRoute
   '/api/stripe-live/portal': typeof ApiStripeLivePortalRoute
@@ -577,6 +585,7 @@ export interface FileRoutesByTo {
   '/api/public/assistant-indexing': typeof ApiPublicAssistantIndexingRoute
   '/api/public/stripe-live-webhook': typeof ApiPublicStripeLiveWebhookRoute
   '/api/public/support-meta': typeof ApiPublicSupportMetaRoute
+  '/api/public/support-reconcile': typeof ApiPublicSupportReconcileRoute
   '/api/public/support-whatsapp': typeof ApiPublicSupportWhatsappRoute
   '/api/stripe-live/checkout': typeof ApiStripeLiveCheckoutRoute
   '/api/stripe-live/portal': typeof ApiStripeLivePortalRoute
@@ -652,6 +661,7 @@ export interface FileRoutesById {
   '/api/public/assistant-indexing': typeof ApiPublicAssistantIndexingRoute
   '/api/public/stripe-live-webhook': typeof ApiPublicStripeLiveWebhookRoute
   '/api/public/support-meta': typeof ApiPublicSupportMetaRoute
+  '/api/public/support-reconcile': typeof ApiPublicSupportReconcileRoute
   '/api/public/support-whatsapp': typeof ApiPublicSupportWhatsappRoute
   '/api/stripe-live/checkout': typeof ApiStripeLiveCheckoutRoute
   '/api/stripe-live/portal': typeof ApiStripeLivePortalRoute
@@ -728,6 +738,7 @@ export interface FileRouteTypes {
     | '/api/public/assistant-indexing'
     | '/api/public/stripe-live-webhook'
     | '/api/public/support-meta'
+    | '/api/public/support-reconcile'
     | '/api/public/support-whatsapp'
     | '/api/stripe-live/checkout'
     | '/api/stripe-live/portal'
@@ -797,6 +808,7 @@ export interface FileRouteTypes {
     | '/api/public/assistant-indexing'
     | '/api/public/stripe-live-webhook'
     | '/api/public/support-meta'
+    | '/api/public/support-reconcile'
     | '/api/public/support-whatsapp'
     | '/api/stripe-live/checkout'
     | '/api/stripe-live/portal'
@@ -871,6 +883,7 @@ export interface FileRouteTypes {
     | '/api/public/assistant-indexing'
     | '/api/public/stripe-live-webhook'
     | '/api/public/support-meta'
+    | '/api/public/support-reconcile'
     | '/api/public/support-whatsapp'
     | '/api/stripe-live/checkout'
     | '/api/stripe-live/portal'
@@ -931,6 +944,7 @@ export interface RootRouteChildren {
   ApiPublicAssistantIndexingRoute: typeof ApiPublicAssistantIndexingRoute
   ApiPublicStripeLiveWebhookRoute: typeof ApiPublicStripeLiveWebhookRoute
   ApiPublicSupportMetaRoute: typeof ApiPublicSupportMetaRoute
+  ApiPublicSupportReconcileRoute: typeof ApiPublicSupportReconcileRoute
   ApiPublicSupportWhatsappRoute: typeof ApiPublicSupportWhatsappRoute
   ApiStripeLiveCheckoutRoute: typeof ApiStripeLiveCheckoutRoute
   ApiStripeLivePortalRoute: typeof ApiStripeLivePortalRoute
@@ -1341,6 +1355,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicSupportMetaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/support-reconcile': {
+      id: '/api/public/support-reconcile'
+      path: '/api/public/support-reconcile'
+      fullPath: '/api/public/support-reconcile'
+      preLoaderRoute: typeof ApiPublicSupportReconcileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/support-whatsapp': {
       id: '/api/public/support-whatsapp'
       path: '/api/public/support-whatsapp'
@@ -1587,6 +1608,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiPublicAssistantIndexingRoute: ApiPublicAssistantIndexingRoute,
   ApiPublicStripeLiveWebhookRoute: ApiPublicStripeLiveWebhookRoute,
   ApiPublicSupportMetaRoute: ApiPublicSupportMetaRoute,
+  ApiPublicSupportReconcileRoute: ApiPublicSupportReconcileRoute,
   ApiPublicSupportWhatsappRoute: ApiPublicSupportWhatsappRoute,
   ApiStripeLiveCheckoutRoute: ApiStripeLiveCheckoutRoute,
   ApiStripeLivePortalRoute: ApiStripeLivePortalRoute,

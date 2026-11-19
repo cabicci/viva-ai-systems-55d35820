@@ -199,7 +199,7 @@ export function countOfficialLinks(text: string): number {
 
 /** Public comments get a reply only when they look like a real question or request. */
 const QUESTION_HINT_RE =
-  /([?؟]|(?:^|\s)(كام|بكام|ازاي|إزاي|ايه|إيه|فين|امتى|إمتى|هل|ممكن|عايز|عاوز|محتاج|ينفع|سعر|اشتراك|how|what|where|when|which|can|does|is there|price|cost|subscribe|sign up|join)(?:\s|$))/i;
+  /([?؟]|(?:^|\s)(كام|بكام|ازاي|إزاي|ايه|إيه|فين|امتى|إمتى|هل|ممكن|عايز|عاوز|محتاج|ينفع|سعر|اشتراك|تفاصيل|التفاصيل|details|info|how|what|where|when|which|can|does|is there|price|cost|subscribe|sign up|join)(?:\s|$))/i;
 export function isRelevantPublicQuestion(text: string): boolean {
   const t = text.trim();
   if (t.length < 4 || t.length > 1000) return false;

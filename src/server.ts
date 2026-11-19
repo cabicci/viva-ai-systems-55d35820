@@ -132,6 +132,10 @@ export default {
         const { handleMetaSupportRequest } = await import("./lib/support/endpoints.server");
         return await handleMetaSupportRequest(request);
       }
+      if (pathname === "/api/public/support-reconcile") {
+        const { handleSupportReconcileRequest } = await import("./lib/support/endpoints.server");
+        return await handleSupportReconcileRequest(request);
+      }
       if (new URL(request.url).pathname === "/api/public/assistant-indexing") {
         const { handlePublicAutomaticIndexing } = await import("./lib/assistant-automation/public-endpoint.server");
         return await handlePublicAutomaticIndexing(request);

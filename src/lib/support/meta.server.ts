@@ -169,14 +169,38 @@ export async function handleMetaSupport(request: Request, deps: MetaDeps): Promi
   const work = extractMetaWork(payload);
   if (!work.length) return new Response("EVENT_RECEIVED", { headers: noStore });
   const send = deps.send ?? graphSender(deps.pageToken);
-  const appSecret = deps.appSecret;
-  let retry = false;
   let store: SupportStore;
   try {
     store = await deps.store();
   } catch {
     return new Response("Service Unavailable", { status: 503 });
   }
+  const retry = await processMetaWork(work, { appSecret: deps.appSecret, store, send, answer: deps.answer });
+  return retry
+    ? new Response("Retry", { status: 500, headers: noStore })
+    : new Response("EVENT_RECEIVED", { headers: noStore });
+}
+
+/** Every outgoing reply must carry the official link and the brand signature. */
+export function isBranded(text: string): boolean {
+  return /https:\/\/masaarat\.ai/.test(text) && /(فريق مسارات|Masaarat Team)/.test(text);
+}
+
+export type MetaWorkContext = {
+  appSecret: string;
+  store: SupportStore;
+  send: MetaSender;
+  answer: MetaDeps["answer"];
+  /** Optional fresh readback right before a send; false means do not send (item is marked ignored). */
+  /** Refuse to send any text without the official link and signature. */
+  requireBrand?: boolean;
+  beforeSend?: (item: Extract<MetaWork, { kind: "reply" }>) => Promise<boolean>;
+};
+
+/** Shared by the signed webhook and the pilot reconciler: one claim per provider event key. Returns true when a retry is needed. */
+export async function processMetaWork(work: MetaWork[], ctx: MetaWorkContext): Promise<boolean> {
+  const { appSecret, store, send, answer, beforeSend } = ctx;
+  let retry = false;
   /** own/automated echoes are ignored; only an echo not proven to be ours or automated is a manual takeover. */
   async function classifyEcho(item: Extract<MetaWork, { kind: "echo" }>, conversation: string) {
     if (item.metadata && (await verifyEchoToken(appSecret, item.family, item.customerId, item.metadata)))
@@ -213,10 +237,15 @@ export async function handleMetaSupport(request: Request, deps: MetaDeps): Promi
       if (publicComment) {
         // Public threads: only genuine questions, scoped context per post+commenter (never DM context).
         if (isRelevantPublicQuestion(item.text))
-          text = (await deps.answer(item.text, true, { family: item.family, thread: `${item.postId}:${hash}`, visibility: "public" }, factsOnly)).text;
+          text = (await answer(item.text, true, { family: item.family, thread: `${item.postId}:${hash}`, visibility: "public" }, factsOnly)).text;
       } else if (wantsHuman(item.text)) text = handoffReply(detectLang(item.text));
-      else text = (await deps.answer(item.text, false, { family: item.family, thread: hash, visibility: "private" }, factsOnly)).text;
+      else text = (await answer(item.text, false, { family: item.family, thread: hash, visibility: "private" }, factsOnly)).text;
+      if (text && ctx.requireBrand && !isBranded(text)) text = null;
       if (!text) {
+        await store.mark(item.provider, key, "ignored");
+        return;
+      }
+      if (beforeSend && !(await beforeSend(item))) {
         await store.mark(item.provider, key, "ignored");
         return;
       }
@@ -268,7 +297,5 @@ export async function handleMetaSupport(request: Request, deps: MetaDeps): Promi
     }
   }
   await Promise.all(Array.from({ length: Math.min(4, bySender.size) }, drain));
-  return retry
-    ? new Response("Retry", { status: 500, headers: noStore })
-    : new Response("EVENT_RECEIVED", { headers: noStore });
+  return retry;
 }
