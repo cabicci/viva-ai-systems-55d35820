@@ -145,8 +145,9 @@ export async function answerQuestion(
   const fetchImpl = deps.fetchImpl ?? fetch;
   const offerP = (deps.freeAccess ?? (() => readFreeAccessState(fetchImpl)))();
   if (!redacted) return { text: fallbackReply(lang, await offerP), source: "fallback" };
-  // A bare greeting gets a short greeting; a real question never gets a standalone welcome.
-  if (!opts.publicComment && isBareGreeting(redacted)) {
+  // WhatsApp only: a bare greeting gets a short greeting; a real question never gets a standalone
+  // welcome. Meta DMs and public comments keep their existing resolver behaviour.
+  if (!opts.publicComment && opts.thread?.family === "whatsapp" && isBareGreeting(redacted)) {
     const body = lang === "ar" ? "أهلاً بيك! اسألني عن برامج مسارات أو الاشتراكات وأنا أساعدك." : "Hi! Ask me about Masaarat's programs or plans and I'll help.";
     return { text: finish(body, OFFICIAL_LINKS.home, lang), source: "deterministic" };
   }

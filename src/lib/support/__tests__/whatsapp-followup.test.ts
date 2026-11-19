@@ -92,6 +92,17 @@ describe("WhatsApp follow-up across workers", () => {
     expect(q.text).toContain("اشتراك تقني");
     expect(q.text).not.toMatch(/أهلاً بيك! اسألني/);
   });
+  it("the short greeting is WhatsApp-only: Meta DMs keep their existing behaviour", async () => {
+    const deps = { context: memoryContextStore(), openaiKey: "", freeAccess: async () => ({ kind: "inactive" as const }), catalogue: async () => staticCatalogue() };
+    for (const family of ["messenger", "instagram"]) {
+      const a = await answerQuestion("السلام عليكم", { publicComment: false, thread: { family, thread: "t", visibility: "private" } }, deps);
+      expect(a.text).not.toMatch(/أهلاً بيك! اسألني/);
+    }
+    const n = await answerQuestion("السلام عليكم", { publicComment: false }, deps);
+    expect(n.text).not.toMatch(/أهلاً بيك! اسألني/);
+    const w = await answerQuestion("السلام عليكم", { publicComment: false, thread: { family: "whatsapp", thread: "t", visibility: "private" } }, deps);
+    expect(w.text).toMatch(/أهلاً بيك! اسألني/);
+  });
   it("stores only allow-listed codes and refuses free text", async () => {
     await send(worker(), "+201000000007", "عندكم إيه في التعليم الفني؟");
     const rows = (await db.query<{ topic: Record<string, string> }>("SELECT topic FROM support_private.topic_context")).rows;
