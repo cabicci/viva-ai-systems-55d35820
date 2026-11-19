@@ -45,7 +45,7 @@ function harness(store: SupportStore = ledgerStore, onSend?: (target: string, me
   });
   const deps: MetaDeps = {
     appSecret: SECRET, pageToken: "unused", store: async () => store, send,
-    answer: vi.fn(async (q: string) => ({ text: "reply to " + q, source: "fallback" as const })),
+    answer: vi.fn(async (q: string) => ({ text: "reply to " + q + "\n\nhttps://masaarat.ai\n— Masaarat Team", source: "fallback" as const })),
   };
   return { deps, send, sent };
 }

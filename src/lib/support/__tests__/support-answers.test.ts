@@ -234,4 +234,17 @@ describe("technical path names and official page (live Instagram regression)", (
     expect(detect("الدعم الفني مش بيرد").area).toBeUndefined();
     expect(detect("فنيات التصوير").area).toBeUndefined();
   });
+  it("a model «skip» on a resolved program question still answers from public facts", async () => {
+    const fetchImpl = (async () => new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({ action: "skip", contact: false, answer: "" }) } }] }))) as unknown as typeof fetch;
+    const r = await answerQuestion("المسار الفني بيبدأ بأي مجال، وإيه لينك صفحته الرسمية؟", { publicComment: true }, { ...base, openaiKey: "k", fetchImpl });
+    expect(r.source).toBe("deterministic");
+    expect(r.text).toContain("النجارة وصناعة الأثاث");
+    expect(r.text).toContain("— فريق مسارات");
+    expect(onlyLink(r.text)).toBe("https://masaarat.ai/technical");
+  });
+  it("a model «skip» on an unrelated public comment stays silent", async () => {
+    const fetchImpl = (async () => new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify({ action: "skip", contact: false, answer: "" }) } }] }))) as unknown as typeof fetch;
+    const r = await answerQuestion("مين هيكسب الماتش النهارده؟", { publicComment: true }, { ...base, openaiKey: "k", fetchImpl });
+    expect(r.text).toBeNull();
+  });
 });

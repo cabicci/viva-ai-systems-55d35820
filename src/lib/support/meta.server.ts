@@ -135,6 +135,8 @@ export type MetaDeps = {
   store: () => Promise<SupportStore>;
   answer: (question: string, publicComment: boolean, thread: ThreadRef, factsOnly: boolean) => Promise<SupportAnswer>;
   send?: MetaSender;
+  /** Fresh readback right before a public reply (staff/own reply already on that comment → skip). */
+  beforeSend?: MetaWorkContext["beforeSend"];
 };
 
 const noStore = { "Cache-Control": "no-store" };
@@ -175,7 +177,7 @@ export async function handleMetaSupport(request: Request, deps: MetaDeps): Promi
   } catch {
     return new Response("Service Unavailable", { status: 503 });
   }
-  const retry = await processMetaWork(work, { appSecret: deps.appSecret, store, send, answer: deps.answer });
+  const retry = await processMetaWork(work, { appSecret: deps.appSecret, store, send, answer: deps.answer, requireBrand: true, beforeSend: deps.beforeSend });
   return retry
     ? new Response("Retry", { status: 500, headers: noStore })
     : new Response("EVENT_RECEIVED", { headers: noStore });
@@ -184,6 +186,21 @@ export async function handleMetaSupport(request: Request, deps: MetaDeps): Promi
 /** Every outgoing reply must carry the official link and the brand signature. */
 export function isBranded(text: string): boolean {
   return /https:\/\/masaarat\.ai/.test(text) && /(فريق مسارات|Masaarat Team)/.test(text);
+}
+
+/** Readback of one public comment: false when it is gone or the Page/IG account (staff or bot) already replied. */
+export function commentReadback(get: (path: string, params: Record<string, string>) => Promise<{ ok: true; data: Obj } | { ok: false }>) {
+  return async (item: Extract<MetaWork, { kind: "reply" }>): Promise<boolean> => {
+    const fb = item.provider === "meta_page_comment";
+    if (!fb && item.provider !== "meta_instagram_comment") return true;
+    const field = fb ? "comments" : "replies";
+    const ownId = fb ? FACEBOOK_PAGE_ID : INSTAGRAM_ACCOUNT_ID;
+    const r = await get(item.target, { fields: `id,${field}.limit(50){from{id}}` });
+    // Unknown state never sends; the event is marked failed and Meta's own redelivery may retry it.
+    if (!r.ok) throw new Error("SUPPORT_READBACK_UNAVAILABLE");
+    if (str(r.data.id) !== item.target) return false;
+    return !arr(obj(r.data[field])?.data).some((x) => str(obj(obj(x)?.from)?.id) === ownId);
+  };
 }
 
 export type MetaWorkContext = {
@@ -225,28 +242,50 @@ export async function processMetaWork(work: MetaWork[], ctx: MetaWorkContext): P
         else if (verdict === "human") await store.handoff(conversation, 24);
         return;
       }
-      const hash = await senderHash(item.family, item.senderId);
+      const publicComment = item.provider === "meta_page_comment" || item.provider === "meta_instagram_comment";
+      // Public comments use their own sender scope: a private (DM) human takeover stays effective on
+      // DMs but never suppresses a new public comment; staff replies on that comment are checked by readback.
+      const hash = await senderHash(publicComment ? `public:${item.family}` : item.family, item.senderId);
       // The ledger accepts 200 characters. Preserve distinct long message IDs.
       const key = item.key.length <= 200 ? item.key : "hash:" + await senderHash(item.provider, item.key);
       const decision = await store.claim(item.provider, key, hash);
-      if (decision !== "process" && decision !== "public_facts") return;
+      if (decision !== "process" && decision !== "public_facts") {
+        console.log(`SUPPORT_META provider=${item.provider} outcome=${decision}`);
+        return;
+      }
       beforeSendKey = key;
       const factsOnly = decision === "public_facts";
-      const publicComment = item.provider === "meta_page_comment" || item.provider === "meta_instagram_comment";
       let text: string | null = null;
+      // Safe category only (openai/deterministic/fallback/skip/handoff_reply/not_question); never content.
+      let source = "not_question";
       if (publicComment) {
         // Public threads: only genuine questions, scoped context per post+commenter (never DM context).
-        if (isRelevantPublicQuestion(item.text))
-          text = (await answer(item.text, true, { family: item.family, thread: `${item.postId}:${hash}`, visibility: "public" }, factsOnly)).text;
-      } else if (wantsHuman(item.text)) text = handoffReply(detectLang(item.text));
-      else text = (await answer(item.text, false, { family: item.family, thread: hash, visibility: "private" }, factsOnly)).text;
-      if (text && ctx.requireBrand && !isBranded(text)) text = null;
+        if (isRelevantPublicQuestion(item.text)) {
+          const a = await answer(item.text, true, { family: item.family, thread: `${item.postId}:${hash}`, visibility: "public" }, factsOnly);
+          text = a.text;
+          source = a.source;
+        }
+      } else if (wantsHuman(item.text)) {
+        text = handoffReply(detectLang(item.text));
+        source = "handoff_reply";
+      } else {
+        const a = await answer(item.text, false, { family: item.family, thread: hash, visibility: "private" }, factsOnly);
+        text = a.text;
+        source = a.source;
+      }
+      const log = (outcome: string) => console.log(`SUPPORT_META provider=${item.provider} source=${source} outcome=${outcome}`);
+      if (text && ctx.requireBrand && !isBranded(text)) {
+        text = null;
+        source = "unbranded";
+      }
       if (!text) {
         await store.mark(item.provider, key, "ignored");
+        log("ignored");
         return;
       }
       if (beforeSend && !(await beforeSend(item))) {
         await store.mark(item.provider, key, "ignored");
+        log("already_answered");
         return;
       }
       beforeSendKey = undefined;
@@ -269,6 +308,7 @@ export async function processMetaWork(work: MetaWork[], ctx: MetaWorkContext): P
         const mh = messageId ? await midHash(item.family, messageId) : null;
         await store.finishOutbound(attempt, mh, result).catch(() => console.error("SUPPORT_OUTBOUND_LEDGER_FINISH_FAILED"));
       }
+      log(result);
       if (result === "sent") await store.mark(item.provider, key, "replied");
       else if (result === "rejected") {
         await store.mark(item.provider, key, "failed");

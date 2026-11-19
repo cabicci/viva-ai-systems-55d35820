@@ -1,6 +1,6 @@
 // Server-only wiring shared by the file routes and the exact-path Worker dispatch.
 import { answerQuestion } from "./answer.server";
-import { handleMetaSupport } from "./meta.server";
+import { commentReadback, handleMetaSupport } from "./meta.server";
 import { cloudSupportStore } from "./store.server";
 import { handleWhatsAppSupport } from "./whatsapp.server";
 
@@ -12,13 +12,22 @@ export function handleWhatsAppSupportRequest(request: Request): Promise<Response
   });
 }
 
-export function handleMetaSupportRequest(request: Request): Promise<Response> {
+export async function handleMetaSupportRequest(request: Request): Promise<Response> {
+  const appSecret = process.env.META_APP_SECRET;
+  const pageToken = process.env.META_PAGE_ACCESS_TOKEN;
+  let beforeSend: Parameters<typeof handleMetaSupport>[1]["beforeSend"];
+  if (appSecret && pageToken && request.method === "POST") {
+    const { graphGet } = await import("./reconcile.server");
+    const { createHmac } = await import("node:crypto");
+    beforeSend = commentReadback(graphGet(pageToken, createHmac("sha256", appSecret).update(pageToken).digest("hex")));
+  }
   return handleMetaSupport(request, {
-    appSecret: process.env.META_APP_SECRET,
+    appSecret,
     verifyToken: process.env.META_WEBHOOK_VERIFY_TOKEN,
-    pageToken: process.env.META_PAGE_ACCESS_TOKEN,
+    pageToken,
     store: cloudSupportStore,
     answer: (q, publicComment, thread, factsOnly) => answerQuestion(q, { publicComment, thread, factsOnly }),
+    beforeSend,
   });
 }
 

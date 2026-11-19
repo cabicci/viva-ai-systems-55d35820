@@ -198,8 +198,13 @@ export async function answerQuestion(
     const content = json.choices?.[0]?.message?.content;
     const parsed = typeof content === "string" ? parseModelJson(content) : null;
     if (!parsed) return { text: deterministic(), source: "fallback" };
-    if (parsed.action === "skip")
+    if (parsed.action === "skip") {
+      // A question the resolver already tied to a named Masaarat program or price is genuine:
+      // answer it from the verified public facts instead of staying silent.
+      const resolved = !!decision.draft && (decision.topic.subject === "program" || decision.topic.subject === "pricing");
+      if (resolved) return { text: deterministic(), source: "deterministic" };
       return opts.publicComment ? { text: null, source: "skip" } : { text: deterministic(), source: "fallback" };
+    }
     const link = parsed.contact ? OFFICIAL_LINKS.contact : decision.link;
     // Price answers always carry the displayed tax wording.
     const ensure = decision.topic.subject === "pricing" ? decision.facts.slice(-1) : [];

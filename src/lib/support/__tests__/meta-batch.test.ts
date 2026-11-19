@@ -7,6 +7,8 @@ import { FACEBOOK_PAGE_ID, INSTAGRAM_ACCOUNT_ID } from "../config";
 import { metaSignature } from "../crypto";
 import { handleMetaSupport, type MetaDeps } from "../meta.server";
 import type { ClaimDecision, SupportStore } from "../store.server";
+// Every real reply carries the official link and signature; the webhook refuses unbranded text.
+const SIGN = "\n\nhttps://masaarat.ai\n— فريق مسارات";
 
 // Replay the production claim/mark SQL in a disposable local database.
 const db = new PGlite();
@@ -34,7 +36,7 @@ const store: SupportStore = {
 };
 const deps = (): MetaDeps => ({
   appSecret: "local-test", pageToken: "unused", store: async () => store,
-  answer: vi.fn(async (q: string) => ({ text: q, source: "fallback" as const })),
+  answer: vi.fn(async (q: string) => ({ text: q + SIGN, source: "fallback" as const })),
   send: vi.fn(async () => "sent" as const),
 });
 async function deliver(payload: unknown, options: MetaDeps) {
@@ -56,7 +58,7 @@ describe.each([["page", FACEBOOK_PAGE_ID], ["instagram", INSTAGRAM_ACCOUNT_ID]])
     ] };
     expect((await deliver(batch, options)).status).toBe(200);
     expect((await deliver(batch, options)).status).toBe(200);
-    expect(vi.mocked(options.send!).mock.calls.map(([, , text]) => text)).toEqual(messages.map(m => m.message.text));
+    expect(vi.mocked(options.send!).mock.calls.map(([, , text]) => text)).toEqual(messages.map(m => m.message.text + SIGN));
     expect(vi.mocked(options.answer).mock.calls.map(([, , , factsOnly]) => factsOnly))
       .toEqual([false, false, false, false, false, false, true, true]);
   });
@@ -91,7 +93,7 @@ it("finishes the other conversations and retries only the unsent message after a
       failOnce = false;
       throw new Error("temporary failure generating answer");
     }
-    return { text, source: "deterministic" };
+    return { text: text + SIGN, source: "deterministic" };
   };
   expect((await deliver(batch, options)).status).toBe(500);
   expect(options.send).toHaveBeenCalledTimes(11);
