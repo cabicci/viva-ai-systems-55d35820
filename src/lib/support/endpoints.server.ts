@@ -28,7 +28,10 @@ export async function handleMetaSupportRequest(request: Request): Promise<Respon
     verifyToken: process.env.META_WEBHOOK_VERIFY_TOKEN,
     pageToken,
     store: cloudSupportStore,
-    answer: (q, publicComment, thread, factsOnly) => answerQuestion(q, { publicComment, thread, factsOnly }),
+    // Durable follow-up topic across server instances for the four native Meta paths (same
+    // hashed-key, allow-listed-codes store as WhatsApp; keys scoped by channel, thread and visibility).
+    answer: async (q, publicComment, thread, factsOnly) =>
+      answerQuestion(q, { publicComment, thread, factsOnly }, { context: await cloudContextStore() }),
     beforeSend,
   });
 }

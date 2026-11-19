@@ -73,8 +73,11 @@ export function extractMetaWork(payload: unknown): MetaWork[] {
         const commentId = str(value.id);
         const text = str(value.text);
         if (!commentId || !text) continue;
-        const mediaId = str(obj(value.media)?.id) ?? "unknown-media";
-        out.push({ kind: "reply", provider: "meta_instagram_comment", key: commentId, family, senderId: fromId, text, target: commentId, postId: mediaId });
+        // A missing or malformed media ID never becomes a shared placeholder: the thread then
+        // falls back to this comment alone, so unrelated posts can never share follow-up context.
+        const mediaId = str(obj(value.media)?.id);
+        const postId = mediaId && /^[A-Za-z0-9_-]{1,80}$/.test(mediaId) ? mediaId : undefined;
+        out.push({ kind: "reply", provider: "meta_instagram_comment", key: commentId, family, senderId: fromId, text, target: commentId, postId });
       }
     }
   }
@@ -260,8 +263,10 @@ export async function processMetaWork(work: MetaWork[], ctx: MetaWorkContext): P
       let source = "not_question";
       if (publicComment) {
         // Public threads: only genuine questions, scoped context per post+commenter (never DM context).
+        // Without a post/media ID the thread is this single comment, never a shared bucket.
         if (isRelevantPublicQuestion(item.text)) {
-          const a = await answer(item.text, true, { family: item.family, thread: `${item.postId}:${hash}`, visibility: "public" }, factsOnly);
+          const thread = item.postId ? `${item.postId}:${hash}` : `comment:${key}:${hash}`;
+          const a = await answer(item.text, true, { family: item.family, thread, visibility: "public" }, factsOnly);
           text = a.text;
           source = a.source;
         }
