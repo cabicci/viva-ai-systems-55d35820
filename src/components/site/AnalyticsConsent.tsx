@@ -83,13 +83,15 @@ export function AnalyticsConsentGate() {
   }
 
   if (!hydrated) return null;
+  const controlsRoot =
+    typeof document === "undefined" ? null : document.getElementById("privacy-settings-controls");
   if (consent === null) {
-    return (
+    const notice = (
       <aside
         aria-label={copy.ariaLabel}
         dir={dir}
         lang={lang}
-        className="fixed inset-x-4 bottom-4 z-[100] mx-auto max-w-3xl rounded-2xl border border-border bg-background/95 p-4 shadow-2xl backdrop-blur"
+        className={`${sensitivePage ? "relative mx-auto my-4 w-[calc(100%_-_2rem)]" : "fixed inset-x-4 bottom-4 z-[100] mx-auto"} max-w-3xl rounded-2xl border border-border bg-background/95 p-4 shadow-2xl backdrop-blur`}
       >
         <p className="text-sm font-bold">{copy.title}</p>
         <p className="mt-1 text-sm leading-6 text-muted-foreground">
@@ -116,6 +118,7 @@ export function AnalyticsConsentGate() {
         </div>
       </aside>
     );
+    return sensitivePage && controlsRoot ? createPortal(notice, controlsRoot) : notice;
   }
   const controls = (
     <>
@@ -166,7 +169,5 @@ export function AnalyticsConsentGate() {
       ) : null}
     </>
   );
-  const controlsRoot =
-    typeof document === "undefined" ? null : document.getElementById("privacy-settings-controls");
   return controlsRoot ? createPortal(controls, controlsRoot) : controls;
 }
