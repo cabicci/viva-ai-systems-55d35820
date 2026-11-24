@@ -479,19 +479,6 @@ function UnifiedLessonPage() {
     }
   };
 
-  // Fire `lesson_opened` once per mount per lesson.
-  const openedRef = useRef<string | null>(null);
-  useEffect(() => {
-    if (openedRef.current === lesson.id) return;
-    openedRef.current = lesson.id;
-    logLearnerEvent({
-      type: "lesson_opened",
-      pathId,
-      moduleId: lesson.moduleId,
-      lessonId: lesson.id,
-    });
-  }, [lesson.id, lesson.moduleId, pathId]);
-
   return (
     <div className="min-h-dvh flex flex-col overflow-x-clip" dir={dir}>
       <Sidebar />
@@ -597,7 +584,7 @@ function UnifiedLessonPage() {
 
         {isGateReady && gate.kind === "open" && (
           <>
-            <JourneyVisitRecorder line="ai" course="ai" lesson={lesson.id} locale={locale} />
+            <JourneyVisitRecorder line="ai" course="ai" lesson={lesson.id} locale={locale} pathId={pathId} moduleId={lesson.moduleId} />
             <DifficultyPrompt
               lessonId={lesson.id}
               pathId={pathId}

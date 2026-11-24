@@ -28,7 +28,10 @@ type MetaPixelFunction = {
 
 type AnalyticsWindow = Window & {
   dataLayer?: (DataLayerEvent | IArguments)[];
-  gtag?: (command: "consent", action: "default" | "update", state: ConsentState) => void;
+  gtag?: {
+    (command: "consent", action: "default" | "update", state: ConsentState): void;
+    (command: "event", name: string, parameters: Record<string, unknown>): void;
+  };
   [key: `ga-disable-${string}`]: boolean | undefined;
   fbq?: MetaPixelFunction;
   _fbq?: MetaPixelFunction;
@@ -58,14 +61,22 @@ function browserDocument(): Document | null {
 export function readAnalyticsConsent(): AnalyticsConsent {
   const win = browserWindow();
   if (!win) return null;
-  const value = win.localStorage.getItem(ANALYTICS_CONSENT_STORAGE_KEY);
-  return value === "granted" || value === "denied" ? value : null;
+  try {
+    const value = win.localStorage.getItem(ANALYTICS_CONSENT_STORAGE_KEY);
+    return value === "granted" || value === "denied" ? value : null;
+  } catch {
+    return null;
+  }
 }
 
 export function persistAnalyticsConsent(consent: Exclude<AnalyticsConsent, null>): void {
   const win = browserWindow();
   if (!win) return;
-  win.localStorage.setItem(ANALYTICS_CONSENT_STORAGE_KEY, consent);
+  try {
+    win.localStorage.setItem(ANALYTICS_CONSENT_STORAGE_KEY, consent);
+  } catch {
+    // A blocked storage area must not prevent an in-page privacy choice.
+  }
   win.dispatchEvent(new CustomEvent(CONSENT_EVENT, { detail: consent }));
 }
 
@@ -260,6 +271,32 @@ export function trackConfirmedRegistration(): boolean {
   }
   trackTikTokRegistration();
   return true;
+}
+
+/** Consented lesson activation, with curriculum scope only and no account data. */
+export function trackLessonOpened(scope: {
+  area: "ai" | "academic" | "technical";
+  course: string;
+  lesson: string;
+}): boolean {
+  const win = browserWindow();
+  if (!analyticsGranted || !win || isSensitiveAnalyticsUrl(win.location.href)) return false;
+  try {
+    if (!win.gtag) return false;
+    // The published GTM container configures this tag but has no lesson-open
+    // trigger. Route this event only to the existing GA4 property.
+    win.gtag("event", "lesson_opened", {
+      send_to: GA4_MEASUREMENT_ID,
+      content_area: scope.area,
+      course_id: scope.course,
+      lesson_id: scope.lesson,
+      page_location: win.location.origin + win.location.pathname,
+      page_referrer: "",
+    });
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 /** Trackers must not read an authentication URL or a prefilled identity. */

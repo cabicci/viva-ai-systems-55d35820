@@ -1,9 +1,13 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
   ANALYTICS_CONSENT_STORAGE_KEY,
+  GA4_MEASUREMENT_ID,
   applyAnalyticsConsent,
   isSensitiveAnalyticsUrl,
   resetAnalyticsRuntimeForTests,
+  persistAnalyticsConsent,
+  readAnalyticsConsent,
+  trackLessonOpened,
 } from "../analytics";
 import {
   clearPendingRegistration,
@@ -139,6 +143,48 @@ describe("auth URL privacy", () => {
     "/?gclid=nonsecret-click-id",
   ])("allows consented campaign navigation at %s", (href) => {
     expect(isSensitiveAnalyticsUrl(href)).toBe(false);
+  });
+});
+
+describe("activation measurement privacy and browser storage", () => {
+  it("requires consent and omits account information from lesson activation", () => {
+    const scope = { area: "academic" as const, course: "AC-BUS", lesson: "AC-BUS-M01-L01" };
+    consent("denied");
+    expect(trackLessonOpened(scope)).toBe(false);
+    consent("granted");
+    expect(trackLessonOpened(scope)).toBe(true);
+    const events = (window as unknown as { dataLayer: IArguments[] }).dataLayer
+      .filter((entry) => entry[0] === "event")
+      .map((entry) => Array.from(entry));
+    expect(events).toEqual([
+      [
+        "event",
+        "lesson_opened",
+        {
+          send_to: GA4_MEASUREMENT_ID,
+          content_area: "academic",
+          course_id: "AC-BUS",
+          lesson_id: "AC-BUS-M01-L01",
+          page_location: window.location.origin + window.location.pathname,
+          page_referrer: "",
+        },
+      ],
+    ]);
+    expect(JSON.stringify(events)).not.toMatch(/user_id|email|password|student-a/);
+    window.history.replaceState({}, "", "/login?email=private%40example.test");
+    expect(trackLessonOpened(scope)).toBe(false);
+    window.history.replaceState({}, "", "/");
+  });
+  it("keeps the privacy gate usable when mobile storage is blocked", () => {
+    vi.spyOn(Storage.prototype, "getItem").mockImplementation(() => {
+      throw new Error("blocked");
+    });
+    vi.spyOn(Storage.prototype, "setItem").mockImplementation(() => {
+      throw new Error("blocked");
+    });
+    expect(readAnalyticsConsent()).toBeNull();
+    expect(() => persistAnalyticsConsent("denied")).not.toThrow();
+    expect(() => applyAnalyticsConsent(readAnalyticsConsent())).not.toThrow();
   });
 });
 

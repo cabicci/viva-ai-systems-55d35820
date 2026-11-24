@@ -85,13 +85,12 @@ describe("invited recipient auth forms", () => {
         }),
       ),
     );
-    await waitFor(() =>
-      expect(mock.navigate).toHaveBeenCalledWith({
-        to: "/login",
-        search: mock.search,
-        replace: true,
-      }),
-    );
+    expect(await screen.findByRole("status")).toHaveTextContent("auth.signup.toast.success");
+    expect(mock.navigate).not.toHaveBeenCalled();
+    const loginLinks = screen.getAllByRole("link", { name: "auth.link.login" });
+    const destination = new URL((loginLinks[0] as HTMLAnchorElement).href);
+    expect(destination.searchParams.get("email")).toBe("edited@example.test");
+    expect(destination.searchParams.get("locale")).toBe("ar-Gulf");
   });
   it("also prefills the existing-account login without an automatic sign-in", () => {
     const Page = LoginRoute.options.component!;
@@ -114,7 +113,9 @@ describe("direct invitation page", () => {
   function renderInvitation() {
     const Page = InvitationRoute.options.component!;
     return render(
-      <QueryClientProvider client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}>
+      <QueryClientProvider
+        client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}
+      >
         <Page />
       </QueryClientProvider>,
     );
