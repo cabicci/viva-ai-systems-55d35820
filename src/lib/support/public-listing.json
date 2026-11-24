@@ -1,0 +1,1048 @@
+{
+ "programs": [
+  {
+   "id": "intro",
+   "name": {
+    "ar": "المقدمة",
+    "en": "Introduction"
+   }
+  },
+  {
+   "id": "business",
+   "name": {
+    "ar": "الأعمال",
+    "en": "Business"
+   }
+  },
+  {
+   "id": "creator",
+   "name": {
+    "ar": "المحتوى",
+    "en": "Content"
+   }
+  },
+  {
+   "id": "analyst",
+   "name": {
+    "ar": "التحليل",
+    "en": "Analysis"
+   }
+  },
+  {
+   "id": "automator",
+   "name": {
+    "ar": "الأتمتة",
+    "en": "Automation"
+   }
+  },
+  {
+   "id": "builder",
+   "name": {
+    "ar": "البناء",
+    "en": "Builder"
+   }
+  }
+ ],
+ "lessons": [
+  {
+   "id": "intro-m1-l1-what-is-ai",
+   "program": "intro",
+   "title": {
+    "ar": "AI يعني إيه فعلًا؟",
+    "en": "What Is AI"
+   },
+   "access": "free",
+   "route": "/learn/intro/intro-m1-l1-what-is-ai"
+  },
+  {
+   "id": "intro-m1-l2-first-prompt",
+   "program": "intro",
+   "title": {
+    "ar": "أول Prompt ليك",
+    "en": "First Prompt"
+   },
+   "access": "free",
+   "route": "/learn/intro/intro-m1-l2-first-prompt"
+  },
+  {
+   "id": "intro-m1-l3-setup-your-ai",
+   "program": "intro",
+   "title": {
+    "ar": "افتح أول AI ليك في دقيقتين",
+    "en": "Setup Your AI"
+   },
+   "access": "free",
+   "route": "/learn/intro/intro-m1-l3-setup-your-ai"
+  },
+  {
+   "id": "intro-m1-l4-ai-can-cannot",
+   "program": "intro",
+   "title": {
+    "ar": "الـ AI يقدر يعمل إيه ومينفعش يعمل إيه؟",
+    "en": "AI Can and Cannot"
+   },
+   "access": "free",
+   "route": "/learn/intro/intro-m1-l4-ai-can-cannot"
+  },
+  {
+   "id": "intro-m1-l5-ai-vs-software",
+   "program": "intro",
+   "title": {
+    "ar": "AI مش زي البرامج العادية",
+    "en": "AI vs Software"
+   },
+   "access": "free",
+   "route": "/learn/intro/intro-m1-l5-ai-vs-software"
+  },
+  {
+   "id": "intro-m1-l6-learn-without-fear",
+   "program": "intro",
+   "title": {
+    "ar": "اتعلم AI من غير خوف",
+    "en": "Learn Without Fear"
+   },
+   "access": "free",
+   "route": "/learn/intro/intro-m1-l6-learn-without-fear"
+  },
+  {
+   "id": "intro-m1-l7-choose-your-path",
+   "program": "intro",
+   "title": {
+    "ar": "اختار مسارك",
+    "en": "Choose Your Path"
+   },
+   "access": "free",
+   "route": "/learn/intro/intro-m1-l7-choose-your-path"
+  },
+  {
+   "id": "business-m1-l1-from-decisions-to-leadership",
+   "program": "business",
+   "title": {
+    "ar": "القرارات بقت بتنفّذ نفسها — دورك إيه؟",
+    "en": "From Decisions to Leadership"
+   },
+   "access": "free",
+   "route": "/learn/business/business-m1-l1-from-decisions-to-leadership"
+  },
+  {
+   "id": "business-m1-l2-reactive-vs-proactive",
+   "program": "business",
+   "title": {
+    "ar": "Reactive vs Proactive",
+    "en": "Reactive vs Proactive"
+   },
+   "access": "plan",
+   "route": "/learn/business/business-m1-l2-reactive-vs-proactive"
+  },
+  {
+   "id": "business-m2-l1-customer-lifecycle",
+   "program": "business",
+   "title": {
+    "ar": "دورة حياة العميل",
+    "en": "Customer Lifecycle"
+   },
+   "access": "plan",
+   "route": "/learn/business/business-m2-l1-customer-lifecycle"
+  },
+  {
+   "id": "business-m2-l2-build-your-offer",
+   "program": "business",
+   "title": {
+    "ar": "ابني عرضك — التحويل مش المنتج",
+    "en": "Build Your Offer"
+   },
+   "access": "plan",
+   "route": "/learn/business/business-m2-l2-build-your-offer"
+  },
+  {
+   "id": "business-m2-l2-retention-flow",
+   "program": "business",
+   "title": {
+    "ar": "Retention Flow",
+    "en": "Retention Flow"
+   },
+   "access": "plan",
+   "route": "/learn/business/business-m2-l2-retention-flow"
+  },
+  {
+   "id": "business-m2-l3-readiness-signals",
+   "program": "business",
+   "title": {
+    "ar": "علامات الجاهزية للتوسع",
+    "en": "Readiness Signals"
+   },
+   "access": "plan",
+   "route": "/learn/business/business-m2-l3-readiness-signals"
+  },
+  {
+   "id": "business-m3-l1-delegate-or-automate",
+   "program": "business",
+   "title": {
+    "ar": "Delegate ولا Automate؟",
+    "en": "Delegate or Automate"
+   },
+   "access": "plan",
+   "route": "/learn/business/business-m3-l1-delegate-or-automate"
+  },
+  {
+   "id": "business-m3-l2-strategic-operational-admin",
+   "program": "business",
+   "title": {
+    "ar": "Strategic / Operational / Admin",
+    "en": "Strategic / Operational / Admin"
+   },
+   "access": "plan",
+   "route": "/learn/business/business-m3-l2-strategic-operational-admin"
+  },
+  {
+   "id": "business-m3-l3-system-then-people",
+   "program": "business",
+   "title": {
+    "ar": "System الأول — الناس بعدين",
+    "en": "System Then People"
+   },
+   "access": "plan",
+   "route": "/learn/business/business-m3-l3-system-then-people"
+  },
+  {
+   "id": "business-m4-l1-premature-scaling",
+   "program": "business",
+   "title": {
+    "ar": "توسع قبل الأوان",
+    "en": "Premature Scaling"
+   },
+   "access": "plan",
+   "route": "/learn/business/business-m4-l1-premature-scaling"
+  },
+  {
+   "id": "business-m4-l2-reactive-relapse",
+   "program": "business",
+   "title": {
+    "ar": "الرجوع لـ Reactive Mode",
+    "en": "Reactive Relapse"
+   },
+   "access": "plan",
+   "route": "/learn/business/business-m4-l2-reactive-relapse"
+  },
+  {
+   "id": "business-m4-l3-weekly-rhythm",
+   "program": "business",
+   "title": {
+    "ar": "الإيقاع الأسبوعي = ٤ مسارات",
+    "en": "Weekly Rhythm"
+   },
+   "access": "plan",
+   "route": "/learn/business/business-m4-l3-weekly-rhythm"
+  },
+  {
+   "id": "business-m4-l4-full-ecosystem",
+   "program": "business",
+   "title": {
+    "ar": "الـ ٥ مسارات في يومك",
+    "en": "Full Ecosystem"
+   },
+   "access": "plan",
+   "route": "/learn/business/business-m4-l4-full-ecosystem"
+  },
+  {
+   "id": "creator-m1-l1-why-content",
+   "program": "creator",
+   "title": {
+    "ar": "ليه المحتوى مش Posting؟",
+    "en": "Why Content Is Not Posting"
+   },
+   "access": "free",
+   "route": "/learn/creator/creator-m1-l1-why-content"
+  },
+  {
+   "id": "creator-m1-l2-attention-economy",
+   "program": "creator",
+   "title": {
+    "ar": "إيه هو اقتصاد الانتباه؟",
+    "en": "Attention Economy"
+   },
+   "access": "plan",
+   "route": "/learn/creator/creator-m1-l2-attention-economy"
+  },
+  {
+   "id": "creator-m2-l1-know-audience",
+   "program": "creator",
+   "title": {
+    "ar": "اعرف جمهورك فعلًا",
+    "en": "Know Your Audience"
+   },
+   "access": "plan",
+   "route": "/learn/creator/creator-m2-l1-know-audience"
+  },
+  {
+   "id": "creator-m2-l2-content-pillars",
+   "program": "creator",
+   "title": {
+    "ar": "اختار ٣ Pillars",
+    "en": "Content Pillars"
+   },
+   "access": "plan",
+   "route": "/learn/creator/creator-m2-l2-content-pillars"
+  },
+  {
+   "id": "creator-m3-l1-hook",
+   "program": "creator",
+   "title": {
+    "ar": "Hook: أول ٣ ثواني",
+    "en": "Hook — First Seconds"
+   },
+   "access": "plan",
+   "route": "/learn/creator/creator-m3-l1-hook"
+  },
+  {
+   "id": "creator-m3-l2-script-structure",
+   "program": "creator",
+   "title": {
+    "ar": "بنية السكريبت الكاملة",
+    "en": "Script Structure"
+   },
+   "access": "plan",
+   "route": "/learn/creator/creator-m3-l2-script-structure"
+  },
+  {
+   "id": "creator-m3-l3-cta",
+   "program": "creator",
+   "title": {
+    "ar": "CTA: ازاي تخلّي المتفرّج يتحرّك",
+    "en": "CTA — Move the Viewer"
+   },
+   "access": "plan",
+   "route": "/learn/creator/creator-m3-l3-cta"
+  },
+  {
+   "id": "creator-m4-l1-reality-check",
+   "program": "creator",
+   "title": {
+    "ar": "Reality Check",
+    "en": "Reality Check"
+   },
+   "access": "plan",
+   "route": "/learn/creator/creator-m4-l1-reality-check"
+  },
+  {
+   "id": "creator-m4-l2-mobile-shooting",
+   "program": "creator",
+   "title": {
+    "ar": "التصوير بالموبايل",
+    "en": "Mobile Shooting"
+   },
+   "access": "plan",
+   "route": "/learn/creator/creator-m4-l2-mobile-shooting"
+  },
+  {
+   "id": "creator-m4-l3-ai-writing",
+   "program": "creator",
+   "title": {
+    "ar": "AI كمساعد كتابة",
+    "en": "AI as Writing Assistant"
+   },
+   "access": "plan",
+   "route": "/learn/creator/creator-m4-l3-ai-writing"
+  },
+  {
+   "id": "creator-m5-l1-editing",
+   "program": "creator",
+   "title": {
+    "ar": "التحرير — القص والإيقاع",
+    "en": "Editing — Cutting and Pacing"
+   },
+   "access": "plan",
+   "route": "/learn/creator/creator-m5-l1-editing"
+  },
+  {
+   "id": "creator-m4-repurposing",
+   "program": "creator",
+   "title": {
+    "ar": "Repurposing — مضاعف المحتوى",
+    "en": "Repurposing — Content Multiplier"
+   },
+   "access": "plan",
+   "route": "/learn/creator/creator-m4-repurposing"
+  },
+  {
+   "id": "creator-m5-l2-thumbnails-captions",
+   "program": "creator",
+   "title": {
+    "ar": "Thumbnails & Captions",
+    "en": "Thumbnails and Captions"
+   },
+   "access": "plan",
+   "route": "/learn/creator/creator-m5-l2-thumbnails-captions"
+  },
+  {
+   "id": "creator-m6-l1-platforms",
+   "program": "creator",
+   "title": {
+    "ar": "اختيار المنصات",
+    "en": "Choosing Platforms"
+   },
+   "access": "plan",
+   "route": "/learn/creator/creator-m6-l1-platforms"
+  },
+  {
+   "id": "creator-m6-l2-scheduling",
+   "program": "creator",
+   "title": {
+    "ar": "الجدولة والاستمرارية",
+    "en": "Scheduling and Consistency"
+   },
+   "access": "plan",
+   "route": "/learn/creator/creator-m6-l2-scheduling"
+  },
+  {
+   "id": "creator-m6-l3-analytics",
+   "program": "creator",
+   "title": {
+    "ar": "قراءة Analytics بسيطة",
+    "en": "Simple Analytics Reading"
+   },
+   "access": "plan",
+   "route": "/learn/creator/creator-m6-l3-analytics"
+  },
+  {
+   "id": "creator-m6-l4-leads",
+   "program": "creator",
+   "title": {
+    "ar": "من Views لـ Leads",
+    "en": "From Views to Leads"
+   },
+   "access": "plan",
+   "route": "/learn/creator/creator-m6-l4-leads"
+  },
+  {
+   "id": "creator-m7-l1-brand-basics",
+   "program": "creator",
+   "title": {
+    "ar": "أساسيات الهوية — وجهة نظرك",
+    "en": "Brand Basics — Point of View"
+   },
+   "access": "plan",
+   "route": "/learn/creator/creator-m7-l1-brand-basics"
+  },
+  {
+   "id": "creator-m7-l2-grid-consistency",
+   "program": "creator",
+   "title": {
+    "ar": "Grid Consistency على الـ Profile",
+    "en": "Grid Consistency on Profile"
+   },
+   "access": "plan",
+   "route": "/learn/creator/creator-m7-l2-grid-consistency"
+  },
+  {
+   "id": "analyst-m1-l1-from-automation-to-insight",
+   "program": "analyst",
+   "title": {
+    "ar": "بياناتك جاهزة — دلوقتي بتسأل",
+    "en": "From Automation to Insight"
+   },
+   "access": "free",
+   "route": "/learn/analyst/analyst-m1-l1-from-automation-to-insight"
+  },
+  {
+   "id": "analyst-m2-l1-feeling-to-question",
+   "program": "analyst",
+   "title": {
+    "ar": "حوّل الشعور لسؤال",
+    "en": "Feeling to Question"
+   },
+   "access": "plan",
+   "route": "/learn/analyst/analyst-m2-l1-feeling-to-question"
+  },
+  {
+   "id": "analyst-m2-l2-right-question-rule",
+   "program": "analyst",
+   "title": {
+    "ar": "السؤال الصح أهم من الإجابة",
+    "en": "Right Question Rule"
+   },
+   "access": "plan",
+   "route": "/learn/analyst/analyst-m2-l2-right-question-rule"
+  },
+  {
+   "id": "analyst-m3-l1-three-sources",
+   "program": "analyst",
+   "title": {
+    "ar": "المصادر الثلاثة",
+    "en": "Three Sources"
+   },
+   "access": "plan",
+   "route": "/learn/analyst/analyst-m3-l1-three-sources"
+  },
+  {
+   "id": "analyst-m3-l2-ai-summarization",
+   "program": "analyst",
+   "title": {
+    "ar": "AI = أسرع محلّل عندك",
+    "en": "AI Summarization"
+   },
+   "access": "plan",
+   "route": "/learn/analyst/analyst-m3-l2-ai-summarization"
+  },
+  {
+   "id": "analyst-m4-l1-pattern-vs-outlier",
+   "program": "analyst",
+   "title": {
+    "ar": "Pattern أم Outlier؟",
+    "en": "Pattern vs Outlier"
+   },
+   "access": "plan",
+   "route": "/learn/analyst/analyst-m4-l1-pattern-vs-outlier"
+  },
+  {
+   "id": "analyst-m4-l2-decision-rule",
+   "program": "analyst",
+   "title": {
+    "ar": "كل تفسير ينتهي بـ «إذًا هعمل…»",
+    "en": "Decision Rule"
+   },
+   "access": "plan",
+   "route": "/learn/analyst/analyst-m4-l2-decision-rule"
+  },
+  {
+   "id": "analyst-m5-l1-four-numbers-dashboard",
+   "program": "analyst",
+   "title": {
+    "ar": "٤ أرقام بس",
+    "en": "Four Numbers Dashboard"
+   },
+   "access": "plan",
+   "route": "/learn/analyst/analyst-m5-l1-four-numbers-dashboard"
+  },
+  {
+   "id": "analyst-m4-automated-dashboard",
+   "program": "analyst",
+   "title": {
+    "ar": "رقم واحد يتحدّث لوحده",
+    "en": "Automated Dashboard"
+   },
+   "access": "plan",
+   "route": "/learn/analyst/analyst-m4-automated-dashboard"
+  },
+  {
+   "id": "analyst-m5-l2-weekly-review-ritual",
+   "program": "analyst",
+   "title": {
+    "ar": "Review أسبوعي = ٣٠ دقيقة",
+    "en": "Weekly Review Ritual"
+   },
+   "access": "plan",
+   "route": "/learn/analyst/analyst-m5-l2-weekly-review-ritual"
+  },
+  {
+   "id": "analyst-m6-l1-question-mistakes",
+   "program": "analyst",
+   "title": {
+    "ar": "أخطاء الأسئلة",
+    "en": "Question Mistakes"
+   },
+   "access": "plan",
+   "route": "/learn/analyst/analyst-m6-l1-question-mistakes"
+  },
+  {
+   "id": "analyst-m5-ab-testing",
+   "program": "analyst",
+   "title": {
+    "ar": "اختبار A/B بسيط",
+    "en": "A/B Testing"
+   },
+   "access": "plan",
+   "route": "/learn/analyst/analyst-m5-ab-testing"
+  },
+  {
+   "id": "analyst-m6-l2-interpretation-mistakes",
+   "program": "analyst",
+   "title": {
+    "ar": "أخطاء التفسير",
+    "en": "Interpretation Mistakes"
+   },
+   "access": "plan",
+   "route": "/learn/analyst/analyst-m6-l2-interpretation-mistakes"
+  },
+  {
+   "id": "analyst-m7-l1-from-decisions-to-business",
+   "program": "analyst",
+   "title": {
+    "ar": "قراراتك جاهزة → Business بيشغّلها",
+    "en": "From Decisions to Business"
+   },
+   "access": "plan",
+   "route": "/learn/analyst/analyst-m7-l1-from-decisions-to-business"
+  },
+  {
+   "id": "automator-m1-l1-where-you-are",
+   "program": "automator",
+   "title": {
+    "ar": "أنت فين في الخريطة؟",
+    "en": "Where You Are on the Map"
+   },
+   "access": "free",
+   "route": "/learn/automator/automator-m1-l1-where-you-are"
+  },
+  {
+   "id": "automator-m2-l1-systems-view",
+   "program": "automator",
+   "title": {
+    "ar": "كل شغل = System",
+    "en": "Systems View"
+   },
+   "access": "plan",
+   "route": "/learn/automator/automator-m2-l1-systems-view"
+  },
+  {
+   "id": "automator-m2-l2-spot-patterns",
+   "program": "automator",
+   "title": {
+    "ar": "شوف الأنماط في يومك",
+    "en": "Spot Patterns"
+   },
+   "access": "plan",
+   "route": "/learn/automator/automator-m2-l2-spot-patterns"
+  },
+  {
+   "id": "automator-m2-l3-decide-what-to-automate",
+   "program": "automator",
+   "title": {
+    "ar": "قرّر إيه يتأتمت",
+    "en": "Decide What to Automate"
+   },
+   "access": "plan",
+   "route": "/learn/automator/automator-m2-l3-decide-what-to-automate"
+  },
+  {
+   "id": "automator-m3-l1-tools-landscape",
+   "program": "automator",
+   "title": {
+    "ar": "Make vs n8n vs Zapier",
+    "en": "Tools Landscape"
+   },
+   "access": "plan",
+   "route": "/learn/automator/automator-m3-l1-tools-landscape"
+  },
+  {
+   "id": "automator-m3-l2-triggers-actions",
+   "program": "automator",
+   "title": {
+    "ar": "Triggers + Actions",
+    "en": "Triggers and Actions"
+   },
+   "access": "plan",
+   "route": "/learn/automator/automator-m3-l2-triggers-actions"
+  },
+  {
+   "id": "automator-m3-l3-filters-routers",
+   "program": "automator",
+   "title": {
+    "ar": "Filters & Routers",
+    "en": "Filters and Routers"
+   },
+   "access": "plan",
+   "route": "/learn/automator/automator-m3-l3-filters-routers"
+  },
+  {
+   "id": "automator-m4-l1-connect-database",
+   "program": "automator",
+   "title": {
+    "ar": "وصّل الـ DB من Builder",
+    "en": "Connect Database"
+   },
+   "access": "plan",
+   "route": "/learn/automator/automator-m4-l1-connect-database"
+  },
+  {
+   "id": "automator-m4-l2-webhooks-api",
+   "program": "automator",
+   "title": {
+    "ar": "Webhooks & APIs",
+    "en": "Webhooks & APIs"
+   },
+   "access": "plan",
+   "route": "/learn/automator/automator-m4-l2-webhooks-api"
+  },
+  {
+   "id": "automator-m4-l3-error-handling",
+   "program": "automator",
+   "title": {
+    "ar": "Error Handling",
+    "en": "Error Handling"
+   },
+   "access": "plan",
+   "route": "/learn/automator/automator-m4-l3-error-handling"
+  },
+  {
+   "id": "automator-m3-testing-automation",
+   "program": "automator",
+   "title": {
+    "ar": "اختبر قبل ما تطلع",
+    "en": "Testing Automation"
+   },
+   "access": "plan",
+   "route": "/learn/automator/automator-m3-testing-automation"
+  },
+  {
+   "id": "automator-m5-l1-llm-in-flow",
+   "program": "automator",
+   "title": {
+    "ar": "LLM جوه الـ Flow",
+    "en": "LLM in Flow"
+   },
+   "access": "plan",
+   "route": "/learn/automator/automator-m5-l1-llm-in-flow"
+  },
+  {
+   "id": "automator-m5-l2-rag-in-n8n",
+   "program": "automator",
+   "title": {
+    "ar": "RAG جوه الـ Automation",
+    "en": "RAG in Automation"
+   },
+   "access": "plan",
+   "route": "/learn/automator/automator-m5-l2-rag-in-n8n"
+  },
+  {
+   "id": "automator-m5-l3-agents",
+   "program": "automator",
+   "title": {
+    "ar": "Agents بياخدوا قرارات",
+    "en": "Agents"
+   },
+   "access": "plan",
+   "route": "/learn/automator/automator-m5-l3-agents"
+  },
+  {
+   "id": "automator-m6-l1-lead-capture",
+   "program": "automator",
+   "title": {
+    "ar": "استقبال Leads من Creator",
+    "en": "Lead Capture"
+   },
+   "access": "plan",
+   "route": "/learn/automator/automator-m6-l1-lead-capture"
+  },
+  {
+   "id": "automator-m6-l2-whatsapp-flow",
+   "program": "automator",
+   "title": {
+    "ar": "WhatsApp Flow ذكي",
+    "en": "WhatsApp Flow"
+   },
+   "access": "plan",
+   "route": "/learn/automator/automator-m6-l2-whatsapp-flow"
+  },
+  {
+   "id": "automator-m6-l3-follow-up",
+   "program": "automator",
+   "title": {
+    "ar": "المتابعة التلقائية + CRM",
+    "en": "Follow-up Automation"
+   },
+   "access": "plan",
+   "route": "/learn/automator/automator-m6-l3-follow-up"
+  },
+  {
+   "id": "automator-m7-l1-closing-loop",
+   "program": "automator",
+   "title": {
+    "ar": "بياناتك جاهزة — اللي جاي",
+    "en": "Closing the Loop"
+   },
+   "access": "plan",
+   "route": "/learn/automator/automator-m7-l1-closing-loop"
+  },
+  {
+   "id": "builder-m1-l1-what-is-llm",
+   "program": "builder",
+   "title": {
+    "ar": "إيه هو الـ LLM؟",
+    "en": "What Is an LLM"
+   },
+   "access": "free",
+   "route": "/learn/builder/builder-m1-l1-what-is-llm"
+  },
+  {
+   "id": "builder-m1-l2-tokens-training",
+   "program": "builder",
+   "title": {
+    "ar": "Tokens والتدريب",
+    "en": "Tokens and Training"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m1-l2-tokens-training"
+  },
+  {
+   "id": "builder-m2-l1-prompt-layer",
+   "program": "builder",
+   "title": {
+    "ar": "تشريح الـ Prompt",
+    "en": "The Prompt Layer"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m2-l1-prompt-layer"
+  },
+  {
+   "id": "builder-m2-l2-instructions-examples",
+   "program": "builder",
+   "title": {
+    "ar": "Instructions vs Examples",
+    "en": "Instructions vs Examples"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m2-l2-instructions-examples"
+  },
+  {
+   "id": "builder-m2-l3-style-control",
+   "program": "builder",
+   "title": {
+    "ar": "Style & Tone",
+    "en": "Style Control"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m2-l3-style-control"
+  },
+  {
+   "id": "builder-m3-l1-context-layer",
+   "program": "builder",
+   "title": {
+    "ar": "إيه السياق؟",
+    "en": "Context Layer"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m3-l1-context-layer"
+  },
+  {
+   "id": "builder-m3-l2-memory-limits",
+   "program": "builder",
+   "title": {
+    "ar": "حدود الذاكرة",
+    "en": "Memory Limits"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m3-l2-memory-limits"
+  },
+  {
+   "id": "builder-m4-l1-parameters",
+   "program": "builder",
+   "title": {
+    "ar": "Parameters: Temperature + Top-p + Max tokens",
+    "en": "Parameters (Temperature)"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m4-l1-parameters"
+  },
+  {
+   "id": "builder-m5-l1-transition",
+   "program": "builder",
+   "title": {
+    "ar": "Transition — من اللغة للـ App",
+    "en": "Transition — From Language to App"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m5-l1-transition"
+  },
+  {
+   "id": "builder-m5-l2-frontend",
+   "program": "builder",
+   "title": {
+    "ar": "واجهة التطبيق (Frontend)",
+    "en": "Frontend (Application Interface)"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m5-l2-frontend"
+  },
+  {
+   "id": "builder-m5-l3-backend-api",
+   "program": "builder",
+   "title": {
+    "ar": "كواليس التطبيق وساعي البريد",
+    "en": "Backend & API (Mail Carrier)"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m5-l3-backend-api"
+  },
+  {
+   "id": "builder-m5-l4-database-intro",
+   "program": "builder",
+   "title": {
+    "ar": "المخزن الذكي (Database)",
+    "en": "Database Intro (Smart Storage)"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m5-l4-database-intro"
+  },
+  {
+   "id": "builder-m5-l5-mini-win",
+   "program": "builder",
+   "title": {
+    "ar": "Mini-Win: شوف إنت فهمت إيه",
+    "en": "Mini Win — Check What You Learned"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m5-l5-mini-win"
+  },
+  {
+   "id": "builder-m6-l1-idea-to-page",
+   "program": "builder",
+   "title": {
+    "ar": "من فكرة لصفحة",
+    "en": "Idea to Page"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m6-l1-idea-to-page"
+  },
+  {
+   "id": "builder-m6-l2-wireframe",
+   "program": "builder",
+   "title": {
+    "ar": "Wireframe — ارسم قبل ما تبني",
+    "en": "Wireframe — Sketch Before You Build"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m6-l2-wireframe"
+  },
+  {
+   "id": "builder-m6-l3-first-prompt-to-lovable",
+   "program": "builder",
+   "title": {
+    "ar": "أول Prompt لـ Lovable",
+    "en": "First Prompt to Lovable"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m6-l3-first-prompt-to-lovable"
+  },
+  {
+   "id": "builder-m6-l4-components-routes",
+   "program": "builder",
+   "title": {
+    "ar": "Components & Routes",
+    "en": "Components & Routes"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m6-l4-components-routes"
+  },
+  {
+   "id": "builder-m6-l5-iteration",
+   "program": "builder",
+   "title": {
+    "ar": "Iteration Loop",
+    "en": "Iteration Loop"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m6-l5-iteration"
+  },
+  {
+   "id": "builder-m6-l6-debugging",
+   "program": "builder",
+   "title": {
+    "ar": "لو الدنيا بازت — Debugging",
+    "en": "Debugging — When Things Break"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m6-l6-debugging"
+  },
+  {
+   "id": "builder-m7-l1-tables-columns",
+   "program": "builder",
+   "title": {
+    "ar": "Tables & Columns",
+    "en": "Tables & Columns"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m7-l1-tables-columns"
+  },
+  {
+   "id": "builder-m7-l2-relations",
+   "program": "builder",
+   "title": {
+    "ar": "Relations بين الجداول",
+    "en": "Relations between Tables"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m7-l2-relations"
+  },
+  {
+   "id": "builder-m7-l3-queries",
+   "program": "builder",
+   "title": {
+    "ar": "Queries: ازاي بتجيب البيانات",
+    "en": "Queries — How to Fetch Data"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m7-l3-queries"
+  },
+  {
+   "id": "builder-m8-l1-sessions-jwt",
+   "program": "builder",
+   "title": {
+    "ar": "كارت الدخول (Sessions & JWT)",
+    "en": "Sessions & JWT"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m8-l1-sessions-jwt"
+  },
+  {
+   "id": "builder-m8-l2-rls",
+   "program": "builder",
+   "title": {
+    "ar": "الحارس الشخصي (RLS)",
+    "en": "RLS — Row Level Security"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m8-l2-rls"
+  },
+  {
+   "id": "builder-m9-l1-rag",
+   "program": "builder",
+   "title": {
+    "ar": "AI يرد من ملفاتك (RAG)",
+    "en": "RAG — AI Answers from Your Files"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m9-l1-rag"
+  },
+  {
+   "id": "builder-m9-l2-embeddings",
+   "program": "builder",
+   "title": {
+    "ar": "إزاي الـ AI بيلاقي المعلومة",
+    "en": "Embeddings — How AI Finds Information"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m9-l2-embeddings"
+  },
+  {
+   "id": "builder-m9-l3-agents",
+   "program": "builder",
+   "title": {
+    "ar": "AI بياخد قرارات لوحده (Agents)",
+    "en": "Agents — AI Takes Decisions"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m9-l3-agents"
+  },
+  {
+   "id": "builder-m10-l1-deploy-domain",
+   "program": "builder",
+   "title": {
+    "ar": "Deploy و Domain",
+    "en": "Deploy & Domain"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m10-l1-deploy-domain"
+  },
+  {
+   "id": "builder-m10-l2-first-users",
+   "program": "builder",
+   "title": {
+    "ar": "أول مستخدمين",
+    "en": "First Users"
+   },
+   "access": "plan",
+   "route": "/learn/builder/builder-m10-l2-first-users"
+  }
+ ]
+}
