@@ -112,6 +112,10 @@ export default {
         return await handleBillingMode(request);
       }
       const pathname = new URL(request.url).pathname;
+      if (pathname === "/ai-programs-sitemap.xml") {
+        const { serveAiProgramSitemap } = await import("./lib/seo/ai-program-sitemap.server");
+        return serveAiProgramSitemap(request);
+      }
       if (pathname === "/api/stripe-live/checkout") {
         const { handleLiveCheckout } = await import("./lib/billing/live/endpoints.server");
         return await handleLiveCheckout(request);
