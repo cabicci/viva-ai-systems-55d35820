@@ -7,6 +7,7 @@ export type PrivateCourseAsset = {
 
 const privateAssetLimit = 10_485_760;
 const privateAssetTypes: Record<string, string> = {
+  wav: "audio/wav",
   pdf: "application/pdf",
   png: "image/png",
   jpg: "image/jpeg",
@@ -21,6 +22,13 @@ export async function storeReviewedCourseAsset(asset: PrivateCourseAsset, file: 
     throw new Error("CURRICULUM_ASSET_UNAVAILABLE");
   const bytes = new Uint8Array(await file.arrayBuffer());
   if ((await sha256(bytes)) !== asset.sha256) throw new Error("CURRICULUM_ASSET_CHANGED");
+  if (
+    mime === "audio/wav" &&
+    (bytes.length < 44 ||
+      String.fromCharCode(...bytes.slice(0, 4)) !== "RIFF" ||
+      String.fromCharCode(...bytes.slice(8, 12)) !== "WAVE")
+  )
+    throw new Error("CURRICULUM_ASSET_UNAVAILABLE");
   const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
   const result = await supabaseAdmin.storage
     .from(destination.bucket)

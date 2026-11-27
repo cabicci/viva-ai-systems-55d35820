@@ -53,7 +53,7 @@ const asset = z
         path: z
           .string()
           .max(500)
-          .regex(/^[A-Za-z0-9][A-Za-z0-9/_-]*\.(?:pdf|png|jpg|jpeg|webp)$/),
+          .regex(/^[A-Za-z0-9][A-Za-z0-9/_-]*\.(?:pdf|png|jpg|jpeg|webp|wav)$/),
       })
       .strict()
       .optional(),
@@ -78,8 +78,16 @@ const asset = z
         code: "custom",
         message: "Images require a reviewed private file and its disclosure caption",
       });
-    if (a.type !== "image" && a.storage && !a.storage.path.endsWith(".pdf"))
-      c.addIssue({ code: "custom", message: "Downloads require a reviewed PDF" });
+    if (
+      a.type !== "image" &&
+      a.storage &&
+      !a.storage.path.endsWith(".pdf") &&
+      !(a.type === "file" && a.storage.path.endsWith(".wav"))
+    )
+      c.addIssue({
+        code: "custom",
+        message: "Downloads require a reviewed PDF or a WAV audio file",
+      });
   });
 const field = z
   .object({

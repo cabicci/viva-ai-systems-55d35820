@@ -26,6 +26,7 @@ import { useLocale } from "@/lib/locale/locale-context";
 import { COURSE_AREAS } from "@/lib/course-system/contract";
 import { curriculumCatalogue, curriculumCommand } from "@/lib/course-system/intake/client";
 import { askCurriculumAssistant, curriculumAsset } from "@/lib/course-system/intake/functions";
+import { AudioStoryWorkspace } from "@/components/course-intake/AudioStoryWorkspace";
 import { ArchiveWorkspace } from "@/components/course-intake/ArchiveWorkspace";
 import { intakeCopy } from "@/lib/course-system/intake/copy";
 import { useKidsParentStateSource } from "@/lib/kids/parent-state";
@@ -448,6 +449,15 @@ function LearnerStep({
         activity={(s) =>
           delivery.reviewOnly ? null : (
             <>
+              {scope.course === "audio-stories" && s.id === "audio-workspace" && auth.user && (
+                <AudioStoryWorkspace
+                  key={archiveScope + ":" + scope.lesson}
+                  scope={archiveScope}
+                  lesson={scope.lesson}
+                  locale={locale}
+                  resolveAsset={resolveAsset}
+                />
+              )}
               {s.id === "archive-workspace" && auth.user && (
                 <ArchiveWorkspace
                   key={archiveScope + ":" + scope.lesson}

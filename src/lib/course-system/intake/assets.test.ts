@@ -67,3 +67,24 @@ it("blocks a missing or changed worksheet instead of activating a broken course"
   await expect(verifyPrivateCourseAssets([asset])).rejects.toThrow("ASSET_UNAVAILABLE");
   await expect(verifyPrivateCourseAssets([asset])).rejects.toThrow("ASSET_UNAVAILABLE");
 });
+
+it("checks the container and exact digest of a privately deposited WAV", async () => {
+  const pcm = new Uint8Array(46);
+  pcm.set(new TextEncoder().encode("RIFF"), 0);
+  pcm.set(new TextEncoder().encode("WAVE"), 8);
+  const asset = {
+    id: "clip-1",
+    sha256: await sha256(pcm),
+    storage: { bucket: "academic-downloads" as const, path: "ai/audio-stories/clip-1.wav" },
+  };
+  state.upload.mockResolvedValueOnce({ error: null });
+  await storeReviewedCourseAsset(asset, new Blob([pcm]));
+  expect(state.upload).toHaveBeenCalledWith(asset.storage.path, expect.any(Uint8Array), {
+    contentType: "audio/wav",
+    upsert: false,
+  });
+  const invalid = new Uint8Array(46);
+  await expect(
+    storeReviewedCourseAsset({ ...asset, sha256: await sha256(invalid) }, new Blob([invalid])),
+  ).rejects.toThrow("ASSET_UNAVAILABLE");
+});
