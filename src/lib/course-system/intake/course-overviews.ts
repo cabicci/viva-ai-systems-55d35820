@@ -71,6 +71,36 @@ const OVERVIEWS: Record<string, Record<SupportedLocale, CourseOverview>> = {
       catalogue: "Compare two room layouts against your measurements, daily activities and budget.",
     },
   },
+  "personal-tutor": {
+    "ar-EG": {
+      summary: "حوّل صفحة من ملفاتك لجلسة مذاكرة مع مدرّس AI، وراجع كل تصحيح على السطر اللي يسنده.",
+      goals: "هتكشف سبب الغلط، وتعمل تدريب على قدّه، وتحل حالة جديدة لوحدك وتراجع تصحيحها بالدليل.",
+      audience: "للطلبة والمتعلّمين ذاتيًا اللي عايزين يذاكروا من ملفاتهم ويتأكدوا من إجابات المساعد.",
+      before: "جهّز صفحة مسموح لك تستخدمها أو ابدأ بدليل الإعارة الخيالي المرفق. محتاج تعرف تقرا فقرة قصيرة وتكتب إجابتك.",
+      catalogue: "ذاكر من ملفاتك واختبر نفسك في حالة جديدة قبل ما تطلب التصحيح.",
+    },
+    "ar-MSA": {
+      summary: "حوّل صفحة من ملفاتك إلى جلسة مذاكرة مع مدرّس ذكي وتحقّق من كل تصحيح في مصدره.",
+      goals: "ستشخّص مفهومًا خاطئًا، وتصمّم تدريبًا لاستدراكه، وتحل حالة جديدة باستقلال وتدقّق تصحيحها.",
+      audience: "للطلاب والمتعلّمين ذاتيًا الذين يدرسون من ملفاتهم ويريدون فحص إجابات المساعد.",
+      before: "جهّز صفحة مأذونًا لك باستخدامها أو ابدأ بدليل الإعارة الخيالي المرفق. تحتاج إلى قراءة فقرة قصيرة وكتابة إجابة.",
+      catalogue: "ذاكر من ملفاتك واختبر نفسك في حالة جديدة قبل طلب التصحيح.",
+    },
+    "ar-Gulf": {
+      summary: "حوّل صفحة من ملفاتك لجلسة دراسة مع مدرّس ذكي وشيّك على تصحيحه من المصدر.",
+      goals: "بتكتشف سبب الغلط وتصمّم تدريب يناسبه وتحل حالة يديدة بروحك وتدقّق تصحيحها بالدليل.",
+      audience: "للطلبة واللي يتعلّمون بروحهم ويبون يدرسون من ملفاتهم ويتأكّدون من أجوبة المساعد.",
+      before: "جهّز صفحة مسموح لك تستخدمها أو ابدأ بدليل الإعارة الخيالي المرفق. تحتاج تقرا فقرة قصيرة وتكتب جوابك.",
+      catalogue: "ادرس من ملفاتك واختبر نفسك بحالة يديدة قبل تطلب التصحيح.",
+    },
+    en: {
+      summary: "Turn a page you own into a study session with an AI tutor and check its feedback against the source.",
+      goals: "Diagnose a misconception, design targeted practice, solve a fresh case independently and audit the marking clause by clause.",
+      audience: "For students and independent learners who want to study from their own materials and check a tutor’s answers.",
+      before: "Bring a page you have permission to use, or start with the supplied fictional lending guide. You need to be able to read a short paragraph and write a response.",
+      catalogue: "Study from your files and try an unfamiliar case before asking for feedback.",
+    },
+  },
   "ai-store-studio": {
     "ar-EG": {
       summary: "ابنِ متجر دَوِّنها من أول كتالوج المنتجات لحد اختبار الطلب وتسليم المتجر.",
