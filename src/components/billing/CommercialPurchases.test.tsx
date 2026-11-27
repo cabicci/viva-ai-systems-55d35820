@@ -7,9 +7,11 @@ const mock = vi.hoisted(() => ({
   locale: "en",
   user: { id: "test-parent" } as { id: string } | null,
   options: vi.fn(),
+  catalogue: vi.fn(),
   checkout: vi.fn(),
   command: vi.fn(),
 }));
+vi.mock("@/lib/course-system/intake/client", () => ({ curriculumCatalogue: mock.catalogue }));
 vi.mock("@/lib/auth-context", () => ({ useAuth: () => ({ user: mock.user, loading: false }) }));
 vi.mock("@/lib/locale/locale-context", () => ({ useLocale: () => ({ locale: mock.locale }) }));
 vi.mock("@tanstack/react-start", () => ({ useServerFn: (fn: unknown) => fn }));
@@ -33,6 +35,7 @@ vi.mock("@/lib/billing/checkout-client", () => ({
 
 beforeEach(() => {
   mock.locale = "en";
+  mock.catalogue.mockReset().mockResolvedValue([]);
   mock.user = { id: "test-parent" };
   mock.options.mockReset().mockResolvedValue({
     curricula: [
@@ -89,6 +92,28 @@ describe("one-time commercial purchases", () => {
       expect(screen.queryByRole("option", { name: "Technical — furniture" })).toBeNull();
     },
   );
+  it("uses the published management title in the list and summary while retaining the purchase id", async () => {
+    mock.options.mockResolvedValue({
+      curricula: [{ area: "academic", course: "AC-MGT-DEC", title: "وراء الأرقام" }],
+      children: [],
+    });
+    mock.catalogue.mockResolvedValue([
+      { area: "academic", id: "AC-MGT-DEC", title: "Behind the Numbers" },
+      { area: "academic", id: "AC-MGT-OTHER", title: "Not offered" },
+    ]);
+    setup();
+    fireEvent.change(screen.getByLabelText("Learning path"), { target: { value: "academic" } });
+    const option = await screen.findByRole("option", { name: "Behind the Numbers" });
+    expect(option).toHaveValue("AC-MGT-DEC");
+    expect(mock.catalogue).toHaveBeenCalledWith("academic", "en");
+    expect(screen.queryByRole("option", { name: "Not offered" })).toBeNull();
+    fireEvent.change(screen.getByLabelText("Choose one curriculum"), {
+      target: { value: "AC-MGT-DEC" },
+    });
+    const dialog = await openPurchase(0);
+    expect(dialog.getByText("Behind the Numbers")).toBeInTheDocument();
+  });
+
   it("binds lifetime purchase to the chosen curriculum and preserves the retry identity", async () => {
     setup();
     await screen.findByRole("option", { name: "Complete AI curriculum" });
