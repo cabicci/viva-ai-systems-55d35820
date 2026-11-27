@@ -9,7 +9,7 @@ type Props = {
 const clips = ["clip-1", "clip-2", "clip-3", "clip-4"];
 const stems = ["mira", "hadi", "ambience", "foley"];
 type Guess = { id: string; voice: string; place: string; cue: string };
-type Attempt = { date: string; familiar: string; answers: Guess[] };
+type Attempt = { source?: string; date: string; familiar: string; answers: Guess[] };
 type Talk = (english: string, msa: string, egyptian?: string, gulf?: string) => string;
 function download(name: string, blob: Blob) {
   const href = URL.createObjectURL(blob);
@@ -31,8 +31,11 @@ function readAttempts(key: string): Attempt[] {
 }
 const button = "rounded-md border border-border bg-card px-3 py-2 text-sm font-semibold";
 const control = "block mt-1 w-full min-w-0 rounded-md border border-border bg-background p-2";
-function Listening({ scope, locale, resolveAsset, t }: Props & { t: Talk }) {
-  const key = "audio-stories:blind:" + scope;
+function Listening({ scope, lesson, locale, resolveAsset, t }: Props & { t: Talk }) {
+  const own = lesson === "story-32";
+  const key = "audio-stories:blind:" + scope + (own ? ":capstone" : "");
+  const localFiles = useRef<(File | null)[]>(Array(6).fill(null));
+  const localUrls = useRef<string[]>([]);
   const [history, setHistory] = useState<Attempt[]>(() => readAttempts(key));
   const [sealed, setSealed] = useState(history.length > 0);
   const [urls, setUrls] = useState<string[]>([]);
@@ -43,6 +46,7 @@ function Listening({ scope, locale, resolveAsset, t }: Props & { t: Talk }) {
     mounted.current = true;
     return () => {
       mounted.current = false;
+      localUrls.current.forEach(URL.revokeObjectURL);
     };
   }, []);
   async function open() {
@@ -120,12 +124,53 @@ function Listening({ scope, locale, resolveAsset, t }: Props & { t: Talk }) {
               "اسمع المرجعين A وB وعقب المقاطع الأربعة. حدّد الصوت واكتب المكان ودليل سمعته. تقدر تقول مب متأكّد. خلّ باقي مواد الدرس مسكّرة لين تخلّص.",
             )}
           </p>
-          <button type="button" className={button} onClick={open} disabled={busy}>
-            {t(
-              urls.length ? "Refresh audio links" : "Load anonymous audio",
-              urls.length ? "جدّد روابط الصوت" : "حمّل المقاطع المجهّلة",
-            )}
-          </button>
+          {own && urls.length === 0 && (
+            <div className="space-y-2">
+              <p>
+                {t(
+                  "Facilitator: select two neutral voice references and four excerpts from the learner’s own drama. Keep the key separately. After starting, hand the screen to the listener.",
+                  "للميسّر: اختر مرجعين صوتيين محايدين وأربعة مقتطفات من دراما المتعلّم نفسه. احتفظ بالمفتاح على حدة، ثم سلّم الشاشة إلى المستمع بعد بدء الجلسة.",
+                )}
+              </p>
+              {["A", "B", "1", "2", "3", "4"].map((v, i) => (
+                <label className="block" key={v}>
+                  {(i < 2 ? t("Reference", "المرجع") : t("Clip", "المقطع")) + " " + v}
+                  <input
+                    className={control}
+                    type="file"
+                    accept="audio/*"
+                    onChange={(e) => {
+                      localFiles.current[i] = e.target.files?.[0] ?? null;
+                    }}
+                  />
+                </label>
+              ))}
+              <button
+                type="button"
+                className={button}
+                onClick={() => {
+                  if (localFiles.current.some((f) => !f)) {
+                    setNotice(t("Choose all six local files first.", "اختر الملفات الستة أولًا."));
+                    return;
+                  }
+                  localUrls.current.forEach(URL.revokeObjectURL);
+                  localUrls.current = localFiles.current.map((f) => URL.createObjectURL(f!));
+                  setUrls(localUrls.current);
+                  setNotice("");
+                }}
+              >
+                {t("Start anonymous capstone session", "ابدأ جلسة المشروع المجهّلة")}
+              </button>
+            </div>
+          )}
+          {!own && (
+            <button type="button" className={button} onClick={open} disabled={busy}>
+              {t(
+                urls.length ? "Refresh audio links" : "Load anonymous audio",
+                urls.length ? "جدّد روابط الصوت" : "حمّل المقاطع المجهّلة",
+              )}
+            </button>
+          )}
           {urls.length === 6 && (
             <form
               className="space-y-3"
@@ -133,6 +178,7 @@ function Listening({ scope, locale, resolveAsset, t }: Props & { t: Talk }) {
                 event.preventDefault();
                 const fields = new FormData(event.currentTarget);
                 const attempt: Attempt = {
+                  source: own ? "learner-original" : "course-demo",
                   date: new Date().toISOString(),
                   familiar: String(fields.get("familiar")),
                   answers: clips.map((id) => ({
