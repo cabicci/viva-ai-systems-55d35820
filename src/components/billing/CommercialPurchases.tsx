@@ -6,6 +6,8 @@ import { useLocale } from "@/lib/locale/locale-context";
 import { commercialCopy } from "@/lib/billing/commercial-copy";
 import { packageBenefits } from "@/lib/billing/package-benefits";
 import { PaymentMethods } from "@/components/commerce/PaymentMethods";
+import { curriculumCatalogue } from "@/lib/course-system/intake/client";
+import { isManagementCourse } from "@/lib/seo/management-program";
 import { getLineCopy } from "@/lib/learning-lines";
 import {
   BillingUnavailableError,
@@ -34,7 +36,22 @@ export function CommercialPurchases({ area }: { area: Area }) {
     enabled: !!user && !loading,
     queryFn: () => loadCommercialPurchaseOptions(locale),
   });
-  const curricula = options.data?.curricula.filter((item) => item.area === selectedArea) ?? [];
+  const available = options.data?.curricula.filter((item) => item.area === selectedArea) ?? [];
+  const managementListings = useQuery({
+    queryKey: ["added-curricula", "academic", locale],
+    enabled:
+      selectedArea === "academic" &&
+      available.some((item) => isManagementCourse({ area: "academic", id: item.course })),
+    queryFn: () => curriculumCatalogue("academic", locale),
+    staleTime: 30000,
+    throwOnError: false,
+  });
+  const titles = new Map(
+    managementListings.data?.filter(isManagementCourse).map((item) => [item.id, item.title]),
+  );
+  const curricula = available.map((item) =>
+    item.area === "academic" ? { ...item, title: titles.get(item.course) ?? item.title } : item,
+  );
   const selected = curricula.find((item) => item.course === course);
   const children = options.data?.children ?? [];
   const child = children.find((item) => item.id === childId);
