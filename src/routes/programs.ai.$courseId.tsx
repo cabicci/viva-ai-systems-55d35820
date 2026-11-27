@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { CurriculumLayout } from "@/components/site/CurriculumLayout";
-import { curriculumCatalogue } from "@/lib/course-system/intake/client";
+import { publicAiCatalogue } from "@/lib/seo/public-ai-catalogue";
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 import { aiProgramSeo, isProgramId, programSearch } from "@/lib/seo/ai-program";
 
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/programs/ai/$courseId")({
   loader: async ({ params, deps }) => {
     if (!isProgramId(params.courseId)) throw notFound();
     const locale = await resolveRouteHeadLocale({ searchLocale: deps.locale });
-    const course = (await curriculumCatalogue("ai", locale)).find((c) => c.id === params.courseId);
+    const course = (await publicAiCatalogue(locale)).find((c) => c.id === params.courseId);
     if (!course) throw notFound();
     const seo = aiProgramSeo(course, locale);
     return { course, locale, seo };

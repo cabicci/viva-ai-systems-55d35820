@@ -15,9 +15,12 @@ import {
 
 export function LineLogo({ line, className = "" }: { line: LearningLine; className?: string }) {
   const { locale } = useLocale();
+  const logo = LINE_LOGOS[line].replace(/\.png$/, "");
   return (
     <img
       src={LINE_LOGOS[line]}
+      srcSet={`${logo}-512.webp 512w, ${logo}-1024.webp 1024w`}
+      sizes="(max-width: 767px) 90vw, 480px"
       alt={`Masaarat ${line === "technical" ? "TECH" : line.toUpperCase()}`}
       width={2048}
       height={line === "ai" ? 602 : line === "kids" ? 497 : 483}
