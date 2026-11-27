@@ -26,6 +26,7 @@ import { useLocale } from "@/lib/locale/locale-context";
 import { COURSE_AREAS } from "@/lib/course-system/contract";
 import { curriculumCatalogue, curriculumCommand } from "@/lib/course-system/intake/client";
 import { askCurriculumAssistant, curriculumAsset } from "@/lib/course-system/intake/functions";
+import { LanternMarketTable } from "@/components/course-intake/LanternMarketTable";
 import { ArchiveWorkspace } from "@/components/course-intake/ArchiveWorkspace";
 import { intakeCopy } from "@/lib/course-system/intake/copy";
 import { useKidsParentStateSource } from "@/lib/kids/parent-state";
@@ -442,6 +443,9 @@ function LearnerStep({
           />
         </DialogContent>
       </Dialog>
+      {auth.user && !delivery.reviewOnly && scope.area === "ai" && scope.course === "tabletop-game" && (
+        <LanternMarketTable key={archiveScope + ":" + scope.lesson} locale={locale} />
+      )}
       <CurriculumContent
         lesson={delivery.lesson}
         leadInHero
