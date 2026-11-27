@@ -12,7 +12,7 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { scopedSearch } from "@/lib/course-system/intake/navigation";
 import { getLineCopy, LINE_PRICING, LINE_ROUTES } from "@/lib/learning-lines";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { z } from "zod";
@@ -26,6 +26,7 @@ import { useLocale } from "@/lib/locale/locale-context";
 import { COURSE_AREAS } from "@/lib/course-system/contract";
 import { curriculumCatalogue, curriculumCommand } from "@/lib/course-system/intake/client";
 import { askCurriculumAssistant, curriculumAsset } from "@/lib/course-system/intake/functions";
+import { ArchiveWorkspace } from "@/components/course-intake/ArchiveWorkspace";
 import { intakeCopy } from "@/lib/course-system/intake/copy";
 import { useKidsParentStateSource } from "@/lib/kids/parent-state";
 import {
@@ -361,6 +362,32 @@ function LearnerStep({
   const auth = useAuth();
   const ask = useServerFn(askCurriculumAssistant);
   const assetLink = useServerFn(curriculumAsset);
+  const resolveAsset = useCallback(
+    async (asset: string) => {
+      if (!auth.user) throw new Error("CURRICULUM_ACCOUNT_REQUIRED");
+      const generation = auth.authGeneration;
+      const result = await assetLink({
+        data: {
+          ...scope,
+          locale,
+          asset,
+          version: delivery.version,
+          expectedAccountId: auth.user.id,
+        },
+      });
+      if (!auth.isAuthGenerationCurrent(generation)) throw new Error("CURRICULUM_ACCOUNT_CHANGED");
+      return result.url;
+    },
+    [assetLink, auth, scope, locale, delivery.version],
+  );
+  const archiveScope = [
+    auth.user?.id,
+    scope.profileId,
+    scope.area,
+    scope.course,
+    delivery.version,
+    locale,
+  ].join(":");
   const assistantScope = {
     admitted: true as const,
     area: scope.area,
@@ -420,25 +447,21 @@ function LearnerStep({
         leadInHero
         activity={(s) =>
           delivery.reviewOnly ? null : (
-            <Activity key={s.id} section={s} delivery={delivery} scope={scope} />
+            <>
+              {s.id === "archive-workspace" && auth.user && (
+                <ArchiveWorkspace
+                  key={archiveScope + ":" + scope.lesson}
+                  scope={archiveScope}
+                  lesson={delivery.lesson}
+                  locale={locale}
+                  resolveAsset={resolveAsset}
+                />
+              )}
+              <Activity key={s.id} section={s} delivery={delivery} scope={scope} />
+            </>
           )
         }
-        resolveAsset={async (asset) => {
-          if (!auth.user) throw new Error("CURRICULUM_ACCOUNT_REQUIRED");
-          const generation = auth.authGeneration;
-          const result = await assetLink({
-            data: {
-              ...scope,
-              locale,
-              asset,
-              version: delivery.version,
-              expectedAccountId: auth.user.id,
-            },
-          });
-          if (!auth.isAuthGenerationCurrent(generation))
-            throw new Error("CURRICULUM_ACCOUNT_CHANGED");
-          return result.url;
-        }}
+        resolveAsset={resolveAsset}
         selected={sectionId}
         onSelect={selectSection}
         progressValue={

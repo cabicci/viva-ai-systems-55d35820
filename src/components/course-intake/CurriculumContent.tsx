@@ -190,6 +190,25 @@ function SectionBody({
   paragraphs: string[];
   locale: SupportedLocale;
 }) {
+  if (
+    /^archive-record-(family|keeper)-[0-9]+$/.test(section.id) &&
+    section.kind === "video" &&
+    paragraphs.length === 2
+  ) {
+    return (
+      <div className="space-y-2">
+        <p>{paragraphs[0]}</p>
+        <details>
+          <summary>
+            {locale === "en"
+              ? "Read the original words after listening"
+              : "اقرأ الكلمات الأصلية بعد الاستماع"}
+          </summary>
+          <p dir="auto">{paragraphs[1]}</p>
+        </details>
+      </div>
+    );
+  }
   const blocks = parseBlocks(paragraphs, section.kind === "faq");
   if (section.kind === "example") {
     const layout = exampleLayout(blocks);
