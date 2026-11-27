@@ -140,6 +140,12 @@ beforeAll(async () => {
   ).replaceAll("\r\n", "\n");
   await db.exec(indexSteps);
   await db.exec(indexSteps);
+  const lessonEvidence = readFileSync(
+    "drizzle/migrations/0070_assistant_current_lesson_evidence.sql",
+    "utf8",
+  ).replaceAll("\r\n", "\n");
+  await db.exec(lessonEvidence);
+  await db.exec(lessonEvidence);
 }, 60000);
 afterAll(async () => {
   await db?.close();
@@ -520,6 +526,32 @@ describe.sequential(
         ]),
       ).toBe(2);
       version = nextVersion;
+    });
+    it("includes open-lesson evidence when other lessons have six closer matches", async () => {
+      const pkg = intakeFixture();
+      pkg.area = "ai";
+      pkg.id = "fixture-lesson-evidence";
+      const open = pkg.stations[0].steps[0];
+      const related = structuredClone(open);
+      related.id = "related";
+      for (let i = 0; i < 6; i++) {
+        related.content.en.sections.push({ ...open.content.en.sections[0], id: `related-${i}` });
+      }
+      pkg.stations[0].steps.push(related);
+      pkg.assessmentKeys.push({ ...pkg.assessmentKeys[0], lessonId: related.id });
+      await prepareCourse(pkg);
+      await finishCourse(pkg.area, pkg.id);
+      await service();
+      await db.query(
+        "UPDATE curriculum_private.chunks SET embedding=$1::extensions.vector WHERE area='ai' AND course=$2 AND lesson=$3",
+        [JSON.stringify(Array(1536).fill(-0.1)), pkg.id, open.id],
+      );
+      const result = await value(
+        "SELECT public.curriculum_assistant_source($1,'ai',$2,$3,'en',NULL,$4) v",
+        [admin, pkg.id, open.id, JSON.stringify(Array(1536).fill(0.1))],
+      );
+      const sources = result.chunks.map((c: { lesson: string }) => c.lesson);
+      expect(sources).toEqual([open.id, open.id, related.id, related.id, related.id, related.id]);
     });
     it.each(["ai", "academic", "technical", "kids"])(
       "admits %s curricula through the same system with separate entitlement and learner identities",
