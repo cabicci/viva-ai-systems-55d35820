@@ -10,6 +10,7 @@ import { useLocale } from "@/lib/locale/locale-context";
 import { useAuth } from "@/lib/auth-context";
 import { intakeCopy } from "@/lib/course-system/intake/copy";
 import { CurriculumContent } from "@/components/course-intake/CurriculumContent";
+import { PrivateCourseFiles } from "@/components/course-intake/PrivateCourseFiles";
 import { ActivityForm } from "@/components/course-intake/CurriculumFields";
 import { lessonLead } from "@/lib/course-system/intake/presentation";
 import type { IntakeSection } from "@/lib/course-system/intake/package";
@@ -233,6 +234,14 @@ function CurriculumAdminSession() {
           <section className="space-y-6 rounded-2xl border p-5">
             <div className="space-y-2 rounded-xl border border-dashed p-4">
               <h2 className="font-bold">{c.reviewerDetails}</h2>
+              {auth.user && review.state === "draft" && (
+                <PrivateCourseFiles
+                  key={review.version}
+                  course={course}
+                  version={review.version}
+                  account={auth.user.id}
+                />
+              )}
               <p>
                 {c.source}: {review.source.reference}
               </p>
