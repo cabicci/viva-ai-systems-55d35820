@@ -11,6 +11,36 @@ export type CourseOverview = {
 };
 
 const OVERVIEWS: Record<string, Record<SupportedLocale, CourseOverview>> = {
+  "animation-film": {
+  "ar-EG": {
+    "summary": "حوّل فكرة صغيرة لفيلم أنيميشن أصلي مدته من ٦٠ لـ٩٠ ثانية، واعمل له نهاية تانية.",
+    "goals": "هترسم مرجع لشخصياتك، وتوقّت اللقطات والحوار، وتختبر استمرارية الحركة بين نهايتين لفيلمك.",
+    "audience": "للمبتدئين اللي عايزين يحكوا قصة بالصور المتحركة. ينفع تبدأ برسومات ورق بسيطة.",
+    "before": "جهّز ورق وقلم، وموبايل أو كمبيوتر عليه مسجّل صوت ومحرّر فيديو بخط زمني. هتحتاج حد يشوف النسخة الأولية ويديك ملاحظة.",
+    "catalogue": "٣٦ درس عملي من أول ثلاث رسومات لحد عرض فيلمك وتجربة نهاية مختلفة."
+  },
+  "ar-MSA": {
+    "summary": "أنجز فيلم رسوم متحركة أصليًا مدته ٦٠–٩٠ ثانية، ثم ابتكر له نهاية بديلة.",
+    "goals": "ارسم مرجعًا للشخصيات، واضبط توقيت اللقطات والحوار، واختبر استمرارية الحركة والعناصر عند تغيير النهاية.",
+    "audience": "للمبتدئين الراغبين في سرد قصة بالصور المتحركة. تكفي رسومات ورقية بسيطة للبدء.",
+    "before": "جهّز ورقًا وقلمًا وهاتفًا أو حاسوبًا بمسجّل صوت ومحرّر فيديو ذي خط زمني. ستحتاج إلى مشاهد يعلّق على النسخة الأولية.",
+    "catalogue": "٣٦ درسًا عمليًا من الرسوم المصغّرة الأولى إلى عرض الفيلم وتنفيذ نهاية بديلة."
+  },
+  "ar-Gulf": {
+    "summary": "حوّل فكرتك لفيلم أنيميشن أصلي مدته من ٦٠ إلى ٩٠ ثانية وجرّب له نهاية ثانية.",
+    "goals": "ترسم مرجع لشخصياتك، وتضبط وقت اللقطات والحوار، وتشيّك على استمرارية الحركة والأغراض يوم تغيّر النهاية.",
+    "audience": "للمبتدئين اللي ودّهم يحكون قصة بالصور المتحركة. تقدر تبدأ برسومات بسيطة على الورق.",
+    "before": "جهّز ورق وقلم وجوال أو كمبيوتر فيه مسجّل صوت ومحرّر فيديو بخط زمني. بتحتاج شخص يشوف النسخة الأولية ويعطيك ملاحظته.",
+    "catalogue": "٣٦ درس عملي من أول رسومات صغيرة لين عرض فيلمك وتجربة نهاية ثانية."
+  },
+  "en": {
+    "summary": "Make an original 60–90 second animated short, then give the same story a different ending.",
+    "goals": "Build a character sheet, time dialogue and shots, and test movement and prop continuity at the cut between two endings.",
+    "audience": "For first-time animators who want to tell a story with moving pictures. Simple paper drawings are enough to start.",
+    "before": "Bring paper, a pencil, and a phone or computer with a voice recorder and a timeline video editor. Ask someone to watch your rough cut.",
+    "catalogue": "36 practical lessons from the first three thumbnail sketches to a screening and an alternate ending."
+  }
+},
   "home-design": {
     "ar-EG": {
       summary: "صمّم أوضتك بالمقاسات وجرّب العفش في مكانه قبل ما تدفع.",
