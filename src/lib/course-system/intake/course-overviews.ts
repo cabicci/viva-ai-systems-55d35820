@@ -11,6 +11,43 @@ export type CourseOverview = {
 };
 
 const OVERVIEWS: Record<string, Record<SupportedLocale, CourseOverview>> = {
+  "ai-store-studio": {
+    "ar-EG": {
+      summary: "ابنِ متجر دَوِّنها من أول كتالوج المنتجات لحد اختبار الطلب وتسليم المتجر.",
+      goals: "تضبط المنتجات والمخزون والشحن، وتختبر الدفع ورفض الطلب، وتسلّم دليل تشغيل المتجر.",
+      audience:
+        "لأصحاب المتاجر المبتدئين ومصممي واجهات المتاجر اللي بيبدأوا في التجارة الإلكترونية.",
+      before:
+        "يكفي تعرف تستخدم المتصفح وتدخل بيانات في جدول. جهّز متجر تدريب وحساب للأداة اللي هتطبّق عليها.",
+      catalogue: "ابنِ متجرًا بأدوات الذكاء الاصطناعي واختبر طلبًا كاملًا.",
+    },
+    "ar-MSA": {
+      summary: "ابنِ متجر دَوِّنها من إعداد الكتالوج إلى اختبار الطلب وتسليم المتجر.",
+      goals: "ستضبط المنتجات والمخزون والشحن، وتختبر الدفع ورفض الطلب، وتسلّم أدلة التشغيل.",
+      audience: "لمؤسسي المتاجر ومصممي واجهاتها المبتدئين في التجارة الإلكترونية.",
+      before:
+        "تحتاج إلى استخدام المتصفح وإدخال بيانات في جدول. جهّز متجرًا تدريبيًا وحسابًا للأداة التي ستطبّق بها.",
+      catalogue: "ابنِ متجرًا بأدوات الذكاء الاصطناعي واختبر طلبًا كاملًا.",
+    },
+    "ar-Gulf": {
+      summary: "ابنِ متجر دَوِّنها من تجهيز الكتالوج لين تختبر الطلب وتسلّم المتجر.",
+      goals: "بتضبط المنتجات والمخزون والشحن، وتجرّب الدفع ورفض الطلب، وتسلّم أدلة التشغيل.",
+      audience: "للي يبدأ مشروع متجر إلكتروني أو يصمّم واجهة متجر لأول مرة.",
+      before:
+        "يكفي تعرف تستخدم المتصفح وتدخل بيانات بجدول. جهّز متجر تدريب وحساب للأداة اللي بتطبّق عليها.",
+      catalogue: "ابنِ متجر بأدوات الذكاء الاصطناعي وجرّب طلب كامل.",
+    },
+    en: {
+      summary:
+        "Build the Dawwenha store from its product catalogue to a tested order and handover.",
+      goals:
+        "Configure products, inventory and shipping, test checkout and declined orders, and hand over operating evidence.",
+      audience: "For first-time store founders and beginning storefront designers.",
+      before:
+        "You should be able to use a browser and enter data in a spreadsheet. Have a practice store and an account for the tool you plan to use.",
+      catalogue: "Build an online store with AI tools and test a complete order.",
+    },
+  },
   "AC-FATE": {
     "ar-EG": {
       summary:

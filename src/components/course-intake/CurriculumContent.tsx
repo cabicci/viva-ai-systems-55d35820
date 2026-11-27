@@ -21,6 +21,19 @@ export type LessonContent = {
   sections: IntakeSection[];
   assets: { id: string; url?: string; label: string; type: string; caption?: string }[];
 };
+// Intake reference paragraphs preserve their authored "label — HTTPS URL" format.
+function referenceLink(paragraph: string) {
+  const match = /^(.+?)\s+—\s+(https:\/\/[^\s]+)$/u.exec(paragraph);
+  if (!match) return null;
+  try {
+    const url = new URL(match[2]);
+    if (url.username || url.password) return null;
+    return { label: match[1], href: url.href };
+  } catch {
+    return null;
+  }
+}
+
 const ACTIVITY = new Set(["questions", "exam", "mission", "practice"]);
 
 /** Text and reviewed hosted media only. No imported JSX, HTML, scripts or frames
@@ -57,8 +70,25 @@ export function CurriculumContent({
   const current = resolveGroup(lesson.sections, selected);
   const lead = leadInHero ? lessonLead(lesson.sections) : null;
   const academic = getAcademicCopy(locale);
+  const hasResources = lesson.sections.some(
+    (section) =>
+      section.kind === "faq" && section.paragraphs.some((paragraph) => referenceLink(paragraph)),
+  );
+  const hasQuestions = lesson.sections.some(
+    (section) =>
+      section.kind === "faq" && parseBlocks(section.paragraphs, true).some((b) => b.type === "faq"),
+  );
+  const resourceLabel = hasQuestions
+    ? locale === "en"
+      ? "Questions and resources"
+      : "الأسئلة وموارد الدرس"
+    : locale === "en"
+      ? "Lesson resources"
+      : "موارد الدرس";
   const label = (g: SectionGroup) =>
-    academic[g === "check" ? "quiz" : g === "explanation" ? "reading" : g];
+    g === "faq" && hasResources
+      ? resourceLabel
+      : academic[g === "check" ? "quiz" : g === "explanation" ? "reading" : g];
   return (
     <div className="grid min-w-0 items-start gap-6 lg:grid-cols-[250px_minmax(0,1fr)]">
       <aside className="min-w-0 rounded-3xl border bg-card p-4 lg:sticky lg:top-24">
@@ -200,9 +230,23 @@ function SectionBody({
   }
   return (
     <div className="space-y-4 leading-8">
-      {blocks.map((b, i) => (
-        <BlockView key={i} block={b} />
-      ))}
+      {blocks.map((block, i) => {
+        const link = section.kind === "faq" && referenceLink(block.source);
+        return link ? (
+          <p key={i}>
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-primary underline underline-offset-4"
+            >
+              {link.label}
+            </a>
+          </p>
+        ) : (
+          <BlockView key={i} block={block} />
+        );
+      })}
     </div>
   );
 }

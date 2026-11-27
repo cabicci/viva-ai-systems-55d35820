@@ -1,4 +1,6 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
+import { courseOverview } from "@/lib/course-system/intake/course-overviews";
+import { getPathStoryCopy } from "@/lib/path-story";
 import { CurriculumLayout } from "@/components/site/CurriculumLayout";
 import { publicAiCatalogue } from "@/lib/seo/public-ai-catalogue";
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
@@ -56,8 +58,22 @@ export const Route = createFileRoute("/programs/ai/$courseId")({
 function ProgramOverview() {
   const { course, locale, seo } = Route.useLoaderData();
   const en = locale === "en";
+  const overview = courseOverview(course.id, locale);
+  const copy = getPathStoryCopy(locale);
   return (
     <CurriculumLayout line="ai" title={course.title} subtitle={seo.description}>
+      {overview && (
+        <section className="mb-6 grid gap-4 sm:grid-cols-2">
+          <div>
+            <h2 className="font-bold">{copy.audience}</h2>
+            <p>{overview.audience}</p>
+          </div>
+          <div>
+            <h2 className="font-bold">{copy.requirements}</h2>
+            <p>{overview.before}</p>
+          </div>
+        </section>
+      )}
       <a
         className="mb-8 inline-flex min-h-11 items-center self-start rounded-full bg-primary px-6 py-3 font-bold text-primary-foreground"
         href={`/courses/ai/${course.id}?locale=${locale}`}

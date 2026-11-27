@@ -36,7 +36,8 @@ import { CurriculumLayout } from "@/components/site/CurriculumLayout";
 import { LearningLessonNotes } from "@/components/journey/LearningLessonNotes";
 import { LearningReadingPosition } from "@/components/journey/LearningReadingPosition";
 import { AssistantConversationPanel } from "@/components/assistant/AssistantConversationPanel";
-import { FloatingAssistantLauncher } from "@/components/learn/FloatingAssistantLauncher";
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { MessageCircle } from "lucide-react";
 import { getUiString } from "@/lib/locale/ui-strings";
 import { Button } from "@/components/ui/button";
 import { Activity, type Delivery } from "@/components/course-intake/CurriculumActivity";
@@ -279,9 +280,7 @@ function CurriculumPage({
                 value={profileId ?? ""}
                 onChange={(e) => setChild(e.target.value)}
               >
-                {isAdmin && auth.user && (
-                  <option value={auth.user.id}>{c.adminReview}</option>
-                )}
+                {isAdmin && auth.user && <option value={auth.user.id}>{c.adminReview}</option>}
                 {parent.profiles.map((p) => (
                   <option key={p.id} value={p.id}>
                     {p.display_name}
@@ -377,6 +376,45 @@ function LearnerStep({
         title={delivery.lesson.title}
         intro={lessonLead(delivery.lesson.sections)?.text}
       />
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button
+            variant="outline"
+            className="min-h-11 gap-2 rounded-full"
+            aria-label={getUiString(locale, "learn.assistant.fabAria")}
+          >
+            <MessageCircle aria-hidden="true" className="size-4" />
+            {getUiString(locale, "learn.assistant.fab")}
+          </Button>
+        </DialogTrigger>
+        <DialogContent
+          dir={locale === "en" ? "ltr" : "rtl"}
+          closeLabel={getUiString(locale, "dashboard.hint.close")}
+          aria-describedby={undefined}
+          className="max-h-[85dvh] w-[calc(100%-2rem)] overflow-y-auto"
+        >
+          <DialogTitle>{getUiString(locale, "sidebar.assistant")}</DialogTitle>
+          <AssistantConversationPanel
+            accountId={auth.user?.id}
+            scope={assistantScope}
+            compact
+            ask={async ({ query, requestId, history }) => {
+              if (!auth.user?.id) return { status: 401 };
+              const result = await ask({
+                data: {
+                  ...scope,
+                  locale,
+                  query,
+                  requestId,
+                  history,
+                  expectedAccountId: auth.user.id,
+                },
+              });
+              return result;
+            }}
+          />
+        </DialogContent>
+      </Dialog>
       <CurriculumContent
         lesson={delivery.lesson}
         leadInHero
@@ -416,31 +454,7 @@ function LearnerStep({
         locale={locale}
       />
       {!delivery.reviewOnly && <LearningLessonNotes scope={scope} />}
-      <FloatingAssistantLauncher
-        fabLabel={getUiString(locale, "learn.assistant.fab")}
-        fabAriaLabel={getUiString(locale, "learn.assistant.fabAria")}
-        panelTitle={getUiString(locale, "sidebar.assistant")}
-      >
-        <AssistantConversationPanel
-          accountId={auth.user?.id}
-          scope={assistantScope}
-          compact
-          ask={async ({ query, requestId, history }) => {
-            if (!auth.user?.id) return { status: 401 };
-            const result = await ask({
-              data: {
-                ...scope,
-                locale,
-                query,
-                requestId,
-                history,
-                expectedAccountId: auth.user.id,
-              },
-            });
-            return result;
-          }}
-        />
-      </FloatingAssistantLauncher>
+
       <a href={`/my-learning?locale=${locale}`} className="text-primary underline">
         {c.record}
       </a>
