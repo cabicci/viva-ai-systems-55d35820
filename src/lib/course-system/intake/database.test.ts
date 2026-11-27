@@ -146,6 +146,12 @@ beforeAll(async () => {
   ).replaceAll("\r\n", "\n");
   await db.exec(lessonEvidence);
   await db.exec(lessonEvidence);
+  const lessonExamples = readFileSync(
+    "drizzle/migrations/0071_assistant_lesson_examples.sql",
+    "utf8",
+  ).replaceAll("\r\n", "\n");
+  await db.exec(lessonExamples);
+  await db.exec(lessonExamples);
 }, 60000);
 afterAll(async () => {
   await db?.close();
@@ -534,6 +540,13 @@ describe.sequential(
       const open = pkg.stations[0].steps[0];
       const related = structuredClone(open);
       related.id = "related";
+      const explanation = open.content.en.sections[0];
+      open.content.en.sections.push(
+        { ...explanation, id: "source-rule" },
+        { ...explanation, id: "worked", kind: "example" },
+        { ...open.content.en.sections[2], id: "similar-task" },
+        { ...open.content.en.sections[2], id: "another-task" },
+      );
       for (let i = 0; i < 6; i++) {
         related.content.en.sections.push({ ...open.content.en.sections[0], id: `related-${i}` });
       }
@@ -544,14 +557,33 @@ describe.sequential(
       await service();
       await db.query(
         "UPDATE curriculum_private.chunks SET embedding=$1::extensions.vector WHERE area='ai' AND course=$2 AND lesson=$3",
-        [JSON.stringify(Array(1536).fill(-0.1)), pkg.id, open.id],
+        [
+          JSON.stringify(Array.from({ length: 1536 }, (_, i) => (i % 2 ? -0.1 : 0.1))),
+          pkg.id,
+          open.id,
+        ],
+      );
+      await db.query(
+        "UPDATE curriculum_private.chunks SET embedding=$1::extensions.vector WHERE area='ai' AND course=$2 AND lesson=$3 AND id=ANY($4)",
+        [
+          JSON.stringify(Array(1536).fill(-0.1)),
+          pkg.id,
+          open.id,
+          ["intro-part-1", "source-rule-part-1", "worked-part-1"],
+        ],
       );
       const result = await value(
         "SELECT public.curriculum_assistant_source($1,'ai',$2,$3,'en',NULL,$4) v",
         [admin, pkg.id, open.id, JSON.stringify(Array(1536).fill(0.1))],
       );
       const sources = result.chunks.map((c: { lesson: string }) => c.lesson);
-      expect(sources).toEqual([open.id, open.id, related.id, related.id, related.id, related.id]);
+      expect(sources).toEqual([open.id, open.id, open.id, related.id, related.id, related.id]);
+      expect(
+        result.chunks
+          .slice(0, 3)
+          .map((c: { id: string }) => c.id)
+          .sort(),
+      ).toEqual(["intro-part-1", "source-rule-part-1", "worked-part-1"]);
     });
     it.each(["ai", "academic", "technical", "kids"])(
       "admits %s curricula through the same system with separate entitlement and learner identities",
