@@ -112,6 +112,10 @@ export default {
         return await handleBillingMode(request);
       }
       const pathname = new URL(request.url).pathname;
+      if (pathname === "/management-programs-sitemap.xml") {
+        const { serveManagementSitemap } = await import("./lib/seo/management-program-sitemap.server");
+        return serveManagementSitemap(request);
+      }
       if (pathname === "/ai-programs-sitemap.xml") {
         const { serveAiProgramSitemap } = await import("./lib/seo/ai-program-sitemap.server");
         return serveAiProgramSitemap(request);

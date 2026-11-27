@@ -76,6 +76,7 @@ import { Route as KidsLevelIdLessonNumberRouteImport } from './routes/kids.$leve
 import { Route as KidsLevelIdContentsRouteImport } from './routes/kids.$levelId.contents'
 import { Route as LearnPathIdLessonIdRouteImport } from './routes/learn.$pathId.$lessonId'
 import { Route as ProgramsAiCourseIdRouteImport } from './routes/programs.ai.$courseId'
+import { Route as ProgramsManagementCourseIdRouteImport } from './routes/programs.management.$courseId'
 import { Route as TechnicalLearnLessonIdRouteImport } from './routes/technical.learn.$lessonId'
 import { Route as AcademicCoursesCourseIdIndexRouteImport } from './routes/academic.courses.$courseId.index'
 import { Route as AcademicCoursesCourseIdContentsRouteImport } from './routes/academic.courses.$courseId.contents'
@@ -423,6 +424,12 @@ const ProgramsAiCourseIdRoute = ProgramsAiCourseIdRouteImport.update({
   path: '/programs/ai/$courseId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProgramsManagementCourseIdRoute =
+  ProgramsManagementCourseIdRouteImport.update({
+    id: '/programs/management/$courseId',
+    path: '/programs/management/$courseId',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const TechnicalLearnLessonIdRoute = TechnicalLearnLessonIdRouteImport.update({
   id: '/learn/$lessonId',
   path: '/learn/$lessonId',
@@ -530,6 +537,7 @@ export interface FileRoutesByFullPath {
   '/kids/$levelId/contents': typeof KidsLevelIdContentsRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
   '/programs/ai/$courseId': typeof ProgramsAiCourseIdRoute
+  '/programs/management/$courseId': typeof ProgramsManagementCourseIdRoute
   '/technical/learn/$lessonId': typeof TechnicalLearnLessonIdRoute
   '/kids/$levelId/': typeof KidsLevelIdIndexRoute
   '/academic/courses/$courseId/contents': typeof AcademicCoursesCourseIdContentsRoute
@@ -601,6 +609,7 @@ export interface FileRoutesByTo {
   '/kids/$levelId/contents': typeof KidsLevelIdContentsRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
   '/programs/ai/$courseId': typeof ProgramsAiCourseIdRoute
+  '/programs/management/$courseId': typeof ProgramsManagementCourseIdRoute
   '/technical/learn/$lessonId': typeof TechnicalLearnLessonIdRoute
   '/kids/$levelId': typeof KidsLevelIdIndexRoute
   '/academic/courses/$courseId/contents': typeof AcademicCoursesCourseIdContentsRoute
@@ -678,6 +687,7 @@ export interface FileRoutesById {
   '/kids/$levelId/contents': typeof KidsLevelIdContentsRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
   '/programs/ai/$courseId': typeof ProgramsAiCourseIdRoute
+  '/programs/management/$courseId': typeof ProgramsManagementCourseIdRoute
   '/technical/learn/$lessonId': typeof TechnicalLearnLessonIdRoute
   '/kids/$levelId/': typeof KidsLevelIdIndexRoute
   '/academic/courses/$courseId/contents': typeof AcademicCoursesCourseIdContentsRoute
@@ -756,6 +766,7 @@ export interface FileRouteTypes {
     | '/kids/$levelId/contents'
     | '/learn/$pathId/$lessonId'
     | '/programs/ai/$courseId'
+    | '/programs/management/$courseId'
     | '/technical/learn/$lessonId'
     | '/kids/$levelId/'
     | '/academic/courses/$courseId/contents'
@@ -827,6 +838,7 @@ export interface FileRouteTypes {
     | '/kids/$levelId/contents'
     | '/learn/$pathId/$lessonId'
     | '/programs/ai/$courseId'
+    | '/programs/management/$courseId'
     | '/technical/learn/$lessonId'
     | '/kids/$levelId'
     | '/academic/courses/$courseId/contents'
@@ -903,6 +915,7 @@ export interface FileRouteTypes {
     | '/kids/$levelId/contents'
     | '/learn/$pathId/$lessonId'
     | '/programs/ai/$courseId'
+    | '/programs/management/$courseId'
     | '/technical/learn/$lessonId'
     | '/kids/$levelId/'
     | '/academic/courses/$courseId/contents'
@@ -963,6 +976,7 @@ export interface RootRouteChildren {
   CoursesAreaCourseIdRoute: typeof CoursesAreaCourseIdRoute
   LearnPathIdLessonIdRoute: typeof LearnPathIdLessonIdRoute
   ProgramsAiCourseIdRoute: typeof ProgramsAiCourseIdRoute
+  ProgramsManagementCourseIdRoute: typeof ProgramsManagementCourseIdRoute
   LovableEmailAuthPreviewRoute: typeof LovableEmailAuthPreviewRoute
   LovableEmailAuthWebhookRoute: typeof LovableEmailAuthWebhookRoute
 }
@@ -1438,6 +1452,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProgramsAiCourseIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/programs/management/$courseId': {
+      id: '/programs/management/$courseId'
+      path: '/programs/management/$courseId'
+      fullPath: '/programs/management/$courseId'
+      preLoaderRoute: typeof ProgramsManagementCourseIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/technical/learn/$lessonId': {
       id: '/technical/learn/$lessonId'
       path: '/learn/$lessonId'
@@ -1635,6 +1656,7 @@ const rootRouteChildren: RootRouteChildren = {
   CoursesAreaCourseIdRoute: CoursesAreaCourseIdRoute,
   LearnPathIdLessonIdRoute: LearnPathIdLessonIdRoute,
   ProgramsAiCourseIdRoute: ProgramsAiCourseIdRoute,
+  ProgramsManagementCourseIdRoute: ProgramsManagementCourseIdRoute,
   LovableEmailAuthPreviewRoute: LovableEmailAuthPreviewRoute,
   LovableEmailAuthWebhookRoute: LovableEmailAuthWebhookRoute,
 }
