@@ -11,6 +11,36 @@ export type CourseOverview = {
 };
 
 const OVERVIEWS: Record<string, Record<SupportedLocale, CourseOverview>> = {
+  "picture-book": {
+  "en": {
+    "summary": "Create an original Arabic picture book and prepare its print files.",
+    "goals": "Write for a particular listener, illustrate seven facing-page scenes, time a reading and revise one confusing spread.",
+    "audience": "For adult beginners who want to write and illustrate a first Arabic picture book.",
+    "before": "Bring paper, a pencil and a phone timer. Use a layout editor that exports PDF. Arrange a willing listener for your own read-aloud trial.",
+    "catalogue": "32 workshops take a story from its first sketch to a right-bound book and a publication package."
+  },
+  "ar-EG": {
+    "summary": "اكتب حكاية أطفال بالعربي وارسمها وجهّز ملفاتها للمطبعة.",
+    "goals": "حدّد مين هيسمع الحكاية، وارسم سبعة مشاهد، ووقّت القراءة، وعدّل المشهد اللي حيّر المستمع.",
+    "audience": "لأي حد كبير عايز يعمل أول كتاب أطفال مصوّر بالعربي، حتى لو دي أول مرة يرسم أو يكتب.",
+    "before": "جهّز ورق وقلم ومؤقت على الموبايل وبرنامج يصدّر PDF. اتّفق مع حد حابب يسمع تجربة القراءة.",
+    "catalogue": "٣٢ ورشة من أول سكتش لحد كتاب بيتفتح من اليمين وحزمة جاهزة تراجعها مع المطبعة."
+  },
+  "ar-MSA": {
+    "summary": "ألّف كتاب أطفال عربيًا مصوّرًا وجهّز ملفاته للطباعة.",
+    "goals": "حدّد جمهور القصة، وارسم سبعة مشاهد متقابلة الصفحات، وقِس زمن القراءة وعدّل مشهدًا أربك المستمع.",
+    "audience": "للبالغين الذين يكتبون ويرسمون أول كتاب أطفال بالعربية. تكفي مهارات الرسم الأولية.",
+    "before": "تحتاج إلى ورق وقلم ومؤقت وبرنامج تنسيق يصدّر ملفات PDF. اتّفق مع مستمع يشارك طوعًا في تجربة القراءة.",
+    "catalogue": "٣٢ ورشة تنتقل بك من التخطيط إلى كتاب بتجليد عربي وحزمة نشر موثّقة."
+  },
+  "ar-Gulf": {
+    "summary": "اكتب قصّة أطفال بالعربي وارسمها وجهّز ملفاتها للمطبعة.",
+    "goals": "حدّد مين بيسمع القصّة، وارسم سبعة مشاهد، ووقّت القراءة وعدّل المشهد اللي حيّر المستمع.",
+    "audience": "للكبار اللي ودّهم يسوّون أول كتاب أطفال مصوّر بالعربي، حتى لو توّهم يبدون.",
+    "before": "جهّز ورق وقلم ومؤقت بالجوال وبرنامج يصدّر PDF. اتّفق مع شخص ودّه يسمع تجربتك.",
+    "catalogue": "٣٢ ورشة من الرسمة الأولى لين كتاب يفتح من اليمين وملفات تراجعها مع المطبعة."
+  }
+},
   "animation-film": {
   "ar-EG": {
     "summary": "حوّل فكرة صغيرة لفيلم أنيميشن أصلي مدته من ٦٠ لـ٩٠ ثانية، واعمل له نهاية تانية.",
