@@ -5,12 +5,12 @@ import { AddedCurricula } from "./AddedCurricula";
 const state = vi.hoisted(() => ({ catalogue: vi.fn(), locale: "en" }));
 vi.mock("@/lib/course-system/intake/client", () => ({ curriculumCatalogue: state.catalogue }));
 vi.mock("@/lib/locale/locale-context", () => ({ useLocale: () => ({ locale: state.locale }) }));
-const view = () =>
+const view = (area: "technical" | "academic" = "technical") =>
   render(
     <QueryClientProvider
       client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}
     >
-      <AddedCurricula area="technical" />
+      <AddedCurricula area={area} />
     </QueryClientProvider>,
   );
 beforeEach(() => {
@@ -61,3 +61,20 @@ it.each(["ar-EG", "ar-MSA", "ar-Gulf"])(
     expect(card).toHaveTextContent("٣ محطات");
   },
 );
+
+it("opens the public management outline from its academic card in the selected language", async () => {
+  state.locale = "ar-Gulf";
+  state.catalogue.mockResolvedValue([
+    { id: "AC-MGT-TEST", area: "academic", title: "قرار", version: "v1", stations: [] },
+    { id: "other-course", area: "academic", title: "Other", version: "v1", stations: [] },
+  ]);
+  view("academic");
+  expect(await screen.findByRole("link", { name: /قرار/ })).toHaveAttribute(
+    "href",
+    "/programs/management/AC-MGT-TEST?locale=ar-Gulf",
+  );
+  expect(screen.getByRole("link", { name: /Other/ })).toHaveAttribute(
+    "href",
+    "/courses/academic/other-course?locale=ar-Gulf",
+  );
+});
