@@ -41,6 +41,36 @@ const OVERVIEWS: Record<string, Record<SupportedLocale, CourseOverview>> = {
     "catalogue": "٣٠ درس للمبتدئ، من تحديد المطلوب إلى جدول رحلة تقدر تسلّمه لرفيقك."
   }
 },
+  "audio-stories": {
+    "en": {
+        "summary": "Write and mix a two-character story that can be followed with eyes closed.",
+        "goals": "Direct contrasting performances, build two audible places and test your final mix with a first-time listener.",
+        "audience": "For first-time storytellers, podcasters and teachers making a short audio drama.",
+        "before": "Bring headphones or a speaker, a way to record your voice, and a willing listener for the final test. No editing experience is required.",
+        "catalogue": "For first-time storytellers, podcasters and teachers making a short audio drama. Bring headphones or a speaker, a way to record your voice, and a willing listener for the final test. No editing experience is required."
+    },
+    "ar-EG": {
+        "summary": "اكتب وامزج حكاية بشخصيتين تتفهم وإنت مغمّض عينيك.",
+        "goals": "هتوجّه صوتين، وتبني إحساس بمكانين، وتختبر المزيج مع حد بيسمعه لأول مرة.",
+        "audience": "للي عايز يعمل أول حكاية صوتية، سواء بيكتب أو بيسجّل بودكاست أو بيدرّس.",
+        "before": "جهّز سماعة أو سبيكر، وموبايل أو جهاز تسجّل بيه، وحد يسمع التجربة الأخيرة. تقدر تبدأ من غير خبرة مونتاج.",
+        "catalogue": "للي عايز يعمل أول حكاية صوتية، سواء بيكتب أو بيسجّل بودكاست أو بيدرّس. جهّز سماعة أو سبيكر، وموبايل أو جهاز تسجّل بيه، وحد يسمع التجربة الأخيرة. تقدر تبدأ من غير خبرة مونتاج."
+    },
+    "ar-MSA": {
+        "summary": "اكتب قصة بشخصيتين وامزج أصواتها حتى يسهل تتبّعها بالاستماع وحده.",
+        "goals": "ستوجّه أداء الشخصيتين وتبني بيئتين مسموعتين وتختبر المزيج مع مستمع جديد.",
+        "audience": "للمبتدئين في كتابة القصص أو إنتاج البودكاست أو إعداد الحكايات التعليمية.",
+        "before": "تحتاج إلى سماعة أو مكبّر صوت ووسيلة لتسجيل صوتك وشخص يستمع إلى الاختبار النهائي. لا تحتاج إلى خبرة سابقة في المونتاج.",
+        "catalogue": "للمبتدئين في كتابة القصص أو إنتاج البودكاست أو إعداد الحكايات التعليمية. تحتاج إلى سماعة أو مكبّر صوت ووسيلة لتسجيل صوتك وشخص يستمع إلى الاختبار النهائي. لا تحتاج إلى خبرة سابقة في المونتاج."
+    },
+    "ar-Gulf": {
+        "summary": "اكتب حكاية بشخصيتين وامزج أصواتها عشان المستمع يتابعها وهو مغمّض عيونه.",
+        "goals": "بتوجّه أداء الصوتين وتبني مكانين بالمؤثّرات وتجرّب المزيج مع شخص يسمعه لأول مرّة.",
+        "audience": "للي ودّه يسوي أول قصة صوتية، من كتّاب الحكايات وصنّاع البودكاست والمعلّمين.",
+        "before": "جهّز سمّاعة أو مكبّر صوت وجهاز تسجّل فيه، واتّفق مع شخص يسمع التجربة الأخيرة. ما تحتاج خبرة مونتاج.",
+        "catalogue": "للي ودّه يسوي أول قصة صوتية، من كتّاب الحكايات وصنّاع البودكاست والمعلّمين. جهّز سمّاعة أو مكبّر صوت وجهاز تسجّل فيه، واتّفق مع شخص يسمع التجربة الأخيرة. ما تحتاج خبرة مونتاج."
+    }
+},
   "tabletop-game": {
   "en": {
     "summary": "Design, print and test a complete tabletop game.",
