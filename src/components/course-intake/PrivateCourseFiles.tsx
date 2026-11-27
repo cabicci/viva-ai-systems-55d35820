@@ -89,7 +89,7 @@ export function PrivateCourseFiles({
         <input
           type="file"
           multiple
-          accept=".pdf,.png,.jpg,.jpeg,.webp"
+          accept=".pdf,.png,.jpg,.jpeg,.webp,.wav"
           disabled={busy}
           className="mt-2 block w-full text-sm"
           onChange={(e) => {
