@@ -11,6 +11,36 @@ export type CourseOverview = {
 };
 
 const OVERVIEWS: Record<string, Record<SupportedLocale, CourseOverview>> = {
+  "physical-prototype": {
+  "en": {
+    "audience": "For first-time makers who want to turn a drawing into an object they can measure.",
+    "before": "Bring paper, a millimetre ruler, pencil, removable tape and blunt-tip scissors. A printer is optional. No drawing or CAD experience is required.",
+    "summary": "Build two open card trays and check how one change affects fit.",
+    "goals": "Record what you measured, what you changed, and what you would retest.",
+    "catalogue": "Build two open card trays and check how one change affects fit."
+  },
+  "ar-EG": {
+    "audience": "للي بيجرّب يصمّم بإيده لأول مرة وعايز يحوّل الرسمة لقطعة يقدر يقيسها.",
+    "before": "جهّز ورق ومسطرة بالمليمتر وقلم وشريط لاصق يتشال ومقص بطرف مدوّر. لو مفيش طابعة، ارسم القالب بالمسطرة. تقدر تبدأ من غير خبرة في الرسم.",
+    "summary": "اعمل صينيّتين ورق للبطاقات وقارن الملاءمة بعد ما تغيّر بُعد واحد.",
+    "goals": "سجّل اللي قسته واللي غيّرته وإيه اللي هتختبره تاني.",
+    "catalogue": "اعمل صينيّتين ورق للبطاقات وقارن الملاءمة بعد ما تغيّر بُعد واحد."
+  },
+  "ar-MSA": {
+    "audience": "للمبتدئين الراغبين في تحويل رسم بسيط إلى نموذج يمكن قياسه واختباره.",
+    "before": "جهّز ورقًا ومسطرة مدرّجة بالمليمتر وقلمًا وشريطًا لاصقًا قابلًا للإزالة ومقصًا مستدير الطرفين. الطابعة اختيارية، ولا تُشترط خبرة في الرسم.",
+    "summary": "اصنع صينيتين ورقيتين للبطاقات واختبر أثر تغيير بُعد واحد في الملاءمة.",
+    "goals": "سجّل قياساتك والتعديل الذي أجريته وما ستعيد اختباره.",
+    "catalogue": "اصنع صينيتين ورقيتين للبطاقات واختبر أثر تغيير بُعد واحد في الملاءمة."
+  },
+  "ar-Gulf": {
+    "audience": "للي يبي يبدأ يصمّم بيده ويحوّل رسمة بسيطة لقطعة يقدر يقيسها ويجرّبها.",
+    "before": "جهّز ورق ومسطرة بالمليمتر وقلم وشريط لاصق ينشال ومقص أطرافه مدوّرة. إذا ما عندك طابعة، تقدر ترسم القالب بالمسطرة. ما تحتاج خبرة بالرسم.",
+    "summary": "سوّ صينيتين ورق للبطاقات وشف كيف يتغيّر دخول البطاقة إذا عدّلت بُعد واحد.",
+    "goals": "سجّل وش قست ووش غيّرت ووش تبي تختبر من جديد.",
+    "catalogue": "سوّ صينيتين ورق للبطاقات وشف كيف يتغيّر دخول البطاقة إذا عدّلت بُعد واحد."
+  }
+},
   "trip-planning": {
   "en": {
     "summary": "Build and revise a timed, costed day trip using evidence you can check.",

@@ -29,6 +29,7 @@ import { askCurriculumAssistant, curriculumAsset } from "@/lib/course-system/int
 import { AudioStoryWorkspace } from "@/components/course-intake/AudioStoryWorkspace";
 import { LanternMarketTable } from "@/components/course-intake/LanternMarketTable";
 import { TripTransfer } from "@/components/course-intake/TripTransfer";
+import { PaperFitLab } from "@/components/course-intake/PaperFitLab";
 import { TripPlannerLab } from "@/components/course-intake/TripPlannerLab";
 import { ArchiveWorkspace } from "@/components/course-intake/ArchiveWorkspace";
 import { intakeCopy } from "@/lib/course-system/intake/copy";
@@ -472,6 +473,9 @@ function LearnerStep({
                   locale={locale}
                   resolveAsset={resolveAsset}
                 />
+              )}
+              {s.id === "paper-fit" && scope.area === "ai" && scope.course === "physical-prototype" && auth.user && (
+                <PaperFitLab key={archiveScope + ":" + scope.lesson} scope={archiveScope} locale={locale} />
               )}
               {s.id === "trip-lab" && scope.area === "ai" && scope.course === "trip-planning" && auth.user && (
                 <TripPlannerLab key={archiveScope + ":" + scope.lesson} locale={locale} />
