@@ -101,6 +101,45 @@ const OVERVIEWS: Record<string, Record<SupportedLocale, CourseOverview>> = {
       catalogue: "Compare two room layouts against your measurements, daily activities and budget.",
     },
   },
+  "family-archive": {
+    en: {
+      summary: "Turn a family picture and a remembered voice into a searchable archive.",
+      goals:
+        "Preserve originals, transcribe Arabic with uncertainty, link a claim to its source, and test an audience-specific listening copy.",
+      audience:
+        "For beginners who want to organize photographs and recorded memories. The practice collection is fictional.",
+      before:
+        "You need a browser, headphones or speakers, and the ability to copy a file. The recordings are in Egyptian Arabic, with source text for comparison.",
+      catalogue: "Build and test a searchable family archive in 30 lessons.",
+    },
+    "ar-EG": {
+      summary: "حوّل صورة وصوت بيحكي عنها لأرشيف عائلي تقدر تدوّر فيه.",
+      goals:
+        "هتحفظ الأصل، وتفرّغ الكلام العربي وتعلّم على مواضع الشك، وتربط الصورة بالمقطع، وتختبر نسخة العيلة.",
+      audience: "للمبتدئين اللي عايزين يرتّبوا الصور والذكريات الصوتية. مواد التدريب كلها خيالية.",
+      before:
+        "محتاج متصفح وسماعات أو مكبر صوت، وتعرف تنسخ ملف. التسجيلات بالمصري ومعاها الكلام المكتوب للمقارنة.",
+      catalogue: "اعمل أرشيف عائلي ينفع تدور فيه وتراجع مصدر كل حكاية في ٣٠ درس.",
+    },
+    "ar-MSA": {
+      summary: "حوّل الصور والشهادات الصوتية إلى أرشيف عائلي قابل للبحث.",
+      goals:
+        "احفظ الأصول وفرّغ الكلام العربي مع توثيق الشك واربط الصورة بمقطعها واختبر نسخة استماع مخصّصة للعائلة.",
+      audience: "للمبتدئين الراغبين في تنظيم الصور والذكريات المسجّلة. جميع مواد التدريب خيالية.",
+      before:
+        "تحتاج إلى متصفّح وسماعات أو مكبّر صوت والقدرة على نسخ ملف. التسجيلات التدريبية بالمصرية ويصاحبها نص للمقارنة.",
+      catalogue: "أنشئ أرشيفًا عائليًا قابلًا للبحث واختبر مصادره في ٣٠ درسًا.",
+    },
+    "ar-Gulf": {
+      summary: "حوّل صورة وصوت يحكي عنها لأرشيف عائلي تقدر تبحث فيه.",
+      goals:
+        "بتحفظ الأصل وتفرّغ الكلام العربي وتبيّن مواضع الشك، وتربط الصورة بالمقطع وتختبر نسخة الأهل.",
+      audience: "للمبتدئين اللي ودّهم يرتّبون الصور والذكريات المسجّلة. مواد التدريب كلها خيالية.",
+      before:
+        "تحتاج متصفّح وسماعات وتعرف تنسخ ملف. التسجيلات التدريبية بالمصري ومعها النص عشان تقارن.",
+      catalogue: "سوّ أرشيف عائلي قابل للبحث واختبر مصدر كل رواية في ٣٠ درس.",
+    },
+  },
   "personal-tutor": {
     "ar-EG": {
       summary: "حوّل صفحة من ملفاتك لجلسة مذاكرة مع مدرّس AI، وراجع كل تصحيح على السطر اللي يسنده.",
