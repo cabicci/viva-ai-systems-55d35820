@@ -102,6 +102,30 @@ describe("admitted curriculum presentation", () => {
     expect(screen.getByRole("heading", { name: "Diagnostic" })).toBeVisible();
     expect(screen.getByRole("heading", { name: "Post check" })).toBeVisible();
   });
+  it("names a resource group and links reviewed HTTPS references by their authored labels", () => {
+    const refs = section({
+      id: "refs",
+      kind: "faq",
+      paragraphs: [
+        "Shopify test orders — https://help.shopify.com/en/manual/checkout-settings/test-orders",
+        "Plain text — javascript:alert(1)",
+      ],
+    });
+    render(
+      <CurriculumContent
+        lesson={{ ...lesson, sections: [refs] }}
+        locale="en"
+        selected="faq"
+        onSelect={vi.fn()}
+      />,
+    );
+    expect(screen.getByRole("button", { name: "Lesson resources" })).toBeVisible();
+    expect(screen.getByRole("link", { name: "Shopify test orders" })).toHaveAttribute(
+      "href",
+      "https://help.shopify.com/en/manual/checkout-settings/test-orders",
+    );
+    expect(screen.getAllByRole("link")).toHaveLength(1);
+  });
   it("renders FAQ pairs as individual collapsible cards without generic labels", () => {
     const { container } = render(
       <CurriculumContent lesson={lesson} locale="en" selected="faq" onSelect={vi.fn()} />,

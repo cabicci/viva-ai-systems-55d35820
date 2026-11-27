@@ -11,6 +11,106 @@ export type CourseOverview = {
 };
 
 const OVERVIEWS: Record<string, Record<SupportedLocale, CourseOverview>> = {
+  "ai-store-studio": {
+    "ar-EG": {
+      summary: "ابنِ متجر دَوِّنها من أول كتالوج المنتجات لحد اختبار الطلب وتسليم المتجر.",
+      goals: "تضبط المنتجات والمخزون والشحن، وتختبر الدفع ورفض الطلب، وتسلّم دليل تشغيل المتجر.",
+      audience:
+        "لأصحاب المتاجر المبتدئين ومصممي واجهات المتاجر اللي بيبدأوا في التجارة الإلكترونية.",
+      before:
+        "يكفي تعرف تستخدم المتصفح وتدخل بيانات في جدول. جهّز متجر تدريب وحساب للأداة اللي هتطبّق عليها.",
+      catalogue: "ابنِ متجرًا بأدوات الذكاء الاصطناعي واختبر طلبًا كاملًا.",
+    },
+    "ar-MSA": {
+      summary: "ابنِ متجر دَوِّنها من إعداد الكتالوج إلى اختبار الطلب وتسليم المتجر.",
+      goals: "ستضبط المنتجات والمخزون والشحن، وتختبر الدفع ورفض الطلب، وتسلّم أدلة التشغيل.",
+      audience: "لمؤسسي المتاجر ومصممي واجهاتها المبتدئين في التجارة الإلكترونية.",
+      before:
+        "تحتاج إلى استخدام المتصفح وإدخال بيانات في جدول. جهّز متجرًا تدريبيًا وحسابًا للأداة التي ستطبّق بها.",
+      catalogue: "ابنِ متجرًا بأدوات الذكاء الاصطناعي واختبر طلبًا كاملًا.",
+    },
+    "ar-Gulf": {
+      summary: "ابنِ متجر دَوِّنها من تجهيز الكتالوج لين تختبر الطلب وتسلّم المتجر.",
+      goals: "بتضبط المنتجات والمخزون والشحن، وتجرّب الدفع ورفض الطلب، وتسلّم أدلة التشغيل.",
+      audience: "للي يبدأ مشروع متجر إلكتروني أو يصمّم واجهة متجر لأول مرة.",
+      before:
+        "يكفي تعرف تستخدم المتصفح وتدخل بيانات بجدول. جهّز متجر تدريب وحساب للأداة اللي بتطبّق عليها.",
+      catalogue: "ابنِ متجر بأدوات الذكاء الاصطناعي وجرّب طلب كامل.",
+    },
+    en: {
+      summary:
+        "Build the Dawwenha store from its product catalogue to a tested order and handover.",
+      goals:
+        "Configure products, inventory and shipping, test checkout and declined orders, and hand over operating evidence.",
+      audience: "For first-time store founders and beginning storefront designers.",
+      before:
+        "You should be able to use a browser and enter data in a spreadsheet. Have a practice store and an account for the tool you plan to use.",
+      catalogue: "Build an online store with AI tools and test a complete order.",
+    },
+  },
+  "english-speaking": {
+    "ar-EG": {
+      summary: "اتدرّب على محادثة إنجليزي من أول تسجيل ليك لحد موقف جديد.",
+      goals: "تسمع وتردّ، وتطلب توضيح، وتقارن أداءك في أول وآخر محادثة.",
+      audience: "للي عايز يستخدم الإنجليزي في مواقف يومية ويتدرّب على ردود مش محفوظة.",
+      before: "اختار موقف يومي يهمك، وجهّز وسيلة تسمع بيها وتسجّل صوتك.",
+      catalogue: "اتدرّب على محادثة إنجليزي من أول تسجيل ليك لحد موقف جديد.",
+    },
+    "ar-MSA": {
+      summary: "تدرّب على المحادثة الإنجليزية ثم اختبر أداءك في موقف جديد.",
+      goals: "تتدرّب على الاستماع والرد وطلب التوضيح ومراجعة النطق.",
+      audience: "لمن يريد استخدام الإنجليزية في محادثات الحياة اليومية.",
+      before: "اختر موقفًا يوميًا وجهّز وسيلة للاستماع وتسجيل صوتك.",
+      catalogue: "تدرّب على المحادثة الإنجليزية ثم اختبر أداءك في موقف جديد.",
+    },
+    "ar-Gulf": {
+      summary: "تمرّن على محادثة إنجليزية وجرّب كلامك في موقف جديد.",
+      goals: "بتتمرّن على الاستماع والرد وطلب التوضيح وبتقارن تسجيلاتك.",
+      audience: "للي يبي يستخدم الإنجليزية في المحادثات اليومية.",
+      before: "اختَر موقف يومي يهمّك وجهّز وسيلة تسمع فيها وتسجّل صوتك.",
+      catalogue: "تمرّن على محادثة إنجليزية وجرّب كلامك في موقف جديد.",
+    },
+    en: {
+      summary: "Practise speaking English and hold a conversation in a new situation.",
+      goals: "Listen, respond, ask for clarification and compare your first and final attempts.",
+      audience: "For learners who want to use English in everyday conversations.",
+      before: "Choose a familiar situation and prepare a way to listen and record your voice.",
+      catalogue: "Practise speaking English and hold a conversation in a new situation.",
+    },
+  },
+  "job-interviews": {
+    "ar-EG": {
+      summary: "حوّل إعلان شغل لطلب تقديم ومقابلة مبنيين على خبرتك.",
+      goals: "تربط متطلبات الإعلان بأمثلة، وتعدّل السيرة، وتجاوب على أسئلة متابعة.",
+      audience: "للي بيدوّر على شغل وعايز يشرح خبرته بوضوح في التقديم والمقابلة.",
+      before: "جهّز إعلان لوظيفة مهتم بيها وأمثلة حقيقية من شغلك أو دراستك.",
+      catalogue: "حوّل إعلان شغل لطلب تقديم ومقابلة مبنيين على خبرتك.",
+    },
+    "ar-MSA": {
+      summary: "حوّل إعلان وظيفة إلى طلب توظيف ومقابلة تستندان إلى خبرتك الفعلية.",
+      goals: "اربط متطلبات الدور بأدلة، وخصّص سيرتك الذاتية وتدرّب على أسئلة المتابعة.",
+      audience: "للباحثين عن عمل الراغبين في تقديم خبراتهم بوضوح.",
+      before: "جهّز إعلانًا لوظيفة تهمّك وأمثلة حقيقية من عملك أو دراستك.",
+      catalogue: "حوّل إعلان وظيفة إلى طلب توظيف ومقابلة تستندان إلى خبرتك الفعلية.",
+    },
+    "ar-Gulf": {
+      summary: "جهّز طلبك للمقابلة على أساس إعلان الوظيفة وخبرتك الفعلية.",
+      goals: "بتربط متطلبات الوظيفة بأمثلة وبتخصّص سيرتك وتتمرّن على أسئلة المتابعة.",
+      audience: "للي يدور على وظيفة ويبي يعرض خبرته بوضوح.",
+      before: "جهّز إعلان وظيفة يهمّك وأمثلة حقيقية من شغلك أو دراستك.",
+      catalogue: "جهّز طلبك للمقابلة على أساس إعلان الوظيفة وخبرتك الفعلية.",
+    },
+    en: {
+      summary: "Turn a job posting into an application and interview grounded in your experience.",
+      goals:
+        "Map the requirements to evidence, tailor your CV and practise answering follow-up questions.",
+      audience:
+        "For job seekers who want to explain their experience in applications and interviews.",
+      before: "Bring a job posting and real examples from your work or studies.",
+      catalogue:
+        "Turn a job posting into an application and interview grounded in your experience.",
+    },
+  },
   "AC-FATE": {
     "ar-EG": {
       summary:
