@@ -27,6 +27,7 @@ import { COURSE_AREAS } from "@/lib/course-system/contract";
 import { curriculumCatalogue, curriculumCommand } from "@/lib/course-system/intake/client";
 import { askCurriculumAssistant, curriculumAsset } from "@/lib/course-system/intake/functions";
 import { LanternMarketTable } from "@/components/course-intake/LanternMarketTable";
+import { TripTransfer } from "@/components/course-intake/TripTransfer";
 import { TripPlannerLab } from "@/components/course-intake/TripPlannerLab";
 import { ArchiveWorkspace } from "@/components/course-intake/ArchiveWorkspace";
 import { intakeCopy } from "@/lib/course-system/intake/copy";
@@ -464,6 +465,9 @@ function LearnerStep({
               )}
               {s.id === "trip-lab" && scope.area === "ai" && scope.course === "trip-planning" && auth.user && (
                 <TripPlannerLab key={archiveScope + ":" + scope.lesson} locale={locale} />
+              )}
+              {s.id === "trip-transfer" && scope.area === "ai" && scope.course === "trip-planning" && scope.lesson === "l30" && auth.user && (
+                <TripTransfer key={archiveScope} locale={locale} storageKey={archiveScope + ":transfer"} />
               )}
               <Activity key={s.id} section={s} delivery={delivery} scope={scope} />
             </>
