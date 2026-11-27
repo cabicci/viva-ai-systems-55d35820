@@ -11,6 +11,36 @@ export type CourseOverview = {
 };
 
 const OVERVIEWS: Record<string, Record<SupportedLocale, CourseOverview>> = {
+  "trip-planning": {
+  "en": {
+    "summary": "Build and revise a timed, costed day trip using evidence you can check.",
+    "audience": "For anyone planning a first independent trip or organising a day out for a companion.",
+    "before": "Bring a browser, a calculator and a place to write. The practice case supplies the prices and route. You can finish without buying a ticket or sharing personal details.",
+    "goals": "Hand a companion a route with named entrances, realistic transfers, dated costs, an accessible fallback and a revised spending limit.",
+    "catalogue": "30 beginner lessons from a travel brief to a revised itinerary you can hand to someone else."
+  },
+  "ar-EG": {
+    "summary": "اعمل جدول ليوم سفر واحسب تكلفته من مصادر تقدر تراجعها.",
+    "audience": "للي بيرتّب أول رحلة بنفسه أو بينظّم خروجة مع حد تاني.",
+    "before": "جهّز متصفح وآلة حاسبة وورقة أو ملف. هتلاقي الأسعار والمسار في المثال، وتقدر تكمّل من غير ما تحجز أو تشارك بيانات شخصية.",
+    "goals": "سلّم لرفيقك خط سير فيه المداخل ووقت التنقل والتكلفة بتاريخها، وبديل يناسب احتياجاته لو الميزانية قلّت.",
+    "catalogue": "٣٠ درس للمبتدئ، من تحديد المطلوب لحد جدول رحلة مُراجع ينفع تسلّمه لرفيقك."
+  },
+  "ar-MSA": {
+    "summary": "أنشئ برنامج يوم سفر واحسب تكلفته من مصادر قابلة للتحقق.",
+    "audience": "لمن يخطّط لرحلته المستقلة الأولى أو ينظّم يومًا مع رفيق.",
+    "before": "جهّز متصفحًا وآلة حاسبة ووسيلة للتدوين. يوفّر المثال الأسعار والمسار، ويمكنك إكمال الدروس دون حجز أو مشاركة بيانات شخصية.",
+    "goals": "سلّم رفيقك مسارًا يبيّن المداخل وأوقات التنقل والأسعار المؤرخة وبديلًا يراعي احتياجات الوصول والميزانية الجديدة.",
+    "catalogue": "ثلاثون درسًا للمبتدئين، من تحديد المتطلبات إلى تسليم خطة رحلة منقّحة."
+  },
+  "ar-Gulf": {
+    "summary": "رتّب يوم سفر واحسب تكلفته من مصادر تقدر تراجعها.",
+    "audience": "للي يرتّب أول رحلة بنفسه أو يخطط لطلعة مع أحد.",
+    "before": "جهّز متصفح وآلة حاسبة ومكان تكتب فيه. المثال فيه الأسعار والمسار وتقدر تكمّل من غير حجز أو مشاركة معلومات شخصية.",
+    "goals": "عط رفيقك مسار يبيّن المداخل ووقت التنقل والأسعار بتاريخها، وخيار بديل يناسب احتياجاته لو قلّت الميزانية.",
+    "catalogue": "٣٠ درس للمبتدئ، من تحديد المطلوب إلى جدول رحلة تقدر تسلّمه لرفيقك."
+  }
+},
   "audio-stories": {
     "en": {
         "summary": "Write and mix a two-character story that can be followed with eyes closed.",
