@@ -75,6 +75,7 @@ import { Route as KidsLevelIdIndexRouteImport } from './routes/kids.$levelId.ind
 import { Route as KidsLevelIdLessonNumberRouteImport } from './routes/kids.$levelId.$lessonNumber'
 import { Route as KidsLevelIdContentsRouteImport } from './routes/kids.$levelId.contents'
 import { Route as LearnPathIdLessonIdRouteImport } from './routes/learn.$pathId.$lessonId'
+import { Route as ProgramsAiCourseIdRouteImport } from './routes/programs.ai.$courseId'
 import { Route as TechnicalLearnLessonIdRouteImport } from './routes/technical.learn.$lessonId'
 import { Route as AcademicCoursesCourseIdIndexRouteImport } from './routes/academic.courses.$courseId.index'
 import { Route as AcademicCoursesCourseIdContentsRouteImport } from './routes/academic.courses.$courseId.contents'
@@ -417,6 +418,11 @@ const LearnPathIdLessonIdRoute = LearnPathIdLessonIdRouteImport.update({
   path: '/learn/$pathId/$lessonId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProgramsAiCourseIdRoute = ProgramsAiCourseIdRouteImport.update({
+  id: '/programs/ai/$courseId',
+  path: '/programs/ai/$courseId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TechnicalLearnLessonIdRoute = TechnicalLearnLessonIdRouteImport.update({
   id: '/learn/$lessonId',
   path: '/learn/$lessonId',
@@ -523,6 +529,7 @@ export interface FileRoutesByFullPath {
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/kids/$levelId/contents': typeof KidsLevelIdContentsRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
+  '/programs/ai/$courseId': typeof ProgramsAiCourseIdRoute
   '/technical/learn/$lessonId': typeof TechnicalLearnLessonIdRoute
   '/kids/$levelId/': typeof KidsLevelIdIndexRoute
   '/academic/courses/$courseId/contents': typeof AcademicCoursesCourseIdContentsRoute
@@ -593,6 +600,7 @@ export interface FileRoutesByTo {
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/kids/$levelId/contents': typeof KidsLevelIdContentsRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
+  '/programs/ai/$courseId': typeof ProgramsAiCourseIdRoute
   '/technical/learn/$lessonId': typeof TechnicalLearnLessonIdRoute
   '/kids/$levelId': typeof KidsLevelIdIndexRoute
   '/academic/courses/$courseId/contents': typeof AcademicCoursesCourseIdContentsRoute
@@ -669,6 +677,7 @@ export interface FileRoutesById {
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/kids/$levelId/contents': typeof KidsLevelIdContentsRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
+  '/programs/ai/$courseId': typeof ProgramsAiCourseIdRoute
   '/technical/learn/$lessonId': typeof TechnicalLearnLessonIdRoute
   '/kids/$levelId/': typeof KidsLevelIdIndexRoute
   '/academic/courses/$courseId/contents': typeof AcademicCoursesCourseIdContentsRoute
@@ -746,6 +755,7 @@ export interface FileRouteTypes {
     | '/kids/$levelId/$lessonNumber'
     | '/kids/$levelId/contents'
     | '/learn/$pathId/$lessonId'
+    | '/programs/ai/$courseId'
     | '/technical/learn/$lessonId'
     | '/kids/$levelId/'
     | '/academic/courses/$courseId/contents'
@@ -816,6 +826,7 @@ export interface FileRouteTypes {
     | '/kids/$levelId/$lessonNumber'
     | '/kids/$levelId/contents'
     | '/learn/$pathId/$lessonId'
+    | '/programs/ai/$courseId'
     | '/technical/learn/$lessonId'
     | '/kids/$levelId'
     | '/academic/courses/$courseId/contents'
@@ -891,6 +902,7 @@ export interface FileRouteTypes {
     | '/kids/$levelId/$lessonNumber'
     | '/kids/$levelId/contents'
     | '/learn/$pathId/$lessonId'
+    | '/programs/ai/$courseId'
     | '/technical/learn/$lessonId'
     | '/kids/$levelId/'
     | '/academic/courses/$courseId/contents'
@@ -950,6 +962,7 @@ export interface RootRouteChildren {
   ApiStripeLivePortalRoute: typeof ApiStripeLivePortalRoute
   CoursesAreaCourseIdRoute: typeof CoursesAreaCourseIdRoute
   LearnPathIdLessonIdRoute: typeof LearnPathIdLessonIdRoute
+  ProgramsAiCourseIdRoute: typeof ProgramsAiCourseIdRoute
   LovableEmailAuthPreviewRoute: typeof LovableEmailAuthPreviewRoute
   LovableEmailAuthWebhookRoute: typeof LovableEmailAuthWebhookRoute
 }
@@ -1418,6 +1431,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LearnPathIdLessonIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/programs/ai/$courseId': {
+      id: '/programs/ai/$courseId'
+      path: '/programs/ai/$courseId'
+      fullPath: '/programs/ai/$courseId'
+      preLoaderRoute: typeof ProgramsAiCourseIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/technical/learn/$lessonId': {
       id: '/technical/learn/$lessonId'
       path: '/learn/$lessonId'
@@ -1614,6 +1634,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiStripeLivePortalRoute: ApiStripeLivePortalRoute,
   CoursesAreaCourseIdRoute: CoursesAreaCourseIdRoute,
   LearnPathIdLessonIdRoute: LearnPathIdLessonIdRoute,
+  ProgramsAiCourseIdRoute: ProgramsAiCourseIdRoute,
   LovableEmailAuthPreviewRoute: LovableEmailAuthPreviewRoute,
   LovableEmailAuthWebhookRoute: LovableEmailAuthWebhookRoute,
 }

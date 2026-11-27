@@ -1,3 +1,4 @@
+import { aiProgramPath } from "@/lib/seo/ai-program";
 import { ArrowUpRight, BookOpen } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { useLocale } from "@/lib/locale/locale-context";
@@ -30,7 +31,7 @@ export function AddedCurricula({ area }: { area: CourseArea }) {
       {q.data?.map((course) => (
         <a
           key={course.id}
-          href={`/courses/${area}/${course.id}?locale=${locale}`}
+          href={area === "ai" ? `${aiProgramPath(course.id)}?locale=${locale}` : `/courses/${area}/${course.id}?locale=${locale}`}
           aria-label={`${c.open} — ${course.title}`}
           className="group flex w-full min-w-0 flex-col gap-6 rounded-3xl border border-border/60 bg-card p-6 transition hover:border-primary/50 hover:shadow-[var(--shadow-card)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary sm:flex-row sm:items-center md:p-8"
           data-testid={`${area}-added-course`}
