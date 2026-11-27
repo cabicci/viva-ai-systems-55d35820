@@ -100,6 +100,43 @@ export const curriculumAsset = createServerFn({ method: "POST" })
     return { url: signed.data.signedUrl };
   });
 
+export const uploadCurriculumAsset = createServerFn({ method: "POST" })
+  .middleware([requireSupabaseAuth])
+  .inputValidator((input: FormData) => {
+    if (!(input instanceof FormData)) throw new Error("CURRICULUM_ASSET_UNAVAILABLE");
+    return input;
+  })
+  .handler(async ({ data, context }) => {
+    if (data.get("account") !== context.userId) throw new Error("CURRICULUM_ACCOUNT_CHANGED");
+    const role = await context.supabase.rpc("has_role", {
+      _user_id: context.userId,
+      _role: "admin",
+    });
+    if (role.error || role.data !== true) throw new Error("CURRICULUM_ADMIN_REQUIRED");
+    const file = data.get("file");
+    if (!(file instanceof Blob) || !file.size || file.size > 10_485_760)
+      throw new Error("CURRICULUM_ASSET_UNAVAILABLE");
+    const id = z.string().regex(/^[A-Za-z0-9][A-Za-z0-9-]{0,79}$/);
+    const args = {
+      p_user: context.userId,
+      p_area: z.enum(COURSE_AREAS).parse(data.get("area")),
+      p_course: id.parse(data.get("course")),
+      p_lesson: id.parse(data.get("lesson")),
+      p_locale: z.enum(["ar-EG", "ar-MSA", "ar-Gulf", "en"]).parse(data.get("locale")),
+      p_child: null,
+      p_asset: id.parse(data.get("asset")),
+      p_version: z
+        .string()
+        .regex(/^[a-f0-9]{64}$/)
+        .parse(data.get("version")),
+    };
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    const result = await supabaseAdmin.rpc("curriculum_asset_source" as never, args as never);
+    if (result.error || !result.data) throw new Error("CURRICULUM_ASSET_UNAVAILABLE");
+    const { storeReviewedCourseAsset } = await import("./assets.server");
+    return storeReviewedCourseAsset(result.data, file);
+  });
+
 export const curriculumAdmin = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .inputValidator((input) =>
