@@ -30,6 +30,7 @@ import { AudioStoryWorkspace } from "@/components/course-intake/AudioStoryWorksp
 import { LanternMarketTable } from "@/components/course-intake/LanternMarketTable";
 import { TripTransfer } from "@/components/course-intake/TripTransfer";
 import { PaperFitLab } from "@/components/course-intake/PaperFitLab";
+import { VerificationLab } from "@/components/course-intake/VerificationLab";
 import { TripPlannerLab } from "@/components/course-intake/TripPlannerLab";
 import { ArchiveWorkspace } from "@/components/course-intake/ArchiveWorkspace";
 import { intakeCopy } from "@/lib/course-system/intake/copy";
@@ -473,6 +474,10 @@ function LearnerStep({
                   locale={locale}
                   resolveAsset={resolveAsset}
                 />
+              )}
+              {s.id === "verification-lab" && scope.area === "ai" && scope.course === "media-verification" && auth.user && (
+                <VerificationLab key={archiveScope + ":" + scope.lesson + ":" + locale} locale={locale}
+                  example={["l01","l09"].includes(scope.lesson) ? "photo" : ["l11","l12"].includes(scope.lesson) ? "paper" : "film"} />
               )}
               {s.id === "paper-fit" && scope.area === "ai" && scope.course === "physical-prototype" && auth.user && (
                 <PaperFitLab key={archiveScope + ":" + scope.lesson} scope={archiveScope} locale={locale} />

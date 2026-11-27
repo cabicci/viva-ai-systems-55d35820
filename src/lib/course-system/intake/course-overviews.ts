@@ -11,6 +11,36 @@ export type CourseOverview = {
 };
 
 const OVERVIEWS: Record<string, Record<SupportedLocale, CourseOverview>> = {
+  "media-verification": {
+  "en": {
+    "summary": "Trace a claim from its caption to its issuing record and write a finding someone else can reproduce.",
+    "catalogue": "Trace a claim from its caption to its issuing record and write a finding someone else can reproduce.",
+    "audience": "For first-time readers who want to check a post before sharing it.",
+    "before": "Bring a browser and somewhere to take notes. All exercises include public or fictional evidence.",
+    "goals": "Compare event and publication dates, inspect omitted frames, and report what remains unknown."
+  },
+  "ar-EG": {
+    "summary": "اتتبّع الادعاء من البوست لحد مصدره واكتب نتيجة يقدر حد تاني يراجعها.",
+    "catalogue": "اتتبّع الادعاء من البوست لحد مصدره واكتب نتيجة يقدر حد تاني يراجعها.",
+    "audience": "للي عايز يتأكد من الخبر أو الصورة قبل ما يشاركهم.",
+    "before": "جهّز متصفح ووسيلة تكتب فيها. أدلة التمارين متاحة جوه الدروس أو في أرشيف عام.",
+    "goals": "قارن يوم الحدث بيوم النشر وافحص اللي اتقص من الصورة أو الفيديو وحدّد إيه اللي لسه مجهول."
+  },
+  "ar-MSA": {
+    "summary": "تتبّع الادعاء من وصف المنشور إلى السجل الأصلي، واكتب نتيجة يمكن للقارئ إعادة فحصها.",
+    "catalogue": "تتبّع الادعاء من وصف المنشور إلى السجل الأصلي، واكتب نتيجة يمكن للقارئ إعادة فحصها.",
+    "audience": "للمبتدئين الراغبين في التحقّق من المواد التي يتلقّونها قبل مشاركتها.",
+    "before": "تحتاج إلى متصفح ووسيلة للتدوين. تستخدم التمارين أدلة عامة أو افتراضية متاحة في الدرس.",
+    "goals": "ميّز تاريخ الحدث من تاريخ النشر، وافحص ما حُذف من الإطار أو التسلسل، وحدّد ما يبقى مجهولًا."
+  },
+  "ar-Gulf": {
+    "summary": "تتبّع الادعاء من المنشور إلى مصدره، واكتب نتيجة يقدر غيرك يراجعها.",
+    "catalogue": "تتبّع الادعاء من المنشور إلى مصدره، واكتب نتيجة يقدر غيرك يراجعها.",
+    "audience": "للي يبي يتأكد من الأخبار والصور والمقاطع قبل ما يشاركها.",
+    "before": "جهّز متصفح ومكان تدوّن فيه. أدلة التمارين موجودة في الدرس أو بأرشيف عام.",
+    "goals": "قارن تاريخ الحدث بتاريخ النشر وطالع الجزء المقصوص وحدّد وش باقي يحتاج دليل."
+  }
+},
   "physical-prototype": {
   "en": {
     "audience": "For first-time makers who want to turn a drawing into an object they can measure.",
