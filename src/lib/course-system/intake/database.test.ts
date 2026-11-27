@@ -134,6 +134,12 @@ beforeAll(async () => {
     }),
   );
   await migrate(drizzle(db), { migrationsFolder: migrationDir });
+  const indexSteps = readFileSync(
+    "drizzle/migrations/0069_index_intake_steps.sql",
+    "utf8",
+  ).replaceAll("\r\n", "\n");
+  await db.exec(indexSteps);
+  await db.exec(indexSteps);
 }, 60000);
 afterAll(async () => {
   await db?.close();
