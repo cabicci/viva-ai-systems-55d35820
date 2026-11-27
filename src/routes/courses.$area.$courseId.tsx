@@ -27,6 +27,7 @@ import { COURSE_AREAS } from "@/lib/course-system/contract";
 import { curriculumCatalogue, curriculumCommand } from "@/lib/course-system/intake/client";
 import { askCurriculumAssistant, curriculumAsset } from "@/lib/course-system/intake/functions";
 import { LanternMarketTable } from "@/components/course-intake/LanternMarketTable";
+import { TripPlannerLab } from "@/components/course-intake/TripPlannerLab";
 import { ArchiveWorkspace } from "@/components/course-intake/ArchiveWorkspace";
 import { intakeCopy } from "@/lib/course-system/intake/copy";
 import { useKidsParentStateSource } from "@/lib/kids/parent-state";
@@ -460,6 +461,9 @@ function LearnerStep({
                   locale={locale}
                   resolveAsset={resolveAsset}
                 />
+              )}
+              {s.id === "trip-lab" && scope.area === "ai" && scope.course === "trip-planning" && auth.user && (
+                <TripPlannerLab key={archiveScope + ":" + scope.lesson} locale={locale} />
               )}
               <Activity key={s.id} section={s} delivery={delivery} scope={scope} />
             </>
