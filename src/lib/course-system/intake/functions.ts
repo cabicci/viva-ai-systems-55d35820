@@ -131,10 +131,20 @@ export const uploadCurriculumAsset = createServerFn({ method: "POST" })
         .parse(data.get("version")),
     };
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const result = await supabaseAdmin.rpc("curriculum_asset_source" as never, args as never);
-    if (result.error || !result.data) throw new Error("CURRICULUM_ASSET_UNAVAILABLE");
+    const result = await supabaseAdmin.rpc("curriculum_asset_source", args as never);
+    if (result.error) throw new Error("CURRICULUM_ASSET_UNAVAILABLE");
+    const asset = z
+      .object({
+        id,
+        sha256: z.string().regex(/^[a-f0-9]{64}$/),
+        storage: z.object({
+          bucket: z.enum(["academic-downloads", "technical-downloads"]),
+          path: z.string().min(1),
+        }),
+      })
+      .parse(result.data);
     const { storeReviewedCourseAsset } = await import("./assets.server");
-    return storeReviewedCourseAsset(result.data, file);
+    return storeReviewedCourseAsset(asset, file);
   });
 
 export const curriculumAdmin = createServerFn({ method: "POST" })
