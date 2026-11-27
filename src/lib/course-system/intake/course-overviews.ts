@@ -41,6 +41,36 @@ const OVERVIEWS: Record<string, Record<SupportedLocale, CourseOverview>> = {
         "catalogue": "للي ودّه يسوي أول قصة صوتية، من كتّاب الحكايات وصنّاع البودكاست والمعلّمين. جهّز سمّاعة أو مكبّر صوت وجهاز تسجّل فيه، واتّفق مع شخص يسمع التجربة الأخيرة. ما تحتاج خبرة مونتاج."
     }
 },
+  "tabletop-game": {
+  "en": {
+    "summary": "Design, print and test a complete tabletop game.",
+    "goals": "Write rules that a new pair can use, trace a four-round match, compare balanced variants and document one revision from evidence.",
+    "audience": "Adults making their first tabletop game. No coding or prior design experience required.",
+    "before": "Bring paper, scissors and a pencil. Use a printer or access to one. Arrange two consenting first-time players for the blind playtest.",
+    "catalogue": "32 workshops build from one meaningful choice to a printable game, a tested rulebook and a design defense."
+  },
+  "ar-EG": {
+    "summary": "صمّم لعبة ورقية واطبعها وجرّبها مع لاعبين بيشوفوها لأول مرة.",
+    "goals": "اكتب قواعد تنفع من غير شرح، واحسب نتيجة أربع جولات، وغيّر عامل واحد واختبر أثره، ووثّق التعديل بدليل.",
+    "audience": "لأي حد كبير بيصمّم أول لعبة طاولة. تقدر تبدأ من غير خبرة في التصميم أو البرمجة.",
+    "before": "جهّز ورق ومقص وقلم وطريقة تطبع بيها. اتفق مع اتنين حابّين يجرّبوا اللعبة لأول مرة.",
+    "catalogue": "٣٢ ورشة من أول قرار اللاعب لحد لعبة مطبوعة وورقة قواعد وسجل يبيّن إيه اللي اتغيّر بعد التجربة."
+  },
+  "ar-MSA": {
+    "summary": "صمّم لعبة طاولة واطبع مكوناتها واختبر قواعدها مع لاعبين جديدين.",
+    "goals": "اكتب قواعد مستقلة، وتتبّع مباراة من أربع جولات، وقارن أثر تعديل واحد، ووثّق قرارك بدليل.",
+    "audience": "للبالغين الذين يصمّمون أول لعبة طاولة. لا يُشترط إتقان البرمجة أو التصميم.",
+    "before": "تحتاج إلى ورق ومقص وقلم وإمكانية الطباعة، ولاعبين يوافقان على تجربة اللعبة للمرة الأولى.",
+    "catalogue": "٣٢ ورشة تبدأ بقرار اللاعب وتنتهي بلعبة قابلة للطباعة ودليل قواعد وسجل مراجعة."
+  },
+  "ar-Gulf": {
+    "summary": "صمّم لعبة ورقية واطبع مكوّناتها وجرّبها مع لاعبين جدد.",
+    "goals": "اكتب قواعد يقدر غيرك يتبعها، واحسب نتيجة أربع جولات، وجرّب تغيّر عامل واحد ووثّق اللي حصل.",
+    "audience": "للكبار اللي يصمّمون أول لعبة طاولة. تقدر تبدأ بدون خبرة في التصميم أو البرمجة.",
+    "before": "جهّز ورق ومقص وقلم وطريقة تطبع فيها. اتفق مع لاعبين ودّهم يجرّبون اللعبة لأول مرة.",
+    "catalogue": "٣٢ ورشة من أول قرار للاعب لين لعبة مطبوعة وقواعد وسجل يوضّح التعديلات بعد التجربة."
+  }
+},
   "picture-book": {
   "en": {
     "summary": "Create an original Arabic picture book and prepare its print files.",
