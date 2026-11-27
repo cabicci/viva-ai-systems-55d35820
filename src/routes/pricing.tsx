@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { AddedCurricula } from "@/components/course-intake/AddedCurricula";
 import { CommercialPurchases } from "@/components/billing/CommercialPurchases";
 import { createFileRoute, Link, redirect } from "@tanstack/react-router";
 import { Check } from "lucide-react";
@@ -167,6 +169,7 @@ function PricingPage() {
                   </li>
                 ))}
               </ul>
+              <IncludedAiCurricula />
               <PlanPrices plan="pro" />
               <StripeCheckoutButtons plan="pro" variant="violet" />
             </article>
@@ -192,6 +195,7 @@ function PricingPage() {
                   </li>
                 ))}
               </ul>
+              <IncludedAiCurricula />
               <PlanPrices plan="pro_plus" />
               <StripeCheckoutButtons plan="pro_plus" variant="outline" />
             </article>
@@ -317,4 +321,21 @@ function ComparisonCell({
     return <span className="text-muted-foreground/50">—</span>;
   }
   return <span className="text-xs text-muted-foreground">{value}</span>;
+}
+
+function IncludedAiCurricula() {
+  const { locale } = useLocale();
+  const [open, setOpen] = useState(false);
+  return (
+    <details className="mb-5" onToggle={(event) => setOpen(event.currentTarget.open)}>
+      <summary className="cursor-pointer font-semibold text-primary underline underline-offset-4">
+        {locale === "en" ? "View included AI curricula" : "شوف مناهج الذكاء الاصطناعي المشمولة"}
+      </summary>
+      {open && (
+        <div className="mt-3 grid gap-2">
+          <AddedCurricula area="ai" />
+        </div>
+      )}
+    </details>
+  );
 }
