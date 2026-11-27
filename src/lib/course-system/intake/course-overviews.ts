@@ -11,6 +11,36 @@ export type CourseOverview = {
 };
 
 const OVERVIEWS: Record<string, Record<SupportedLocale, CourseOverview>> = {
+  "home-design": {
+    "ar-EG": {
+      summary: "صمّم أوضتك بالمقاسات وجرّب العفش في مكانه قبل ما تدفع.",
+      goals: "هتقارن توزيعتين، وتختبر فتح الباب والأدراج والمشي بين العفش، وتحسب التكلفة بالتوصيل والتركيب.",
+      audience: "للي بيرتّب بيته أو شقة إيجار لأول مرة وعايز يختار عفش يناسب استخدامه اليومي.",
+      before: "جهّز متر وورقة وقلم، واختار أوضة مسموح لك تقيسها. تقدر تبدأ من غير خبرة في الرسم.",
+      catalogue: "قيس أوضتك وقارن توزيعتين بالعفش والميزانية قبل الشراء.",
+    },
+    "ar-MSA": {
+      summary: "صمّم غرفتك من واقع قياساتها واختبر مواضع الأثاث قبل الشراء.",
+      goals: "ستقارن بين توزيعَين، وتختبر فتح الأبواب والأدراج ومسارات الحركة، وتحسب التكلفة شاملة التوصيل والتركيب.",
+      audience: "للمبتدئين الذين يرتّبون منزلًا أو غرفة مستأجرة ويريدون اختيار أثاث يلائم استخدامهم اليومي.",
+      before: "جهّز شريط قياس وورقة وقلمًا واختر غرفة لديك إذن بقياسها. يمكنك البدء دون خبرة سابقة في الرسم.",
+      catalogue: "قِس غرفتك وقارن بين توزيعَين وفق الملاءمة والميزانية قبل الشراء.",
+    },
+    "ar-Gulf": {
+      summary: "صمّم غرفتك على مقاسها وجرّب مكان الأثاث قبل ما تدفع.",
+      goals: "بتقارن توزيعين وتختبر فتح الباب والأدراج ومسارات الحركة وتحسب التكلفة مع التوصيل والتركيب.",
+      audience: "للي يرتّب بيته أو غرفة مستأجرة لأول مرة ويبي يختار أثاث يناسب استخدامه اليومي.",
+      before: "جهّز متر وورقة وقلم واختَر غرفة مسموح لك تقيسها. تقدر تبدأ بدون خبرة في الرسم.",
+      catalogue: "قِس غرفتك وقارن توزيعين على حسب المساحة والميزانية قبل الشراء.",
+    },
+    en: {
+      summary: "Measure your room and test where furniture will go before you buy it.",
+      goals: "Compare two layouts, test door and drawer movement, check the routes people use and calculate the cost with delivery and assembly.",
+      audience: "For beginners furnishing their home or a rented room who want to check everyday fit before buying.",
+      before: "Bring a tape measure, paper and a pencil, and choose a room you have permission to measure. No drawing experience is needed.",
+      catalogue: "Compare two room layouts against your measurements, daily activities and budget.",
+    },
+  },
   "ai-store-studio": {
     "ar-EG": {
       summary: "ابنِ متجر دَوِّنها من أول كتالوج المنتجات لحد اختبار الطلب وتسليم المتجر.",
