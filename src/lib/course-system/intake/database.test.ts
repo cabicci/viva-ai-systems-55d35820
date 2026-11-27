@@ -152,6 +152,14 @@ beforeAll(async () => {
   ).replaceAll("\r\n", "\n");
   await db.exec(lessonExamples);
   await db.exec(lessonExamples);
+  await db.exec(
+    readFileSync("drizzle/migrations/0073_curriculum_admin_intake_timeout.sql", "utf8"),
+  );
+  expect(
+    await value(
+      "SELECT proconfig v FROM pg_proc WHERE oid='public.curriculum_admin(uuid,text,jsonb)'::regprocedure",
+    ),
+  ).toContain("statement_timeout=30s");
 }, 60000);
 afterAll(async () => {
   await db?.close();
