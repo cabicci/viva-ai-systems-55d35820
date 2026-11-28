@@ -231,6 +231,20 @@ describe("same-version source proof", () => {
     expect(evidence.question).toBe(identity.query);
   });
 
+  it("keeps fixed demand probabilities separate from weak-state contributions for strategy", async () => {
+    mock.rpc.mockResolvedValueOnce(ok(admitted))
+      .mockResolvedValueOnce(ok({ version: admitted.version, chunks: [await retrievalChunk()] }))
+      .mockResolvedValue(ok(admitted));
+    mock.embed.mockResolvedValue([[0, 1]]);
+    mock.llm.mockResolvedValue({
+      content: JSON.stringify({ grounding: "supported", answer: "Case comparison", sourceIds: ["S1"] }),
+    });
+    await invoke({ ...identity, area: "academic", course: "AC-MGT-STRAT", locale: "ar-Gulf" });
+    const request = mock.llm.mock.calls[0][0];
+    expect(request.messages[0].content).toContain("keep those probabilities fixed");
+    expect(request.messages[0].content).toContain("weak-state values for each option");
+  });
+
   it("does not return a generated answer if the course changes during generation", async () => {
     mock.rpc
       .mockResolvedValueOnce(ok(admitted))
