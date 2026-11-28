@@ -114,6 +114,18 @@ export const curriculumAsset = createServerFn({ method: "POST" })
       }
     }
     if (!asset.storage) throw new Error("CURRICULUM_ASSET_UNAVAILABLE");
+    if (data.area === "academic" && data.course === "AC-MGT-INV" && asset.id === "shubbak-update") {
+      if (data.lesson !== "AC-MGT-INV-L39" || !data.version)
+        throw new Error("CURRICULUM_INITIAL_SUBMISSION_REQUIRED");
+      const history = await context.supabase.rpc("curriculum_command" as never, {
+        p_action: "lesson",
+        p_data: { area: data.area, course: data.course, lesson: data.lesson,
+          locale: data.locale, profileId: data.profileId },
+      } as never);
+      const { canReleaseInvestmentUpdate } = await import("./investment-update.server");
+      if (history.error || !canReleaseInvestmentUpdate(history.data, data.version))
+        throw new Error("CURRICULUM_INITIAL_SUBMISSION_REQUIRED");
+    }
     await (await import("./assets.server")).verifyPrivateCourseAssets([asset]);
     if (JSON.stringify(await read()) !== JSON.stringify(asset))
       throw new Error("CURRICULUM_ASSET_CHANGED");
