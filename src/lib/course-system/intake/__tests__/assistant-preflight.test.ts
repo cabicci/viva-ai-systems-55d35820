@@ -259,6 +259,20 @@ describe("same-version source proof", () => {
     expect(request.messages[0].content).toContain("inspection or release required before dispatch");
   });
 
+  it("limits a board cash conclusion to the dates evidenced by the cash flows", async () => {
+    mock.rpc.mockResolvedValueOnce(ok(admitted))
+      .mockResolvedValueOnce(ok({ version: admitted.version, chunks: [await retrievalChunk()] }))
+      .mockResolvedValue(ok(admitted));
+    mock.embed.mockResolvedValue([[0, 1]]);
+    mock.llm.mockResolvedValue({
+      content: JSON.stringify({ grounding: "supported", answer: "Case comparison", sourceIds: ["S1"] }),
+    });
+    await invoke({ ...identity, area: "academic", course: "AC-MGT-BOARD", locale: "ar-EG" });
+    const request = mock.llm.mock.calls[0][0];
+    expect(request.messages[0].content).toContain("positive closing cushion alone cannot guarantee");
+    expect(request.messages[0].content).toContain("each relevant balance with the reserve on the same date");
+  });
+
   it("does not return a generated answer if the course changes during generation", async () => {
     mock.rpc
       .mockResolvedValueOnce(ok(admitted))
