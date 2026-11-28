@@ -37,7 +37,9 @@ export function Activity({
   section,
   delivery,
   scope,
+  renderTools,
 }: {
+  renderTools?: (values: ActivityValues) => React.ReactNode;
   section: IntakeSection;
   delivery: Delivery;
   scope: {
@@ -215,6 +217,7 @@ export function Activity({
           onChange={(id, value) => setSubmission((prev) => ({ ...prev, [id]: value }))}
         />
       )}
+      {renderTools?.(submission)}
       {attempt && (
         <div role="status" className="text-sm text-muted-foreground">
           {draft.state === "saved"

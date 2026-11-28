@@ -26,6 +26,8 @@ import { useLocale } from "@/lib/locale/locale-context";
 import { COURSE_AREAS } from "@/lib/course-system/contract";
 import { curriculumCatalogue, curriculumCommand } from "@/lib/course-system/intake/client";
 import { askCurriculumAssistant, curriculumAsset } from "@/lib/course-system/intake/functions";
+import { PictureColourLab } from "@/components/course-intake/PictureColourLab";
+import { PictureGalleryLab } from "@/components/course-intake/PictureGalleryLab";
 import { AudioStoryWorkspace } from "@/components/course-intake/AudioStoryWorkspace";
 import { LanternMarketTable } from "@/components/course-intake/LanternMarketTable";
 import { TripTransfer } from "@/components/course-intake/TripTransfer";
@@ -488,7 +490,12 @@ function LearnerStep({
               {s.id === "trip-transfer" && scope.area === "ai" && scope.course === "trip-planning" && scope.lesson === "l30" && auth.user && (
                 <TripTransfer key={archiveScope} locale={locale} storageKey={archiveScope + ":transfer"} />
               )}
-              <Activity key={s.id} section={s} delivery={delivery} scope={scope} />
+              <Activity key={s.id} section={s} delivery={delivery} scope={scope}
+                renderTools={scope.area === "kids" && scope.course === "KAI-02" && s.id === "evidence" ? values => {
+                  if (scope.lesson === "KAI-02-L02") return <PictureColourLab key={archiveScope} locale={locale} resolveAsset={resolveAsset} />;
+                  if (scope.lesson === "KAI-02-L04" || scope.lesson === "KAI-02-L05") return <PictureGalleryLab key={archiveScope+scope.lesson} lesson={delivery.lesson} locale={locale} values={values} resolveAsset={resolveAsset} />;
+                  return null;
+                } : undefined} />
             </>
           )
         }
