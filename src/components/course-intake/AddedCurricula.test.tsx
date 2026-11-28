@@ -5,12 +5,15 @@ import { AddedCurricula } from "./AddedCurricula";
 const state = vi.hoisted(() => ({ catalogue: vi.fn(), locale: "en" }));
 vi.mock("@/lib/course-system/intake/client", () => ({ curriculumCatalogue: state.catalogue }));
 vi.mock("@/lib/locale/locale-context", () => ({ useLocale: () => ({ locale: state.locale }) }));
-const view = (area: "technical" | "academic" = "technical") =>
+const view = (
+  area: "technical" | "academic" | "kids" = "technical",
+  levelId?: "level-1" | "level-2" | "level-3",
+) =>
   render(
     <QueryClientProvider
       client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}
     >
-      <AddedCurricula area={area} />
+      <AddedCurricula area={area} levelId={levelId} />
     </QueryClientProvider>,
   );
 beforeEach(() => {
@@ -77,4 +80,30 @@ it("opens the public management outline from its academic card in the selected l
     "href",
     "/courses/academic/other-course?locale=ar-Gulf",
   );
+});
+
+it.each([
+  ["level-1", "KAI-01", "KAI-04"],
+  ["level-2", "KAI-05", "KAI-08"],
+  ["level-3", "KAI-09", "KAI-12"],
+] as const)("shows only published additions for %s", async (level, first, last) => {
+  const ids = ["KAI-01", "KAI-04", "KAI-05", "KAI-08", "KAI-09", "KAI-12", "legacy"];
+  state.catalogue.mockResolvedValue(
+    ids.map((id) => ({ id, title: id, area: "kids", stations: [] })),
+  );
+  view("kids", level);
+  expect(await screen.findByRole("link", { name: new RegExp(first) })).toHaveAttribute(
+    "href",
+    `/courses/kids/${first}?locale=en`,
+  );
+  expect(screen.getByRole("link", { name: new RegExp(last) })).toBeInTheDocument();
+  expect(screen.getAllByRole("link")).toHaveLength(2);
+});
+
+it("keeps the original location of ungrouped Kids curricula", async () => {
+  state.catalogue.mockResolvedValue([
+    { id: "other", title: "Other course", area: "kids", stations: [] },
+  ]);
+  view("kids");
+  expect(await screen.findByRole("link", { name: /Other course/ })).toBeInTheDocument();
 });

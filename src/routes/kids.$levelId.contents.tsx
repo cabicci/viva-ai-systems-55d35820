@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { getPathStoryCopy } from "@/lib/path-story";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
+import { AddedCurricula } from "@/components/course-intake/AddedCurricula";
 import { KidsBrand } from "@/components/kids/KidsBrand";
 import { KidsReleaseNotice } from "@/components/kids/KidsReleaseNotice";
 import { KIDS_LEVELS } from "@/lib/kids/catalogue";
@@ -154,6 +155,7 @@ function KidsLevelPage() {
               );
             })}
           </section>
+          <AddedCurricula area="kids" levelId={level.id} />
         </div>
       </main>
       <Footer />

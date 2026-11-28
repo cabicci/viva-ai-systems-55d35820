@@ -22,3 +22,23 @@ export function isKidsFreeLesson(level: KidsLevelId, lessonNumber: number): bool
     lessonNumber <= KIDS_FREE_LESSONS_PER_LEVEL
   );
 }
+
+/** Catalogue placement for the added curricula. Access uses the standard Kids grant. */
+const addedCurriculumLevels: ReadonlyMap<string, KidsLevelId> = new Map([
+  ["KAI-01", "level-1"],
+  ["KAI-02", "level-1"],
+  ["KAI-03", "level-1"],
+  ["KAI-04", "level-1"],
+  ["KAI-05", "level-2"],
+  ["KAI-06", "level-2"],
+  ["KAI-07", "level-2"],
+  ["KAI-08", "level-2"],
+  ["KAI-09", "level-3"],
+  ["KAI-10", "level-3"],
+  ["KAI-11", "level-3"],
+  ["KAI-12", "level-3"],
+]);
+
+export function kidsCurriculumLevel(courseId: string): KidsLevelId | undefined {
+  return addedCurriculumLevels.get(courseId);
+}
