@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import type { ActivityValues } from "@/lib/course-system/intake/use-activity-draft";
 import type { SupportedLocale } from "@/lib/locale/types";
-import type { LessonContent } from "./CurriculumContent";
+import type { RenderFields } from "./CurriculumFields";
+import { PrivateImage, type LessonContent } from "./CurriculumContent";
 import { Button } from "@/components/ui/button";
 import { encodeWave } from "./encode-wave";
 
@@ -63,7 +64,16 @@ const copy = {
     "Analysis region",
   ],
 };
+const pictureControls = {
+  "ar-EG": { hide: "غطّي الصورة", show: "اكشف الصورة" },
+  "ar-MSA": { hide: "أخفِ الصورة", show: "أظهر الصورة" },
+  "ar-Gulf": { hide: "غطّ الصورة", show: "اكشف الصورة" },
+  en: { hide: "Hide picture", show: "Show picture" },
+};
+
 type Props = {
+  active: boolean;
+  renderFields: RenderFields;
   locale: SupportedLocale;
   lesson: LessonContent;
   values: ActivityValues;
@@ -127,7 +137,64 @@ function galleryFile(cards: Card[], title: string, locale: SupportedLocale) {
   });
 }
 
-export function PictureGalleryLab({ locale, lesson, values, resolveAsset }: Props) {
+function PictureComparison({
+  picture,
+  locale,
+  resolveAsset,
+  card,
+  onHeard,
+  active,
+}: {
+  picture: LessonContent["assets"][number];
+  locale: SupportedLocale;
+  resolveAsset: Props["resolveAsset"];
+  card?: Card;
+  onHeard: () => void;
+  active: boolean;
+}) {
+  const [visible, setVisible] = useState(true);
+  const id = useId();
+  const words = pictureControls[locale];
+  return (
+    <div role="group" aria-label={picture.label} className="space-y-3 rounded-xl border p-4">
+      <p className="font-bold">{picture.label}</p>
+      <Button
+        type="button"
+        variant="outline"
+        aria-expanded={visible}
+        aria-controls={id}
+        onClick={() => setVisible((value) => !value)}
+      >
+        {visible ? words.hide : words.show}
+      </Button>
+      <div id={id} hidden={!visible} className="max-w-md">
+        {active && <PrivateImage asset={picture} resolve={resolveAsset} locale={locale} />}
+      </div>
+      {card && (
+        <figure>
+          <figcaption>{card.text}</figcaption>
+          <audio
+            className="w-full max-w-md"
+            controls
+            preload="metadata"
+            aria-label={card.name}
+            src={card.audio}
+            onEnded={onHeard}
+          />
+        </figure>
+      )}
+    </div>
+  );
+}
+
+export function PictureGalleryLab({
+  locale,
+  lesson,
+  values,
+  resolveAsset,
+  renderFields,
+  active,
+}: Props) {
   const words = copy[locale],
     final = lesson.id === "KAI-02-L05";
   const requested = final ? ["boat", "desk", "bag"] : ["desk"];
@@ -145,7 +212,7 @@ export function PictureGalleryLab({ locale, lesson, values, resolveAsset }: Prop
           )
         : undefined;
     });
-    return { picture, lines, evidence: String(values[subject + "-basis"] ?? "").trim() };
+    return { subject, picture, lines, evidence: String(values[subject + "-basis"] ?? "").trim() };
   });
   const selection = JSON.stringify(
     cards.map((c) => [c.picture?.id, c.lines.map((l) => l?.id), c.evidence]),
@@ -228,23 +295,25 @@ export function PictureGalleryLab({ locale, lesson, values, resolveAsset }: Prop
   }
   return (
     <div className="space-y-3">
+      {renderFields((fieldId) => {
+        const index = cards.findIndex((item) => fieldId === item.subject + "-line-1");
+        const item = cards[index];
+        if (!item?.picture) return null;
+        return (
+          <PictureComparison
+            picture={item.picture}
+            locale={locale}
+            resolveAsset={resolveAsset}
+            active={active}
+            card={current[index]}
+            onHeard={() => setHeard((prev) => [...new Set([...prev, item.subject])])}
+          />
+        );
+      })}
       <Button type="button" variant="outline" disabled={busy} onClick={prepare}>
         {busy ? words[6] : words[0]}
       </Button>
       {error && <p role="status">{error}</p>}
-      {current.map((card) => (
-        <figure key={card.name}>
-          <figcaption>{card.text}</figcaption>
-          <audio
-            className="w-full max-w-md"
-            controls
-            preload="metadata"
-            aria-label={card.name}
-            src={card.audio}
-            onEnded={() => setHeard((prev) => [...new Set([...prev, card.name])])}
-          />
-        </figure>
-      ))}
       {final && current.length === 3 && (
         <>
           <p>{words[2]}</p>
