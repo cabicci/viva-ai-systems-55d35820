@@ -2,6 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { COURSE_AREAS } from "../contract";
+import { hasSubmittedInitialDecision, initialDecisionForUpdate } from "./management-case-update";
 import type { AssistantReply } from "@/lib/card-assistant/types";
 import {
   curriculumJourneyInput,
@@ -89,13 +90,8 @@ export const curriculumAsset = createServerFn({ method: "POST" })
       return r.data as unknown as import("./assets.server").PrivateCourseAsset;
     };
     const asset = await read();
-    if (
-      data.area === "academic" &&
-      data.course === "AC-MGT-CHANGE" &&
-      data.lesson === "AC-MGT-CHANGE-L40" &&
-      data.asset === "sikka-update"
-    ) {
-      const { mayReadSikkaUpdate } = await import("./sikka-release");
+    const initialLesson = initialDecisionForUpdate(data);
+    if (initialLesson) {
       const initial = await context.supabase.rpc(
         "curriculum_command" as never,
         {
@@ -103,13 +99,13 @@ export const curriculumAsset = createServerFn({ method: "POST" })
           p_data: {
             area: data.area,
             course: data.course,
-            lesson: "AC-MGT-CHANGE-L39",
+            lesson: initialLesson,
             locale: data.locale,
             ...(data.profileId ? { profileId: data.profileId } : {}),
           },
         } as never,
       );
-      if (initial.error || !mayReadSikkaUpdate(initial.data, data.version)) {
+      if (initial.error || !hasSubmittedInitialDecision(initial.data, data.version)) {
         throw new Error("CURRICULUM_INITIAL_SUBMISSION_REQUIRED");
       }
     }
