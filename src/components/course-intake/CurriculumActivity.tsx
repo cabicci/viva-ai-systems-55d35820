@@ -12,7 +12,7 @@ import { getAcademicCopy } from "@/lib/academic-education/copy";
 import type { COURSE_AREAS } from "@/lib/course-system/contract";
 import type { IntakeSection } from "@/lib/course-system/intake/package";
 import type { LessonContent } from "./CurriculumContent";
-import { ActivityForm } from "./CurriculumFields";
+import { ActivityForm, type RenderFields } from "./CurriculumFields";
 import { Button } from "@/components/ui/button";
 
 export type Delivery = {
@@ -39,7 +39,7 @@ export function Activity({
   scope,
   renderTools,
 }: {
-  renderTools?: (values: ActivityValues) => React.ReactNode;
+  renderTools?: (values: ActivityValues, renderFields: RenderFields) => React.ReactNode;
   section: IntakeSection;
   delivery: Delivery;
   scope: {
@@ -206,18 +206,20 @@ export function Activity({
   // Optional reading/media sections carry no completion control (as in AC-BUS);
   // required ones keep their explicit completion so progress stays reachable.
   if (!interactive && !section.required) return null;
+  const renderFields: RenderFields = (beforeField) =>
+    interactive && (
+      <ActivityForm
+        beforeField={beforeField}
+        section={section}
+        values={submission}
+        disabled={locked}
+        locale={locale}
+        onChange={(id, value) => setSubmission((prev) => ({ ...prev, [id]: value }))}
+      />
+    );
   return (
     <div className="space-y-4">
-      {interactive && (
-        <ActivityForm
-          section={section}
-          values={submission}
-          disabled={locked}
-          locale={locale}
-          onChange={(id, value) => setSubmission((prev) => ({ ...prev, [id]: value }))}
-        />
-      )}
-      {renderTools?.(submission)}
+      {renderTools?.(submission, renderFields) ?? renderFields()}
       {attempt && (
         <div role="status" className="text-sm text-muted-foreground">
           {draft.state === "saved"
