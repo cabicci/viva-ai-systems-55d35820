@@ -89,6 +89,30 @@ export const curriculumAsset = createServerFn({ method: "POST" })
       return r.data as unknown as import("./assets.server").PrivateCourseAsset;
     };
     const asset = await read();
+    if (
+      data.area === "academic" &&
+      data.course === "AC-MGT-CHANGE" &&
+      data.lesson === "AC-MGT-CHANGE-L40" &&
+      data.asset === "sikka-update"
+    ) {
+      const { mayReadSikkaUpdate } = await import("./sikka-release");
+      const initial = await context.supabase.rpc(
+        "curriculum_command" as never,
+        {
+          p_action: "lesson",
+          p_data: {
+            area: data.area,
+            course: data.course,
+            lesson: "AC-MGT-CHANGE-L39",
+            locale: data.locale,
+            ...(data.profileId ? { profileId: data.profileId } : {}),
+          },
+        } as never,
+      );
+      if (initial.error || !mayReadSikkaUpdate(initial.data, data.version)) {
+        throw new Error("CURRICULUM_INITIAL_SUBMISSION_REQUIRED");
+      }
+    }
     if (!asset.storage) throw new Error("CURRICULUM_ASSET_UNAVAILABLE");
     await (await import("./assets.server")).verifyPrivateCourseAssets([asset]);
     if (JSON.stringify(await read()) !== JSON.stringify(asset))
