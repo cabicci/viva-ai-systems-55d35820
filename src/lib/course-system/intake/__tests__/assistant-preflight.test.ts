@@ -212,6 +212,25 @@ describe("same-version source proof", () => {
     expect(mock.rpc).toHaveBeenCalledTimes(4);
   });
 
+  it("rechecks a repeated management question from teaching sources and retains distinct context", async () => {
+    const chunk = await retrievalChunk();
+    mock.rpc.mockResolvedValueOnce(ok(admitted))
+      .mockResolvedValueOnce(ok({ version: admitted.version, chunks: [chunk] }))
+      .mockResolvedValue(ok(admitted));
+    mock.embed.mockResolvedValue([[0, 1]]);
+    mock.llm.mockResolvedValue({
+      content: JSON.stringify({ grounding: "supported", answer: "Current answer", sourceIds: ["S1"] }),
+    });
+    const earlier = { question: "Which booking?", answer: "The booking in the current lesson." };
+    const repeated = { question: identity.query, answer: "An earlier incorrect answer" };
+    await invoke({ ...identity, area: "academic", course: "AC-MGT-COST", history: [earlier, repeated] });
+    const request = mock.llm.mock.calls[0][0];
+    const evidence = JSON.parse(request.messages[1].content);
+    expect(evidence.history).toEqual([earlier]);
+    expect(evidence.sources[0].text).toBe(chunk.content);
+    expect(evidence.question).toBe(identity.query);
+  });
+
   it("does not return a generated answer if the course changes during generation", async () => {
     mock.rpc
       .mockResolvedValueOnce(ok(admitted))
