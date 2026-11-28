@@ -16,7 +16,13 @@ const run=async()=> (await import('../../../scripts/assistant/automatic-worker-c
 it.each([403,404])('waits for publication on HTTP %i without any tick',async status=>{http=status;expect(await run()).toBe('awaiting-publication');expect(calls.map(x=>x.operation)).toEqual(['status']);});
 it.each(['missing','algorithm','source'])('waits for publication on %s identity mismatch without any tick',async mode=>{if(mode==='missing')delete published.deploymentFingerprint;else published[mode==='algorithm'?'indexerBuild':'deploymentFingerprint']='c'.repeat(64);expect(await run()).toBe('awaiting-publication');expect(calls).toHaveLength(1);});
 it.each([401,503])('fails a real authentication/database HTTP %i immediately',async status=>{http=status;await expect(run()).rejects.toThrow('AUTOMATION_REQUEST_UNCONFIRMED');expect(calls.map(x=>x.operation)).toEqual(['status']);});
-it('respects a disabled backend after successful readiness proof',async()=>{published.enabled=false;expect(await run()).toBe('disabled');expect(calls.map(x=>x.operation)).toEqual(['status']);});
+it('allows the database response window for readiness and respects a disabled backend', async () => {
+  const timeout = vi.spyOn(AbortSignal, 'timeout');
+  published.enabled = false;
+  expect(await run()).toBe('disabled');
+  expect(calls.map(x => x.operation)).toEqual(['status']);
+  expect(timeout).toHaveBeenCalledWith(125_000);
+});
 it('sends both exact main identities on the first and only tick',async()=>{expect(await run()).toBe('complete');expect(calls.map(x=>x.operation)).toEqual(['status','tick']);expect(calls[1].headers.get('x-masaarat-indexer-build')).toBe(build);expect(calls[1].headers.get('x-masaarat-indexer-deployment')).toBe(deployment);});
 it('never retries an uncertain state-changing request',async()=>{tickFails=true;await expect(run()).rejects.toThrow('ACK uncertain');expect(calls.map(x=>x.operation)).toEqual(['status','tick']);});
 
