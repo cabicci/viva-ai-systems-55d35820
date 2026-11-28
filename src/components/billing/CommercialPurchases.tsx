@@ -52,7 +52,12 @@ export function CommercialPurchases({ area }: { area: Area }) {
       ?.filter((item) => item.area === "technical" || isManagementCourse(item))
       .map((item) => [item.id, item.title]),
   );
-  const curricula = available.map((item) => {
+  const waitingForTechnicalTitles =
+    selectedArea === "technical" && locale !== "ar-EG" && localizedListings.isLoading;
+  const readyOptions = waitingForTechnicalTitles
+    ? available.filter((item) => item.course === "furniture")
+    : available;
+  const curricula = readyOptions.map((item) => {
     // Intake purchase options supply an Egyptian title until the localized catalogue arrives.
     const fallback =
       item.area === "technical" && item.course !== "furniture" && locale !== "ar-EG"
@@ -204,7 +209,7 @@ export function CommercialPurchases({ area }: { area: Area }) {
                   </select>
                 </label>
               )}
-              {options.isSuccess && !curricula.length && <p role="status">{w.empty}</p>}
+              {options.isSuccess && !available.length && <p role="status">{w.empty}</p>}
               {options.isSuccess && selectedArea === "kids" && !children.length && (
                 <p role="status">{w.childEmpty}</p>
               )}
