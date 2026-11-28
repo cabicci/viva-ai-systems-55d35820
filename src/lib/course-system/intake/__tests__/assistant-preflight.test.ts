@@ -212,7 +212,10 @@ describe("same-version source proof", () => {
     expect(mock.rpc).toHaveBeenCalledTimes(4);
   });
 
-  it("rechecks a repeated management question from teaching sources and retains distinct context", async () => {
+  it.each([
+    ["academic", "AC-MGT-COST"],
+    ["technical", "TE-HVAC"],
+  ])("rechecks a repeated %s question in %s from source and retains distinct context", async (area, course) => {
     const chunk = await retrievalChunk();
     mock.rpc.mockResolvedValueOnce(ok(admitted))
       .mockResolvedValueOnce(ok({ version: admitted.version, chunks: [chunk] }))
@@ -223,12 +226,34 @@ describe("same-version source proof", () => {
     });
     const earlier = { question: "Which booking?", answer: "The booking in the current lesson." };
     const repeated = { question: identity.query, answer: "An earlier incorrect answer" };
-    await invoke({ ...identity, area: "academic", course: "AC-MGT-COST", history: [earlier, repeated] });
+    await invoke({ ...identity, area, course, history: [earlier, repeated] });
     const request = mock.llm.mock.calls[0][0];
     const evidence = JSON.parse(request.messages[1].content);
     expect(evidence.history).toEqual([earlier]);
     expect(evidence.sources[0].text).toBe(chunk.content);
     expect(evidence.question).toBe(identity.query);
+    if (course === "TE-HVAC") {
+      expect(request.messages[0].content).toContain("A past answer cannot establish a diagnostic signature");
+      expect(request.messages[0].content).toContain("sensible, latent and total margins separately");
+    }
+  });
+
+  it("retains the earlier HVAC scenario when the learner changes the latent load", async () => {
+    const chunk = await retrievalChunk();
+    mock.rpc.mockResolvedValueOnce(ok(admitted))
+      .mockResolvedValueOnce(ok({ version: admitted.version, chunks: [chunk] }))
+      .mockResolvedValue(ok(admitted));
+    mock.embed.mockResolvedValue([[0, 1]]);
+    mock.llm.mockResolvedValue({
+      content: JSON.stringify({ grounding: "supported", answer: "Updated selection", sourceIds: ["S1"] }),
+    });
+    const original = { question: "Which unit covers the original loads?", answer: "Unit B." };
+    const followUp = "What if the latent load rises to 1.00 kW?";
+    await invoke({ ...identity, area: "technical", course: "TE-HVAC", query: followUp, history: [original] });
+    const payload = JSON.parse(mock.llm.mock.calls[0][0].messages[1].content);
+    expect(payload.history).toEqual([original]);
+    expect(payload.question).toBe(followUp);
+    expect(payload.sources[0].text).toBe(chunk.content);
   });
 
   it("keeps fixed demand probabilities separate from weak-state contributions for strategy", async () => {
