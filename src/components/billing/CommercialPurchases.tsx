@@ -52,10 +52,14 @@ export function CommercialPurchases({ area }: { area: Area }) {
       ?.filter((item) => item.area === "technical" || isManagementCourse(item))
       .map((item) => [item.id, item.title]),
   );
-  const curricula = available.map((item) => ({
-    ...item,
-    title: titles.get(item.course) ?? item.title,
-  }));
+  const curricula = available.map((item) => {
+    // Intake purchase options supply an Egyptian title until the localized catalogue arrives.
+    const fallback =
+      item.area === "technical" && item.course !== "furniture" && locale !== "ar-EG"
+        ? item.course
+        : item.title;
+    return { ...item, title: titles.get(item.course) ?? fallback };
+  });
   const selected = curricula.find((item) => item.course === course);
   const children = options.data?.children ?? [];
   const child = children.find((item) => item.id === childId);
