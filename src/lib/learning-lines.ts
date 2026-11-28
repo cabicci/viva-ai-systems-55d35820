@@ -105,10 +105,10 @@ const copy = {
     "Age-appropriate AI learning for children, guided by a parent. Age paths, steps and practical activities, with family management in one account.",
   ],
   technicalIntro: [
-    "مجال للتعليم الفني، يبدأ بمسار النجارة وصناعة الأثاث: من فهم الاحتياج والتصميم لتخطيط التصنيع والتركيب. مسارات فنية تانية هتنضاف بعد كده.",
-    "مجال للتعليم الفني يبدأ بمسار النجارة وصناعة الأثاث، من تحليل الاحتياج والتصميم إلى تخطيط التصنيع والتركيب. ستُضاف مسارات فنية أخرى لاحقًا.",
-    "مجال للتعليم الفني، يبدأ بمسار النجارة وصناعة الأثاث: من فهم الاحتياج والتصميم لتخطيط التصنيع والتركيب. مسارات فنية ثانية بتنضاف لاحقًا.",
-    "A technical learning area, starting with carpentry and furniture making: from requirements and design to production and installation planning. More technical paths will follow.",
+    "اتعلّم صنعة من أول معاينة الشغل لحد الفحص والتسليم. اختار منهجك من كتالوج التعليم الفني وطبّق على مشروع عملي.",
+    "تعلّم حرفة من معاينة العمل إلى الفحص والتسليم. اختر منهجك من كتالوج التعليم الفني وطبّق ما تتعلمه في مشروع عملي.",
+    "تعلّم صنعة من معاينة الشغل إلى الفحص والتسليم. اختر منهجك من كتالوج التعليم الفني وطبّق على مشروع عملي.",
+    "Learn a trade from the first site survey through inspection and handover. Choose a curriculum from the technical catalogue and apply what you learn in a practical project.",
   ],
   shared: [
     "حساب واحد. واختيارك هو اللي يحدد رحلتك.",
@@ -178,10 +178,10 @@ const copy = {
     "Carpentry and furniture curriculum",
   ],
   futureTracks: [
-    "النجارة وصناعة الأثاث مسار واحد جوّه التعليم الفني. مسارات تانية هتنضاف بعد كده.",
-    "النجارة وصناعة الأثاث مسار ضمن التعليم الفني. ستُضاف مسارات أخرى لاحقًا.",
-    "النجارة وصناعة الأثاث مسار ضمن التعليم الفني. مسارات ثانية بتنضاف لاحقًا.",
-    "Carpentry and furniture making is one path within technical learning. More paths will be added later.",
+    "افتح كتالوج التعليم الفني عشان تشوف باقي الصنايع المتاحة.",
+    "تصفّح كتالوج التعليم الفني للاطلاع على مناهج الحرف الأخرى المتاحة.",
+    "تصفّح كتالوج التعليم الفني عشان تشوف مناهج الصنايع الثانية.",
+    "Explore the technical catalogue for other available trades.",
   ],
   catalogLoading: [
     "جارٍ تحميل عناوين الخطوات",

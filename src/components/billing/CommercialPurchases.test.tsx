@@ -59,7 +59,7 @@ beforeEach(() => {
     );
 });
 afterEach(cleanup);
-function setup(area: "ai" | "kids" = "ai") {
+function setup(area: "ai" | "kids" | "technical" = "ai") {
   return render(
     <QueryClientProvider
       client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}
@@ -78,6 +78,40 @@ function closePurchase() {
 }
 
 describe("one-time commercial purchases", () => {
+  it("shows the active localized title for a purchasable technical curriculum", async () => {
+    mock.options.mockResolvedValue({
+      curricula: [{ area: "technical", course: "TE-ELEC", title: "كهرباء المباني" }],
+      children: [],
+    });
+    mock.catalogue.mockResolvedValue([
+      { area: "technical", id: "TE-ELEC", title: "Building Electrical Systems" },
+      { area: "technical", id: "TE-EXTRA", title: "Unavailable course" },
+    ]);
+    setup("technical");
+    await screen.findByRole("option", { name: "Building Electrical Systems" });
+    expect(mock.catalogue).toHaveBeenCalledWith("technical", "en");
+    expect(screen.queryByRole("option", { name: "Unavailable course" })).toBeNull();
+    fireEvent.change(screen.getByLabelText("Choose one curriculum"), {
+      target: { value: "TE-ELEC" },
+    });
+    expect((await openPurchase(0)).getByText("Building Electrical Systems")).toBeInTheDocument();
+  });
+
+  it("keeps technical purchases identifiable in English when translated titles are unavailable", async () => {
+    mock.options.mockResolvedValue({
+      curricula: [{ area: "technical", course: "TE-ELEC", title: "كهرباء المباني" }],
+      children: [],
+    });
+    mock.catalogue.mockRejectedValue(new Error("catalogue unavailable"));
+    setup("technical");
+    await screen.findByRole("option", { name: "TE-ELEC" });
+    expect(screen.queryByRole("option", { name: "كهرباء المباني" })).toBeNull();
+    fireEvent.change(screen.getByLabelText("Choose one curriculum"), {
+      target: { value: "TE-ELEC" },
+    });
+    expect((await openPurchase(0)).getByText("TE-ELEC")).toBeInTheDocument();
+  });
+
   it.each(["en", "ar-EG", "ar-MSA", "ar-Gulf"])(
     "labels furniture for customers in %s",
     async (locale) => {
