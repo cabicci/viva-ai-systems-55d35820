@@ -304,7 +304,10 @@ function CurriculumPage({
           {course && !visible && !delivery.isFetching && (
             <p className="mt-6">
               {c.locked}{" "}
-              <a className="text-primary underline" href={`/pricing?locale=${locale}`}>
+              <a
+                className="text-primary underline"
+                href={`${area === "kids" ? LINE_PRICING.kids : "/pricing"}?locale=${locale}`}
+              >
                 {c.packages}
               </a>
             </p>
