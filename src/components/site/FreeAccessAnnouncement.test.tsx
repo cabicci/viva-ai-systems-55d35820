@@ -4,13 +4,20 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { FreeAccessAnnouncement } from "./FreeAccessAnnouncement";
+import { LOCALE_META, SUPPORTED_LOCALES, type SupportedLocale } from "@/lib/locale/types";
 
-const fixture = vi.hoisted(() => ({ rpc: vi.fn(), signedIn: false }));
+const fixture = vi.hoisted(() => ({
+  rpc: vi.fn(),
+  signedIn: false,
+  locale: "en" as SupportedLocale,
+}));
 vi.mock("@/integrations/supabase/client", () => ({ supabase: { rpc: fixture.rpc } }));
 vi.mock("@/lib/auth-context", () => ({
   useAuth: () => ({ loading: false, user: fixture.signedIn ? { id: "learner" } : null }),
 }));
-vi.mock("@/lib/locale/locale-context", () => ({ useLocale: () => ({ locale: "en", dir: "ltr" }) }));
+vi.mock("@/lib/locale/locale-context", () => ({
+  useLocale: () => ({ locale: fixture.locale, dir: LOCALE_META[fixture.locale].dir }),
+}));
 vi.mock("@tanstack/react-router", () => ({
   Link: ({
     to,
@@ -47,11 +54,26 @@ function show() {
 beforeEach(() => {
   localStorage.clear();
   fixture.signedIn = false;
+  fixture.locale = "en";
   fixture.rpc.mockReset();
 });
 afterEach(cleanup);
 
 describe("free access announcement", () => {
+  it.each(SUPPORTED_LOCALES)("renders the offer end in Cairo time for %s", async (locale) => {
+    fixture.locale = locale;
+    fixture.rpc.mockResolvedValue({ data: campaign });
+    show();
+    const popup = await screen.findByRole("dialog");
+    const language = { "ar-EG": "ar-EG", "ar-MSA": "ar", "ar-Gulf": "ar", en: "en" }[locale];
+    const expected = new Intl.DateTimeFormat(language, {
+      dateStyle: "long",
+      timeStyle: "short",
+      timeZone: "Africa/Cairo",
+    }).format(new Date(campaign.ends_at));
+    expect(popup.querySelector("time")?.textContent).toBe(expected);
+  });
+
   it("shows the active window once and leads guests to registration", async () => {
     fixture.rpc.mockResolvedValue({ data: campaign });
     const first = show();
