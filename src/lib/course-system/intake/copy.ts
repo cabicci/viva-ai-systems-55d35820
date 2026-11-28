@@ -65,6 +65,7 @@ const en = {
   learnerProgress: "Your progress",
   step: "Step",
   open: "Open",
+  lessonReadFailed: "The lesson could not be loaded. Try again.",
   locked: "Sign in with an account entitled to this course, or choose an eligible package.",
   packages: "Packages",
   complete: "Mark complete",
@@ -163,6 +164,7 @@ const msa: Copy = {
   learnerProgress: "تقدمك",
   step: "الخطوة",
   open: "فتح",
+  lessonReadFailed: "تعذّر تحميل الدرس. أعد المحاولة.",
   locked: "سجّل الدخول بحساب لديه صلاحية المنهج، أو اختر الباقة المناسبة.",
   packages: "الباقات",
   complete: "تسجيل الإتمام",
@@ -204,6 +206,7 @@ export function intakeCopy(locale: SupportedLocale): Copy {
     return {
       ...msa,
       empty: "لسه مفيش مناهج جديدة.",
+      lessonReadFailed: "الدرس ما اتحمّلش. جرّب تاني.",
       child: "اختار الطفل",
       select: "اختار خطوة",
       complete: "سجّل إتمام الجزء",
@@ -214,6 +217,7 @@ export function intakeCopy(locale: SupportedLocale): Copy {
     return {
       ...msa,
       empty: "ما فيه مناهج جديدة للحين.",
+      lessonReadFailed: "ما تحمّل الدرس. جرّب مرة ثانية.",
       child: "اختر الطفل",
       stage: "جهّز للمراجعة",
     };

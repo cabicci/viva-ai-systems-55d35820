@@ -91,11 +91,25 @@ export async function curriculumCatalogue(
   if (!Array.isArray(r.data)) throw new Error("CURRICULUM_RESPONSE_INVALID");
   return r.data as CurriculumSummary[];
 }
+export class LessonReadUnavailable extends Error {}
+
 export async function curriculumCommand<T>(action: string, data: object): Promise<T> {
   const r = await supabase.rpc(
     "curriculum_command" as never,
     { p_action: action, p_data: data } as never,
   );
-  if (r.error) throw new Error(r.error.message);
+  if (r.error) {
+    if (
+      action === "lesson" &&
+      (r.status === 0 ||
+        r.status === 408 ||
+        r.status === 429 ||
+        r.status >= 500 ||
+        r.error.code === "57014")
+    ) {
+      throw new LessonReadUnavailable(r.error.message);
+    }
+    throw new Error(r.error.message);
+  }
   return r.data as T;
 }
