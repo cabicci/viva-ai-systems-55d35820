@@ -172,6 +172,11 @@ export async function askCurriculum(identity: QuestionIdentity) {
                           "Distinguish a customer offer from a minimum acceptable price. Keep current capacity in the baseline. If a change has no specified size, explain its supported effect without assigning it a new number.",
                         ]
                       : []),
+                    ...(management && identity.course === "AC-MGT-STRAT"
+                      ? [
+                          "When comparing demand scenarios, report the expected contribution gap separately from what each option earns in the weak-demand state. If the question fixes equal probabilities, keep those probabilities fixed. Interpret لو ضعف الطلب in that context as demand weakening. Use the current lesson's weak-state values for each option. Discuss changing probabilities only if the learner asks how the probabilities change.",
+                        ]
+                      : []),
                     ...(management && identity.course === "AC-MGT-COST"
                       ? [
                           "For a question about a price floor (حد السعر، الحد الأدنى للسعر، حد القبول), lead with the worked example's statement naming the applicable floor. When a delivery date displaces booked work, include that lost contribution in the floor. Use the quoted floor for both the order total and unit conversion. Name the offer only if comparing it with that floor. A previous assistant answer is never evidence for a number.",
