@@ -172,6 +172,11 @@ export async function askCurriculum(identity: QuestionIdentity) {
                           "Distinguish a customer offer from a minimum acceptable price. Keep current capacity in the baseline. If a change has no specified size, explain its supported effect without assigning it a new number.",
                         ]
                       : []),
+                    ...(management && identity.course === "AC-MGT-CONT"
+                      ? [
+                          "Distinguish customer jobs due from a replenishment order placed with a supplier. In a comparison of ordering a backup with its arrival or readiness, الطلب refers to placing that purchase order. State the ordering cutoff, the delivery time, and any inspection or release required before dispatch, using the current lesson's times. Count exposed customer jobs separately.",
+                        ]
+                      : []),
                     ...(management && identity.course === "AC-MGT-STRAT"
                       ? [
                           "When comparing demand scenarios, report the expected contribution gap separately from what each option earns in the weak-demand state. If the question fixes equal probabilities, keep those probabilities fixed. Interpret لو ضعف الطلب in that context as demand weakening. Use the current lesson's weak-state values for each option. Discuss changing probabilities only if the learner asks how the probabilities change.",

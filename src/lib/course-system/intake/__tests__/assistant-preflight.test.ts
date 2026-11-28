@@ -245,6 +245,20 @@ describe("same-version source proof", () => {
     expect(request.messages[0].content).toContain("weak-state values for each option");
   });
 
+  it("distinguishes customer demand from ordering and releasing backup stock", async () => {
+    mock.rpc.mockResolvedValueOnce(ok(admitted))
+      .mockResolvedValueOnce(ok({ version: admitted.version, chunks: [await retrievalChunk()] }))
+      .mockResolvedValue(ok(admitted));
+    mock.embed.mockResolvedValue([[0, 1]]);
+    mock.llm.mockResolvedValue({
+      content: JSON.stringify({ grounding: "supported", answer: "Case comparison", sourceIds: ["S1"] }),
+    });
+    await invoke({ ...identity, area: "academic", course: "AC-MGT-CONT", locale: "ar-MSA" });
+    const request = mock.llm.mock.calls[0][0];
+    expect(request.messages[0].content).toContain("placing that purchase order");
+    expect(request.messages[0].content).toContain("inspection or release required before dispatch");
+  });
+
   it("does not return a generated answer if the course changes during generation", async () => {
     mock.rpc
       .mockResolvedValueOnce(ok(admitted))
