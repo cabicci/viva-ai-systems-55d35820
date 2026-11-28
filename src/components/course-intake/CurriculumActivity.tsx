@@ -15,6 +15,13 @@ import type { LessonContent } from "./CurriculumContent";
 import { ActivityForm } from "./CurriculumFields";
 import { Button } from "@/components/ui/button";
 
+type ActivityResult = {
+  state: string;
+  passed?: boolean;
+  score?: number;
+  total?: number;
+};
+
 export type Delivery = {
   attempts?: {
     id: string;
@@ -28,7 +35,7 @@ export type Delivery = {
   recordId: string | null;
   lesson: LessonContent;
   progress: { lesson: string; required: number; completed: number; done: boolean }[];
-  events: { section: string; completed: boolean; result?: { state: string; passed?: boolean } }[];
+  events: { section: string; completed: boolean; result?: ActivityResult | null }[];
 };
 
 /** Learner controls for one section. Server-authoritative attempts: an untimed
@@ -70,11 +77,10 @@ export function Activity({
     }
     delivered.current = delivery;
   }, [delivery, attempt, resumed?.id]);
-  const [result, setResult] = useState<{
-    state: string;
-    passed?: boolean;
-    score?: number;
-    total?: number;
+  const [lastReply, setLastReply] = useState<{
+    result: ActivityResult;
+    recordId: Delivery["recordId"];
+    eventCount: number;
   } | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(false);
@@ -108,10 +114,15 @@ export function Activity({
   const submission = draft.values;
   const setSubmission = draft.setValues;
   const interactive = ["questions", "exam", "mission", "practice"].includes(section.kind);
-  const completed = delivery.events.some((x) => x.section === section.id && x.completed);
-  const pending = delivery.events.some(
-    (x) => x.section === section.id && x.result?.state === "awaiting_review",
-  );
+  // Lesson delivery returns this record's events oldest first.
+  const sectionEvents = delivery.events.filter((event) => event.section === section.id);
+  const completed = sectionEvents.some((event) => event.completed);
+  const result =
+    lastReply &&
+    lastReply.recordId === delivery.recordId &&
+    lastReply.eventCount === sectionEvents.length
+      ? lastReply.result
+      : sectionEvents.at(-1)?.result;
   // Inputs are editable before an attempt exists. Untimed activities create their
   // attempt only inside the submit handler (start → submit), never on view.
   const timed = section.durationMinutes !== undefined;
@@ -126,11 +137,8 @@ export function Activity({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps -- setter identity changes each render; only a new attempt matters.
   }, [attempt]);
-  type Reply = {
+  type Reply = ActivityResult & {
     attemptId?: string;
-    state: string;
-    score?: number;
-    total?: number;
     draft?: ActivityValues;
     revision?: number;
   };
@@ -174,7 +182,7 @@ export function Activity({
         setCreated({ draft: r.draft ?? {}, revision: r.revision ?? 0 });
         setAttempt(r.attemptId);
       }
-      setResult(r);
+      setLastReply({ result: r, recordId: delivery.recordId, eventCount: sectionEvents.length });
       if (action !== "start") {
         restore.current = null;
         if (id) closedAttempts.current.add(id);
@@ -250,12 +258,15 @@ export function Activity({
       >
         {actionLabel}
       </Button>
-      {(result?.state === "awaiting_review" || pending) && <p role="status">{c.pending}</p>}
-      {result?.score !== undefined && (
-        <p role="status">
-          {c.result}: {result.score} / {result.total}
-        </p>
-      )}
+      {result?.state === "awaiting_review" && <p role="status">{c.pending}</p>}
+      {!attempt &&
+        result?.state === "graded" &&
+        result.score !== undefined &&
+        result.total !== undefined && (
+          <p role="status">
+            {c.result}: {result.score} / {result.total}
+          </p>
+        )}
       {completed && interactive && <p role="status">✓ {c.saved}</p>}
       {error && <p role="alert">{c.error}</p>}
     </div>

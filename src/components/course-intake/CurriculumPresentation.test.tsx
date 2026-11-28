@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { IntakeSection } from "@/lib/course-system/intake/package";
 import { CurriculumContent, type LessonContent } from "./CurriculumContent";
+import type { Delivery } from "./CurriculumActivity";
 import { ActivityForm } from "./CurriculumFields";
 
 const command = vi.fn();
@@ -75,7 +76,9 @@ const lesson: LessonContent = {
   ],
 };
 afterEach(cleanup);
-beforeEach(() => command.mockReset());
+beforeEach(() => {
+  command.mockReset();
+});
 
 describe("admitted curriculum presentation", () => {
   it("shows concise groups and keeps every section, with subheadings for multiple checks", () => {
@@ -204,6 +207,58 @@ describe("learner activity lifecycle", () => {
       section: "diagnostic",
       submission: { D01: "option-1" },
     });
+  });
+  it("restores the latest score for the quiz after reopening the lesson", async () => {
+    const quiz = section({
+      id: "check",
+      kind: "questions",
+      completion: "pass",
+      passPercent: 100,
+      questions: [{ id: "pencil", prompt: "Pack the pencil?", options: ["Remove", "Keep"] }],
+    });
+    const quizScope = {
+      area: "kids" as const,
+      course: "KAI-01",
+      lesson: "KAI-01-L03",
+      profileId: "test-child",
+    };
+    const events: Delivery["events"] = [];
+    command.mockImplementation(async (action, data) => {
+      if (action === "start") return { attemptId: crypto.randomUUID(), state: "started" };
+      const score = Number(data.submission.pencil === 1);
+      const result = { state: "graded", score, total: 1, passed: score === 1 };
+      events.push({ section: quiz.id, completed: result.passed, result });
+      return result;
+    });
+    const openQuiz = () =>
+      render(
+        <QueryClientProvider client={new QueryClient()}>
+          <Activity
+            section={quiz}
+            scope={quizScope}
+            delivery={{
+              ...delivery,
+              recordId: "child-record",
+              lesson: { ...lesson, id: quizScope.lesson, sections: [quiz] },
+              events: [...events],
+            }}
+          />
+        </QueryClientProvider>,
+      );
+
+    let view = openQuiz();
+    for (const [index, option] of ["Remove", "Keep"].entries()) {
+      fireEvent.click(screen.getByRole("radio", { name: option }));
+      fireEvent.click(screen.getByRole("button", { name: "Submit answers" }));
+      const expected = `Result: ${index} / 1`;
+      expect(await screen.findByText(expected)).toBeVisible();
+      view.unmount();
+      // The reloaded delivery can also contain a newer result for another section.
+      events.push({ section: "other", completed: false, result: { state: "awaiting_review" } });
+      view = openQuiz();
+      expect.soft(screen.queryByText(expected), expected + " after remount").toBeVisible();
+      expect(screen.queryByText(/Awaiting review/)).not.toBeInTheDocument();
+    }
   });
   it("keeps input and reuses the started attempt and request id when submit fails", async () => {
     let fail = true;
