@@ -37,21 +37,25 @@ export function CommercialPurchases({ area }: { area: Area }) {
     queryFn: () => loadCommercialPurchaseOptions(locale),
   });
   const available = options.data?.curricula.filter((item) => item.area === selectedArea) ?? [];
-  const managementListings = useQuery({
-    queryKey: ["added-curricula", "academic", locale],
+  const localizedListings = useQuery({
+    queryKey: ["added-curricula", selectedArea, locale],
     enabled:
-      selectedArea === "academic" &&
-      available.some((item) => isManagementCourse({ area: "academic", id: item.course })),
-    queryFn: () => curriculumCatalogue("academic", locale),
+      (selectedArea === "academic" &&
+        available.some((item) => isManagementCourse({ area: "academic", id: item.course }))) ||
+      (selectedArea === "technical" && available.some((item) => item.course !== "furniture")),
+    queryFn: () => curriculumCatalogue(selectedArea, locale),
     staleTime: 30000,
     throwOnError: false,
   });
   const titles = new Map(
-    managementListings.data?.filter(isManagementCourse).map((item) => [item.id, item.title]),
+    localizedListings.data
+      ?.filter((item) => item.area === "technical" || isManagementCourse(item))
+      .map((item) => [item.id, item.title]),
   );
-  const curricula = available.map((item) =>
-    item.area === "academic" ? { ...item, title: titles.get(item.course) ?? item.title } : item,
-  );
+  const curricula = available.map((item) => ({
+    ...item,
+    title: titles.get(item.course) ?? item.title,
+  }));
   const selected = curricula.find((item) => item.course === course);
   const children = options.data?.children ?? [];
   const child = children.find((item) => item.id === childId);
