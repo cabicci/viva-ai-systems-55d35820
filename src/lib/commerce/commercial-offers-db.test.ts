@@ -784,6 +784,218 @@ describe("campaign access, questions and email notices", () => {
       await db.exec(sql("drizzle/migrations/0059_campaign_paid_clock_freeze.sql"));
     });
 
+    async function installLineAccess() {
+      await db.exec(`ALTER TABLE curriculum_private.courses ADD COLUMN active_version text,
+        ADD COLUMN titles jsonb DEFAULT '{}', ADD COLUMN locales text[] DEFAULT ARRAY['en'];
+        CREATE TABLE curriculum_private.versions(area text, course text, version text);
+        CREATE TABLE curriculum_private.lessons(area text,course text,version text,lesson text,locale text);`);
+      const protectedIntake = sql("drizzle/migrations/0036_curriculum_password_lock.sql");
+      await db.exec(
+        protectedIntake.slice(
+          0,
+          protectedIntake.indexOf("CREATE FUNCTION public.curriculum_password_state"),
+        ),
+      );
+      const journey = sql("drizzle/migrations/0040_curriculum_journey_read_model.sql").replace(
+        /\r\n/g,
+        "\n",
+      );
+      const from = journey.indexOf("anchor:='FROM public.academic_courses c)");
+      const accessFrom = journey.indexOf(
+        "original:=pg_get_functiondef('curriculum_private.access(",
+      );
+      const accessEnd = journey.indexOf(
+        "original:=pg_get_functiondef('billing.free_access_targets()",
+        accessFrom,
+      );
+      const until = journey.indexOf("END;\n$patch$;", from);
+      await db.exec(
+        "DO $patch$ DECLARE original text; anchor text; addition text; BEGIN " +
+          journey.slice(accessFrom, accessEnd) +
+          " original:=pg_get_functiondef('billing.free_access_targets()'::regprocedure); " +
+          journey.slice(from, until) +
+          " END; $patch$;",
+      );
+      await db.exec(sql("drizzle/migrations/0061_free_access_public_announcement.sql"));
+      await db.exec(sql("drizzle/migrations/0075_platform_and_learning_line_access.sql"));
+    }
+    it("applies platform and line scopes to new editions while preserving individual selections and expiry", async () => {
+      await installLineAccess();
+      const adminView = await free("list", {});
+      expect(adminView.targets.map((t: { id: string }) => t.id)).toEqual(
+        expect.arrayContaining(["platform", "ai", "line:kids", "line:technical", "line:academic"]),
+      );
+      const campaign = await free("create", {
+        ...opening(),
+        targets: ["platform"],
+        assistant_questions: 100,
+      });
+      await db.exec(`INSERT INTO curriculum_private.courses(area,id,active_version) VALUES
+        ('academic','AC-FUTURE','v1'),('technical','TECH-NEW','v1'),('ai','AI-NEW','v1'),('kids','KIDS-NEW','v1');
+        INSERT INTO curriculum_private.versions SELECT area,id,active_version FROM curriculum_private.courses`);
+      const has = (target: string) =>
+        value("SELECT billing.free_access_has($1,$2) v", [user, target]);
+      const pool = (area: string, course: string) =>
+        value(
+          "SELECT coalesce(sum(units),0)::integer v FROM billing.free_access_question_specs($1,$2,$3,NULL,now())",
+          [user, area, course],
+        );
+      for (const target of [
+        "curriculum:academic:AC-FUTURE",
+        "curriculum:technical:TECH-NEW",
+        "curriculum:ai:AI-NEW",
+        "curriculum:kids:KIDS-NEW",
+      ]) {
+        expect(await has(target)).toBe(true);
+      }
+      expect(await pool("academic", "AC-FUTURE")).toBe(100);
+      expect(await pool("ai", "AI-NEW")).toBe(100);
+      expect(await pool("kids", "KIDS-NEW")).toBe(0);
+      const child = randomUUID();
+      await db.query(
+        "INSERT INTO public.kids_profiles(id,parent_id,display_name,level_id) VALUES($1,$2,'Test','level-1')",
+        [child, user],
+      );
+      for (const [parent, expected] of [
+        [user, 100],
+        [other, 0],
+      ] as const) {
+        expect(
+          await value(
+            "SELECT coalesce(sum(units),0)::integer v FROM billing.free_access_question_specs($1,'kids','KIDS-NEW',$2,now())",
+            [parent, child],
+          ),
+        ).toBe(expected);
+      }
+      await actor(user);
+      expect((await value("SELECT public.get_my_free_access() v")).targets).toContain(
+        "curriculum:academic:AC-FUTURE",
+      );
+      await actor(admin);
+      expect(await value("SELECT (public.get_free_access_announcement()->>'id') v")).toBe(
+        campaign.id,
+      );
+      await free("update", {
+        ...opening(),
+        id: campaign.id,
+        expected_version: campaign.version,
+        targets: ["line:academic"],
+        assistant_questions: 100,
+      });
+      expect(await has("curriculum:academic:AC-FUTURE")).toBe(true);
+      expect(await has("technical:furniture")).toBe(false);
+      expect(await pool("ai", "AI-NEW")).toBe(0);
+      await free("update", {
+        ...opening(),
+        id: campaign.id,
+        expected_version: campaign.version + 1,
+        targets: ["curriculum:academic:AC-FUTURE"],
+        assistant_questions: 100,
+      });
+      expect(await has("curriculum:academic:AC-FUTURE")).toBe(true);
+      expect(await has("curriculum:academic:AC-ANOTHER")).toBe(false);
+      await db.query("UPDATE billing.free_access_windows SET ends_at=now() WHERE id=$1", [
+        campaign.id,
+      ]);
+      expect(await has("curriculum:academic:AC-FUTURE")).toBe(false);
+      expect(await pool("academic", "AC-FUTURE")).toBe(0);
+    });
+
+    it("converts only the agreed existing window and retains its dates and shared allowance", async () => {
+      const selected = await free("create", {
+        ...opening(),
+        targets: ["ai:business"],
+        assistant_questions: 7,
+      });
+      const id = "573a7817-3af3-40d3-991e-aecc940aad50";
+      await db.query(
+        `INSERT INTO billing.free_access_windows
+        (id,title,targets,starts_at,ends_at,enabled,version,assistant_questions,created_by)
+        VALUES($1,'Existing offer',ARRAY['academic:AC-BUS','ai','curriculum:academic:AC-FATE','kids','technical:furniture'],
+        '2026-11-11 11:26Z','2026-12-10 11:26Z',true,2,100,$2)`,
+        [id, admin],
+      );
+      await installLineAccess();
+      expect(
+        await value(
+          `SELECT targets=ARRAY['platform'] AND version=3 AND assistant_questions=100
+        AND starts_at='2026-11-11 11:26Z' AND ends_at='2026-12-10 11:26Z' v FROM billing.free_access_windows WHERE id=$1`,
+          [id],
+        ),
+      ).toBe(true);
+      expect(
+        await value("SELECT targets v FROM billing.free_access_windows WHERE id=$1", [selected.id]),
+      ).toEqual(["ai:business"]);
+    });
+
+    it("covers a new academic course under an active Stripe subscription and closes it on refund", async () => {
+      await installLineAccess();
+      await actor(user, true);
+      await db.exec(`INSERT INTO curriculum_private.courses(area,id,active_version) VALUES('academic','AC-FUTURE','v1');
+        INSERT INTO billing.academic_stripe_prices(market_code,billing_interval,amount_minor,currency_code,
+          gateway_product_id,gateway_price_id,course_id,stripe_environment)
+        VALUES('EG','month',22200,'egp','prod_line','price_line','AC-BUS','live')`);
+      await db.query(
+        `INSERT INTO billing.academic_stripe_subscriptions(user_id,subscription_id,customer_id,
+        price_id,status,last_event_at,paid_invoice_id,starts_at,ends_at,stripe_environment)
+        VALUES($1,'sub_line','cus_line','price_line','active',now(),'in_line',now()-interval '1 day',now()+interval '1 day','live')`,
+        [user],
+      );
+      const paid = (who: string) =>
+        value(
+          `SELECT count(*)::integer v FROM billing.assistant_source_specs(
+        $1,'academic','AC-FUTURE',NULL,now()) WHERE source_key LIKE 'academic:%'`,
+          [who],
+        );
+      expect(await paid(user)).toBe(1);
+      expect(await paid(other)).toBe(0);
+      await db.exec(
+        "INSERT INTO curriculum_private.lessons VALUES('academic','AC-FUTURE','v1','L1','en')",
+      );
+      const lesson = () =>
+        value("SELECT curriculum_private.access($1,'academic','AC-FUTURE','L1','en',NULL) v", [
+          user,
+        ]);
+      expect(await lesson()).toBe(true);
+      await db.exec(
+        "INSERT INTO curriculum_private.password_locks(area,course) VALUES('academic','AC-FUTURE')",
+      );
+      expect(await lesson()).toBe(false);
+      await db.query(
+        "INSERT INTO curriculum_private.password_unlocks(account_id,area,course) VALUES($1,'academic','AC-FUTURE')",
+        [user],
+      );
+      expect(await lesson()).toBe(true);
+      await db.exec(
+        "UPDATE billing.academic_stripe_subscriptions SET refunded=true WHERE subscription_id='sub_line'",
+      );
+      expect(await paid(user)).toBe(0);
+      expect(await lesson()).toBe(false);
+    });
+
+    it("includes published Builder lessons for a paid Pro account without turning a course purchase into a subscription", async () => {
+      await installLineAccess();
+      await offer();
+      await manualPurchase();
+      await db.exec("UPDATE billing.commerce_control SET access_enabled=true");
+      await actor(user);
+      const builder = await value(
+        "SELECT lesson_id v FROM billing.commerce_lesson_catalog WHERE path_id='builder' LIMIT 1",
+      );
+      const snapshot = await value("SELECT public.get_my_commercial_access() v");
+      expect(snapshot.ai_lifetime_access).toBe(false);
+      expect(snapshot.ai_paid_line_access).toBe(true);
+      expect(snapshot.ai_lesson_ids).toContain(builder);
+      await actor(user, true);
+      expect(
+        (await value("SELECT billing.evaluate_access($1,'lesson',$2) v", [user, builder])).allowed,
+      ).toBe(true);
+      await actor(other);
+      expect((await value("SELECT public.get_my_commercial_access() v")).ai_paid_line_access).toBe(
+        false,
+      );
+    });
+
     it("freezes a manual paid balance from opening and resumes the same allowance and usage", async () => {
       await offer();
       const { order } = await manualPurchase();

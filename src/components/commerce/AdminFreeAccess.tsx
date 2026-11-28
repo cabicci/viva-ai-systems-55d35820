@@ -5,7 +5,6 @@ import { useAuth } from "@/lib/auth-context";
 import { useLocale } from "@/lib/locale/locale-context";
 import { PATHS } from "@/lib/curriculum-data";
 import { getCurriculumPathLabel } from "@/lib/locale-curriculum/resolve-curriculum-label";
-import { getPathDefinition } from "@/lib/path-story";
 import { Button } from "@/components/ui/button";
 import { AccessNoticeStatus } from "./AccessNoticeStatus";
 import { freeAccessCommand } from "@/lib/commerce/free-access.functions";
@@ -106,9 +105,9 @@ export function AdminFreeAccess() {
   }
   const label = (id: string) => {
     const t = result.data?.targets.find((t) => t.id === id);
-    if (id === "ai") return getPathDefinition("ai", locale).title;
-    if (id === "kids") return getPathDefinition("kids", locale).title;
-    if (id === "technical:furniture") return getPathDefinition("technical", locale).title;
+    if (id === "ai") return w.allAi;
+    if (id === "kids") return w.kidsByAge;
+    if (id === "technical:furniture") return w.furniture;
     if (id.startsWith("ai:")) {
       const path = PATHS.find((p) => p.id === id.slice(3));
       if (path) return getCurriculumPathLabel(locale, path.id, "title");
@@ -177,9 +176,14 @@ export function AdminFreeAccess() {
                 <input
                   type="checkbox"
                   checked={targets.includes(t.id)}
+                  disabled={t.id !== "platform" && targets.includes("platform")}
                   onChange={(e) =>
                     setTargets((old) =>
-                      e.target.checked ? [...old, t.id] : old.filter((id) => id !== t.id),
+                      !e.target.checked
+                        ? old.filter((id) => id !== t.id)
+                        : t.id === "platform"
+                          ? ["platform"]
+                          : [...old, t.id],
                     )
                   }
                 />

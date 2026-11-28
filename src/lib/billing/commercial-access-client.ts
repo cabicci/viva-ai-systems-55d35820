@@ -6,6 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 
 const snapshotSchema = z.object({
   ai_lifetime_access: z.boolean(),
+  ai_paid_line_access: z.boolean().optional(),
   ai_lesson_ids: z.array(z.string().min(1)).max(10000),
   server_time: z.string(),
   check_at: z.string(),
@@ -52,7 +53,10 @@ export function useCommercialAccess() {
     data?.userId === userId &&
     performance.now() < data.deadline;
   return {
-    lessonIds: current && data.snapshot.ai_lifetime_access ? data.snapshot.ai_lesson_ids : EMPTY,
+    lessonIds:
+      current && (data.snapshot.ai_lifetime_access || data.snapshot.ai_paid_line_access)
+        ? data.snapshot.ai_lesson_ids
+        : EMPTY,
     isLoaded: !loading && (!userId || query.isSuccess || query.isError),
   };
 }

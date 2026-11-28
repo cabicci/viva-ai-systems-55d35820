@@ -48,7 +48,9 @@ vi.mock("@tanstack/react-query", () => ({
           }
         : queryKey[0] === "academic-catalogue"
           ? [{ released: true }]
-          : { stripe: false },
+          : queryKey[0] === "added-curricula"
+            ? []
+            : { stripe: false },
   }),
 }));
 vi.mock("@/lib/auth-context", () => ({
