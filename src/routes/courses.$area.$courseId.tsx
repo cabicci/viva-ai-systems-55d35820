@@ -27,6 +27,7 @@ import { COURSE_AREAS } from "@/lib/course-system/contract";
 import { curriculumCatalogue, curriculumCommand } from "@/lib/course-system/intake/client";
 import { askCurriculumAssistant, curriculumAsset } from "@/lib/course-system/intake/functions";
 import { PictureColourLab } from "@/components/course-intake/PictureColourLab";
+import { LessonLoadNotice } from "@/components/course-intake/LessonLoadNotice";
 import { PictureGalleryLab } from "@/components/course-intake/PictureGalleryLab";
 import { AudioStoryWorkspace } from "@/components/course-intake/AudioStoryWorkspace";
 import { LanternMarketTable } from "@/components/course-intake/LanternMarketTable";
@@ -301,19 +302,16 @@ function CurriculumPage({
           {step && !visible && (
             <LessonHero eyebrow={getLineCopy(locale)[area]} title={step.title} />
           )}
-          {course && !visible && !delivery.isFetching && (
-            <p className="mt-6">
-              {c.locked}{" "}
-              <a
-                className="text-primary underline"
-                href={`${area === "kids" ? LINE_PRICING.kids : "/pricing"}?locale=${locale}`}
-              >
-                {c.packages}
-              </a>
-            </p>
+          {course && !visible && (
+            <LessonLoadNotice
+              locale={locale}
+              loading={auth.loading || delivery.isFetching}
+              error={auth.user ? delivery.error : null}
+              retry={() => void delivery.refetch()}
+              plansUrl={`${area === "kids" ? LINE_PRICING.kids : "/pricing"}?locale=${locale}`}
+            />
           )}
           {!course && catalogue.isSuccess && <p>{c.courseUnavailable}</p>}
-          {!visible && delivery.isFetching && <p role="status">{c.loading}</p>}
           {visible && step && (
             <LearnerStep
               key={`${key}:${visible.version}`}
