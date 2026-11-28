@@ -97,6 +97,26 @@ describe("one-time commercial purchases", () => {
     expect((await openPurchase(0)).getByText("Building Electrical Systems")).toBeInTheDocument();
   });
 
+  it("first offers a technical curriculum with its translated title when the catalogue is slow", async () => {
+    mock.options.mockResolvedValue({
+      curricula: [{ area: "technical", course: "TE-ELEC", title: "كهرباء المباني" }],
+      children: [],
+    });
+    let finish!: () => void;
+    mock.catalogue.mockImplementation(
+      () =>
+        new Promise((resolve) => {
+          finish = () =>
+            resolve([{ area: "technical", id: "TE-ELEC", title: "Building Electrical Systems" }]);
+        }),
+    );
+    setup("technical");
+    await waitFor(() => expect(mock.catalogue).toHaveBeenCalledWith("technical", "en"));
+    expect(screen.queryByRole("option", { name: "TE-ELEC" })).toBeNull();
+    finish();
+    await screen.findByRole("option", { name: "Building Electrical Systems" });
+  });
+
   it("keeps technical purchases identifiable in English when translated titles are unavailable", async () => {
     mock.options.mockResolvedValue({
       curricula: [{ area: "technical", course: "TE-ELEC", title: "كهرباء المباني" }],
