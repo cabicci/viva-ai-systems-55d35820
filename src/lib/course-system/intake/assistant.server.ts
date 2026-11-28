@@ -144,9 +144,10 @@ export async function askCurriculum(identity: QuestionIdentity) {
         text: x.content,
       }));
       const management = isManagementCourse({ area: identity.area, id: identity.course });
+      const hvac = identity.area === "technical" && identity.course === "TE-HVAC";
       const history = identity.history ?? [];
       // Re-answer repeated questions from the lesson. Preserve distinct follow-ups.
-      const contextHistory = management
+      const contextHistory = management || hvac
         ? history.filter((turn) => turn.question.trim() !== identity.query.trim())
         : history;
       const generated = await provider(
@@ -170,6 +171,12 @@ export async function askCurriculum(identity: QuestionIdentity) {
                       ? [
                           "Identify the measure the learner asks for. Label each case figure with its role, unit, and scenario. For a calculation, use the inputs for that measure and check the total.",
                           "Distinguish a customer offer from a minimum acceptable price. Keep current capacity in the baseline. If a change has no specified size, explain its supported effect without assigning it a new number.",
+                        ]
+                      : []),
+                    ...(hvac
+                      ? [
+                          "For equipment selection, compare each available thermal capacity with its matching load at the stated design point. Report sensible, latent and total margins separately and keep electrical input separate.",
+                          "For fault diagnosis, name only distinctions the current sources support. A past answer cannot establish a diagnostic signature. Explain what the measurements can establish, which competing explanations remain, and the documented conditions for a comparable retest. If the sources do not distinguish the causes, leave the cause open.",
                         ]
                       : []),
                     ...(management && identity.course === "AC-MGT-BOARD"
