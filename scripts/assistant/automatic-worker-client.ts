@@ -42,7 +42,8 @@ export async function runProbe() {
   return passed;
 }
 async function call(operation: "status" | "tick", pruneResponseCache = false): Promise<Record<string, unknown>> {
-  const response = await fetch(endpoint, { method: "POST", redirect: "error", signal: AbortSignal.timeout(operation === "status" ? 20000 : 125000),
+  // Readiness consults the same production database as a tick and can take as long.
+  const response = await fetch(endpoint, { method: "POST", redirect: "error", signal: AbortSignal.timeout(125_000),
     headers: { Authorization: `Bearer ${await token()}`, "Content-Type": "application/json",
       ...(operation === "tick" ? { "x-masaarat-indexer-build": expected.indexerBuild,
         "x-masaarat-indexer-deployment": expected.deploymentFingerprint } : {}) },
