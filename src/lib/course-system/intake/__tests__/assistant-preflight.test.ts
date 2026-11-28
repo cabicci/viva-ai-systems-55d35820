@@ -65,13 +65,13 @@ const lesson = {
 };
 const admitted = { version: "synthetic-v1", source: lesson };
 const ok = (data: unknown) => ({ data, error: null });
-async function retrievalChunk() {
-  const [chunk] = await curriculumChunks(lesson);
+async function retrievalChunk(source = lesson) {
+  const [chunk] = await curriculumChunks(source);
   return {
     ...chunk,
-    lesson: identity.lesson,
-    title: lesson.title,
-    sourceSha: await sha256(intakeCanonical(lesson)),
+    lesson: source.id,
+    title: source.title,
+    sourceSha: await sha256(intakeCanonical(source)),
   };
 }
 const invoke = (value: unknown = identity) =>
@@ -236,6 +236,22 @@ describe("same-version source proof", () => {
       expect(request.messages[0].content).toContain("A past answer cannot establish a diagnostic signature");
       expect(request.messages[0].content).toContain("sensible, latent and total margins separately");
     }
+  });
+
+  it.each(["ar-EG", "ar-MSA"])("keeps missing-input advice scoped to the affected electrical lesson and locale (%s)", async locale => {
+    const source = { ...lesson, id: "TE-ELEC-L04" };
+    const doc = { ...admitted, source };
+    const chunk = await retrievalChunk(source);
+    mock.rpc.mockResolvedValueOnce(ok(doc))
+      .mockResolvedValueOnce(ok({ version: doc.version, chunks: [chunk] }))
+      .mockResolvedValue(ok(doc));
+    mock.embed.mockResolvedValue([[0, 1]]);
+    mock.llm.mockResolvedValue({ content: JSON.stringify({ grounding: "supported", answer: "Reviewed", sourceIds: ["S1"] }) });
+    const repeated = { question: identity.query, answer: "Leave it blank." };
+    await invoke({ ...identity, area: "technical", course: "TE-ELEC", lesson: source.id, locale, history: [repeated] });
+    const messages = mock.llm.mock.calls[0][0].messages;
+    expect(messages[0].content.includes("explicit pending status")).toBe(locale === "ar-EG");
+    expect(JSON.parse(messages[1].content).history).toEqual(locale === "ar-EG" ? [] : [repeated]);
   });
 
   it("retains the earlier HVAC scenario when the learner changes the latent load", async () => {
