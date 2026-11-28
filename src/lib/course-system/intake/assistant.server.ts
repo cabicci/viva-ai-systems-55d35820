@@ -145,9 +145,11 @@ export async function askCurriculum(identity: QuestionIdentity) {
       }));
       const management = isManagementCourse({ area: identity.area, id: identity.course });
       const hvac = identity.area === "technical" && identity.course === "TE-HVAC";
+      const egyptianLoadSchedule = identity.area === "technical" && identity.course === "TE-ELEC"
+        && identity.lesson === "TE-ELEC-L04" && identity.locale === "ar-EG";
       const history = identity.history ?? [];
       // Re-answer repeated questions from the lesson. Preserve distinct follow-ups.
-      const contextHistory = management || hvac
+      const contextHistory = management || hvac || egyptianLoadSchedule
         ? history.filter((turn) => turn.question.trim() !== identity.query.trim())
         : history;
       const generated = await provider(
@@ -171,6 +173,11 @@ export async function askCurriculum(identity: QuestionIdentity) {
                       ? [
                           "Identify the measure the learner asks for. Label each case figure with its role, unit, and scenario. For a calculation, use the inputs for that measure and check the total.",
                           "Distinguish a customer offer from a minimum acceptable price. Keep current capacity in the baseline. If a change has no specified size, explain its supported effect without assigning it a new number.",
+                        ]
+                      : []),
+                    ...(egyptianLoadSchedule
+                      ? [
+                          "When the worked example has an unknown equipment input, show how to record the equipment row with an explicit pending status and the evidence still needed. Only its numerical input may remain empty while that status is visible. Include only verified input ratings in the known subtotal.",
                         ]
                       : []),
                     ...(hvac
