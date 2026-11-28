@@ -439,9 +439,19 @@ export function SubscriptionSources({
               <p>{c[sourceState(source)]}</p>
               <p>
                 {c.scope}:{" "}
-                {source.targets.includes("all_published")
+                {source.targets.includes("all_published") || source.targets.includes("platform")
                   ? c.all
-                  : source.targets.join("، ") || c[source.area]}
+                  : source.kind.endsWith("_subscription")
+                    ? c[source.area]
+                    : source.targets
+                        .map((id) => {
+                          if (id === "line:academic") return c.academic;
+                          if (id === "line:technical") return c.technical;
+                          if (id === "line:kids") return c.kids;
+                          if (id === "ai") return c.ai;
+                          return id;
+                        })
+                        .join("، ") || c[source.area]}
               </p>
               {source.beneficiary && (
                 <p>

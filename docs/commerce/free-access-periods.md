@@ -14,6 +14,9 @@ the row's loaded version. A competing edit requires refresh/review before retry.
 An uncertain retry retains its UUID and exact parameters, so it cannot multiply
 offers or audit events. The server rechecks stored administrator authority.
 
+The selector accepts the entire platform, individual learning lines and exact
+curriculum targets. Platform and line selections apply to later published
+editions during the same window. Exact selections retain their original scope.
 The selector reads the current database catalogue on load, refresh and focus.
 AI paths derive from `billing.commerce_lesson_catalog`; academic curricula derive
 from **every** `academic_courses` row, including newly added drafts. Technical

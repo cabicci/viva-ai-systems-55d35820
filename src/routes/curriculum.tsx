@@ -179,7 +179,10 @@ function PathBlock({
   const isIntro = path.kind === "intro";
   const orderedIds = pathLessonIds(path);
   const bypassSequenceLocks =
-    isAdmin || tier === "pro_plus" || (tier === "pro" && path.id !== "builder");
+    isAdmin ||
+    tier === "pro_plus" ||
+    (tier === "pro" &&
+      (path.id !== "builder" || orderedIds.every((id) => entitledLessonIds.includes(id))));
   const totalIn = orderedIds.length;
   const completed = orderedIds.filter((id) => getStatus(id) === "completed").length;
   const pct = totalIn ? Math.round((completed / totalIn) * 100) : 0;
@@ -346,7 +349,7 @@ function PathBlock({
                       tier={tier}
                       isAdmin={isAdmin}
                       freeLessonIds={freeLessonIds}
-              entitledLessonIds={entitledLessonIds}
+                      entitledLessonIds={entitledLessonIds}
                       introCompletedCount={introCompletedCount}
                       introTotal={introTotal}
                     />
@@ -420,7 +423,7 @@ function LessonRow({
   const lessonGate = decideLessonGate({
     lessonId: lesson.id,
     freeLessonIds,
-  entitledLessonIds,
+    entitledLessonIds,
     tier,
     isAdmin,
     introCompletedCount,
