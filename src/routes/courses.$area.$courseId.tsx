@@ -457,7 +457,7 @@ function LearnerStep({
       <CurriculumContent
         lesson={delivery.lesson}
         leadInHero
-        activity={(s) =>
+        activity={(s, active) =>
           delivery.reviewOnly ? null : (
             <>
               {scope.course === "audio-stories" && s.id === "audio-workspace" && auth.user && (
@@ -492,9 +492,9 @@ function LearnerStep({
                 <TripTransfer key={archiveScope} locale={locale} storageKey={archiveScope + ":transfer"} />
               )}
               <Activity key={s.id} section={s} delivery={delivery} scope={scope}
-                renderTools={scope.area === "kids" && scope.course === "KAI-02" && s.id === "evidence" ? values => {
-                  if (scope.lesson === "KAI-02-L02") return <PictureColourLab key={archiveScope} locale={locale} resolveAsset={resolveAsset} />;
-                  if (scope.lesson === "KAI-02-L04" || scope.lesson === "KAI-02-L05") return <PictureGalleryLab key={archiveScope+scope.lesson} lesson={delivery.lesson} locale={locale} values={values} resolveAsset={resolveAsset} />;
+                renderTools={scope.area === "kids" && scope.course === "KAI-02" && s.id === "evidence" ? (values, renderFields) => {
+                  if (scope.lesson === "KAI-02-L02") return <>{renderFields()}<PictureColourLab key={archiveScope} locale={locale} resolveAsset={resolveAsset} /></>;
+                  if (scope.lesson === "KAI-02-L04" || scope.lesson === "KAI-02-L05") return <PictureGalleryLab key={archiveScope+scope.lesson} active={active} renderFields={renderFields} lesson={delivery.lesson} locale={locale} values={values} resolveAsset={resolveAsset} />;
                   return null;
                 } : undefined} />
             </>

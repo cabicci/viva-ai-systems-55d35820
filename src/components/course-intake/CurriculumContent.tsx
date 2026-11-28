@@ -60,7 +60,7 @@ export function CurriculumContent({
   locale: SupportedLocale;
   children?: ReactNode;
   /** Activity controls for one section; mounted for every section so input survives tab changes. */
-  activity?: (section: IntakeSection) => ReactNode;
+  activity?: (section: IntakeSection, active: boolean) => ReactNode;
   resolveAsset?: (id: string) => Promise<string>;
   /** The first explanation paragraph is already shown in the lesson hero. */
   leadInHero?: boolean;
@@ -169,7 +169,7 @@ export function CurriculumContent({
                       resolveAsset={resolveAsset}
                     />
                   )}
-                  {activity?.(section)}
+                  {activity?.(section, group === current)}
                 </article>
               );
             })}
@@ -393,7 +393,7 @@ function SectionAssets({
   );
 }
 
-function PrivateImage({
+export function PrivateImage({
   asset,
   resolve,
   locale,
