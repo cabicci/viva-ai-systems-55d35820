@@ -7,6 +7,7 @@ import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/compone
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
 import { useLocale } from "@/lib/locale/locale-context";
+import { LOCALE_META } from "@/lib/locale/types";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 
 const storageKey = "masaarat:free-access-announcement";
@@ -56,7 +57,8 @@ export function FreeAccessAnnouncement() {
   }, [openedId, deadline]);
 
   if (!data || isError || data.id !== openedId || data.deadline <= performance.now()) return null;
-  const end = new Intl.DateTimeFormat(locale, {
+  const dateLocale = locale === "ar-EG" ? locale : LOCALE_META[locale].lang;
+  const end = new Intl.DateTimeFormat(dateLocale, {
     dateStyle: "long",
     timeStyle: "short",
     timeZone: "Africa/Cairo",
