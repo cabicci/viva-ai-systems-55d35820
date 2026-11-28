@@ -172,6 +172,11 @@ export async function askCurriculum(identity: QuestionIdentity) {
                           "Distinguish a customer offer from a minimum acceptable price. Keep current capacity in the baseline. If a change has no specified size, explain its supported effect without assigning it a new number.",
                         ]
                       : []),
+                    ...(management && identity.course === "AC-MGT-BOARD"
+                      ? [
+                          "State which date or period each cash balance and reserve cushion describes. A positive closing cushion alone cannot guarantee the reserve was maintained in each intervening week. Answer that question explicitly before describing any dated cash-flow checks. Compare each relevant balance with the reserve on the same date, and keep confirmed cash flows separate from conditional receipts or financing.",
+                        ]
+                      : []),
                     ...(management && identity.course === "AC-MGT-CONT"
                       ? [
                           "Distinguish customer jobs due from a replenishment order placed with a supplier. In a comparison of ordering a backup with its arrival or readiness, الطلب refers to placing that purchase order. State the ordering cutoff, the delivery time, and any inspection or release required before dispatch, using the current lesson's times. Count exposed customer jobs separately.",
